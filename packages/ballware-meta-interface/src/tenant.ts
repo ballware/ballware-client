@@ -24,5 +24,5 @@ export interface CompiledTenant {
 }
 
 export interface MetaTenantApi {
-  metadataForTenantFunc: (token: string, tenant: string) => Promise<CompiledTenant>;
+  metadataForTenant: (token: string, tenant: string) => Promise<CompiledTenant>;
 }

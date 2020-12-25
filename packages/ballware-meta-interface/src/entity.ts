@@ -45,7 +45,7 @@ export interface EditLayoutItemOptions {
   itemsMember?: string;
   hint?: string;
   items?: Array<{ Value: string; Text: string }>;
-  itemoptions?: Record<string, unknown>;
+  itemoptions?: unknown;
   validations?: Array<{ identifier: string; message: string }>;
 }
 
@@ -124,7 +124,7 @@ export interface CompiledEntityCustomScripts {
   editorPreparing?: (
     mode: string,
     item: Record<string, unknown>,
-    layoutItem: Record<string, unknown>,
+    layoutItem: unknown,
     identifier: string,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
@@ -175,7 +175,7 @@ export interface CompiledEntityCustomScripts {
     item: CrudItem,
     detailItem: Record<string, unknown>,
     identifier: string,
-    options: Record<string, unknown>,
+    options: unknown,
     util: ScriptUtil,
   ) => void;
   detailGridRowValidating?: (
@@ -257,6 +257,6 @@ export interface CompiledEntityMetadata {
 }
 
 export interface MetaEntityApi {
-  metadataForEntityFunc: (token: string, entity: string) => Promise<CompiledEntityMetadata>;
-  documentsForEntityFunc: (token: string, entity: string) => Promise<Array<DocumentSelectEntry>>;
+  metadataForEntity: (token: string, entity: string) => Promise<CompiledEntityMetadata>;
+  documentsForEntity: (token: string, entity: string) => Promise<Array<DocumentSelectEntry>>;
 }

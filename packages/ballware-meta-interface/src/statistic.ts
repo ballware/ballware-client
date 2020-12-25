@@ -87,8 +87,8 @@ export interface CompiledStatistic {
 }
 
 export interface MetaStatisticApi {
-  metadataForStatisticFunc: (token: string, identifier: string) => Promise<CompiledStatistic>;
-  dataForStatisticFunc: (
+  metadataForStatistic: (token: string, identifier: string) => Promise<CompiledStatistic>;
+  dataForStatistic: (
     token: string,
     identifier: string,
     params: Record<string, unknown>,
