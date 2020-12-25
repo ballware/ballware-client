@@ -16,8 +16,9 @@
     ".": "./dist"
   },
   "keywords": [],
-  "author": "Frank Ballmeyer",
+  "author": "frank@ballmeyer.com",
   "license": "MIT",
+  "homepage": "https://github.com/frankball/ballware-meta-interface",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
