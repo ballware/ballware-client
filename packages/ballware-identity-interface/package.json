@@ -1,0 +1,51 @@
+{
+  "name": "@ballware/identity-interface",
+  "version": "6.0.0-alpha2",
+  "description": "Ballware Application Builder - Interface for identity provider",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "exports": {
+    ".": "./dist"
+  },
+  "keywords": [],
+  "author": "frank@ballmeyer.com",
+  "license": "MIT",
+  "homepage": "https://github.com/frankball/ballware-identity-interface",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "eslint-config-prettier"
+    ],
+    "ignorePatterns": [
+      "node_modules",
+      "dist",
+      "spec"
+    ]
+  }
+}
