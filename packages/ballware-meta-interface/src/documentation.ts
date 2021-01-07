@@ -1,3 +1,6 @@
 export interface MetaDocumentationApi {
-  loadDocumentationForEntity: (token: string, entity: string) => Promise<unknown>;
+  loadDocumentationForEntity: (
+    token: string,
+    entity: string
+  ) => Promise<unknown>;
 }

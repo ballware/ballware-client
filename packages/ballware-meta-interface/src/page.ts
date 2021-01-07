@@ -30,28 +30,43 @@ export interface StatisticOptions {
 export interface PageLayoutItemOptions {
   height?: string;
   width?: string;
-  itemoptions?: TabItemOptions | CrudContainerOptions | EntityGridOptions | EntityMapOptions | StatisticOptions;
+  itemoptions?:
+    | TabItemOptions
+    | CrudContainerOptions
+    | EntityGridOptions
+    | EntityMapOptions
+    | StatisticOptions;
 }
 
 export interface PageLayoutItem {
-  type: 'tabs' | 'tabitem' | 'entitygrid' | 'statistic' | 'crudcontainer' | 'grid' | 'map';
+  type:
+    | 'tabs'
+    | 'tabitem'
+    | 'entitygrid'
+    | 'statistic'
+    | 'crudcontainer'
+    | 'grid'
+    | 'map';
   options?: PageLayoutItemOptions;
   colCount?: number;
   colSpan?: number;
   items?: Array<PageLayoutItem>;
 }
 
+export interface PageToolbarItem {
+  type: string;
+  name: string;
+  caption?: string;
+  lookup?: string;
+  defaultValue: unknown | Array<unknown>;
+  options: Record<string, unknown>;
+}
+
 export interface PageLayout {
   title?: string;
   documentationEntity?: string;
-  searchparams?: Array<{
-    type: string;
-    name: string;
-    caption: string;
-    lookup?: string;
-    defaultValue: unknown | Array<unknown>;
-    options: Record<string, unknown>;
-  }>;
+  /** @deprecated */ searchparams?: Array<PageToolbarItem>;
+  toolbaritems?: Array<PageToolbarItem>;
   items: Array<PageLayoutItem>;
 }
 
@@ -61,20 +76,20 @@ export interface CompiledPageCustomScripts {
   prepareCustomParam?: (
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    callback: (customParam: Record<string, unknown>) => void,
+    callback: (customParam: Record<string, unknown>) => void
   ) => void;
   paramsInitialized?: (
     hidden: boolean,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions,
+    actions: ScriptActions
   ) => void;
   paramEditorInitialized?: (
     name: string,
     editUtil: EditUtil,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions,
+    actions: ScriptActions
   ) => void;
   paramEditorValueChanged?: (
     name: string,
@@ -82,7 +97,7 @@ export interface CompiledPageCustomScripts {
     editUtil: EditUtil,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions,
+    actions: ScriptActions
   ) => void;
   paramEditorEvent?: (
     name: string,
@@ -91,7 +106,7 @@ export interface CompiledPageCustomScripts {
     lookups: Record<string, unknown>,
     util: ScriptUtil,
     actions: ScriptActions,
-    param?: Record<string, unknown>,
+    param?: Record<string, unknown>
   ) => void;
 }
 
@@ -112,5 +127,8 @@ export interface CompiledPageData {
 }
 
 export interface MetaPageApi {
-  pageDataForIdentifier: (token: string, page: string) => Promise<CompiledPageData>;
+  pageDataForIdentifier: (
+    token: string,
+    page: string
+  ) => Promise<CompiledPageData>;
 }

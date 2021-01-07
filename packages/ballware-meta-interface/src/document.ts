@@ -4,6 +4,9 @@ export interface DocumentSelectEntry {
 }
 
 export interface MetaDocumentApi {
-  selectListPrintDocumentsForEntity: (token: string, entity: string) => Promise<Array<DocumentSelectEntry>>;
+  selectListPrintDocumentsForEntity: (
+    token: string,
+    entity: string
+  ) => Promise<Array<DocumentSelectEntry>>;
   viewerUrl: (token: string, search: string) => Promise<string>;
 }

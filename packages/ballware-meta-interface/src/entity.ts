@@ -77,7 +77,12 @@ export interface GridLayout {
   allowMultiselect?: boolean;
   allowEditing?: boolean;
   columns: Array<GridLayoutColumn>;
-  summaries?: Array<{ dataMember: string; groupSummary: boolean; totalSummary: boolean; summaryType: string }>;
+  summaries?: Array<{
+    dataMember: string;
+    groupSummary: boolean;
+    totalSummary: boolean;
+    summaryType: string;
+  }>;
   details?: DetailLayout;
 }
 
@@ -92,24 +97,27 @@ export interface EditLayout {
 export interface CompiledEntityCustomScripts {
   extendedRightsCheck?: ExtendedRightsCheckFunc;
   rightsParamForHead?: (customParam: unknown) => Record<string, unknown>;
-  rightsParamForItem?: (item: Record<string, unknown>, customParam: unknown) => Record<string, unknown>;
+  rightsParamForItem?: (
+    item: Record<string, unknown>,
+    customParam: unknown
+  ) => Record<string, unknown>;
   prepareCustomParam?: (
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    callback: (customParam: Record<string, unknown>) => void,
+    callback: (customParam: Record<string, unknown>) => void
   ) => void;
   prepareGridLayout?: (
     lookups: Record<string, unknown>,
     customParam: unknown,
     util: ScriptUtil,
-    gridLayout: GridLayout,
+    gridLayout: GridLayout
   ) => void;
   prepareEditLayout?: (
     mode: string,
     lookups: Record<string, unknown>,
     customParam: unknown,
     util: ScriptUtil,
-    editLayout: EditLayout,
+    editLayout: EditLayout
   ) => void;
   editorPreparing?: (
     mode: string,
@@ -117,7 +125,7 @@ export interface CompiledEntityCustomScripts {
     layoutItem: unknown,
     identifier: string,
     lookups: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   editorInitialized?: (
     mode: string,
@@ -125,7 +133,7 @@ export interface CompiledEntityCustomScripts {
     editUtil: EditUtil,
     identifier: string,
     lookups: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   editorValueChanged?: (
     item: Record<string, unknown>,
@@ -133,7 +141,7 @@ export interface CompiledEntityCustomScripts {
     identifier: string,
     value: ValueType,
     lookups: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   editorEvent?: (
     item: Record<string, unknown>,
@@ -141,7 +149,7 @@ export interface CompiledEntityCustomScripts {
     identifier: string,
     event: string,
     lookups: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   editorEntered?: (
     mode: string,
@@ -149,7 +157,7 @@ export interface CompiledEntityCustomScripts {
     editUtil: EditUtil,
     identifier: string,
     lookups: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   editorValidating?: (
     item: Record<string, unknown>,
@@ -158,7 +166,7 @@ export interface CompiledEntityCustomScripts {
     value: ValueType,
     validation: string,
     lookups: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => boolean;
   detailGridCellPreparing?: (
     mode: string,
@@ -166,27 +174,27 @@ export interface CompiledEntityCustomScripts {
     detailItem: Record<string, unknown>,
     identifier: string,
     options: unknown,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   detailGridRowValidating?: (
     mode: string,
     item: CrudItem,
     detailItem: Record<string, unknown>,
     identifier: string,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => string;
   initNewDetailItem?: (
     dataMember: string,
     item: CrudItem,
     detailItem: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => void;
   paramEditorInitialized?: (
     name: string,
     editUtil: EditUtil,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions,
+    actions: ScriptActions
   ) => void;
   paramEditorValueChanged?: (
     name: string,
@@ -194,7 +202,7 @@ export interface CompiledEntityCustomScripts {
     editUtil: EditUtil,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions,
+    actions: ScriptActions
   ) => void;
   paramEditorEvent?: (
     name: string,
@@ -203,7 +211,7 @@ export interface CompiledEntityCustomScripts {
     lookups: Record<string, unknown>,
     util: ScriptUtil,
     actions: ScriptActions,
-    param?: Record<string, unknown>,
+    param?: Record<string, unknown>
   ) => void;
   prepareCustomFunction?: (
     identifier: string,
@@ -211,7 +219,7 @@ export interface CompiledEntityCustomScripts {
     util: ScriptUtil,
     executeCallback: (param: Record<string, unknown>) => void,
     messageCallback: (message: string) => void,
-    selection?: Array<CrudItem>,
+    selection?: Array<CrudItem>
   ) => void;
   evaluateCustomFunction?: (
     identifier: string,
@@ -219,7 +227,7 @@ export interface CompiledEntityCustomScripts {
     util: ScriptUtil,
     param: Record<string, unknown>,
     saveCallback: (param: Record<string, unknown>) => void,
-    messageCallback: (message: string) => void,
+    messageCallback: (message: string) => void
   ) => void;
 }
 
@@ -228,8 +236,16 @@ export interface CompiledEntityMetadata {
   entity: string;
   displayName: string;
   baseUrl: string;
-  itemMappingScript: (item: CrudItem, customParam: unknown, util: ScriptUtil) => CrudItem;
-  itemReverseMappingScript: (item: CrudItem, customParam: unknown, util: ScriptUtil) => CrudItem;
+  itemMappingScript: (
+    item: CrudItem,
+    customParam: unknown,
+    util: ScriptUtil
+  ) => CrudItem;
+  itemReverseMappingScript: (
+    item: CrudItem,
+    customParam: unknown,
+    util: ScriptUtil
+  ) => CrudItem;
   compiledCustomScripts?: CompiledEntityCustomScripts;
   customFunctions?: Array<EntityCustomFunction>;
   gridLayouts: Array<GridLayout>;
@@ -247,6 +263,12 @@ export interface CompiledEntityMetadata {
 }
 
 export interface MetaEntityApi {
-  metadataForEntity: (token: string, entity: string) => Promise<CompiledEntityMetadata>;
-  documentsForEntity: (token: string, entity: string) => Promise<Array<DocumentSelectEntry>>;
+  metadataForEntity: (
+    token: string,
+    entity: string
+  ) => Promise<CompiledEntityMetadata>;
+  documentsForEntity: (
+    token: string,
+    entity: string
+  ) => Promise<Array<DocumentSelectEntry>>;
 }

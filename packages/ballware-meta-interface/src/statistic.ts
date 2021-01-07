@@ -8,12 +8,26 @@ export interface StatisticChartOptions {
     visualRangeFrom: number;
     visualRangeTo: number;
     tickIntervall: unknown;
-    lines: Array<{ value: number; color: string; dashStyle: string; labelText: string }>;
+    lines: Array<{
+      value: number;
+      color: string;
+      dashStyle: string;
+      labelText: string;
+    }>;
   };
   valueAxis?: {
-    lines: Array<{ value: number; color: string; dashStyle: string; labelText: string }>;
+    lines: Array<{
+      value: number;
+      color: string;
+      dashStyle: string;
+      labelText: string;
+    }>;
   };
-  legend?: { title: string; horizontalAlignment: string; verticalAlignment: string };
+  legend?: {
+    title: string;
+    horizontalAlignment: string;
+    verticalAlignment: string;
+  };
   series: Array<{
     type: 'bar' | 'line';
     visible?: boolean;
@@ -64,7 +78,7 @@ export interface CompiledStatisticCustomScripts {
     value: unknown,
     params: Record<string, unknown>,
     customParam: Record<string, unknown>,
-    util: ScriptUtil,
+    util: ScriptUtil
   ) => string;
 }
 
@@ -81,16 +95,22 @@ export interface CompiledStatistic {
     params: Record<string, unknown>,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    callback: (layout: StatisticLayout, data: Array<Record<string, unknown>>) => void,
+    callback: (
+      layout: StatisticLayout,
+      data: Array<Record<string, unknown>>
+    ) => void
   ) => void;
   customScripts?: CompiledStatisticCustomScripts;
 }
 
 export interface MetaStatisticApi {
-  metadataForStatistic: (token: string, identifier: string) => Promise<CompiledStatistic>;
+  metadataForStatistic: (
+    token: string,
+    identifier: string
+  ) => Promise<CompiledStatistic>;
   dataForStatistic: (
     token: string,
     identifier: string,
-    params: Record<string, unknown>,
+    params: Record<string, unknown>
   ) => Promise<Array<Record<string, unknown>>>;
 }
