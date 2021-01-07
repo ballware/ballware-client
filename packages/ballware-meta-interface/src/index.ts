@@ -33,7 +33,7 @@ export {
 } from './page';
 export { MetaPickvalueApi } from './pickvalue';
 export { MetaProcessingstateApi } from './processingstate';
-export { Rights, EntityRights, ExtendedRightsCheckFunc } from './rights';
+export { Rights, EntityRights, ExtendedRightsCheckFunc, hasRight, hasAnyRight } from './rights';
 export { ScriptUtil } from './scriptutil';
 export {
   StatisticChartOptions,

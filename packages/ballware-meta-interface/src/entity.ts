@@ -57,16 +57,8 @@ export interface EditLayoutItem {
   items?: Array<EditLayoutItem>;
 }
 
-export interface GridLayoutColumn {
+export interface GridLayoutColumn extends EditLayoutItemOptions {
   type: string;
-  dataMember: string;
-  caption: string;
-  lookup?: string;
-  lookupParam?: string;
-  lookupMember?: string;
-  displayExpr?: string;
-  valueExpr?: string;
-  width?: string;
   precision?: number;
   fixedPosition?: 'left' | 'right';
   sorting?: 'asc' | 'desc';
@@ -75,9 +67,7 @@ export interface GridLayoutColumn {
   visible?: boolean;
   editable?: boolean;
   editFunction?: string;
-  required?: boolean;
   popuplayout?: string;
-  items?: Array<{ Value: unknown; Text: string }>;
 }
 
 export interface GridLayout {

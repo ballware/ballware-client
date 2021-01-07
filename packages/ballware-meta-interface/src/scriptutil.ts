@@ -18,7 +18,7 @@ export interface ScriptUtil {
   geocodeLocation: (
     location: { lat: number; lng: number },
     callback: (
-      addresses: Array<{ street: string; houseNumber: string; zipCode: string; city: string; country: string }>,
+      addresses: Array<{ street?: string; houseNumber?: string; zipCode?: string; city?: string; country?: string }>,
     ) => void,
   ) => void;
 }
