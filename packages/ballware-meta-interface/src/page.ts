@@ -58,6 +58,7 @@ export interface PageToolbarItem {
   name: string;
   caption?: string;
   lookup?: string;
+  width?: string;
   defaultValue: unknown | Array<unknown>;
   options: Record<string, unknown>;
 }
