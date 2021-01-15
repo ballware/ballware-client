@@ -1,22 +1,23 @@
 import { createContext } from 'react';
-import { ScriptActions, EditUtil, ValueType, PageLayout } from '@ballware/meta-interface';
+import { EditUtil, ValueType, PageLayout } from '@ballware/meta-interface';
 
 export interface PageContextState {
     layout?: PageLayout;
+
+    pageParam?: Record<string, unknown>;
 
     customParam?: Record<string, unknown>;
     documentation?: string | undefined;
     loadDocumentation?: (entity: string) => void;
     resetDocumentation?: () => void;
 
-    paramsInitialized?: (hidden: boolean, actions: ScriptActions) => void;
-    paramEditorInitialized?: (name: string, editUtil: EditUtil, actions: ScriptActions) => void;
-    paramEditorValueChanged?: (name: string, value: ValueType, editUtil: EditUtil, actions: ScriptActions) => void;
+    paramsInitialized?: (hidden: boolean) => void;
+    paramEditorInitialized?: (name: string, editUtil: EditUtil) => void;
+    paramEditorValueChanged?: (name: string, value: ValueType, editUtil: EditUtil) => void;
     paramEditorEvent?: (
         name: string,
         event: string,
         editUtil: EditUtil,
-        actions: ScriptActions,
         param?: ValueType,
     ) => void;
 }
