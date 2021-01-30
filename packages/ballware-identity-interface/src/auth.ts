@@ -10,16 +10,16 @@
  */
 export interface Session {
   /** access token to make api request on behalf of authenticated user  */
-  access_token: string; 
+  access_token: string;
 
   /** refresh token to grant a new access token for extended authentication session */
-  refresh_token: string; 
+  refresh_token: string;
 
   /** number of seconds the access token will expire in */
-  expires_in: number; 
+  expires_in: number;
 
   /** Timestamp the access token was issued */
-  issued: Date; 
+  issued: Date;
 }
 
 /**
@@ -35,17 +35,19 @@ export interface SessionWithUserInfo extends Session {
 
 /**
  * Application specific mapping function for fetching additional information from authentication response (claims, rights...)
- * 
- * @param sessionWithUserInfo - Response from login 
+ *
+ * @param sessionWithUserInfo - Response from login
  * @param userinfo - Response from userinfo endpoint with additional content
  * @returns - Extended session object with additional information
  */
-export type UserInfoMappingFunc = <T extends SessionWithUserInfo>(sessionWithUserInfo: T, userinfo: Record<string, unknown>) => T;
-
+export type UserInfoMappingFunc = <T extends SessionWithUserInfo>(
+  sessionWithUserInfo: T,
+  userinfo: Record<string, unknown>
+) => T;
 
 /**
  * API for resource owner based authentication flow.
- * 
+ *
  * @remarks
  * Attention: This is not save for usage in browser application
  */
@@ -64,32 +66,40 @@ export interface ResourceOwnerAuthApi {
     password: string,
     client: string,
     secret: string,
-    userinfoMapper: UserInfoMappingFunc,
+    userinfoMapper: UserInfoMappingFunc
   ) => Promise<T>;
 
   /**
    * Logout authenticated user, invalidate access token
-   * 
+   *
    * @param accessToken - Valid token from authenticated user
    * @param client - Client identifier for identifying application in OAuth service
    * @param secret - Secrect for client identifier
    * @returns Promise resolved when logout has finished
    */
-  logout: (accessToken: string, client: string, secret: string) => Promise<void>;
+  logout: (
+    accessToken: string,
+    client: string,
+    secret: string
+  ) => Promise<void>;
 
   /**
    * Registering new user
-   * 
+   *
    * @param email - Unique mail adress for new user
    * @param password - Password for authentication user
    * @param displayname - Screen friendly representation of user
    * @returns Promise resolved when registration has finished
    */
-  register: (email: string, password: string, displayname: string) => Promise<void>;
+  register: (
+    email: string,
+    password: string,
+    displayname: string
+  ) => Promise<void>;
 
   /**
    * Request password reset token for lost password
-   * 
+   *
    * @param email - Unique mail adress for requesting user
    * @returns Promise resolved when request was transmitted
    */
@@ -97,30 +107,43 @@ export interface ResourceOwnerAuthApi {
 
   /**
    * Reset password with password reset token
-   * 
+   *
    * @param email - Unique mail adress for requesting user
    * @param code - Token delivered by identity provider for password reset
    * @param newPassword - New password provided by user
    * @returns Promise resolved when request was transmitted
-   */  
-  resetPassword: (email: string, code: string, newPassword: string) => Promise<void>;
+   */
+
+  resetPassword: (
+    email: string,
+    code: string,
+    newPassword: string
+  ) => Promise<void>;
 
   /**
    * Change password for registered user
-   * 
+   *
    * @param accessToken - Valid access token for authenticated user
    * @param oldPassword - Previous password of user
    * @param newPassword - New password provided by user
    * @returns Promise resolved when password change was finished
    */
-  changePassword: (accessToken: string, oldPassword: string, newPassword: string) => Promise<void>;
+  changePassword: (
+    accessToken: string,
+    oldPassword: string,
+    newPassword: string
+  ) => Promise<void>;
 
   /**
    * Refresh access token for extending authenticated session
-   * 
+   *
    * @param refreshToken - Valid refresh token provided by login
    * @param client - Client identifier for identifying application in OAuth service
-   * @param secret - Secrect for client identifier   
+   * @param secret - Secrect for client identifier
    */
-  refreshToken: (refreshToken: string, client: string, secret: string) => Promise<Session>;
+  refreshToken: (
+    refreshToken: string,
+    client: string,
+    secret: string
+  ) => Promise<Session>;
 }

@@ -11,7 +11,7 @@
 export interface IdentityUserApi {
   /**
    * Returning a list of available users in identity system
-   * 
+   *
    * @param token - access token required for authentication
    * @returns Promise resolving list of available user with id and display text
    */
@@ -19,9 +19,13 @@ export interface IdentityUserApi {
 
   /**
    * Returns a single existing user by identifier from identity system
-   * 
+   *
    * @param token - access token required for authentication
    * @returns Promise resoling single element with id and display text for requested identifier
-   */  
-  selectByIdFunc: (token: string, identifier: string) => Promise<Record<string, unknown>>;
+   */
+
+  selectByIdFunc: (
+    token: string,
+    identifier: string
+  ) => Promise<Record<string, unknown>>;
 }
