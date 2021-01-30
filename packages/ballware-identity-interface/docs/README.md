@@ -7,4 +7,7 @@ This packages is part of ballware application builder for building modular gener
 <img src="https://github.com/frankball/ballware-identity-interface/blob/main/assets/landscape.png">
 
 ## Documentation
-For API documentation see Github repository at <a href="https://github.com/frankball/ballware-identity-interface/master/docs/modules.md">TypeDoc</a>
+For API documentation see Github repository at [TypeDoc](docs/modules.md)
+
+## Copyright and license
+Code and documentation copyright 2021 Frank Ballmeyer. Code released under the [MIT License](https://github.com/frankball/ballware-identity-interface/blob/main/LICENSE).

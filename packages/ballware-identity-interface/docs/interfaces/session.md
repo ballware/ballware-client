@@ -27,7 +27,7 @@ Basic authentication response containing user token
 
 access token to make api request on behalf of authenticated user
 
-Defined in: [auth.ts:13](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/auth.ts#L13)
+Defined in: [auth.ts:13](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L13)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 number of seconds the access token will expire in
 
-Defined in: [auth.ts:19](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/auth.ts#L19)
+Defined in: [auth.ts:19](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L19)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Timestamp the access token was issued
 
-Defined in: [auth.ts:22](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/auth.ts#L22)
+Defined in: [auth.ts:22](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L22)
 
 ___
 
@@ -57,4 +57,4 @@ ___
 
 refresh token to grant a new access token for extended authentication session
 
-Defined in: [auth.ts:16](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/auth.ts#L16)
+Defined in: [auth.ts:16](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L16)

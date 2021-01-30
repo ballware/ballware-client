@@ -27,7 +27,7 @@ Returns a single existing role by identifier from identity system
 
 **`returns`** Promise resoling single element with id and display text for requested identifier
 
-Defined in: [role.ts:26](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/role.ts#L26)
+Defined in: [role.ts:26](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/role.ts#L26)
 
 ___
 
@@ -41,4 +41,4 @@ Returning a list of available roles in identity system
 
 **`returns`** Promise resolving list of available roles with id and display text
 
-Defined in: [role.ts:18](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/role.ts#L18)
+Defined in: [role.ts:18](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/role.ts#L18)

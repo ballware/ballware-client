@@ -27,7 +27,7 @@ Returns a single existing user by identifier from identity system
 
 **`returns`** Promise resoling single element with id and display text for requested identifier
 
-Defined in: [user.ts:26](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/user.ts#L26)
+Defined in: [user.ts:26](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/user.ts#L26)
 
 ___
 
@@ -41,4 +41,4 @@ Returning a list of available users in identity system
 
 **`returns`** Promise resolving list of available user with id and display text
 
-Defined in: [user.ts:18](https://github.com/frankball/ballware-identity-interface/blob/6e35751/src/user.ts#L18)
+Defined in: [user.ts:18](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/user.ts#L18)
