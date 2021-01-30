@@ -1,3 +1,3 @@
-export { Session, SessionWithUserInfo, IdentityAuthApi } from './auth';
+export { Session, SessionWithUserInfo, ResourceOwnerAuthApi } from './auth';
 export { IdentityUserApi } from './user';
 export { IdentityRoleApi } from './role';
