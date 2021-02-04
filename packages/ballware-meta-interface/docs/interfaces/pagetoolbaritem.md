@@ -28,7 +28,7 @@ Toolbar element
 
 Display text
 
-Defined in: [page.ts:167](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L167)
+Defined in: [page.ts:167](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L167)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 Initial value of toolbar component
 
-Defined in: [page.ts:182](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L182)
+Defined in: [page.ts:182](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L182)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 Identifier for lookup (only for components with select lists)
 
-Defined in: [page.ts:172](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L172)
+Defined in: [page.ts:172](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L172)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 Unique name of toolbar element
 
-Defined in: [page.ts:162](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L162)
+Defined in: [page.ts:162](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L162)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 Component type specific options
 
-Defined in: [page.ts:187](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L187)
+Defined in: [page.ts:187](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L187)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 Type identifier of toolbar component
 
-Defined in: [page.ts:157](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L157)
+Defined in: [page.ts:157](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L157)
 
 ___
 
@@ -88,4 +88,4 @@ ___
 
 Optional fixed width of toolbar component
 
-Defined in: [page.ts:177](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L177)
+Defined in: [page.ts:177](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L177)

@@ -27,7 +27,7 @@ Options for line/bar chart
 
 Options for argument axis
 
-Defined in: [statistic.ts:27](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L27)
+Defined in: [statistic.ts:27](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L27)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Property in data containing argument value
 
-Defined in: [statistic.ts:22](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L22)
+Defined in: [statistic.ts:22](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L22)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Options for legend
 
-Defined in: [statistic.ts:117](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L117)
+Defined in: [statistic.ts:117](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L117)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Horizontal value bars
 
-Defined in: [statistic.ts:17](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L17)
+Defined in: [statistic.ts:17](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L17)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Series of data
 
-Defined in: [statistic.ts:136](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L136)
+Defined in: [statistic.ts:136](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L136)
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 Options for value axis
 
-Defined in: [statistic.ts:88](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L88)
+Defined in: [statistic.ts:88](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L88)

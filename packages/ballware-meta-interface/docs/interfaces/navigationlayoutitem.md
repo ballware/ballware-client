@@ -24,7 +24,7 @@ Navigation tree item
 
 Collection of child items (only for 'group' and 'section')
 
-Defined in: [tenant.ts:42](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/tenant.ts#L42)
+Defined in: [tenant.ts:42](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L42)
 
 ___
 
@@ -42,7 +42,7 @@ Name | Type | Description |
 `page?` | *undefined* \| *string* | Page identifier if item type is 'page'   |
 `url?` | *undefined* \| *string* | Optional url for external page not part of application   |
 
-Defined in: [tenant.ts:22](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/tenant.ts#L22)
+Defined in: [tenant.ts:22](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L22)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 Type of navigation item
 
-Defined in: [tenant.ts:17](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/tenant.ts#L17)
+Defined in: [tenant.ts:17](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L17)

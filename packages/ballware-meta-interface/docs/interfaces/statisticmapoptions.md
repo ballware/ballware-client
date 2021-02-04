@@ -23,7 +23,7 @@ Options for statistic map
 
 Data item property containing location
 
-Defined in: [statistic.ts:209](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L209)
+Defined in: [statistic.ts:209](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L209)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 Data item property containing tooltip text
 
-Defined in: [statistic.ts:214](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L214)
+Defined in: [statistic.ts:214](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L214)

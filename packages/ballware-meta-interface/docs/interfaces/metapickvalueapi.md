@@ -33,7 +33,7 @@ Fetch single select list element for business object property
 
 **`returns`** Promise containing single property value
 
-Defined in: [pickvalue.ts:35](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/pickvalue.ts#L35)
+Defined in: [pickvalue.ts:35](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/pickvalue.ts#L35)
 
 ___
 
@@ -51,4 +51,4 @@ Fetch select list for business object property possible values
 
 **`returns`** Promise containing collection of possible property values
 
-Defined in: [pickvalue.ts:20](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/pickvalue.ts#L20)
+Defined in: [pickvalue.ts:20](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/pickvalue.ts#L20)

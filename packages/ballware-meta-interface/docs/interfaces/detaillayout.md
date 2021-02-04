@@ -25,7 +25,7 @@ Detail layout definition for expandable detail view in grid/list
 
 Number of columns for display layout
 
-Defined in: [entity.ts:92](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L92)
+Defined in: [entity.ts:92](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L92)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Specific column count definition for small/big screens
 
-Defined in: [entity.ts:97](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L97)
+Defined in: [entity.ts:97](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L97)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Optional fixed height of detail layout
 
-Defined in: [entity.ts:102](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L102)
+Defined in: [entity.ts:102](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L102)
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 List of detail layout items
 
-Defined in: [entity.ts:107](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L107)
+Defined in: [entity.ts:107](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L107)

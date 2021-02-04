@@ -20,7 +20,7 @@ Definition of rights for default operations
 
 • **RIGHT\_ADD**: = "add"
 
-Defined in: [rights.ts:33](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L33)
+Defined in: [rights.ts:33](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L33)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **RIGHT\_DELETE**: = "delete"
 
-Defined in: [rights.ts:35](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L35)
+Defined in: [rights.ts:35](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L35)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **RIGHT\_EDIT**: = "edit"
 
-Defined in: [rights.ts:34](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L34)
+Defined in: [rights.ts:34](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L34)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **RIGHT\_PRINT**: = "print"
 
-Defined in: [rights.ts:36](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L36)
+Defined in: [rights.ts:36](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L36)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 • **RIGHT\_VIEW**: = "view"
 
-Defined in: [rights.ts:32](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L32)
+Defined in: [rights.ts:32](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L32)

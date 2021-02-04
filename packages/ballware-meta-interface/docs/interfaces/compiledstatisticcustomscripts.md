@@ -34,4 +34,4 @@ Customize display text for argument axis label
 
 **`returns`** Display text for label
 
-Defined in: [statistic.ts:364](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L364)
+Defined in: [statistic.ts:364](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L364)

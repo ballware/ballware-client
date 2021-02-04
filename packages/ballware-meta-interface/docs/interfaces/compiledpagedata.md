@@ -27,7 +27,7 @@ Page metadata
 
 Container for custom script operations
 
-Defined in: [page.ts:374](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L374)
+Defined in: [page.ts:374](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L374)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Unique identifier of page
 
-Defined in: [page.ts:342](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L342)
+Defined in: [page.ts:342](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L342)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Layout definition
 
-Defined in: [page.ts:352](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L352)
+Defined in: [page.ts:352](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L352)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Collection of lookup definitions
 
-Defined in: [page.ts:357](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L357)
+Defined in: [page.ts:357](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L357)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Display name for navigation
 
-Defined in: [page.ts:347](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L347)
+Defined in: [page.ts:347](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L347)
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 Collection of picklist definitions
 
-Defined in: [page.ts:369](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/page.ts#L369)
+Defined in: [page.ts:369](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L369)

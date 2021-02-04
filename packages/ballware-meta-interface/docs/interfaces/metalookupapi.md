@@ -35,7 +35,7 @@ Fetch list of proposals for lookup
 
 **`returns`** Promise containing proposals
 
-Defined in: [lookup.ts:98](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L98)
+Defined in: [lookup.ts:98](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L98)
 
 ___
 
@@ -53,7 +53,7 @@ Fetch list of proposals for lookup with param
 
 **`returns`** Promise containing proposals
 
-Defined in: [lookup.ts:111](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L111)
+Defined in: [lookup.ts:111](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L111)
 
 ___
 
@@ -71,7 +71,7 @@ Fetch single element by lookup and id
 
 **`returns`** Promise containing lookup element
 
-Defined in: [lookup.ts:32](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L32)
+Defined in: [lookup.ts:32](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L32)
 
 ___
 
@@ -89,7 +89,7 @@ Fetch single element by lookup identifier and id
 
 **`returns`** Promise containing lookup element
 
-Defined in: [lookup.ts:57](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L57)
+Defined in: [lookup.ts:57](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L57)
 
 ___
 
@@ -109,7 +109,7 @@ Fetch single element by lookup with param and id
 
 **`returns`** Promise containing lookup element
 
-Defined in: [lookup.ts:85](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L85)
+Defined in: [lookup.ts:85](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L85)
 
 ___
 
@@ -125,7 +125,7 @@ Fetch list by lookup
 
 **`returns`** Promise containing result list of lookup query
 
-Defined in: [lookup.ts:19](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L19)
+Defined in: [lookup.ts:19](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L19)
 
 ___
 
@@ -141,7 +141,7 @@ Fetch list by lookup identifier
 
 **`returns`** Promise containing result list of lookup query
 
-Defined in: [lookup.ts:44](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L44)
+Defined in: [lookup.ts:44](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L44)
 
 ___
 
@@ -159,4 +159,4 @@ Fetch list by lookup with param
 
 **`returns`** Promise containing result list of lookup query
 
-Defined in: [lookup.ts:70](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/lookup.ts#L70)
+Defined in: [lookup.ts:70](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/lookup.ts#L70)

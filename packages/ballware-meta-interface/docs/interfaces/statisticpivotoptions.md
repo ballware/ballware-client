@@ -24,7 +24,7 @@ Options for pivot grid
 
 List of pivot fields
 
-Defined in: [statistic.ts:234](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L234)
+Defined in: [statistic.ts:234](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L234)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Show summary values of entire column
 
-Defined in: [statistic.ts:229](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L229)
+Defined in: [statistic.ts:229](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L229)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 Show summary values of hierarchy levels
 
-Defined in: [statistic.ts:224](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L224)
+Defined in: [statistic.ts:224](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L224)

@@ -39,7 +39,7 @@ Available Options for edit/detail layout items
 
 Accept alternative custom user input as value (only for editors with select list functionality)
 
-Defined in: [entity.ts:168](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L168)
+Defined in: [entity.ts:168](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L168)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Display text for label
 
-Defined in: [entity.ts:117](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L117)
+Defined in: [entity.ts:117](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L117)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 Property of business object the editor is attached to
 
-Defined in: [entity.ts:122](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L122)
+Defined in: [entity.ts:122](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L122)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 Display data member in lookup query result (only for editors with select list functionality)
 
-Defined in: [entity.ts:153](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L153)
+Defined in: [entity.ts:153](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L153)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 Optional fixed height for editor component
 
-Defined in: [entity.ts:158](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L158)
+Defined in: [entity.ts:158](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L158)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 Hint displayed as tooltip on editor
 
-Defined in: [entity.ts:178](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L178)
+Defined in: [entity.ts:178](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L178)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 Editor component specific additional options
 
-Defined in: [entity.ts:188](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L188)
+Defined in: [entity.ts:188](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L188)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 Static item list used as select list (only for editors with select list functionality)
 
-Defined in: [entity.ts:183](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L183)
+Defined in: [entity.ts:183](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L183)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 Data member of business object containing select list (only for editors with select list functionality)
 
-Defined in: [entity.ts:173](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L173)
+Defined in: [entity.ts:173](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L173)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 Lookup identifier (only for editors with select list functionality)
 
-Defined in: [entity.ts:137](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L137)
+Defined in: [entity.ts:137](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L137)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 Optional data member for lookup query (only for editors with select list functionality).
 The current business object property value of data member will be supplied as parameter to lookup query
 
-Defined in: [entity.ts:143](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L143)
+Defined in: [entity.ts:143](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L143)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 If set, the property is not changeable by user
 
-Defined in: [entity.ts:132](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L132)
+Defined in: [entity.ts:132](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L132)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 If set, property of business object is required to have a value
 
-Defined in: [entity.ts:127](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L127)
+Defined in: [entity.ts:127](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L127)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 List of custom validation rules (Have to be checked in editorValidating custom script)
 
-Defined in: [entity.ts:193](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L193)
+Defined in: [entity.ts:193](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L193)
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 Value data member in lookup query result (only for editors with select list functionality)
 
-Defined in: [entity.ts:148](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L148)
+Defined in: [entity.ts:148](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L148)
 
 ___
 
@@ -190,4 +190,4 @@ ___
 
 Optional fixed width for editor component
 
-Defined in: [entity.ts:163](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L163)
+Defined in: [entity.ts:163](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L163)

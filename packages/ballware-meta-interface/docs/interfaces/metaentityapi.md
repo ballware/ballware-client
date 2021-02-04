@@ -29,7 +29,7 @@ Fetch available print documents for business object type
 
 **`returns`** Promise containing available print documents for entity
 
-Defined in: [entity.ts:776](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L776)
+Defined in: [entity.ts:776](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L776)
 
 ___
 
@@ -45,4 +45,4 @@ Fetch metadata by entity identifier
 
 **`returns`** Promise containing metadata entity
 
-Defined in: [entity.ts:764](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/entity.ts#L764)
+Defined in: [entity.ts:764](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L764)

@@ -29,7 +29,7 @@ Fetch content data for statistic
 
 **`returns`** Promise containing statistic content
 
-Defined in: [statistic.ts:442](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L442)
+Defined in: [statistic.ts:442](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L442)
 
 ___
 
@@ -45,4 +45,4 @@ Fetch metadata for statistic
 
 **`returns`** Promise containing statistic metadata
 
-Defined in: [statistic.ts:431](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/statistic.ts#L431)
+Defined in: [statistic.ts:431](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L431)

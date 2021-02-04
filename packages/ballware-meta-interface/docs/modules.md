@@ -87,7 +87,7 @@ Definition for extended rights check function for custom script right checks
 
 **`returns`** true if access is allowed, false if not
 
-Defined in: [rights.ts:49](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L49)
+Defined in: [rights.ts:49](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L49)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 Possible value types for business object properties
 
-Defined in: [cruditem.ts:11](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/cruditem.ts#L11)
+Defined in: [cruditem.ts:11](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/cruditem.ts#L11)
 
 ## Functions
 
@@ -120,7 +120,7 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [rights.ts:95](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L95)
+Defined in: [rights.ts:95](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L95)
 
 ___
 
@@ -145,4 +145,4 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [rights.ts:68](https://github.com/frankball/ballware-meta-interface/blob/d19dcf1/src/rights.ts#L68)
+Defined in: [rights.ts:68](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/rights.ts#L68)

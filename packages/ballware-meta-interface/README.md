@@ -3,7 +3,7 @@ Provides a provider independend interface for providing metadata to applications
 ## ballware application builder
 This packages is part of ballware application builder for building modular generic metadata based application for the cloud.
 <br/>
-<img src="https://github.com/frankball/ballware-identity-interface/blob/main/assets/landscape.png">
+<img src="https://github.com/frankball/ballware-meta-interface/blob/main/assets/landscape.png">
 
 ## Documentation
 For API documentation see Github repository at [TypeDoc](docs/modules.md)
