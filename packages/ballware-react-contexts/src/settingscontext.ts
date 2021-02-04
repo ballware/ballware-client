@@ -16,6 +16,7 @@ import {
 
 export interface SettingsContextState {
     version?: string;
+    googlekey?: string;
     identityAuthApiFactory?: () => IdentityAuthApi;
     identityUserApiFactory?: () => IdentityUserApi;
     identityRoleApiFactory?: () => IdentityRoleApi;
