@@ -1,3 +1,5 @@
+@ballware/meta-interface / [Exports](modules.md)
+
 Provides a provider independend interface for providing metadata to applications based on ballware application builder framework.
 
 ## ballware application builder
