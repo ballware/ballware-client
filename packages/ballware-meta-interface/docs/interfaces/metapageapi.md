@@ -28,4 +28,4 @@ Fetch page metadata by identifier
 
 **`returns`** Promise containing page metadata
 
-Defined in: [page.ts:388](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L388)
+Defined in: [page.ts:388](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L388)

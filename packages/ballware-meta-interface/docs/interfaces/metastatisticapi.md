@@ -19,7 +19,7 @@ Interface for statistic data operations
 
 ### dataForStatistic
 
-• **dataForStatistic**: (`token`: *string*, `identifier`: *string*, `params`: *Record*<*string*, *unknown*\>) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **dataForStatistic**: (`token`: *string*, `identifier`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<*Record*<*string*, *unknown*\>[]\>
 
 Fetch content data for statistic
 
@@ -27,9 +27,11 @@ Fetch content data for statistic
 
 **`param`** Unique identifier of statistic item
 
+**`param`** Optional parameters for query
+
 **`returns`** Promise containing statistic content
 
-Defined in: [statistic.ts:442](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L442)
+Defined in: [statistic.ts:444](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L444)
 
 ___
 
@@ -45,4 +47,4 @@ Fetch metadata for statistic
 
 **`returns`** Promise containing statistic metadata
 
-Defined in: [statistic.ts:431](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/statistic.ts#L431)
+Defined in: [statistic.ts:432](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L432)

@@ -24,4 +24,4 @@ Set head params for page layout items
 
 **`param`** New page head param object
 
-Defined in: [page.ts:224](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L224)
+Defined in: [page.ts:224](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L224)

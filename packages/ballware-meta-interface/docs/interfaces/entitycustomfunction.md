@@ -30,7 +30,7 @@ Interface of custom crud function definition
 Identifier of edit layout definition used by function.
 If not set the primary edit layout will be used
 
-Defined in: [entity.ts:82](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L82)
+Defined in: [entity.ts:82](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L82)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 Identifier of owning business object
 
-Defined in: [entity.ts:43](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L43)
+Defined in: [entity.ts:43](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L43)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 Set if function uses a propritary editor.
 If set, prepareCustomFunction has to supply editor url as callback parameter
 
-Defined in: [entity.ts:76](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L76)
+Defined in: [entity.ts:76](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L76)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 CSS class for icon
 
-Defined in: [entity.ts:65](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L65)
+Defined in: [entity.ts:65](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L65)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Unique id of custom function
 
-Defined in: [entity.ts:48](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L48)
+Defined in: [entity.ts:48](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L48)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Set if function supports batch operations of multiple business object instances
 
-Defined in: [entity.ts:70](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L70)
+Defined in: [entity.ts:70](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L70)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 Display text of function
 
-Defined in: [entity.ts:60](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L60)
+Defined in: [entity.ts:60](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L60)
 
 ___
 
@@ -103,4 +103,4 @@ Function operation type
 add: Function is creating new business objects
 edit: Function is editing existing selected business objects
 
-Defined in: [entity.ts:55](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L55)
+Defined in: [entity.ts:55](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L55)

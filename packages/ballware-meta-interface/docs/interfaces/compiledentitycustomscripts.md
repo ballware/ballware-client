@@ -50,7 +50,7 @@ Manipulate cell options on detail member grid before rendering
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:578](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L578)
+Defined in: [entity.ts:578](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L578)
 
 ___
 
@@ -72,7 +72,7 @@ Validate detail row values
 
 **`returns`** Custom validation message if validation failed, otherwise undefined
 
-Defined in: [entity.ts:597](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L597)
+Defined in: [entity.ts:597](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L597)
 
 ___
 
@@ -94,7 +94,7 @@ Custom functionality on editor got focus
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:537](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L537)
+Defined in: [entity.ts:537](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L537)
 
 ___
 
@@ -116,7 +116,7 @@ Custom functionality on editor specific event
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:518](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L518)
+Defined in: [entity.ts:518](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L518)
 
 ___
 
@@ -138,7 +138,7 @@ Configure editor instance after rendering
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:480](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L480)
+Defined in: [entity.ts:480](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L480)
 
 ___
 
@@ -160,7 +160,7 @@ Manipulate editor options before rendering
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:461](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L461)
+Defined in: [entity.ts:461](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L461)
 
 ___
 
@@ -186,7 +186,7 @@ Custom functionality on editor validation (if custom validation rules are set)
 
 **`returns`** true if current value is valid, false if not
 
-Defined in: [entity.ts:558](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L558)
+Defined in: [entity.ts:558](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L558)
 
 ___
 
@@ -208,7 +208,7 @@ Custom functionality on editor value changed
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:499](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L499)
+Defined in: [entity.ts:499](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L499)
 
 ___
 
@@ -228,7 +228,7 @@ Evaluation custom function result after execution
 
 **`param`** Show notification message to user
 
-Defined in: [entity.ts:648](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L648)
+Defined in: [entity.ts:648](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L648)
 
 ___
 
@@ -238,7 +238,7 @@ ___
 
 Custom rights check operations
 
-Defined in: [entity.ts:383](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L383)
+Defined in: [entity.ts:383](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L383)
 
 ___
 
@@ -256,7 +256,7 @@ Initialize new instance of detail item
 
 **`param`** Utility for performing misc operations
 
-Defined in: [entity.ts:613](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L613)
+Defined in: [entity.ts:613](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L613)
 
 ___
 
@@ -278,7 +278,7 @@ Prepare custom function before execution
 
 **`param`** Current selected business objects (only for function type 'edit')
 
-Defined in: [entity.ts:630](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L630)
+Defined in: [entity.ts:630](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L630)
 
 ___
 
@@ -294,7 +294,7 @@ Prepare custom param object containing values needed for other custom scripts
 
 **`param`** Async callback operation performed by custom script when custom param preparation is finished
 
-Defined in: [entity.ts:413](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L413)
+Defined in: [entity.ts:413](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L413)
 
 ___
 
@@ -314,7 +314,7 @@ Manipulate configured edit layout before rendering
 
 **`param`** Edit layout instance
 
-Defined in: [entity.ts:443](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L443)
+Defined in: [entity.ts:443](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L443)
 
 ___
 
@@ -332,7 +332,7 @@ Manipulate configured grid layout before rendering
 
 **`param`** Grid layout instance
 
-Defined in: [entity.ts:427](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L427)
+Defined in: [entity.ts:427](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L427)
 
 ___
 
@@ -347,7 +347,7 @@ Prepare custom param for extendedRightsCheck if operation is not connected to sp
 
 **`returns`** Object containing values needed for extendedRightsCheck implementation
 
-Defined in: [entity.ts:392](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L392)
+Defined in: [entity.ts:392](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L392)
 
 ___
 
@@ -363,4 +363,4 @@ Prepare custom param for extendedRightsCheck if operation is not connected to sp
 
 **`returns`** Object containing values needed for extendedRightsCheck implementation
 
-Defined in: [entity.ts:401](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L401)
+Defined in: [entity.ts:401](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L401)

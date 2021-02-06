@@ -26,7 +26,7 @@ Layout item tree element
 
 Number of cols for layouting child editor items (only for container types)
 
-Defined in: [page.ts:136](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L136)
+Defined in: [page.ts:136](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L136)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Number of cols occupied by editor in layout
 
-Defined in: [page.ts:141](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L141)
+Defined in: [page.ts:141](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L141)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 Child layout components (only for container types)
 
-Defined in: [page.ts:147](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L147)
+Defined in: [page.ts:147](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L147)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 Options for layout item
 
-Defined in: [page.ts:131](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L131)
+Defined in: [page.ts:131](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L131)
 
 ___
 
@@ -66,4 +66,4 @@ ___
 
 Type identifier for layout item
 
-Defined in: [page.ts:119](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/page.ts#L119)
+Defined in: [page.ts:119](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L119)

@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { QueryParams } from './common';
 import { CrudItem } from './cruditem';
 
 /**
@@ -22,7 +23,7 @@ export interface MetaGenericEntityApi {
   query: (
     token: string,
     query: string,
-    params?: Record<string, unknown>
+    params?: QueryParams
   ) => Promise<Array<CrudItem>>;
 
   /**
@@ -41,7 +42,7 @@ export interface MetaGenericEntityApi {
    * @param params Parameter values for initialization of business object
    * @returns Promise containing new generated instance of business object
    */
-  new: (token: string, params?: Record<string, unknown>) => Promise<CrudItem>;
+  new: (token: string, params?: QueryParams) => Promise<CrudItem>;
 
   /**
    * Save modified instance of business object

@@ -29,7 +29,7 @@ Get editor option by data member
 
 **`returns`** Value of option, undefined if option is not available
 
-Defined in: [entity.ts:24](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L24)
+Defined in: [entity.ts:24](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L24)
 
 ___
 
@@ -45,4 +45,4 @@ Set editor option value by data member
 
 **`param`** New value of option
 
-Defined in: [entity.ts:33](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L33)
+Defined in: [entity.ts:33](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L33)

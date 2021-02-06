@@ -51,7 +51,7 @@ Accept alternative custom user input as value (only for editors with select list
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[acceptCustomValue](editlayoutitemoptions.md#acceptcustomvalue)
 
-Defined in: [entity.ts:168](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L168)
+Defined in: [entity.ts:168](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L168)
 
 ___
 
@@ -63,7 +63,7 @@ Display text for label
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[caption](editlayoutitemoptions.md#caption)
 
-Defined in: [entity.ts:117](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L117)
+Defined in: [entity.ts:117](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L117)
 
 ___
 
@@ -75,7 +75,7 @@ Property of business object the editor is attached to
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[dataMember](editlayoutitemoptions.md#datamember)
 
-Defined in: [entity.ts:122](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L122)
+Defined in: [entity.ts:122](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L122)
 
 ___
 
@@ -87,7 +87,7 @@ Display data member in lookup query result (only for editors with select list fu
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[displayExpr](editlayoutitemoptions.md#displayexpr)
 
-Defined in: [entity.ts:153](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L153)
+Defined in: [entity.ts:153](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L153)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 Custom edit function executed on inline editing
 
-Defined in: [entity.ts:273](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L273)
+Defined in: [entity.ts:273](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L273)
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 Enable inline editing of column value in table
 
-Defined in: [entity.ts:268](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L268)
+Defined in: [entity.ts:268](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L268)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 Fixing position of column in table
 
-Defined in: [entity.ts:243](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L243)
+Defined in: [entity.ts:243](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L243)
 
 ___
 
@@ -129,7 +129,7 @@ Optional fixed height for editor component
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[height](editlayoutitemoptions.md#height)
 
-Defined in: [entity.ts:158](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L158)
+Defined in: [entity.ts:158](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L158)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 Hiding priority of column for hiding columns on small screens
 
-Defined in: [entity.ts:258](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L258)
+Defined in: [entity.ts:258](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L258)
 
 ___
 
@@ -151,7 +151,7 @@ Hint displayed as tooltip on editor
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[hint](editlayoutitemoptions.md#hint)
 
-Defined in: [entity.ts:178](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L178)
+Defined in: [entity.ts:178](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L178)
 
 ___
 
@@ -163,7 +163,7 @@ Editor component specific additional options
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[itemoptions](editlayoutitemoptions.md#itemoptions)
 
-Defined in: [entity.ts:188](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L188)
+Defined in: [entity.ts:188](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L188)
 
 ___
 
@@ -175,7 +175,7 @@ Static item list used as select list (only for editors with select list function
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[items](editlayoutitemoptions.md#items)
 
-Defined in: [entity.ts:183](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L183)
+Defined in: [entity.ts:183](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L183)
 
 ___
 
@@ -187,7 +187,7 @@ Data member of business object containing select list (only for editors with sel
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[itemsMember](editlayoutitemoptions.md#itemsmember)
 
-Defined in: [entity.ts:173](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L173)
+Defined in: [entity.ts:173](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L173)
 
 ___
 
@@ -199,7 +199,7 @@ Lookup identifier (only for editors with select list functionality)
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[lookup](editlayoutitemoptions.md#lookup)
 
-Defined in: [entity.ts:137](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L137)
+Defined in: [entity.ts:137](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L137)
 
 ___
 
@@ -212,7 +212,7 @@ The current business object property value of data member will be supplied as pa
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[lookupParam](editlayoutitemoptions.md#lookupparam)
 
-Defined in: [entity.ts:143](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L143)
+Defined in: [entity.ts:143](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L143)
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 Identifier of edit layout used in popup edit box
 
-Defined in: [entity.ts:278](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L278)
+Defined in: [entity.ts:278](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L278)
 
 ___
 
@@ -232,7 +232,7 @@ ___
 
 Position of column in table (ascending sorted left to right)
 
-Defined in: [entity.ts:253](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L253)
+Defined in: [entity.ts:253](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L253)
 
 ___
 
@@ -242,7 +242,7 @@ ___
 
 Precision for displaying floating numbers
 
-Defined in: [entity.ts:238](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L238)
+Defined in: [entity.ts:238](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L238)
 
 ___
 
@@ -254,7 +254,7 @@ If set, the property is not changeable by user
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[readonly](editlayoutitemoptions.md#readonly)
 
-Defined in: [entity.ts:132](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L132)
+Defined in: [entity.ts:132](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L132)
 
 ___
 
@@ -266,7 +266,7 @@ If set, property of business object is required to have a value
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[required](editlayoutitemoptions.md#required)
 
-Defined in: [entity.ts:127](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L127)
+Defined in: [entity.ts:127](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L127)
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 Default sorting setting of column
 
-Defined in: [entity.ts:248](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L248)
+Defined in: [entity.ts:248](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L248)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 Type of table column (specific for used rendering engine)
 
-Defined in: [entity.ts:233](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L233)
+Defined in: [entity.ts:233](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L233)
 
 ___
 
@@ -298,7 +298,7 @@ List of custom validation rules (Have to be checked in editorValidating custom s
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[validations](editlayoutitemoptions.md#validations)
 
-Defined in: [entity.ts:193](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L193)
+Defined in: [entity.ts:193](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L193)
 
 ___
 
@@ -310,7 +310,7 @@ Value data member in lookup query result (only for editors with select list func
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[valueExpr](editlayoutitemoptions.md#valueexpr)
 
-Defined in: [entity.ts:148](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L148)
+Defined in: [entity.ts:148](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L148)
 
 ___
 
@@ -320,7 +320,7 @@ ___
 
 Default value for column visibility
 
-Defined in: [entity.ts:263](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L263)
+Defined in: [entity.ts:263](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L263)
 
 ___
 
@@ -332,4 +332,4 @@ Optional fixed width for editor component
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[width](editlayoutitemoptions.md#width)
 
-Defined in: [entity.ts:163](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L163)
+Defined in: [entity.ts:163](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L163)

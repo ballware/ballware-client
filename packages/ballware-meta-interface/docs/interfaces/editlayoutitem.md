@@ -26,7 +26,7 @@ Interface of edit layout item definition
 
 Number of cols for layouting child editor items (only for container types)
 
-Defined in: [entity.ts:213](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L213)
+Defined in: [entity.ts:213](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L213)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Number of cols occupied by editor in layout
 
-Defined in: [entity.ts:218](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L218)
+Defined in: [entity.ts:218](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L218)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 Child editor components (only for container types)
 
-Defined in: [entity.ts:223](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L223)
+Defined in: [entity.ts:223](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L223)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 Options for editor component configuration
 
-Defined in: [entity.ts:208](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L208)
+Defined in: [entity.ts:208](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L208)
 
 ___
 
@@ -66,4 +66,4 @@ ___
 
 Editor component type (specific for used rendering engine)
 
-Defined in: [entity.ts:203](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/entity.ts#L203)
+Defined in: [entity.ts:203](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L203)

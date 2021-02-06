@@ -28,4 +28,4 @@ Fetch documentation for business object type
 
 **`returns`** Promise containing rich text for rendering documentation
 
-Defined in: [documentation.ts:19](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/documentation.ts#L19)
+Defined in: [documentation.ts:19](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/documentation.ts#L19)

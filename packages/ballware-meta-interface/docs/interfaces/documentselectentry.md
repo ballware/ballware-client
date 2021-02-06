@@ -23,7 +23,7 @@ Select list entry of available document list for printing
 
 Unique identifier of document
 
-Defined in: [document.ts:15](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/document.ts#L15)
+Defined in: [document.ts:15](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/document.ts#L15)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 Display name of document
 
-Defined in: [document.ts:20](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/document.ts#L20)
+Defined in: [document.ts:20](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/document.ts#L20)

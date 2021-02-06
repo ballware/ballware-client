@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { QueryParams } from './common';
 import { ScriptUtil } from './scriptutil';
 
 /**
@@ -437,11 +438,12 @@ export interface MetaStatisticApi {
    * Fetch content data for statistic
    * @param token Access token required for authentication
    * @param identifier Unique identifier of statistic item
+   * @param param Optional parameters for query
    * @returns Promise containing statistic content
    */
   dataForStatistic: (
     token: string,
     identifier: string,
-    params: Record<string, unknown>
+    params?: QueryParams
   ) => Promise<Array<Record<string, unknown>>>;
 }

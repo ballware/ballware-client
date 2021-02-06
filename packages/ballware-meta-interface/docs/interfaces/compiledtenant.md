@@ -25,7 +25,7 @@ Metadata for tenant
 
 Unique identifier of tenant
 
-Defined in: [tenant.ts:72](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L72)
+Defined in: [tenant.ts:72](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/tenant.ts#L72)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Display name of tenant
 
-Defined in: [tenant.ts:77](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L77)
+Defined in: [tenant.ts:77](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/tenant.ts#L77)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Navigation metadata for tenant
 
-Defined in: [tenant.ts:82](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L82)
+Defined in: [tenant.ts:82](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/tenant.ts#L82)
 
 ___
 
@@ -61,4 +61,4 @@ Custom script for access rights check of pages
 
 **`returns`** true if access allowed, false if access denied
 
-Defined in: [tenant.ts:90](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/tenant.ts#L90)
+Defined in: [tenant.ts:90](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/tenant.ts#L90)

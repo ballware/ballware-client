@@ -29,7 +29,7 @@ Fetch available print documents for business object type
 
 **`returns`** Promise containing available print documents for entity
 
-Defined in: [document.ts:34](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/document.ts#L34)
+Defined in: [document.ts:34](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/document.ts#L34)
 
 ___
 
@@ -45,4 +45,4 @@ Generate viewer url for document
 
 **`returns`** Promise containing url for rendering document
 
-Defined in: [document.ts:46](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/document.ts#L46)
+Defined in: [document.ts:46](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/document.ts#L46)

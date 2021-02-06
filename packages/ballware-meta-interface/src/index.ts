@@ -1,3 +1,4 @@
+export * from './common';
 export * from './attachment';
 export * from './cruditem';
 export * from './document';

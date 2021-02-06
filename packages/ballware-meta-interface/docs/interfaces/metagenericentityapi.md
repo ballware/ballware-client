@@ -33,7 +33,7 @@ Fetch single business object by id
 
 **`returns`** Promise containing instance of business object
 
-Defined in: [genericentity.ts:35](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/genericentity.ts#L35)
+Defined in: [genericentity.ts:36](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L36)
 
 ___
 
@@ -49,13 +49,13 @@ Drop existing instance of business object
 
 **`returns`** Promise resolved when drop operation has finished
 
-Defined in: [genericentity.ts:71](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/genericentity.ts#L71)
+Defined in: [genericentity.ts:72](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L72)
 
 ___
 
 ### new
 
-• **new**: (`token`: *string*, `params?`: *Record*<*string*, *unknown*\>) => *Promise*<[*CrudItem*](cruditem.md)\>
+• **new**: (`token`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<[*CrudItem*](cruditem.md)\>
 
 Fetch prepared new instance of business object
 
@@ -65,13 +65,13 @@ Fetch prepared new instance of business object
 
 **`returns`** Promise containing new generated instance of business object
 
-Defined in: [genericentity.ts:44](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/genericentity.ts#L44)
+Defined in: [genericentity.ts:45](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L45)
 
 ___
 
 ### query
 
-• **query**: (`token`: *string*, `query`: *string*, `params?`: *Record*<*string*, *unknown*\>) => *Promise*<[*CrudItem*](cruditem.md)[]\>
+• **query**: (`token`: *string*, `query`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<[*CrudItem*](cruditem.md)[]\>
 
 Query list of business objects by search params
 
@@ -83,7 +83,7 @@ Query list of business objects by search params
 
 **`returns`** Promise containing list of resulting business objects
 
-Defined in: [genericentity.ts:22](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/genericentity.ts#L22)
+Defined in: [genericentity.ts:23](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L23)
 
 ___
 
@@ -99,7 +99,7 @@ Save modified instance of business object
 
 **`returns`** Promise resolved when save operation has finished
 
-Defined in: [genericentity.ts:53](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/genericentity.ts#L53)
+Defined in: [genericentity.ts:54](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L54)
 
 ___
 
@@ -115,4 +115,4 @@ Save multiple modified instances of business object
 
 **`returns`** Promise resolved when save operation has finished
 
-Defined in: [genericentity.ts:62](https://github.com/frankball/ballware-meta-interface/blob/6b9dc3f/src/genericentity.ts#L62)
+Defined in: [genericentity.ts:63](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L63)
