@@ -22,4 +22,4 @@ Context for displaying user notification functionality
 
 Current triggered notification message
 
-Defined in: [src/notificationcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/notificationcontext.ts#L45)
+Defined in: [src/notificationcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/notificationcontext.ts#L45)

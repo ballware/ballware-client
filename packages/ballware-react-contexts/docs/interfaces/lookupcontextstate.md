@@ -27,7 +27,7 @@ Request list of static required lookups in consumer
 
 **`param`** Collection of lookup requests
 
-Defined in: [src/lookupcontext.ts:140](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/lookupcontext.ts#L140)
+Defined in: [src/lookupcontext.ts:140](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/lookupcontext.ts#L140)
 
 ___
 
@@ -43,7 +43,7 @@ Request additional lookup by unique identifier
 
 **`param`** Display property in fetched items
 
-Defined in: [src/lookupcontext.ts:148](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/lookupcontext.ts#L148)
+Defined in: [src/lookupcontext.ts:148](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/lookupcontext.ts#L148)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 Container for created lookups
 
-Defined in: [src/lookupcontext.ts:129](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/lookupcontext.ts#L129)
+Defined in: [src/lookupcontext.ts:129](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/lookupcontext.ts#L129)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 True if requested lookups are completely available
 
-Defined in: [src/lookupcontext.ts:134](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/lookupcontext.ts#L134)
+Defined in: [src/lookupcontext.ts:134](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/lookupcontext.ts#L134)

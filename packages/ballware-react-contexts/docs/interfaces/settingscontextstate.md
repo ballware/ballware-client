@@ -37,7 +37,7 @@ Context for providing environment dependend application functionality
 
 API key for usage with google services
 
-Defined in: [src/settingscontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L36)
+Defined in: [src/settingscontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L36)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Factory for creating data adapter for user authentication
 
-Defined in: [src/settingscontext.ts:41](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L41)
+Defined in: [src/settingscontext.ts:41](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L41)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Factory for creating data adapter for role list data access
 
-Defined in: [src/settingscontext.ts:51](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L51)
+Defined in: [src/settingscontext.ts:51](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L51)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Factory for creating data adapter for user list data access
 
-Defined in: [src/settingscontext.ts:46](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L46)
+Defined in: [src/settingscontext.ts:46](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L46)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 Factory for creating data adapter for tenant data access
 
-Defined in: [src/settingscontext.ts:66](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L66)
+Defined in: [src/settingscontext.ts:66](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L66)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 Factory for creating data adapter for print document data access
 
-Defined in: [src/settingscontext.ts:91](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L91)
+Defined in: [src/settingscontext.ts:91](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L91)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 Factory for creating data adapter for documentation data access
 
-Defined in: [src/settingscontext.ts:96](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L96)
+Defined in: [src/settingscontext.ts:96](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L96)
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 Factory for creating data adapter for entity metadata access
 
-Defined in: [src/settingscontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L56)
+Defined in: [src/settingscontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L56)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 Factory for creating data adapter for generic entity crud operations
 
-Defined in: [src/settingscontext.ts:106](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L106)
+Defined in: [src/settingscontext.ts:106](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L106)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 Factory for creating data adapter for lookup data access
 
-Defined in: [src/settingscontext.ts:76](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L76)
+Defined in: [src/settingscontext.ts:76](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L76)
 
 ___
 
@@ -137,7 +137,7 @@ ___
 
 Factory for creating data adapter for page data access
 
-Defined in: [src/settingscontext.ts:101](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L101)
+Defined in: [src/settingscontext.ts:101](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L101)
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 Factory for creating data adapter for pick values data access
 
-Defined in: [src/settingscontext.ts:86](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L86)
+Defined in: [src/settingscontext.ts:86](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L86)
 
 ___
 
@@ -157,7 +157,7 @@ ___
 
 Factory for creating data adapter for processing state data access
 
-Defined in: [src/settingscontext.ts:81](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L81)
+Defined in: [src/settingscontext.ts:81](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L81)
 
 ___
 
@@ -167,7 +167,7 @@ ___
 
 Factory for creating data adapter for statistic data access
 
-Defined in: [src/settingscontext.ts:71](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L71)
+Defined in: [src/settingscontext.ts:71](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L71)
 
 ___
 
@@ -177,7 +177,7 @@ ___
 
 Factory for creating data adapter for tenant data access
 
-Defined in: [src/settingscontext.ts:61](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L61)
+Defined in: [src/settingscontext.ts:61](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L61)
 
 ___
 
@@ -187,4 +187,4 @@ ___
 
 Current version of application
 
-Defined in: [src/settingscontext.ts:31](https://github.com/frankball/ballware-react-contexts/blob/6321ec4/src/settingscontext.ts#L31)
+Defined in: [src/settingscontext.ts:31](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/settingscontext.ts#L31)

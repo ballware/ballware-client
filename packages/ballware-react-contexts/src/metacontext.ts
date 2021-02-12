@@ -56,7 +56,7 @@ export interface MetaContextState {
      * Fetch new prepared item for add
      * @param params Optional parameter values for initialization
      */
-    new?: (params?: QueryParams) => Promise<CrudItem>;
+    create?: (params?: QueryParams) => Promise<CrudItem>;
 
     /**
      * Save changed or add new item
