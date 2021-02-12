@@ -30,7 +30,7 @@ Context for instantiating context provider
 
 Instanticate crud provider
 
-Defined in: [src/providerfactorycontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L36)
+Defined in: [src/providerfactorycontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L36)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 Instantiate item edit provider
 
-Defined in: [src/providerfactorycontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L69)
+Defined in: [src/providerfactorycontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L69)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 Instanticate lookup provider
 
-Defined in: [src/providerfactorycontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L45)
+Defined in: [src/providerfactorycontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L45)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 Instantiate generic entity metadata provider
 
-Defined in: [src/providerfactorycontext.ts:25](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L25)
+Defined in: [src/providerfactorycontext.ts:25](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L25)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 Instantiate notification provider
 
-Defined in: [src/providerfactorycontext.ts:50](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L50)
+Defined in: [src/providerfactorycontext.ts:50](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L50)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 Instantiate page provider
 
-Defined in: [src/providerfactorycontext.ts:20](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L20)
+Defined in: [src/providerfactorycontext.ts:20](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L20)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 Instantiate resource owner user rights provider
 
-Defined in: [src/providerfactorycontext.ts:55](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L55)
+Defined in: [src/providerfactorycontext.ts:55](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L55)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 Instantiate statistic provider
 
-Defined in: [src/providerfactorycontext.ts:80](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L80)
+Defined in: [src/providerfactorycontext.ts:80](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L80)
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 Instantiate tenant provider
 
-Defined in: [src/providerfactorycontext.ts:64](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/providerfactorycontext.ts#L64)
+Defined in: [src/providerfactorycontext.ts:64](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/providerfactorycontext.ts#L64)

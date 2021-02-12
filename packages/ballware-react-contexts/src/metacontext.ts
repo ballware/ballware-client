@@ -87,7 +87,7 @@ export interface MetaContextState {
     /**
      * Param object inherited by container (page or parent entity for example)
      */
-    headParams?: Record<string, unknown>;
+    headParams?: QueryParams
 
     /**
      * Collection of available print documents for entity

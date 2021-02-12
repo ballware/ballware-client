@@ -22,4 +22,4 @@ Data access adapter for fetching autocomplete lookup data
 
 Fetch list of autocomplete entries
 
-Defined in: [src/lookupcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/3ab969c/src/lookupcontext.ts#L35)
+Defined in: [src/lookupcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/bbedef5/src/lookupcontext.ts#L35)

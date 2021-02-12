@@ -6,7 +6,7 @@
  */
 
 import { createContext } from 'react';
-import { EditUtil, ValueType, PageLayout } from '@ballware/meta-interface';
+import { EditUtil, ValueType, PageLayout, QueryParams } from '@ballware/meta-interface';
 
 /**
  * Context for page layout functionality
@@ -20,7 +20,7 @@ export interface PageContextState {
     /**
      * Page param provided by param editors or url
      */
-    pageParam?: Record<string, unknown>;
+    pageParam?: QueryParams;
     
     /**
      * Custom param provided by custom page scripts
