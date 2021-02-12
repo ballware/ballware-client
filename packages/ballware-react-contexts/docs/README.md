@@ -1,3 +1,5 @@
+@ballware/react-contexts / [Exports](modules.md)
+
 Provides an implementation independend encapsulation of application logic as react context type definitions.
 
 ## ballware application builder
