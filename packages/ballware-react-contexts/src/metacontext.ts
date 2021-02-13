@@ -6,7 +6,7 @@
  */
 
 import { createContext } from 'react';
-import { EntityCustomFunction, CrudItem, GridLayout, EditLayout, EditUtil, ValueType, QueryParams } from '@ballware/meta-interface';
+import { EntityCustomFunction, CrudItem, GridLayout, EditLayout, EditUtil, ValueType, QueryParams, EditLayoutItemOptions, GridLayoutColumn } from '@ballware/meta-interface';
 import { EditModes } from './editcontext';
 
 /**
@@ -205,7 +205,7 @@ export interface MetaContextState {
      * @param layoutItem Item metadata to be prepared
      * @param identifier Data member identifier of current editor
      */
-    editorPreparing?: (mode: EditModes, item: Record<string, unknown>, layoutItem: unknown, identifier: string) => void;
+    editorPreparing?: (mode: EditModes, item: Record<string, unknown>, layoutItem: EditLayoutItemOptions, identifier: string) => void;
 
     /**
      * Customize instanciated editor component before edit
@@ -293,7 +293,7 @@ export interface MetaContextState {
         item: Record<string, unknown>,
         detailItem: Record<string, unknown>,
         identifier: string,
-        options: unknown,
+        options: GridLayoutColumn,
     ) => void;
 
     /**
