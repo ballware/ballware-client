@@ -39,7 +39,7 @@ Change password for registered user
 
 **`returns`** Promise resolved when password change was finished
 
-Defined in: [auth.ts:116](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L116)
+Defined in: [auth.ts:143](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L143)
 
 ___
 
@@ -53,13 +53,13 @@ Request password reset token for lost password
 
 **`returns`** Promise resolved when request was transmitted
 
-Defined in: [auth.ts:96](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L96)
+Defined in: [auth.ts:118](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L118)
 
 ___
 
 ### login
 
-• **login**: <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*, `userinfoMapper`: UserInfoMappingFunc) => *Promise*<T\>
+• **login**: <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*, `userinfoMapper`: [*UserInfoMappingFunc*](../modules.md#userinfomappingfunc)) => *Promise*<T\>
 
 Authenticate user with mail and password.
 
@@ -75,7 +75,7 @@ Authenticate user with mail and password.
 
 **`returns`** Promise resolving user session instance
 
-Defined in: [auth.ts:62](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L62)
+Defined in: [auth.ts:76](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L76)
 
 ___
 
@@ -93,7 +93,7 @@ Logout authenticated user, invalidate access token
 
 **`returns`** Promise resolved when logout has finished
 
-Defined in: [auth.ts:78](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L78)
+Defined in: [auth.ts:92](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L92)
 
 ___
 
@@ -109,7 +109,7 @@ Refresh access token for extending authenticated session
 
 **`param`** Secrect for client identifier
 
-Defined in: [auth.ts:125](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L125)
+Defined in: [auth.ts:156](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L156)
 
 ___
 
@@ -127,7 +127,7 @@ Registering new user
 
 **`returns`** Promise resolved when registration has finished
 
-Defined in: [auth.ts:88](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L88)
+Defined in: [auth.ts:106](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L106)
 
 ___
 
@@ -145,4 +145,4 @@ Reset password with password reset token
 
 **`returns`** Promise resolved when request was transmitted
 
-Defined in: [auth.ts:106](https://github.com/frankball/ballware-identity-interface/blob/c681936/src/auth.ts#L106)
+Defined in: [auth.ts:129](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L129)

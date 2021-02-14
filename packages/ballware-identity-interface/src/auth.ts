@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Rights } from '@ballware/meta-interface';
+
 /**
  * Basic authentication response containing user token
  */
@@ -25,12 +27,22 @@ export interface Session {
 /**
  * Extendes authentication response including additional user info
  */
-export interface SessionWithUserInfo extends Session {
+export interface SessionWithUserInfo extends Session, Record<string, unknown> {
   /** Subject of authenticated user (mail, unique user name...) */
   identifier: string;
 
   /** Mail adress of authenticated user, can be identical with identifer if authenticated via mail adress */
   email: string;
+}
+
+/**
+ * Session extended with application specific user rights
+ */
+export interface MappedSessionWithUserRights extends SessionWithUserInfo {  
+  /**
+   * Collection of user rights
+   */
+  rights: Rights;
 }
 
 /**
@@ -40,8 +52,8 @@ export interface SessionWithUserInfo extends Session {
  * @param userinfo - Response from userinfo endpoint with additional content
  * @returns - Extended session object with additional information
  */
-export type UserInfoMappingFunc = <T extends SessionWithUserInfo>(
-  sessionWithUserInfo: T,
+export type UserInfoMappingFunc = <T extends MappedSessionWithUserRights>(
+  sessionWithUserInfo: SessionWithUserInfo,
   userinfo: Record<string, unknown>
 ) => T;
 
