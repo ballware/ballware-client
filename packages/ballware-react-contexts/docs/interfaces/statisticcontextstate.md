@@ -31,7 +31,7 @@ Customize display text for argument axis labels
 
 **`returns`** Modified display text, if applicable
 
-Defined in: [src/statisticcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/db6431c/src/statisticcontext.ts#L45)
+Defined in: [src/statisticcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/statisticcontext.ts#L45)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Fetched data for statistic
 
-Defined in: [src/statisticcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/db6431c/src/statisticcontext.ts#L38)
+Defined in: [src/statisticcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/statisticcontext.ts#L38)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 Unique identifier of statistic item
 
-Defined in: [src/statisticcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/db6431c/src/statisticcontext.ts#L18)
+Defined in: [src/statisticcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/statisticcontext.ts#L18)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Layout for displaying statistic item
 
-Defined in: [src/statisticcontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/db6431c/src/statisticcontext.ts#L33)
+Defined in: [src/statisticcontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/statisticcontext.ts#L33)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Display name of statistic item
 
-Defined in: [src/statisticcontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/db6431c/src/statisticcontext.ts#L23)
+Defined in: [src/statisticcontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/statisticcontext.ts#L23)
 
 ___
 
@@ -81,4 +81,4 @@ ___
 
 Additional query params from containing element (page for example)
 
-Defined in: [src/statisticcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/db6431c/src/statisticcontext.ts#L28)
+Defined in: [src/statisticcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/statisticcontext.ts#L28)

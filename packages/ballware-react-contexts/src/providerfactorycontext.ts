@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { createContext } from 'react';
+import { createContext, PropsWithChildren } from 'react';
 import { CrudItem, ValueType, EditLayout } from '@ballware/meta-interface';
 
 import { EditModes } from './editcontext';
@@ -17,46 +17,43 @@ export interface ProviderFactoryContextState {
     /**
      * Instantiate page provider
      */
-    PageProvider?: (props: { identifier: string; children: JSX.Element | Array<JSX.Element> }) => JSX.Element;
+    PageProvider?: (props: PropsWithChildren<{ identifier: string; }>) => JSX.Element;
 
     /**
      * Instantiate generic entity metadata provider
      */
-    MetaProvider?: (props: {
+    MetaProvider?: (props: PropsWithChildren<{
         entity: string;
         readOnly: boolean;
         headParams: Record<string, unknown>;
         initialCustomParam: Record<string, unknown>;
-        children: JSX.Element | Array<JSX.Element>;
-    }) => JSX.Element;
+    }>) => JSX.Element;
 
     /**
      * Instanticate crud provider 
      */
-    CrudProvider?: (props: {
+    CrudProvider?: (props: PropsWithChildren<{
         query: string | undefined;
         initialFetchParams: Record<string, unknown> | undefined;
-        children: JSX.Element | Array<JSX.Element>;
-    }) => JSX.Element;
+    }>) => JSX.Element;
 
     /**
      * Instanticate lookup provider
      */
-    LookupProvider?: (props: { children: JSX.Element | Array<JSX.Element> }) => JSX.Element;
+    LookupProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
 
     /**
      * Instantiate notification provider
      */
-    NotificationProvider?: (props: { children: JSX.Element | Array<JSX.Element> }) => JSX.Element;
+    NotificationProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
 
     /**
      * Instantiate resource owner user rights provider
      */
-    ResourceOwnerRightsProvider?: (props: {
+    ResourceOwnerRightsProvider?: (props: PropsWithChildren<{
         client: string;
         secret: string;
-        children: JSX.Element | Array<JSX.Element>;
-    }) => JSX.Element;
+    }>) => JSX.Element;
 
     /**
      * Instantiate tenant provider
@@ -66,22 +63,20 @@ export interface ProviderFactoryContextState {
     /**
      * Instantiate item edit provider
      */
-    EditProvider?: (props: {
+    EditProvider?: (props: PropsWithChildren<{
         mode: EditModes;
         editLayout: EditLayout | undefined;
         item: CrudItem | Array<CrudItem> | ValueType;
         functionIdentifier?: string | undefined;
-        children: JSX.Element | Array<JSX.Element>;
-    }) => JSX.Element;
+    }>) => JSX.Element;
 
     /**
      * Instantiate statistic provider
      */
-    StatisticProvider?: (props: {
+    StatisticProvider?: (props: PropsWithChildren<{
         identifier: string;
-        params: Record<string, unknown> | undefined;
-        children: JSX.Element | Array<JSX.Element>;
-    }) => JSX.Element;
+        params: Record<string, unknown> | undefined;        
+    }>) => JSX.Element;
 }
 
 export const ProviderFactoryContext = createContext<ProviderFactoryContextState>({} as ProviderFactoryContextState);
