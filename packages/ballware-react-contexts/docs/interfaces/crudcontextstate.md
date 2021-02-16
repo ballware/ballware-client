@@ -46,7 +46,7 @@ Add new item
 
 **`param`** Edit layout to use for add operation
 
-Defined in: [src/crudcontext.ts:90](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L90)
+Defined in: [src/crudcontext.ts:90](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L90)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 Adding current item
 
-Defined in: [src/crudcontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L43)
+Defined in: [src/crudcontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L43)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 Cancel/close edit operation
 
-Defined in: [src/crudcontext.ts:109](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L109)
+Defined in: [src/crudcontext.ts:109](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L109)
 
 ___
 
@@ -80,7 +80,7 @@ Execute custom edit operation
 
 **`param`** Selected items for edit operation
 
-Defined in: [src/crudcontext.ts:140](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L140)
+Defined in: [src/crudcontext.ts:140](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L140)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 Function for current custom edit operation
 
-Defined in: [src/crudcontext.ts:63](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L63)
+Defined in: [src/crudcontext.ts:63](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L63)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 Prepared edit param for custom edit operation
 
-Defined in: [src/crudcontext.ts:68](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L68)
+Defined in: [src/crudcontext.ts:68](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L68)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 Custom edit operation active
 
-Defined in: [src/crudcontext.ts:58](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L58)
+Defined in: [src/crudcontext.ts:58](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L58)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 Deleting current item
 
-Defined in: [src/crudcontext.ts:53](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L53)
+Defined in: [src/crudcontext.ts:53](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L53)
 
 ___
 
@@ -132,7 +132,7 @@ Drop item
 
 **`param`** Identifier of item to be dropped
 
-Defined in: [src/crudcontext.ts:133](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L133)
+Defined in: [src/crudcontext.ts:133](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L133)
 
 ___
 
@@ -146,7 +146,7 @@ Edit item
 
 **`param`** Edit layout to use for edit operation
 
-Defined in: [src/crudcontext.ts:104](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L104)
+Defined in: [src/crudcontext.ts:104](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L104)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 Edit layout for current edit operation
 
-Defined in: [src/crudcontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L73)
+Defined in: [src/crudcontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L73)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 Editing current item
 
-Defined in: [src/crudcontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L48)
+Defined in: [src/crudcontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L48)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 Fetch params used for current item fetch
 
-Defined in: [src/crudcontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L23)
+Defined in: [src/crudcontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L23)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 Fetched items from data provider
 
-Defined in: [src/crudcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L28)
+Defined in: [src/crudcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L28)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 Currently fetching items
 
-Defined in: [src/crudcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L18)
+Defined in: [src/crudcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L18)
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 Current item for crud operations
 
-Defined in: [src/crudcontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L33)
+Defined in: [src/crudcontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L33)
 
 ___
 
@@ -218,7 +218,7 @@ Fetch items
 
 **`param`** Provided query params
 
-Defined in: [src/crudcontext.ts:84](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L84)
+Defined in: [src/crudcontext.ts:84](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L84)
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 Refresh after edit operation pending
 
-Defined in: [src/crudcontext.ts:78](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L78)
+Defined in: [src/crudcontext.ts:78](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L78)
 
 ___
 
@@ -240,7 +240,7 @@ Request remove item
 
 **`param`** Identifier of item
 
-Defined in: [src/crudcontext.ts:115](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L115)
+Defined in: [src/crudcontext.ts:115](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L115)
 
 ___
 
@@ -252,7 +252,7 @@ Save changed/added item
 
 **`param`** Edited item
 
-Defined in: [src/crudcontext.ts:121](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L121)
+Defined in: [src/crudcontext.ts:121](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L121)
 
 ___
 
@@ -264,7 +264,7 @@ Save changed/added multiple items
 
 **`param`** Edited items
 
-Defined in: [src/crudcontext.ts:127](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L127)
+Defined in: [src/crudcontext.ts:127](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L127)
 
 ___
 
@@ -278,7 +278,7 @@ View item
 
 **`param`** Edit layout to use for view operation
 
-Defined in: [src/crudcontext.ts:97](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L97)
+Defined in: [src/crudcontext.ts:97](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L97)
 
 ___
 
@@ -288,4 +288,4 @@ ___
 
 Viewing current item
 
-Defined in: [src/crudcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/crudcontext.ts#L38)
+Defined in: [src/crudcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/crudcontext.ts#L38)

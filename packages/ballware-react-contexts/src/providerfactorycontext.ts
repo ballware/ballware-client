@@ -9,6 +9,7 @@ import { createContext, PropsWithChildren } from 'react';
 import { CrudItem, ValueType, EditLayout } from '@ballware/meta-interface';
 
 import { EditModes } from './editcontext';
+import { UserInfoMappingFunc } from '@ballware/identity-interface';
 
 /**
  * Context for instantiating context provider
@@ -52,7 +53,8 @@ export interface ProviderFactoryContextState {
      */
     ResourceOwnerRightsProvider?: (props: PropsWithChildren<{
         client: string;
-        secret: string;
+        secret: string;        
+        userinfoMapper: UserInfoMappingFunc;
     }>) => JSX.Element;
 
     /**

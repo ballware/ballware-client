@@ -31,7 +31,7 @@ Context for page layout functionality
 
 Custom param provided by custom page scripts
 
-Defined in: [src/pagecontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L28)
+Defined in: [src/pagecontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L28)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Documentation text provided for display
 
-Defined in: [src/pagecontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L33)
+Defined in: [src/pagecontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L33)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 Current provided page layout
 
-Defined in: [src/pagecontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L18)
+Defined in: [src/pagecontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L18)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Load documentation for documentation identifier
 
-Defined in: [src/pagecontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L38)
+Defined in: [src/pagecontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L38)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Page param provided by param editors or url
 
-Defined in: [src/pagecontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L23)
+Defined in: [src/pagecontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L23)
 
 ___
 
@@ -89,7 +89,7 @@ Parameter editor event triggered
 
 **`param`** Optional event specific parameter
 
-Defined in: [src/pagecontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L73)
+Defined in: [src/pagecontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L73)
 
 ___
 
@@ -103,7 +103,7 @@ Parameter editor for identifier is inizialized (and displayed)
 
 **`param`** Adaptor for access to parameter editor instances
 
-Defined in: [src/pagecontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L56)
+Defined in: [src/pagecontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L56)
 
 ___
 
@@ -119,7 +119,7 @@ Parameter editor value changed
 
 **`param`** Adapter for access to parameter editor instances
 
-Defined in: [src/pagecontext.ts:64](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L64)
+Defined in: [src/pagecontext.ts:64](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L64)
 
 ___
 
@@ -131,7 +131,7 @@ All parameter editors initialized
 
 **`param`** True if parameter editor display is hidden because of media limitations
 
-Defined in: [src/pagecontext.ts:49](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L49)
+Defined in: [src/pagecontext.ts:49](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L49)
 
 ___
 
@@ -141,4 +141,4 @@ ___
 
 Hide documentation for display
 
-Defined in: [src/pagecontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/pagecontext.ts#L43)
+Defined in: [src/pagecontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/pagecontext.ts#L43)

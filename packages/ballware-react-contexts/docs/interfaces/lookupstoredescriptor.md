@@ -27,7 +27,7 @@ Fetch lookup record by id
 
 **`returns`** Promise resolving single lookup record for id
 
-Defined in: [src/lookupcontext.ts:25](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/lookupcontext.ts#L25)
+Defined in: [src/lookupcontext.ts:25](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/lookupcontext.ts#L25)
 
 ___
 
@@ -39,4 +39,4 @@ Fetch list of lookup records
 
 **`returns`** Promise resolving list of available lookup records
 
-Defined in: [src/lookupcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/85afb6f/src/lookupcontext.ts#L18)
+Defined in: [src/lookupcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/lookupcontext.ts#L18)
