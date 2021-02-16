@@ -26,7 +26,7 @@ Definition of edit layout for editing/adding business objects
 
 Number of cols for layouting child editor items
 
-Defined in: [entity.ts:358](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L358)
+Defined in: [entity.ts:358](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L358)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Specific column count definition for small/big screens
 
-Defined in: [entity.ts:363](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L363)
+Defined in: [entity.ts:363](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L363)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 Display editor in full screen popup
 
-Defined in: [entity.ts:368](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L368)
+Defined in: [entity.ts:368](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L368)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 Unique identifier of edit layout
 
-Defined in: [entity.ts:353](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L353)
+Defined in: [entity.ts:353](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L353)
 
 ___
 
@@ -66,4 +66,4 @@ ___
 
 List of layout items
 
-Defined in: [entity.ts:373](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/entity.ts#L373)
+Defined in: [entity.ts:373](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L373)

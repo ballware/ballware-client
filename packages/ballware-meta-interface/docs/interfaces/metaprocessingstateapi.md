@@ -32,7 +32,7 @@ Fetch single processing state by state number
 
 **`returns`** Promise containing processing state data
 
-Defined in: [processingstate.ts:46](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/processingstate.ts#L46)
+Defined in: [processingstate.ts:46](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/processingstate.ts#L46)
 
 ___
 
@@ -50,7 +50,7 @@ Fetch select list containing all allowed states for business object ids
 
 **`returns`** Promise containing list of allowed processing states
 
-Defined in: [processingstate.ts:32](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/processingstate.ts#L32)
+Defined in: [processingstate.ts:32](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/processingstate.ts#L32)
 
 ___
 
@@ -66,4 +66,4 @@ Fetch select list containing all possible states for business object
 
 **`returns`** Promise containing list of available processing states
 
-Defined in: [processingstate.ts:19](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/processingstate.ts#L19)
+Defined in: [processingstate.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/processingstate.ts#L19)

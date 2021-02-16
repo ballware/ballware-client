@@ -23,11 +23,11 @@ Options for line/bar chart
 
 ### argumentAxis
 
-• `Optional` **argumentAxis**: *undefined* \| { `argumentType`: *string* \| *datetime* \| *numeric* ; `lines?`: *undefined* \| { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *undefined* \| *string* ; `value`: *number*  }[] ; `tickIntervall?`: *undefined* \| *number* \| *object* \| *day* \| *hour* \| *millisecond* \| *minute* \| *month* \| *quarter* \| *second* \| *week* \| *year* ; `visualRangeFrom?`: *undefined* \| *number* ; `visualRangeTo?`: *undefined* \| *number*  }
+• `Optional` **argumentAxis**: *undefined* \| { `argumentType`: *string* \| *datetime* \| *numeric* ; `lines?`: *undefined* \| { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *undefined* \| *string* ; `value`: *number*  }[] ; `tickInterval?`: *undefined* \| { `days?`: *any* ; `hours?`: *any* ; `milliseconds?`: *any* ; `minutes?`: *any* ; `months?`: *any* ; `quarters?`: *any* ; `seconds?`: *any* ; `weeks?`: *any* ; `years?`: *any*  } ; `visualRangeFrom?`: *undefined* \| *number* ; `visualRangeTo?`: *undefined* \| *number*  }
 
 Options for argument axis
 
-Defined in: [statistic.ts:28](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L28)
+Defined in: [statistic.ts:28](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L28)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Property in data containing argument value
 
-Defined in: [statistic.ts:23](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L23)
+Defined in: [statistic.ts:23](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L23)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Options for legend
 
-Defined in: [statistic.ts:118](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L118)
+Defined in: [statistic.ts:117](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L117)
 
 ___
 
@@ -57,17 +57,17 @@ ___
 
 Horizontal value bars
 
-Defined in: [statistic.ts:18](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L18)
+Defined in: [statistic.ts:18](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L18)
 
 ___
 
 ### series
 
-• **series**: { `format?`: *undefined* \| *day* \| *hour* \| *millisecond* \| *minute* \| *month* \| *quarter* \| *second* \| *year* \| *billions* \| *currency* \| *decimal* \| *exponential* \| *fixedPoint* \| *largeNumber* \| *longDate* \| *longTime* \| *millions* \| *monthAndDay* \| *monthAndYear* \| *percent* \| *quarterAndYear* \| *shortDate* \| *shortTime* \| *thousands* \| *trillions* \| *dayOfWeek* \| *longDateLongTime* \| *shortDateShortTime* ; `labelVisible?`: *undefined* \| *boolean* ; `name`: *string* ; `precision?`: *undefined* \| *number* ; `type`: *bar* \| *line* ; `valueField`: *string* ; `visible?`: *undefined* \| *boolean*  }[]
+• **series**: { `format?`: *undefined* \| *billions* \| *currency* \| *day* \| *decimal* \| *exponential* \| *fixedPoint* \| *largeNumber* \| *longDate* \| *longTime* \| *millions* \| *millisecond* \| *month* \| *monthAndDay* \| *monthAndYear* \| *percent* \| *quarter* \| *quarterAndYear* \| *shortDate* \| *shortTime* \| *thousands* \| *trillions* \| *year* \| *dayOfWeek* \| *hour* \| *longDateLongTime* \| *minute* \| *second* \| *shortDateShortTime* ; `labelVisible?`: *undefined* \| *boolean* ; `name`: *string* ; `precision?`: *undefined* \| *number* ; `type`: *bar* \| *line* ; `valueField`: *string* ; `visible?`: *undefined* \| *boolean*  }[]
 
 Series of data
 
-Defined in: [statistic.ts:137](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L137)
+Defined in: [statistic.ts:136](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L136)
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 Options for value axis
 
-Defined in: [statistic.ts:89](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L89)
+Defined in: [statistic.ts:88](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L88)

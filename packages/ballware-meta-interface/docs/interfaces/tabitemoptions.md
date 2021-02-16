@@ -22,4 +22,4 @@ Options for layout item type 'tab'
 
 Display text in tab panel
 
-Defined in: [page.ts:19](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L19)
+Defined in: [page.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L19)

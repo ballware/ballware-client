@@ -42,20 +42,19 @@ export interface StatisticChartOptions {
     visualRangeTo?: number;
 
     /**
-     * Options for setting tick intervall
+     * Options for setting tick interval
      */
-    tickIntervall?:
-      | number
-      | object
-      | 'day'
-      | 'hour'
-      | 'millisecond'
-      | 'minute'
-      | 'month'
-      | 'quarter'
-      | 'second'
-      | 'week'
-      | 'year';
+    tickInterval?: {
+      days?: any;
+      hours?: any;
+      milliseconds?: any;
+      minutes?: any;
+      months?: any;
+      quarters?: any;
+      seconds?: any;
+      weeks?: any;
+      years?: any;
+    };
 
     /**
      * Define constant lines on argument axis in chart

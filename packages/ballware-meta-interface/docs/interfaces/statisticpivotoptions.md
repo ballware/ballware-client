@@ -20,11 +20,11 @@ Options for pivot grid
 
 ### fields
 
-• **fields**: { `area?`: *undefined* \| *row* \| *column* \| *data* ; `caption`: *string* ; `dataField`: *string* ; `dataType?`: *undefined* \| *string* \| *number* \| *date* ; `expanded?`: *undefined* \| *boolean* ; `format?`: *undefined* \| *day* \| *hour* \| *millisecond* \| *minute* \| *month* \| *quarter* \| *second* \| *year* \| *billions* \| *currency* \| *decimal* \| *exponential* \| *fixedPoint* \| *largeNumber* \| *longDate* \| *longTime* \| *millions* \| *monthAndDay* \| *monthAndYear* \| *percent* \| *quarterAndYear* \| *shortDate* \| *shortTime* \| *thousands* \| *trillions* \| *dayOfWeek* \| *longDateLongTime* \| *shortDateShortTime* ; `groupInterval?`: *undefined* \| *day* \| *month* \| *quarter* \| *year* \| *dayOfWeek* ; `precision?`: *undefined* \| *number* ; `showGrandTotals?`: *undefined* \| *boolean* ; `showTotals?`: *undefined* \| *boolean* ; `summaryType?`: *undefined* \| *avg* \| *count* \| *custom* \| *max* \| *min* \| *sum* ; `width?`: *undefined* \| *number*  }[]
+• **fields**: { `area?`: *undefined* \| *row* \| *column* \| *data* ; `caption`: *string* ; `dataField`: *string* ; `dataType?`: *undefined* \| *string* \| *number* \| *date* ; `expanded?`: *undefined* \| *boolean* ; `format?`: *undefined* \| *billions* \| *currency* \| *day* \| *decimal* \| *exponential* \| *fixedPoint* \| *largeNumber* \| *longDate* \| *longTime* \| *millions* \| *millisecond* \| *month* \| *monthAndDay* \| *monthAndYear* \| *percent* \| *quarter* \| *quarterAndYear* \| *shortDate* \| *shortTime* \| *thousands* \| *trillions* \| *year* \| *dayOfWeek* \| *hour* \| *longDateLongTime* \| *minute* \| *second* \| *shortDateShortTime* ; `groupInterval?`: *undefined* \| *day* \| *month* \| *quarter* \| *year* \| *dayOfWeek* ; `precision?`: *undefined* \| *number* ; `showGrandTotals?`: *undefined* \| *boolean* ; `showTotals?`: *undefined* \| *boolean* ; `summaryType?`: *undefined* \| *avg* \| *count* \| *custom* \| *max* \| *min* \| *sum* ; `width?`: *undefined* \| *number*  }[]
 
 List of pivot fields
 
-Defined in: [statistic.ts:235](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L235)
+Defined in: [statistic.ts:234](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L234)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Show summary values of entire column
 
-Defined in: [statistic.ts:230](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L230)
+Defined in: [statistic.ts:229](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L229)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 Show summary values of hierarchy levels
 
-Defined in: [statistic.ts:225](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/statistic.ts#L225)
+Defined in: [statistic.ts:224](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L224)

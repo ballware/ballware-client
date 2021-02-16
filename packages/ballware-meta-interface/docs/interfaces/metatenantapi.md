@@ -28,4 +28,4 @@ Fetch metadatan for tenant
 
 **`returns`** Promise containing compiled tenant metadata
 
-Defined in: [tenant.ts:103](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/tenant.ts#L103)
+Defined in: [tenant.ts:103](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/tenant.ts#L103)

@@ -33,7 +33,7 @@ Fetch single business object by id
 
 **`returns`** Promise containing instance of business object
 
-Defined in: [genericentity.ts:36](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L36)
+Defined in: [genericentity.ts:36](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L36)
 
 ___
 
@@ -49,7 +49,7 @@ Drop existing instance of business object
 
 **`returns`** Promise resolved when drop operation has finished
 
-Defined in: [genericentity.ts:72](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L72)
+Defined in: [genericentity.ts:72](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L72)
 
 ___
 
@@ -65,7 +65,7 @@ Fetch prepared new instance of business object
 
 **`returns`** Promise containing new generated instance of business object
 
-Defined in: [genericentity.ts:45](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L45)
+Defined in: [genericentity.ts:45](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L45)
 
 ___
 
@@ -83,7 +83,7 @@ Query list of business objects by search params
 
 **`returns`** Promise containing list of resulting business objects
 
-Defined in: [genericentity.ts:23](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L23)
+Defined in: [genericentity.ts:23](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L23)
 
 ___
 
@@ -99,7 +99,7 @@ Save modified instance of business object
 
 **`returns`** Promise resolved when save operation has finished
 
-Defined in: [genericentity.ts:54](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L54)
+Defined in: [genericentity.ts:54](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L54)
 
 ___
 
@@ -115,4 +115,4 @@ Save multiple modified instances of business object
 
 **`returns`** Promise resolved when save operation has finished
 
-Defined in: [genericentity.ts:63](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/genericentity.ts#L63)
+Defined in: [genericentity.ts:63](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L63)

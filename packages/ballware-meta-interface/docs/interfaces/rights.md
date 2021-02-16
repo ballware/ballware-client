@@ -24,7 +24,7 @@ Container for user rights information
 
 Collection of user claims
 
-Defined in: [rights.ts:25](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/rights.ts#L25)
+Defined in: [rights.ts:25](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/rights.ts#L25)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Mail adress of user
 
-Defined in: [rights.ts:15](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/rights.ts#L15)
+Defined in: [rights.ts:15](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/rights.ts#L15)
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 Tenant of current user
 
-Defined in: [rights.ts:20](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/rights.ts#L20)
+Defined in: [rights.ts:20](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/rights.ts#L20)

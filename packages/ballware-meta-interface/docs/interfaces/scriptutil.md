@@ -38,7 +38,7 @@ Adapter for utilities available in custom scripts
 
 Get date with first day of previous year
 
-Defined in: [scriptutil.ts:66](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L66)
+Defined in: [scriptutil.ts:66](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L66)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 Get date with first day of current year
 
-Defined in: [scriptutil.ts:55](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L55)
+Defined in: [scriptutil.ts:55](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L55)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 Convert universal date to local date
 
-Defined in: [scriptutil.ts:45](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L45)
+Defined in: [scriptutil.ts:45](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L45)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 Get Date with last day of previous year
 
-Defined in: [scriptutil.ts:71](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L71)
+Defined in: [scriptutil.ts:71](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L71)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 Get Date with last day of current year
 
-Defined in: [scriptutil.ts:60](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L60)
+Defined in: [scriptutil.ts:60](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L60)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 Find coordinates for adress
 
-Defined in: [scriptutil.ts:129](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L129)
+Defined in: [scriptutil.ts:129](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L129)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 Find adress for coordinates
 
-Defined in: [scriptutil.ts:137](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L137)
+Defined in: [scriptutil.ts:137](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L137)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 Fetch JSON from url
 
-Defined in: [scriptutil.ts:111](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L111)
+Defined in: [scriptutil.ts:111](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L111)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 Fetch text from url
 
-Defined in: [scriptutil.ts:120](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L120)
+Defined in: [scriptutil.ts:120](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L120)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 Convert local date to universal date
 
-Defined in: [scriptutil.ts:50](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L50)
+Defined in: [scriptutil.ts:50](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L50)
 
 ___
 
@@ -142,7 +142,7 @@ Parse JSON to object
 
 **`returns`** Deserialized object
 
-Defined in: [scriptutil.ts:28](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L28)
+Defined in: [scriptutil.ts:28](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L28)
 
 ___
 
@@ -156,7 +156,7 @@ Stringify object to JSON
 
 **`returns`** String with serialized object
 
-Defined in: [scriptutil.ts:38](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L38)
+Defined in: [scriptutil.ts:38](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L38)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 Request current user access token
 
-Defined in: [scriptutil.ts:15](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L15)
+Defined in: [scriptutil.ts:15](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L15)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 Generate new UUID
 
-Defined in: [scriptutil.ts:20](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L20)
+Defined in: [scriptutil.ts:20](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L20)
 
 ___
 
@@ -190,7 +190,7 @@ Fetch autocomplete list by definition
 
 **`param`** Callback function called with result
 
-Defined in: [scriptutil.ts:103](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L103)
+Defined in: [scriptutil.ts:103](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L103)
 
 ___
 
@@ -206,7 +206,7 @@ Fetch lookup single element by definition and id
 
 **`param`** Callback function called with result
 
-Defined in: [scriptutil.ts:91](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L91)
+Defined in: [scriptutil.ts:91](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L91)
 
 ___
 
@@ -220,4 +220,4 @@ Fetch lookup select list by definition
 
 **`param`** Callback function called with result
 
-Defined in: [scriptutil.ts:79](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/scriptutil.ts#L79)
+Defined in: [scriptutil.ts:79](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L79)

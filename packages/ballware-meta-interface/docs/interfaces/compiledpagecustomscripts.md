@@ -34,7 +34,7 @@ Check if user is allowed to navigate to page
 
 **`returns`** true if page is allowed, false if not
 
-Defined in: [page.ts:247](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L247)
+Defined in: [page.ts:247](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L247)
 
 ___
 
@@ -50,7 +50,7 @@ Check if user is allowed to view page in navigation
 
 **`returns`** true if page is allowed, false if not
 
-Defined in: [page.ts:238](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L238)
+Defined in: [page.ts:238](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L238)
 
 ___
 
@@ -74,7 +74,7 @@ Toolbar component event triggered
 
 **`param`** Additional parameter to item event
 
-Defined in: [page.ts:324](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L324)
+Defined in: [page.ts:324](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L324)
 
 ___
 
@@ -94,7 +94,7 @@ Single toolbar component initialized
 
 **`param`** Container containing action triggers for page
 
-Defined in: [page.ts:286](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L286)
+Defined in: [page.ts:286](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L286)
 
 ___
 
@@ -116,7 +116,7 @@ toolbar component value changed
 
 **`param`** Container containing action triggers for page
 
-Defined in: [page.ts:304](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L304)
+Defined in: [page.ts:304](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L304)
 
 ___
 
@@ -134,7 +134,7 @@ Toolbar initialization finished
 
 **`param`** Container containing action triggers for page
 
-Defined in: [page.ts:270](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L270)
+Defined in: [page.ts:270](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L270)
 
 ___
 
@@ -150,4 +150,4 @@ Prepare custom param object containing values needed for other custom scripts
 
 **`param`** Async callback operation performed by custom script when custom param preparation is finished
 
-Defined in: [page.ts:256](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L256)
+Defined in: [page.ts:256](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L256)

@@ -22,4 +22,4 @@ Options for layout item type 'statistic'
 
 Identifier of statistic definition
 
-Defined in: [page.ts:84](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/page.ts#L84)
+Defined in: [page.ts:84](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L84)

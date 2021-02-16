@@ -33,7 +33,7 @@ Fetch file url for display/download
 
 **`returns`** Promise with URL for download of file
 
-Defined in: [attachment.ts:42](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/attachment.ts#L42)
+Defined in: [attachment.ts:42](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L42)
 
 ___
 
@@ -49,7 +49,7 @@ Query list of attachments by owner
 
 **`returns`** Promise with list of attachment metadata belonging to owner
 
-Defined in: [attachment.ts:19](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/attachment.ts#L19)
+Defined in: [attachment.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L19)
 
 ___
 
@@ -67,7 +67,7 @@ Remove existing attachment
 
 **`returns`** Promise resolved when remove operation finished
 
-Defined in: [attachment.ts:52](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/attachment.ts#L52)
+Defined in: [attachment.ts:52](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L52)
 
 ___
 
@@ -85,4 +85,4 @@ Upload new attachment
 
 **`returns`** Promise resolved when upload finished
 
-Defined in: [attachment.ts:32](https://github.com/frankball/ballware-meta-interface/blob/157bdb2/src/attachment.ts#L32)
+Defined in: [attachment.ts:32](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L32)
