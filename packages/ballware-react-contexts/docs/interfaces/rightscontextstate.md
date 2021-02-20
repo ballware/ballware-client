@@ -40,7 +40,7 @@ Change password of logged in user
 
 **`param`** New password for user
 
-Defined in: [src/resourceownerrightscontext.ts:90](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L90)
+Defined in: [src/resourceownerrightscontext.ts:90](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L90)
 
 ___
 
@@ -52,7 +52,7 @@ Last login try error message
 
 Inherited from: [PersistedResourceOwnerRightsState](persistedresourceownerrightsstate.md).[error](persistedresourceownerrightsstate.md#error)
 
-Defined in: [src/resourceownerrightscontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L43)
+Defined in: [src/resourceownerrightscontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L43)
 
 ___
 
@@ -64,7 +64,7 @@ Number of seconds the access token expires in
 
 Inherited from: [PersistedResourceOwnerRightsState](persistedresourceownerrightsstate.md).[expires_in](persistedresourceownerrightsstate.md#expires_in)
 
-Defined in: [src/resourceownerrightscontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L38)
+Defined in: [src/resourceownerrightscontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L38)
 
 ___
 
@@ -76,7 +76,7 @@ Require password reset message for lost password
 
 **`param`** Mail adress of lost password account
 
-Defined in: [src/resourceownerrightscontext.ts:75](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L75)
+Defined in: [src/resourceownerrightscontext.ts:75](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L75)
 
 ___
 
@@ -92,7 +92,7 @@ Login user
 
 **`param`** Redirect url after successful login
 
-Defined in: [src/resourceownerrightscontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L56)
+Defined in: [src/resourceownerrightscontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L56)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 Logout current user
 
-Defined in: [src/resourceownerrightscontext.ts:61](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L61)
+Defined in: [src/resourceownerrightscontext.ts:61](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L61)
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 Refresh user session with refresh token
 
-Defined in: [src/resourceownerrightscontext.ts:95](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L95)
+Defined in: [src/resourceownerrightscontext.ts:95](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L95)
 
 ___
 
@@ -124,7 +124,7 @@ Refresh token
 
 Inherited from: [PersistedResourceOwnerRightsState](persistedresourceownerrightsstate.md).[refresh_token](persistedresourceownerrightsstate.md#refresh_token)
 
-Defined in: [src/resourceownerrightscontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L33)
+Defined in: [src/resourceownerrightscontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L33)
 
 ___
 
@@ -140,7 +140,7 @@ Register new user for application
 
 **`param`** Password for new user
 
-Defined in: [src/resourceownerrightscontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L69)
+Defined in: [src/resourceownerrightscontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L69)
 
 ___
 
@@ -156,7 +156,7 @@ Reset lost password with reset code
 
 **`param`** New user password
 
-Defined in: [src/resourceownerrightscontext.ts:83](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L83)
+Defined in: [src/resourceownerrightscontext.ts:83](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L83)
 
 ___
 
@@ -168,7 +168,7 @@ User rights for current user
 
 Inherited from: [PersistedResourceOwnerRightsState](persistedresourceownerrightsstate.md).[rights](persistedresourceownerrightsstate.md#rights)
 
-Defined in: [src/resourceownerrightscontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L18)
+Defined in: [src/resourceownerrightscontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L18)
 
 ___
 
@@ -180,7 +180,7 @@ Access token timeout stamp
 
 Inherited from: [PersistedResourceOwnerRightsState](persistedresourceownerrightsstate.md).[timeout_in](persistedresourceownerrightsstate.md#timeout_in)
 
-Defined in: [src/resourceownerrightscontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L23)
+Defined in: [src/resourceownerrightscontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L23)
 
 ___
 
@@ -192,4 +192,4 @@ Access token
 
 Inherited from: [PersistedResourceOwnerRightsState](persistedresourceownerrightsstate.md).[token](persistedresourceownerrightsstate.md#token)
 
-Defined in: [src/resourceownerrightscontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L28)
+Defined in: [src/resourceownerrightscontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L28)

@@ -31,6 +31,11 @@ export interface ProviderFactoryContextState {
     }>) => JSX.Element;
 
     /**
+     * Instantiate attachment provider
+     */
+    AttachmentProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
+
+    /**
      * Instanticate crud provider 
      */
     CrudProvider?: (props: PropsWithChildren<{

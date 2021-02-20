@@ -29,7 +29,7 @@ Persisted part of rights state in application store
 
 Last login try error message
 
-Defined in: [src/resourceownerrightscontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L43)
+Defined in: [src/resourceownerrightscontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L43)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 Number of seconds the access token expires in
 
-Defined in: [src/resourceownerrightscontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L38)
+Defined in: [src/resourceownerrightscontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L38)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Refresh token
 
-Defined in: [src/resourceownerrightscontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L33)
+Defined in: [src/resourceownerrightscontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L33)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 User rights for current user
 
-Defined in: [src/resourceownerrightscontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L18)
+Defined in: [src/resourceownerrightscontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L18)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 Access token timeout stamp
 
-Defined in: [src/resourceownerrightscontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L23)
+Defined in: [src/resourceownerrightscontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L23)
 
 ___
 
@@ -79,4 +79,4 @@ ___
 
 Access token
 
-Defined in: [src/resourceownerrightscontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/d61edea/src/resourceownerrightscontext.ts#L28)
+Defined in: [src/resourceownerrightscontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/resourceownerrightscontext.ts#L28)
