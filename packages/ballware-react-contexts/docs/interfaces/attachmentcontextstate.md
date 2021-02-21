@@ -31,7 +31,7 @@ Drop existing attachment
 
 **`returns`** Promise resolving when drop has completed
 
-Defined in: [src/attachmentcontext.ts:44](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/attachmentcontext.ts#L44)
+Defined in: [src/attachmentcontext.ts:44](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/attachmentcontext.ts#L44)
 
 ___
 
@@ -45,7 +45,7 @@ Fetch available attachments by owner id
 
 **`returns`** Promise resolving available attachment metadata
 
-Defined in: [src/attachmentcontext.ts:20](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/attachmentcontext.ts#L20)
+Defined in: [src/attachmentcontext.ts:20](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/attachmentcontext.ts#L20)
 
 ___
 
@@ -61,7 +61,7 @@ Request download url for attachment
 
 **`returns`** Promise resolving Url for download attachment file
 
-Defined in: [src/attachmentcontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/attachmentcontext.ts#L36)
+Defined in: [src/attachmentcontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/attachmentcontext.ts#L36)
 
 ___
 
@@ -77,4 +77,4 @@ Upload new attachment
 
 **`returns`** Promise resolving when upload has completed
 
-Defined in: [src/attachmentcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/attachmentcontext.ts#L28)
+Defined in: [src/attachmentcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/attachmentcontext.ts#L28)

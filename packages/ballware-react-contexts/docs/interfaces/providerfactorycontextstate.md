@@ -31,7 +31,7 @@ Context for instantiating context provider
 
 Instantiate attachment provider
 
-Defined in: [src/providerfactorycontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L36)
+Defined in: [src/providerfactorycontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L36)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Instanticate crud provider
 
-Defined in: [src/providerfactorycontext.ts:41](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L41)
+Defined in: [src/providerfactorycontext.ts:41](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L41)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 Instantiate item edit provider
 
-Defined in: [src/providerfactorycontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L73)
+Defined in: [src/providerfactorycontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L73)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Instanticate lookup provider
 
-Defined in: [src/providerfactorycontext.ts:49](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L49)
+Defined in: [src/providerfactorycontext.ts:49](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L49)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Instantiate generic entity metadata provider
 
-Defined in: [src/providerfactorycontext.ts:26](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L26)
+Defined in: [src/providerfactorycontext.ts:26](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L26)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Instantiate notification provider
 
-Defined in: [src/providerfactorycontext.ts:54](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L54)
+Defined in: [src/providerfactorycontext.ts:54](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L54)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 Instantiate page provider
 
-Defined in: [src/providerfactorycontext.ts:21](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L21)
+Defined in: [src/providerfactorycontext.ts:21](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L21)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 Instantiate resource owner user rights provider
 
-Defined in: [src/providerfactorycontext.ts:59](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L59)
+Defined in: [src/providerfactorycontext.ts:59](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L59)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 Instantiate statistic provider
 
-Defined in: [src/providerfactorycontext.ts:83](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L83)
+Defined in: [src/providerfactorycontext.ts:83](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L83)
 
 ___
 
@@ -121,4 +121,4 @@ ___
 
 Instantiate tenant provider
 
-Defined in: [src/providerfactorycontext.ts:68](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/providerfactorycontext.ts#L68)
+Defined in: [src/providerfactorycontext.ts:68](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L68)

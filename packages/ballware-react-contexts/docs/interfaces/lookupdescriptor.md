@@ -25,7 +25,7 @@ Descriptor for lookup and autocomplete datasource
 
 Display property in fetched data items
 
-Defined in: [src/lookupcontext.ts:60](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/lookupcontext.ts#L60)
+Defined in: [src/lookupcontext.ts:60](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L60)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Data access adapter for fetching data for lookup/autocomplete source
 
-Defined in: [src/lookupcontext.ts:50](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/lookupcontext.ts#L50)
+Defined in: [src/lookupcontext.ts:50](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L50)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Type of lookup descriptor
 
-Defined in: [src/lookupcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/lookupcontext.ts#L45)
+Defined in: [src/lookupcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L45)
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 Value property in fetched data items
 
-Defined in: [src/lookupcontext.ts:55](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/lookupcontext.ts#L55)
+Defined in: [src/lookupcontext.ts:55](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L55)

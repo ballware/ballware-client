@@ -136,12 +136,12 @@ export interface MetaContextState {
     printAllowed?: (item: CrudItem) => boolean;
 
     /**
-     * Check if custom edit function is allowed for current user
-     * @param item Item to be edited
+     * Check if custom edit function is allowed for current user     
      * @param customFunction Function used for editing
+     * @param item Item to be edited (undefined if function is type 'add')
      * @returns true if custom function is allowed
      */
-    customFunctionAllowed?: (item: CrudItem, customFunction: EntityCustomFunction) => boolean;
+    customFunctionAllowed?: (customFunction: EntityCustomFunction, item?: CrudItem) => boolean;
 
     /**
      * Prepare fetched item for usage in frontend

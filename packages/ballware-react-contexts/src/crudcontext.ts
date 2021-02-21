@@ -135,9 +135,9 @@ export interface CrudContextState {
     /**
      * Execute custom edit operation
      * @param customFunction Selected custom function
-     * @param items Selected items for edit operation
+     * @param items Selected items for edit operation (undefined if function type is 'add')
      */
-    customEdit?: (customFunction: EntityCustomFunction, items: Array<CrudItem>) => void;
+    customEdit?: (customFunction: EntityCustomFunction, items?: Array<CrudItem>) => void;
 }
 
 export const CrudContext = createContext({} as CrudContextState);

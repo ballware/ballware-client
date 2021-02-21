@@ -25,7 +25,7 @@ Context for triggering user notification functionality
 
 Hide current shown user notification
 
-Defined in: [src/notificationcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/notificationcontext.ts#L35)
+Defined in: [src/notificationcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/notificationcontext.ts#L35)
 
 ___
 
@@ -37,7 +37,7 @@ Show error message to user
 
 **`param`** Message content or translation identifier
 
-Defined in: [src/notificationcontext.ts:30](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/notificationcontext.ts#L30)
+Defined in: [src/notificationcontext.ts:30](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/notificationcontext.ts#L30)
 
 ___
 
@@ -49,7 +49,7 @@ Show information message to user
 
 **`param`** Message content or translation identifier
 
-Defined in: [src/notificationcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/notificationcontext.ts#L18)
+Defined in: [src/notificationcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/notificationcontext.ts#L18)
 
 ___
 
@@ -61,4 +61,4 @@ Show warning message to user
 
 **`param`** Message content or translation identifier
 
-Defined in: [src/notificationcontext.ts:24](https://github.com/frankball/ballware-react-contexts/blob/214ba92/src/notificationcontext.ts#L24)
+Defined in: [src/notificationcontext.ts:24](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/notificationcontext.ts#L24)
