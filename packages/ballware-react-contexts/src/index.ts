@@ -5,7 +5,7 @@ export * from './metacontext';
 export * from './attachmentcontext';
 export * from './notificationcontext';
 export * from './pagecontext';
-export * from './resourceownerrightscontext';
+export * from './rightscontext';
 export * from './settingscontext';
 export * from './statisticcontext';
 export * from './tenantcontext';

@@ -11,49 +11,53 @@ import { createContext } from 'react';
  * Context for triggering user notification functionality
  */
 export interface NotificationContextState {
-    /**
-     * Show information message to user
-     * @param message Message content or translation identifier
-     */
-    showInfo?: (message: string) => void;
+  /**
+   * Show information message to user
+   * @param message Message content or translation identifier
+   */
+  showInfo?: (message: string) => void;
 
-    /**
-     * Show warning message to user
-     * @param message Message content or translation identifier
-     */
-    showWarning?: (message: string) => void;
+  /**
+   * Show warning message to user
+   * @param message Message content or translation identifier
+   */
+  showWarning?: (message: string) => void;
 
-    /**
-     * Show error message to user
-     * @param message Message content or translation identifier
-     */
-    showError?: (message: string) => void;
+  /**
+   * Show error message to user
+   * @param message Message content or translation identifier
+   */
+  showError?: (message: string) => void;
 
-    /**
-     * Hide current shown user notification
-     */
-    hide?: () => void;
+  /**
+   * Hide current shown user notification
+   */
+  hide?: () => void;
 }
 
 /**
  * Context for displaying user notification functionality
  */
 export interface NotificationDisplayContextState {
+  /**
+   * Current triggered notification message
+   */
+  message?: {
     /**
-     * Current triggered notification message
+     * Severity of message
      */
-    message?: { 
-        /**
-         * Severity of message
-         */
-        type: 'error' | 'info' | 'warning'; 
+    type: 'error' | 'info' | 'warning';
 
-        /**
-         * Message text or translation identifier
-         */
-        text: string 
-    };
+    /**
+     * Message text or translation identifier
+     */
+    text: string;
+  };
 }
 
-export const NotificationContext = createContext({} as NotificationContextState);
-export const NotificationDisplayContext = createContext({} as NotificationDisplayContextState);
+export const NotificationContext = createContext(
+  {} as NotificationContextState
+);
+export const NotificationDisplayContext = createContext(
+  {} as NotificationDisplayContextState
+);

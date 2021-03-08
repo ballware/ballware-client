@@ -26,7 +26,7 @@ Context for functionality to edit a specific item
 
 Edit layout for rendering form
 
-Defined in: [src/editcontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/editcontext.ts#L43)
+Defined in: [src/editcontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L43)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Function identifier when editing with custom function
 
-Defined in: [src/editcontext.ts:53](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/editcontext.ts#L53)
+Defined in: [src/editcontext.ts:53](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L53)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 Edited item
 
-Defined in: [src/editcontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/editcontext.ts#L48)
+Defined in: [src/editcontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L48)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 Current editing mode
 
-Defined in: [src/editcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/editcontext.ts#L38)
+Defined in: [src/editcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L38)
 
 ___
 
@@ -66,4 +66,4 @@ ___
 
 Replacing edited item
 
-Defined in: [src/editcontext.ts:58](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/editcontext.ts#L58)
+Defined in: [src/editcontext.ts:58](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L58)

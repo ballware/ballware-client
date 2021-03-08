@@ -28,7 +28,7 @@ Request object for requesting lookup descriptor
 
 Display property in fetched lookup items specific for consumer (only for lookup, lookupwithparam)
 
-Defined in: [src/lookupcontext.ts:109](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L109)
+Defined in: [src/lookupcontext.ts:111](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L111)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 Entity identifier (only for pickvalue)
 
-Defined in: [src/lookupcontext.ts:114](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L114)
+Defined in: [src/lookupcontext.ts:116](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L116)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 Field identifier (only for pickvalue)
 
-Defined in: [src/lookupcontext.ts:119](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L119)
+Defined in: [src/lookupcontext.ts:121](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L121)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 Unique identifier for lookup in consumer
 
-Defined in: [src/lookupcontext.ts:94](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L94)
+Defined in: [src/lookupcontext.ts:96](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L96)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 Unique id for lookup  in metadata
 
-Defined in: [src/lookupcontext.ts:99](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L99)
+Defined in: [src/lookupcontext.ts:101](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L101)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 Type of requested lookup
 
-Defined in: [src/lookupcontext.ts:82](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L82)
+Defined in: [src/lookupcontext.ts:84](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L84)
 
 ___
 
@@ -88,4 +88,4 @@ ___
 
 Value property in fetched lookup items specific for consumer (only for lookup, lookupwithparam)
 
-Defined in: [src/lookupcontext.ts:104](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/lookupcontext.ts#L104)
+Defined in: [src/lookupcontext.ts:106](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L106)

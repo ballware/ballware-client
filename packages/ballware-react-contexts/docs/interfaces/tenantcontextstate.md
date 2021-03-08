@@ -25,7 +25,7 @@ Context for providing tenant metadata
 
 Unique name of tenant
 
-Defined in: [src/tenantcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/tenantcontext.ts#L18)
+Defined in: [src/tenantcontext.ts:21](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/tenantcontext.ts#L21)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Navigation layout metadata for tenant
 
-Defined in: [src/tenantcontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/tenantcontext.ts#L23)
+Defined in: [src/tenantcontext.ts:26](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/tenantcontext.ts#L26)
 
 ___
 
@@ -49,7 +49,7 @@ Check if access to page is allowed for current user
 
 **`returns`** true if access is allowed
 
-Defined in: [src/tenantcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/tenantcontext.ts#L35)
+Defined in: [src/tenantcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/tenantcontext.ts#L38)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 List of pages for tenant
 
-Defined in: [src/tenantcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/tenantcontext.ts#L28)
+Defined in: [src/tenantcontext.ts:31](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/tenantcontext.ts#L31)

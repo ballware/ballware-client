@@ -12,37 +12,37 @@ import { QueryParams, StatisticLayout } from '@ballware/meta-interface';
  * Context for providing statistic item metadata and data
  */
 export interface StatisticContextState {
-    /**
-     * Unique identifier of statistic item
-     */
-    identifier?: string;
+  /**
+   * Unique identifier of statistic item
+   */
+  identifier?: string;
 
-    /**
-     * Display name of statistic item
-     */
-    name?: string;
+  /**
+   * Display name of statistic item
+   */
+  name?: string;
 
-    /***
-     * Additional query params from containing element (page for example)
-     */
-    params?: QueryParams;
+  /***
+   * Additional query params from containing element (page for example)
+   */
+  params?: QueryParams;
 
-    /**
-     * Layout for displaying statistic item
-     */
-    layout?: StatisticLayout;
+  /**
+   * Layout for displaying statistic item
+   */
+  layout?: StatisticLayout;
 
-    /**
-     * Fetched data for statistic
-     */
-    data?: Array<Record<string, unknown>>;
+  /**
+   * Fetched data for statistic
+   */
+  data?: Array<Record<string, unknown>>;
 
-    /**
-     * Customize display text for argument axis labels
-     * @param value Argument value
-     * @returns Modified display text, if applicable
-     */
-    argumentAxisCustomizeText?: (value: unknown) => string | undefined;
+  /**
+   * Customize display text for argument axis labels
+   * @param value Argument value
+   * @returns Modified display text, if applicable
+   */
+  argumentAxisCustomizeText?: (value: unknown) => string | undefined;
 }
 
 export const StatisticContext = createContext({} as StatisticContextState);

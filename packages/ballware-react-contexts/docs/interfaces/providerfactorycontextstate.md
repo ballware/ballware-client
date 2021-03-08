@@ -19,7 +19,6 @@ Context for instantiating context provider
 - [MetaProvider](providerfactorycontextstate.md#metaprovider)
 - [NotificationProvider](providerfactorycontextstate.md#notificationprovider)
 - [PageProvider](providerfactorycontextstate.md#pageprovider)
-- [ResourceOwnerRightsProvider](providerfactorycontextstate.md#resourceownerrightsprovider)
 - [StatisticProvider](providerfactorycontextstate.md#statisticprovider)
 - [TenantProvider](providerfactorycontextstate.md#tenantprovider)
 
@@ -31,7 +30,7 @@ Context for instantiating context provider
 
 Instantiate attachment provider
 
-Defined in: [src/providerfactorycontext.ts:36](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L36)
+Defined in: [src/providerfactorycontext.ts:39](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L39)
 
 ___
 
@@ -41,7 +40,7 @@ ___
 
 Instanticate crud provider
 
-Defined in: [src/providerfactorycontext.ts:41](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L41)
+Defined in: [src/providerfactorycontext.ts:44](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L44)
 
 ___
 
@@ -51,7 +50,7 @@ ___
 
 Instantiate item edit provider
 
-Defined in: [src/providerfactorycontext.ts:73](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L73)
+Defined in: [src/providerfactorycontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L69)
 
 ___
 
@@ -61,7 +60,7 @@ ___
 
 Instanticate lookup provider
 
-Defined in: [src/providerfactorycontext.ts:49](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L49)
+Defined in: [src/providerfactorycontext.ts:54](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L54)
 
 ___
 
@@ -71,7 +70,7 @@ ___
 
 Instantiate generic entity metadata provider
 
-Defined in: [src/providerfactorycontext.ts:26](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L26)
+Defined in: [src/providerfactorycontext.ts:27](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L27)
 
 ___
 
@@ -81,7 +80,7 @@ ___
 
 Instantiate notification provider
 
-Defined in: [src/providerfactorycontext.ts:54](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L54)
+Defined in: [src/providerfactorycontext.ts:59](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L59)
 
 ___
 
@@ -91,17 +90,7 @@ ___
 
 Instantiate page provider
 
-Defined in: [src/providerfactorycontext.ts:21](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L21)
-
-___
-
-### ResourceOwnerRightsProvider
-
-• `Optional` **ResourceOwnerRightsProvider**: *undefined* \| (`props`: *PropsWithChildren*<{ `client`: *string* ; `secret`: *string* ; `userinfoMapper`: UserInfoMappingFunc  }\>) => *Element*
-
-Instantiate resource owner user rights provider
-
-Defined in: [src/providerfactorycontext.ts:59](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L59)
+Defined in: [src/providerfactorycontext.ts:20](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L20)
 
 ___
 
@@ -111,14 +100,14 @@ ___
 
 Instantiate statistic provider
 
-Defined in: [src/providerfactorycontext.ts:83](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L83)
+Defined in: [src/providerfactorycontext.ts:81](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L81)
 
 ___
 
 ### TenantProvider
 
-• `Optional` **TenantProvider**: *undefined* \| (`props`: { `children`: *Element* \| *Element*[]  }) => *Element*
+• `Optional` **TenantProvider**: *undefined* \| (`props`: { `children?`: ReactNode  }) => *Element*
 
 Instantiate tenant provider
 
-Defined in: [src/providerfactorycontext.ts:68](https://github.com/frankball/ballware-react-contexts/blob/839804b/src/providerfactorycontext.ts#L68)
+Defined in: [src/providerfactorycontext.ts:64](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/providerfactorycontext.ts#L64)
