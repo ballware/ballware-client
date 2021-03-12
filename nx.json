@@ -1,0 +1,46 @@
+{
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "ballware",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "ballware-webclient": { "tags": [] },
+    "ballware-webclient-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ballware-webclient"]
+    },
+    "ballware-identity-interface": { "tags": [] },
+    "identity-backend": { "tags": [] },
+    "meta-interface": { "tags": [] },
+    "meta-backend": { "tags": [] },
+    "react-contexts": { "tags": [] },
+    "react-provider": { "tags": [] },
+    "react-renderer": { "tags": [] },
+    "react-renderer-dx": { "tags": [] },
+    "react-renderer-dx-e2e": {
+      "tags": [],
+      "implicitDependencies": ["react-renderer-dx"]
+    },
+    "react-renderer-bs": { "tags": [] }
+  }
+}

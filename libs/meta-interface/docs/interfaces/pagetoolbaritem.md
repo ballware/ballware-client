@@ -1,0 +1,87 @@
+[@ballware/meta-interface](../README.md) / [Exports](../modules.md) / PageToolbarItem
+
+# Interface: PageToolbarItem
+
+Toolbar element
+
+## Table of contents
+
+### Properties
+
+- [caption](pagetoolbaritem.md#caption)
+- [defaultValue](pagetoolbaritem.md#defaultvalue)
+- [lookup](pagetoolbaritem.md#lookup)
+- [name](pagetoolbaritem.md#name)
+- [options](pagetoolbaritem.md#options)
+- [type](pagetoolbaritem.md#type)
+- [width](pagetoolbaritem.md#width)
+
+## Properties
+
+### caption
+
+• `Optional` **caption**: *string*
+
+Display text
+
+Defined in: lib/page.ts:167
+
+___
+
+### defaultValue
+
+• **defaultValue**: *unknown*
+
+Initial value of toolbar component
+
+Defined in: lib/page.ts:182
+
+___
+
+### lookup
+
+• `Optional` **lookup**: *string*
+
+Identifier for lookup (only for components with select lists)
+
+Defined in: lib/page.ts:172
+
+___
+
+### name
+
+• **name**: *string*
+
+Unique name of toolbar element
+
+Defined in: lib/page.ts:162
+
+___
+
+### options
+
+• **options**: *Record*<string, unknown\>
+
+Component type specific options
+
+Defined in: lib/page.ts:187
+
+___
+
+### type
+
+• **type**: *string*
+
+Type identifier of toolbar component
+
+Defined in: lib/page.ts:157
+
+___
+
+### width
+
+• `Optional` **width**: *string*
+
+Optional fixed width of toolbar component
+
+Defined in: lib/page.ts:177

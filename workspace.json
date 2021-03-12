@@ -1,0 +1,399 @@
+{
+  "version": 2,
+  "cli": { "defaultCollection": "@nrwl/react" },
+  "defaultProject": "ballware-webclient",
+  "generators": {
+    "@nrwl/react": {
+      "application": { "style": "scss", "linter": "eslint", "babel": true },
+      "component": { "style": "scss" },
+      "library": { "style": "scss", "linter": "eslint" }
+    }
+  },
+  "projects": {
+    "ballware-webclient": {
+      "root": "apps/ballware-webclient",
+      "sourceRoot": "apps/ballware-webclient/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/ballware-webclient",
+            "index": "apps/ballware-webclient/src/index.html",
+            "main": "apps/ballware-webclient/src/main.tsx",
+            "polyfills": "apps/ballware-webclient/src/polyfills.ts",
+            "tsConfig": "apps/ballware-webclient/tsconfig.app.json",
+            "assets": [
+              "apps/ballware-webclient/src/favicon.ico",
+              "apps/ballware-webclient/src/assets"
+            ],
+            "styles": ["apps/ballware-webclient/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ballware-webclient/src/environments/environment.ts",
+                  "with": "apps/ballware-webclient/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": { "buildTarget": "ballware-webclient:build" },
+          "configurations": {
+            "production": {
+              "buildTarget": "ballware-webclient:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ballware-webclient/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ballware-webclient"],
+          "options": {
+            "jestConfig": "apps/ballware-webclient/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ballware-webclient-e2e": {
+      "root": "apps/ballware-webclient-e2e",
+      "sourceRoot": "apps/ballware-webclient-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ballware-webclient-e2e/cypress.json",
+            "tsConfig": "apps/ballware-webclient-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ballware-webclient:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ballware-webclient:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ballware-webclient-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ballware-identity-interface": {
+      "root": "libs/identity-interface",
+      "sourceRoot": "libs/identity-interface/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/identity-interface/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/identity-interface"],
+          "options": {
+            "jestConfig": "libs/identity-interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "identity-backend": {
+      "root": "libs/identity-backend",
+      "sourceRoot": "libs/identity-backend/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/identity-backend/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/identity-backend"],
+          "options": {
+            "jestConfig": "libs/identity-backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "meta-interface": {
+      "root": "libs/meta-interface",
+      "sourceRoot": "libs/meta-interface/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/meta-interface",
+            "tsConfig": "libs/meta-interface/tsconfig.lib.json",
+            "project": "libs/meta-interface/package.json",
+            "entryFile": "libs/meta-interface/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "README.md", "input": ".", "output": "." }]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/meta-interface/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/meta-interface"],
+          "options": {
+            "jestConfig": "libs/meta-interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/meta-interface/tsconfig.json --plugin typedoc-plugin-markdown --out libs/meta-interface/docs libs/meta-interface/src/index.ts"             
+          }
+        }
+      }
+    },
+    "meta-backend": {
+      "root": "libs/meta-backend",
+      "sourceRoot": "libs/meta-backend/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/meta-backend",
+            "tsConfig": "libs/meta-backend/tsconfig.lib.json",
+            "project": "libs/meta-backend/package.json",
+            "entryFile": "libs/meta-backend/src/index.ts",
+            "globals": [
+              { "moduleId": "axios", "global": "axios" },
+              { "moduleId": "json5", "global": "JSON5" }
+            ],
+            "external": ["react", "react-dom", "axios", "json5"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "README.md", "input": ".", "output": "." }]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/meta-backend/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/meta-backend"],
+          "options": {
+            "jestConfig": "libs/meta-backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-contexts": {
+      "root": "libs/react-contexts",
+      "sourceRoot": "libs/react-contexts/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/react-contexts/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/react-contexts"],
+          "options": {
+            "jestConfig": "libs/react-contexts/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-provider": {
+      "root": "libs/react-provider",
+      "sourceRoot": "libs/react-provider/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/react-provider/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/react-provider"],
+          "options": {
+            "jestConfig": "libs/react-provider/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-renderer": {
+      "root": "libs/react-renderer",
+      "sourceRoot": "libs/react-renderer/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/react-renderer/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/react-renderer"],
+          "options": {
+            "jestConfig": "libs/react-renderer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-renderer-dx": {
+      "root": "libs/react-renderer-dx",
+      "sourceRoot": "libs/react-renderer-dx/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/react-renderer-dx",
+            "tsConfig": "libs/react-renderer-dx/tsconfig.lib.json",
+            "project": "libs/react-renderer-dx/package.json",
+            "entryFile": "libs/react-renderer-dx/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "README.md", "input": ".", "output": "." }]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/react-renderer-dx/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/react-renderer-dx"],
+          "options": {
+            "jestConfig": "libs/react-renderer-dx/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": { "configFolder": "libs/react-renderer-dx/.storybook" }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/react-renderer-dx",
+            "config": { "configFolder": "libs/react-renderer-dx/.storybook" }
+          },
+          "configurations": { "ci": { "quiet": true } }
+        }
+      }
+    },
+    "react-renderer-dx-e2e": {
+      "root": "apps/react-renderer-dx-e2e",
+      "sourceRoot": "apps/react-renderer-dx-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/react-renderer-dx-e2e/cypress.json",
+            "tsConfig": "apps/react-renderer-dx-e2e/tsconfig.e2e.json",
+            "devServerTarget": "react-renderer-dx:storybook"
+          },
+          "configurations": {
+            "ci": { "devServerTarget": "react-renderer-dx:storybook:ci" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/react-renderer-dx-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "react-renderer-bs": {
+      "root": "libs/react-renderer-bs",
+      "sourceRoot": "libs/react-renderer-bs/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/react-renderer-bs",
+            "tsConfig": "libs/react-renderer-bs/tsconfig.lib.json",
+            "project": "libs/react-renderer-bs/package.json",
+            "entryFile": "libs/react-renderer-bs/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "README.md", "input": ".", "output": "." }]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/react-renderer-bs/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/react-renderer-bs"],
+          "options": {
+            "jestConfig": "libs/react-renderer-bs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}

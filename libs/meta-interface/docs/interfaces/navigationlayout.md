@@ -1,0 +1,43 @@
+[@ballware/meta-interface](../README.md) / [Exports](../modules.md) / NavigationLayout
+
+# Interface: NavigationLayout
+
+Navigation layout for single tenant
+
+## Table of contents
+
+### Properties
+
+- [defaultUrl](navigationlayout.md#defaulturl)
+- [items](navigationlayout.md#items)
+- [title](navigationlayout.md#title)
+
+## Properties
+
+### defaultUrl
+
+• `Optional` **defaultUrl**: *string*
+
+Default page activated on tenant entered
+
+Defined in: lib/tenant.ts:57
+
+___
+
+### items
+
+• **items**: [*NavigationLayoutItem*](navigationlayoutitem.md)[]
+
+Collection of layout items
+
+Defined in: lib/tenant.ts:62
+
+___
+
+### title
+
+• **title**: *string*
+
+Headline for tenant application
+
+Defined in: lib/tenant.ts:52

@@ -1,0 +1,8 @@
+{
+  "name": "@ballware/meta-interface",
+  "version": "6.0.2",
+  "description": "Ballware Application Builder - Interface for metadata provider",
+  "author": "frank@ballmeyer.com",
+  "license": "MIT",
+  "homepage": "https://github.com/frankball/ballware-meta-interface"
+}

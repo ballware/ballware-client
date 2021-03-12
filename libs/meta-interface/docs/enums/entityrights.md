@@ -1,0 +1,55 @@
+[@ballware/meta-interface](../README.md) / [Exports](../modules.md) / EntityRights
+
+# Enumeration: EntityRights
+
+Definition of rights for default operations
+
+## Table of contents
+
+### Enumeration members
+
+- [RIGHT\_ADD](entityrights.md#right_add)
+- [RIGHT\_DELETE](entityrights.md#right_delete)
+- [RIGHT\_EDIT](entityrights.md#right_edit)
+- [RIGHT\_PRINT](entityrights.md#right_print)
+- [RIGHT\_VIEW](entityrights.md#right_view)
+
+## Enumeration members
+
+### RIGHT\_ADD
+
+• **RIGHT\_ADD**: = "add"
+
+Defined in: lib/rights.ts:33
+
+___
+
+### RIGHT\_DELETE
+
+• **RIGHT\_DELETE**: = "delete"
+
+Defined in: lib/rights.ts:35
+
+___
+
+### RIGHT\_EDIT
+
+• **RIGHT\_EDIT**: = "edit"
+
+Defined in: lib/rights.ts:34
+
+___
+
+### RIGHT\_PRINT
+
+• **RIGHT\_PRINT**: = "print"
+
+Defined in: lib/rights.ts:36
+
+___
+
+### RIGHT\_VIEW
+
+• **RIGHT\_VIEW**: = "view"
+
+Defined in: lib/rights.ts:32

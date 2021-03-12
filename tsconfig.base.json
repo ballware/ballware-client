@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@ballware/identity-interface": ["libs/identity-interface/src/index.ts"],
+      "@ballware/identity-backend": ["libs/identity-backend/src/index.ts"],
+      "@ballware/meta-interface": ["libs/meta-interface/src/index.ts"],
+      "@ballware/meta-backend": ["libs/meta-backend/src/index.ts"],
+      "@ballware/react-contexts": ["libs/react-contexts/src/index.ts"],
+      "@ballware/react-provider": ["libs/react-provider/src/index.ts"],
+      "@ballware/react-renderer": ["libs/react-renderer/src/index.ts"],
+      "@ballware/react-renderer-dx": ["libs/react-renderer-dx/src/index.ts"],
+      "@ballware/react-renderer-bs": ["libs/react-renderer-bs/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
