@@ -43,9 +43,9 @@ Name | Type |
 
 **Returns:** (`value`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: lib/pickvalue.ts:35
+Defined in: [lib/pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/pickvalue.ts#L35)
 
-Defined in: lib/pickvalue.ts:35
+Defined in: [lib/pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/pickvalue.ts#L35)
 
 ___
 
@@ -77,6 +77,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: lib/pickvalue.ts:20
+Defined in: [lib/pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/pickvalue.ts#L20)
 
-Defined in: lib/pickvalue.ts:20
+Defined in: [lib/pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/pickvalue.ts#L20)

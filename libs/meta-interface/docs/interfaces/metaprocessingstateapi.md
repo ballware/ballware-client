@@ -41,9 +41,9 @@ Name | Type |
 
 **Returns:** (`state`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: lib/processingstate.ts:46
+Defined in: [lib/processingstate.ts:46](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/processingstate.ts#L46)
 
-Defined in: lib/processingstate.ts:46
+Defined in: [lib/processingstate.ts:46](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/processingstate.ts#L46)
 
 ___
 
@@ -75,9 +75,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: lib/processingstate.ts:32
+Defined in: [lib/processingstate.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/processingstate.ts#L32)
 
-Defined in: lib/processingstate.ts:32
+Defined in: [lib/processingstate.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/processingstate.ts#L32)
 
 ___
 
@@ -106,6 +106,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: lib/processingstate.ts:19
+Defined in: [lib/processingstate.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/processingstate.ts#L19)
 
-Defined in: lib/processingstate.ts:19
+Defined in: [lib/processingstate.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/processingstate.ts#L19)

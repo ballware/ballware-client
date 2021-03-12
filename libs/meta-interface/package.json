@@ -1,8 +1,16 @@
 {
   "name": "@ballware/meta-interface",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Ballware Application Builder - Interface for metadata provider",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
-  "homepage": "https://github.com/frankball/ballware-meta-interface"
+  "homepage": "https://github.com/ballware/ballware-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballware/ballware-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "peerDependencies": {}
 }

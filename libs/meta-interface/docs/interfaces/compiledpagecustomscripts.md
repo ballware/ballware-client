@@ -43,9 +43,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: lib/page.ts:247
+Defined in: [lib/page.ts:247](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L247)
 
-Defined in: lib/page.ts:247
+Defined in: [lib/page.ts:247](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L247)
 
 ___
 
@@ -74,9 +74,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: lib/page.ts:238
+Defined in: [lib/page.ts:238](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L238)
 
-Defined in: lib/page.ts:238
+Defined in: [lib/page.ts:238](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L238)
 
 ___
 
@@ -118,9 +118,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: lib/page.ts:324
+Defined in: [lib/page.ts:324](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L324)
 
-Defined in: lib/page.ts:324
+Defined in: [lib/page.ts:324](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L324)
 
 ___
 
@@ -156,9 +156,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: lib/page.ts:286
+Defined in: [lib/page.ts:286](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L286)
 
-Defined in: lib/page.ts:286
+Defined in: [lib/page.ts:286](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L286)
 
 ___
 
@@ -197,9 +197,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: lib/page.ts:304
+Defined in: [lib/page.ts:304](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L304)
 
-Defined in: lib/page.ts:304
+Defined in: [lib/page.ts:304](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L304)
 
 ___
 
@@ -232,9 +232,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: lib/page.ts:270
+Defined in: [lib/page.ts:270](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L270)
 
-Defined in: lib/page.ts:270
+Defined in: [lib/page.ts:270](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L270)
 
 ___
 
@@ -264,6 +264,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: lib/page.ts:256
+Defined in: [lib/page.ts:256](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L256)
 
-Defined in: lib/page.ts:256
+Defined in: [lib/page.ts:256](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L256)

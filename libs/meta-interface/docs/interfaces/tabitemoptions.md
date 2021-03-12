@@ -18,4 +18,4 @@ Options for layout item type 'tab'
 
 Display text in tab panel
 
-Defined in: lib/page.ts:19
+Defined in: [lib/page.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L19)

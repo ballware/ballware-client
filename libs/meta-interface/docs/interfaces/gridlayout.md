@@ -25,7 +25,7 @@ Definition of table layout for listing business objects
 
 Enable inline editing functionality in table
 
-Defined in: lib/entity.ts:308
+Defined in: [lib/entity.ts:308](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L308)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Enable multi select functionality in table
 
-Defined in: lib/entity.ts:303
+Defined in: [lib/entity.ts:303](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L303)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 List of column definitions
 
-Defined in: lib/entity.ts:313
+Defined in: [lib/entity.ts:313](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L313)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 Defnition of detail layout in master/detail display
 
-Defined in: lib/entity.ts:343
+Defined in: [lib/entity.ts:343](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L343)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 Identifier of default edit layout used for add/edit operations
 
-Defined in: lib/entity.ts:298
+Defined in: [lib/entity.ts:298](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L298)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 Unique identifier of table layout
 
-Defined in: lib/entity.ts:288
+Defined in: [lib/entity.ts:288](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L288)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 List of definitions for group/total summary
 
-Defined in: lib/entity.ts:318
+Defined in: [lib/entity.ts:318](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L318)
 
 ___
 
@@ -95,4 +95,4 @@ ___
 
 Headline of table
 
-Defined in: lib/entity.ts:293
+Defined in: [lib/entity.ts:293](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L293)

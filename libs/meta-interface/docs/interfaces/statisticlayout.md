@@ -21,7 +21,7 @@ Statistic layout item metadata
 
 Optional fixed width of item
 
-Defined in: lib/statistic.ts:343
+Defined in: [lib/statistic.ts:343](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L343)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Type specific options for layout item
 
-Defined in: lib/statistic.ts:348
+Defined in: [lib/statistic.ts:348](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L348)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Optional headline of item
 
-Defined in: lib/statistic.ts:338
+Defined in: [lib/statistic.ts:338](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L338)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 Type of statistic layout item
 
-Defined in: lib/statistic.ts:333
+Defined in: [lib/statistic.ts:333](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L333)

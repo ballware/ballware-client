@@ -42,9 +42,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*CrudItem*](cruditem.md)\>
 
-Defined in: lib/genericentity.ts:36
+Defined in: [lib/genericentity.ts:36](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L36)
 
-Defined in: lib/genericentity.ts:36
+Defined in: [lib/genericentity.ts:36](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L36)
 
 ___
 
@@ -73,9 +73,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: lib/genericentity.ts:72
+Defined in: [lib/genericentity.ts:72](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L72)
 
-Defined in: lib/genericentity.ts:72
+Defined in: [lib/genericentity.ts:72](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L72)
 
 ___
 
@@ -104,9 +104,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*CrudItem*](cruditem.md)\>
 
-Defined in: lib/genericentity.ts:45
+Defined in: [lib/genericentity.ts:45](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L45)
 
-Defined in: lib/genericentity.ts:45
+Defined in: [lib/genericentity.ts:45](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L45)
 
 ___
 
@@ -138,9 +138,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*CrudItem*](cruditem.md)[]\>
 
-Defined in: lib/genericentity.ts:23
+Defined in: [lib/genericentity.ts:23](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L23)
 
-Defined in: lib/genericentity.ts:23
+Defined in: [lib/genericentity.ts:23](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L23)
 
 ___
 
@@ -169,9 +169,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: lib/genericentity.ts:54
+Defined in: [lib/genericentity.ts:54](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L54)
 
-Defined in: lib/genericentity.ts:54
+Defined in: [lib/genericentity.ts:54](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L54)
 
 ___
 
@@ -200,6 +200,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: lib/genericentity.ts:63
+Defined in: [lib/genericentity.ts:63](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L63)
 
-Defined in: lib/genericentity.ts:63
+Defined in: [lib/genericentity.ts:63](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/genericentity.ts#L63)

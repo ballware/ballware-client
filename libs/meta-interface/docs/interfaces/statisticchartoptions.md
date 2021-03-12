@@ -42,7 +42,7 @@ Name | Type | Description |
 `visualRangeFrom`? | *number* | Start value of visual range displayed   |
 `visualRangeTo`? | *number* | End value of visual range displayed   |
 
-Defined in: lib/statistic.ts:28
+Defined in: [lib/statistic.ts:28](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L28)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Property in data containing argument value
 
-Defined in: lib/statistic.ts:23
+Defined in: [lib/statistic.ts:23](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L23)
 
 ___
 
@@ -70,7 +70,7 @@ Name | Type | Description |
 `title`? | *string* | Optional title text in legend   |
 `verticalAlignment`? | *bottom* \| *top* | Vertical alignment of legend   |
 
-Defined in: lib/statistic.ts:117
+Defined in: [lib/statistic.ts:117](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L117)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 Horizontal value bars
 
-Defined in: lib/statistic.ts:18
+Defined in: [lib/statistic.ts:18](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L18)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 Series of data
 
-Defined in: lib/statistic.ts:136
+Defined in: [lib/statistic.ts:136](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L136)
 
 ___
 
@@ -106,4 +106,4 @@ Name | Type | Description |
 :------ | :------ | :------ |
 `lines`? | { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *string* ; `value`: *number*  }[] | Define constant lines on value axis in chart   |
 
-Defined in: lib/statistic.ts:88
+Defined in: [lib/statistic.ts:88](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L88)

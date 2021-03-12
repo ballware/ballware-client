@@ -44,9 +44,9 @@ Name | Type |
 
 **Returns:** *Promise*<unknown[]\>
 
-Defined in: lib/lookup.ts:98
+Defined in: [lib/lookup.ts:98](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L98)
 
-Defined in: lib/lookup.ts:98
+Defined in: [lib/lookup.ts:98](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L98)
 
 ___
 
@@ -78,9 +78,9 @@ Name | Type |
 
 **Returns:** *Promise*<unknown[]\>
 
-Defined in: lib/lookup.ts:111
+Defined in: [lib/lookup.ts:111](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L111)
 
-Defined in: lib/lookup.ts:111
+Defined in: [lib/lookup.ts:111](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L111)
 
 ___
 
@@ -111,9 +111,9 @@ Name | Type |
 
 **Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: lib/lookup.ts:32
+Defined in: [lib/lookup.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L32)
 
-Defined in: lib/lookup.ts:32
+Defined in: [lib/lookup.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L32)
 
 ___
 
@@ -144,9 +144,9 @@ Name | Type |
 
 **Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: lib/lookup.ts:57
+Defined in: [lib/lookup.ts:57](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L57)
 
-Defined in: lib/lookup.ts:57
+Defined in: [lib/lookup.ts:57](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L57)
 
 ___
 
@@ -180,9 +180,9 @@ Name | Type |
 
 **Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: lib/lookup.ts:85
+Defined in: [lib/lookup.ts:85](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L85)
 
-Defined in: lib/lookup.ts:85
+Defined in: [lib/lookup.ts:85](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L85)
 
 ___
 
@@ -211,9 +211,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: lib/lookup.ts:19
+Defined in: [lib/lookup.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L19)
 
-Defined in: lib/lookup.ts:19
+Defined in: [lib/lookup.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L19)
 
 ___
 
@@ -242,9 +242,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: lib/lookup.ts:44
+Defined in: [lib/lookup.ts:44](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L44)
 
-Defined in: lib/lookup.ts:44
+Defined in: [lib/lookup.ts:44](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L44)
 
 ___
 
@@ -276,6 +276,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: lib/lookup.ts:70
+Defined in: [lib/lookup.ts:70](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L70)
 
-Defined in: lib/lookup.ts:70
+Defined in: [lib/lookup.ts:70](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/lookup.ts#L70)

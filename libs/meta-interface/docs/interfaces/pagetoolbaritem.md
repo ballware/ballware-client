@@ -24,7 +24,7 @@ Toolbar element
 
 Display text
 
-Defined in: lib/page.ts:167
+Defined in: [lib/page.ts:167](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L167)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Initial value of toolbar component
 
-Defined in: lib/page.ts:182
+Defined in: [lib/page.ts:182](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L182)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 Identifier for lookup (only for components with select lists)
 
-Defined in: lib/page.ts:172
+Defined in: [lib/page.ts:172](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L172)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 Unique name of toolbar element
 
-Defined in: lib/page.ts:162
+Defined in: [lib/page.ts:162](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L162)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 Component type specific options
 
-Defined in: lib/page.ts:187
+Defined in: [lib/page.ts:187](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L187)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 Type identifier of toolbar component
 
-Defined in: lib/page.ts:157
+Defined in: [lib/page.ts:157](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L157)
 
 ___
 
@@ -84,4 +84,4 @@ ___
 
 Optional fixed width of toolbar component
 
-Defined in: lib/page.ts:177
+Defined in: [lib/page.ts:177](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L177)

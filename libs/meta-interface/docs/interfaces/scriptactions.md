@@ -32,6 +32,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: lib/page.ts:224
+Defined in: [lib/page.ts:224](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L224)
 
-Defined in: lib/page.ts:224
+Defined in: [lib/page.ts:224](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L224)

@@ -46,6 +46,6 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: lib/statistic.ts:364
+Defined in: [lib/statistic.ts:364](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L364)
 
-Defined in: lib/statistic.ts:364
+Defined in: [lib/statistic.ts:364](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/statistic.ts#L364)
