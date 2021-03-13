@@ -38,9 +38,9 @@ Name | Type |
 
 **Returns:** *unknown*
 
-Defined in: [lib/entity.ts:24](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L24)
+Defined in: [lib/entity.ts:24](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L24)
 
-Defined in: [lib/entity.ts:24](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L24)
+Defined in: [lib/entity.ts:24](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L24)
 
 ___
 
@@ -70,6 +70,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:33](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L33)
+Defined in: [lib/entity.ts:33](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L33)
 
-Defined in: [lib/entity.ts:33](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L33)
+Defined in: [lib/entity.ts:33](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L33)

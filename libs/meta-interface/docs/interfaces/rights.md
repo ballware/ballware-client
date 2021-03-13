@@ -20,7 +20,7 @@ Container for user rights information
 
 Collection of user claims
 
-Defined in: [lib/rights.ts:25](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L25)
+Defined in: [lib/rights.ts:25](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L25)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Mail adress of user
 
-Defined in: [lib/rights.ts:15](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L15)
+Defined in: [lib/rights.ts:15](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L15)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Tenant of current user
 
-Defined in: [lib/rights.ts:20](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L20)
+Defined in: [lib/rights.ts:20](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L20)

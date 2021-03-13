@@ -38,9 +38,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
 
-Defined in: [lib/document.ts:34](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/document.ts#L34)
+Defined in: [lib/document.ts:34](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/document.ts#L34)
 
-Defined in: [lib/document.ts:34](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/document.ts#L34)
+Defined in: [lib/document.ts:34](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/document.ts#L34)
 
 ___
 
@@ -69,6 +69,6 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [lib/document.ts:46](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/document.ts#L46)
+Defined in: [lib/document.ts:46](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/document.ts#L46)
 
-Defined in: [lib/document.ts:46](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/document.ts#L46)
+Defined in: [lib/document.ts:46](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/document.ts#L46)

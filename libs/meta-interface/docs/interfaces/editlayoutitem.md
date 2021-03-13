@@ -22,7 +22,7 @@ Interface of edit layout item definition
 
 Number of cols for layouting child editor items (only for container types)
 
-Defined in: [lib/entity.ts:213](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L213)
+Defined in: [lib/entity.ts:213](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L213)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 Number of cols occupied by editor in layout
 
-Defined in: [lib/entity.ts:218](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L218)
+Defined in: [lib/entity.ts:218](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L218)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 Child editor components (only for container types)
 
-Defined in: [lib/entity.ts:223](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L223)
+Defined in: [lib/entity.ts:223](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L223)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Options for editor component configuration
 
-Defined in: [lib/entity.ts:208](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L208)
+Defined in: [lib/entity.ts:208](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L208)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 Editor component type (specific for used rendering engine)
 
-Defined in: [lib/entity.ts:203](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L203)
+Defined in: [lib/entity.ts:203](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L203)

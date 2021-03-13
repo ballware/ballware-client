@@ -22,7 +22,7 @@ Definition of edit layout for editing/adding business objects
 
 Number of cols for layouting child editor items
 
-Defined in: [lib/entity.ts:358](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L358)
+Defined in: [lib/entity.ts:358](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L358)
 
 ___
 
@@ -39,7 +39,7 @@ Name | Type |
 `lg`? | *number* |
 `sm`? | *number* |
 
-Defined in: [lib/entity.ts:363](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L363)
+Defined in: [lib/entity.ts:363](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L363)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Display editor in full screen popup
 
-Defined in: [lib/entity.ts:368](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L368)
+Defined in: [lib/entity.ts:368](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L368)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 Unique identifier of edit layout
 
-Defined in: [lib/entity.ts:353](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L353)
+Defined in: [lib/entity.ts:353](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L353)
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 List of layout items
 
-Defined in: [lib/entity.ts:373](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L373)
+Defined in: [lib/entity.ts:373](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L373)

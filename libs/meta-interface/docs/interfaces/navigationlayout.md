@@ -20,7 +20,7 @@ Navigation layout for single tenant
 
 Default page activated on tenant entered
 
-Defined in: [lib/tenant.ts:57](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/tenant.ts#L57)
+Defined in: [lib/tenant.ts:57](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/tenant.ts#L57)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Collection of layout items
 
-Defined in: [lib/tenant.ts:62](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/tenant.ts#L62)
+Defined in: [lib/tenant.ts:62](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/tenant.ts#L62)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Headline for tenant application
 
-Defined in: [lib/tenant.ts:52](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/tenant.ts#L52)
+Defined in: [lib/tenant.ts:52](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/tenant.ts#L52)

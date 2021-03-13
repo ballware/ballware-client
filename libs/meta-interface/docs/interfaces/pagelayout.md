@@ -21,7 +21,7 @@ Page layout metadata
 
 Entity identifier for documentation
 
-Defined in: [lib/page.ts:202](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L202)
+Defined in: [lib/page.ts:202](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L202)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Collection of layout items
 
-Defined in: [lib/page.ts:212](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L212)
+Defined in: [lib/page.ts:212](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L212)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Header bar text
 
-Defined in: [lib/page.ts:197](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L197)
+Defined in: [lib/page.ts:197](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L197)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 Collection of toolbar items
 
-Defined in: [lib/page.ts:207](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L207)
+Defined in: [lib/page.ts:207](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L207)

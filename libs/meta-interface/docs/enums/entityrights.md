@@ -20,7 +20,7 @@ Definition of rights for default operations
 
 • **RIGHT\_ADD**: = "add"
 
-Defined in: [lib/rights.ts:33](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L33)
+Defined in: [lib/rights.ts:33](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L33)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **RIGHT\_DELETE**: = "delete"
 
-Defined in: [lib/rights.ts:35](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L35)
+Defined in: [lib/rights.ts:35](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L35)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **RIGHT\_EDIT**: = "edit"
 
-Defined in: [lib/rights.ts:34](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L34)
+Defined in: [lib/rights.ts:34](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L34)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **RIGHT\_PRINT**: = "print"
 
-Defined in: [lib/rights.ts:36](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L36)
+Defined in: [lib/rights.ts:36](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L36)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 • **RIGHT\_VIEW**: = "view"
 
-Defined in: [lib/rights.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L32)
+Defined in: [lib/rights.ts:32](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L32)

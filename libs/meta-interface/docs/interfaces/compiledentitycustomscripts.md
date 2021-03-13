@@ -63,9 +63,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:578](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L578)
+Defined in: [lib/entity.ts:578](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L578)
 
-Defined in: [lib/entity.ts:578](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L578)
+Defined in: [lib/entity.ts:578](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L578)
 
 ___
 
@@ -103,9 +103,9 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [lib/entity.ts:597](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L597)
+Defined in: [lib/entity.ts:597](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L597)
 
-Defined in: [lib/entity.ts:597](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L597)
+Defined in: [lib/entity.ts:597](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L597)
 
 ___
 
@@ -144,9 +144,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:537](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L537)
+Defined in: [lib/entity.ts:537](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L537)
 
-Defined in: [lib/entity.ts:537](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L537)
+Defined in: [lib/entity.ts:537](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L537)
 
 ___
 
@@ -185,9 +185,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:518](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L518)
+Defined in: [lib/entity.ts:518](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L518)
 
-Defined in: [lib/entity.ts:518](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L518)
+Defined in: [lib/entity.ts:518](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L518)
 
 ___
 
@@ -226,9 +226,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:480](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L480)
+Defined in: [lib/entity.ts:480](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L480)
 
-Defined in: [lib/entity.ts:480](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L480)
+Defined in: [lib/entity.ts:480](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L480)
 
 ___
 
@@ -267,9 +267,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:461](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L461)
+Defined in: [lib/entity.ts:461](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L461)
 
-Defined in: [lib/entity.ts:461](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L461)
+Defined in: [lib/entity.ts:461](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L461)
 
 ___
 
@@ -313,9 +313,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [lib/entity.ts:558](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L558)
+Defined in: [lib/entity.ts:558](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L558)
 
-Defined in: [lib/entity.ts:558](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L558)
+Defined in: [lib/entity.ts:558](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L558)
 
 ___
 
@@ -354,9 +354,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:499](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L499)
+Defined in: [lib/entity.ts:499](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L499)
 
-Defined in: [lib/entity.ts:499](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L499)
+Defined in: [lib/entity.ts:499](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L499)
 
 ___
 
@@ -393,9 +393,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:648](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L648)
+Defined in: [lib/entity.ts:648](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L648)
 
-Defined in: [lib/entity.ts:648](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L648)
+Defined in: [lib/entity.ts:648](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L648)
 
 ___
 
@@ -405,7 +405,7 @@ ___
 
 Custom rights check operations
 
-Defined in: [lib/entity.ts:383](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L383)
+Defined in: [lib/entity.ts:383](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L383)
 
 ___
 
@@ -438,9 +438,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:613](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L613)
+Defined in: [lib/entity.ts:613](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L613)
 
-Defined in: [lib/entity.ts:613](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L613)
+Defined in: [lib/entity.ts:613](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L613)
 
 ___
 
@@ -479,9 +479,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:630](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L630)
+Defined in: [lib/entity.ts:630](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L630)
 
-Defined in: [lib/entity.ts:630](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L630)
+Defined in: [lib/entity.ts:630](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L630)
 
 ___
 
@@ -511,9 +511,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:413](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L413)
+Defined in: [lib/entity.ts:413](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L413)
 
-Defined in: [lib/entity.ts:413](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L413)
+Defined in: [lib/entity.ts:413](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L413)
 
 ___
 
@@ -549,9 +549,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:443](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L443)
+Defined in: [lib/entity.ts:443](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L443)
 
-Defined in: [lib/entity.ts:443](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L443)
+Defined in: [lib/entity.ts:443](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L443)
 
 ___
 
@@ -584,9 +584,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [lib/entity.ts:427](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L427)
+Defined in: [lib/entity.ts:427](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L427)
 
-Defined in: [lib/entity.ts:427](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L427)
+Defined in: [lib/entity.ts:427](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L427)
 
 ___
 
@@ -613,9 +613,9 @@ Name | Type |
 
 **Returns:** *Record*<string, unknown\>
 
-Defined in: [lib/entity.ts:392](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L392)
+Defined in: [lib/entity.ts:392](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L392)
 
-Defined in: [lib/entity.ts:392](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L392)
+Defined in: [lib/entity.ts:392](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L392)
 
 ___
 
@@ -644,6 +644,6 @@ Name | Type |
 
 **Returns:** *Record*<string, unknown\>
 
-Defined in: [lib/entity.ts:401](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L401)
+Defined in: [lib/entity.ts:401](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L401)
 
-Defined in: [lib/entity.ts:401](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/entity.ts#L401)
+Defined in: [lib/entity.ts:401](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/entity.ts#L401)

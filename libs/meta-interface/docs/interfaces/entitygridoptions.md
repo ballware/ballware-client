@@ -29,7 +29,7 @@ Identifier of business object
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[entity](crudcontaineroptions.md#entity)
 
-Defined in: [lib/page.ts:29](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L29)
+Defined in: [lib/page.ts:29](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L29)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 Optional fixed height of component
 
-Defined in: [lib/page.ts:44](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L44)
+Defined in: [lib/page.ts:44](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L44)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Identifier of list layout
 
-Defined in: [lib/page.ts:49](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L49)
+Defined in: [lib/page.ts:49](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L49)
 
 ___
 
@@ -61,4 +61,4 @@ Identifier of list query
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[query](crudcontaineroptions.md#query)
 
-Defined in: [lib/page.ts:34](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L34)
+Defined in: [lib/page.ts:34](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L34)

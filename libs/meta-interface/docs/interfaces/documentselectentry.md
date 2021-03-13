@@ -19,7 +19,7 @@ Select list entry of available document list for printing
 
 Unique identifier of document
 
-Defined in: [lib/document.ts:15](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/document.ts#L15)
+Defined in: [lib/document.ts:15](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/document.ts#L15)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Display name of document
 
-Defined in: [lib/document.ts:20](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/document.ts#L20)
+Defined in: [lib/document.ts:20](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/document.ts#L20)

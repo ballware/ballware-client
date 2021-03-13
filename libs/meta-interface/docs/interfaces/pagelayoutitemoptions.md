@@ -20,7 +20,7 @@ Basic options for layout item element
 
 Optional fixed height of component
 
-Defined in: [lib/page.ts:94](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L94)
+Defined in: [lib/page.ts:94](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L94)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Item type specific options
 
-Defined in: [lib/page.ts:104](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L104)
+Defined in: [lib/page.ts:104](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L104)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Optional fixed width of component
 
-Defined in: [lib/page.ts:99](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/page.ts#L99)
+Defined in: [lib/page.ts:99](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/page.ts#L99)

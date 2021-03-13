@@ -104,7 +104,7 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [lib/rights.ts:49](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L49)
+Defined in: [lib/rights.ts:49](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L49)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 Generic data container type containing parameter values for data queries
 
-Defined in: [lib/common.ts:11](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/common.ts#L11)
+Defined in: [lib/common.ts:11](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/common.ts#L11)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 Possible value types for business object properties
 
-Defined in: [lib/cruditem.ts:11](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/cruditem.ts#L11)
+Defined in: [lib/cruditem.ts:11](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/cruditem.ts#L11)
 
 ## Functions
 
@@ -147,7 +147,7 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [lib/rights.ts:95](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L95)
+Defined in: [lib/rights.ts:95](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L95)
 
 ___
 
@@ -172,4 +172,4 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [lib/rights.ts:68](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/rights.ts#L68)
+Defined in: [lib/rights.ts:68](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/rights.ts#L68)

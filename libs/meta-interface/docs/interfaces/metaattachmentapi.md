@@ -43,9 +43,9 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [lib/attachment.ts:42](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L42)
+Defined in: [lib/attachment.ts:42](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L42)
 
-Defined in: [lib/attachment.ts:42](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L42)
+Defined in: [lib/attachment.ts:42](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L42)
 
 ___
 
@@ -74,9 +74,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [lib/attachment.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L19)
+Defined in: [lib/attachment.ts:19](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L19)
 
-Defined in: [lib/attachment.ts:19](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L19)
+Defined in: [lib/attachment.ts:19](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L19)
 
 ___
 
@@ -108,9 +108,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [lib/attachment.ts:52](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L52)
+Defined in: [lib/attachment.ts:52](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L52)
 
-Defined in: [lib/attachment.ts:52](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L52)
+Defined in: [lib/attachment.ts:52](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L52)
 
 ___
 
@@ -142,6 +142,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [lib/attachment.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L32)
+Defined in: [lib/attachment.ts:32](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L32)
 
-Defined in: [lib/attachment.ts:32](https://github.com/ballware/ballware-client/blob/c9efe3e/libs/meta-interface/src/lib/attachment.ts#L32)
+Defined in: [lib/attachment.ts:32](https://github.com/ballware/ballware-client/blob/69c8328/libs/meta-interface/src/lib/attachment.ts#L32)
