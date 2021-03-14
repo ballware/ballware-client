@@ -1,6 +1,6 @@
 {
   "name": "@ballware/meta-backend",
-  "version": "6.1.0-alpha.0",
+  "version": "6.1.0-alpha.1",
   "description": "Ballware Application Builder - Client for metadata provider backend",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
@@ -62,7 +62,7 @@
     }
   ],
   "dependencies": {
-    "@ballware/meta-interface": "^6.1.0-alpha.0"
+    "@ballware/meta-interface": "^6.1.0-alpha.1"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.9.1",

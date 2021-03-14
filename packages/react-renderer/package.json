@@ -1,5 +1,5 @@
 {
-  "version": "6.1.0-alpha.0",
+  "version": "6.1.0-alpha.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -21,8 +21,8 @@
     "docs": "typedoc --plugin typedoc-plugin-markdown"
   },
   "dependencies": {
-    "@ballware/meta-interface": "^6.1.0-alpha.0",
-    "@ballware/react-contexts": "^6.1.0-alpha.0"
+    "@ballware/meta-interface": "^6.1.0-alpha.1",
+    "@ballware/react-contexts": "^6.1.0-alpha.1"
   },
   "peerDependencies": {
     "react": ">=16",
@@ -71,8 +71,8 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.5",
-    "i18next": "^19.9.2",
     "husky": "^4.3.6",
+    "i18next": "^19.9.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.6",
