@@ -19,7 +19,7 @@ Properties for editor component
 
 Options for editor
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:216](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L216)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:216](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L216)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Type identifier for editor
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:211](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L211)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:211](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L211)

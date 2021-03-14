@@ -20,7 +20,7 @@ Options for pivot grid
 
 List of pivot fields
 
-Defined in: [statistic.ts:234](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L234)
+Defined in: [statistic.ts:234](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L234)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Show summary values of entire column
 
-Defined in: [statistic.ts:229](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L229)
+Defined in: [statistic.ts:229](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L229)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Show summary values of hierarchy levels
 
-Defined in: [statistic.ts:224](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L224)
+Defined in: [statistic.ts:224](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L224)

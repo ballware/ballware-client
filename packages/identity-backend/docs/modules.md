@@ -26,7 +26,7 @@ Name | Type | Description |
 
 **Returns:** IdentityRoleApi
 
-Defined in: [role.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-backend/src/role.ts#L34)
+Defined in: [role.ts:40](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-backend/src/role.ts#L40)
 
 ___
 
@@ -44,7 +44,7 @@ Name | Type | Description |
 
 **Returns:** IdentityUserApi
 
-Defined in: [user.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-backend/src/user.ts#L34)
+Defined in: [user.ts:40](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-backend/src/user.ts#L40)
 
 ___
 
@@ -63,4 +63,4 @@ Name | Type | Description |
 
 **Returns:** ResourceOwnerAuthApi
 
-Defined in: [resourceownerauth.ts:178](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-backend/src/resourceownerauth.ts#L178)
+Defined in: [resourceownerauth.ts:206](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-backend/src/resourceownerauth.ts#L206)

@@ -22,7 +22,7 @@ Compiled metadta for statistic container
 
 Compiled custom scripts for statistic layout
 
-Defined in: [statistic.ts:418](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L418)
+Defined in: [statistic.ts:418](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L418)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 Unique identifier of statistic container
 
-Defined in: [statistic.ts:380](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L380)
+Defined in: [statistic.ts:380](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L380)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 Layout of statistic container
 
-Defined in: [statistic.ts:390](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L390)
+Defined in: [statistic.ts:390](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L390)
 
 ___
 
@@ -84,9 +84,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [statistic.ts:402](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L402)
+Defined in: [statistic.ts:402](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L402)
 
-Defined in: [statistic.ts:402](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L402)
+Defined in: [statistic.ts:402](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L402)
 
 ___
 
@@ -96,4 +96,4 @@ ___
 
 Display name of statistic container
 
-Defined in: [statistic.ts:385](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L385)
+Defined in: [statistic.ts:385](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L385)

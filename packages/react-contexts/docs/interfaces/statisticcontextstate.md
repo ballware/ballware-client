@@ -39,9 +39,9 @@ Name | Type |
 
 **Returns:** *undefined* \| *string*
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L45)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:45](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L45)
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L45)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:45](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L45)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 Fetched data for statistic
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L38)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:38](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L38)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Unique identifier of statistic item
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L18)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:18](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L18)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Layout for displaying statistic item
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L33)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:33](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L33)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Display name of statistic item
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L23)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:23](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L23)
 
 ___
 
@@ -91,4 +91,4 @@ ___
 
 Additional query params from containing element (page for example)
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L28)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:28](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/statisticcontext.ts#L28)

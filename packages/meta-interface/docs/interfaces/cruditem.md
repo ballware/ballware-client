@@ -28,7 +28,7 @@ Interface for generic business object types
 
 Timestamp of creation time
 
-Defined in: [cruditem.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L38)
+Defined in: [cruditem.ts:38](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/cruditem.ts#L38)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 Identifier of creating user
 
-Defined in: [cruditem.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L33)
+Defined in: [cruditem.ts:33](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/cruditem.ts#L33)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 Unique identifier of object
 
-Defined in: [cruditem.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L28)
+Defined in: [cruditem.ts:28](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/cruditem.ts#L28)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 Timestamp of last update
 
-Defined in: [cruditem.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L48)
+Defined in: [cruditem.ts:48](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/cruditem.ts#L48)
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 Identifier of last updating user
 
-Defined in: [cruditem.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L43)
+Defined in: [cruditem.ts:43](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/cruditem.ts#L43)

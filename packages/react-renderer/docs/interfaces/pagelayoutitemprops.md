@@ -20,7 +20,7 @@ Properties for page layout item
 
 Number of layout columns used for layout item
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:181](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L181)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:181](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L181)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Layout item metadata
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:176](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L176)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:176](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L176)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Params provided by page
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:186](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L186)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:186](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L186)

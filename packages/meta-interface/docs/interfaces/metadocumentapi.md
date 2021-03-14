@@ -38,9 +38,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
 
-Defined in: [document.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L34)
+Defined in: [document.ts:34](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/document.ts#L34)
 
-Defined in: [document.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L34)
+Defined in: [document.ts:34](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/document.ts#L34)
 
 ___
 
@@ -69,6 +69,6 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [document.ts:46](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L46)
+Defined in: [document.ts:46](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/document.ts#L46)
 
-Defined in: [document.ts:46](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L46)
+Defined in: [document.ts:46](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/document.ts#L46)

@@ -466,7 +466,6 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
   useEffect(() => {
     if (
-      t &&
       displayName &&
       addAllowed &&
       viewAllowed &&
@@ -502,7 +501,6 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
   useEffect(() => {
     if (
-      t &&
       displayName &&
       customFunctions &&
       addAllowed &&
@@ -531,7 +529,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
   const smallColumnConfiguration = useMemo(
     () =>
-      optionButtonAllowed && renderGrid && headParams && preparedGridLayout
+      renderGrid && headParams && preparedGridLayout
         ? createColumnConfiguration<dxDataGridColumn>(
             t,
             preparedGridLayout.columns,
@@ -554,7 +552,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   );
   const mediumColumnConfiguration = useMemo(
     () =>
-      optionButtonAllowed && renderGrid && headParams && preparedGridLayout
+      renderGrid && headParams && preparedGridLayout
         ? createColumnConfiguration<dxDataGridColumn>(
             t,
             preparedGridLayout.columns,
@@ -577,7 +575,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   );
   const largeColumnConfiguration = useMemo(
     () =>
-      optionButtonAllowed && renderGrid && headParams && preparedGridLayout
+      renderGrid && headParams && preparedGridLayout
         ? createColumnConfiguration<dxDataGridColumn>(
             t,
             preparedGridLayout.columns,

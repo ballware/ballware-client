@@ -39,7 +39,6 @@ export const DateBox = ({ layoutItem, type }: DateBoxProps) => {
 
   useEffect(() => {
     if (
-      t &&
       layoutItem &&
       layoutItem.dataMember &&
       editorPreparing &&

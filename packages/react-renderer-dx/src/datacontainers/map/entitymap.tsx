@@ -241,7 +241,6 @@ export const EntityMap = ({
 
   useEffect(() => {
     if (
-      t &&
       displayName &&
       addMenu.current?.instance &&
       addAllowed &&

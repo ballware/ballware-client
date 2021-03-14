@@ -88,7 +88,7 @@ export const DataGrid = ({
   const grid = useRef<DxDataGrid>(null);
 
   useEffect(() => {
-    if (t && isLoading) {
+    if (isLoading) {
       grid.current?.instance.beginCustomLoading(
         t('datacontainer.messages.loading')
       );
@@ -103,7 +103,7 @@ export const DataGrid = ({
     };
 
     const onToolbarPreparing = (e: { toolbarOptions?: dxToolbarOptions }) => {
-      if (t && showReload && e.toolbarOptions?.items) {
+      if (showReload && e.toolbarOptions?.items) {
         e.toolbarOptions.items.unshift({
           locateInMenu: 'auto',
           location: 'after',
@@ -120,7 +120,7 @@ export const DataGrid = ({
         } as dxToolbarItem);
       }
 
-      if (t && showPrint && e.toolbarOptions?.items) {
+      if (showPrint && e.toolbarOptions?.items) {
         e.toolbarOptions.items.unshift({
           locateInMenu: 'auto',
           location: 'after',
@@ -161,7 +161,7 @@ export const DataGrid = ({
         } as dxToolbarItem);
       });
 
-      if (t && showAdd) {
+      if (showAdd) {
         e.toolbarOptions?.items?.unshift({
           locateInMenu: 'auto',
           location: 'after',

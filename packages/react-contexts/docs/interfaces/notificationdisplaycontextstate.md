@@ -25,4 +25,4 @@ Name | Type | Description |
 `text` | *string* | Message text or translation identifier   |
 `type` | *error* \| *info* \| *warning* | Severity of message   |
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L45)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:45](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/notificationcontext.ts#L45)

@@ -50,4 +50,4 @@ Name | Type |
 
 **Returns:** T
 
-Defined in: [auth.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L55)
+Defined in: [auth.ts:55](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L55)

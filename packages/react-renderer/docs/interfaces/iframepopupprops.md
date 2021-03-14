@@ -19,7 +19,7 @@ Properties for iframe popup
 
 Title text for iframe popup
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L90)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:90](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L90)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Url for iframe
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L95)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:95](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/renderfactorycontext.ts#L95)

@@ -72,7 +72,6 @@ export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
 
   useEffect(() => {
     if (
-      t &&
       layoutItem &&
       layoutItem.dataMember &&
       editorPreparing &&
