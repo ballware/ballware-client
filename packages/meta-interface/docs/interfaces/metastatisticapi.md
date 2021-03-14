@@ -4,10 +4,6 @@
 
 Interface for statistic data operations
 
-## Hierarchy
-
-* **MetaStatisticApi**
-
 ## Table of contents
 
 ### Properties
@@ -19,7 +15,7 @@ Interface for statistic data operations
 
 ### dataForStatistic
 
-• **dataForStatistic**: (`token`: *string*, `identifier`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **dataForStatistic**: (`token`: *string*, `identifier`: *string*, `params?`: [*QueryParams*](../modules.md#queryparams)) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch content data for statistic
 
@@ -31,7 +27,23 @@ Fetch content data for statistic
 
 **`returns`** Promise containing statistic content
 
-Defined in: [statistic.ts:443](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L443)
+#### Type declaration:
+
+▸ (`token`: *string*, `identifier`: *string*, `params?`: [*QueryParams*](../modules.md#queryparams)): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`identifier` | *string* |
+`params?` | [*QueryParams*](../modules.md#queryparams) |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [statistic.ts:443](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L443)
+
+Defined in: [statistic.ts:443](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L443)
 
 ___
 
@@ -47,4 +59,19 @@ Fetch metadata for statistic
 
 **`returns`** Promise containing statistic metadata
 
-Defined in: [statistic.ts:431](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L431)
+#### Type declaration:
+
+▸ (`token`: *string*, `identifier`: *string*): *Promise*<[*CompiledStatistic*](compiledstatistic.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`identifier` | *string* |
+
+**Returns:** *Promise*<[*CompiledStatistic*](compiledstatistic.md)\>
+
+Defined in: [statistic.ts:431](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L431)
+
+Defined in: [statistic.ts:431](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L431)

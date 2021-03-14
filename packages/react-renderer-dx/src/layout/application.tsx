@@ -17,7 +17,7 @@ import { SessionButton } from './sessionbutton';
 import { TenantContext } from '@ballware/react-contexts';
 
 const useStyles = (drawerWidth: string | number) =>
-  makeStyles((theme) => ({
+  makeStyles(theme => ({
     root: {
       display: 'flex',
       height: '100vh',

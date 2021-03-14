@@ -4,10 +4,6 @@
 
 Context for functionality to edit a specific item
 
-## Hierarchy
-
-* **EditContextState**
-
 ## Table of contents
 
 ### Properties
@@ -22,48 +18,62 @@ Context for functionality to edit a specific item
 
 ### editLayout
 
-• `Optional` **editLayout**: *undefined* \| EditLayout
+• `Optional` **editLayout**: EditLayout
 
 Edit layout for rendering form
 
-Defined in: [src/editcontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L43)
+Defined in: [packages/react-contexts/src/editcontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/editcontext.ts#L43)
 
 ___
 
 ### functionIdentifier
 
-• `Optional` **functionIdentifier**: *undefined* \| *string*
+• `Optional` **functionIdentifier**: *string*
 
 Function identifier when editing with custom function
 
-Defined in: [src/editcontext.ts:53](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L53)
+Defined in: [packages/react-contexts/src/editcontext.ts:53](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/editcontext.ts#L53)
 
 ___
 
 ### item
 
-• `Optional` **item**: *undefined* \| *string* \| *number* \| *boolean* \| *CrudItem* \| *CrudItem*[] \| *Record*<*string*, *unknown*\> \| Date \| (*string* \| *number* \| *Record*<*string*, *unknown*\>)[] \| { `lat`: *number* ; `lng`: *number*  }
+• `Optional` **item**: *CrudItem* \| *CrudItem*[] \| ValueType
 
 Edited item
 
-Defined in: [src/editcontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L48)
+Defined in: [packages/react-contexts/src/editcontext.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/editcontext.ts#L48)
 
 ___
 
 ### mode
 
-• `Optional` **mode**: *undefined* \| [*VIEW*](../enums/editmodes.md#view) \| [*EDIT*](../enums/editmodes.md#edit) \| [*CREATE*](../enums/editmodes.md#create)
+• `Optional` **mode**: [*EditModes*](../enums/editmodes.md)
 
 Current editing mode
 
-Defined in: [src/editcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L38)
+Defined in: [packages/react-contexts/src/editcontext.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/editcontext.ts#L38)
 
 ___
 
 ### setItem
 
-• `Optional` **setItem**: *undefined* \| (`item`: *undefined* \| *string* \| *number* \| *boolean* \| *CrudItem* \| *Record*<*string*, *unknown*\> \| Date \| (*string* \| *number* \| *Record*<*string*, *unknown*\>)[] \| { `lat`: *number* ; `lng`: *number*  }) => *void*
+• `Optional` **setItem**: (`item`: *CrudItem* \| ValueType) => *void*
 
 Replacing edited item
 
-Defined in: [src/editcontext.ts:58](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/editcontext.ts#L58)
+#### Type declaration:
+
+▸ (`item`: *CrudItem* \| ValueType): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* \| ValueType |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/editcontext.ts:58](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/editcontext.ts#L58)
+
+Defined in: [packages/react-contexts/src/editcontext.ts:58](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/editcontext.ts#L58)

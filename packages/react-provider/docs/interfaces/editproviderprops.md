@@ -4,10 +4,6 @@
 
 Edit provider properties
 
-## Hierarchy
-
-* **EditProviderProps**
-
 ## Table of contents
 
 ### Properties
@@ -25,27 +21,27 @@ Edit provider properties
 
 Edit layout used for edit operation
 
-Defined in: [src/editprovider.tsx:23](https://github.com/frankball/ballware-react-provider/blob/5745264/src/editprovider.tsx#L23)
+Defined in: [editprovider.tsx:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/editprovider.tsx#L23)
 
 ___
 
 ### functionIdentifier
 
-• `Optional` **functionIdentifier**: *undefined* \| *string*
+• `Optional` **functionIdentifier**: *string*
 
 Custom edit function identifier if custom edit operation
 
-Defined in: [src/editprovider.tsx:38](https://github.com/frankball/ballware-react-provider/blob/5745264/src/editprovider.tsx#L38)
+Defined in: [editprovider.tsx:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/editprovider.tsx#L38)
 
 ___
 
 ### item
 
-• **item**: *undefined* \| *string* \| *number* \| *boolean* \| *CrudItem* \| *CrudItem*[] \| *Record*<*string*, *unknown*\> \| Date \| (*string* \| *number* \| *Record*<*string*, *unknown*\>)[] \| { `lat`: *number* ; `lng`: *number*  }
+• **item**: *CrudItem* \| *CrudItem*[] \| ValueType
 
 Item to be edited
 
-Defined in: [src/editprovider.tsx:28](https://github.com/frankball/ballware-react-provider/blob/5745264/src/editprovider.tsx#L28)
+Defined in: [editprovider.tsx:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/editprovider.tsx#L28)
 
 ___
 
@@ -55,4 +51,4 @@ ___
 
 Edit mode for edit operation
 
-Defined in: [src/editprovider.tsx:33](https://github.com/frankball/ballware-react-provider/blob/5745264/src/editprovider.tsx#L33)
+Defined in: [editprovider.tsx:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/editprovider.tsx#L33)

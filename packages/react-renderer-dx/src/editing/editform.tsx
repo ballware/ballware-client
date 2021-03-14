@@ -62,7 +62,7 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
               evaluateCustomFunction(
                 functionIdentifier,
                 item as Record<string, unknown>,
-                (evaluatedItem) => {
+                evaluatedItem => {
                   if (Array.isArray(evaluatedItem)) {
                     if (saveBatch) {
                       saveBatch(evaluatedItem);
@@ -73,7 +73,7 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
                     }
                   }
                 },
-                (message) => {
+                message => {
                   if (showWarning) {
                     showWarning(message);
                   }
@@ -121,10 +121,10 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
           <EditItemsProvider>
             <ValidationGroup
               ref={validationGroupRef}
-              onInitialized={(e) => e.component?.validate()}
+              onInitialized={e => e.component?.validate()}
             >
               <Container>
-                {preparedEditLayout.items?.map((item) => (
+                {preparedEditLayout.items?.map(item => (
                   <EditLayoutItem
                     key={key++}
                     colCount={preparedEditLayout.colCount}

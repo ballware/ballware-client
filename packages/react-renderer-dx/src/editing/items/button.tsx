@@ -37,7 +37,7 @@ export const Button = ({ layoutItem }: ButtonProps) => {
     readOnly
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'readonly':
             return readonly;

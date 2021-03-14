@@ -4,13 +4,17 @@
   "description": "Ballware Application Builder - Client for metadata provider backend",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
-  "homepage": "https://github.com/frankball/ballware-meta-backend#readme",
+  "homepage": "https://github.com/ballware/ballware-client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankball/ballware-meta-backend.git"
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/meta-backend"
   },
   "bugs": {
-    "url": "https://github.com/frankball/ballware-meta-backend/issues"
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

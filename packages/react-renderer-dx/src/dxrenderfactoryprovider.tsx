@@ -201,7 +201,7 @@ const EditLayoutComponent = ({
             </div>
             <Container>
               {layoutItem.items &&
-                layoutItem.items.map((item) => (
+                layoutItem.items.map(item => (
                   <Item
                     key={key++}
                     colCount={layoutItem.colCount}
@@ -307,27 +307,27 @@ export const DxRenderFactoryProvider = ({
   const [value, setValue] = useState<RenderFactoryContextState>({});
 
   useEffect(() => {
-    setValue((previousValue) => {
+    setValue(previousValue => {
       return {
         ...previousValue,
         Context: ({ children }) => <Context>{children}</Context>,
-        Application: (props) => <Application {...props} />,
-        ApplicationBar: (props) => <ApplicationBar {...props} />,
-        Navigation: (props) => <Navigation {...props} />,
-        PrivateRoute: (props) => <PrivateRoute {...props} />,
-        Routes: (props) => <Routes {...props} />,
+        Application: props => <Application {...props} />,
+        ApplicationBar: props => <ApplicationBar {...props} />,
+        Navigation: props => <Navigation {...props} />,
+        PrivateRoute: props => <PrivateRoute {...props} />,
+        Routes: props => <Routes {...props} />,
         Notification: () => <Notification />,
         Page: () => <Page />,
-        PageToolbar: (props) => <FilterBar {...props} />,
-        PageLayoutItem: (props) => <PageLayoutComponent {...props} />,
-        EditLayoutItem: (props) => <EditLayoutComponent {...props} />,
-        PageToolbarItem: (props) => <PageToolbarComponent {...props} />,
-        Editor: (props) => <EditorComponent {...props} />,
-        EditPopup: (props) => <EditPopup {...props} />,
-        DeletePopup: (props) => <DeletePopup {...props} />,
-        ForeignEditPopup: (props) => <ForeignEditPopup {...props} />,
-        DetailEditPopup: (props) => <DetailEditPopup {...props} />,
-        IframePopup: (props) => <ExternalLinkEditPopup {...props} />,
+        PageToolbar: props => <FilterBar {...props} />,
+        PageLayoutItem: props => <PageLayoutComponent {...props} />,
+        EditLayoutItem: props => <EditLayoutComponent {...props} />,
+        PageToolbarItem: props => <PageToolbarComponent {...props} />,
+        Editor: props => <EditorComponent {...props} />,
+        EditPopup: props => <EditPopup {...props} />,
+        DeletePopup: props => <DeletePopup {...props} />,
+        ForeignEditPopup: props => <ForeignEditPopup {...props} />,
+        DetailEditPopup: props => <DetailEditPopup {...props} />,
+        IframePopup: props => <ExternalLinkEditPopup {...props} />,
       };
     });
   }, []);

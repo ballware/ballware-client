@@ -4,10 +4,6 @@
 
 Properties for foreign edit popup
 
-## Hierarchy
-
-* **ForeignEditPopupProps**
-
 ## Table of contents
 
 ### Properties
@@ -26,7 +22,21 @@ Editing finished callback
 
 **`param`** Reload items in parent component
 
-Defined in: [src/renderfactorycontext.ts:136](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L136)
+#### Type declaration:
+
+▸ (`reload`: *boolean*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`reload` | *boolean* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:136](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L136)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:136](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L136)
 
 ___
 
@@ -36,7 +46,7 @@ ___
 
 Edit function identifier
 
-Defined in: [src/renderfactorycontext.ts:125](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L125)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L125)
 
 ___
 
@@ -46,4 +56,4 @@ ___
 
 Selected items for foreign edit
 
-Defined in: [src/renderfactorycontext.ts:130](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L130)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:130](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L130)

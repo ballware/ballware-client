@@ -42,7 +42,7 @@ export const BeautifiedAceEditor = forwardRef<AceEditorRef, AceEditorProps>(
           getValue: () => {
             return value;
           },
-          setValue: (newValue) => {
+          setValue: newValue => {
             setValue(newValue);
           },
         } as AceEditorRef)
@@ -58,7 +58,7 @@ export const BeautifiedAceEditor = forwardRef<AceEditorRef, AceEditorProps>(
 
     return (
       <AceEditor
-        ref={(ref) => {
+        ref={ref => {
           editorRef.current = ref;
           if (ref) beautify.beautify(ref?.editor.session);
         }}

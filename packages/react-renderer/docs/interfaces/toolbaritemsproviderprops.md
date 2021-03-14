@@ -3,7 +3,3 @@
 # Interface: ToolbarItemsProviderProps
 
 Properties for toolbar items provider
-
-## Hierarchy
-
-* **ToolbarItemsProviderProps**

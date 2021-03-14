@@ -3,7 +3,3 @@
 # Interface: NotificationProviderProps
 
 Properties for notification provider
-
-## Hierarchy
-
-* **NotificationProviderProps**

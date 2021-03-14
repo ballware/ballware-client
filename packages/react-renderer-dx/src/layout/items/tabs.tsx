@@ -21,7 +21,7 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
 
   const tabItems = useMemo(
     () =>
-      layoutItem.items?.map((tab) => (
+      layoutItem.items?.map(tab => (
         <TabItem
           key={`tab-${tabscount++}`}
           title={(tab.options?.itemoptions as TabItemOptions)?.caption}
@@ -29,7 +29,7 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
           <Container height={layoutItem.options?.height}>
             {PageLayoutItem &&
               tab.items &&
-              tab.items.map((item) => (
+              tab.items.map(item => (
                 <PageLayoutItem
                   key={key++}
                   colCount={tab.colCount}

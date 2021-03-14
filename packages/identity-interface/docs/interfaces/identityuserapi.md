@@ -4,10 +4,6 @@
 
 Functions for accessing user information from identity provider
 
-## Hierarchy
-
-* **IdentityUserApi**
-
 ## Table of contents
 
 ### Properties
@@ -19,7 +15,7 @@ Functions for accessing user information from identity provider
 
 ### selectByIdFunc
 
-• **selectByIdFunc**: (`token`: *string*, `identifier`: *string*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByIdFunc**: (`token`: *string*, `identifier`: *string*) => *Promise*<Record<string, unknown\>\>
 
 Returns a single existing user by identifier from identity system
 
@@ -27,13 +23,28 @@ Returns a single existing user by identifier from identity system
 
 **`returns`** Promise resoling single element with id and display text for requested identifier
 
-Defined in: [user.ts:27](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/user.ts#L27)
+#### Type declaration:
+
+▸ (`token`: *string*, `identifier`: *string*): *Promise*<Record<string, unknown\>\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`identifier` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>\>
+
+Defined in: [user.ts:27](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/user.ts#L27)
+
+Defined in: [user.ts:27](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/user.ts#L27)
 
 ___
 
 ### selectListFunc
 
-• **selectListFunc**: (`token`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListFunc**: (`token`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Returning a list of available users in identity system
 
@@ -41,4 +52,18 @@ Returning a list of available users in identity system
 
 **`returns`** Promise resolving list of available user with id and display text
 
-Defined in: [user.ts:18](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/user.ts#L18)
+#### Type declaration:
+
+▸ (`token`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [user.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/user.ts#L18)
+
+Defined in: [user.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/user.ts#L18)

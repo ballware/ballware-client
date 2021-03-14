@@ -4,10 +4,6 @@
 
 Interface for fetching lookups
 
-## Hierarchy
-
-* **MetaLookupApi**
-
 ## Table of contents
 
 ### Properties
@@ -25,7 +21,7 @@ Interface for fetching lookups
 
 ### autoCompleteForLookup
 
-• **autoCompleteForLookup**: (`token`: *string*, `lookup`: *string*) => *Promise*<*unknown*[]\>
+• **autoCompleteForLookup**: (`token`: *string*, `lookup`: *string*) => *Promise*<unknown[]\>
 
 Fetch list of proposals for lookup
 
@@ -35,13 +31,28 @@ Fetch list of proposals for lookup
 
 **`returns`** Promise containing proposals
 
-Defined in: [lookup.ts:98](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L98)
+#### Type declaration:
+
+▸ (`token`: *string*, `lookup`: *string*): *Promise*<unknown[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`lookup` | *string* |
+
+**Returns:** *Promise*<unknown[]\>
+
+Defined in: [lookup.ts:98](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L98)
+
+Defined in: [lookup.ts:98](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L98)
 
 ___
 
 ### autoCompleteForLookupWithParam
 
-• **autoCompleteForLookupWithParam**: (`token`: *string*, `lookup`: *string*, `param`: *unknown*) => *Promise*<*unknown*[]\>
+• **autoCompleteForLookupWithParam**: (`token`: *string*, `lookup`: *string*, `param`: *unknown*) => *Promise*<unknown[]\>
 
 Fetch list of proposals for lookup with param
 
@@ -53,13 +64,29 @@ Fetch list of proposals for lookup with param
 
 **`returns`** Promise containing proposals
 
-Defined in: [lookup.ts:111](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L111)
+#### Type declaration:
+
+▸ (`token`: *string*, `lookup`: *string*, `param`: *unknown*): *Promise*<unknown[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`lookup` | *string* |
+`param` | *unknown* |
+
+**Returns:** *Promise*<unknown[]\>
+
+Defined in: [lookup.ts:111](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L111)
+
+Defined in: [lookup.ts:111](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L111)
 
 ___
 
 ### selectByIdForLookup
 
-• **selectByIdForLookup**: (`token`: *string*, `lookup`: *string*) => (`id`: *string*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByIdForLookup**: (`token`: *string*, `lookup`: *string*) => (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
 Fetch single element by lookup and id
 
@@ -71,13 +98,28 @@ Fetch single element by lookup and id
 
 **`returns`** Promise containing lookup element
 
-Defined in: [lookup.ts:32](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L32)
+#### Type declaration:
+
+▸ (`token`: *string*, `lookup`: *string*): *function*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`lookup` | *string* |
+
+**Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
+
+Defined in: [lookup.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L32)
+
+Defined in: [lookup.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L32)
 
 ___
 
 ### selectByIdForLookupIdentifier
 
-• **selectByIdForLookupIdentifier**: (`token`: *string*, `identifier`: *string*) => (`id`: *string*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByIdForLookupIdentifier**: (`token`: *string*, `identifier`: *string*) => (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
 Fetch single element by lookup identifier and id
 
@@ -89,13 +131,28 @@ Fetch single element by lookup identifier and id
 
 **`returns`** Promise containing lookup element
 
-Defined in: [lookup.ts:57](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L57)
+#### Type declaration:
+
+▸ (`token`: *string*, `identifier`: *string*): *function*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`identifier` | *string* |
+
+**Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
+
+Defined in: [lookup.ts:57](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L57)
+
+Defined in: [lookup.ts:57](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L57)
 
 ___
 
 ### selectByIdForLookupWithParam
 
-• **selectByIdForLookupWithParam**: (`token`: *string*, `lookup`: *string*, `param`: *unknown*) => (`id`: *string*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByIdForLookupWithParam**: (`token`: *string*, `lookup`: *string*, `param`: *unknown*) => (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
 Fetch single element by lookup with param and id
 
@@ -109,13 +166,29 @@ Fetch single element by lookup with param and id
 
 **`returns`** Promise containing lookup element
 
-Defined in: [lookup.ts:85](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L85)
+#### Type declaration:
+
+▸ (`token`: *string*, `lookup`: *string*, `param`: *unknown*): *function*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`lookup` | *string* |
+`param` | *unknown* |
+
+**Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
+
+Defined in: [lookup.ts:85](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L85)
+
+Defined in: [lookup.ts:85](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L85)
 
 ___
 
 ### selectListForLookup
 
-• **selectListForLookup**: (`token`: *string*, `lookup`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListForLookup**: (`token`: *string*, `lookup`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch list by lookup
 
@@ -125,13 +198,28 @@ Fetch list by lookup
 
 **`returns`** Promise containing result list of lookup query
 
-Defined in: [lookup.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L19)
+#### Type declaration:
+
+▸ (`token`: *string*, `lookup`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`lookup` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [lookup.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L19)
+
+Defined in: [lookup.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L19)
 
 ___
 
 ### selectListForLookupIdentifier
 
-• **selectListForLookupIdentifier**: (`token`: *string*, `identifier`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListForLookupIdentifier**: (`token`: *string*, `identifier`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch list by lookup identifier
 
@@ -141,13 +229,28 @@ Fetch list by lookup identifier
 
 **`returns`** Promise containing result list of lookup query
 
-Defined in: [lookup.ts:44](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L44)
+#### Type declaration:
+
+▸ (`token`: *string*, `identifier`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`identifier` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [lookup.ts:44](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L44)
+
+Defined in: [lookup.ts:44](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L44)
 
 ___
 
 ### selectListForLookupWithParam
 
-• **selectListForLookupWithParam**: (`token`: *string*, `lookup`: *string*, `param`: *unknown*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListForLookupWithParam**: (`token`: *string*, `lookup`: *string*, `param`: *unknown*) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch list by lookup with param
 
@@ -159,4 +262,20 @@ Fetch list by lookup with param
 
 **`returns`** Promise containing result list of lookup query
 
-Defined in: [lookup.ts:70](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/lookup.ts#L70)
+#### Type declaration:
+
+▸ (`token`: *string*, `lookup`: *string*, `param`: *unknown*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`lookup` | *string* |
+`param` | *unknown* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [lookup.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L70)
+
+Defined in: [lookup.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/lookup.ts#L70)

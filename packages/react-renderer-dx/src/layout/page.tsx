@@ -45,7 +45,7 @@ export const Page = (): JSX.Element => {
           PageLayoutItem && (
             <Container>
               {layout.items &&
-                layout.items.map((item) => (
+                layout.items.map(item => (
                   <PageLayoutItem
                     key={key++}
                     layoutItem={item}

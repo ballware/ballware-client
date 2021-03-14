@@ -118,14 +118,7 @@ export const ResourceOwnerRightsProvider = ({
   }, [push]);
 
   useEffect(() => {
-    if (
-      push &&
-      replace &&
-      identityAuthApiFactory &&
-      version &&
-      showInfo &&
-      showError
-    ) {
+    if (identityAuthApiFactory && version && showInfo && showError) {
       setValue(previousValue => {
         const api = identityAuthApiFactory();
 

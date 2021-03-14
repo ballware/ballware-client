@@ -4,10 +4,6 @@
 
 Context for generic entity metadata functionality
 
-## Hierarchy
-
-* **MetaContextState**
-
 ## Table of contents
 
 ### Properties
@@ -52,19 +48,27 @@ Context for generic entity metadata functionality
 
 ### addAllowed
 
-• `Optional` **addAllowed**: *undefined* \| () => *boolean*
+• `Optional` **addAllowed**: () => *boolean*
 
 Check if add operation is allowed for current user
 
 **`returns`** true if add is allowed
 
-Defined in: [src/metacontext.ts:118](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L118)
+#### Type declaration:
+
+▸ (): *boolean*
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:118](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L118)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:118](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L118)
 
 ___
 
 ### byId
 
-• `Optional` **byId**: *undefined* \| (`id`: *string*) => *Promise*<*CrudItem*\>
+• `Optional` **byId**: (`id`: *string*) => *Promise*<CrudItem\>
 
 Fetch item by id
 
@@ -72,25 +76,53 @@ Fetch item by id
 
 **`returns`** Promise resolving item by id if available
 
-Defined in: [src/metacontext.ts:63](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L63)
+#### Type declaration:
+
+▸ (`id`: *string*): *Promise*<CrudItem\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+
+**Returns:** *Promise*<CrudItem\>
+
+Defined in: [packages/react-contexts/src/metacontext.ts:63](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L63)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:63](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L63)
 
 ___
 
 ### create
 
-• `Optional` **create**: *undefined* \| (`params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<*CrudItem*\>
+• `Optional` **create**: (`params?`: QueryParams) => *Promise*<CrudItem\>
 
 Fetch new prepared item for add
 
 **`param`** Optional parameter values for initialization
 
-Defined in: [src/metacontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L69)
+#### Type declaration:
+
+▸ (`params?`: QueryParams): *Promise*<CrudItem\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`params?` | QueryParams |
+
+**Returns:** *Promise*<CrudItem\>
+
+Defined in: [packages/react-contexts/src/metacontext.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L69)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L69)
 
 ___
 
 ### customFunctionAllowed
 
-• `Optional` **customFunctionAllowed**: *undefined* \| (`customFunction`: EntityCustomFunction, `item?`: *CrudItem*) => *boolean*
+• `Optional` **customFunctionAllowed**: (`customFunction`: EntityCustomFunction, `item?`: *CrudItem*) => *boolean*
 
 Check if custom edit function is allowed for current user
 
@@ -100,33 +132,48 @@ Check if custom edit function is allowed for current user
 
 **`returns`** true if custom function is allowed
 
-Defined in: [src/metacontext.ts:154](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L154)
+#### Type declaration:
+
+▸ (`customFunction`: EntityCustomFunction, `item?`: *CrudItem*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`customFunction` | EntityCustomFunction |
+`item?` | *CrudItem* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:154](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L154)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:154](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L154)
 
 ___
 
 ### customFunctions
 
-• `Optional` **customFunctions**: *undefined* \| EntityCustomFunction[]
+• `Optional` **customFunctions**: EntityCustomFunction[]
 
 Collection of available custom crud functions for entity
 
-Defined in: [src/metacontext.ts:34](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L34)
+Defined in: [packages/react-contexts/src/metacontext.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L34)
 
 ___
 
 ### customParam
 
-• `Optional` **customParam**: *undefined* \| *Record*<*string*, *unknown*\>
+• `Optional` **customParam**: *Record*<string, unknown\>
 
 Prepared custom param object used by custom scripts
 
-Defined in: [src/metacontext.ts:95](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L95)
+Defined in: [packages/react-contexts/src/metacontext.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L95)
 
 ___
 
 ### detailGridCellPreparing
 
-• `Optional` **detailGridCellPreparing**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `detailItem`: *Record*<*string*, *unknown*\>, `identifier`: *string*, `options`: GridLayoutColumn) => *void*
+• `Optional` **detailGridCellPreparing**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `detailItem`: *Record*<string, unknown\>, `identifier`: *string*, `options`: GridLayoutColumn) => *void*
 
 Modify options for detail grid cell before rendering
 
@@ -140,13 +187,31 @@ Modify options for detail grid cell before rendering
 
 **`param`** Options for cell
 
-Defined in: [src/metacontext.ts:316](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L316)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `detailItem`: *Record*<string, unknown\>, `identifier`: *string*, `options`: GridLayoutColumn): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`detailItem` | *Record*<string, unknown\> |
+`identifier` | *string* |
+`options` | GridLayoutColumn |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:316](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L316)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:316](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L316)
 
 ___
 
 ### detailGridRowValidating
 
-• `Optional` **detailGridRowValidating**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `detailItem`: *Record*<*string*, *unknown*\>, `identifier`: *string*) => *string*
+• `Optional` **detailGridRowValidating**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `detailItem`: *Record*<string, unknown\>, `identifier`: *string*) => *string*
 
 Validate changed detail row before saving
 
@@ -160,33 +225,50 @@ Validate changed detail row before saving
 
 **`returns`** Validation message if validation failed, undefined if validation succeeded
 
-Defined in: [src/metacontext.ts:332](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L332)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `detailItem`: *Record*<string, unknown\>, `identifier`: *string*): *string*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`detailItem` | *Record*<string, unknown\> |
+`identifier` | *string* |
+
+**Returns:** *string*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:332](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L332)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:332](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L332)
 
 ___
 
 ### displayName
 
-• `Optional` **displayName**: *undefined* \| *string*
+• `Optional` **displayName**: *string*
 
 Display name of generic entity
 
-Defined in: [src/metacontext.ts:29](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L29)
+Defined in: [packages/react-contexts/src/metacontext.ts:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L29)
 
 ___
 
 ### documents
 
-• `Optional` **documents**: *undefined* \| { `id`: *string* ; `text`: *string*  }[]
+• `Optional` **documents**: { `id`: *string* ; `text`: *string*  }[]
 
 Collection of available print documents for entity
 
-Defined in: [src/metacontext.ts:105](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L105)
+Defined in: [packages/react-contexts/src/metacontext.ts:105](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L105)
 
 ___
 
 ### drop
 
-• `Optional` **drop**: *undefined* \| (`id`: *string*) => *Promise*<*void*\>
+• `Optional` **drop**: (`id`: *string*) => *Promise*<void\>
 
 Drop item by id
 
@@ -194,13 +276,27 @@ Drop item by id
 
 **`returns`** Promise resolving when drop operation has completed
 
-Defined in: [src/metacontext.ts:90](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L90)
+#### Type declaration:
+
+▸ (`id`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [packages/react-contexts/src/metacontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L90)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L90)
 
 ___
 
 ### dropAllowed
 
-• `Optional` **dropAllowed**: *undefined* \| (`item`: *CrudItem*) => *boolean*
+• `Optional` **dropAllowed**: (`item`: *CrudItem*) => *boolean*
 
 Check if drop operation is allowed for current user
 
@@ -208,13 +304,27 @@ Check if drop operation is allowed for current user
 
 **`returns`** true if drop is allowed
 
-Defined in: [src/metacontext.ts:139](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L139)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:139](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L139)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:139](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L139)
 
 ___
 
 ### editAllowed
 
-• `Optional` **editAllowed**: *undefined* \| (`item`: *CrudItem*) => *boolean*
+• `Optional` **editAllowed**: (`item`: *CrudItem*) => *boolean*
 
 Check if edit operation is allowed for current user
 
@@ -222,13 +332,27 @@ Check if edit operation is allowed for current user
 
 **`returns`** true if edit is allowed
 
-Defined in: [src/metacontext.ts:132](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L132)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:132](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L132)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:132](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L132)
 
 ___
 
 ### editorEntered
 
-• `Optional` **editorEntered**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `editUtil`: EditUtil, `identifier`: *string*) => *void*
+• `Optional` **editorEntered**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*) => *void*
 
 Customize editor entered for editing
 
@@ -240,13 +364,30 @@ Customize editor entered for editing
 
 **`param`** Data member identifier of current editor
 
-Defined in: [src/metacontext.ts:249](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L249)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`editUtil` | EditUtil |
+`identifier` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:249](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L249)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:249](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L249)
 
 ___
 
 ### editorEvent
 
-• `Optional` **editorEvent**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `editUtil`: EditUtil, `identifier`: *string*, `event`: *string*) => *void*
+• `Optional` **editorEvent**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*, `event`: *string*) => *void*
 
 Editor event triggered
 
@@ -260,13 +401,31 @@ Editor event triggered
 
 **`param`** Event identifier
 
-Defined in: [src/metacontext.ts:300](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L300)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*, `event`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`editUtil` | EditUtil |
+`identifier` | *string* |
+`event` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:300](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L300)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:300](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L300)
 
 ___
 
 ### editorInitialized
 
-• `Optional` **editorInitialized**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `editUtil`: EditUtil, `identifier`: *string*) => *void*
+• `Optional` **editorInitialized**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*) => *void*
 
 Customize instanciated editor component before edit
 
@@ -278,13 +437,30 @@ Customize instanciated editor component before edit
 
 **`param`** Data member identifier of current editor
 
-Defined in: [src/metacontext.ts:235](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L235)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`editUtil` | EditUtil |
+`identifier` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:235](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L235)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:235](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L235)
 
 ___
 
 ### editorPreparing
 
-• `Optional` **editorPreparing**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `layoutItem`: EditLayoutItemOptions, `identifier`: *string*) => *void*
+• `Optional` **editorPreparing**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `layoutItem`: EditLayoutItemOptions, `identifier`: *string*) => *void*
 
 Prepare editor metadata by custom script
 
@@ -296,13 +472,30 @@ Prepare editor metadata by custom script
 
 **`param`** Data member identifier of current editor
 
-Defined in: [src/metacontext.ts:221](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L221)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `layoutItem`: EditLayoutItemOptions, `identifier`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`layoutItem` | EditLayoutItemOptions |
+`identifier` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:221](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L221)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:221](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L221)
 
 ___
 
 ### editorValidating
 
-• `Optional` **editorValidating**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `editUtil`: EditUtil, `identifier`: *string*, `value`: ValueType, `validation`: *string*) => *boolean*
+• `Optional` **editorValidating**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*, `value`: ValueType, `validation`: *string*) => *boolean*
 
 Editor value custom validation requested
 
@@ -318,13 +511,32 @@ Editor value custom validation requested
 
 **`param`** Identifier of custom validation rule
 
-Defined in: [src/metacontext.ts:282](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L282)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*, `value`: ValueType, `validation`: *string*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`editUtil` | EditUtil |
+`identifier` | *string* |
+`value` | ValueType |
+`validation` | *string* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:282](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L282)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:282](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L282)
 
 ___
 
 ### editorValueChanged
 
-• `Optional` **editorValueChanged**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<*string*, *unknown*\>, `editUtil`: EditUtil, `identifier`: *string*, `value`: ValueType) => *void*
+• `Optional` **editorValueChanged**: (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*, `value`: ValueType) => *void*
 
 Editor value has changed
 
@@ -338,13 +550,31 @@ Editor value has changed
 
 **`param`** Current value of data member
 
-Defined in: [src/metacontext.ts:264](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L264)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `item`: *Record*<string, unknown\>, `editUtil`: EditUtil, `identifier`: *string*, `value`: ValueType): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`item` | *Record*<string, unknown\> |
+`editUtil` | EditUtil |
+`identifier` | *string* |
+`value` | ValueType |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:264](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L264)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:264](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L264)
 
 ___
 
 ### evaluateCustomFunction
 
-• `Optional` **evaluateCustomFunction**: *undefined* \| (`identifier`: *string*, `param`: *Record*<*string*, *unknown*\>, `save`: (`param`: *Record*<*string*, *unknown*\>) => *void*, `message`: (`message`: *string*) => *void*) => *void*
+• `Optional` **evaluateCustomFunction**: (`identifier`: *string*, `param`: *Record*<string, unknown\>, `save`: (`param`: *Record*<string, unknown\>) => *void*, `message`: (`message`: *string*) => *void*) => *void*
 
 Evaluate item data for save operation
 
@@ -356,13 +586,30 @@ Evaluate item data for save operation
 
 **`param`** Message callback for notifying user with reason why save operation is declined
 
-Defined in: [src/metacontext.ts:194](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L194)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `param`: *Record*<string, unknown\>, `save`: (`param`: *Record*<string, unknown\>) => *void*, `message`: (`message`: *string*) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`param` | *Record*<string, unknown\> |
+`save` | (`param`: *Record*<string, unknown\>) => *void* |
+`message` | (`message`: *string*) => *void* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:194](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L194)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:194](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L194)
 
 ___
 
 ### getEditLayout
 
-• `Optional` **getEditLayout**: *undefined* \| (`identifier`: *string*) => *undefined* \| EditLayout
+• `Optional` **getEditLayout**: (`identifier`: *string*) => *undefined* \| EditLayout
 
 Get edit layout by identifier from entity metadata
 
@@ -370,13 +617,27 @@ Get edit layout by identifier from entity metadata
 
 **`returns`** Edit layout metadata if available
 
-Defined in: [src/metacontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L48)
+#### Type declaration:
+
+▸ (`identifier`: *string*): *undefined* \| EditLayout
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+
+**Returns:** *undefined* \| EditLayout
+
+Defined in: [packages/react-contexts/src/metacontext.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L48)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L48)
 
 ___
 
 ### getGridLayout
 
-• `Optional` **getGridLayout**: *undefined* \| (`identifier`: *string*) => *undefined* \| GridLayout
+• `Optional` **getGridLayout**: (`identifier`: *string*) => *undefined* \| GridLayout
 
 Get grid layout by identifier from entity metadata
 
@@ -384,23 +645,37 @@ Get grid layout by identifier from entity metadata
 
 **`returns`** Grid layout metadata if available
 
-Defined in: [src/metacontext.ts:41](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L41)
+#### Type declaration:
+
+▸ (`identifier`: *string*): *undefined* \| GridLayout
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+
+**Returns:** *undefined* \| GridLayout
+
+Defined in: [packages/react-contexts/src/metacontext.ts:41](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L41)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:41](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L41)
 
 ___
 
 ### headParams
 
-• `Optional` **headParams**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **headParams**: QueryParams
 
 Param object inherited by container (page or parent entity for example)
 
-Defined in: [src/metacontext.ts:100](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L100)
+Defined in: [packages/react-contexts/src/metacontext.ts:100](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L100)
 
 ___
 
 ### initNewDetailItem
 
-• `Optional` **initNewDetailItem**: *undefined* \| (`dataMember`: *string*, `item`: *Record*<*string*, *unknown*\>, `detailItem`: *Record*<*string*, *unknown*\>) => *void*
+• `Optional` **initNewDetailItem**: (`dataMember`: *string*, `item`: *Record*<string, unknown\>, `detailItem`: *Record*<string, unknown\>) => *void*
 
 Initialize new generated detail item
 
@@ -410,13 +685,29 @@ Initialize new generated detail item
 
 **`param`** New generated detail item
 
-Defined in: [src/metacontext.ts:345](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L345)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `item`: *Record*<string, unknown\>, `detailItem`: *Record*<string, unknown\>): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`item` | *Record*<string, unknown\> |
+`detailItem` | *Record*<string, unknown\> |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:345](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L345)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:345](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L345)
 
 ___
 
 ### mapIncomingItem
 
-• `Optional` **mapIncomingItem**: *undefined* \| (`item`: *CrudItem*) => *CrudItem*
+• `Optional` **mapIncomingItem**: (`item`: *CrudItem*) => *CrudItem*
 
 Prepare fetched item for usage in frontend
 
@@ -424,13 +715,27 @@ Prepare fetched item for usage in frontend
 
 **`returns`** Mapped item for frontend
 
-Defined in: [src/metacontext.ts:164](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L164)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *CrudItem*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *CrudItem*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:164](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L164)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:164](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L164)
 
 ___
 
 ### mapOutgoingItem
 
-• `Optional` **mapOutgoingItem**: *undefined* \| (`item`: *CrudItem*) => *CrudItem*
+• `Optional` **mapOutgoingItem**: (`item`: *CrudItem*) => *CrudItem*
 
 Prepare changed item for usage in backend
 
@@ -438,13 +743,27 @@ Prepare changed item for usage in backend
 
 **`returns`** Mapped item for backend
 
-Defined in: [src/metacontext.ts:171](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L171)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *CrudItem*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *CrudItem*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:171](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L171)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:171](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L171)
 
 ___
 
 ### prepareCustomFunction
 
-• `Optional` **prepareCustomFunction**: *undefined* \| (`identifier`: *string*, `selection`: *undefined* \| *Record*<*string*, *unknown*\>[], `execute`: (`param`: *Record*<*string*, *unknown*\>) => *void*, `message`: (`message`: *string*) => *void*) => *void*
+• `Optional` **prepareCustomFunction**: (`identifier`: *string*, `selection`: *undefined* \| *Record*<string, unknown\>[], `execute`: (`param`: *Record*<string, unknown\>) => *void*, `message`: (`message`: *string*) => *void*) => *void*
 
 Prepare item data for custom edit function
 
@@ -456,13 +775,30 @@ Prepare item data for custom edit function
 
 **`param`** Message callback for notifying user with reason why edit operation is canceled
 
-Defined in: [src/metacontext.ts:180](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L180)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `selection`: *undefined* \| *Record*<string, unknown\>[], `execute`: (`param`: *Record*<string, unknown\>) => *void*, `message`: (`message`: *string*) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`selection` | *undefined* \| *Record*<string, unknown\>[] |
+`execute` | (`param`: *Record*<string, unknown\>) => *void* |
+`message` | (`message`: *string*) => *void* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:180](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L180)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:180](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L180)
 
 ___
 
 ### prepareEditLayout
 
-• `Optional` **prepareEditLayout**: *undefined* \| (`mode`: [*EditModes*](../enums/editmodes.md), `editLayout`: EditLayout) => *void*
+• `Optional` **prepareEditLayout**: (`mode`: [*EditModes*](../enums/editmodes.md), `editLayout`: EditLayout) => *void*
 
 Prepare edit layout by custom script
 
@@ -470,25 +806,54 @@ Prepare edit layout by custom script
 
 **`param`** Edit layout to be prepared
 
-Defined in: [src/metacontext.ts:212](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L212)
+#### Type declaration:
+
+▸ (`mode`: [*EditModes*](../enums/editmodes.md), `editLayout`: EditLayout): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`mode` | [*EditModes*](../enums/editmodes.md) |
+`editLayout` | EditLayout |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:212](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L212)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:212](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L212)
 
 ___
 
 ### prepareGridLayout
 
-• `Optional` **prepareGridLayout**: *undefined* \| (`gridLayout`: GridLayout) => *void*
+• `Optional` **prepareGridLayout**: (`gridLayout`: GridLayout) => *void*
 
 Prepare grid layout by custom script
 
 **`param`** Grid layout to be prepared
 
-Defined in: [src/metacontext.ts:205](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L205)
+#### Type declaration:
+
+▸ (`gridLayout`: GridLayout): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`gridLayout` | GridLayout |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:205](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L205)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:205](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L205)
 
 ___
 
 ### print
 
-• `Optional` **print**: *undefined* \| (`doc`: *string*, `ids`: *string*[]) => *void*
+• `Optional` **print**: (`doc`: *string*, `ids`: *string*[]) => *void*
 
 Execute print operation
 
@@ -496,13 +861,28 @@ Execute print operation
 
 **`param`** Collection of selected item ids to print
 
-Defined in: [src/metacontext.ts:112](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L112)
+#### Type declaration:
+
+▸ (`doc`: *string*, `ids`: *string*[]): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`doc` | *string* |
+`ids` | *string*[] |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:112](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L112)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:112](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L112)
 
 ___
 
 ### printAllowed
 
-• `Optional` **printAllowed**: *undefined* \| (`item`: *CrudItem*) => *boolean*
+• `Optional` **printAllowed**: (`item`: *CrudItem*) => *boolean*
 
 Check if print operation is allowed for current user
 
@@ -510,13 +890,27 @@ Check if print operation is allowed for current user
 
 **`returns`** true if print is allowed
 
-Defined in: [src/metacontext.ts:146](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L146)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:146](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L146)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:146](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L146)
 
 ___
 
 ### query
 
-• `Optional` **query**: *undefined* \| (`query`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<*CrudItem*[]\>
+• `Optional` **query**: (`query`: *string*, `params?`: QueryParams) => *Promise*<CrudItem[]\>
 
 Fetch list of items
 
@@ -526,13 +920,28 @@ Fetch list of items
 
 **`returns`** Promise resolving collection of fetched items
 
-Defined in: [src/metacontext.ts:56](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L56)
+#### Type declaration:
+
+▸ (`query`: *string*, `params?`: QueryParams): *Promise*<CrudItem[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`query` | *string* |
+`params?` | QueryParams |
+
+**Returns:** *Promise*<CrudItem[]\>
+
+Defined in: [packages/react-contexts/src/metacontext.ts:56](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L56)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:56](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L56)
 
 ___
 
 ### save
 
-• `Optional` **save**: *undefined* \| (`item`: *CrudItem*) => *Promise*<*void*\>
+• `Optional` **save**: (`item`: *CrudItem*) => *Promise*<void\>
 
 Save changed or add new item
 
@@ -540,13 +949,27 @@ Save changed or add new item
 
 **`returns`** Promise resolving when save operation has completed
 
-Defined in: [src/metacontext.ts:76](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L76)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [packages/react-contexts/src/metacontext.ts:76](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L76)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:76](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L76)
 
 ___
 
 ### saveBatch
 
-• `Optional` **saveBatch**: *undefined* \| (`items`: *CrudItem*[]) => *Promise*<*void*\>
+• `Optional` **saveBatch**: (`items`: *CrudItem*[]) => *Promise*<void\>
 
 Save collection of changed or new created items
 
@@ -554,13 +977,27 @@ Save collection of changed or new created items
 
 **`returns`** Promise resolving when save operation has completed
 
-Defined in: [src/metacontext.ts:83](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L83)
+#### Type declaration:
+
+▸ (`items`: *CrudItem*[]): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`items` | *CrudItem*[] |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [packages/react-contexts/src/metacontext.ts:83](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L83)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:83](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L83)
 
 ___
 
 ### viewAllowed
 
-• `Optional` **viewAllowed**: *undefined* \| (`item`: *CrudItem*) => *boolean*
+• `Optional` **viewAllowed**: (`item`: *CrudItem*) => *boolean*
 
 Check if view details operation is allowed for current user
 
@@ -568,4 +1005,18 @@ Check if view details operation is allowed for current user
 
 **`returns`** true if view is allowed
 
-Defined in: [src/metacontext.ts:125](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/metacontext.ts#L125)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/metacontext.ts:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L125)
+
+Defined in: [packages/react-contexts/src/metacontext.ts:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/metacontext.ts#L125)

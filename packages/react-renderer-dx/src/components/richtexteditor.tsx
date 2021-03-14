@@ -25,7 +25,7 @@ export const RichTextEditor = forwardRef<
     getValue: () => {
       return value;
     },
-    setValue: (newValue) => {
+    setValue: newValue => {
       setValue(newValue);
     },
   }));
@@ -37,7 +37,7 @@ export const RichTextEditor = forwardRef<
       width={'100%'}
       height={height ?? '200px'}
       defaultValue={value}
-      onChange={(value) => {
+      onChange={value => {
         valueChanged(value);
       }}
     />

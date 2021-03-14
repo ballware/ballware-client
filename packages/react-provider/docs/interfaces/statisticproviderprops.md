@@ -4,10 +4,6 @@
 
 Properties for statistic provider
 
-## Hierarchy
-
-* **StatisticProviderProps**
-
 ## Table of contents
 
 ### Properties
@@ -23,14 +19,14 @@ Properties for statistic provider
 
 Unique identifier of statistic item
 
-Defined in: [src/statisticprovider.tsx:38](https://github.com/frankball/ballware-react-provider/blob/5745264/src/statisticprovider.tsx#L38)
+Defined in: [statisticprovider.tsx:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/statisticprovider.tsx#L38)
 
 ___
 
 ### params
 
-• `Optional` **params**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **params**: QueryParams
 
 Query params used to fetch statistic payload
 
-Defined in: [src/statisticprovider.tsx:43](https://github.com/frankball/ballware-react-provider/blob/5745264/src/statisticprovider.tsx#L43)
+Defined in: [statisticprovider.tsx:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/statisticprovider.tsx#L43)

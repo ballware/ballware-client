@@ -49,12 +49,17 @@
   "description": "Ballware Application Builder - React renderer MUI with DevExtreme",
   "author": "frank@ballmeyer.com",
   "module": "dist/ballware-react-renderer-dx.esm.js",
+  "homepage": "https://github.com/ballware/ballware-client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankball/ballware-react-renderer-dx.git"
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/react-renderer-dx"
   },
   "bugs": {
-    "url": "https://github.com/frankball/ballware-react-renderer-dx/issues"
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "size-limit": [
     {

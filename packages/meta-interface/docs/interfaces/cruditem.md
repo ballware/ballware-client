@@ -6,7 +6,7 @@ Interface for generic business object types
 
 ## Hierarchy
 
-* *Record*<*string*, [*ValueType*](../modules.md#valuetype)\>
+* *Record*<string, [*ValueType*](../modules.md#valuetype)\>
 
   ↳ **CrudItem**
 
@@ -24,21 +24,21 @@ Interface for generic business object types
 
 ### CreateStamp
 
-• `Optional` **CreateStamp**: *undefined* \| Date
+• `Optional` **CreateStamp**: Date
 
 Timestamp of creation time
 
-Defined in: [cruditem.ts:38](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/cruditem.ts#L38)
+Defined in: [cruditem.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L38)
 
 ___
 
 ### CreatorId
 
-• `Optional` **CreatorId**: *undefined* \| *string*
+• `Optional` **CreatorId**: *string*
 
 Identifier of creating user
 
-Defined in: [cruditem.ts:33](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/cruditem.ts#L33)
+Defined in: [cruditem.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L33)
 
 ___
 
@@ -48,24 +48,24 @@ ___
 
 Unique identifier of object
 
-Defined in: [cruditem.ts:28](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/cruditem.ts#L28)
+Defined in: [cruditem.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L28)
 
 ___
 
 ### LastChangeStamp
 
-• `Optional` **LastChangeStamp**: *undefined* \| Date
+• `Optional` **LastChangeStamp**: Date
 
 Timestamp of last update
 
-Defined in: [cruditem.ts:48](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/cruditem.ts#L48)
+Defined in: [cruditem.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L48)
 
 ___
 
 ### LastChangerId
 
-• `Optional` **LastChangerId**: *undefined* \| *string*
+• `Optional` **LastChangerId**: *string*
 
 Identifier of last updating user
 
-Defined in: [cruditem.ts:43](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/cruditem.ts#L43)
+Defined in: [cruditem.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L43)

@@ -4,10 +4,6 @@
 
 Basic options for layout item element
 
-## Hierarchy
-
-* **PageLayoutItemOptions**
-
 ## Table of contents
 
 ### Properties
@@ -20,28 +16,28 @@ Basic options for layout item element
 
 ### height
 
-• `Optional` **height**: *undefined* \| *string*
+• `Optional` **height**: *string*
 
 Optional fixed height of component
 
-Defined in: [page.ts:94](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L94)
+Defined in: [page.ts:94](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L94)
 
 ___
 
 ### itemoptions
 
-• `Optional` **itemoptions**: *undefined* \| [*TabItemOptions*](tabitemoptions.md) \| [*CrudContainerOptions*](crudcontaineroptions.md) \| [*EntityGridOptions*](entitygridoptions.md) \| [*EntityMapOptions*](entitymapoptions.md) \| [*StatisticOptions*](statisticoptions.md)
+• `Optional` **itemoptions**: [*TabItemOptions*](tabitemoptions.md) \| [*CrudContainerOptions*](crudcontaineroptions.md) \| [*EntityGridOptions*](entitygridoptions.md) \| [*EntityMapOptions*](entitymapoptions.md) \| [*StatisticOptions*](statisticoptions.md)
 
 Item type specific options
 
-Defined in: [page.ts:104](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L104)
+Defined in: [page.ts:104](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L104)
 
 ___
 
 ### width
 
-• `Optional` **width**: *undefined* \| *string*
+• `Optional` **width**: *string*
 
 Optional fixed width of component
 
-Defined in: [page.ts:99](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L99)
+Defined in: [page.ts:99](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L99)

@@ -5,7 +5,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { Session, SessionWithUserInfo, ResourceOwnerAuthApi, MappedSessionWithUserRights } from '@ballware/identity-interface';
+import {
+  Session,
+  SessionWithUserInfo,
+  ResourceOwnerAuthApi,
+  MappedSessionWithUserRights,
+} from '@ballware/identity-interface';
 import axios from 'axios';
 
 interface TokenResponse {
@@ -19,12 +24,17 @@ interface UserInfoResponse extends Record<string, unknown> {
   preferred_username: string;
 }
 
-const loginFunc = (serviceBaseUrl: string, scopes: string) => <T extends MappedSessionWithUserRights>(
+const loginFunc = (serviceBaseUrl: string, scopes: string) => <
+  T extends MappedSessionWithUserRights
+>(
   email: string,
   password: string,
   client: string,
   secret: string,
-  userinfoMapper: (sessionWithUserInfo: SessionWithUserInfo, userinfo: Record<string, unknown>) => T,
+  userinfoMapper: (
+    sessionWithUserInfo: SessionWithUserInfo,
+    userinfo: Record<string, unknown>
+  ) => T
 ): Promise<T> => {
   return new Promise((resolve, reject) => {
     const tokenUrl = `${serviceBaseUrl}connect/token`;
@@ -33,27 +43,31 @@ const loginFunc = (serviceBaseUrl: string, scopes: string) => <T extends MappedS
     axios
       .post<TokenResponse>(
         tokenUrl,
-        `grant_type=password&client_id=${encodeURIComponent(client)}&client_secret=${encodeURIComponent(
-          secret,
-        )}&scope=${encodeURIComponent(scopes)}&username=${encodeURIComponent(email)}&password=${encodeURIComponent(
-          password,
-        )}`,
+        `grant_type=password&client_id=${encodeURIComponent(
+          client
+        )}&client_secret=${encodeURIComponent(
+          secret
+        )}&scope=${encodeURIComponent(scopes)}&username=${encodeURIComponent(
+          email
+        )}&password=${encodeURIComponent(password)}`,
         {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        },
+        }
       )
-      .then((tokenResponse) => {
+      .then(tokenResponse => {
         axios
           .get<UserInfoResponse>(userinfoUrl, {
-            headers: { Authorization: `Bearer ${tokenResponse.data.access_token}` },
+            headers: {
+              Authorization: `Bearer ${tokenResponse.data.access_token}`,
+            },
           })
-          .then((userinfoResponse) => {
+          .then(userinfoResponse => {
             let session = {
               access_token: tokenResponse.data.access_token,
               refresh_token: tokenResponse.data.refresh_token,
               expires_in: tokenResponse.data.expires_in,
               identifier: userinfoResponse.data.sub,
-              email: userinfoResponse.data.preferred_username
+              email: userinfoResponse.data.preferred_username,
             } as T;
 
             if (userinfoMapper) {
@@ -62,33 +76,37 @@ const loginFunc = (serviceBaseUrl: string, scopes: string) => <T extends MappedS
 
             resolve(session);
           })
-          .catch((reason) => reject(reason));
+          .catch(reason => reject(reason));
       })
-      .catch((reason) => reject(reason));
+      .catch(reason => reject(reason));
   });
 };
 
-const logoutFunc = (serviceBaseUrl: string) => (accessToken: string, client: string, secret: string): Promise<void> => {
+const logoutFunc = (serviceBaseUrl: string) => (
+  accessToken: string,
+  client: string,
+  secret: string
+): Promise<void> => {
   const url = `${serviceBaseUrl}connect/revocation`;
 
   return axios.post(
     url,
     `client_id=${encodeURIComponent(client)}&client_secret=${encodeURIComponent(
-      secret,
+      secret
     )}&token_type_hint=access_token&token=${encodeURIComponent(accessToken)}`,
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-    },
+    }
   );
 };
 
 const registerFunc = (serviceBaseUrl: string) => (
   email: string,
   password: string,
-  displayname: string,
+  displayname: string
 ): Promise<void> => {
   const url = `${serviceBaseUrl}api/public/register`;
 
@@ -99,7 +117,9 @@ const registerFunc = (serviceBaseUrl: string) => (
   });
 };
 
-const forgotPasswordFunc = (serviceBaseUrl: string) => (email: string): Promise<void> => {
+const forgotPasswordFunc = (serviceBaseUrl: string) => (
+  email: string
+): Promise<void> => {
   const url = `${serviceBaseUrl}api/public/forgotpassword`;
 
   return axios.post(url, JSON.stringify({ Email: email }), {
@@ -112,37 +132,45 @@ const forgotPasswordFunc = (serviceBaseUrl: string) => (email: string): Promise<
 const resetPasswordFunc = (serviceBaseUrl: string) => (
   email: string,
   code: string,
-  newPassword: string,
+  newPassword: string
 ): Promise<void> => {
   const url = `${serviceBaseUrl}api/public/resetpassword`;
 
-  return axios.post(url, JSON.stringify({ Email: email, Code: code, Password: newPassword }), {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  return axios.post(
+    url,
+    JSON.stringify({ Email: email, Code: code, Password: newPassword }),
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
 };
 
 const changePasswordFunc = (serviceBaseUrl: string) => (
   accessToken: string,
   oldPassword: string,
-  newPassword: string,
+  newPassword: string
 ): Promise<void> => {
   const url = `${serviceBaseUrl}api/public/changepassword`;
 
-  return axios.post(url, JSON.stringify({ OldPassword: oldPassword, NewPassword: newPassword }), {
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  });
+  return axios.post(
+    url,
+    JSON.stringify({ OldPassword: oldPassword, NewPassword: newPassword }),
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    }
+  );
 };
 
 const refreshTokenFunc = (serviceBaseUrl: string) => (
   refreshToken: string,
   client: string,
-  secret: string,
+  secret: string
 ): Promise<Session> => {
   return new Promise((resolve, reject) => {
     const tokenUrl = `${serviceBaseUrl}connect/token`;
@@ -151,13 +179,13 @@ const refreshTokenFunc = (serviceBaseUrl: string) => (
       .post<TokenResponse>(
         tokenUrl,
         `grant_type=refresh_token&client_id=${client}&client_secret=${secret}&refresh_token=${encodeURIComponent(
-          refreshToken,
+          refreshToken
         )}`,
         {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        },
+        }
       )
-      .then((tokenResponse) => {
+      .then(tokenResponse => {
         const session = {
           access_token: tokenResponse.data.access_token,
           refresh_token: tokenResponse.data.refresh_token,
@@ -166,7 +194,7 @@ const refreshTokenFunc = (serviceBaseUrl: string) => (
 
         resolve(session);
       })
-      .catch((reason) => reject(reason));
+      .catch(reason => reject(reason));
   });
 };
 
@@ -175,7 +203,10 @@ const refreshTokenFunc = (serviceBaseUrl: string) => (
  * @param serviceBaseUrl Base URL of identity provider to use
  * @param scopes Collection of requested scopes
  */
-export function createResourceOwnerAuthApi(serviceBaseUrl: string, scopes: string): ResourceOwnerAuthApi {
+export function createResourceOwnerAuthApi(
+  serviceBaseUrl: string,
+  scopes: string
+): ResourceOwnerAuthApi {
   return {
     login: loginFunc(serviceBaseUrl, scopes),
     logout: logoutFunc(serviceBaseUrl),

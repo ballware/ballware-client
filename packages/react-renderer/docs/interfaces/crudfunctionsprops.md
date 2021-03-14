@@ -3,7 +3,3 @@
 # Interface: CrudFunctionsProps
 
 Properties for crud functions component
-
-## Hierarchy
-
-* **CrudFunctionsProps**

@@ -42,9 +42,9 @@ export const AttachmentGrid = ({ layoutItem }: AttachmentGridProps) => {
             <DxAttachmentGrid
               readonly={readOnly()}
               fetchFunc={() => fetch(getValue('Id'))}
-              openFunc={(fileName) => open(getValue('Id'), fileName)}
-              uploadFunc={(file) => upload(getValue('Id'), file)}
-              deleteFunc={(fileName) => drop(getValue('Id'), fileName)}
+              openFunc={fileName => open(getValue('Id'), fileName)}
+              uploadFunc={file => upload(getValue('Id'), file)}
+              deleteFunc={fileName => drop(getValue('Id'), fileName)}
               showInfo={showInfo}
               showWarning={showWarning}
               showError={showError}

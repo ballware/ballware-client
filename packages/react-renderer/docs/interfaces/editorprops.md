@@ -4,10 +4,6 @@
 
 Properties for editor component
 
-## Hierarchy
-
-* **EditorProps**
-
 ## Table of contents
 
 ### Properties
@@ -23,7 +19,7 @@ Properties for editor component
 
 Options for editor
 
-Defined in: [src/renderfactorycontext.ts:216](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L216)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:216](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L216)
 
 ___
 
@@ -33,4 +29,4 @@ ___
 
 Type identifier for editor
 
-Defined in: [src/renderfactorycontext.ts:211](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L211)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:211](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L211)

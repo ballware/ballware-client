@@ -290,7 +290,7 @@ const TemplateColumn = ({
             readOnly={!editing}
             defaultValue={getByPath(item, dataMember)}
             onValueChanged={onValueChanged}
-            onInitialized={(e) => {
+            onInitialized={e => {
               if (editing) e.component?.focus();
             }}
           />
@@ -301,7 +301,7 @@ const TemplateColumn = ({
             readOnly={!editing}
             defaultValue={getByPath(item, dataMember)}
             onValueChanged={onValueChanged}
-            onInitialized={(e) => {
+            onInitialized={e => {
               if (editing) e.component?.focus();
             }}
           />
@@ -314,7 +314,7 @@ const TemplateColumn = ({
             readOnly={!editing}
             defaultValue={getByPath(item, dataMember)}
             onValueChanged={onValueChanged}
-            onInitialized={(e) => {
+            onInitialized={e => {
               if (editing) e.component?.focus();
             }}
           />
@@ -327,7 +327,7 @@ const TemplateColumn = ({
             readOnly={!editing}
             defaultValue={getByPath(item, dataMember)}
             onValueChanged={onValueChanged}
-            onInitialized={(e) => {
+            onInitialized={e => {
               if (editing) e.component?.focus();
             }}
           />
@@ -346,7 +346,7 @@ const TemplateColumn = ({
             displayExpr={columnOptions.displayExpr ?? 'Text'}
             valueExpr={columnOptions.valueExpr ?? 'Value'}
             onValueChanged={onValueChanged}
-            onInitialized={(e) => {
+            onInitialized={e => {
               if (editing) e.component?.focus();
             }}
           />
@@ -385,7 +385,7 @@ const TemplateColumn = ({
             displayExpr={columnOptions.displayExpr ?? lookup?.displayMember}
             valueExpr={columnOptions.valueExpr ?? lookup?.valueMember}
             onValueChanged={onValueChanged}
-            onInitialized={(e) => {
+            onInitialized={e => {
               if (editing) e.component?.focus();
             }}
           />
@@ -411,7 +411,7 @@ const TemplateColumn = ({
         readOnly={!editing}
         value={getByPath(item, dataMember) as string}
         onValueChanged={onValueChanged}
-        onInitialized={(e) => {
+        onInitialized={e => {
           if (editing) e.component?.focus();
         }}
       />
@@ -432,7 +432,7 @@ export const renderCellTemplates = ({
         item={cell.data}
         dataMember={cell.column.dataField}
         editing={false}
-        setValue={(value) => setByPath(cell.data, cell.column.dataField, value)}
+        setValue={value => setByPath(cell.data, cell.column.dataField, value)}
       />
     );
   };
@@ -445,7 +445,7 @@ export const renderCellTemplates = ({
         item={cell.data}
         dataMember={cell.column.dataField}
         editing={true}
-        setValue={(value) => setByPath(cell.data, cell.column.dataField, value)}
+        setValue={value => setByPath(cell.data, cell.column.dataField, value)}
       />
     );
   };
@@ -491,7 +491,7 @@ export function createColumnConfiguration<
   const gridColumns =
     columns
       ?.sort((a, b) => ((a.position ?? 0) <= (b.position ?? 0) ? -1 : 1))
-      .map((c) => createColumn<ColumnType>(t, c, lookups, lookupParams)) ?? [];
+      .map(c => createColumn<ColumnType>(t, c, lookups, lookupParams)) ?? [];
 
   switch (mode) {
     case 'small':

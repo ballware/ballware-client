@@ -4,10 +4,6 @@
 
 Reference for edit items provider
 
-## Hierarchy
-
-* **EditItemsProviderRef**
-
 ## Table of contents
 
 ### Methods
@@ -26,4 +22,4 @@ Validate editors in edit items provider
 
 true if validation passes
 
-Defined in: [src/common/edititemscontext.tsx:287](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L287)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:287](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L287)

@@ -3,7 +3,3 @@
 # Interface: TenantProviderProps
 
 Properties for tenant provider
-
-## Hierarchy
-
-* **TenantProviderProps**

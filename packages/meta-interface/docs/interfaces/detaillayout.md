@@ -4,10 +4,6 @@
 
 Detail layout definition for expandable detail view in grid/list
 
-## Hierarchy
-
-* **DetailLayout**
-
 ## Table of contents
 
 ### Properties
@@ -21,31 +17,38 @@ Detail layout definition for expandable detail view in grid/list
 
 ### colCount
 
-• `Optional` **colCount**: *undefined* \| *number*
+• `Optional` **colCount**: *number*
 
 Number of columns for display layout
 
-Defined in: [entity.ts:92](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L92)
+Defined in: [entity.ts:92](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L92)
 
 ___
 
 ### colCountByScreen
 
-• `Optional` **colCountByScreen**: *undefined* \| { `lg?`: *undefined* \| *number* ; `sm?`: *undefined* \| *number*  }
+• `Optional` **colCountByScreen**: *object*
 
 Specific column count definition for small/big screens
 
-Defined in: [entity.ts:97](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L97)
+#### Type declaration:
+
+Name | Type |
+:------ | :------ |
+`lg`? | *number* |
+`sm`? | *number* |
+
+Defined in: [entity.ts:97](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L97)
 
 ___
 
 ### height
 
-• `Optional` **height**: *undefined* \| *string*
+• `Optional` **height**: *string*
 
 Optional fixed height of detail layout
 
-Defined in: [entity.ts:102](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L102)
+Defined in: [entity.ts:102](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L102)
 
 ___
 
@@ -55,4 +58,4 @@ ___
 
 List of detail layout items
 
-Defined in: [entity.ts:107](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L107)
+Defined in: [entity.ts:107](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L107)

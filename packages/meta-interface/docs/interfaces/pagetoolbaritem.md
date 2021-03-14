@@ -4,10 +4,6 @@
 
 Toolbar element
 
-## Hierarchy
-
-* **PageToolbarItem**
-
 ## Table of contents
 
 ### Properties
@@ -24,11 +20,11 @@ Toolbar element
 
 ### caption
 
-• `Optional` **caption**: *undefined* \| *string*
+• `Optional` **caption**: *string*
 
 Display text
 
-Defined in: [page.ts:167](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L167)
+Defined in: [page.ts:167](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L167)
 
 ___
 
@@ -38,17 +34,17 @@ ___
 
 Initial value of toolbar component
 
-Defined in: [page.ts:182](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L182)
+Defined in: [page.ts:182](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L182)
 
 ___
 
 ### lookup
 
-• `Optional` **lookup**: *undefined* \| *string*
+• `Optional` **lookup**: *string*
 
 Identifier for lookup (only for components with select lists)
 
-Defined in: [page.ts:172](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L172)
+Defined in: [page.ts:172](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L172)
 
 ___
 
@@ -58,17 +54,17 @@ ___
 
 Unique name of toolbar element
 
-Defined in: [page.ts:162](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L162)
+Defined in: [page.ts:162](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L162)
 
 ___
 
 ### options
 
-• **options**: *Record*<*string*, *unknown*\>
+• **options**: *Record*<string, unknown\>
 
 Component type specific options
 
-Defined in: [page.ts:187](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L187)
+Defined in: [page.ts:187](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L187)
 
 ___
 
@@ -78,14 +74,14 @@ ___
 
 Type identifier of toolbar component
 
-Defined in: [page.ts:157](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L157)
+Defined in: [page.ts:157](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L157)
 
 ___
 
 ### width
 
-• `Optional` **width**: *undefined* \| *string*
+• `Optional` **width**: *string*
 
 Optional fixed width of toolbar component
 
-Defined in: [page.ts:177](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L177)
+Defined in: [page.ts:177](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L177)

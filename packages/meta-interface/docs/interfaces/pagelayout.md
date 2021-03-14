@@ -4,10 +4,6 @@
 
 Page layout metadata
 
-## Hierarchy
-
-* **PageLayout**
-
 ## Table of contents
 
 ### Properties
@@ -21,11 +17,11 @@ Page layout metadata
 
 ### documentationEntity
 
-• `Optional` **documentationEntity**: *undefined* \| *string*
+• `Optional` **documentationEntity**: *string*
 
 Entity identifier for documentation
 
-Defined in: [page.ts:202](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L202)
+Defined in: [page.ts:202](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L202)
 
 ___
 
@@ -35,24 +31,24 @@ ___
 
 Collection of layout items
 
-Defined in: [page.ts:212](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L212)
+Defined in: [page.ts:212](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L212)
 
 ___
 
 ### title
 
-• `Optional` **title**: *undefined* \| *string*
+• `Optional` **title**: *string*
 
 Header bar text
 
-Defined in: [page.ts:197](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L197)
+Defined in: [page.ts:197](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L197)
 
 ___
 
 ### toolbaritems
 
-• `Optional` **toolbaritems**: *undefined* \| [*PageToolbarItem*](pagetoolbaritem.md)[]
+• `Optional` **toolbaritems**: [*PageToolbarItem*](pagetoolbaritem.md)[]
 
 Collection of toolbar items
 
-Defined in: [page.ts:207](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L207)
+Defined in: [page.ts:207](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L207)

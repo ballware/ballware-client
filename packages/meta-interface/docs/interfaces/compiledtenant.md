@@ -4,10 +4,6 @@
 
 Metadata for tenant
 
-## Hierarchy
-
-* **CompiledTenant**
-
 ## Table of contents
 
 ### Properties
@@ -25,7 +21,7 @@ Metadata for tenant
 
 Unique identifier of tenant
 
-Defined in: [tenant.ts:72](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/tenant.ts#L72)
+Defined in: [tenant.ts:72](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L72)
 
 ___
 
@@ -35,17 +31,17 @@ ___
 
 Display name of tenant
 
-Defined in: [tenant.ts:77](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/tenant.ts#L77)
+Defined in: [tenant.ts:77](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L77)
 
 ___
 
 ### navigation
 
-• `Optional` **navigation**: *undefined* \| [*NavigationLayout*](navigationlayout.md)
+• `Optional` **navigation**: [*NavigationLayout*](navigationlayout.md)
 
 Navigation metadata for tenant
 
-Defined in: [tenant.ts:82](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/tenant.ts#L82)
+Defined in: [tenant.ts:82](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L82)
 
 ___
 
@@ -61,4 +57,19 @@ Custom script for access rights check of pages
 
 **`returns`** true if access allowed, false if access denied
 
-Defined in: [tenant.ts:90](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/tenant.ts#L90)
+#### Type declaration:
+
+▸ (`rights`: [*Rights*](rights.md), `page`: *string*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`rights` | [*Rights*](rights.md) |
+`page` | *string* |
+
+**Returns:** *boolean*
+
+Defined in: [tenant.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L90)
+
+Defined in: [tenant.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L90)

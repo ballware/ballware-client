@@ -4,10 +4,6 @@
 
 Properties for application bar component
 
-## Hierarchy
-
-* **ApplicationBarProps**
-
 ## Table of contents
 
 ### Properties
@@ -20,28 +16,36 @@ Properties for application bar component
 
 ### drawerWidth
 
-• **drawerWidth**: ReactText
+• **drawerWidth**: *string* \| *number*
 
 Width of navigation drawer
 
-Defined in: [src/renderfactorycontext.ts:44](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L44)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:44](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L44)
 
 ___
 
 ### onMenuToggle
 
-• `Optional` **onMenuToggle**: *undefined* \| () => *void*
+• `Optional` **onMenuToggle**: () => *void*
 
 Burger menu button toggled
 
-Defined in: [src/renderfactorycontext.ts:49](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L49)
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:49](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L49)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:49](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L49)
 
 ___
 
 ### title
 
-• `Optional` **title**: *undefined* \| *string*
+• `Optional` **title**: *string*
 
 Title text for application bar
 
-Defined in: [src/renderfactorycontext.ts:39](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L39)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:39](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L39)

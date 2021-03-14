@@ -4,10 +4,6 @@
 
 Context for triggering user notification functionality
 
-## Hierarchy
-
-* **NotificationContextState**
-
 ## Table of contents
 
 ### Properties
@@ -21,44 +17,94 @@ Context for triggering user notification functionality
 
 ### hide
 
-• `Optional` **hide**: *undefined* \| () => *void*
+• `Optional` **hide**: () => *void*
 
 Hide current shown user notification
 
-Defined in: [src/notificationcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/notificationcontext.ts#L35)
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L35)
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L35)
 
 ___
 
 ### showError
 
-• `Optional` **showError**: *undefined* \| (`message`: *string*) => *void*
+• `Optional` **showError**: (`message`: *string*) => *void*
 
 Show error message to user
 
 **`param`** Message content or translation identifier
 
-Defined in: [src/notificationcontext.ts:30](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/notificationcontext.ts#L30)
+#### Type declaration:
+
+▸ (`message`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`message` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:30](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L30)
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:30](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L30)
 
 ___
 
 ### showInfo
 
-• `Optional` **showInfo**: *undefined* \| (`message`: *string*) => *void*
+• `Optional` **showInfo**: (`message`: *string*) => *void*
 
 Show information message to user
 
 **`param`** Message content or translation identifier
 
-Defined in: [src/notificationcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/notificationcontext.ts#L18)
+#### Type declaration:
+
+▸ (`message`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`message` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L18)
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L18)
 
 ___
 
 ### showWarning
 
-• `Optional` **showWarning**: *undefined* \| (`message`: *string*) => *void*
+• `Optional` **showWarning**: (`message`: *string*) => *void*
 
 Show warning message to user
 
 **`param`** Message content or translation identifier
 
-Defined in: [src/notificationcontext.ts:24](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/notificationcontext.ts#L24)
+#### Type declaration:
+
+▸ (`message`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`message` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:24](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L24)
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:24](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L24)

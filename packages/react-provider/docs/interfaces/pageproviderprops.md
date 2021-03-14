@@ -4,10 +4,6 @@
 
 Properties for page provider
 
-## Hierarchy
-
-* **PageProviderProps**
-
 ## Table of contents
 
 ### Properties
@@ -22,4 +18,4 @@ Properties for page provider
 
 Identifier of page to use
 
-Defined in: [src/pageprovider.tsx:40](https://github.com/frankball/ballware-react-provider/blob/5745264/src/pageprovider.tsx#L40)
+Defined in: [pageprovider.tsx:40](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/pageprovider.tsx#L40)

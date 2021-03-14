@@ -4,10 +4,6 @@
 
 Options for layout item type 'statistic'
 
-## Hierarchy
-
-* **StatisticOptions**
-
 ## Table of contents
 
 ### Properties
@@ -22,4 +18,4 @@ Options for layout item type 'statistic'
 
 Identifier of statistic definition
 
-Defined in: [page.ts:84](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L84)
+Defined in: [page.ts:84](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L84)

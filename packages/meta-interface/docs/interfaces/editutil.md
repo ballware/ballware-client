@@ -4,10 +4,6 @@
 
 Adapter for accessing editor objects in custom scripts
 
-## Hierarchy
-
-* **EditUtil**
-
 ## Table of contents
 
 ### Properties
@@ -29,7 +25,22 @@ Get editor option by data member
 
 **`returns`** Value of option, undefined if option is not available
 
-Defined in: [entity.ts:24](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L24)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `option`: *string*): *unknown*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`option` | *string* |
+
+**Returns:** *unknown*
+
+Defined in: [entity.ts:24](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L24)
+
+Defined in: [entity.ts:24](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L24)
 
 ___
 
@@ -45,4 +56,20 @@ Set editor option value by data member
 
 **`param`** New value of option
 
-Defined in: [entity.ts:33](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L33)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `option`: *string*, `value`: *unknown*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`option` | *string* |
+`value` | *unknown* |
+
+**Returns:** *void*
+
+Defined in: [entity.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L33)
+
+Defined in: [entity.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L33)

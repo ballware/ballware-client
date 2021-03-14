@@ -43,7 +43,7 @@ export const ForeignEditPopup = ({
   useEffect(() => {
     if (customFunctions && functionIdentifier) {
       const customFunction = customFunctions?.find(
-        (f) => f.id === functionIdentifier
+        f => f.id === functionIdentifier
       );
 
       setCustomEditFunction(customFunction);

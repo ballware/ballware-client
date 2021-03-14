@@ -4,10 +4,6 @@
 
 Context for providing statistic item metadata and data
 
-## Hierarchy
-
-* **StatisticContextState**
-
 ## Table of contents
 
 ### Properties
@@ -23,7 +19,7 @@ Context for providing statistic item metadata and data
 
 ### argumentAxisCustomizeText
 
-• `Optional` **argumentAxisCustomizeText**: *undefined* \| (`value`: *unknown*) => *undefined* \| *string*
+• `Optional` **argumentAxisCustomizeText**: (`value`: *unknown*) => *undefined* \| *string*
 
 Customize display text for argument axis labels
 
@@ -31,54 +27,68 @@ Customize display text for argument axis labels
 
 **`returns`** Modified display text, if applicable
 
-Defined in: [src/statisticcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/statisticcontext.ts#L45)
+#### Type declaration:
+
+▸ (`value`: *unknown*): *undefined* \| *string*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`value` | *unknown* |
+
+**Returns:** *undefined* \| *string*
+
+Defined in: [packages/react-contexts/src/statisticcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L45)
+
+Defined in: [packages/react-contexts/src/statisticcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L45)
 
 ___
 
 ### data
 
-• `Optional` **data**: *undefined* \| *Record*<*string*, *unknown*\>[]
+• `Optional` **data**: *Record*<string, unknown\>[]
 
 Fetched data for statistic
 
-Defined in: [src/statisticcontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/statisticcontext.ts#L38)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L38)
 
 ___
 
 ### identifier
 
-• `Optional` **identifier**: *undefined* \| *string*
+• `Optional` **identifier**: *string*
 
 Unique identifier of statistic item
 
-Defined in: [src/statisticcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/statisticcontext.ts#L18)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L18)
 
 ___
 
 ### layout
 
-• `Optional` **layout**: *undefined* \| StatisticLayout
+• `Optional` **layout**: StatisticLayout
 
 Layout for displaying statistic item
 
-Defined in: [src/statisticcontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/statisticcontext.ts#L33)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L33)
 
 ___
 
 ### name
 
-• `Optional` **name**: *undefined* \| *string*
+• `Optional` **name**: *string*
 
 Display name of statistic item
 
-Defined in: [src/statisticcontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/statisticcontext.ts#L23)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L23)
 
 ___
 
 ### params
 
-• `Optional` **params**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **params**: QueryParams
 
 Additional query params from containing element (page for example)
 
-Defined in: [src/statisticcontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/statisticcontext.ts#L28)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/statisticcontext.ts#L28)

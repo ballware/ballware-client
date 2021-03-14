@@ -7,7 +7,7 @@ export interface ToolbarItemProps {
   toolbarItem: PageToolbarItem;
 }
 
-export const useDefaultToolbarItemStyles = makeStyles((theme) => ({
+export const useDefaultToolbarItemStyles = makeStyles(theme => ({
   toolbaritem: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
@@ -16,7 +16,7 @@ export const useDefaultToolbarItemStyles = makeStyles((theme) => ({
 
 export const componentToToolbarItemRef = (component: Component) => {
   return {
-    getOption: (option) => component.option(option),
+    getOption: option => component.option(option),
     setOption: (option, value) => component.option(option, value),
   } as ToolbarItemRef;
 };

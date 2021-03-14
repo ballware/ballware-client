@@ -5,7 +5,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { MetaGenericEntityApi, CrudItem, QueryParams } from '@ballware/meta-interface';
+import {
+  MetaGenericEntityApi,
+  CrudItem,
+  QueryParams,
+} from '@ballware/meta-interface';
 import { paramsToUrl } from './util';
 import axios from 'axios';
 

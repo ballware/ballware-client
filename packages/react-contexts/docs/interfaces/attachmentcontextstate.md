@@ -4,10 +4,6 @@
 
 Context for attachment files functionality
 
-## Hierarchy
-
-* **AttachmentContextState**
-
 ## Table of contents
 
 ### Properties
@@ -21,7 +17,7 @@ Context for attachment files functionality
 
 ### drop
 
-• `Optional` **drop**: *undefined* \| (`id`: *string*, `fileName`: *string*) => *Promise*<*void*\>
+• `Optional` **drop**: (`id`: *string*, `fileName`: *string*) => *Promise*<void\>
 
 Drop existing attachment
 
@@ -31,13 +27,28 @@ Drop existing attachment
 
 **`returns`** Promise resolving when drop has completed
 
-Defined in: [src/attachmentcontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/attachmentcontext.ts#L43)
+#### Type declaration:
+
+▸ (`id`: *string*, `fileName`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+`fileName` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L43)
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L43)
 
 ___
 
 ### fetch
 
-• `Optional` **fetch**: *undefined* \| (`id`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• `Optional` **fetch**: (`id`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch available attachments by owner id
 
@@ -45,13 +56,27 @@ Fetch available attachments by owner id
 
 **`returns`** Promise resolving available attachment metadata
 
-Defined in: [src/attachmentcontext.ts:19](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/attachmentcontext.ts#L19)
+#### Type declaration:
+
+▸ (`id`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L19)
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L19)
 
 ___
 
 ### open
 
-• `Optional` **open**: *undefined* \| (`id`: *string*, `fileName`: *string*) => *Promise*<*string*\>
+• `Optional` **open**: (`id`: *string*, `fileName`: *string*) => *Promise*<string\>
 
 Request download url for attachment
 
@@ -61,13 +86,28 @@ Request download url for attachment
 
 **`returns`** Promise resolving Url for download attachment file
 
-Defined in: [src/attachmentcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/attachmentcontext.ts#L35)
+#### Type declaration:
+
+▸ (`id`: *string*, `fileName`: *string*): *Promise*<string\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+`fileName` | *string* |
+
+**Returns:** *Promise*<string\>
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L35)
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L35)
 
 ___
 
 ### upload
 
-• `Optional` **upload**: *undefined* \| (`id`: *string*, `file`: File) => *Promise*<*void*\>
+• `Optional` **upload**: (`id`: *string*, `file`: File) => *Promise*<void\>
 
 Upload new attachment
 
@@ -77,4 +117,19 @@ Upload new attachment
 
 **`returns`** Promise resolving when upload has completed
 
-Defined in: [src/attachmentcontext.ts:27](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/attachmentcontext.ts#L27)
+#### Type declaration:
+
+▸ (`id`: *string*, `file`: File): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+`file` | File |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:27](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L27)
+
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:27](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/attachmentcontext.ts#L27)

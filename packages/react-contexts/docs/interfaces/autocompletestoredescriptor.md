@@ -4,10 +4,6 @@
 
 Data access adapter for fetching autocomplete lookup data
 
-## Hierarchy
-
-* **AutocompleteStoreDescriptor**
-
 ## Table of contents
 
 ### Properties
@@ -18,8 +14,16 @@ Data access adapter for fetching autocomplete lookup data
 
 ### listFunc
 
-• **listFunc**: () => *Promise*<*unknown*[]\>
+• **listFunc**: () => *Promise*<unknown[]\>
 
 Fetch list of autocomplete entries
 
-Defined in: [src/lookupcontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L35)
+#### Type declaration:
+
+▸ (): *Promise*<unknown[]\>
+
+**Returns:** *Promise*<unknown[]\>
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L35)
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L35)

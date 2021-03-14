@@ -4,13 +4,17 @@
   "description": "Ballware Application Builder - Interface for identity provider",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
-  "homepage": "https://github.com/frankball/ballware-identity-interface",
+  "homepage": "https://github.com/ballware/ballware-client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankball/ballware-identity-interface.git"
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/identity-interface"
   },
   "bugs": {
-    "url": "https://github.com/frankball/ballware-identity-interface/issues"
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

@@ -61,7 +61,7 @@ export const MultiLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
               componentToToolbarItemRef(e.component)
             );
           }}
-          onValueChanged={(e) => {
+          onValueChanged={e => {
             if (paramEditorValueChanged) paramEditorValueChanged(name, e.value);
           }}
         />

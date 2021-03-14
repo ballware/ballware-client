@@ -19,7 +19,7 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HelpIcon from '@material-ui/icons/Help';
 import { EditLayoutItem } from '@ballware/meta-interface';
 
-const useSummaryStyles = makeStyles((theme) => ({
+const useSummaryStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.background.paper,
@@ -68,7 +68,7 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
     editorInitialized
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return value;
@@ -112,7 +112,7 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
   if (prepared && value && layoutItem.options) {
     let itemCount = 1;
 
-    const entries = layoutItem.items?.map((it) => {
+    const entries = layoutItem.items?.map(it => {
       const options = it.options?.itemoptions as SummaryElementOptions;
 
       return (

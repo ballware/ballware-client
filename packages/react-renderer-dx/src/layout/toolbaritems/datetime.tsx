@@ -30,14 +30,14 @@ export const DatetimeToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
           type={'datetime'}
           displayFormat={`'${caption}': ${t('format.datetime')}`}
           defaultValue={defaultValue}
-          onInitialized={(e) => {
+          onInitialized={e => {
             e.component &&
               paramEditorInitialized(
                 name,
                 componentToToolbarItemRef(e.component)
               );
           }}
-          onValueChanged={(e) => {
+          onValueChanged={e => {
             if (paramEditorValueChanged) paramEditorValueChanged(name, e.value);
           }}
         />

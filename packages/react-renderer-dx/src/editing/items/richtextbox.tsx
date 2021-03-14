@@ -52,7 +52,7 @@ export const RichTextBox = ({ layoutItem }: RichTextBoxProps) => {
     editorEntered
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.getValue();
@@ -86,7 +86,7 @@ export const RichTextBox = ({ layoutItem }: RichTextBoxProps) => {
           readonly={readonly ?? false}
           required={required}
           height={layoutItem.height ?? '300px'}
-          valueChanged={(value) => {
+          valueChanged={value => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,

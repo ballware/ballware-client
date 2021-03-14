@@ -16,14 +16,14 @@ export const Tabs = ({ layoutItem }: TabsProps) => {
   if (EditLayoutItem) {
     let tabscount = 1;
 
-    const tabItems = layoutItem.items?.map((tab) => {
+    const tabItems = layoutItem.items?.map(tab => {
       let key = 1;
 
       return (
         <TabItem key={`tab-${tabscount++}`} title={tab.options?.caption}>
           <Container height={layoutItem.options?.height}>
             {tab.items &&
-              tab.items.map((item) => (
+              tab.items.map(item => (
                 <EditLayoutItem
                   key={key++}
                   colCount={tab.colCount}

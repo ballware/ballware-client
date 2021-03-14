@@ -87,10 +87,7 @@ export const SessionButton = () => {
   return (
     <React.Fragment>
       {timeoutIn > 0 && rights && (
-        <IconButton
-          color="inherit"
-          onClick={(e) => setAnchorEl(e.currentTarget)}
-        >
+        <IconButton color="inherit" onClick={e => setAnchorEl(e.currentTarget)}>
           <Badge color="error" badgeContent={badgeContent}>
             <AccountCircle />
           </Badge>

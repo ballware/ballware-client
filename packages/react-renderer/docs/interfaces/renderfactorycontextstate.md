@@ -4,10 +4,6 @@
 
 Context providing rendered items from render plugin
 
-## Hierarchy
-
-* **RenderFactoryContextState**
-
 ## Table of contents
 
 ### Properties
@@ -35,178 +31,431 @@ Context providing rendered items from render plugin
 
 ### Application
 
-• `Optional` **Application**: *undefined* \| (`props`: *PropsWithChildren*<[*ApplicationProps*](applicationprops.md)\>) => *Element*
+• `Optional` **Application**: (`props`: *PropsWithChildren*<[*ApplicationProps*](applicationprops.md)\>) => *Element*
 
 Provide application window component
 
-Defined in: [src/renderfactorycontext.ts:251](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L251)
+#### Type declaration:
+
+▸ (`props`: *PropsWithChildren*<[*ApplicationProps*](applicationprops.md)\>): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *PropsWithChildren*<[*ApplicationProps*](applicationprops.md)\> |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:251](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L251)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:251](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L251)
 
 ___
 
 ### ApplicationBar
 
-• `Optional` **ApplicationBar**: *undefined* \| (`props`: *PropsWithChildren*<[*ApplicationBarProps*](applicationbarprops.md)\>) => *Element*
+• `Optional` **ApplicationBar**: (`props`: *PropsWithChildren*<[*ApplicationBarProps*](applicationbarprops.md)\>) => *Element*
 
 Provide main application bar component
 
-Defined in: [src/renderfactorycontext.ts:256](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L256)
+#### Type declaration:
+
+▸ (`props`: *PropsWithChildren*<[*ApplicationBarProps*](applicationbarprops.md)\>): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *PropsWithChildren*<[*ApplicationBarProps*](applicationbarprops.md)\> |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:256](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L256)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:256](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L256)
 
 ___
 
 ### Context
 
-• `Optional` **Context**: *undefined* \| (`props`: { `children?`: ReactNode  }) => *Element*
+• `Optional` **Context**: (`props`: { `children?`: *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*  }) => *Element*
 
 Provide context component with shared functionality for render plugin
 
-Defined in: [src/renderfactorycontext.ts:246](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L246)
+#### Type declaration:
+
+▸ (`props`: { `children?`: *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*  }): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *object* |
+`props.children?` | *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal* |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:246](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L246)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:246](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L246)
 
 ___
 
 ### DeletePopup
 
-• `Optional` **DeletePopup**: *undefined* \| (`props`: [*DeletePopupProps*](deletepopupprops.md)) => *Element*
+• `Optional` **DeletePopup**: (`props`: [*DeletePopupProps*](deletepopupprops.md)) => *Element*
 
 Provide delete popup
 
-Defined in: [src/renderfactorycontext.ts:323](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L323)
+#### Type declaration:
+
+▸ (`props`: [*DeletePopupProps*](deletepopupprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*DeletePopupProps*](deletepopupprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:323](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L323)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:323](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L323)
 
 ___
 
 ### DetailEditPopup
 
-• `Optional` **DetailEditPopup**: *undefined* \| (`props`: [*DetailEditPopupProps*](detaileditpopupprops.md)) => *Element*
+• `Optional` **DetailEditPopup**: (`props`: [*DetailEditPopupProps*](detaileditpopupprops.md)) => *Element*
 
 Provide detail edit popup
 
-Defined in: [src/renderfactorycontext.ts:333](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L333)
+#### Type declaration:
+
+▸ (`props`: [*DetailEditPopupProps*](detaileditpopupprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*DetailEditPopupProps*](detaileditpopupprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:333](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L333)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:333](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L333)
 
 ___
 
 ### EditLayoutItem
 
-• `Optional` **EditLayoutItem**: *undefined* \| (`props`: [*EditLayoutItemProps*](editlayoutitemprops.md)) => *Element*
+• `Optional` **EditLayoutItem**: (`props`: [*EditLayoutItemProps*](editlayoutitemprops.md)) => *Element*
 
 Provide edit layout item
 
-Defined in: [src/renderfactorycontext.ts:298](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L298)
+#### Type declaration:
+
+▸ (`props`: [*EditLayoutItemProps*](editlayoutitemprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*EditLayoutItemProps*](editlayoutitemprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:298](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L298)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:298](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L298)
 
 ___
 
 ### EditPopup
 
-• `Optional` **EditPopup**: *undefined* \| (`props`: [*EditPopupProps*](editpopupprops.md)) => *Element*
+• `Optional` **EditPopup**: (`props`: [*EditPopupProps*](editpopupprops.md)) => *Element*
 
 Provide edit popup
 
-Defined in: [src/renderfactorycontext.ts:313](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L313)
+#### Type declaration:
+
+▸ (`props`: [*EditPopupProps*](editpopupprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*EditPopupProps*](editpopupprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:313](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L313)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:313](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L313)
 
 ___
 
 ### Editor
 
-• `Optional` **Editor**: *undefined* \| (`props`: [*EditorProps*](editorprops.md)) => *Element*
+• `Optional` **Editor**: (`props`: [*EditorProps*](editorprops.md)) => *Element*
 
 Provide editor component
 
-Defined in: [src/renderfactorycontext.ts:303](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L303)
+#### Type declaration:
+
+▸ (`props`: [*EditorProps*](editorprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*EditorProps*](editorprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:303](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L303)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:303](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L303)
 
 ___
 
 ### ForeignEditPopup
 
-• `Optional` **ForeignEditPopup**: *undefined* \| (`props`: [*ForeignEditPopupProps*](foreigneditpopupprops.md)) => *Element*
+• `Optional` **ForeignEditPopup**: (`props`: [*ForeignEditPopupProps*](foreigneditpopupprops.md)) => *Element*
 
 Provide foreign edit popup
 
-Defined in: [src/renderfactorycontext.ts:328](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L328)
+#### Type declaration:
+
+▸ (`props`: [*ForeignEditPopupProps*](foreigneditpopupprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*ForeignEditPopupProps*](foreigneditpopupprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:328](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L328)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:328](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L328)
 
 ___
 
 ### IframePopup
 
-• `Optional` **IframePopup**: *undefined* \| (`props`: [*IframePopupProps*](iframepopupprops.md)) => *Element*
+• `Optional` **IframePopup**: (`props`: [*IframePopupProps*](iframepopupprops.md)) => *Element*
 
 Provide iframe popup
 
-Defined in: [src/renderfactorycontext.ts:318](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L318)
+#### Type declaration:
+
+▸ (`props`: [*IframePopupProps*](iframepopupprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*IframePopupProps*](iframepopupprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:318](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L318)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:318](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L318)
 
 ___
 
 ### Navigation
 
-• `Optional` **Navigation**: *undefined* \| (`props`: *PropsWithChildren*<[*NavigationProps*](navigationprops.md)\>) => *Element*
+• `Optional` **Navigation**: (`props`: *PropsWithChildren*<[*NavigationProps*](navigationprops.md)\>) => *Element*
 
 Provide navigation tree component
 
-Defined in: [src/renderfactorycontext.ts:263](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L263)
+#### Type declaration:
+
+▸ (`props`: *PropsWithChildren*<[*NavigationProps*](navigationprops.md)\>): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *PropsWithChildren*<[*NavigationProps*](navigationprops.md)\> |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:263](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L263)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:263](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L263)
 
 ___
 
 ### Notification
 
-• `Optional` **Notification**: *undefined* \| (`props`: {}) => *Element*
+• `Optional` **Notification**: (`props`: {}) => *Element*
 
 Provide notification component for display user notifications
 
-Defined in: [src/renderfactorycontext.ts:278](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L278)
+#### Type declaration:
+
+▸ (`props`: {}): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *object* |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:278](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L278)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:278](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L278)
 
 ___
 
 ### Page
 
-• `Optional` **Page**: *undefined* \| (`props`: {}) => *Element*
+• `Optional` **Page**: (`props`: {}) => *Element*
 
 Provide page component for displaying metadata page
 
-Defined in: [src/renderfactorycontext.ts:283](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L283)
+#### Type declaration:
+
+▸ (`props`: {}): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *object* |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:283](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L283)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:283](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L283)
 
 ___
 
 ### PageLayoutItem
 
-• `Optional` **PageLayoutItem**: *undefined* \| (`props`: [*PageLayoutItemProps*](pagelayoutitemprops.md)) => *Element*
+• `Optional` **PageLayoutItem**: (`props`: [*PageLayoutItemProps*](pagelayoutitemprops.md)) => *Element*
 
 Provide page layout item
 
-Defined in: [src/renderfactorycontext.ts:293](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L293)
+#### Type declaration:
+
+▸ (`props`: [*PageLayoutItemProps*](pagelayoutitemprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*PageLayoutItemProps*](pagelayoutitemprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:293](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L293)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:293](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L293)
 
 ___
 
 ### PageToolbar
 
-• `Optional` **PageToolbar**: *undefined* \| (`props`: [*PageToolbarProps*](pagetoolbarprops.md)) => *Element*
+• `Optional` **PageToolbar**: (`props`: [*PageToolbarProps*](pagetoolbarprops.md)) => *Element*
 
 Provide page toolbar component
 
-Defined in: [src/renderfactorycontext.ts:288](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L288)
+#### Type declaration:
+
+▸ (`props`: [*PageToolbarProps*](pagetoolbarprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*PageToolbarProps*](pagetoolbarprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:288](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L288)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:288](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L288)
 
 ___
 
 ### PageToolbarItem
 
-• `Optional` **PageToolbarItem**: *undefined* \| (`props`: [*PageToolbarItemProps*](pagetoolbaritemprops.md)) => *Element*
+• `Optional` **PageToolbarItem**: (`props`: [*PageToolbarItemProps*](pagetoolbaritemprops.md)) => *Element*
 
 Provide page toolbar item component
 
-Defined in: [src/renderfactorycontext.ts:308](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L308)
+#### Type declaration:
+
+▸ (`props`: [*PageToolbarItemProps*](pagetoolbaritemprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*PageToolbarItemProps*](pagetoolbaritemprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:308](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L308)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:308](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L308)
 
 ___
 
 ### PrivateRoute
 
-• `Optional` **PrivateRoute**: *undefined* \| (`props`: [*PrivateRouteProps*](privaterouteprops.md)) => *Element*
+• `Optional` **PrivateRoute**: (`props`: [*PrivateRouteProps*](privaterouteprops.md)) => *Element*
 
 Provide route component for restricted access
 
-Defined in: [src/renderfactorycontext.ts:268](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L268)
+#### Type declaration:
+
+▸ (`props`: [*PrivateRouteProps*](privaterouteprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*PrivateRouteProps*](privaterouteprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:268](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L268)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:268](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L268)
 
 ___
 
 ### Routes
 
-• `Optional` **Routes**: *undefined* \| (`props`: {}) => *Element*
+• `Optional` **Routes**: (`props`: {}) => *Element*
 
 Provide routes for router
 
-Defined in: [src/renderfactorycontext.ts:273](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L273)
+#### Type declaration:
+
+▸ (`props`: {}): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *object* |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:273](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L273)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:273](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L273)

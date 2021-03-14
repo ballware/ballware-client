@@ -4,10 +4,6 @@
 
 Context for providing environment dependend application functionality
 
-## Hierarchy
-
-* **SettingsContextState**
-
 ## Table of contents
 
 ### Properties
@@ -33,158 +29,276 @@ Context for providing environment dependend application functionality
 
 ### googlekey
 
-• `Optional` **googlekey**: *undefined* \| *string*
+• `Optional` **googlekey**: *string*
 
 API key for usage with google services
 
-Defined in: [src/settingscontext.ts:40](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L40)
+Defined in: [packages/react-contexts/src/settingscontext.ts:40](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L40)
 
 ___
 
 ### identityAuthApiFactory
 
-• `Optional` **identityAuthApiFactory**: *undefined* \| () => ResourceOwnerAuthApi
+• `Optional` **identityAuthApiFactory**: () => ResourceOwnerAuthApi
 
 Factory for creating data adapter for user authentication
 
-Defined in: [src/settingscontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L45)
+#### Type declaration:
+
+▸ (): ResourceOwnerAuthApi
+
+**Returns:** ResourceOwnerAuthApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L45)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L45)
 
 ___
 
 ### identityRoleApiFactory
 
-• `Optional` **identityRoleApiFactory**: *undefined* \| () => IdentityRoleApi
+• `Optional` **identityRoleApiFactory**: () => IdentityRoleApi
 
 Factory for creating data adapter for role list data access
 
-Defined in: [src/settingscontext.ts:55](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L55)
+#### Type declaration:
+
+▸ (): IdentityRoleApi
+
+**Returns:** IdentityRoleApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L55)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L55)
 
 ___
 
 ### identityUserApiFactory
 
-• `Optional` **identityUserApiFactory**: *undefined* \| () => IdentityUserApi
+• `Optional` **identityUserApiFactory**: () => IdentityUserApi
 
 Factory for creating data adapter for user list data access
 
-Defined in: [src/settingscontext.ts:50](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L50)
+#### Type declaration:
+
+▸ (): IdentityUserApi
+
+**Returns:** IdentityUserApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:50](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L50)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:50](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L50)
 
 ___
 
 ### metaAttachmentApiFactory
 
-• `Optional` **metaAttachmentApiFactory**: *undefined* \| () => MetaAttachmentApi
+• `Optional` **metaAttachmentApiFactory**: () => MetaAttachmentApi
 
 Factory for creating data adapter for tenant data access
 
-Defined in: [src/settingscontext.ts:70](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L70)
+#### Type declaration:
+
+▸ (): MetaAttachmentApi
+
+**Returns:** MetaAttachmentApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L70)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L70)
 
 ___
 
 ### metaDocumentApiFactory
 
-• `Optional` **metaDocumentApiFactory**: *undefined* \| () => MetaDocumentApi
+• `Optional` **metaDocumentApiFactory**: () => MetaDocumentApi
 
 Factory for creating data adapter for print document data access
 
-Defined in: [src/settingscontext.ts:95](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L95)
+#### Type declaration:
+
+▸ (): MetaDocumentApi
+
+**Returns:** MetaDocumentApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L95)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L95)
 
 ___
 
 ### metaDocumentationApiFactory
 
-• `Optional` **metaDocumentationApiFactory**: *undefined* \| () => MetaDocumentationApi
+• `Optional` **metaDocumentationApiFactory**: () => MetaDocumentationApi
 
 Factory for creating data adapter for documentation data access
 
-Defined in: [src/settingscontext.ts:100](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L100)
+#### Type declaration:
+
+▸ (): MetaDocumentationApi
+
+**Returns:** MetaDocumentationApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:100](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L100)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:100](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L100)
 
 ___
 
 ### metaEntityApiFactory
 
-• `Optional` **metaEntityApiFactory**: *undefined* \| () => MetaEntityApi
+• `Optional` **metaEntityApiFactory**: () => MetaEntityApi
 
 Factory for creating data adapter for entity metadata access
 
-Defined in: [src/settingscontext.ts:60](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L60)
+#### Type declaration:
+
+▸ (): MetaEntityApi
+
+**Returns:** MetaEntityApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:60](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L60)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:60](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L60)
 
 ___
 
 ### metaGenericEntityApiFactory
 
-• `Optional` **metaGenericEntityApiFactory**: *undefined* \| (`baseUrl`: *string*) => MetaGenericEntityApi
+• `Optional` **metaGenericEntityApiFactory**: (`baseUrl`: *string*) => MetaGenericEntityApi
 
 Factory for creating data adapter for generic entity crud operations
 
-Defined in: [src/settingscontext.ts:110](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L110)
+#### Type declaration:
+
+▸ (`baseUrl`: *string*): MetaGenericEntityApi
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`baseUrl` | *string* |
+
+**Returns:** MetaGenericEntityApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:110](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L110)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:110](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L110)
 
 ___
 
 ### metaLookupApiFactory
 
-• `Optional` **metaLookupApiFactory**: *undefined* \| () => MetaLookupApi
+• `Optional` **metaLookupApiFactory**: () => MetaLookupApi
 
 Factory for creating data adapter for lookup data access
 
-Defined in: [src/settingscontext.ts:80](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L80)
+#### Type declaration:
+
+▸ (): MetaLookupApi
+
+**Returns:** MetaLookupApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:80](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L80)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:80](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L80)
 
 ___
 
 ### metaPageApiFactory
 
-• `Optional` **metaPageApiFactory**: *undefined* \| () => MetaPageApi
+• `Optional` **metaPageApiFactory**: () => MetaPageApi
 
 Factory for creating data adapter for page data access
 
-Defined in: [src/settingscontext.ts:105](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L105)
+#### Type declaration:
+
+▸ (): MetaPageApi
+
+**Returns:** MetaPageApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:105](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L105)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:105](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L105)
 
 ___
 
 ### metaPickvalueApiFactory
 
-• `Optional` **metaPickvalueApiFactory**: *undefined* \| () => MetaPickvalueApi
+• `Optional` **metaPickvalueApiFactory**: () => MetaPickvalueApi
 
 Factory for creating data adapter for pick values data access
 
-Defined in: [src/settingscontext.ts:90](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L90)
+#### Type declaration:
+
+▸ (): MetaPickvalueApi
+
+**Returns:** MetaPickvalueApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L90)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L90)
 
 ___
 
 ### metaProcessingstateApiFactory
 
-• `Optional` **metaProcessingstateApiFactory**: *undefined* \| () => MetaProcessingstateApi
+• `Optional` **metaProcessingstateApiFactory**: () => MetaProcessingstateApi
 
 Factory for creating data adapter for processing state data access
 
-Defined in: [src/settingscontext.ts:85](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L85)
+#### Type declaration:
+
+▸ (): MetaProcessingstateApi
+
+**Returns:** MetaProcessingstateApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:85](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L85)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:85](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L85)
 
 ___
 
 ### metaStatisticApiFactory
 
-• `Optional` **metaStatisticApiFactory**: *undefined* \| () => MetaStatisticApi
+• `Optional` **metaStatisticApiFactory**: () => MetaStatisticApi
 
 Factory for creating data adapter for statistic data access
 
-Defined in: [src/settingscontext.ts:75](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L75)
+#### Type declaration:
+
+▸ (): MetaStatisticApi
+
+**Returns:** MetaStatisticApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:75](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L75)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:75](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L75)
 
 ___
 
 ### metaTenantApiFactory
 
-• `Optional` **metaTenantApiFactory**: *undefined* \| () => MetaTenantApi
+• `Optional` **metaTenantApiFactory**: () => MetaTenantApi
 
 Factory for creating data adapter for tenant data access
 
-Defined in: [src/settingscontext.ts:65](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L65)
+#### Type declaration:
+
+▸ (): MetaTenantApi
+
+**Returns:** MetaTenantApi
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:65](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L65)
+
+Defined in: [packages/react-contexts/src/settingscontext.ts:65](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L65)
 
 ___
 
 ### version
 
-• `Optional` **version**: *undefined* \| *string*
+• `Optional` **version**: *string*
 
 Current version of application
 
-Defined in: [src/settingscontext.ts:35](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/settingscontext.ts#L35)
+Defined in: [packages/react-contexts/src/settingscontext.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/settingscontext.ts#L35)

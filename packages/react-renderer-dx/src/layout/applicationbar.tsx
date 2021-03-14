@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = (drawerWidth: string | number) =>
-  makeStyles((theme) => ({
+  makeStyles(theme => ({
     appBar: {
       [theme.breakpoints.up('md')]: {
         marginLeft: drawerWidth,

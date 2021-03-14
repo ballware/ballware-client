@@ -29,17 +29,17 @@ Options for layout item type 'map'
 
 Business object property containing display text
 
-Defined in: [page.ts:74](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L74)
+Defined in: [page.ts:74](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L74)
 
 ___
 
 ### editLayout
 
-• `Optional` **editLayout**: *undefined* \| *string*
+• `Optional` **editLayout**: *string*
 
 Identifier of edit layout for crud operations
 
-Defined in: [page.ts:64](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L64)
+Defined in: [page.ts:64](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L64)
 
 ___
 
@@ -51,17 +51,17 @@ Identifier of business object
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[entity](crudcontaineroptions.md#entity)
 
-Defined in: [page.ts:29](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L29)
+Defined in: [page.ts:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L29)
 
 ___
 
 ### height
 
-• `Optional` **height**: *undefined* \| *string*
+• `Optional` **height**: *string*
 
 Optional fixed height of component
 
-Defined in: [page.ts:59](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L59)
+Defined in: [page.ts:59](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L59)
 
 ___
 
@@ -71,16 +71,16 @@ ___
 
 Business object property containing coordinates
 
-Defined in: [page.ts:69](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L69)
+Defined in: [page.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L69)
 
 ___
 
 ### query
 
-• `Optional` **query**: *undefined* \| *string*
+• `Optional` **query**: *string*
 
 Identifier of list query
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[query](crudcontaineroptions.md#query)
 
-Defined in: [page.ts:34](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L34)
+Defined in: [page.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L34)

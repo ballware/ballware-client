@@ -34,68 +34,106 @@ Check if route is allowed to be accessed by authenticated user
 
 **`returns`** true if access is allowed
 
-Defined in: [src/renderfactorycontext.ts:70](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L70)
+#### Type declaration:
+
+▸ (): *boolean*
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L70)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L70)
 
 ___
 
 ### children
 
-• `Optional` **children**: *undefined* \| *null* \| *string* \| *number* \| *boolean* \| {} \| *ReactElement*<*any*, *string* \| (`props`: *any*) => *null* \| *ReactElement*<*any*, *string* \| (props: any) =\> ReactElement<any, string \| ... \| (new (props: any) =\> Component<any, any, any\>)\> \| null \| (`props`: *any*) => *Component*<*any*, *any*, *any*\>\> \| (`props`: *any*) => *Component*<*any*, *any*, *any*\>\> \| *ReactNodeArray* \| *ReactPortal* \| (`props`: *RouteChildrenProps*<*any*, *unknown*\>) => ReactNode
+• `Optional` **children**: *undefined* \| *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal* \| (`props`: *RouteChildrenProps*<{}, unknown\>) => *undefined* \| *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*
 
-Defined in: node_modules/@types/react-router/index.d.ts:90
-
-___
-
-### component
-
-• `Optional` **component**: *undefined* \| *ComponentClass*<*RouteComponentProps*<*any*, StaticContext, *unknown*\>, *any*\> \| *FunctionComponent*<*RouteComponentProps*<*any*, StaticContext, *unknown*\>\> \| *ComponentClass*<*any*, *any*\> \| *FunctionComponent*<*any*\>
-
-Defined in: node_modules/@types/react-router/index.d.ts:88
-
-___
-
-### exact
-
-• `Optional` **exact**: *undefined* \| *boolean*
-
-Defined in: node_modules/@types/react-router/index.d.ts:92
-
-___
-
-### location
-
-• `Optional` **location**: *undefined* \| *Location*<*unknown*\>
-
-Defined in: node_modules/@types/react-router/index.d.ts:87
-
-___
-
-### path
-
-• `Optional` **path**: *undefined* \| *string* \| *string*[]
-
-Defined in: node_modules/@types/react-router/index.d.ts:91
-
-___
-
-### render
-
-• `Optional` **render**: *undefined* \| (`props`: *RouteComponentProps*<*any*, StaticContext, *unknown*\>) => ReactNode
-
-Defined in: node_modules/@types/react-router/index.d.ts:89
-
-___
-
-### sensitive
-
-• `Optional` **sensitive**: *undefined* \| *boolean*
+Inherited from: void
 
 Defined in: node_modules/@types/react-router/index.d.ts:93
 
 ___
 
-### strict
+### component
 
-• `Optional` **strict**: *undefined* \| *boolean*
+• `Optional` **component**: *ComponentType*<RouteComponentProps<any, StaticContext, unknown\>\> \| *ComponentType*<any\>
+
+Inherited from: void
+
+Defined in: node_modules/@types/react-router/index.d.ts:91
+
+___
+
+### exact
+
+• `Optional` **exact**: *boolean*
+
+Inherited from: void
+
+Defined in: node_modules/@types/react-router/index.d.ts:95
+
+___
+
+### location
+
+• `Optional` **location**: *Location*<unknown\>
+
+Inherited from: void
+
+Defined in: node_modules/@types/react-router/index.d.ts:90
+
+___
+
+### path
+
+• `Optional` **path**: *string* \| *string*[]
+
+Inherited from: void
 
 Defined in: node_modules/@types/react-router/index.d.ts:94
+
+___
+
+### render
+
+• `Optional` **render**: (`props`: *RouteComponentProps*<{}, StaticContext, unknown\>) => *undefined* \| *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*
+
+#### Type declaration:
+
+▸ (`props`: *RouteComponentProps*<{}, StaticContext, unknown\>): *undefined* \| *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *RouteComponentProps*<{}, StaticContext, unknown\> |
+
+**Returns:** *undefined* \| *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*
+
+Defined in: node_modules/@types/react-router/index.d.ts:92
+
+Inherited from: void
+
+Defined in: node_modules/@types/react-router/index.d.ts:92
+
+___
+
+### sensitive
+
+• `Optional` **sensitive**: *boolean*
+
+Inherited from: void
+
+Defined in: node_modules/@types/react-router/index.d.ts:96
+
+___
+
+### strict
+
+• `Optional` **strict**: *boolean*
+
+Inherited from: void
+
+Defined in: node_modules/@types/react-router/index.d.ts:97

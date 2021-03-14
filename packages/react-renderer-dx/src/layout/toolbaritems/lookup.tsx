@@ -55,14 +55,14 @@ export const LookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
             displayExpr={mylookup.displayMember}
             valueExpr={mylookup.valueMember}
             defaultValue={defaultValue}
-            onInitialized={(e) => {
+            onInitialized={e => {
               e.component &&
                 paramEditorInitialized(
                   name,
                   componentToToolbarItemRef(e.component)
                 );
             }}
-            onValueChanged={(e) => {
+            onValueChanged={e => {
               if (paramEditorValueChanged)
                 paramEditorValueChanged(name, e.value);
             }}

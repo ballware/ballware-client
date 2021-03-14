@@ -32,7 +32,7 @@ export const LocationMap = forwardRef<LocationMapRef, LocationMapProps>(
       getValue: () => {
         return currentValue;
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         setCurrentValue(newValue);
         setValue(newValue);
       },
@@ -60,7 +60,7 @@ export const LocationMap = forwardRef<LocationMapRef, LocationMapProps>(
               .addMarker({
                 location: marker,
               })
-              .then((marker) => {
+              .then(marker => {
                 if (!readonly) {
                   marker.setDraggable(true);
                   google.maps.event.addListener(

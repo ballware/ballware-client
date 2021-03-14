@@ -7,10 +7,6 @@ API for resource owner based authentication flow.
 **`remarks`** 
 Attention: This is not save for usage in browser application
 
-## Hierarchy
-
-* **ResourceOwnerAuthApi**
-
 ## Table of contents
 
 ### Properties
@@ -27,7 +23,7 @@ Attention: This is not save for usage in browser application
 
 ### changePassword
 
-• **changePassword**: (`accessToken`: *string*, `oldPassword`: *string*, `newPassword`: *string*) => *Promise*<*void*\>
+• **changePassword**: (`accessToken`: *string*, `oldPassword`: *string*, `newPassword`: *string*) => *Promise*<void\>
 
 Change password for registered user
 
@@ -39,13 +35,29 @@ Change password for registered user
 
 **`returns`** Promise resolved when password change was finished
 
-Defined in: [auth.ts:143](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L143)
+#### Type declaration:
+
+▸ (`accessToken`: *string*, `oldPassword`: *string*, `newPassword`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`accessToken` | *string* |
+`oldPassword` | *string* |
+`newPassword` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L143)
+
+Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L143)
 
 ___
 
 ### forgotPassword
 
-• **forgotPassword**: (`email`: *string*) => *Promise*<*void*\>
+• **forgotPassword**: (`email`: *string*) => *Promise*<void\>
 
 Request password reset token for lost password
 
@@ -53,7 +65,21 @@ Request password reset token for lost password
 
 **`returns`** Promise resolved when request was transmitted
 
-Defined in: [auth.ts:118](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L118)
+#### Type declaration:
+
+▸ (`email`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`email` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L118)
+
+Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L118)
 
 ___
 
@@ -75,13 +101,37 @@ Authenticate user with mail and password.
 
 **`returns`** Promise resolving user session instance
 
-Defined in: [auth.ts:76](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L76)
+#### Type declaration:
+
+▸ <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*, `userinfoMapper`: [*UserInfoMappingFunc*](../modules.md#userinfomappingfunc)): *Promise*<T\>
+
+#### Type parameters:
+
+Name | Type |
+:------ | :------ |
+`T` | [*SessionWithUserInfo*](sessionwithuserinfo.md)<T\> |
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`email` | *string* |
+`password` | *string* |
+`client` | *string* |
+`secret` | *string* |
+`userinfoMapper` | [*UserInfoMappingFunc*](../modules.md#userinfomappingfunc) |
+
+**Returns:** *Promise*<T\>
+
+Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L76)
+
+Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L76)
 
 ___
 
 ### logout
 
-• **logout**: (`accessToken`: *string*, `client`: *string*, `secret`: *string*) => *Promise*<*void*\>
+• **logout**: (`accessToken`: *string*, `client`: *string*, `secret`: *string*) => *Promise*<void\>
 
 Logout authenticated user, invalidate access token
 
@@ -93,7 +143,23 @@ Logout authenticated user, invalidate access token
 
 **`returns`** Promise resolved when logout has finished
 
-Defined in: [auth.ts:92](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L92)
+#### Type declaration:
+
+▸ (`accessToken`: *string*, `client`: *string*, `secret`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`accessToken` | *string* |
+`client` | *string* |
+`secret` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L92)
+
+Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L92)
 
 ___
 
@@ -109,13 +175,29 @@ Refresh access token for extending authenticated session
 
 **`param`** Secrect for client identifier
 
-Defined in: [auth.ts:156](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L156)
+#### Type declaration:
+
+▸ (`refreshToken`: *string*, `client`: *string*, `secret`: *string*): *Promise*<[*Session*](session.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`refreshToken` | *string* |
+`client` | *string* |
+`secret` | *string* |
+
+**Returns:** *Promise*<[*Session*](session.md)\>
+
+Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L156)
+
+Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L156)
 
 ___
 
 ### register
 
-• **register**: (`email`: *string*, `password`: *string*, `displayname`: *string*) => *Promise*<*void*\>
+• **register**: (`email`: *string*, `password`: *string*, `displayname`: *string*) => *Promise*<void\>
 
 Registering new user
 
@@ -127,13 +209,29 @@ Registering new user
 
 **`returns`** Promise resolved when registration has finished
 
-Defined in: [auth.ts:106](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L106)
+#### Type declaration:
+
+▸ (`email`: *string*, `password`: *string*, `displayname`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`email` | *string* |
+`password` | *string* |
+`displayname` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L106)
+
+Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L106)
 
 ___
 
 ### resetPassword
 
-• **resetPassword**: (`email`: *string*, `code`: *string*, `newPassword`: *string*) => *Promise*<*void*\>
+• **resetPassword**: (`email`: *string*, `code`: *string*, `newPassword`: *string*) => *Promise*<void\>
 
 Reset password with password reset token
 
@@ -145,4 +243,20 @@ Reset password with password reset token
 
 **`returns`** Promise resolved when request was transmitted
 
-Defined in: [auth.ts:129](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L129)
+#### Type declaration:
+
+▸ (`email`: *string*, `code`: *string*, `newPassword`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`email` | *string* |
+`code` | *string* |
+`newPassword` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L129)
+
+Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L129)

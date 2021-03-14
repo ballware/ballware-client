@@ -38,7 +38,7 @@ export interface SessionWithUserInfo extends Session, Record<string, unknown> {
 /**
  * Session extended with application specific user rights
  */
-export interface MappedSessionWithUserRights extends SessionWithUserInfo {  
+export interface MappedSessionWithUserRights extends SessionWithUserInfo {
   /**
    * Collection of user rights
    */

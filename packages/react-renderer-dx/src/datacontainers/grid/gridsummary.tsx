@@ -3,8 +3,8 @@ import { GridLayout } from '@ballware/meta-interface';
 export const createSummaryConfiguration = (gridLayout: GridLayout) => {
   return {
     totalItems: gridLayout.summaries
-      ?.filter((s) => s.totalSummary)
-      .map((s) => {
+      ?.filter(s => s.totalSummary)
+      .map(s => {
         return {
           column: s.dataMember,
           summaryType: s.summaryType,
@@ -12,8 +12,8 @@ export const createSummaryConfiguration = (gridLayout: GridLayout) => {
         };
       }),
     groupItems: gridLayout.summaries
-      ?.filter((s) => s.groupSummary)
-      .map((s) => {
+      ?.filter(s => s.groupSummary)
+      .map(s => {
         return {
           column: s.dataMember,
           summaryType: s.summaryType,

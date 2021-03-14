@@ -3,7 +3,3 @@
 # Interface: AttachmentProviderProps
 
 Properties for attachment provider
-
-## Hierarchy
-
-* **AttachmentProviderProps**

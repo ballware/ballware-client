@@ -14,7 +14,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 import { TenantContext } from '@ballware/react-contexts';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
@@ -49,7 +49,7 @@ export const NavigationList = () => {
     (items: Array<NavigationLayoutItem>) => {
       let itemKey = 1;
 
-      return items?.map((item) => {
+      return items?.map(item => {
         switch (item.type) {
           case 'group': {
             const children = item.items ? renderItems(item.items) : [];

@@ -4,10 +4,6 @@
 
 Interface for generic business object crud operations
 
-## Hierarchy
-
-* **MetaGenericEntityApi**
-
 ## Table of contents
 
 ### Properties
@@ -33,13 +29,28 @@ Fetch single business object by id
 
 **`returns`** Promise containing instance of business object
 
-Defined in: [genericentity.ts:36](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L36)
+#### Type declaration:
+
+▸ (`token`: *string*, `id`: *string*): *Promise*<[*CrudItem*](cruditem.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`id` | *string* |
+
+**Returns:** *Promise*<[*CrudItem*](cruditem.md)\>
+
+Defined in: [genericentity.ts:36](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L36)
+
+Defined in: [genericentity.ts:36](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L36)
 
 ___
 
 ### drop
 
-• **drop**: (`token`: *string*, `id`: *string*) => *Promise*<*void*\>
+• **drop**: (`token`: *string*, `id`: *string*) => *Promise*<void\>
 
 Drop existing instance of business object
 
@@ -49,13 +60,28 @@ Drop existing instance of business object
 
 **`returns`** Promise resolved when drop operation has finished
 
-Defined in: [genericentity.ts:72](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L72)
+#### Type declaration:
+
+▸ (`token`: *string*, `id`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`id` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [genericentity.ts:72](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L72)
+
+Defined in: [genericentity.ts:72](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L72)
 
 ___
 
 ### new
 
-• **new**: (`token`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<[*CrudItem*](cruditem.md)\>
+• **new**: (`token`: *string*, `params?`: [*QueryParams*](../modules.md#queryparams)) => *Promise*<[*CrudItem*](cruditem.md)\>
 
 Fetch prepared new instance of business object
 
@@ -65,13 +91,28 @@ Fetch prepared new instance of business object
 
 **`returns`** Promise containing new generated instance of business object
 
-Defined in: [genericentity.ts:45](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L45)
+#### Type declaration:
+
+▸ (`token`: *string*, `params?`: [*QueryParams*](../modules.md#queryparams)): *Promise*<[*CrudItem*](cruditem.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`params?` | [*QueryParams*](../modules.md#queryparams) |
+
+**Returns:** *Promise*<[*CrudItem*](cruditem.md)\>
+
+Defined in: [genericentity.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L45)
+
+Defined in: [genericentity.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L45)
 
 ___
 
 ### query
 
-• **query**: (`token`: *string*, `query`: *string*, `params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *Promise*<[*CrudItem*](cruditem.md)[]\>
+• **query**: (`token`: *string*, `query`: *string*, `params?`: [*QueryParams*](../modules.md#queryparams)) => *Promise*<[*CrudItem*](cruditem.md)[]\>
 
 Query list of business objects by search params
 
@@ -83,13 +124,29 @@ Query list of business objects by search params
 
 **`returns`** Promise containing list of resulting business objects
 
-Defined in: [genericentity.ts:23](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L23)
+#### Type declaration:
+
+▸ (`token`: *string*, `query`: *string*, `params?`: [*QueryParams*](../modules.md#queryparams)): *Promise*<[*CrudItem*](cruditem.md)[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`query` | *string* |
+`params?` | [*QueryParams*](../modules.md#queryparams) |
+
+**Returns:** *Promise*<[*CrudItem*](cruditem.md)[]\>
+
+Defined in: [genericentity.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L23)
+
+Defined in: [genericentity.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L23)
 
 ___
 
 ### save
 
-• **save**: (`token`: *string*, `item`: [*CrudItem*](cruditem.md)) => *Promise*<*void*\>
+• **save**: (`token`: *string*, `item`: [*CrudItem*](cruditem.md)) => *Promise*<void\>
 
 Save modified instance of business object
 
@@ -99,13 +156,28 @@ Save modified instance of business object
 
 **`returns`** Promise resolved when save operation has finished
 
-Defined in: [genericentity.ts:54](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L54)
+#### Type declaration:
+
+▸ (`token`: *string*, `item`: [*CrudItem*](cruditem.md)): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`item` | [*CrudItem*](cruditem.md) |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [genericentity.ts:54](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L54)
+
+Defined in: [genericentity.ts:54](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L54)
 
 ___
 
 ### saveBatch
 
-• **saveBatch**: (`token`: *string*, `items`: [*CrudItem*](cruditem.md)[]) => *Promise*<*void*\>
+• **saveBatch**: (`token`: *string*, `items`: [*CrudItem*](cruditem.md)[]) => *Promise*<void\>
 
 Save multiple modified instances of business object
 
@@ -115,4 +187,19 @@ Save multiple modified instances of business object
 
 **`returns`** Promise resolved when save operation has finished
 
-Defined in: [genericentity.ts:63](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/genericentity.ts#L63)
+#### Type declaration:
+
+▸ (`token`: *string*, `items`: [*CrudItem*](cruditem.md)[]): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`items` | [*CrudItem*](cruditem.md)[] |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [genericentity.ts:63](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L63)
+
+Defined in: [genericentity.ts:63](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/genericentity.ts#L63)

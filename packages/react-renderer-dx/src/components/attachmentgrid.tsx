@@ -40,7 +40,7 @@ export const AttachmentGrid = ({
 
   const fileOpen = useCallback(
     (fileName: string) => {
-      openFunc(fileName).then((response) => {
+      openFunc(fileName).then(response => {
         window.open(response, '_blank');
       });
     },
@@ -55,7 +55,7 @@ export const AttachmentGrid = ({
             fileSource.reload();
             showInfo(t('attachment.messages.removed'));
           })
-          .catch((reason) => showError(reason));
+          .catch(reason => showError(reason));
       }
     },
     [t, deleteFunc, fileSource, showError, showInfo]

@@ -2,6 +2,26 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0"
-  }
+    "lerna": "^4.0.0",
+    "tsdx": "^0.14.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "lerna",
+    "start": "lerna run start --stream --parallel",
+    "test": "lerna run test --",
+    "lint": "lerna run lint -- --fix",
+    "build": "lerna run build",
+    "prepublish": "lerna run prepublish",
+    "start:app": "yarn run build && yarn --cwd example && yarn --cwd example start",
+    "cypress": "cypress run",
+    "cypress:open": "cypress open",
+    "changeset": "changeset",
+    "release": "changeset publish",
+    "version:canary": "changeset version --snapshot canary",
+    "release:canary": "changeset publish --tag canary"
+  },
+  "dependencies": {}
 }

@@ -4,10 +4,6 @@
 
 Interface for entity metadata operations
 
-## Hierarchy
-
-* **MetaEntityApi**
-
 ## Table of contents
 
 ### Properties
@@ -29,7 +25,22 @@ Fetch available print documents for business object type
 
 **`returns`** Promise containing available print documents for entity
 
-Defined in: [entity.ts:776](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L776)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*): *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+
+**Returns:** *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
+
+Defined in: [entity.ts:776](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L776)
+
+Defined in: [entity.ts:776](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L776)
 
 ___
 
@@ -45,4 +56,19 @@ Fetch metadata by entity identifier
 
 **`returns`** Promise containing metadata entity
 
-Defined in: [entity.ts:764](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L764)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*): *Promise*<[*CompiledEntityMetadata*](compiledentitymetadata.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+
+**Returns:** *Promise*<[*CompiledEntityMetadata*](compiledentitymetadata.md)\>
+
+Defined in: [entity.ts:764](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L764)
+
+Defined in: [entity.ts:764](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L764)

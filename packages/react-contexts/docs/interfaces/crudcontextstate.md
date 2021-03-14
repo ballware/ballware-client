@@ -4,10 +4,6 @@
 
 Context for providing crud operations based parent meta entity context
 
-## Hierarchy
-
-* **CrudContextState**
-
 ## Table of contents
 
 ### Properties
@@ -40,39 +36,61 @@ Context for providing crud operations based parent meta entity context
 
 ### add
 
-• `Optional` **add**: *undefined* \| (`editLayout`: *string*) => *void*
+• `Optional` **add**: (`editLayout`: *string*) => *void*
 
 Add new item
 
 **`param`** Edit layout to use for add operation
 
-Defined in: [src/crudcontext.ts:94](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L94)
+#### Type declaration:
+
+▸ (`editLayout`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`editLayout` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:94](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L94)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:94](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L94)
 
 ___
 
 ### adding
 
-• `Optional` **adding**: *undefined* \| *boolean*
+• `Optional` **adding**: *boolean*
 
 Adding current item
 
-Defined in: [src/crudcontext.ts:47](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L47)
+Defined in: [packages/react-contexts/src/crudcontext.ts:47](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L47)
 
 ___
 
 ### close
 
-• `Optional` **close**: *undefined* \| () => *void*
+• `Optional` **close**: () => *void*
 
 Cancel/close edit operation
 
-Defined in: [src/crudcontext.ts:113](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L113)
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:113](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L113)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:113](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L113)
 
 ___
 
 ### customEdit
 
-• `Optional` **customEdit**: *undefined* \| (`customFunction`: EntityCustomFunction, `items?`: *CrudItem*[]) => *void*
+• `Optional` **customEdit**: (`customFunction`: EntityCustomFunction, `items?`: *CrudItem*[]) => *void*
 
 Execute custom edit operation
 
@@ -80,17 +98,32 @@ Execute custom edit operation
 
 **`param`** Selected items for edit operation (undefined if function type is 'add')
 
-Defined in: [src/crudcontext.ts:145](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L145)
+#### Type declaration:
+
+▸ (`customFunction`: EntityCustomFunction, `items?`: *CrudItem*[]): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`customFunction` | EntityCustomFunction |
+`items?` | *CrudItem*[] |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:145](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L145)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:145](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L145)
 
 ___
 
 ### customEditFunction
 
-• `Optional` **customEditFunction**: *undefined* \| EntityCustomFunction
+• `Optional` **customEditFunction**: EntityCustomFunction
 
 Function for current custom edit operation
 
-Defined in: [src/crudcontext.ts:67](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L67)
+Defined in: [packages/react-contexts/src/crudcontext.ts:67](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L67)
 
 ___
 
@@ -100,45 +133,59 @@ ___
 
 Prepared edit param for custom edit operation
 
-Defined in: [src/crudcontext.ts:72](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L72)
+Defined in: [packages/react-contexts/src/crudcontext.ts:72](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L72)
 
 ___
 
 ### customEditing
 
-• `Optional` **customEditing**: *undefined* \| *boolean*
+• `Optional` **customEditing**: *boolean*
 
 Custom edit operation active
 
-Defined in: [src/crudcontext.ts:62](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L62)
+Defined in: [packages/react-contexts/src/crudcontext.ts:62](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L62)
 
 ___
 
 ### deleteing
 
-• `Optional` **deleteing**: *undefined* \| *boolean*
+• `Optional` **deleteing**: *boolean*
 
 Deleting current item
 
-Defined in: [src/crudcontext.ts:57](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L57)
+Defined in: [packages/react-contexts/src/crudcontext.ts:57](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L57)
 
 ___
 
 ### drop
 
-• `Optional` **drop**: *undefined* \| (`id`: *string*) => *void*
+• `Optional` **drop**: (`id`: *string*) => *void*
 
 Drop item
 
 **`param`** Identifier of item to be dropped
 
-Defined in: [src/crudcontext.ts:138](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L138)
+#### Type declaration:
+
+▸ (`id`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:138](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L138)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:138](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L138)
 
 ___
 
 ### edit
 
-• `Optional` **edit**: *undefined* \| (`id`: *string*, `editLayout`: *string*) => *void*
+• `Optional` **edit**: (`id`: *string*, `editLayout`: *string*) => *void*
 
 Edit item
 
@@ -146,131 +193,202 @@ Edit item
 
 **`param`** Edit layout to use for edit operation
 
-Defined in: [src/crudcontext.ts:108](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L108)
+#### Type declaration:
+
+▸ (`id`: *string*, `editLayout`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+`editLayout` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:108](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L108)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:108](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L108)
 
 ___
 
 ### editLayout
 
-• `Optional` **editLayout**: *undefined* \| *string*
+• `Optional` **editLayout**: *string*
 
 Edit layout for current edit operation
 
-Defined in: [src/crudcontext.ts:77](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L77)
+Defined in: [packages/react-contexts/src/crudcontext.ts:77](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L77)
 
 ___
 
 ### editing
 
-• `Optional` **editing**: *undefined* \| *boolean*
+• `Optional` **editing**: *boolean*
 
 Editing current item
 
-Defined in: [src/crudcontext.ts:52](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L52)
+Defined in: [packages/react-contexts/src/crudcontext.ts:52](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L52)
 
 ___
 
 ### fetchParams
 
-• `Optional` **fetchParams**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **fetchParams**: QueryParams
 
 Fetch params used for current item fetch
 
-Defined in: [src/crudcontext.ts:27](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L27)
+Defined in: [packages/react-contexts/src/crudcontext.ts:27](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L27)
 
 ___
 
 ### fetchedItems
 
-• `Optional` **fetchedItems**: *undefined* \| *CrudItem*[]
+• `Optional` **fetchedItems**: *CrudItem*[]
 
 Fetched items from data provider
 
-Defined in: [src/crudcontext.ts:32](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L32)
+Defined in: [packages/react-contexts/src/crudcontext.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L32)
 
 ___
 
 ### isLoading
 
-• `Optional` **isLoading**: *undefined* \| *boolean*
+• `Optional` **isLoading**: *boolean*
 
 Currently fetching items
 
-Defined in: [src/crudcontext.ts:22](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L22)
+Defined in: [packages/react-contexts/src/crudcontext.ts:22](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L22)
 
 ___
 
 ### item
 
-• `Optional` **item**: *undefined* \| *CrudItem*
+• `Optional` **item**: *CrudItem*
 
 Current item for crud operations
 
-Defined in: [src/crudcontext.ts:37](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L37)
+Defined in: [packages/react-contexts/src/crudcontext.ts:37](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L37)
 
 ___
 
 ### load
 
-• `Optional` **load**: *undefined* \| (`params?`: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>) => *void*
+• `Optional` **load**: (`params?`: QueryParams) => *void*
 
 Fetch items
 
 **`param`** Provided query params
 
-Defined in: [src/crudcontext.ts:88](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L88)
+#### Type declaration:
+
+▸ (`params?`: QueryParams): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`params?` | QueryParams |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:88](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L88)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:88](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L88)
 
 ___
 
 ### refreshing
 
-• `Optional` **refreshing**: *undefined* \| *boolean*
+• `Optional` **refreshing**: *boolean*
 
 Refresh after edit operation pending
 
-Defined in: [src/crudcontext.ts:82](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L82)
+Defined in: [packages/react-contexts/src/crudcontext.ts:82](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L82)
 
 ___
 
 ### remove
 
-• `Optional` **remove**: *undefined* \| (`id`: *string*) => *void*
+• `Optional` **remove**: (`id`: *string*) => *void*
 
 Request remove item
 
 **`param`** Identifier of item
 
-Defined in: [src/crudcontext.ts:119](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L119)
+#### Type declaration:
+
+▸ (`id`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:119](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L119)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:119](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L119)
 
 ___
 
 ### save
 
-• `Optional` **save**: *undefined* \| (`item`: *CrudItem*) => *void*
+• `Optional` **save**: (`item`: *CrudItem*) => *void*
 
 Save changed/added item
 
 **`param`** Edited item
 
-Defined in: [src/crudcontext.ts:125](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L125)
+#### Type declaration:
+
+▸ (`item`: *CrudItem*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`item` | *CrudItem* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L125)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L125)
 
 ___
 
 ### saveBatch
 
-• `Optional` **saveBatch**: *undefined* \| (`items`: *CrudItem*[]) => *void*
+• `Optional` **saveBatch**: (`items`: *CrudItem*[]) => *void*
 
 Save changed/added multiple items
 
 **`param`** Edited items
 
-Defined in: [src/crudcontext.ts:132](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L132)
+#### Type declaration:
+
+▸ (`items`: *CrudItem*[]): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`items` | *CrudItem*[] |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:132](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L132)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:132](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L132)
 
 ___
 
 ### view
 
-• `Optional` **view**: *undefined* \| (`id`: *string*, `editLayout`: *string*) => *void*
+• `Optional` **view**: (`id`: *string*, `editLayout`: *string*) => *void*
 
 View item
 
@@ -278,14 +396,29 @@ View item
 
 **`param`** Edit layout to use for view operation
 
-Defined in: [src/crudcontext.ts:101](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L101)
+#### Type declaration:
+
+▸ (`id`: *string*, `editLayout`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+`editLayout` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:101](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L101)
+
+Defined in: [packages/react-contexts/src/crudcontext.ts:101](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L101)
 
 ___
 
 ### viewing
 
-• `Optional` **viewing**: *undefined* \| *boolean*
+• `Optional` **viewing**: *boolean*
 
 Viewing current item
 
-Defined in: [src/crudcontext.ts:42](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/crudcontext.ts#L42)
+Defined in: [packages/react-contexts/src/crudcontext.ts:42](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/crudcontext.ts#L42)

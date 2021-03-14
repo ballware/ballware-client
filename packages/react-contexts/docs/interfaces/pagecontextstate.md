@@ -4,10 +4,6 @@
 
 Context for page layout functionality
 
-## Hierarchy
-
-* **PageContextState**
-
 ## Table of contents
 
 ### Properties
@@ -27,57 +23,71 @@ Context for page layout functionality
 
 ### customParam
 
-• `Optional` **customParam**: *undefined* \| *Record*<*string*, *unknown*\>
+• `Optional` **customParam**: *Record*<string, unknown\>
 
 Custom param provided by custom page scripts
 
-Defined in: [src/pagecontext.ts:33](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L33)
+Defined in: [packages/react-contexts/src/pagecontext.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L33)
 
 ___
 
 ### documentation
 
-• `Optional` **documentation**: *undefined* \| *string*
+• `Optional` **documentation**: *string*
 
 Documentation text provided for display
 
-Defined in: [src/pagecontext.ts:38](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L38)
+Defined in: [packages/react-contexts/src/pagecontext.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L38)
 
 ___
 
 ### layout
 
-• `Optional` **layout**: *undefined* \| PageLayout
+• `Optional` **layout**: PageLayout
 
 Current provided page layout
 
-Defined in: [src/pagecontext.ts:23](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L23)
+Defined in: [packages/react-contexts/src/pagecontext.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L23)
 
 ___
 
 ### loadDocumentation
 
-• `Optional` **loadDocumentation**: *undefined* \| (`identifier`: *string*) => *void*
+• `Optional` **loadDocumentation**: (`identifier`: *string*) => *void*
 
 Load documentation for documentation identifier
 
-Defined in: [src/pagecontext.ts:43](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L43)
+#### Type declaration:
+
+▸ (`identifier`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L43)
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L43)
 
 ___
 
 ### pageParam
 
-• `Optional` **pageParam**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **pageParam**: QueryParams
 
 Page param provided by param editors or url
 
-Defined in: [src/pagecontext.ts:28](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L28)
+Defined in: [packages/react-contexts/src/pagecontext.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L28)
 
 ___
 
 ### paramEditorEvent
 
-• `Optional` **paramEditorEvent**: *undefined* \| (`name`: *string*, `event`: *string*, `editUtil`: EditUtil, `param?`: ValueType) => *void*
+• `Optional` **paramEditorEvent**: (`name`: *string*, `event`: *string*, `editUtil`: EditUtil, `param?`: ValueType) => *void*
 
 Parameter editor event triggered
 
@@ -89,13 +99,30 @@ Parameter editor event triggered
 
 **`param`** Optional event specific parameter
 
-Defined in: [src/pagecontext.ts:82](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L82)
+#### Type declaration:
+
+▸ (`name`: *string*, `event`: *string*, `editUtil`: EditUtil, `param?`: ValueType): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`name` | *string* |
+`event` | *string* |
+`editUtil` | EditUtil |
+`param?` | ValueType |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:82](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L82)
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:82](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L82)
 
 ___
 
 ### paramEditorInitialized
 
-• `Optional` **paramEditorInitialized**: *undefined* \| (`identifier`: *string*, `editUtil`: EditUtil) => *void*
+• `Optional` **paramEditorInitialized**: (`identifier`: *string*, `editUtil`: EditUtil) => *void*
 
 Parameter editor for identifier is inizialized (and displayed)
 
@@ -103,13 +130,28 @@ Parameter editor for identifier is inizialized (and displayed)
 
 **`param`** Adaptor for access to parameter editor instances
 
-Defined in: [src/pagecontext.ts:61](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L61)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `editUtil`: EditUtil): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`editUtil` | EditUtil |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:61](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L61)
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:61](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L61)
 
 ___
 
 ### paramEditorValueChanged
 
-• `Optional` **paramEditorValueChanged**: *undefined* \| (`name`: *string*, `value`: ValueType, `editUtil`: EditUtil) => *void*
+• `Optional` **paramEditorValueChanged**: (`name`: *string*, `value`: ValueType, `editUtil`: EditUtil) => *void*
 
 Parameter editor value changed
 
@@ -119,26 +161,64 @@ Parameter editor value changed
 
 **`param`** Adapter for access to parameter editor instances
 
-Defined in: [src/pagecontext.ts:69](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L69)
+#### Type declaration:
+
+▸ (`name`: *string*, `value`: ValueType, `editUtil`: EditUtil): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`name` | *string* |
+`value` | ValueType |
+`editUtil` | EditUtil |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L69)
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L69)
 
 ___
 
 ### paramsInitialized
 
-• `Optional` **paramsInitialized**: *undefined* \| (`hidden`: *boolean*) => *void*
+• `Optional` **paramsInitialized**: (`hidden`: *boolean*) => *void*
 
 All parameter editors initialized
 
 **`param`** True if parameter editor display is hidden because of media limitations
 
-Defined in: [src/pagecontext.ts:54](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L54)
+#### Type declaration:
+
+▸ (`hidden`: *boolean*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`hidden` | *boolean* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:54](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L54)
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:54](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L54)
 
 ___
 
 ### resetDocumentation
 
-• `Optional` **resetDocumentation**: *undefined* \| () => *void*
+• `Optional` **resetDocumentation**: () => *void*
 
 Hide documentation for display
 
-Defined in: [src/pagecontext.ts:48](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/pagecontext.ts#L48)
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L48)
+
+Defined in: [packages/react-contexts/src/pagecontext.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/pagecontext.ts#L48)

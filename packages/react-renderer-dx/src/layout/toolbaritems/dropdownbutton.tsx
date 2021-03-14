@@ -33,7 +33,7 @@ export const DropDownButtonToolbarItem = ({
           onButtonClick={() => {
             paramEditorEvent(name, 'click', undefined);
           }}
-          onItemClick={(e) => {
+          onItemClick={e => {
             paramEditorEvent(name, 'click', e.itemData.id);
           }}
           onInitialized={(e: any) => {

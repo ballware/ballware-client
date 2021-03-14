@@ -4,10 +4,6 @@
 
 Options for statistic map
 
-## Hierarchy
-
-* **StatisticMapOptions**
-
 ## Table of contents
 
 ### Properties
@@ -23,7 +19,7 @@ Options for statistic map
 
 Data item property containing location
 
-Defined in: [statistic.ts:209](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L209)
+Defined in: [statistic.ts:209](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L209)
 
 ___
 
@@ -33,4 +29,4 @@ ___
 
 Data item property containing tooltip text
 
-Defined in: [statistic.ts:214](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L214)
+Defined in: [statistic.ts:214](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L214)

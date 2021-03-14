@@ -72,7 +72,7 @@
 
 ### ExtendedRightsCheckFunc
 
-Ƭ **ExtendedRightsCheckFunc**: (`rights`: [*Rights*](interfaces/rights.md), `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `param`: *Record*<*string*, *unknown*\> \| *undefined*, `result`: *boolean*) => *boolean*
+Ƭ **ExtendedRightsCheckFunc**: (`rights`: [*Rights*](interfaces/rights.md), `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `param`: *Record*<string, unknown\> \| *undefined*, `result`: *boolean*) => *boolean*
 
 Definition for extended rights check function for custom script right checks
 
@@ -88,27 +88,43 @@ Definition for extended rights check function for custom script right checks
 
 **`returns`** true if access is allowed, false if not
 
-Defined in: [rights.ts:49](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/rights.ts#L49)
+#### Type declaration:
+
+▸ (`rights`: [*Rights*](interfaces/rights.md), `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `param`: *Record*<string, unknown\> \| *undefined*, `result`: *boolean*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`rights` | [*Rights*](interfaces/rights.md) |
+`entity` | *string* |
+`right` | [*EntityRights*](enums/entityrights.md) \| *string* |
+`param` | *Record*<string, unknown\> \| *undefined* |
+`result` | *boolean* |
+
+**Returns:** *boolean*
+
+Defined in: [rights.ts:49](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/rights.ts#L49)
 
 ___
 
 ### QueryParams
 
-Ƭ **QueryParams**: *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+Ƭ **QueryParams**: *Record*<string, string \| number \| boolean \| (string \| number \| boolean)[]\>
 
 Generic data container type containing parameter values for data queries
 
-Defined in: [common.ts:11](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/common.ts#L11)
+Defined in: [common.ts:11](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/common.ts#L11)
 
 ___
 
 ### ValueType
 
-Ƭ **ValueType**: *undefined* \| *Record*<*string*, *unknown*\> \| *string* \| *number* \| *boolean* \| Date \| (*string* \| *number* \| *Record*<*string*, *unknown*\>)[] \| { `lat`: *number* ; `lng`: *number*  }
+Ƭ **ValueType**: *undefined* \| *Record*<string, unknown\> \| *string* \| *number* \| *boolean* \| Date \| (*string* \| *number* \| *Record*<string, unknown\>)[] \| { `lat`: *number* ; `lng`: *number*  }
 
 Possible value types for business object properties
 
-Defined in: [cruditem.ts:11](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/cruditem.ts#L11)
+Defined in: [cruditem.ts:11](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/cruditem.ts#L11)
 
 ## Functions
 
@@ -121,7 +137,7 @@ Function for checking any access right for business object operations
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `rights` | [*Rights*](interfaces/rights.md) | Container with current user rights   |
 `application` | *string* | Application scope the business object is nested in   |
 `entity` | *string* | Business object type identifier   |
@@ -131,29 +147,29 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [rights.ts:95](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/rights.ts#L95)
+Defined in: [rights.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/rights.ts#L95)
 
 ___
 
 ### hasRight
 
-▸ **hasRight**(`rights`: [*Rights*](interfaces/rights.md), `application`: *string*, `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `extendedRightCheckFunc?`: [*ExtendedRightsCheckFunc*](modules.md#extendedrightscheckfunc), `param?`: *Record*<*string*, *unknown*\>): *boolean*
+▸ **hasRight**(`rights`: [*Rights*](interfaces/rights.md), `application`: *string*, `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `extendedRightCheckFunc?`: [*ExtendedRightsCheckFunc*](modules.md#extendedrightscheckfunc), `param?`: *Record*<string, unknown\>): *boolean*
 
 Function for checking specific access right for business object operations
 
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `rights` | [*Rights*](interfaces/rights.md) | Container with current user rights   |
 `application` | *string* | Application scope the business object is nested in   |
 `entity` | *string* | Business object type identifier   |
 `right` | [*EntityRights*](enums/entityrights.md) \| *string* | Requested right   |
 `extendedRightCheckFunc?` | [*ExtendedRightsCheckFunc*](modules.md#extendedrightscheckfunc) | Extended rights check function   |
-`param?` | *Record*<*string*, *unknown*\> | Extra param for custom rights check   |
+`param?` | *Record*<string, unknown\> | Extra param for custom rights check   |
 
 **Returns:** *boolean*
 
 true if access is allowed, false if not
 
-Defined in: [rights.ts:68](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/rights.ts#L68)
+Defined in: [rights.ts:68](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/rights.ts#L68)

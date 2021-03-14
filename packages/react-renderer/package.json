@@ -44,12 +44,17 @@
   "description": "Ballware Application Builder - React renderer interface",
   "author": "frank@ballmeyer.com",
   "module": "dist/ballware-react-renderer.esm.js",
+  "homepage": "https://github.com/ballware/ballware-client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankball/ballware-react-renderer.git"
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/react-renderer"
   },
   "bugs": {
-    "url": "https://github.com/frankball/ballware-react-renderer/issues"
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "size-limit": [
     {

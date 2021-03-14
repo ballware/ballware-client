@@ -49,7 +49,7 @@ export const Map = ({ layoutItem }: MapProps) => {
     editorEntered
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.getValue();
@@ -84,7 +84,7 @@ export const Map = ({ layoutItem }: MapProps) => {
           googlekey={googlekey}
           readonly={readonly ?? false}
           defaultValue={getValue(layoutItem.dataMember)}
-          setValue={(value) => {
+          setValue={value => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,

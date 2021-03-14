@@ -4,10 +4,6 @@
 
 Layout item tree element
 
-## Hierarchy
-
-* **PageLayoutItem**
-
 ## Table of contents
 
 ### Properties
@@ -22,41 +18,41 @@ Layout item tree element
 
 ### colCount
 
-• `Optional` **colCount**: *undefined* \| *number*
+• `Optional` **colCount**: *number*
 
 Number of cols for layouting child editor items (only for container types)
 
-Defined in: [page.ts:136](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L136)
+Defined in: [page.ts:136](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L136)
 
 ___
 
 ### colSpan
 
-• `Optional` **colSpan**: *undefined* \| *number*
+• `Optional` **colSpan**: *number*
 
 Number of cols occupied by editor in layout
 
-Defined in: [page.ts:141](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L141)
+Defined in: [page.ts:141](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L141)
 
 ___
 
 ### items
 
-• `Optional` **items**: *undefined* \| [*PageLayoutItem*](pagelayoutitem.md)[]
+• `Optional` **items**: [*PageLayoutItem*](pagelayoutitem.md)[]
 
 Child layout components (only for container types)
 
-Defined in: [page.ts:147](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L147)
+Defined in: [page.ts:147](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L147)
 
 ___
 
 ### options
 
-• `Optional` **options**: *undefined* \| [*PageLayoutItemOptions*](pagelayoutitemoptions.md)
+• `Optional` **options**: [*PageLayoutItemOptions*](pagelayoutitemoptions.md)
 
 Options for layout item
 
-Defined in: [page.ts:131](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L131)
+Defined in: [page.ts:131](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L131)
 
 ___
 
@@ -66,4 +62,4 @@ ___
 
 Type identifier for layout item
 
-Defined in: [page.ts:119](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L119)
+Defined in: [page.ts:119](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L119)

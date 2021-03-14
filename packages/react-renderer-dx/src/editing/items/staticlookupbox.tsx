@@ -51,7 +51,7 @@ export const StaticLookupBox = ({ layoutItem }: StaticLookupBoxProps) => {
     editorEntered
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.instance.option('value');
@@ -94,7 +94,7 @@ export const StaticLookupBox = ({ layoutItem }: StaticLookupBoxProps) => {
             layoutItem.dataMember &&
             editorInitialized(layoutItem.dataMember, editor)
           }
-          onValueChanged={(e) => {
+          onValueChanged={e => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,
@@ -108,7 +108,7 @@ export const StaticLookupBox = ({ layoutItem }: StaticLookupBoxProps) => {
         >
           <Validator>
             {required && <RequiredRule />}
-            {layoutItem.validations?.map((v) => (
+            {layoutItem.validations?.map(v => (
               <CustomRule
                 key={v.identifier}
                 validationCallback={(e: { value: any }) =>

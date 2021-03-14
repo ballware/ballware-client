@@ -4,10 +4,6 @@
 
 Interface of custom crud function definition
 
-## Hierarchy
-
-* **EntityCustomFunction**
-
 ## Table of contents
 
 ### Properties
@@ -30,38 +26,38 @@ Interface of custom crud function definition
 Identifier of edit layout definition used by function.
 If not set the primary edit layout will be used
 
-Defined in: [entity.ts:82](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L82)
+Defined in: [entity.ts:82](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L82)
 
 ___
 
 ### entity
 
-• `Optional` **entity**: *undefined* \| *string*
+• `Optional` **entity**: *string*
 
 Identifier of owning business object
 
-Defined in: [entity.ts:43](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L43)
+Defined in: [entity.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L43)
 
 ___
 
 ### externalEditor
 
-• `Optional` **externalEditor**: *undefined* \| *boolean*
+• `Optional` **externalEditor**: *boolean*
 
 Set if function uses a propritary editor.
 If set, prepareCustomFunction has to supply editor url as callback parameter
 
-Defined in: [entity.ts:76](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L76)
+Defined in: [entity.ts:76](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L76)
 
 ___
 
 ### icon
 
-• `Optional` **icon**: *undefined* \| *string*
+• `Optional` **icon**: *string*
 
 CSS class for icon
 
-Defined in: [entity.ts:65](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L65)
+Defined in: [entity.ts:65](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L65)
 
 ___
 
@@ -71,17 +67,17 @@ ___
 
 Unique id of custom function
 
-Defined in: [entity.ts:48](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L48)
+Defined in: [entity.ts:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L48)
 
 ___
 
 ### multi
 
-• `Optional` **multi**: *undefined* \| *boolean*
+• `Optional` **multi**: *boolean*
 
 Set if function supports batch operations of multiple business object instances
 
-Defined in: [entity.ts:70](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L70)
+Defined in: [entity.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L70)
 
 ___
 
@@ -91,7 +87,7 @@ ___
 
 Display text of function
 
-Defined in: [entity.ts:60](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L60)
+Defined in: [entity.ts:60](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L60)
 
 ___
 
@@ -103,4 +99,4 @@ Function operation type
 add: Function is creating new business objects
 edit: Function is editing existing selected business objects
 
-Defined in: [entity.ts:55](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L55)
+Defined in: [entity.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L55)

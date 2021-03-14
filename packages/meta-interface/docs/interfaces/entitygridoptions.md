@@ -29,36 +29,36 @@ Identifier of business object
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[entity](crudcontaineroptions.md#entity)
 
-Defined in: [page.ts:29](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L29)
+Defined in: [page.ts:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L29)
 
 ___
 
 ### height
 
-• `Optional` **height**: *undefined* \| *string*
+• `Optional` **height**: *string*
 
 Optional fixed height of component
 
-Defined in: [page.ts:44](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L44)
+Defined in: [page.ts:44](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L44)
 
 ___
 
 ### layout
 
-• `Optional` **layout**: *undefined* \| *string*
+• `Optional` **layout**: *string*
 
 Identifier of list layout
 
-Defined in: [page.ts:49](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L49)
+Defined in: [page.ts:49](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L49)
 
 ___
 
 ### query
 
-• `Optional` **query**: *undefined* \| *string*
+• `Optional` **query**: *string*
 
 Identifier of list query
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[query](crudcontaineroptions.md#query)
 
-Defined in: [page.ts:34](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L34)
+Defined in: [page.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L34)

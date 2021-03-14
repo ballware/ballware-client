@@ -28,12 +28,12 @@
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 `statistic` | Statistic |
 
 **Returns:** CompiledStatistic
 
-Defined in: [statistic.ts:33](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/statistic.ts#L33)
+Defined in: [statistic.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/statistic.ts#L33)
 
 ___
 
@@ -46,14 +46,14 @@ Create adapter for attachment data operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaAttachmentApi
 
 Adapter object providing data operations
 
-Defined in: [attachment.ts:70](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/attachment.ts#L70)
+Defined in: [attachment.ts:70](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/attachment.ts#L70)
 
 ___
 
@@ -66,7 +66,7 @@ Create adapter for document data operations with ballware.meta.service
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 `metaServiceBaseUrl` | *string* |
 `documentServiceBaseUrl` | *string* |
 
@@ -74,7 +74,7 @@ Name | Type |
 
 Adapter object providing data operations
 
-Defined in: [document.ts:40](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/document.ts#L40)
+Defined in: [document.ts:40](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/document.ts#L40)
 
 ___
 
@@ -87,14 +87,14 @@ Create adapter for documentation data operations with ballware.meta.service
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 `metaServiceBaseUrl` | *string* |
 
 **Returns:** MetaDocumentationApi
 
 Adapter object providing data operations
 
-Defined in: [documentation.ts:29](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/documentation.ts#L29)
+Defined in: [documentation.ts:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/documentation.ts#L29)
 
 ___
 
@@ -107,14 +107,14 @@ Create adapter for entity metadata operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaEntityApi
 
 Adapter object providing data operations
 
-Defined in: [entity.ts:552](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/entity.ts#L552)
+Defined in: [entity.ts:552](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/entity.ts#L552)
 
 ___
 
@@ -127,14 +127,14 @@ Create adapter for generic entity data operations with ballware.meta.service
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 `entityBaseUrl` | *string* |
 
 **Returns:** MetaGenericEntityApi
 
 Adapter object providing data operations
 
-Defined in: [genericentity.ts:96](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/genericentity.ts#L96)
+Defined in: [genericentity.ts:96](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/genericentity.ts#L96)
 
 ___
 
@@ -147,14 +147,14 @@ Create adapter for lookup fetch operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaLookupApi
 
 Adapter object providing data operations
 
-Defined in: [lookup.ts:119](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/lookup.ts#L119)
+Defined in: [lookup.ts:119](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/lookup.ts#L119)
 
 ___
 
@@ -167,14 +167,14 @@ Create adapter for page fetch operations with ballware.meta.service
 #### Parameters:
 
 Name | Type |
------- | ------ |
+:------ | :------ |
 `metaServiceBaseUrl` | *string* |
 
 **Returns:** MetaPageApi
 
 Adapter object providing data operations
 
-Defined in: [page.ts:191](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/page.ts#L191)
+Defined in: [page.ts:191](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/page.ts#L191)
 
 ___
 
@@ -187,14 +187,14 @@ Create adapter for pickvalue fetch operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaPickvalueApi
 
 Adapter object providing data operations
 
-Defined in: [pickvalue.ts:44](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/pickvalue.ts#L44)
+Defined in: [pickvalue.ts:44](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/pickvalue.ts#L44)
 
 ___
 
@@ -207,14 +207,14 @@ Create adapter for processing state fetch operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaProcessingstateApi
 
 Adapter object providing data operations
 
-Defined in: [processingstate.ts:58](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/processingstate.ts#L58)
+Defined in: [processingstate.ts:58](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/processingstate.ts#L58)
 
 ___
 
@@ -227,14 +227,14 @@ Create adapter for statistic fetch operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaStatisticApi
 
 Adapter object providing data operations
 
-Defined in: [statistic.ts:135](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/statistic.ts#L135)
+Defined in: [statistic.ts:135](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/statistic.ts#L135)
 
 ___
 
@@ -247,11 +247,11 @@ Create adapter for tenant fetch operations with ballware.meta.service
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL to connect to ballware.meta.service   |
 
 **Returns:** MetaTenantApi
 
 Adapter object providing data operations
 
-Defined in: [tenant.ts:63](https://github.com/frankball/ballware-meta-backend/blob/d4d3151/src/tenant.ts#L63)
+Defined in: [tenant.ts:63](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-backend/src/tenant.ts#L63)

@@ -120,7 +120,6 @@ export const AuthorizationCodeRightsProvider = ({
 
   useEffect(() => {
     if (
-      push &&
       authority &&
       client &&
       redirect_uri &&
@@ -195,7 +194,7 @@ export const AuthorizationCodeRightsProvider = ({
   ]);
 
   useEffect(() => {
-    if (push && replace && version && showInfo && showError && userManager) {
+    if (version && showInfo && showError && userManager) {
       setValue(previousValue => {
         return {
           ...previousValue,

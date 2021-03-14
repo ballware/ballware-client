@@ -4,10 +4,6 @@
 
 Properties for generic meta provider
 
-## Hierarchy
-
-* **MetaProviderProps**
-
 ## Table of contents
 
 ### Properties
@@ -25,27 +21,27 @@ Properties for generic meta provider
 
 Entity identifier of generic entity
 
-Defined in: [src/metaprovider.tsx:40](https://github.com/frankball/ballware-react-provider/blob/5745264/src/metaprovider.tsx#L40)
+Defined in: [metaprovider.tsx:40](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/metaprovider.tsx#L40)
 
 ___
 
 ### headParams
 
-• `Optional` **headParams**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **headParams**: QueryParams
 
 Optional paraemeter provided by parent component (page and suchlike)
 
-Defined in: [src/metaprovider.tsx:50](https://github.com/frankball/ballware-react-provider/blob/5745264/src/metaprovider.tsx#L50)
+Defined in: [metaprovider.tsx:50](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/metaprovider.tsx#L50)
 
 ___
 
 ### initialCustomParam
 
-• **initialCustomParam**: *Record*<*string*, *unknown*\>
+• **initialCustomParam**: *Record*<string, unknown\>
 
 Custom param provided by parent component
 
-Defined in: [src/metaprovider.tsx:55](https://github.com/frankball/ballware-react-provider/blob/5745264/src/metaprovider.tsx#L55)
+Defined in: [metaprovider.tsx:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/metaprovider.tsx#L55)
 
 ___
 
@@ -55,4 +51,4 @@ ___
 
 Provide only readonly functionality
 
-Defined in: [src/metaprovider.tsx:45](https://github.com/frankball/ballware-react-provider/blob/5745264/src/metaprovider.tsx#L45)
+Defined in: [metaprovider.tsx:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/metaprovider.tsx#L45)

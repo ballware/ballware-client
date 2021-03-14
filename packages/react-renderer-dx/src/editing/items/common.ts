@@ -8,7 +8,7 @@ export interface EditItemProps {
 
 export const componentToEditorRef = (component: Component) => {
   return {
-    getOption: (option) => component.option(option),
+    getOption: option => component.option(option),
     setOption: (option, value) => component.option(option, value),
   } as EditorRef;
 };

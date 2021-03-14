@@ -4,10 +4,6 @@
 
 Definition of edit layout for editing/adding business objects
 
-## Hierarchy
-
-* **EditLayout**
-
 ## Table of contents
 
 ### Properties
@@ -22,31 +18,38 @@ Definition of edit layout for editing/adding business objects
 
 ### colCount
 
-• `Optional` **colCount**: *undefined* \| *number*
+• `Optional` **colCount**: *number*
 
 Number of cols for layouting child editor items
 
-Defined in: [entity.ts:358](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L358)
+Defined in: [entity.ts:358](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L358)
 
 ___
 
 ### colCountByScreen
 
-• `Optional` **colCountByScreen**: *undefined* \| { `lg?`: *undefined* \| *number* ; `sm?`: *undefined* \| *number*  }
+• `Optional` **colCountByScreen**: *object*
 
 Specific column count definition for small/big screens
 
-Defined in: [entity.ts:363](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L363)
+#### Type declaration:
+
+Name | Type |
+:------ | :------ |
+`lg`? | *number* |
+`sm`? | *number* |
+
+Defined in: [entity.ts:363](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L363)
 
 ___
 
 ### fullscreen
 
-• `Optional` **fullscreen**: *undefined* \| *boolean*
+• `Optional` **fullscreen**: *boolean*
 
 Display editor in full screen popup
 
-Defined in: [entity.ts:368](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L368)
+Defined in: [entity.ts:368](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L368)
 
 ___
 
@@ -56,7 +59,7 @@ ___
 
 Unique identifier of edit layout
 
-Defined in: [entity.ts:353](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L353)
+Defined in: [entity.ts:353](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L353)
 
 ___
 
@@ -66,4 +69,4 @@ ___
 
 List of layout items
 
-Defined in: [entity.ts:373](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L373)
+Defined in: [entity.ts:373](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L373)

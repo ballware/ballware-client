@@ -32,7 +32,7 @@ access token to make api request on behalf of authenticated user
 
 Inherited from: [SessionWithUserInfo](sessionwithuserinfo.md).[access_token](sessionwithuserinfo.md#access_token)
 
-Defined in: [auth.ts:15](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L15)
+Defined in: [auth.ts:15](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L15)
 
 ___
 
@@ -44,7 +44,7 @@ Mail adress of authenticated user, can be identical with identifer if authentica
 
 Inherited from: [SessionWithUserInfo](sessionwithuserinfo.md).[email](sessionwithuserinfo.md#email)
 
-Defined in: [auth.ts:35](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L35)
+Defined in: [auth.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L35)
 
 ___
 
@@ -56,7 +56,7 @@ number of seconds the access token will expire in
 
 Inherited from: [SessionWithUserInfo](sessionwithuserinfo.md).[expires_in](sessionwithuserinfo.md#expires_in)
 
-Defined in: [auth.ts:21](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L21)
+Defined in: [auth.ts:21](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L21)
 
 ___
 
@@ -68,7 +68,7 @@ Subject of authenticated user (mail, unique user name...)
 
 Inherited from: [SessionWithUserInfo](sessionwithuserinfo.md).[identifier](sessionwithuserinfo.md#identifier)
 
-Defined in: [auth.ts:32](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L32)
+Defined in: [auth.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L32)
 
 ___
 
@@ -80,7 +80,7 @@ Timestamp the access token was issued
 
 Inherited from: [SessionWithUserInfo](sessionwithuserinfo.md).[issued](sessionwithuserinfo.md#issued)
 
-Defined in: [auth.ts:24](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L24)
+Defined in: [auth.ts:24](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L24)
 
 ___
 
@@ -92,7 +92,7 @@ refresh token to grant a new access token for extended authentication session
 
 Inherited from: [SessionWithUserInfo](sessionwithuserinfo.md).[refresh_token](sessionwithuserinfo.md#refresh_token)
 
-Defined in: [auth.ts:18](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L18)
+Defined in: [auth.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L18)
 
 ___
 
@@ -102,4 +102,4 @@ ___
 
 Collection of user rights
 
-Defined in: [auth.ts:45](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L45)
+Defined in: [auth.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L45)

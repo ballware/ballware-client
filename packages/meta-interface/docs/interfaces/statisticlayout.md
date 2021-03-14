@@ -4,10 +4,6 @@
 
 Statistic layout item metadata
 
-## Hierarchy
-
-* **StatisticLayout**
-
 ## Table of contents
 
 ### Properties
@@ -21,11 +17,11 @@ Statistic layout item metadata
 
 ### height
 
-• `Optional` **height**: *undefined* \| *string*
+• `Optional` **height**: *string*
 
 Optional fixed width of item
 
-Defined in: [statistic.ts:343](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L343)
+Defined in: [statistic.ts:343](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L343)
 
 ___
 
@@ -35,17 +31,17 @@ ___
 
 Type specific options for layout item
 
-Defined in: [statistic.ts:348](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L348)
+Defined in: [statistic.ts:348](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L348)
 
 ___
 
 ### title
 
-• `Optional` **title**: *undefined* \| *string*
+• `Optional` **title**: *string*
 
 Optional headline of item
 
-Defined in: [statistic.ts:338](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L338)
+Defined in: [statistic.ts:338](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L338)
 
 ___
 
@@ -55,4 +51,4 @@ ___
 
 Type of statistic layout item
 
-Defined in: [statistic.ts:333](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L333)
+Defined in: [statistic.ts:333](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L333)

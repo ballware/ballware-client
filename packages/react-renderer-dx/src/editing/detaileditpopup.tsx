@@ -71,11 +71,11 @@ export const DetailEditPopup = ({
             <DialogContent>
               <ValidationGroup
                 ref={validationGroupRef}
-                onInitialized={(e) => e.component?.validate()}
+                onInitialized={e => e.component?.validate()}
               >
                 {editLayout && EditLayoutItem && (
                   <Container>
-                    {editLayout.items?.map((item) => (
+                    {editLayout.items?.map(item => (
                       <EditLayoutItem
                         key={key++}
                         colCount={editLayout.colCount}

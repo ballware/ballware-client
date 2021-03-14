@@ -21,7 +21,7 @@
 
 ### UserInfoMappingFunc
 
-Ƭ **UserInfoMappingFunc**: <T\>(`sessionWithUserInfo`: [*SessionWithUserInfo*](interfaces/sessionwithuserinfo.md), `userinfo`: *Record*<*string*, *unknown*\>) => T
+Ƭ **UserInfoMappingFunc**: <T\>(`sessionWithUserInfo`: [*SessionWithUserInfo*](interfaces/sessionwithuserinfo.md), `userinfo`: *Record*<string, unknown\>) => T
 
 Application specific mapping function for fetching additional information from authentication response (claims, rights...)
 
@@ -31,4 +31,23 @@ Application specific mapping function for fetching additional information from a
 
 **`returns`** - Extended session object with additional information
 
-Defined in: [auth.ts:55](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L55)
+#### Type declaration:
+
+▸ <T\>(`sessionWithUserInfo`: [*SessionWithUserInfo*](interfaces/sessionwithuserinfo.md), `userinfo`: *Record*<string, unknown\>): T
+
+#### Type parameters:
+
+Name | Type |
+:------ | :------ |
+`T` | [*MappedSessionWithUserRights*](interfaces/mappedsessionwithuserrights.md) |
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`sessionWithUserInfo` | [*SessionWithUserInfo*](interfaces/sessionwithuserinfo.md) |
+`userinfo` | *Record*<string, unknown\> |
+
+**Returns:** T
+
+Defined in: [auth.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L55)

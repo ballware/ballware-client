@@ -30,7 +30,7 @@ export const HtmlEditor = ({
         height={height}
         width={width}
         readOnly={readOnly}
-        onValueChanged={(e) => onChange && onChange(e.value)}
+        onValueChanged={e => onChange && onChange(e.value)}
       >
         {!readOnly && (
           <Toolbar multiline={false}>

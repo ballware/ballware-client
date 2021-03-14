@@ -4,10 +4,6 @@
 
 Interface for document printing operations
 
-## Hierarchy
-
-* **MetaDocumentApi**
-
 ## Table of contents
 
 ### Properties
@@ -29,13 +25,28 @@ Fetch available print documents for business object type
 
 **`returns`** Promise containing available print documents for entity
 
-Defined in: [document.ts:34](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/document.ts#L34)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*): *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+
+**Returns:** *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
+
+Defined in: [document.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L34)
+
+Defined in: [document.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L34)
 
 ___
 
 ### viewerUrl
 
-• **viewerUrl**: (`token`: *string*, `search`: *string*) => *Promise*<*string*\>
+• **viewerUrl**: (`token`: *string*, `search`: *string*) => *Promise*<string\>
 
 Generate viewer url for document
 
@@ -45,4 +56,19 @@ Generate viewer url for document
 
 **`returns`** Promise containing url for rendering document
 
-Defined in: [document.ts:46](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/document.ts#L46)
+#### Type declaration:
+
+▸ (`token`: *string*, `search`: *string*): *Promise*<string\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`search` | *string* |
+
+**Returns:** *Promise*<string\>
+
+Defined in: [document.ts:46](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L46)
+
+Defined in: [document.ts:46](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L46)

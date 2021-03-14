@@ -54,7 +54,7 @@ export const TextBox = ({ layoutItem, type }: TextBoxProps) => {
     editorEntered
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.instance.option('value');
@@ -92,7 +92,7 @@ export const TextBox = ({ layoutItem, type }: TextBoxProps) => {
             layoutItem.dataMember &&
               editorInitialized(layoutItem.dataMember, editor);
           }}
-          onValueChanged={(e) => {
+          onValueChanged={e => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,
@@ -107,7 +107,7 @@ export const TextBox = ({ layoutItem, type }: TextBoxProps) => {
           <Validator>
             {required && <RequiredRule />}
             {type === 'mail' && <EmailRule />}
-            {layoutItem.validations?.map((v) => (
+            {layoutItem.validations?.map(v => (
               <CustomRule
                 key={v.identifier}
                 validationCallback={(e: { value: any }) =>

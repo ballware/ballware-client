@@ -4,10 +4,6 @@
 
 Properties for crudcontainer component
 
-## Hierarchy
-
-* **CrudContainerProps**
-
 ## Table of contents
 
 ### Properties
@@ -23,14 +19,14 @@ Properties for crudcontainer component
 
 Layout item metadata for crudcontainer item
 
-Defined in: [src/common/crudcontainer.tsx:25](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/crudcontainer.tsx#L25)
+Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:25](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/crudcontainer.tsx#L25)
 
 ___
 
 ### params
 
-• `Optional` **params**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **params**: QueryParams
 
 Head params provided by parent container
 
-Defined in: [src/common/crudcontainer.tsx:30](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/crudcontainer.tsx#L30)
+Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:30](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/crudcontainer.tsx#L30)

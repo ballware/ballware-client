@@ -6,7 +6,18 @@
   "typings": "dist/index.d.ts",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
-  "homepage": "https://github.com/frankball/ballware-meta-interface",
+  "homepage": "https://github.com/ballware/ballware-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/meta-interface"
+  },
+  "bugs": {
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist",
     "src"

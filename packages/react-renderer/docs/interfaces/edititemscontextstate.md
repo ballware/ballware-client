@@ -4,10 +4,6 @@
 
 Context providing environmental functionality for rendered edit layout
 
-## Hierarchy
-
-* **EditItemsContextState**
-
 ## Table of contents
 
 ### Properties
@@ -38,17 +34,31 @@ Context providing environmental functionality for rendered edit layout
 
 ### EditProvider
 
-• `Optional` **EditProvider**: *undefined* \| (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *undefined* \| *string* ; `item`: *undefined* \| *string* \| *number* \| *boolean* \| *Record*<*string*, *unknown*\> \| Date \| (*string* \| *number* \| *Record*<*string*, *unknown*\>)[] \| { `lat`: *number* ; `lng`: *number*  } \| *CrudItem* \| *CrudItem*[]  }\>) => *Element*
+• `Optional` **EditProvider**: (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\>) => *Element*
 
 Factory for generating new edit provider
 
-Defined in: [src/common/edititemscontext.tsx:263](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L263)
+#### Type declaration:
+
+▸ (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\>): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\> |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:263](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L263)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:263](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L263)
 
 ___
 
 ### detailEditorEntered
 
-• `Optional` **detailEditorEntered**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember`: *string*) => *void*
+• `Optional` **detailEditorEntered**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*) => *void*
 
 Detail editor entered focus
 
@@ -58,13 +68,29 @@ Detail editor entered focus
 
 **`param`** Data member of detail editor
 
-Defined in: [src/common/edititemscontext.tsx:217](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L217)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:217](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L217)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:217](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L217)
 
 ___
 
 ### detailEditorEvent
 
-• `Optional` **detailEditorEvent**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember`: *string*, `event`: *string*) => *void*
+• `Optional` **detailEditorEvent**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `event`: *string*) => *void*
 
 Detail editor event triggered
 
@@ -76,13 +102,30 @@ Detail editor event triggered
 
 **`param`** Editor event identifier
 
-Defined in: [src/common/edititemscontext.tsx:230](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L230)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `event`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember` | *string* |
+`event` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:230](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L230)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:230](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L230)
 
 ___
 
 ### detailEditorInitialized
 
-• `Optional` **detailEditorInitialized**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember`: *string*, `editor`: [*EditorRef*](editorref.md)) => *void*
+• `Optional` **detailEditorInitialized**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `editor`: [*EditorRef*](editorref.md)) => *void*
 
 Manipulate detail editor component after creation
 
@@ -94,13 +137,30 @@ Manipulate detail editor component after creation
 
 **`param`** Reference to editor component
 
-Defined in: [src/common/edititemscontext.tsx:171](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L171)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `editor`: [*EditorRef*](editorref.md)): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember` | *string* |
+`editor` | [*EditorRef*](editorref.md) |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:171](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L171)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:171](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L171)
 
 ___
 
 ### detailEditorPreparing
 
-• `Optional` **detailEditorPreparing**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember`: *string*, `options`: EditLayoutItemOptions) => *void*
+• `Optional` **detailEditorPreparing**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `options`: EditLayoutItemOptions) => *void*
 
 Manipulate detail editor options before rendering
 
@@ -112,13 +172,30 @@ Manipulate detail editor options before rendering
 
 **`param`** Detail editor options
 
-Defined in: [src/common/edititemscontext.tsx:157](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L157)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `options`: EditLayoutItemOptions): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember` | *string* |
+`options` | EditLayoutItemOptions |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:157](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L157)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:157](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L157)
 
 ___
 
 ### detailEditorValidating
 
-• `Optional` **detailEditorValidating**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember`: *string*, `identifier`: *string*, `value`: ValueType) => *boolean*
+• `Optional` **detailEditorValidating**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `identifier`: *string*, `value`: ValueType) => *boolean*
 
 Execute custom validation rule for detail editor
 
@@ -134,13 +211,31 @@ Execute custom validation rule for detail editor
 
 **`returns`** true if value passes validation
 
-Defined in: [src/common/edititemscontext.tsx:187](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L187)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `identifier`: *string*, `value`: ValueType): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember` | *string* |
+`identifier` | *string* |
+`value` | ValueType |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:187](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L187)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:187](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L187)
 
 ___
 
 ### detailEditorValueChanged
 
-• `Optional` **detailEditorValueChanged**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember`: *string*, `value`: ValueType, `notify`: *boolean*) => *void*
+• `Optional` **detailEditorValueChanged**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `value`: ValueType, `notify`: *boolean*) => *void*
 
 Value changed in detail editor
 
@@ -154,13 +249,31 @@ Value changed in detail editor
 
 **`param`** True if value change is triggered by user, false if value change was triggered by custom script
 
-Defined in: [src/common/edititemscontext.tsx:203](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L203)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember`: *string*, `value`: ValueType, `notify`: *boolean*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember` | *string* |
+`value` | ValueType |
+`notify` | *boolean* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:203](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L203)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:203](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L203)
 
 ___
 
 ### detailGridCellPreparing
 
-• `Optional` **detailGridCellPreparing**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `options`: GridLayoutColumn) => *void*
+• `Optional` **detailGridCellPreparing**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `options`: GridLayoutColumn) => *void*
 
 Manipulate detail grid cell options before rendering
 
@@ -170,13 +283,29 @@ Manipulate detail grid cell options before rendering
 
 **`param`** Grid column options
 
-Defined in: [src/common/edititemscontext.tsx:133](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L133)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `options`: GridLayoutColumn): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`options` | GridLayoutColumn |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:133](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L133)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:133](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L133)
 
 ___
 
 ### detailGridRowValidating
 
-• `Optional` **detailGridRowValidating**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>) => *string*
+• `Optional` **detailGridRowValidating**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>) => *string*
 
 Validate detail row before save operation
 
@@ -186,25 +315,54 @@ Validate detail row before save operation
 
 **`returns`** Validation message or translation id if validation fails, undefined if row passes validation
 
-Defined in: [src/common/edititemscontext.tsx:145](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L145)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>): *string*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+
+**Returns:** *string*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:145](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L145)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:145](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L145)
 
 ___
 
 ### editorEntered
 
-• `Optional` **editorEntered**: *undefined* \| (`dataMember`: *string*) => *void*
+• `Optional` **editorEntered**: (`dataMember`: *string*) => *void*
 
 Editor entered focus
 
 **`param`** Data member of editor
 
-Defined in: [src/common/edititemscontext.tsx:118](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L118)
+#### Type declaration:
+
+▸ (`dataMember`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:118](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L118)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:118](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L118)
 
 ___
 
 ### editorEvent
 
-• `Optional` **editorEvent**: *undefined* \| (`dataMember`: *string*, `event`: *string*) => *void*
+• `Optional` **editorEvent**: (`dataMember`: *string*, `event`: *string*) => *void*
 
 Editor triggered specific event
 
@@ -212,13 +370,28 @@ Editor triggered specific event
 
 **`param`** Event identifier
 
-Defined in: [src/common/edititemscontext.tsx:125](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L125)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `event`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`event` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L125)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:125](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L125)
 
 ___
 
 ### editorInitialized
 
-• `Optional` **editorInitialized**: *undefined* \| (`dataMember`: *string*, `editor`: [*EditorRef*](editorref.md)) => *void*
+• `Optional` **editorInitialized**: (`dataMember`: *string*, `editor`: [*EditorRef*](editorref.md)) => *void*
 
 Initialize editor component after first rendering
 
@@ -226,13 +399,28 @@ Initialize editor component after first rendering
 
 **`param`** Editor component reference
 
-Defined in: [src/common/edititemscontext.tsx:87](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L87)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `editor`: [*EditorRef*](editorref.md)): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`editor` | [*EditorRef*](editorref.md) |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:87](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L87)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:87](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L87)
 
 ___
 
 ### editorPreparing
 
-• `Optional` **editorPreparing**: *undefined* \| (`dataMember`: *string*, `item`: EditLayoutItemOptions) => *void*
+• `Optional` **editorPreparing**: (`dataMember`: *string*, `item`: EditLayoutItemOptions) => *void*
 
 Manipulate editor options before rendering
 
@@ -240,13 +428,28 @@ Manipulate editor options before rendering
 
 **`param`** Editor options
 
-Defined in: [src/common/edititemscontext.tsx:80](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L80)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `item`: EditLayoutItemOptions): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`item` | EditLayoutItemOptions |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:80](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L80)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:80](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L80)
 
 ___
 
 ### editorValidating
 
-• `Optional` **editorValidating**: *undefined* \| (`dataMember`: *string*, `identifier`: *string*, `value`: ValueType) => *boolean*
+• `Optional` **editorValidating**: (`dataMember`: *string*, `identifier`: *string*, `value`: ValueType) => *boolean*
 
 Validate custom validation rule for editor
 
@@ -258,13 +461,29 @@ Validate custom validation rule for editor
 
 **`returns`** true if value passed validation
 
-Defined in: [src/common/edititemscontext.tsx:96](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L96)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `identifier`: *string*, `value`: ValueType): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`identifier` | *string* |
+`value` | ValueType |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:96](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L96)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:96](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L96)
 
 ___
 
 ### editorValueChanged
 
-• `Optional` **editorValueChanged**: *undefined* \| (`dataMember`: *string*, `value`: ValueType, `notify`: *boolean*) => *void*
+• `Optional` **editorValueChanged**: (`dataMember`: *string*, `value`: ValueType, `notify`: *boolean*) => *void*
 
 Editor value has changed event
 
@@ -274,13 +493,29 @@ Editor value has changed event
 
 **`param`** True if value change was triggered by user, false if value change was triggered by application
 
-Defined in: [src/common/edititemscontext.tsx:108](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L108)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `value`: ValueType, `notify`: *boolean*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`value` | ValueType |
+`notify` | *boolean* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:108](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L108)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:108](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L108)
 
 ___
 
 ### getDetailValue
 
-• `Optional` **getDetailValue**: *undefined* \| <T\>(`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>, `detailMember?`: *string*) => T
+• `Optional` **getDetailValue**: <T\>(`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember?`: *string*) => T
 
 Get value in detail row
 
@@ -292,25 +527,61 @@ Get value in detail row
 
 **`returns`** Detail member value
 
-Defined in: [src/common/edititemscontext.tsx:244](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L244)
+#### Type declaration:
+
+▸ <T\>(`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>, `detailMember?`: *string*): T
+
+#### Type parameters:
+
+Name |
+:------ |
+`T` |
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+`detailMember?` | *string* |
+
+**Returns:** T
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:244](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L244)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:244](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L244)
 
 ___
 
 ### getLookup
 
-• `Optional` **getLookup**: *undefined* \| (`identifier`: *string*) => LookupDescriptor \| LookupCreator
+• `Optional` **getLookup**: (`identifier`: *string*) => LookupDescriptor \| LookupCreator
 
 Get lookup descriptor by identifier
 
 **`returns`** Lookup descriptor or lookup creator method
 
-Defined in: [src/common/edititemscontext.tsx:67](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L67)
+#### Type declaration:
+
+▸ (`identifier`: *string*): LookupDescriptor \| LookupCreator
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+
+**Returns:** LookupDescriptor \| LookupCreator
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:67](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L67)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:67](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L67)
 
 ___
 
 ### getValue
 
-• `Optional` **getValue**: *undefined* \| <T\>(`dataMember?`: *string*) => T
+• `Optional` **getValue**: <T\>(`dataMember?`: *string*) => T
 
 Get typed value from edited item by data member
 
@@ -318,13 +589,33 @@ Get typed value from edited item by data member
 
 **`returns`** Property value as requested type
 
-Defined in: [src/common/edititemscontext.tsx:61](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L61)
+#### Type declaration:
+
+▸ <T\>(`dataMember?`: *string*): T
+
+#### Type parameters:
+
+Name |
+:------ |
+`T` |
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember?` | *string* |
+
+**Returns:** T
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:61](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L61)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:61](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L61)
 
 ___
 
 ### initNewDetailItem
 
-• `Optional` **initNewDetailItem**: *undefined* \| (`dataMember`: *string*, `detailItem`: *Record*<*string*, *unknown*\>) => *void*
+• `Optional` **initNewDetailItem**: (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>) => *void*
 
 Initialize new created detail item
 
@@ -332,25 +623,48 @@ Initialize new created detail item
 
 **`param`** New created detail item
 
-Defined in: [src/common/edititemscontext.tsx:255](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L255)
+#### Type declaration:
+
+▸ (`dataMember`: *string*, `detailItem`: *Record*<string, unknown\>): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`dataMember` | *string* |
+`detailItem` | *Record*<string, unknown\> |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:255](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L255)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:255](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L255)
 
 ___
 
 ### readOnly
 
-• `Optional` **readOnly**: *undefined* \| () => *boolean*
+• `Optional` **readOnly**: () => *boolean*
 
 Check if edit form is read only
 
 **`returns`** true if edit form is read only
 
-Defined in: [src/common/edititemscontext.tsx:73](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L73)
+#### Type declaration:
+
+▸ (): *boolean*
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:73](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L73)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:73](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L73)
 
 ___
 
 ### renderEditLayoutItems
 
-• `Optional` **renderEditLayoutItems**: *undefined* \| (`items`: EditLayoutItem[]) => *undefined* \| *Element*[]
+• `Optional` **renderEditLayoutItems**: (`items`: EditLayoutItem[]) => *undefined* \| *Element*[]
 
 Render list of layout items
 
@@ -358,4 +672,18 @@ Render list of layout items
 
 **`returns`** Collection of rendered items
 
-Defined in: [src/common/edititemscontext.tsx:52](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/edititemscontext.tsx#L52)
+#### Type declaration:
+
+▸ (`items`: EditLayoutItem[]): *undefined* \| *Element*[]
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`items` | EditLayoutItem[] |
+
+**Returns:** *undefined* \| *Element*[]
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:52](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L52)
+
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:52](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/edititemscontext.tsx#L52)

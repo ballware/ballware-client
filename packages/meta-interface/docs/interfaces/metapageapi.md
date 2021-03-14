@@ -4,10 +4,6 @@
 
 Interface for page metadata operations
 
-## Hierarchy
-
-* **MetaPageApi**
-
 ## Table of contents
 
 ### Properties
@@ -28,4 +24,19 @@ Fetch page metadata by identifier
 
 **`returns`** Promise containing page metadata
 
-Defined in: [page.ts:388](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L388)
+#### Type declaration:
+
+▸ (`token`: *string*, `page`: *string*): *Promise*<[*CompiledPageData*](compiledpagedata.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`page` | *string* |
+
+**Returns:** *Promise*<[*CompiledPageData*](compiledpagedata.md)\>
+
+Defined in: [page.ts:388](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L388)
+
+Defined in: [page.ts:388](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L388)

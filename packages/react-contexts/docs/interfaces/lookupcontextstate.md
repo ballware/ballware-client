@@ -4,10 +4,6 @@
 
 Context for lookup request functionality
 
-## Hierarchy
-
-* **LookupContextState**
-
 ## Table of contents
 
 ### Properties
@@ -21,19 +17,33 @@ Context for lookup request functionality
 
 ### createLookups
 
-• `Optional` **createLookups**: *undefined* \| (`lookups`: [*LookupRequest*](lookuprequest.md)[]) => *void*
+• `Optional` **createLookups**: (`lookups`: [*LookupRequest*](lookuprequest.md)[]) => *void*
 
 Request list of static required lookups in consumer
 
 **`param`** Collection of lookup requests
 
-Defined in: [src/lookupcontext.ts:145](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L145)
+#### Type declaration:
+
+▸ (`lookups`: [*LookupRequest*](lookuprequest.md)[]): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`lookups` | [*LookupRequest*](lookuprequest.md)[] |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:145](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L145)
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:145](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L145)
 
 ___
 
 ### getGenericLookupByIdentifier
 
-• `Optional` **getGenericLookupByIdentifier**: *undefined* \| (`identifier`: *string*, `valueExpr`: *string*, `displayExpr`: *string*) => *undefined* \| [*LookupDescriptor*](lookupdescriptor.md)
+• `Optional` **getGenericLookupByIdentifier**: (`identifier`: *string*, `valueExpr`: *string*, `displayExpr`: *string*) => *undefined* \| [*LookupDescriptor*](lookupdescriptor.md)
 
 Request additional lookup by unique identifier
 
@@ -43,24 +53,40 @@ Request additional lookup by unique identifier
 
 **`param`** Display property in fetched items
 
-Defined in: [src/lookupcontext.ts:153](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L153)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `valueExpr`: *string*, `displayExpr`: *string*): *undefined* \| [*LookupDescriptor*](lookupdescriptor.md)
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`valueExpr` | *string* |
+`displayExpr` | *string* |
+
+**Returns:** *undefined* \| [*LookupDescriptor*](lookupdescriptor.md)
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:153](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L153)
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:153](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L153)
 
 ___
 
 ### lookups
 
-• `Optional` **lookups**: *undefined* \| *Record*<*string*, *unknown*[] \| [*LookupDescriptor*](lookupdescriptor.md) \| [*LookupCreator*](../modules.md#lookupcreator) \| [*AutocompleteCreator*](../modules.md#autocompletecreator)\>
+• `Optional` **lookups**: *Record*<string, unknown[] \| [*LookupDescriptor*](lookupdescriptor.md) \| [*LookupCreator*](../modules.md#lookupcreator) \| [*AutocompleteCreator*](../modules.md#autocompletecreator)\>
 
 Container for created lookups
 
-Defined in: [src/lookupcontext.ts:131](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L131)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:131](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L131)
 
 ___
 
 ### lookupsComplete
 
-• `Optional` **lookupsComplete**: *undefined* \| *boolean*
+• `Optional` **lookupsComplete**: *boolean*
 
 True if requested lookups are completely available
 
-Defined in: [src/lookupcontext.ts:139](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L139)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:139](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L139)

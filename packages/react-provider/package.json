@@ -4,13 +4,17 @@
   "description": "Ballware Application Builder - React provider for contexts",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
-  "homepage": "https://github.com/frankball/ballware-react-provider#readme",
+  "homepage": "https://github.com/ballware/ballware-client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frankball/ballware-react-provider.git"
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/react-provider"
   },
   "bugs": {
-    "url": "https://github.com/frankball/ballware-react-provider/issues"
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

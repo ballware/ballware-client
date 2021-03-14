@@ -4,10 +4,6 @@
 
 Properties for page toolbar component
 
-## Hierarchy
-
-* **PageToolbarProps**
-
 ## Table of contents
 
 ### Properties
@@ -20,28 +16,28 @@ Properties for page toolbar component
 
 ### documentationIdentifier
 
-• `Optional` **documentationIdentifier**: *undefined* \| *string*
+• `Optional` **documentationIdentifier**: *string*
 
 Identifier for showing documentation
 
-Defined in: [src/renderfactorycontext.ts:146](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L146)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:146](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L146)
 
 ___
 
 ### items
 
-• `Optional` **items**: *undefined* \| PageToolbarItem[]
+• `Optional` **items**: PageToolbarItem[]
 
 Toolbar items metadata
 
-Defined in: [src/renderfactorycontext.ts:156](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L156)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:156](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L156)
 
 ___
 
 ### title
 
-• `Optional` **title**: *undefined* \| *string*
+• `Optional` **title**: *string*
 
 Title of page
 
-Defined in: [src/renderfactorycontext.ts:151](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L151)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:151](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L151)

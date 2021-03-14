@@ -4,10 +4,6 @@
 
 Properties for settings provider
 
-## Hierarchy
-
-* **SettingsProviderProps**
-
 ## Table of contents
 
 ### Properties
@@ -33,158 +29,276 @@ Properties for settings provider
 
 ### appversion
 
-• `Optional` **appversion**: *undefined* \| *string*
+• `Optional` **appversion**: *string*
 
 Current app version for display
 
-Defined in: [src/settingsprovider.tsx:39](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L39)
+Defined in: [settingsprovider.tsx:39](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L39)
 
 ___
 
 ### googlekey
 
-• `Optional` **googlekey**: *undefined* \| *string*
+• `Optional` **googlekey**: *string*
 
 Google API key used by maps implementation
 
-Defined in: [src/settingsprovider.tsx:44](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L44)
+Defined in: [settingsprovider.tsx:44](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L44)
 
 ___
 
 ### identityAuthApiFactory
 
-• `Optional` **identityAuthApiFactory**: *undefined* \| () => ResourceOwnerAuthApi
+• `Optional` **identityAuthApiFactory**: () => ResourceOwnerAuthApi
 
 API factory for resource owner authentication functions
 
-Defined in: [src/settingsprovider.tsx:49](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L49)
+#### Type declaration:
+
+▸ (): ResourceOwnerAuthApi
+
+**Returns:** ResourceOwnerAuthApi
+
+Defined in: [settingsprovider.tsx:49](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L49)
+
+Defined in: [settingsprovider.tsx:49](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L49)
 
 ___
 
 ### identityRoleApiFactory
 
-• `Optional` **identityRoleApiFactory**: *undefined* \| () => IdentityRoleApi
+• `Optional` **identityRoleApiFactory**: () => IdentityRoleApi
 
 API factory for access to role list
 
-Defined in: [src/settingsprovider.tsx:59](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L59)
+#### Type declaration:
+
+▸ (): IdentityRoleApi
+
+**Returns:** IdentityRoleApi
+
+Defined in: [settingsprovider.tsx:59](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L59)
+
+Defined in: [settingsprovider.tsx:59](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L59)
 
 ___
 
 ### identityUserApiFactory
 
-• `Optional` **identityUserApiFactory**: *undefined* \| () => IdentityUserApi
+• `Optional` **identityUserApiFactory**: () => IdentityUserApi
 
 API factory for access to user list
 
-Defined in: [src/settingsprovider.tsx:54](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L54)
+#### Type declaration:
+
+▸ (): IdentityUserApi
+
+**Returns:** IdentityUserApi
+
+Defined in: [settingsprovider.tsx:54](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L54)
+
+Defined in: [settingsprovider.tsx:54](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L54)
 
 ___
 
 ### metaAttachmentApiFactory
 
-• `Optional` **metaAttachmentApiFactory**: *undefined* \| () => MetaAttachmentApi
+• `Optional` **metaAttachmentApiFactory**: () => MetaAttachmentApi
 
 API factory to access attachments
 
-Defined in: [src/settingsprovider.tsx:74](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L74)
+#### Type declaration:
+
+▸ (): MetaAttachmentApi
+
+**Returns:** MetaAttachmentApi
+
+Defined in: [settingsprovider.tsx:74](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L74)
+
+Defined in: [settingsprovider.tsx:74](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L74)
 
 ___
 
 ### metaDocumentApiFactory
 
-• `Optional` **metaDocumentApiFactory**: *undefined* \| () => MetaDocumentApi
+• `Optional` **metaDocumentApiFactory**: () => MetaDocumentApi
 
 API factory to access print document lists
 
-Defined in: [src/settingsprovider.tsx:99](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L99)
+#### Type declaration:
+
+▸ (): MetaDocumentApi
+
+**Returns:** MetaDocumentApi
+
+Defined in: [settingsprovider.tsx:99](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L99)
+
+Defined in: [settingsprovider.tsx:99](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L99)
 
 ___
 
 ### metaDocumentationApiFactory
 
-• `Optional` **metaDocumentationApiFactory**: *undefined* \| () => MetaDocumentationApi
+• `Optional` **metaDocumentationApiFactory**: () => MetaDocumentationApi
 
 API factory to access documentation
 
-Defined in: [src/settingsprovider.tsx:104](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L104)
+#### Type declaration:
+
+▸ (): MetaDocumentationApi
+
+**Returns:** MetaDocumentationApi
+
+Defined in: [settingsprovider.tsx:104](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L104)
+
+Defined in: [settingsprovider.tsx:104](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L104)
 
 ___
 
 ### metaEntityApiFactory
 
-• `Optional` **metaEntityApiFactory**: *undefined* \| () => MetaEntityApi
+• `Optional` **metaEntityApiFactory**: () => MetaEntityApi
 
 API factory to access generic entity metadata
 
-Defined in: [src/settingsprovider.tsx:64](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L64)
+#### Type declaration:
+
+▸ (): MetaEntityApi
+
+**Returns:** MetaEntityApi
+
+Defined in: [settingsprovider.tsx:64](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L64)
+
+Defined in: [settingsprovider.tsx:64](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L64)
 
 ___
 
 ### metaGenericEntityApiFactory
 
-• `Optional` **metaGenericEntityApiFactory**: *undefined* \| (`baseUrl`: *string*) => MetaGenericEntityApi
+• `Optional` **metaGenericEntityApiFactory**: (`baseUrl`: *string*) => MetaGenericEntityApi
 
 API factory to access generic entity crud operations
 
-Defined in: [src/settingsprovider.tsx:114](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L114)
+#### Type declaration:
+
+▸ (`baseUrl`: *string*): MetaGenericEntityApi
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`baseUrl` | *string* |
+
+**Returns:** MetaGenericEntityApi
+
+Defined in: [settingsprovider.tsx:114](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L114)
+
+Defined in: [settingsprovider.tsx:114](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L114)
 
 ___
 
 ### metaLookupApiFactory
 
-• `Optional` **metaLookupApiFactory**: *undefined* \| () => MetaLookupApi
+• `Optional` **metaLookupApiFactory**: () => MetaLookupApi
 
 API factory to access lookup data
 
-Defined in: [src/settingsprovider.tsx:84](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L84)
+#### Type declaration:
+
+▸ (): MetaLookupApi
+
+**Returns:** MetaLookupApi
+
+Defined in: [settingsprovider.tsx:84](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L84)
+
+Defined in: [settingsprovider.tsx:84](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L84)
 
 ___
 
 ### metaPageApiFactory
 
-• `Optional` **metaPageApiFactory**: *undefined* \| () => MetaPageApi
+• `Optional` **metaPageApiFactory**: () => MetaPageApi
 
 API factory to access page metadata
 
-Defined in: [src/settingsprovider.tsx:109](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L109)
+#### Type declaration:
+
+▸ (): MetaPageApi
+
+**Returns:** MetaPageApi
+
+Defined in: [settingsprovider.tsx:109](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L109)
+
+Defined in: [settingsprovider.tsx:109](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L109)
 
 ___
 
 ### metaPickvalueApiFactory
 
-• `Optional` **metaPickvalueApiFactory**: *undefined* \| () => MetaPickvalueApi
+• `Optional` **metaPickvalueApiFactory**: () => MetaPickvalueApi
 
 API factory to access pickvalue data
 
-Defined in: [src/settingsprovider.tsx:94](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L94)
+#### Type declaration:
+
+▸ (): MetaPickvalueApi
+
+**Returns:** MetaPickvalueApi
+
+Defined in: [settingsprovider.tsx:94](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L94)
+
+Defined in: [settingsprovider.tsx:94](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L94)
 
 ___
 
 ### metaProcessingstateApiFactory
 
-• `Optional` **metaProcessingstateApiFactory**: *undefined* \| () => MetaProcessingstateApi
+• `Optional` **metaProcessingstateApiFactory**: () => MetaProcessingstateApi
 
 API factory to access processing state functionality
 
-Defined in: [src/settingsprovider.tsx:89](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L89)
+#### Type declaration:
+
+▸ (): MetaProcessingstateApi
+
+**Returns:** MetaProcessingstateApi
+
+Defined in: [settingsprovider.tsx:89](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L89)
+
+Defined in: [settingsprovider.tsx:89](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L89)
 
 ___
 
 ### metaStatisticApiFactory
 
-• `Optional` **metaStatisticApiFactory**: *undefined* \| () => MetaStatisticApi
+• `Optional` **metaStatisticApiFactory**: () => MetaStatisticApi
 
 API factory to access statistic metadata and data
 
-Defined in: [src/settingsprovider.tsx:79](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L79)
+#### Type declaration:
+
+▸ (): MetaStatisticApi
+
+**Returns:** MetaStatisticApi
+
+Defined in: [settingsprovider.tsx:79](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L79)
+
+Defined in: [settingsprovider.tsx:79](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L79)
 
 ___
 
 ### metaTenantApiFactory
 
-• `Optional` **metaTenantApiFactory**: *undefined* \| () => MetaTenantApi
+• `Optional` **metaTenantApiFactory**: () => MetaTenantApi
 
 API factory to access tenant metadata
 
-Defined in: [src/settingsprovider.tsx:69](https://github.com/frankball/ballware-react-provider/blob/5745264/src/settingsprovider.tsx#L69)
+#### Type declaration:
+
+▸ (): MetaTenantApi
+
+**Returns:** MetaTenantApi
+
+Defined in: [settingsprovider.tsx:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L69)
+
+Defined in: [settingsprovider.tsx:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/settingsprovider.tsx#L69)

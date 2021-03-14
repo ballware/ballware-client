@@ -25,58 +25,58 @@ Persisted part of rights state in application store
 
 ### error
 
-• `Optional` **error**: *undefined* \| *string*
+• `Optional` **error**: *string*
 
 Last login try error message
 
-Defined in: src/rightscontext.ts:43
+Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L43)
 
 ___
 
 ### expires\_in
 
-• `Optional` **expires\_in**: *undefined* \| *number*
+• `Optional` **expires\_in**: *number*
 
 Number of seconds the access token expires in
 
-Defined in: src/rightscontext.ts:38
+Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L38)
 
 ___
 
 ### refresh\_token
 
-• `Optional` **refresh\_token**: *undefined* \| *string*
+• `Optional` **refresh\_token**: *string*
 
 Refresh token
 
-Defined in: src/rightscontext.ts:33
+Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L33)
 
 ___
 
 ### rights
 
-• `Optional` **rights**: *undefined* \| Rights
+• `Optional` **rights**: Rights
 
 User rights for current user
 
-Defined in: src/rightscontext.ts:18
+Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L18)
 
 ___
 
 ### timeout\_in
 
-• `Optional` **timeout\_in**: *undefined* \| Date
+• `Optional` **timeout\_in**: Date
 
 Access token timeout stamp
 
-Defined in: src/rightscontext.ts:23
+Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L23)
 
 ___
 
 ### token
 
-• `Optional` **token**: *undefined* \| *string*
+• `Optional` **token**: *string*
 
 Access token
 
-Defined in: src/rightscontext.ts:28
+Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L28)

@@ -33,7 +33,7 @@ Context for providing user session functionality
 
 ### changePassword
 
-• `Optional` **changePassword**: *undefined* \| (`oldPassword`: *string*, `newPassword`: *string*) => *void*
+• `Optional` **changePassword**: (`oldPassword`: *string*, `newPassword`: *string*) => *void*
 
 Change password of logged in user
 
@@ -41,49 +41,78 @@ Change password of logged in user
 
 **`param`** New password for user
 
-Defined in: src/rightscontext.ts:90
+#### Type declaration:
+
+▸ (`oldPassword`: *string*, `newPassword`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`oldPassword` | *string* |
+`newPassword` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L90)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:90](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L90)
 
 ___
 
 ### error
 
-• `Optional` **error**: *undefined* \| *string*
+• `Optional` **error**: *string*
 
 Last login try error message
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[error](persistedrightsstate.md#error)
 
-Defined in: src/rightscontext.ts:43
+Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L43)
 
 ___
 
 ### expires\_in
 
-• `Optional` **expires\_in**: *undefined* \| *number*
+• `Optional` **expires\_in**: *number*
 
 Number of seconds the access token expires in
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[expires_in](persistedrightsstate.md#expires_in)
 
-Defined in: src/rightscontext.ts:38
+Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L38)
 
 ___
 
 ### forgotPassword
 
-• `Optional` **forgotPassword**: *undefined* \| (`email`: *string*) => *void*
+• `Optional` **forgotPassword**: (`email`: *string*) => *void*
 
 Require password reset message for lost password
 
 **`param`** Mail adress of lost password account
 
-Defined in: src/rightscontext.ts:75
+#### Type declaration:
+
+▸ (`email`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`email` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:75](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L75)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:75](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L75)
 
 ___
 
 ### login
 
-• `Optional` **login**: *undefined* \| (`username`: *string*, `password`: *string*, `redirect`: *string*) => *void*
+• `Optional` **login**: (`username`: *string*, `password`: *string*, `redirect`: *string*) => *void*
 
 Login user
 
@@ -93,55 +122,95 @@ Login user
 
 **`param`** Redirect url after successful login
 
-Defined in: src/rightscontext.ts:56
+#### Type declaration:
+
+▸ (`username`: *string*, `password`: *string*, `redirect`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`username` | *string* |
+`password` | *string* |
+`redirect` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:56](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L56)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:56](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L56)
 
 ___
 
 ### logout
 
-• `Optional` **logout**: *undefined* \| () => *void*
+• `Optional` **logout**: () => *void*
 
 Logout current user
 
-Defined in: src/rightscontext.ts:61
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:61](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L61)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:61](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L61)
 
 ___
 
 ### manageAccount
 
-• `Optional` **manageAccount**: *undefined* \| () => *void*
+• `Optional` **manageAccount**: () => *void*
 
 Switch to account management
 
-Defined in: src/rightscontext.ts:95
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L95)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:95](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L95)
 
 ___
 
 ### refresh
 
-• `Optional` **refresh**: *undefined* \| () => *void*
+• `Optional` **refresh**: () => *void*
 
 Refresh user session with refresh token
 
-Defined in: src/rightscontext.ts:100
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:100](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L100)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:100](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L100)
 
 ___
 
 ### refresh\_token
 
-• `Optional` **refresh\_token**: *undefined* \| *string*
+• `Optional` **refresh\_token**: *string*
 
 Refresh token
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[refresh_token](persistedrightsstate.md#refresh_token)
 
-Defined in: src/rightscontext.ts:33
+Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L33)
 
 ___
 
 ### register
 
-• `Optional` **register**: *undefined* \| (`username`: *string*, `displayname`: *string*, `password`: *string*) => *void*
+• `Optional` **register**: (`username`: *string*, `displayname`: *string*, `password`: *string*) => *void*
 
 Register new user for application
 
@@ -151,13 +220,29 @@ Register new user for application
 
 **`param`** Password for new user
 
-Defined in: src/rightscontext.ts:69
+#### Type declaration:
+
+▸ (`username`: *string*, `displayname`: *string*, `password`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`username` | *string* |
+`displayname` | *string* |
+`password` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L69)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:69](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L69)
 
 ___
 
 ### resetPassword
 
-• `Optional` **resetPassword**: *undefined* \| (`email`: *string*, `code`: *string*, `newPassword`: *string*) => *void*
+• `Optional` **resetPassword**: (`email`: *string*, `code`: *string*, `newPassword`: *string*) => *void*
 
 Reset lost password with reset code
 
@@ -167,40 +252,56 @@ Reset lost password with reset code
 
 **`param`** New user password
 
-Defined in: src/rightscontext.ts:83
+#### Type declaration:
+
+▸ (`email`: *string*, `code`: *string*, `newPassword`: *string*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`email` | *string* |
+`code` | *string* |
+`newPassword` | *string* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:83](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L83)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:83](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L83)
 
 ___
 
 ### rights
 
-• `Optional` **rights**: *undefined* \| Rights
+• `Optional` **rights**: Rights
 
 User rights for current user
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[rights](persistedrightsstate.md#rights)
 
-Defined in: src/rightscontext.ts:18
+Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L18)
 
 ___
 
 ### timeout\_in
 
-• `Optional` **timeout\_in**: *undefined* \| Date
+• `Optional` **timeout\_in**: Date
 
 Access token timeout stamp
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[timeout_in](persistedrightsstate.md#timeout_in)
 
-Defined in: src/rightscontext.ts:23
+Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L23)
 
 ___
 
 ### token
 
-• `Optional` **token**: *undefined* \| *string*
+• `Optional` **token**: *string*
 
 Access token
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[token](persistedrightsstate.md#token)
 
-Defined in: src/rightscontext.ts:28
+Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/rightscontext.ts#L28)

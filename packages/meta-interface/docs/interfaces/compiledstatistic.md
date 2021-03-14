@@ -4,10 +4,6 @@
 
 Compiled metadta for statistic container
 
-## Hierarchy
-
-* **CompiledStatistic**
-
 ## Table of contents
 
 ### Properties
@@ -22,11 +18,11 @@ Compiled metadta for statistic container
 
 ### customScripts
 
-• `Optional` **customScripts**: *undefined* \| [*CompiledStatisticCustomScripts*](compiledstatisticcustomscripts.md)
+• `Optional` **customScripts**: [*CompiledStatisticCustomScripts*](compiledstatisticcustomscripts.md)
 
 Compiled custom scripts for statistic layout
 
-Defined in: [statistic.ts:418](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L418)
+Defined in: [statistic.ts:418](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L418)
 
 ___
 
@@ -36,23 +32,23 @@ ___
 
 Unique identifier of statistic container
 
-Defined in: [statistic.ts:380](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L380)
+Defined in: [statistic.ts:380](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L380)
 
 ___
 
 ### layout
 
-• `Optional` **layout**: *undefined* \| [*StatisticLayout*](statisticlayout.md)
+• `Optional` **layout**: [*StatisticLayout*](statisticlayout.md)
 
 Layout of statistic container
 
-Defined in: [statistic.ts:390](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L390)
+Defined in: [statistic.ts:390](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L390)
 
 ___
 
 ### mappingScript
 
-• `Optional` **mappingScript**: *undefined* \| (`data`: *Record*<*string*, *unknown*\>[], `layout`: [*StatisticLayout*](statisticlayout.md), `customParam`: *Record*<*string*, *unknown*\>, `params`: *Record*<*string*, *unknown*\>, `lookups`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md), `callback`: (`layout`: [*StatisticLayout*](statisticlayout.md), `data`: *Record*<*string*, *unknown*\>[]) => *void*) => *void*
+• `Optional` **mappingScript**: (`data`: *Record*<string, unknown\>[], `layout`: [*StatisticLayout*](statisticlayout.md), `customParam`: *Record*<string, unknown\>, `params`: *Record*<string, unknown\>, `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `callback`: (`layout`: [*StatisticLayout*](statisticlayout.md), `data`: *Record*<string, unknown\>[]) => *void*) => *void*
 
 Mapping script to prepare fetched data for statistic display
 
@@ -70,7 +66,27 @@ Mapping script to prepare fetched data for statistic display
 
 **`param`** Callback executed after preparation of layout and data
 
-Defined in: [statistic.ts:402](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L402)
+#### Type declaration:
+
+▸ (`data`: *Record*<string, unknown\>[], `layout`: [*StatisticLayout*](statisticlayout.md), `customParam`: *Record*<string, unknown\>, `params`: *Record*<string, unknown\>, `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `callback`: (`layout`: [*StatisticLayout*](statisticlayout.md), `data`: *Record*<string, unknown\>[]) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`data` | *Record*<string, unknown\>[] |
+`layout` | [*StatisticLayout*](statisticlayout.md) |
+`customParam` | *Record*<string, unknown\> |
+`params` | *Record*<string, unknown\> |
+`lookups` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+`callback` | (`layout`: [*StatisticLayout*](statisticlayout.md), `data`: *Record*<string, unknown\>[]) => *void* |
+
+**Returns:** *void*
+
+Defined in: [statistic.ts:402](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L402)
+
+Defined in: [statistic.ts:402](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L402)
 
 ___
 
@@ -80,4 +96,4 @@ ___
 
 Display name of statistic container
 
-Defined in: [statistic.ts:385](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L385)
+Defined in: [statistic.ts:385](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L385)

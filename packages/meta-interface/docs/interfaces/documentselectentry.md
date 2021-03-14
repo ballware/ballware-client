@@ -4,10 +4,6 @@
 
 Select list entry of available document list for printing
 
-## Hierarchy
-
-* **DocumentSelectEntry**
-
 ## Table of contents
 
 ### Properties
@@ -23,7 +19,7 @@ Select list entry of available document list for printing
 
 Unique identifier of document
 
-Defined in: [document.ts:15](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/document.ts#L15)
+Defined in: [document.ts:15](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L15)
 
 ___
 
@@ -33,4 +29,4 @@ ___
 
 Display name of document
 
-Defined in: [document.ts:20](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/document.ts#L20)
+Defined in: [document.ts:20](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/document.ts#L20)

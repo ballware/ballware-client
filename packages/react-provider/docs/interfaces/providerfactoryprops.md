@@ -3,7 +3,3 @@
 # Interface: ProviderFactoryProps
 
 Provider factory properties
-
-## Hierarchy
-
-* **ProviderFactoryProps**

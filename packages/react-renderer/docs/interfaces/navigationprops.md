@@ -4,10 +4,6 @@
 
 Properties for navigation menu
 
-## Hierarchy
-
-* **NavigationProps**
-
 ## Table of contents
 
 ### Properties
@@ -18,8 +14,16 @@ Properties for navigation menu
 
 ### onMenuToggle
 
-• `Optional` **onMenuToggle**: *undefined* \| () => *void*
+• `Optional` **onMenuToggle**: () => *void*
 
 Navigation menu display/hide toggled
 
-Defined in: [src/renderfactorycontext.ts:59](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L59)
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:59](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L59)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:59](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L59)

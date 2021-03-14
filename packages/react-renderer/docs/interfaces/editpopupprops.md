@@ -4,10 +4,6 @@
 
 Properties of edit popup
 
-## Hierarchy
-
-* **EditPopupProps**
-
 ## Table of contents
 
 ### Properties
@@ -22,4 +18,4 @@ Properties of edit popup
 
 Title text for popup
 
-Defined in: [src/renderfactorycontext.ts:80](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L80)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:80](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L80)

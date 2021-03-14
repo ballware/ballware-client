@@ -4,10 +4,6 @@
 
 Interface for pickvalue operations
 
-## Hierarchy
-
-* **MetaPickvalueApi**
-
 ## Table of contents
 
 ### Properties
@@ -19,7 +15,7 @@ Interface for pickvalue operations
 
 ### selectByValueForEntityAndField
 
-• **selectByValueForEntityAndField**: (`token`: *string*, `entity`: *string*, `field`: *string*) => (`value`: *string* \| *number*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByValueForEntityAndField**: (`token`: *string*, `entity`: *string*, `field`: *string*) => (`value`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
 
 Fetch single select list element for business object property
 
@@ -33,13 +29,29 @@ Fetch single select list element for business object property
 
 **`returns`** Promise containing single property value
 
-Defined in: [pickvalue.ts:35](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/pickvalue.ts#L35)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*, `field`: *string*): *function*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+`field` | *string* |
+
+**Returns:** (`value`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
+
+Defined in: [pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/pickvalue.ts#L35)
+
+Defined in: [pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/pickvalue.ts#L35)
 
 ___
 
 ### selectListForEntityAndField
 
-• **selectListForEntityAndField**: (`token`: *string*, `entity`: *string*, `field`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListForEntityAndField**: (`token`: *string*, `entity`: *string*, `field`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch select list for business object property possible values
 
@@ -51,4 +63,20 @@ Fetch select list for business object property possible values
 
 **`returns`** Promise containing collection of possible property values
 
-Defined in: [pickvalue.ts:20](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/pickvalue.ts#L20)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*, `field`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+`field` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/pickvalue.ts#L20)
+
+Defined in: [pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/pickvalue.ts#L20)

@@ -45,7 +45,7 @@ export const DetailTree = ({ layoutItem }: DetailTreeProps) => {
     editorValueChanged
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.getValue();
@@ -77,7 +77,7 @@ export const DetailTree = ({ layoutItem }: DetailTreeProps) => {
           ref={editorRef}
           readonly={readonly ?? false}
           defaultValue={getValue(layoutItem.dataMember)}
-          setValue={(value) => {
+          setValue={value => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,

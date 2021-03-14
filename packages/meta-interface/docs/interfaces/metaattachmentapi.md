@@ -4,10 +4,6 @@
 
 Interface for owner specific attachments operations
 
-## Hierarchy
-
-* **MetaAttachmentApi**
-
 ## Table of contents
 
 ### Properties
@@ -21,7 +17,7 @@ Interface for owner specific attachments operations
 
 ### open
 
-• **open**: (`token`: *string*, `owner`: *string*, `fileName`: *string*) => *Promise*<*string*\>
+• **open**: (`token`: *string*, `owner`: *string*, `fileName`: *string*) => *Promise*<string\>
 
 Fetch file url for display/download
 
@@ -33,13 +29,29 @@ Fetch file url for display/download
 
 **`returns`** Promise with URL for download of file
 
-Defined in: [attachment.ts:42](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L42)
+#### Type declaration:
+
+▸ (`token`: *string*, `owner`: *string*, `fileName`: *string*): *Promise*<string\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`owner` | *string* |
+`fileName` | *string* |
+
+**Returns:** *Promise*<string\>
+
+Defined in: [attachment.ts:42](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L42)
+
+Defined in: [attachment.ts:42](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L42)
 
 ___
 
 ### queryByOwner
 
-• **queryByOwner**: (`token`: *string*, `owner`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **queryByOwner**: (`token`: *string*, `owner`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Query list of attachments by owner
 
@@ -49,13 +61,28 @@ Query list of attachments by owner
 
 **`returns`** Promise with list of attachment metadata belonging to owner
 
-Defined in: [attachment.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L19)
+#### Type declaration:
+
+▸ (`token`: *string*, `owner`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`owner` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [attachment.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L19)
+
+Defined in: [attachment.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L19)
 
 ___
 
 ### remove
 
-• **remove**: (`token`: *string*, `owner`: *string*, `fileName`: *string*) => *Promise*<*void*\>
+• **remove**: (`token`: *string*, `owner`: *string*, `fileName`: *string*) => *Promise*<void\>
 
 Remove existing attachment
 
@@ -67,13 +94,29 @@ Remove existing attachment
 
 **`returns`** Promise resolved when remove operation finished
 
-Defined in: [attachment.ts:52](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L52)
+#### Type declaration:
+
+▸ (`token`: *string*, `owner`: *string*, `fileName`: *string*): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`owner` | *string* |
+`fileName` | *string* |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [attachment.ts:52](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L52)
+
+Defined in: [attachment.ts:52](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L52)
 
 ___
 
 ### upload
 
-• **upload**: (`token`: *string*, `owner`: *string*, `file`: File) => *Promise*<*void*\>
+• **upload**: (`token`: *string*, `owner`: *string*, `file`: File) => *Promise*<void\>
 
 Upload new attachment
 
@@ -85,4 +128,20 @@ Upload new attachment
 
 **`returns`** Promise resolved when upload finished
 
-Defined in: [attachment.ts:32](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/attachment.ts#L32)
+#### Type declaration:
+
+▸ (`token`: *string*, `owner`: *string*, `file`: File): *Promise*<void\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`owner` | *string* |
+`file` | File |
+
+**Returns:** *Promise*<void\>
+
+Defined in: [attachment.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L32)
+
+Defined in: [attachment.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/attachment.ts#L32)

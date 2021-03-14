@@ -4,10 +4,6 @@
 
 Context for displaying user notification functionality
 
-## Hierarchy
-
-* **NotificationDisplayContextState**
-
 ## Table of contents
 
 ### Properties
@@ -18,8 +14,15 @@ Context for displaying user notification functionality
 
 ### message
 
-• `Optional` **message**: *undefined* \| { `text`: *string* ; `type`: *error* \| *info* \| *warning*  }
+• `Optional` **message**: *object*
 
 Current triggered notification message
 
-Defined in: [src/notificationcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/notificationcontext.ts#L45)
+#### Type declaration:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`text` | *string* | Message text or translation identifier   |
+`type` | *error* \| *info* \| *warning* | Severity of message   |
+
+Defined in: [packages/react-contexts/src/notificationcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/notificationcontext.ts#L45)

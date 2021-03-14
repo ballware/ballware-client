@@ -4,10 +4,6 @@
 
 Functions for accessing role information from identity provider
 
-## Hierarchy
-
-* **IdentityRoleApi**
-
 ## Table of contents
 
 ### Properties
@@ -19,7 +15,7 @@ Functions for accessing role information from identity provider
 
 ### selectByIdFunc
 
-• **selectByIdFunc**: (`token`: *string*, `identifier`: *string*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByIdFunc**: (`token`: *string*, `identifier`: *string*) => *Promise*<Record<string, unknown\>\>
 
 Returns a single existing role by identifier from identity system
 
@@ -27,13 +23,28 @@ Returns a single existing role by identifier from identity system
 
 **`returns`** Promise resoling single element with id and display text for requested identifier
 
-Defined in: [role.ts:26](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/role.ts#L26)
+#### Type declaration:
+
+▸ (`token`: *string*, `identifier`: *string*): *Promise*<Record<string, unknown\>\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`identifier` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>\>
+
+Defined in: [role.ts:26](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/role.ts#L26)
+
+Defined in: [role.ts:26](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/role.ts#L26)
 
 ___
 
 ### selectListFunc
 
-• **selectListFunc**: (`token`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListFunc**: (`token`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Returning a list of available roles in identity system
 
@@ -41,4 +52,18 @@ Returning a list of available roles in identity system
 
 **`returns`** Promise resolving list of available roles with id and display text
 
-Defined in: [role.ts:18](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/role.ts#L18)
+#### Type declaration:
+
+▸ (`token`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [role.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/role.ts#L18)
+
+Defined in: [role.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/role.ts#L18)

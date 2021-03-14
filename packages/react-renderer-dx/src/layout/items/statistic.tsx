@@ -95,7 +95,7 @@ const MyStatisticElement = () => {
                     customizeText: onCustomizeArgumentAxisText,
                   }}
                 >
-                  {options.argumentAxis.lines?.map((l) => (
+                  {options.argumentAxis.lines?.map(l => (
                     <ConstantLine
                       key={argumentLineKey++}
                       value={l.value}
@@ -108,7 +108,7 @@ const MyStatisticElement = () => {
               )}
               {options.valueAxis && (
                 <ValueAxis>
-                  {options.valueAxis.lines?.map((l) => (
+                  {options.valueAxis.lines?.map(l => (
                     <ConstantLine
                       key={valueLineKey++}
                       value={l.value}
@@ -126,7 +126,7 @@ const MyStatisticElement = () => {
                   verticalAlignment={options.legend.verticalAlignment}
                 />
               )}
-              {options.series?.map((s) => (
+              {options.series?.map(s => (
                 <Series
                   key={seriesKey++}
                   type={s.type}
@@ -159,7 +159,7 @@ const MyStatisticElement = () => {
                   controls
                   apiKey={{ google: googlekey }}
                 >
-                  {data?.map((item) => (
+                  {data?.map(item => (
                     <Marker
                       key={markersKey++}
                       location={[
@@ -194,7 +194,7 @@ const MyStatisticElement = () => {
               showRowGrandTotals={options.showRowGrandTotals ?? false}
               dataSource={{
                 retrieveFields: false,
-                fields: options.fields?.map((f) => {
+                fields: options.fields?.map(f => {
                   return {
                     caption: f.caption,
                     dataField: f.dataField,

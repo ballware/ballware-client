@@ -4,10 +4,6 @@
 
 Descriptor for lookup and autocomplete datasource
 
-## Hierarchy
-
-* **LookupDescriptor**
-
 ## Table of contents
 
 ### Properties
@@ -21,11 +17,11 @@ Descriptor for lookup and autocomplete datasource
 
 ### displayMember
 
-• `Optional` **displayMember**: *undefined* \| *string*
+• `Optional` **displayMember**: *string*
 
 Display property in fetched data items
 
-Defined in: [src/lookupcontext.ts:60](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L60)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:60](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L60)
 
 ___
 
@@ -35,7 +31,7 @@ ___
 
 Data access adapter for fetching data for lookup/autocomplete source
 
-Defined in: [src/lookupcontext.ts:50](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L50)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:50](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L50)
 
 ___
 
@@ -45,14 +41,14 @@ ___
 
 Type of lookup descriptor
 
-Defined in: [src/lookupcontext.ts:45](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L45)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L45)
 
 ___
 
 ### valueMember
 
-• `Optional` **valueMember**: *undefined* \| *string*
+• `Optional` **valueMember**: *string*
 
 Value property in fetched data items
 
-Defined in: [src/lookupcontext.ts:55](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L55)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L55)

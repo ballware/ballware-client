@@ -27,14 +27,14 @@ Options for layout item type 'crudcontainer'
 
 Identifier of business object
 
-Defined in: [page.ts:29](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L29)
+Defined in: [page.ts:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L29)
 
 ___
 
 ### query
 
-• `Optional` **query**: *undefined* \| *string*
+• `Optional` **query**: *string*
 
 Identifier of list query
 
-Defined in: [page.ts:34](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L34)
+Defined in: [page.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L34)

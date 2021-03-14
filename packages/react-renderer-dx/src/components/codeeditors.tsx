@@ -28,7 +28,7 @@ export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
       getValue: () => {
         return editorRef.current?.getValue() ?? '';
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         editorRef.current?.setValue(newValue);
       },
     }));
@@ -86,7 +86,7 @@ export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
       getValue: () => {
         return editorRef.current?.getValue() ?? '';
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         editorRef.current?.setValue(newValue);
       },
     }));
@@ -99,7 +99,7 @@ export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
         height={height ?? '200px'}
         mode={'javascript'}
         defaultValue={defaultValue as string}
-        onChange={(value) => setValue && setValue(value)}
+        onChange={value => setValue && setValue(value)}
       />
     );
   }
@@ -113,7 +113,7 @@ export const SqlEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
       getValue: () => {
         return editorRef.current?.getValue() ?? '';
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         editorRef.current?.setValue(newValue);
       },
     }));
@@ -126,7 +126,7 @@ export const SqlEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
         height={height ?? '200px'}
         mode={'sqlserver'}
         defaultValue={defaultValue as string}
-        onChange={(value) => setValue && setValue(value)}
+        onChange={value => setValue && setValue(value)}
       />
     );
   }

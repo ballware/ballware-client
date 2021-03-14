@@ -21,12 +21,12 @@ Create API adapter for ballware.identity.server role list access
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base url for ballware.identity.server to use    |
 
 **Returns:** IdentityRoleApi
 
-Defined in: [role.ts:34](https://github.com/frankball/ballware-identity-backend/blob/7711a21/src/role.ts#L34)
+Defined in: [role.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-backend/src/role.ts#L34)
 
 ___
 
@@ -39,12 +39,12 @@ Create API adapter for ballware.identity.server user list access
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base url for ballware.identity.server to use    |
 
 **Returns:** IdentityUserApi
 
-Defined in: [user.ts:34](https://github.com/frankball/ballware-identity-backend/blob/7711a21/src/user.ts#L34)
+Defined in: [user.ts:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-backend/src/user.ts#L34)
 
 ___
 
@@ -57,10 +57,10 @@ Create API adapter for ballware.identity.server with resource owner auth flow
 #### Parameters:
 
 Name | Type | Description |
------- | ------ | ------ |
+:------ | :------ | :------ |
 `serviceBaseUrl` | *string* | Base URL of identity provider to use   |
 `scopes` | *string* | Collection of requested scopes    |
 
 **Returns:** ResourceOwnerAuthApi
 
-Defined in: [resourceownerauth.ts:178](https://github.com/frankball/ballware-identity-backend/blob/7711a21/src/resourceownerauth.ts#L178)
+Defined in: [resourceownerauth.ts:178](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-backend/src/resourceownerauth.ts#L178)

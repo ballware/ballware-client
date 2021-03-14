@@ -4,10 +4,6 @@
 
 Interface for documentation viewer operations
 
-## Hierarchy
-
-* **MetaDocumentationApi**
-
 ## Table of contents
 
 ### Properties
@@ -18,7 +14,7 @@ Interface for documentation viewer operations
 
 ### loadDocumentationForEntity
 
-• **loadDocumentationForEntity**: (`token`: *string*, `entity`: *string*) => *Promise*<*unknown*\>
+• **loadDocumentationForEntity**: (`token`: *string*, `entity`: *string*) => *Promise*<unknown\>
 
 Fetch documentation for business object type
 
@@ -28,4 +24,19 @@ Fetch documentation for business object type
 
 **`returns`** Promise containing rich text for rendering documentation
 
-Defined in: [documentation.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/documentation.ts#L19)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*): *Promise*<unknown\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+
+**Returns:** *Promise*<unknown\>
+
+Defined in: [documentation.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/documentation.ts#L19)
+
+Defined in: [documentation.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/documentation.ts#L19)

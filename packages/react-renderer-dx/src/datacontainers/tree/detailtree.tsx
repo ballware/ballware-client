@@ -60,7 +60,7 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
       getValue: () => {
         return treeRef.current?.instance.option('dataSource');
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         treeRef.current?.instance.option('dataSource', newValue);
         setValue(newValue);
       },
@@ -172,7 +172,7 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
         allowColumnResizing
         dataSource={defaultValue}
         onEditorPreparing={treeEditorPreparing}
-        onInitNewRow={(e) =>
+        onInitNewRow={e =>
           dataMember && onInitNewDetailItem(dataMember, e.data)
         }
         onRowValidating={treeRowValidating}

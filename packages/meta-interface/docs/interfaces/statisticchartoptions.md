@@ -4,10 +4,6 @@
 
 Options for line/bar chart
 
-## Hierarchy
-
-* **StatisticChartOptions**
-
 ## Table of contents
 
 ### Properties
@@ -23,11 +19,30 @@ Options for line/bar chart
 
 ### argumentAxis
 
-• `Optional` **argumentAxis**: *undefined* \| { `argumentType`: *string* \| *datetime* \| *numeric* ; `lines?`: *undefined* \| { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *undefined* \| *string* ; `value`: *number*  }[] ; `tickInterval?`: *undefined* \| { `days?`: *any* ; `hours?`: *any* ; `milliseconds?`: *any* ; `minutes?`: *any* ; `months?`: *any* ; `quarters?`: *any* ; `seconds?`: *any* ; `weeks?`: *any* ; `years?`: *any*  } ; `visualRangeFrom?`: *undefined* \| *number* ; `visualRangeTo?`: *undefined* \| *number*  }
+• `Optional` **argumentAxis**: *object*
 
 Options for argument axis
 
-Defined in: [statistic.ts:28](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L28)
+#### Type declaration:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`argumentType` | *string* \| *datetime* \| *numeric* | Data type of argument values   |
+`lines`? | { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *string* ; `value`: *number*  }[] | Define constant lines on argument axis in chart   |
+`tickInterval`? | *object* | Options for setting tick interval   |
+`tickInterval.days`? | *any* | - |
+`tickInterval.hours`? | *any* | - |
+`tickInterval.milliseconds`? | *any* | - |
+`tickInterval.minutes`? | *any* | - |
+`tickInterval.months`? | *any* | - |
+`tickInterval.quarters`? | *any* | - |
+`tickInterval.seconds`? | *any* | - |
+`tickInterval.weeks`? | *any* | - |
+`tickInterval.years`? | *any* | - |
+`visualRangeFrom`? | *number* | Start value of visual range displayed   |
+`visualRangeTo`? | *number* | End value of visual range displayed   |
+
+Defined in: [statistic.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L28)
 
 ___
 
@@ -37,44 +52,58 @@ ___
 
 Property in data containing argument value
 
-Defined in: [statistic.ts:23](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L23)
+Defined in: [statistic.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L23)
 
 ___
 
 ### legend
 
-• `Optional` **legend**: *undefined* \| { `horizontalAlignment?`: *undefined* \| *left* \| *right* \| *center* ; `title?`: *undefined* \| *string* ; `verticalAlignment?`: *undefined* \| *bottom* \| *top*  }
+• `Optional` **legend**: *object*
 
 Options for legend
 
-Defined in: [statistic.ts:117](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L117)
+#### Type declaration:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`horizontalAlignment`? | *left* \| *right* \| *center* | Horizontal alignment of legend   |
+`title`? | *string* | Optional title text in legend   |
+`verticalAlignment`? | *bottom* \| *top* | Vertical alignment of legend   |
+
+Defined in: [statistic.ts:117](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L117)
 
 ___
 
 ### rotated
 
-• `Optional` **rotated**: *undefined* \| *boolean*
+• `Optional` **rotated**: *boolean*
 
 Horizontal value bars
 
-Defined in: [statistic.ts:18](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L18)
+Defined in: [statistic.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L18)
 
 ___
 
 ### series
 
-• **series**: { `format?`: *undefined* \| *billions* \| *currency* \| *day* \| *decimal* \| *exponential* \| *fixedPoint* \| *largeNumber* \| *longDate* \| *longTime* \| *millions* \| *millisecond* \| *month* \| *monthAndDay* \| *monthAndYear* \| *percent* \| *quarter* \| *quarterAndYear* \| *shortDate* \| *shortTime* \| *thousands* \| *trillions* \| *year* \| *dayOfWeek* \| *hour* \| *longDateLongTime* \| *minute* \| *second* \| *shortDateShortTime* ; `labelVisible?`: *undefined* \| *boolean* ; `name`: *string* ; `precision?`: *undefined* \| *number* ; `type`: *bar* \| *line* ; `valueField`: *string* ; `visible?`: *undefined* \| *boolean*  }[]
+• **series**: { `format?`: *billions* \| *currency* \| *day* \| *decimal* \| *exponential* \| *fixedPoint* \| *largeNumber* \| *longDate* \| *longTime* \| *millions* \| *millisecond* \| *month* \| *monthAndDay* \| *monthAndYear* \| *percent* \| *quarter* \| *quarterAndYear* \| *shortDate* \| *shortTime* \| *thousands* \| *trillions* \| *year* \| *dayOfWeek* \| *hour* \| *longDateLongTime* \| *minute* \| *second* \| *shortDateShortTime* ; `labelVisible?`: *boolean* ; `name`: *string* ; `precision?`: *number* ; `type`: *bar* \| *line* ; `valueField`: *string* ; `visible?`: *boolean*  }[]
 
 Series of data
 
-Defined in: [statistic.ts:136](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L136)
+Defined in: [statistic.ts:136](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L136)
 
 ___
 
 ### valueAxis
 
-• `Optional` **valueAxis**: *undefined* \| { `lines?`: *undefined* \| { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *undefined* \| *string* ; `value`: *number*  }[]  }
+• `Optional` **valueAxis**: *object*
 
 Options for value axis
 
-Defined in: [statistic.ts:88](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L88)
+#### Type declaration:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`lines`? | { `color`: *string* ; `dashStyle`: *dash* \| *dot* \| *longDash* \| *solid* ; `labelText?`: *string* ; `value`: *number*  }[] | Define constant lines on value axis in chart   |
+
+Defined in: [statistic.ts:88](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L88)

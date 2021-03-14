@@ -51,7 +51,7 @@ export const NumberBox = ({ layoutItem }: NumberBoxProps) => {
     editorEntered
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.instance.option('value');
@@ -90,7 +90,7 @@ export const NumberBox = ({ layoutItem }: NumberBoxProps) => {
             layoutItem.dataMember &&
             editorInitialized(layoutItem.dataMember, editor)
           }
-          onValueChanged={(e) => {
+          onValueChanged={e => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,
@@ -104,7 +104,7 @@ export const NumberBox = ({ layoutItem }: NumberBoxProps) => {
         >
           <Validator>
             {required && <RequiredRule />}
-            {layoutItem.validations?.map((v) => (
+            {layoutItem.validations?.map(v => (
               <CustomRule
                 key={v.identifier}
                 validationCallback={(e: { value: any }) =>

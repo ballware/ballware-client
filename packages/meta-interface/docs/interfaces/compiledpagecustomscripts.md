@@ -4,10 +4,6 @@
 
 Definition of page specific custom scripts
 
-## Hierarchy
-
-* **CompiledPageCustomScripts**
-
 ## Table of contents
 
 ### Properties
@@ -24,7 +20,7 @@ Definition of page specific custom scripts
 
 ### pageEnabled
 
-• `Optional` **pageEnabled**: *undefined* \| (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
+• `Optional` **pageEnabled**: (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
 
 Check if user is allowed to navigate to page
 
@@ -34,13 +30,28 @@ Check if user is allowed to navigate to page
 
 **`returns`** true if page is allowed, false if not
 
-Defined in: [page.ts:247](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L247)
+#### Type declaration:
+
+▸ (`rights`: [*Rights*](rights.md), `page`: *string*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`rights` | [*Rights*](rights.md) |
+`page` | *string* |
+
+**Returns:** *boolean*
+
+Defined in: [page.ts:247](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L247)
+
+Defined in: [page.ts:247](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L247)
 
 ___
 
 ### pageVisible
 
-• `Optional` **pageVisible**: *undefined* \| (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
+• `Optional` **pageVisible**: (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
 
 Check if user is allowed to view page in navigation
 
@@ -50,13 +61,28 @@ Check if user is allowed to view page in navigation
 
 **`returns`** true if page is allowed, false if not
 
-Defined in: [page.ts:238](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L238)
+#### Type declaration:
+
+▸ (`rights`: [*Rights*](rights.md), `page`: *string*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`rights` | [*Rights*](rights.md) |
+`page` | *string* |
+
+**Returns:** *boolean*
+
+Defined in: [page.ts:238](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L238)
+
+Defined in: [page.ts:238](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L238)
 
 ___
 
 ### paramEditorEvent
 
-• `Optional` **paramEditorEvent**: *undefined* \| (`name`: *string*, `event`: *string*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md), `param?`: *Record*<*string*, *unknown*\>) => *void*
+• `Optional` **paramEditorEvent**: (`name`: *string*, `event`: *string*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md), `param?`: *Record*<string, unknown\>) => *void*
 
 Toolbar component event triggered
 
@@ -74,13 +100,33 @@ Toolbar component event triggered
 
 **`param`** Additional parameter to item event
 
-Defined in: [page.ts:324](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L324)
+#### Type declaration:
+
+▸ (`name`: *string*, `event`: *string*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md), `param?`: *Record*<string, unknown\>): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`name` | *string* |
+`event` | *string* |
+`editUtil` | [*EditUtil*](editutil.md) |
+`lookups` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+`actions` | [*ScriptActions*](scriptactions.md) |
+`param?` | *Record*<string, unknown\> |
+
+**Returns:** *void*
+
+Defined in: [page.ts:324](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L324)
+
+Defined in: [page.ts:324](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L324)
 
 ___
 
 ### paramEditorInitialized
 
-• `Optional` **paramEditorInitialized**: *undefined* \| (`name`: *string*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)) => *void*
+• `Optional` **paramEditorInitialized**: (`name`: *string*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)) => *void*
 
 Single toolbar component initialized
 
@@ -94,13 +140,31 @@ Single toolbar component initialized
 
 **`param`** Container containing action triggers for page
 
-Defined in: [page.ts:286](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L286)
+#### Type declaration:
+
+▸ (`name`: *string*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`name` | *string* |
+`editUtil` | [*EditUtil*](editutil.md) |
+`lookups` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+`actions` | [*ScriptActions*](scriptactions.md) |
+
+**Returns:** *void*
+
+Defined in: [page.ts:286](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L286)
+
+Defined in: [page.ts:286](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L286)
 
 ___
 
 ### paramEditorValueChanged
 
-• `Optional` **paramEditorValueChanged**: *undefined* \| (`name`: *string*, `value`: *unknown*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)) => *void*
+• `Optional` **paramEditorValueChanged**: (`name`: *string*, `value`: *unknown*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)) => *void*
 
 toolbar component value changed
 
@@ -116,13 +180,32 @@ toolbar component value changed
 
 **`param`** Container containing action triggers for page
 
-Defined in: [page.ts:304](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L304)
+#### Type declaration:
+
+▸ (`name`: *string*, `value`: *unknown*, `editUtil`: [*EditUtil*](editutil.md), `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`name` | *string* |
+`value` | *unknown* |
+`editUtil` | [*EditUtil*](editutil.md) |
+`lookups` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+`actions` | [*ScriptActions*](scriptactions.md) |
+
+**Returns:** *void*
+
+Defined in: [page.ts:304](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L304)
+
+Defined in: [page.ts:304](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L304)
 
 ___
 
 ### paramsInitialized
 
-• `Optional` **paramsInitialized**: *undefined* \| (`hidden`: *boolean*, `lookups`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)) => *void*
+• `Optional` **paramsInitialized**: (`hidden`: *boolean*, `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)) => *void*
 
 Toolbar initialization finished
 
@@ -134,13 +217,30 @@ Toolbar initialization finished
 
 **`param`** Container containing action triggers for page
 
-Defined in: [page.ts:270](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L270)
+#### Type declaration:
+
+▸ (`hidden`: *boolean*, `lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `actions`: [*ScriptActions*](scriptactions.md)): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`hidden` | *boolean* |
+`lookups` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+`actions` | [*ScriptActions*](scriptactions.md) |
+
+**Returns:** *void*
+
+Defined in: [page.ts:270](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L270)
+
+Defined in: [page.ts:270](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L270)
 
 ___
 
 ### prepareCustomParam
 
-• `Optional` **prepareCustomParam**: *undefined* \| (`lookups`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md), `callback`: (`customParam`: *Record*<*string*, *unknown*\>) => *void*) => *void*
+• `Optional` **prepareCustomParam**: (`lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `callback`: (`customParam`: *Record*<string, unknown\>) => *void*) => *void*
 
 Prepare custom param object containing values needed for other custom scripts
 
@@ -150,4 +250,20 @@ Prepare custom param object containing values needed for other custom scripts
 
 **`param`** Async callback operation performed by custom script when custom param preparation is finished
 
-Defined in: [page.ts:256](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L256)
+#### Type declaration:
+
+▸ (`lookups`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md), `callback`: (`customParam`: *Record*<string, unknown\>) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`lookups` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+`callback` | (`customParam`: *Record*<string, unknown\>) => *void* |
+
+**Returns:** *void*
+
+Defined in: [page.ts:256](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L256)
+
+Defined in: [page.ts:256](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L256)

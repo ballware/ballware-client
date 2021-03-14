@@ -4,10 +4,6 @@
 
 Interface for tenant data operations
 
-## Hierarchy
-
-* **MetaTenantApi**
-
 ## Table of contents
 
 ### Properties
@@ -28,4 +24,19 @@ Fetch metadatan for tenant
 
 **`returns`** Promise containing compiled tenant metadata
 
-Defined in: [tenant.ts:103](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/tenant.ts#L103)
+#### Type declaration:
+
+▸ (`token`: *string*, `tenant`: *string*): *Promise*<[*CompiledTenant*](compiledtenant.md)\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`tenant` | *string* |
+
+**Returns:** *Promise*<[*CompiledTenant*](compiledtenant.md)\>
+
+Defined in: [tenant.ts:103](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L103)
+
+Defined in: [tenant.ts:103](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/tenant.ts#L103)

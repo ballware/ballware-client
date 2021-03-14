@@ -98,7 +98,7 @@ export const MultiLookupBox = ({ layoutItem }: MultiLookupBoxProps) => {
     editorEntered
   ) {
     const editor = {
-      getOption: (option) => {
+      getOption: option => {
         switch (option) {
           case 'value':
             return editorRef.current?.instance.option('value');
@@ -141,7 +141,7 @@ export const MultiLookupBox = ({ layoutItem }: MultiLookupBoxProps) => {
             layoutItem.dataMember &&
             editorInitialized(layoutItem.dataMember, editor)
           }
-          onValueChanged={(e) => {
+          onValueChanged={e => {
             layoutItem.dataMember &&
               editorValueChanged(
                 layoutItem.dataMember,
@@ -155,7 +155,7 @@ export const MultiLookupBox = ({ layoutItem }: MultiLookupBoxProps) => {
         >
           <Validator>
             {required && <RequiredRule />}
-            {layoutItem.validations?.map((v) => (
+            {layoutItem.validations?.map(v => (
               <CustomRule
                 key={v.identifier}
                 validationCallback={(e: { value: any }) =>

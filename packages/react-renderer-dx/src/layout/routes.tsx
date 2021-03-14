@@ -44,12 +44,11 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
       Page
     ) {
       renderedPages.push(
-        ...pages.map((p) => (
+        ...pages.map(p => (
           <PrivateRoute
             key={pageKey++}
-            path={`/${
-              p.options.url?.toLowerCase() ?? 'unknown'
-            }/:action(view|edit)?/:id?`}
+            path={`/${p.options.url?.toLowerCase() ??
+              'unknown'}/:action(view|edit)?/:id?`}
             allowed={() => pageAllowed(p.options.page ?? 'unknown')}
             render={() => (
               <LookupProvider>

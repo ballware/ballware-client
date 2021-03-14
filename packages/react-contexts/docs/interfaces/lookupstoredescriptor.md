@@ -4,10 +4,6 @@
 
 Data access adapter for fetching lookup data
 
-## Hierarchy
-
-* **LookupStoreDescriptor**
-
 ## Table of contents
 
 ### Properties
@@ -19,7 +15,7 @@ Data access adapter for fetching lookup data
 
 ### byIdFunc
 
-• **byIdFunc**: (`id`: *string*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **byIdFunc**: (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
 Fetch lookup record by id
 
@@ -27,16 +23,38 @@ Fetch lookup record by id
 
 **`returns`** Promise resolving single lookup record for id
 
-Defined in: [src/lookupcontext.ts:25](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L25)
+#### Type declaration:
+
+▸ (`id`: *string*): *Promise*<Record<string, unknown\>\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`id` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>\>
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:25](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L25)
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:25](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L25)
 
 ___
 
 ### listFunc
 
-• **listFunc**: () => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **listFunc**: () => *Promise*<Record<string, unknown\>[]\>
 
 Fetch list of lookup records
 
 **`returns`** Promise resolving list of available lookup records
 
-Defined in: [src/lookupcontext.ts:18](https://github.com/frankball/ballware-react-contexts/blob/34223fb/src/lookupcontext.ts#L18)
+#### Type declaration:
+
+▸ (): *Promise*<Record<string, unknown\>[]\>
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L18)
+
+Defined in: [packages/react-contexts/src/lookupcontext.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-contexts/src/lookupcontext.ts#L18)

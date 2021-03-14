@@ -3,7 +3,3 @@
 # Interface: LookupProviderProps
 
 Properties for lookup provider
-
-## Hierarchy
-
-* **LookupProviderProps**

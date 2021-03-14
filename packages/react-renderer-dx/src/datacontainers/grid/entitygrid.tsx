@@ -136,7 +136,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
         print(
           item.id,
-          actionRows.current.map((item) => item.Id)
+          actionRows.current.map(item => item.Id)
         );
       }
     },
@@ -194,12 +194,12 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
         if (customFunctions && customFunctionAllowed) {
           const additionalFunctions = customFunctions
-            ?.filter((f) => f.type === 'edit' && customFunctionAllowed(f, row))
-            .map((f) =>
+            ?.filter(f => f.type === 'edit' && customFunctionAllowed(f, row))
+            .map(f =>
               Object.assign({}, f, { row: row, originalTarget: target })
             );
 
-          additionalFunctions?.forEach((f) => actions.push(f));
+          additionalFunctions?.forEach(f => actions.push(f));
         }
 
         if (actionMenu.current) {
@@ -231,12 +231,10 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
       if (customFunctions && customFunctionAllowed) {
         const additionalFunctions = customFunctions
-          ?.filter((f) => f.type === 'edit' && customFunctionAllowed(f, row))
-          .map((f) =>
-            Object.assign({}, f, { row: row, originalTarget: target })
-          );
+          ?.filter(f => f.type === 'edit' && customFunctionAllowed(f, row))
+          .map(f => Object.assign({}, f, { row: row, originalTarget: target }));
 
-        additionalFunctions?.forEach((f) => actions.push(f));
+        additionalFunctions?.forEach(f => actions.push(f));
       }
 
       if (actionMenu.current) {
@@ -347,7 +345,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   const customFunctionButtonClicked = useCallback(
     (e: { id: string; target: Element; items: Array<CrudItem> }) => {
       if (customFunctions && customEdit) {
-        const customFunction = customFunctions.find((f) => f.id === e.id);
+        const customFunction = customFunctions.find(f => f.id === e.id);
 
         if (customFunction) {
           customEdit(customFunction, e.items);
@@ -411,7 +409,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
           return true;
         case 'customoptions': {
           if (data && customFunctions && customFunctionAllowed) {
-            const allowedAdditionalFunctions = customFunctions?.filter((f) =>
+            const allowedAdditionalFunctions = customFunctions?.filter(f =>
               customFunctionAllowed(f, data)
             );
 
@@ -521,8 +519,8 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
       items.push(
         ...customFunctions
-          ?.filter((f) => f.type === 'add' && customFunctionAllowed(f))
-          .map((f) => {
+          ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
+          .map(f => {
             return { id: f.id, text: f.text, customFunction: f };
           })
       );
@@ -611,7 +609,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   const headCustomFunctions = useMemo(
     () =>
       renderGrid && customFunctionAllowed
-        ? customFunctions?.filter((f) => f.multi && customFunctionAllowed(f))
+        ? customFunctions?.filter(f => f.multi && customFunctionAllowed(f))
         : null,
     [renderGrid, customFunctions, customFunctionAllowed]
   );
@@ -632,7 +630,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
         large: { minWidth: 1001 },
       }}
     >
-      {(matches) => (
+      {matches => (
         <React.Fragment>
           {renderGrid &&
           load &&

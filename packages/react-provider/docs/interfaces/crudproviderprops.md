@@ -4,10 +4,6 @@
 
 Properties for crud provider component
 
-## Hierarchy
-
-* **CrudProviderProps**
-
 ## Table of contents
 
 ### Properties
@@ -19,11 +15,11 @@ Properties for crud provider component
 
 ### initialFetchParams
 
-• `Optional` **initialFetchParams**: *undefined* \| *Record*<*string*, *string* \| *number* \| *boolean* \| (*string* \| *number* \| *boolean*)[]\>
+• `Optional` **initialFetchParams**: QueryParams
 
 Fetch params prepared in parent container (page, parent entity)
 
-Defined in: [src/crudprovider.tsx:34](https://github.com/frankball/ballware-react-provider/blob/5745264/src/crudprovider.tsx#L34)
+Defined in: [crudprovider.tsx:34](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/crudprovider.tsx#L34)
 
 ___
 
@@ -33,4 +29,4 @@ ___
 
 Query identifier used for querying item list
 
-Defined in: [src/crudprovider.tsx:29](https://github.com/frankball/ballware-react-provider/blob/5745264/src/crudprovider.tsx#L29)
+Defined in: [crudprovider.tsx:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-provider/src/crudprovider.tsx#L29)

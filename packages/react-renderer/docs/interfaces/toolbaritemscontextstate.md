@@ -4,10 +4,6 @@
 
 Context providing environmental functionality for toolbar items
 
-## Hierarchy
-
-* **ToolbarItemsContextState**
-
 ## Table of contents
 
 ### Properties
@@ -22,7 +18,7 @@ Context providing environmental functionality for toolbar items
 
 ### getLookup
 
-• `Optional` **getLookup**: *undefined* \| (`identifier`: *string*) => LookupDescriptor \| LookupCreator
+• `Optional` **getLookup**: (`identifier`: *string*) => LookupDescriptor \| LookupCreator
 
 Get lookup descriptor by lookup identifier
 
@@ -30,13 +26,27 @@ Get lookup descriptor by lookup identifier
 
 **`returns`** Lookup descriptor or lookup creator function
 
-Defined in: [src/common/toolbaritemscontext.tsx:35](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbaritemscontext.tsx#L35)
+#### Type declaration:
+
+▸ (`identifier`: *string*): LookupDescriptor \| LookupCreator
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+
+**Returns:** LookupDescriptor \| LookupCreator
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L35)
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L35)
 
 ___
 
 ### paramEditorEvent
 
-• `Optional` **paramEditorEvent**: *undefined* \| (`identifier`: *string*, `event`: *string*, `param?`: ValueType) => *void*
+• `Optional` **paramEditorEvent**: (`identifier`: *string*, `event`: *string*, `param?`: ValueType) => *void*
 
 Parameter editor event triggered
 
@@ -46,13 +56,29 @@ Parameter editor event triggered
 
 **`param`** Optional event specific parameter
 
-Defined in: [src/common/toolbaritemscontext.tsx:66](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbaritemscontext.tsx#L66)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `event`: *string*, `param?`: ValueType): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`event` | *string* |
+`param?` | ValueType |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:66](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L66)
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:66](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L66)
 
 ___
 
 ### paramEditorInitialized
 
-• `Optional` **paramEditorInitialized**: *undefined* \| (`identifier`: *string*, `toolbarItem`: [*ToolbarItemRef*](toolbaritemref.md)) => *void*
+• `Optional` **paramEditorInitialized**: (`identifier`: *string*, `toolbarItem`: [*ToolbarItemRef*](toolbaritemref.md)) => *void*
 
 Parameter editor for identifier is inizialized (and displayed)
 
@@ -60,13 +86,28 @@ Parameter editor for identifier is inizialized (and displayed)
 
 **`param`** Reference to toolbar item component
 
-Defined in: [src/common/toolbaritemscontext.tsx:48](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbaritemscontext.tsx#L48)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `toolbarItem`: [*ToolbarItemRef*](toolbaritemref.md)): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`toolbarItem` | [*ToolbarItemRef*](toolbaritemref.md) |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L48)
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:48](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L48)
 
 ___
 
 ### paramEditorValueChanged
 
-• `Optional` **paramEditorValueChanged**: *undefined* \| (`identifier`: *string*, `value`: ValueType) => *void*
+• `Optional` **paramEditorValueChanged**: (`identifier`: *string*, `value`: ValueType) => *void*
 
 Parameter editor value changed
 
@@ -74,16 +115,45 @@ Parameter editor value changed
 
 **`param`** Current value of parameter editor
 
-Defined in: [src/common/toolbaritemscontext.tsx:58](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbaritemscontext.tsx#L58)
+#### Type declaration:
+
+▸ (`identifier`: *string*, `value`: ValueType): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`identifier` | *string* |
+`value` | ValueType |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:58](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L58)
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:58](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L58)
 
 ___
 
 ### paramsInitialized
 
-• `Optional` **paramsInitialized**: *undefined* \| (`hidden`: *boolean*) => *void*
+• `Optional` **paramsInitialized**: (`hidden`: *boolean*) => *void*
 
 All parameter editors initialized
 
 **`param`** True if parameter editor display is hidden because of media limitations
 
-Defined in: [src/common/toolbaritemscontext.tsx:41](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbaritemscontext.tsx#L41)
+#### Type declaration:
+
+▸ (`hidden`: *boolean*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`hidden` | *boolean* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:41](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L41)
+
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:41](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L41)

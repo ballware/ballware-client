@@ -169,12 +169,12 @@ export const EntityMap = ({
 
         if (customFunctionAllowed) {
           const additionalFunctions = customFunctions
-            ?.filter((f) => f.type === 'edit' && customFunctionAllowed(f, row))
-            .map((f) =>
+            ?.filter(f => f.type === 'edit' && customFunctionAllowed(f, row))
+            .map(f =>
               Object.assign({}, f, { row: row, originalTarget: target })
             );
 
-          additionalFunctions?.forEach((f) => actions.push(f));
+          additionalFunctions?.forEach(f => actions.push(f));
         }
 
         actionMenu.current.instance.option(
@@ -263,8 +263,8 @@ export const EntityMap = ({
       if (customFunctions) {
         addMenuItems.push(
           ...customFunctions
-            ?.filter((f) => f.type === 'add' && customFunctionAllowed(f))
-            .map((f) => {
+            ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
+            .map(f => {
               return { id: f.id, text: f.text, customFunction: f };
             })
         );
@@ -357,7 +357,7 @@ export const EntityMap = ({
       mapRef.current.instance.beginUpdate();
       cleanupMarker().then(() =>
         addMarkers(
-          fetchedItems?.filter((item) => item.Latitude && item.Longitude)
+          fetchedItems?.filter(item => item.Latitude && item.Longitude)
         )
       );
     }
@@ -385,7 +385,7 @@ export const EntityMap = ({
             apiKey={{ google: googlekey }}
             defaultZoom={30}
             controls
-            onInitialized={(e) =>
+            onInitialized={e =>
               e.element?.addEventListener('mousemove', onMouseMove)
             }
           ></Map>
@@ -412,7 +412,7 @@ export const EntityMap = ({
         large: { minWidth: 1001 },
       }}
     >
-      {(matches) => (
+      {matches => (
         <div style={{ height: height ?? '100%' }}>
           {WrappedMap}
           {t && displayName && false && (
@@ -420,7 +420,7 @@ export const EntityMap = ({
               icon="bi bi-plus"
               label={t('datacontainer.actions.add', { entity: displayName })}
               index={1}
-              onClick={(e) => addButtonClicked(e.element)}
+              onClick={e => addButtonClicked(e.element)}
             />
           )}
           <ActionSheet

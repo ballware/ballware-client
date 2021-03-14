@@ -4,10 +4,6 @@
 
 Custom scripts for statistic layout
 
-## Hierarchy
-
-* **CompiledStatisticCustomScripts**
-
 ## Table of contents
 
 ### Properties
@@ -18,7 +14,7 @@ Custom scripts for statistic layout
 
 ### argumentAxisCustomizeText
 
-• `Optional` **argumentAxisCustomizeText**: *undefined* \| (`layout`: [*StatisticLayout*](statisticlayout.md), `value`: *unknown*, `params`: *Record*<*string*, *unknown*\>, `customParam`: *Record*<*string*, *unknown*\>, `util`: [*ScriptUtil*](scriptutil.md)) => *string*
+• `Optional` **argumentAxisCustomizeText**: (`layout`: [*StatisticLayout*](statisticlayout.md), `value`: *unknown*, `params`: *Record*<string, unknown\>, `customParam`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md)) => *string*
 
 Customize display text for argument axis label
 
@@ -34,4 +30,22 @@ Customize display text for argument axis label
 
 **`returns`** Display text for label
 
-Defined in: [statistic.ts:364](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/statistic.ts#L364)
+#### Type declaration:
+
+▸ (`layout`: [*StatisticLayout*](statisticlayout.md), `value`: *unknown*, `params`: *Record*<string, unknown\>, `customParam`: *Record*<string, unknown\>, `util`: [*ScriptUtil*](scriptutil.md)): *string*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`layout` | [*StatisticLayout*](statisticlayout.md) |
+`value` | *unknown* |
+`params` | *Record*<string, unknown\> |
+`customParam` | *Record*<string, unknown\> |
+`util` | [*ScriptUtil*](scriptutil.md) |
+
+**Returns:** *string*
+
+Defined in: [statistic.ts:364](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L364)
+
+Defined in: [statistic.ts:364](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/statistic.ts#L364)

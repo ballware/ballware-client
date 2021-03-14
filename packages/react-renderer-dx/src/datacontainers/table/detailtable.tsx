@@ -63,7 +63,7 @@ export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
       getValue: () => {
         return rows;
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         setRows(newValue ?? []);
         setValue(newValue);
       },
@@ -78,25 +78,25 @@ export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
         <Table className={classes.table} size={'small'}>
           <TableHead>
             <TableRow>
-              {options?.columns?.map((column) => (
+              {options?.columns?.map(column => (
                 <TableCell key={column.dataMember}>{column.caption}</TableCell>
               ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {rows.map(row => (
               <React.Fragment>
                 {EditProvider && (
                   <EditProvider item={row} editLayout={undefined}>
                     <EditItemsProvider>
                       <TableRow key={rowKey++}>
-                        {options?.columns?.map((column) => (
+                        {options?.columns?.map(column => (
                           <TableCell key={column.dataMember}>
                             <TableColumn
                               readonly={readonly}
                               data={row}
                               column={column}
-                              setValue={(value) =>
+                              setValue={value =>
                                 column.dataMember &&
                                 setByPath(row, column.dataMember, value)
                               }

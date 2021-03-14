@@ -4,10 +4,6 @@
 
 Properties for page toolbar item component
 
-## Hierarchy
-
-* **PageToolbarItemProps**
-
 ## Table of contents
 
 ### Properties
@@ -22,4 +18,4 @@ Properties for page toolbar item component
 
 Toolbar item metadata
 
-Defined in: [src/renderfactorycontext.ts:166](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L166)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:166](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L166)

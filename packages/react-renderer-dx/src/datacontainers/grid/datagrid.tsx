@@ -99,7 +99,7 @@ export const DataGrid = ({
 
   return useMemo(() => {
     const onCustomizeColumnsDisableHidingPriority = (columns: Array<any>) => {
-      columns?.forEach((c) => (c.hidingPriority = null));
+      columns?.forEach(c => (c.hidingPriority = null));
     };
 
     const onToolbarPreparing = (e: { toolbarOptions?: dxToolbarOptions }) => {
@@ -140,7 +140,7 @@ export const DataGrid = ({
         });
       }
 
-      customFunctions?.forEach((f) => {
+      customFunctions?.forEach(f => {
         e.toolbarOptions?.items?.unshift({
           locateInMenu: 'auto',
           location: 'after',
@@ -188,14 +188,14 @@ export const DataGrid = ({
 
       if (!e.cancel && e.column) {
         const column = layout.columns.find(
-          (c) => c.dataMember === e.column?.dataField
+          c => c.dataMember === e.column?.dataField
         );
 
         if (column && column.editFunction) {
           e.cancel = true;
 
           const customFunction = customFunctions?.find(
-            (cf) => cf.id === column.editFunction
+            cf => cf.id === column.editFunction
           );
 
           if (customFunction && customEdit && e.data) {
@@ -274,7 +274,7 @@ export const DataGrid = ({
         rowAlternationEnabled
         onEditingStart={onEditingStart}
         onEditorPreparing={gridEditorPreparing}
-        onSelectionChanged={(e) => {
+        onSelectionChanged={e => {
           selectedRowKeys.current = e.selectedRowKeys as string[];
           selectedRowData.current = e.selectedRowsData as CrudItem[];
         }}
@@ -289,7 +289,7 @@ export const DataGrid = ({
         defaultSelectedRowKeys={selectedRowKeys.current}
         onRowDblClick={
           mode === 'small'
-            ? (e) =>
+            ? e =>
                 e.rowElement &&
                 onRowDblClick({
                   event: e.event as dxEvent,

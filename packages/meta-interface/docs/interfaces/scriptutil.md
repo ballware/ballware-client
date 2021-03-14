@@ -4,10 +4,6 @@
 
 Adapter for utilities available in custom scripts
 
-## Hierarchy
-
-* **ScriptUtil**
-
 ## Table of contents
 
 ### Properties
@@ -38,7 +34,15 @@ Adapter for utilities available in custom scripts
 
 Get date with first day of previous year
 
-Defined in: [scriptutil.ts:66](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L66)
+#### Type declaration:
+
+▸ (): Date
+
+**Returns:** Date
+
+Defined in: [scriptutil.ts:66](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L66)
+
+Defined in: [scriptutil.ts:66](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L66)
 
 ___
 
@@ -48,7 +52,15 @@ ___
 
 Get date with first day of current year
 
-Defined in: [scriptutil.ts:55](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L55)
+#### Type declaration:
+
+▸ (): Date
+
+**Returns:** Date
+
+Defined in: [scriptutil.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L55)
+
+Defined in: [scriptutil.ts:55](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L55)
 
 ___
 
@@ -58,7 +70,21 @@ ___
 
 Convert universal date to local date
 
-Defined in: [scriptutil.ts:45](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L45)
+#### Type declaration:
+
+▸ (`date`: Date): Date
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`date` | Date |
+
+**Returns:** Date
+
+Defined in: [scriptutil.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L45)
+
+Defined in: [scriptutil.ts:45](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L45)
 
 ___
 
@@ -68,7 +94,15 @@ ___
 
 Get Date with last day of previous year
 
-Defined in: [scriptutil.ts:71](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L71)
+#### Type declaration:
+
+▸ (): Date
+
+**Returns:** Date
+
+Defined in: [scriptutil.ts:71](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L71)
+
+Defined in: [scriptutil.ts:71](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L71)
 
 ___
 
@@ -78,7 +112,15 @@ ___
 
 Get Date with last day of current year
 
-Defined in: [scriptutil.ts:60](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L60)
+#### Type declaration:
+
+▸ (): Date
+
+**Returns:** Date
+
+Defined in: [scriptutil.ts:60](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L60)
+
+Defined in: [scriptutil.ts:60](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L60)
 
 ___
 
@@ -88,17 +130,49 @@ ___
 
 Find coordinates for adress
 
-Defined in: [scriptutil.ts:129](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L129)
+#### Type declaration:
+
+▸ (`address`: *string*, `callback`: (`location`: { `lat`: *number* ; `lng`: *number*  }) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`address` | *string* |
+`callback` | (`location`: { `lat`: *number* ; `lng`: *number*  }) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:129](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L129)
+
+Defined in: [scriptutil.ts:129](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L129)
 
 ___
 
 ### geocodeLocation
 
-• **geocodeLocation**: (`location`: { `lat`: *number* ; `lng`: *number*  }, `callback`: (`addresses`: { `city?`: *undefined* \| *string* ; `country?`: *undefined* \| *string* ; `houseNumber?`: *undefined* \| *string* ; `street?`: *undefined* \| *string* ; `zipCode?`: *undefined* \| *string*  }[]) => *void*) => *void*
+• **geocodeLocation**: (`location`: { `lat`: *number* ; `lng`: *number*  }, `callback`: (`addresses`: { `city?`: *string* ; `country?`: *string* ; `houseNumber?`: *string* ; `street?`: *string* ; `zipCode?`: *string*  }[]) => *void*) => *void*
 
 Find adress for coordinates
 
-Defined in: [scriptutil.ts:137](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L137)
+#### Type declaration:
+
+▸ (`location`: { `lat`: *number* ; `lng`: *number*  }, `callback`: (`addresses`: { `city?`: *string* ; `country?`: *string* ; `houseNumber?`: *string* ; `street?`: *string* ; `zipCode?`: *string*  }[]) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`location` | *object* |
+`location.lat` | *number* |
+`location.lng` | *number* |
+`callback` | (`addresses`: { `city?`: *string* ; `country?`: *string* ; `houseNumber?`: *string* ; `street?`: *string* ; `zipCode?`: *string*  }[]) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:137](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L137)
+
+Defined in: [scriptutil.ts:137](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L137)
 
 ___
 
@@ -108,7 +182,23 @@ ___
 
 Fetch JSON from url
 
-Defined in: [scriptutil.ts:111](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L111)
+#### Type declaration:
+
+▸ (`url`: *string*, `success`: (`response`: *unknown*) => *void*, `failure`: (`message`: *string*) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`url` | *string* |
+`success` | (`response`: *unknown*) => *void* |
+`failure` | (`message`: *string*) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:111](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L111)
+
+Defined in: [scriptutil.ts:111](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L111)
 
 ___
 
@@ -118,7 +208,23 @@ ___
 
 Fetch text from url
 
-Defined in: [scriptutil.ts:120](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L120)
+#### Type declaration:
+
+▸ (`url`: *string*, `success`: (`response`: *string*) => *void*, `failure`: (`message`: *string*) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`url` | *string* |
+`success` | (`response`: *string*) => *void* |
+`failure` | (`message`: *string*) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:120](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L120)
+
+Defined in: [scriptutil.ts:120](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L120)
 
 ___
 
@@ -128,13 +234,27 @@ ___
 
 Convert local date to universal date
 
-Defined in: [scriptutil.ts:50](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L50)
+#### Type declaration:
+
+▸ (`date`: Date): Date
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`date` | Date |
+
+**Returns:** Date
+
+Defined in: [scriptutil.ts:50](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L50)
+
+Defined in: [scriptutil.ts:50](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L50)
 
 ___
 
 ### parse
 
-• **parse**: (`json`: *string*) => *Record*<*string*, *unknown*\> \| *Record*<*string*, *unknown*\>[]
+• **parse**: (`json`: *string*) => *Record*<string, unknown\> \| *Record*<string, unknown\>[]
 
 Parse JSON to object
 
@@ -142,13 +262,27 @@ Parse JSON to object
 
 **`returns`** Deserialized object
 
-Defined in: [scriptutil.ts:28](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L28)
+#### Type declaration:
+
+▸ (`json`: *string*): *Record*<string, unknown\> \| *Record*<string, unknown\>[]
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`json` | *string* |
+
+**Returns:** *Record*<string, unknown\> \| *Record*<string, unknown\>[]
+
+Defined in: [scriptutil.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L28)
+
+Defined in: [scriptutil.ts:28](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L28)
 
 ___
 
 ### stringify
 
-• **stringify**: (`json`: *Record*<*string*, *unknown*\> \| *Record*<*string*, *unknown*\>[]) => *string*
+• **stringify**: (`json`: *Record*<string, unknown\> \| *Record*<string, unknown\>[]) => *string*
 
 Stringify object to JSON
 
@@ -156,7 +290,21 @@ Stringify object to JSON
 
 **`returns`** String with serialized object
 
-Defined in: [scriptutil.ts:38](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L38)
+#### Type declaration:
+
+▸ (`json`: *Record*<string, unknown\> \| *Record*<string, unknown\>[]): *string*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`json` | *Record*<string, unknown\> \| *Record*<string, unknown\>[] |
+
+**Returns:** *string*
+
+Defined in: [scriptutil.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L38)
+
+Defined in: [scriptutil.ts:38](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L38)
 
 ___
 
@@ -166,7 +314,15 @@ ___
 
 Request current user access token
 
-Defined in: [scriptutil.ts:15](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L15)
+#### Type declaration:
+
+▸ (): *string*
+
+**Returns:** *string*
+
+Defined in: [scriptutil.ts:15](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L15)
+
+Defined in: [scriptutil.ts:15](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L15)
 
 ___
 
@@ -176,13 +332,21 @@ ___
 
 Generate new UUID
 
-Defined in: [scriptutil.ts:20](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L20)
+#### Type declaration:
+
+▸ (): *string*
+
+**Returns:** *string*
+
+Defined in: [scriptutil.ts:20](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L20)
+
+Defined in: [scriptutil.ts:20](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L20)
 
 ___
 
 ### withAutocompleteList
 
-• **withAutocompleteList**: (`autocomplete`: *unknown*, `callback`: (`items`: *Record*<*string*, *unknown*\>[]) => *void*) => *void*
+• **withAutocompleteList**: (`autocomplete`: *unknown*, `callback`: (`items`: *Record*<string, unknown\>[]) => *void*) => *void*
 
 Fetch autocomplete list by definition
 
@@ -190,13 +354,28 @@ Fetch autocomplete list by definition
 
 **`param`** Callback function called with result
 
-Defined in: [scriptutil.ts:103](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L103)
+#### Type declaration:
+
+▸ (`autocomplete`: *unknown*, `callback`: (`items`: *Record*<string, unknown\>[]) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`autocomplete` | *unknown* |
+`callback` | (`items`: *Record*<string, unknown\>[]) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:103](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L103)
+
+Defined in: [scriptutil.ts:103](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L103)
 
 ___
 
 ### withLookupById
 
-• **withLookupById**: (`lookup`: *unknown*, `id`: *string*, `callback`: (`item?`: *Record*<*string*, *unknown*\>) => *void*) => *void*
+• **withLookupById**: (`lookup`: *unknown*, `id`: *string*, `callback`: (`item?`: *Record*<string, unknown\>) => *void*) => *void*
 
 Fetch lookup single element by definition and id
 
@@ -206,13 +385,29 @@ Fetch lookup single element by definition and id
 
 **`param`** Callback function called with result
 
-Defined in: [scriptutil.ts:91](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L91)
+#### Type declaration:
+
+▸ (`lookup`: *unknown*, `id`: *string*, `callback`: (`item?`: *Record*<string, unknown\>) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`lookup` | *unknown* |
+`id` | *string* |
+`callback` | (`item?`: *Record*<string, unknown\>) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:91](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L91)
+
+Defined in: [scriptutil.ts:91](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L91)
 
 ___
 
 ### withLookupList
 
-• **withLookupList**: (`lookup`: *unknown*, `callback`: (`items`: *Record*<*string*, *unknown*\>[]) => *void*) => *void*
+• **withLookupList**: (`lookup`: *unknown*, `callback`: (`items`: *Record*<string, unknown\>[]) => *void*) => *void*
 
 Fetch lookup select list by definition
 
@@ -220,4 +415,19 @@ Fetch lookup select list by definition
 
 **`param`** Callback function called with result
 
-Defined in: [scriptutil.ts:79](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/scriptutil.ts#L79)
+#### Type declaration:
+
+▸ (`lookup`: *unknown*, `callback`: (`items`: *Record*<string, unknown\>[]) => *void*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`lookup` | *unknown* |
+`callback` | (`items`: *Record*<string, unknown\>[]) => *void* |
+
+**Returns:** *void*
+
+Defined in: [scriptutil.ts:79](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L79)
+
+Defined in: [scriptutil.ts:79](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/scriptutil.ts#L79)

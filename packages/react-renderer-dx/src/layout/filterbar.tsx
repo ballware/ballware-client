@@ -22,7 +22,7 @@ import {
 } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },

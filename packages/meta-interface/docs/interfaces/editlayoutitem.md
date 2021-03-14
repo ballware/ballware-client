@@ -4,10 +4,6 @@
 
 Interface of edit layout item definition
 
-## Hierarchy
-
-* **EditLayoutItem**
-
 ## Table of contents
 
 ### Properties
@@ -22,41 +18,41 @@ Interface of edit layout item definition
 
 ### colCount
 
-• `Optional` **colCount**: *undefined* \| *number*
+• `Optional` **colCount**: *number*
 
 Number of cols for layouting child editor items (only for container types)
 
-Defined in: [entity.ts:213](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L213)
+Defined in: [entity.ts:213](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L213)
 
 ___
 
 ### colSpan
 
-• `Optional` **colSpan**: *undefined* \| *number*
+• `Optional` **colSpan**: *number*
 
 Number of cols occupied by editor in layout
 
-Defined in: [entity.ts:218](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L218)
+Defined in: [entity.ts:218](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L218)
 
 ___
 
 ### items
 
-• `Optional` **items**: *undefined* \| [*EditLayoutItem*](editlayoutitem.md)[]
+• `Optional` **items**: [*EditLayoutItem*](editlayoutitem.md)[]
 
 Child editor components (only for container types)
 
-Defined in: [entity.ts:223](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L223)
+Defined in: [entity.ts:223](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L223)
 
 ___
 
 ### options
 
-• `Optional` **options**: *undefined* \| [*EditLayoutItemOptions*](editlayoutitemoptions.md)
+• `Optional` **options**: [*EditLayoutItemOptions*](editlayoutitemoptions.md)
 
 Options for editor component configuration
 
-Defined in: [entity.ts:208](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L208)
+Defined in: [entity.ts:208](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L208)
 
 ___
 
@@ -66,4 +62,4 @@ ___
 
 Editor component type (specific for used rendering engine)
 
-Defined in: [entity.ts:203](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/entity.ts#L203)
+Defined in: [entity.ts:203](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/entity.ts#L203)

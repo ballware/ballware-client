@@ -4,10 +4,6 @@
 
 Interface for processing state operations
 
-## Hierarchy
-
-* **MetaProcessingstateApi**
-
 ## Table of contents
 
 ### Properties
@@ -20,7 +16,7 @@ Interface for processing state operations
 
 ### selectByStateForEntity
 
-• **selectByStateForEntity**: (`token`: *string*, `entity`: *string*) => (`state`: *string* \| *number*) => *Promise*<*Record*<*string*, *unknown*\>\>
+• **selectByStateForEntity**: (`token`: *string*, `entity`: *string*) => (`state`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
 
 Fetch single processing state by state number
 
@@ -32,13 +28,28 @@ Fetch single processing state by state number
 
 **`returns`** Promise containing processing state data
 
-Defined in: [processingstate.ts:46](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/processingstate.ts#L46)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*): *function*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+
+**Returns:** (`state`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
+
+Defined in: [processingstate.ts:46](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/processingstate.ts#L46)
+
+Defined in: [processingstate.ts:46](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/processingstate.ts#L46)
 
 ___
 
 ### selectListAllowedForEntityAndIds
 
-• **selectListAllowedForEntityAndIds**: (`token`: *string*, `entity`: *string*, `ids`: *string*[]) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListAllowedForEntityAndIds**: (`token`: *string*, `entity`: *string*, `ids`: *string*[]) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch select list containing all allowed states for business object ids
 
@@ -50,13 +61,29 @@ Fetch select list containing all allowed states for business object ids
 
 **`returns`** Promise containing list of allowed processing states
 
-Defined in: [processingstate.ts:32](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/processingstate.ts#L32)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*, `ids`: *string*[]): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+`ids` | *string*[] |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [processingstate.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/processingstate.ts#L32)
+
+Defined in: [processingstate.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/processingstate.ts#L32)
 
 ___
 
 ### selectListForEntity
 
-• **selectListForEntity**: (`token`: *string*, `entity`: *string*) => *Promise*<*Record*<*string*, *unknown*\>[]\>
+• **selectListForEntity**: (`token`: *string*, `entity`: *string*) => *Promise*<Record<string, unknown\>[]\>
 
 Fetch select list containing all possible states for business object
 
@@ -66,4 +93,19 @@ Fetch select list containing all possible states for business object
 
 **`returns`** Promise containing list of available processing states
 
-Defined in: [processingstate.ts:19](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/processingstate.ts#L19)
+#### Type declaration:
+
+▸ (`token`: *string*, `entity`: *string*): *Promise*<Record<string, unknown\>[]\>
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`token` | *string* |
+`entity` | *string* |
+
+**Returns:** *Promise*<Record<string, unknown\>[]\>
+
+Defined in: [processingstate.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/processingstate.ts#L19)
+
+Defined in: [processingstate.ts:19](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/processingstate.ts#L19)

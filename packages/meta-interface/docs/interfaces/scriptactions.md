@@ -4,10 +4,6 @@
 
 Adaptor for initiating actions from custom page scripts
 
-## Hierarchy
-
-* **ScriptActions**
-
 ## Table of contents
 
 ### Properties
@@ -18,10 +14,24 @@ Adaptor for initiating actions from custom page scripts
 
 ### loadData
 
-• **loadData**: (`params`: *Record*<*string*, *unknown*\>) => *void*
+• **loadData**: (`params`: *Record*<string, unknown\>) => *void*
 
 Set head params for page layout items
 
 **`param`** New page head param object
 
-Defined in: [page.ts:224](https://github.com/frankball/ballware-meta-interface/blob/08dd5e4/src/page.ts#L224)
+#### Type declaration:
+
+▸ (`params`: *Record*<string, unknown\>): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`params` | *Record*<string, unknown\> |
+
+**Returns:** *void*
+
+Defined in: [page.ts:224](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L224)
+
+Defined in: [page.ts:224](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/meta-interface/src/page.ts#L224)

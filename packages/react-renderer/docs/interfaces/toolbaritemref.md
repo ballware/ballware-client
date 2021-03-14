@@ -4,10 +4,6 @@
 
 Reference of toolbar item
 
-## Hierarchy
-
-* **ToolbarItemRef**
-
 ## Table of contents
 
 ### Properties
@@ -25,7 +21,21 @@ Get option value of toolbar item component
 
 **`param`** Identifier of option
 
-Defined in: [src/common/toolbar.ts:23](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbar.ts#L23)
+#### Type declaration:
+
+▸ (`option`: *string*): *any*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`option` | *string* |
+
+**Returns:** *any*
+
+Defined in: [packages/react-renderer/src/common/toolbar.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbar.ts#L23)
+
+Defined in: [packages/react-renderer/src/common/toolbar.ts:23](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbar.ts#L23)
 
 ___
 
@@ -39,4 +49,19 @@ Set option value of toolbar item component
 
 **`param`** New value of option
 
-Defined in: [src/common/toolbar.ts:17](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/common/toolbar.ts#L17)
+#### Type declaration:
+
+▸ (`option`: *string*, `value`: *unknown*): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`option` | *string* |
+`value` | *unknown* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/common/toolbar.ts:17](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbar.ts#L17)
+
+Defined in: [packages/react-renderer/src/common/toolbar.ts:17](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/common/toolbar.ts#L17)

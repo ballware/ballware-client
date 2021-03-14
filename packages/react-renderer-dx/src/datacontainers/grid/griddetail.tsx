@@ -23,7 +23,7 @@ export const GridDetail = ({ item, detailLayout }: GridDetailProps) => {
     let key = 1;
 
     if (EditLayoutItem) {
-      return detailLayout?.items?.map((item) => (
+      return detailLayout?.items?.map(item => (
         <EditLayoutItem key={key++} layoutItem={item} />
       ));
     }

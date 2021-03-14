@@ -82,7 +82,7 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
       getValue: () => {
         return gridRef.current?.instance.option('dataSource');
       },
-      setValue: (newValue) => {
+      setValue: newValue => {
         gridRef.current?.instance.option('dataSource', newValue);
         setValue(newValue);
       },
@@ -228,7 +228,7 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
               allowColumnResizing
               dataSource={defaultValue}
               onEditorPreparing={onGridEditorPreparing}
-              onInitNewRow={(e) => onInitNewDetailItem(dataMember, e.data)}
+              onInitNewRow={e => onInitNewDetailItem(dataMember, e.data)}
               onRowValidating={onGridRowValidating}
               onInitialized={onInitialized}
               columns={columnConfiguration}

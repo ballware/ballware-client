@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { QueryParams } from "@ballware/meta-interface";
+import { QueryParams } from '@ballware/meta-interface';
 
 /**
  * Convert param object to url parameter

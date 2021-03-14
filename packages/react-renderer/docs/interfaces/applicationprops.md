@@ -4,10 +4,6 @@
 
 Properties for application component
 
-## Hierarchy
-
-* **ApplicationProps**
-
 ## Table of contents
 
 ### Properties
@@ -18,8 +14,8 @@ Properties for application component
 
 ### drawerWidth
 
-• `Optional` **drawerWidth**: *undefined* \| *string* \| *number*
+• `Optional` **drawerWidth**: *string* \| *number*
 
 Width of navigation drawer
 
-Defined in: [src/renderfactorycontext.ts:29](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L29)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:29](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L29)

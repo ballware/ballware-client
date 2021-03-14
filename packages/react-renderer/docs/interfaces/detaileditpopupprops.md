@@ -4,10 +4,6 @@
 
 Properties for grid detail edit popup
 
-## Hierarchy
-
-* **DetailEditPopupProps**
-
 ## Table of contents
 
 ### Properties
@@ -20,11 +16,26 @@ Properties for grid detail edit popup
 
 ### applyChanges
 
-• **applyChanges**: (`e`: { `value`: *undefined* \| *string* \| *number* \| *boolean* \| *Record*<*string*, *unknown*\> \| Date \| (*string* \| *number* \| *Record*<*string*, *unknown*\>)[] \| { `lat`: *number* ; `lng`: *number*  } \| *CrudItem*  }) => *void*
+• **applyChanges**: (`e`: { `value`: ValueType \| *CrudItem*  }) => *void*
 
 Apply changes callback after editing finished
 
-Defined in: [src/renderfactorycontext.ts:236](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L236)
+#### Type declaration:
+
+▸ (`e`: { `value`: ValueType \| *CrudItem*  }): *void*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`e` | *object* |
+`e.value` | ValueType \| *CrudItem* |
+
+**Returns:** *void*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:236](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L236)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:236](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L236)
 
 ___
 
@@ -34,7 +45,7 @@ ___
 
 Edited column in grid
 
-Defined in: [src/renderfactorycontext.ts:231](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L231)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:231](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L231)
 
 ___
 
@@ -44,4 +55,4 @@ ___
 
 Detail edit content is readonly (view mode)
 
-Defined in: [src/renderfactorycontext.ts:226](https://github.com/frankball/ballware-react-renderer/blob/625dfe5/src/renderfactorycontext.ts#L226)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:226](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/react-renderer/src/renderfactorycontext.ts#L226)

@@ -10,8 +10,8 @@ export function createReadonlyDatasource(
   const dataStore = new CustomStore({
     loadMode: 'raw',
     key: keyProperty,
-    load: function () {
-      return fetchFunc().then((result) => {
+    load: function() {
+      return fetchFunc().then(result => {
         return result;
       });
     },
@@ -33,14 +33,14 @@ export function createEditableGridDatasource(
   const dataStore = new CustomStore({
     loadMode: 'raw',
     key: keyProperty,
-    load: function () {
+    load: function() {
       return Promise.resolve(items);
     },
-    byKey: function (key: string) {
-      return Promise.resolve(items?.find((item) => item.Id === key));
+    byKey: function(key: string) {
+      return Promise.resolve(items?.find(item => item.Id === key));
     },
-    update: function (key: string, values: CrudItem) {
-      let item = items?.find((item) => item[keyProperty] === key);
+    update: function(key: string, values: CrudItem) {
+      let item = items?.find(item => item[keyProperty] === key);
 
       if (item) {
         item = Object.assign(item, values);
@@ -90,12 +90,12 @@ export function createLookupDataSource(
   const dataStore = new CustomStore({
     key: keyProperty,
     loadMode: 'raw',
-    load: function () {
-      return fetchListFunc().then((result) => {
+    load: function() {
+      return fetchListFunc().then(result => {
         return result;
       });
     },
-    byKey: function (key) {
+    byKey: function(key) {
       if (
         typeof key === 'undefined' ||
         key === '00000000-0000-0000-0000-000000000000'
@@ -107,7 +107,7 @@ export function createLookupDataSource(
         return valueCache[key];
       }
 
-      return byIdFunc(key).then((result) => {
+      return byIdFunc(key).then(result => {
         valueCache[key] = result;
 
         return result;
@@ -127,8 +127,8 @@ export function createAutocompleteDataSource(
 ): DataSource {
   const dataStore = new CustomStore({
     loadMode: 'raw',
-    load: function () {
-      return fetchFunc().then((result) => {
+    load: function() {
+      return fetchFunc().then(result => {
         return result;
       });
     },

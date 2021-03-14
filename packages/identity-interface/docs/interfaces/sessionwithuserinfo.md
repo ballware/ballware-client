@@ -8,7 +8,7 @@ Extendes authentication response including additional user info
 
 * [*Session*](session.md)
 
-* *Record*<*string*, *unknown*\>
+* *Record*<string, unknown\>
 
   ↳ **SessionWithUserInfo**
 
@@ -35,7 +35,7 @@ access token to make api request on behalf of authenticated user
 
 Inherited from: [Session](session.md).[access_token](session.md#access_token)
 
-Defined in: [auth.ts:15](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L15)
+Defined in: [auth.ts:15](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L15)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Mail adress of authenticated user, can be identical with identifer if authenticated via mail adress
 
-Defined in: [auth.ts:35](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L35)
+Defined in: [auth.ts:35](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L35)
 
 ___
 
@@ -57,7 +57,7 @@ number of seconds the access token will expire in
 
 Inherited from: [Session](session.md).[expires_in](session.md#expires_in)
 
-Defined in: [auth.ts:21](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L21)
+Defined in: [auth.ts:21](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L21)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Subject of authenticated user (mail, unique user name...)
 
-Defined in: [auth.ts:32](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L32)
+Defined in: [auth.ts:32](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L32)
 
 ___
 
@@ -79,7 +79,7 @@ Timestamp the access token was issued
 
 Inherited from: [Session](session.md).[issued](session.md#issued)
 
-Defined in: [auth.ts:24](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L24)
+Defined in: [auth.ts:24](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L24)
 
 ___
 
@@ -91,4 +91,4 @@ refresh token to grant a new access token for extended authentication session
 
 Inherited from: [Session](session.md).[refresh_token](session.md#refresh_token)
 
-Defined in: [auth.ts:18](https://github.com/frankball/ballware-identity-interface/blob/f3cbf03/src/auth.ts#L18)
+Defined in: [auth.ts:18](https://github.com/ballware/ballware-client/blob/c28ad0b/packages/identity-interface/src/auth.ts#L18)
