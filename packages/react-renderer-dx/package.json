@@ -1,5 +1,5 @@
 {
-  "version": "6.0.0-beta6",
+  "version": "6.1.0-alpha.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -23,11 +23,11 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "react": ">=16",
     "devextreme": ">=20.2.5",
     "devextreme-react": ">=20.2.5",
     "lodash": ">=4.17.21",
     "moment": ">=2.29.1",
+    "react": ">=16",
     "react-ace": ">=9.3.0",
     "react-i18next": ">=11.8.7",
     "react-is": ">=17.0.1",
@@ -115,7 +115,7 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
-    "@ballware/meta-interface": "^6.0.2",
-    "@ballware/react-renderer": "^6.0.2"
+    "@ballware/meta-interface": "^6.1.0-alpha.0",
+    "@ballware/react-renderer": "^6.1.0-alpha.0"
   }
 }

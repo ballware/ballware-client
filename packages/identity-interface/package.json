@@ -1,6 +1,6 @@
 {
   "name": "@ballware/identity-interface",
-  "version": "6.0.2",
+  "version": "6.1.0-alpha.0",
   "description": "Ballware Application Builder - Interface for identity provider",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
@@ -35,7 +35,6 @@
     "analyze": "size-limit --why",
     "docs": "typedoc --plugin typedoc-plugin-markdown"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -69,6 +68,6 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
-    "@ballware/meta-interface": "^6.0.1"
+    "@ballware/meta-interface": "^6.1.0-alpha.0"
   }
 }

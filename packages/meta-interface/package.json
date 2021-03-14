@@ -1,6 +1,6 @@
 {
   "name": "@ballware/meta-interface",
-  "version": "6.0.2",
+  "version": "6.1.0-alpha.0",
   "description": "Ballware Application Builder - Interface for metadata provider",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -35,7 +35,6 @@
     "analyze": "size-limit --why",
     "docs": "typedoc --plugin typedoc-plugin-markdown"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
