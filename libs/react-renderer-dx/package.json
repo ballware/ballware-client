@@ -1,4 +1,24 @@
 {
   "name": "@ballware/react-renderer-dx",
-  "version": "0.0.1"
+  "version": "6.0.0-beta7",
+  "description": "Ballware Application Builder - React renderer MUI with DevExtreme",
+  "author": "frank@ballmeyer.com",
+  "license": "MIT",
+  "homepage": "https://github.com/ballware/ballware-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballware/ballware-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-router-dom": ">=5.2.0",
+    "react-i18next": ">=11.8.6"
+  },
+  "dependencies": {
+    "@ballware/meta-interface": "^6.0.5",    
+    "@ballware/react-renderer": "^6.0.3"
+  }
 }

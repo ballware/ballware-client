@@ -1,7 +1,12 @@
-# react-renderer
+Provides an rendering implementation independend rendering factory context.
 
-This library was generated with [Nx](https://nx.dev).
+## ballware application builder
+This packages is part of ballware application builder for building modular generic metadata based application for the cloud.
+<br/>
+<img src="https://github.com/ballware/ballware-client/blob/main/libs/react-renderer/assets/landscape.png">
 
-## Running unit tests
+## Documentation
+For API documentation see Github repository at [TypeDoc](libs/react-renderer/docs/modules.md)
 
-Run `nx test react-renderer` to execute the unit tests via [Jest](https://jestjs.io).
+## Copyright and license
+Code and documentation copyright 2021 Frank Ballmeyer. Code released under the [MIT License](https://github.com/frankball/ballware-react-renderer/blob/main/LICENSE).

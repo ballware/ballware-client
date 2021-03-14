@@ -29,7 +29,7 @@
       "tags": [],
       "implicitDependencies": ["ballware-webclient"]
     },
-    "ballware-identity-interface": { "tags": [] },
+    "identity-interface": { "tags": [] },
     "identity-backend": { "tags": [] },
     "meta-interface": { "tags": [] },
     "meta-backend": { "tags": [] },

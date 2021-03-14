@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": false,  
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true,    
     "paths": {
       "@ballware/identity-interface": ["libs/identity-interface/src/index.ts"],
       "@ballware/identity-backend": ["libs/identity-backend/src/index.ts"],

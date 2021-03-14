@@ -108,11 +108,25 @@
         }
       }
     },
-    "ballware-identity-interface": {
+    "identity-interface": {
       "root": "libs/identity-interface",
       "sourceRoot": "libs/identity-interface/src",
       "projectType": "library",
       "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/identity-interface",
+            "tsConfig": "libs/identity-interface/tsconfig.lib.json",
+            "project": "libs/identity-interface/package.json",
+            "entryFile": "libs/identity-interface/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "libs/identity-interface/README.md", "input": ".", "output": "." }]
+          }
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": { "lintFilePatterns": ["libs/identity-interface/**/*.ts"] }
@@ -124,6 +138,13 @@
             "jestConfig": "libs/identity-interface/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/identity-interface/tsconfig.json --plugin typedoc-plugin-markdown --out libs/identity-interface/docs libs/identity-interface/src/index.ts"             
+          }
         }
       }
     },
@@ -132,6 +153,20 @@
       "sourceRoot": "libs/identity-backend/src",
       "projectType": "library",
       "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/identity-backend",
+            "tsConfig": "libs/identity-backend/tsconfig.lib.json",
+            "project": "libs/identity-backend/package.json",
+            "entryFile": "libs/identity-backend/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "libs/identity-backend/README.md", "input": ".", "output": "." }]
+          }
+        },        
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": { "lintFilePatterns": ["libs/identity-backend/**/*.ts"] }
@@ -142,6 +177,13 @@
           "options": {
             "jestConfig": "libs/identity-backend/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/identity-backend/tsconfig.json --plugin typedoc-plugin-markdown --out libs/identity-backend/docs libs/identity-backend/src/index.ts"             
           }
         }
       }
@@ -220,6 +262,13 @@
             "jestConfig": "libs/meta-backend/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/meta-backend/tsconfig.json --plugin typedoc-plugin-markdown --out libs/meta-backend/docs libs/meta-backend/src/index.ts"             
+          }
         }
       }
     },
@@ -228,6 +277,20 @@
       "sourceRoot": "libs/react-contexts/src",
       "projectType": "library",
       "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/react-contexts",
+            "tsConfig": "libs/react-contexts/tsconfig.lib.json",
+            "project": "libs/react-contexts/package.json",
+            "entryFile": "libs/react-contexts/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "libs/react-contexts/README.md", "input": ".", "output": "." }]
+          }
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": { "lintFilePatterns": ["libs/react-contexts/**/*.ts"] }
@@ -239,6 +302,13 @@
             "jestConfig": "libs/react-contexts/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/react-contexts/tsconfig.json --plugin typedoc-plugin-markdown --out libs/react-contexts/docs libs/react-contexts/src/index.ts"             
+          }
         }
       }
     },
@@ -247,6 +317,20 @@
       "sourceRoot": "libs/react-provider/src",
       "projectType": "library",
       "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/react-provider",
+            "tsConfig": "libs/react-provider/tsconfig.lib.json",
+            "project": "libs/react-provider/package.json",
+            "entryFile": "libs/react-provider/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "libs/react-provider/README.md", "input": ".", "output": "." }]
+          }
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": { "lintFilePatterns": ["libs/react-provider/**/*.ts"] }
@@ -258,6 +342,13 @@
             "jestConfig": "libs/react-provider/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/react-provider/tsconfig.json --plugin typedoc-plugin-markdown --out libs/react-provider/docs libs/react-provider/src/index.ts"             
+          }
         }
       }
     },
@@ -266,6 +357,20 @@
       "sourceRoot": "libs/react-renderer/src",
       "projectType": "library",
       "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/react-renderer",
+            "tsConfig": "libs/react-renderer/tsconfig.lib.json",
+            "project": "libs/react-renderer/package.json",
+            "entryFile": "libs/react-renderer/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [{ "glob": "libs/react-renderer/README.md", "input": ".", "output": "." }]
+          }
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
@@ -279,6 +384,13 @@
             "jestConfig": "libs/react-renderer/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/react-renderer/tsconfig.json --plugin typedoc-plugin-markdown --out libs/react-renderer/docs libs/react-renderer/src/index.ts"             
+          }
         }
       }
     },
@@ -290,12 +402,29 @@
         "build": {
           "executor": "@nrwl/web:package",
           "outputs": ["{options.outputPath}"],
-          "options": {
+          "options": {     
+            "verbose": true,       
             "outputPath": "dist/libs/react-renderer-dx",
             "tsConfig": "libs/react-renderer-dx/tsconfig.lib.json",
             "project": "libs/react-renderer-dx/package.json",
             "entryFile": "libs/react-renderer-dx/src/index.ts",
-            "external": ["react", "react-dom"],
+            "external": [
+              "react", 
+              "react-dom", 
+              "react-router-dom",
+              "devextreme", 
+              "devextreme-react", 
+              "ace-builds", 
+              "react-ace",
+              "lodash",
+              "moment",
+              "react-i18next",
+              "react-is",
+              "react-media",
+              "@material-ui/core",
+              "@material-ui/icons",
+              "@material-ui/lab"              
+            ],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [{ "glob": "README.md", "input": ".", "output": "." }]
@@ -313,6 +442,13 @@
           "options": {
             "jestConfig": "libs/react-renderer-dx/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "docs": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": { 
+            "command": "npx typedoc --tsconfig libs/react-renderer-dx/tsconfig.json --plugin typedoc-plugin-markdown --out libs/react-renderer-dx/docs libs/react-renderer-dx/src/index.ts"             
           }
         },
         "storybook": {
