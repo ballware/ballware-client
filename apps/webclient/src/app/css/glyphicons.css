@@ -1,0 +1,76 @@
+﻿.glyphicon {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    vertical-align: middle;
+}
+
+.glyphicon-exclamation-sign {
+    background-image: url(glyphicons/glyphicons-halflings-105-circle-alert.svg)
+}
+
+.glyphicon-question-sign {
+    background-image: url(glyphicons/glyphicons-halflings-103-circle-question.svg)
+}
+
+.glyphicon-ok-sign {
+    background-image: url(glyphicons/glyphicons-halflings-102-circle-check.svg)
+}
+
+.glyphicon-file {
+    background-image: url(glyphicons/glyphicons-halflings-14-file.svg)
+}
+
+.glyphicon-eye-open {
+    background-image: url(glyphicons/glyphicons-halflings-25-eye.svg)
+}
+
+.glyphicon-refresh {
+    background-image: url(glyphicons/glyphicons-halflings-45-refresh.svg)
+}
+
+.glyphicon-pencil {
+    background-image: url(glyphicons/glyphicons-halflings-13-pencil.svg)
+}
+
+.glyphicon-print {
+    background-image: url(glyphicons/glyphicons-halflings-6-print.svg)
+}
+
+.glyphicon-trash {
+    background-image: url(glyphicons/glyphicons-halflings-7-bin.svg)
+}
+
+.glyphicon-plus {
+    background-image: url(glyphicons/glyphicons-halflings-170-plus.svg)
+}
+
+.glyphicon-lock-off {
+  background-image: url(glyphicons/glyphicons-halflings-127-lock-off.svg)
+}
+
+.glyphicon-switch {
+  background-image: url(glyphicons/glyphicons-halflings-199-switch.svg)
+}
+
+.glyphicon-more-vertical {
+  background-image: url(glyphicons/glyphicons-halflings-203-more-vertical.svg)
+}
+
+.glyphicon-menu {
+  background-image: url(glyphicons/glyphicons-halflings-227-menu.svg)
+}
+
+.glyphicon-square-checkbox {
+  background-image: url(glyphicons/glyphicons-halflings-76-square-checkbox.svg)
+}
+
+.glyphicon-cart-in {
+  background-image: url(glyphicons/glyphicons-halflings-110-cart-in.svg)
+}
+
+.glyphicon-envelope {
+  background-image: url(glyphicons/glyphicons-halflings-3-envelope.svg)
+}

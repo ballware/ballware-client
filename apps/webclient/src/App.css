@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#content-wrapper {
+  min-height: 100%;
+  /* sticky footer */
+  box-sizing: border-box;
+  margin-bottom: -100px;
+  padding-bottom: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+  box-sizing: border-box;
+  height: 70px;
+  padding-top: 35px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 800px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dx-field > .dx-field-label {
+  width: 20%;
+}
+
+.dx-field > .dx-field-value {
+  width: 80%;
+}
+
+td > .dx-state-readonly:after {
+  border-bottom: none !important
+}
+
+
+.digitalfunkowl {
+  position: relative;
+  top: 0px;
+  display: inline-block;
+  height: 24px;
+  width: 44px;
+  vertical-align: middle;
+  background-image: url(./css/digitalfunkowl.png);
+  background-size: 100%;
 }
