@@ -270,7 +270,6 @@ export const AuthorizationCodeRightsProvider = ({
     if (
       authority &&
       client &&
-      secret &&
       redirect_uri &&
       post_logout_redirect_uri &&
       response_type &&

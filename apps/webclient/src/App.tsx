@@ -25,15 +25,15 @@ declare var window :any;
 
 function App() {
 
-  const applicationBaseUrl: string = window.ENV.REACT_APP_BASEURL ?? 'https://localhost:3000';
-  const identityBaseUrl: string = window.ENV.REACT_APP_IDENTITYURL ?? 'https://identity.ballware.de/';
-  const metaBaseUrl: string = window.ENV.REACT_APP_METAURL ?? 'https://meta.ballware.de/';
-  const documentBaseUrl: string = window.ENV.REACT_APP_DOCUMENTURL ?? 'https://documents.ballware.de/';
-  const identityClientId: string = window.ENV.REACT_APP_CLIENTID ?? 'incidentreport';
-  const identityClientSecret: string = window.ENV.REACT_APP_CLIENTSECRET ?? 'trustme';
-  const identityScopes: string = window.ENV.REACT_APP_IDENTITYSCOPES ?? 'openid offline_access incidentreportUserInfo incidentreportApi identityApi documentApi metaApi';
-  const managementUri: string = window.ENV.REACT_APP_ACCOUNTURL ?? 'https://identity.ballware.de/Manage/Index'
-  const googlekey: string = window.ENV.REACT_APP_GOOGLEKEY ?? 'AIzaSyBtLddtyZa4860nhMtItQfXf_x2c2_OmVc';
+  const applicationBaseUrl: string = window.ENV.REACT_APP_BASEURL;
+  const identityBaseUrl: string = window.ENV.REACT_APP_IDENTITYURL;
+  const metaBaseUrl: string = window.ENV.REACT_APP_METAURL;
+  const documentBaseUrl: string = window.ENV.REACT_APP_DOCUMENTURL;
+  const identityClientId: string = window.ENV.REACT_APP_CLIENTID;
+  const identityClientSecret: string = window.ENV.REACT_APP_CLIENTSECRET;
+  const identityScopes: string = window.ENV.REACT_APP_IDENTITYSCOPES;
+  const managementUri: string = window.ENV.REACT_APP_ACCOUNTURL;
+  const googlekey: string = window.ENV.REACT_APP_GOOGLEKEY;
 
   return (<SettingsProvider 
       appversion={process.env.REACT_APP_VERSION}
@@ -56,6 +56,7 @@ function App() {
           <AppComponent authority={identityBaseUrl} scope={identityScopes} application_uri={applicationBaseUrl} client_id={identityClientId} client_secret={identityClientSecret} account_management_uri={managementUri} />        
         </DxRenderFactoryProvider>
       </ProviderFactory>
+      {googlekey && <script type="text/javascript" src={`https://maps.googleapis.com/maps/api/js?key=${googlekey}`}></script>}
     </SettingsProvider>
   );
 }

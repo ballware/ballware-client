@@ -24,16 +24,22 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtLddtyZa4860nhMtItQfXf_x2c2_OmVc"></script>
+    
     <script>
       var ENV={
-        REACT_APP_IDENTITYURL: 'https://identity.ballware.de/',
-        REACT_APP_METAURL: 'https://meta.ballware.de/',
-        REACT_APP_DOCUMENTURL: 'https://documents.ballware.de/'
+        REACT_APP_BASEURL: '%REACT_APP_BASEURL%',
+        REACT_APP_IDENTITYURL: '%REACT_APP_IDENTITYURL%',
+        REACT_APP_METAURL: '%REACT_APP_METAURL%',
+        REACT_APP_DOCUMENTURL: '%REACT_APP_DOCUMENTURL%',
+        REACT_APP_CLIENTID: '%REACT_APP_CLIENTID%',
+        REACT_APP_CLIENTSECRET: '%REACT_APP_CLIENTSECRET%',
+        REACT_APP_IDENTITYSCOPES: '%REACT_APP_IDENTITYSCOPES%',
+        REACT_APP_ACCOUNTURL: '%REACT_APP_ACCOUNTURL%',
+        REACT_APP_GOOGLEKEY: '%REACT_APP_GOOGLEKEY%'
       }
     </script>
     <noscript id="env-insertion-point"></noscript>
-    <title>Ballware</title>
+    <title>ballware</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

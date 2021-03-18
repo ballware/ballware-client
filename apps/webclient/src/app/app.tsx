@@ -1,8 +1,6 @@
 import React, { Suspense, useContext, useEffect, useMemo } from 'react';
 import { Router, Route } from 'react-router-dom';
 
-import "./css/glyphicons.css";
-
 import { history } from './history';
 
 import { I18nextProvider } from 'react-i18next';

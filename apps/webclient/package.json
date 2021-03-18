@@ -1,6 +1,6 @@
 {
-  "name": "ballware-app",
-  "version": "6.0.0",
+  "name": "@ballware/webclient",
+  "version": "6.1.0-alpha.2",
   "private": true,
   "dependencies": {
     "@ballware/identity-backend": "^6.1.0-alpha.2",
