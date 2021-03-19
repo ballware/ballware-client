@@ -138,7 +138,7 @@ export const AuthorizationCodeRightsProvider = ({
           post_logout_redirect_uri,
           response_type,
           scope,
-          userStore: new WebStorageStateStore({ store: window.localStorage }),
+          userStore: new WebStorageStateStore({ store: window.sessionStorage }),
         });
 
         newUserManager.getUser().then(user => {
@@ -287,7 +287,7 @@ export const AuthorizationCodeRightsProvider = ({
         post_logout_redirect_uri,
         response_type,
         scope,
-        userStore: new WebStorageStateStore({ store: window.localStorage }),
+        userStore: new WebStorageStateStore({ store: window.sessionStorage }),
       });
 
       newUserManager
