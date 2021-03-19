@@ -1,6 +1,6 @@
 {
   "name": "@ballware/identity-interface",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "description": "Ballware Application Builder - Interface for identity provider",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
@@ -59,7 +59,7 @@
     }
   ],
   "dependencies": {
-    "@ballware/meta-interface": "^6.1.0"
+    "@ballware/meta-interface": "^6.1.1"
   },
   "gitHead": "82afc07945123fb1ac91471e34568bbba8727f1d"
 }
