@@ -1,8 +1,9 @@
 FROM node:12.20 as build-deps
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
+COPY package.json ./
 RUN npm install
 COPY . ./
+COPY config-overrides.docker.js ./config-overrides.js
 RUN npm run build
 
 FROM nginx:stable-alpine
