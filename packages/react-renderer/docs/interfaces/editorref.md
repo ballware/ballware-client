@@ -36,9 +36,9 @@ Name | Type |
 
 **Returns:** *unknown*
 
-Defined in: [packages/react-renderer/src/common/editor.ts:24](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/editor.ts#L24)
+Defined in: [packages/react-renderer/src/common/editor.ts:24](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/editor.ts#L24)
 
-Defined in: [packages/react-renderer/src/common/editor.ts:24](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/editor.ts#L24)
+Defined in: [packages/react-renderer/src/common/editor.ts:24](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/editor.ts#L24)
 
 ___
 
@@ -65,9 +65,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/editor.ts:17](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/editor.ts#L17)
+Defined in: [packages/react-renderer/src/common/editor.ts:17](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/editor.ts#L17)
 
-Defined in: [packages/react-renderer/src/common/editor.ts:17](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/editor.ts#L17)
+Defined in: [packages/react-renderer/src/common/editor.ts:17](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/editor.ts#L17)
 
 ___
 
@@ -85,6 +85,6 @@ Trigger validation of editor
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-renderer/src/common/editor.ts:30](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/editor.ts#L30)
+Defined in: [packages/react-renderer/src/common/editor.ts:30](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/editor.ts#L30)
 
-Defined in: [packages/react-renderer/src/common/editor.ts:30](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/editor.ts#L30)
+Defined in: [packages/react-renderer/src/common/editor.ts:30](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/editor.ts#L30)

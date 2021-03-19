@@ -43,9 +43,9 @@ Name | Type |
 
 **Returns:** (`value`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: [pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/pickvalue.ts#L35)
+Defined in: [pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/pickvalue.ts#L35)
 
-Defined in: [pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/pickvalue.ts#L35)
+Defined in: [pickvalue.ts:35](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/pickvalue.ts#L35)
 
 ___
 
@@ -77,6 +77,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/pickvalue.ts#L20)
+Defined in: [pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/pickvalue.ts#L20)
 
-Defined in: [pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/pickvalue.ts#L20)
+Defined in: [pickvalue.ts:20](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/pickvalue.ts#L20)

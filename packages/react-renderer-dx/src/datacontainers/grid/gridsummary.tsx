@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright 2021 Frank Ballmeyer
+ * This code is released under the MIT license.
+ * SPDX-License-Identifier: MIT
+ */
+
 import { GridLayout } from '@ballware/meta-interface';
 
 export const createSummaryConfiguration = (gridLayout: GridLayout) => {

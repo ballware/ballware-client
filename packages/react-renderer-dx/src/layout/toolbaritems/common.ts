@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright 2021 Frank Ballmeyer
+ * This code is released under the MIT license.
+ * SPDX-License-Identifier: MIT
+ */
+
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { ToolbarItemRef } from '@ballware/react-renderer';
 import { makeStyles } from '@material-ui/core';

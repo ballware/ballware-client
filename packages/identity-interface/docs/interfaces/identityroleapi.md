@@ -36,9 +36,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>\>
 
-Defined in: [role.ts:26](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/role.ts#L26)
+Defined in: [role.ts:26](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/role.ts#L26)
 
-Defined in: [role.ts:26](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/role.ts#L26)
+Defined in: [role.ts:26](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/role.ts#L26)
 
 ___
 
@@ -64,6 +64,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [role.ts:18](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/role.ts#L18)
+Defined in: [role.ts:18](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/role.ts#L18)
 
-Defined in: [role.ts:18](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/role.ts#L18)
+Defined in: [role.ts:18](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/role.ts#L18)

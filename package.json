@@ -59,6 +59,7 @@
     "build:changed": "lerna run --since origin/master --include-dependents build",
     "prepublish": "lerna run prepublish",
     "start:app": "yarn run build && yarn --cwd example && yarn --cwd example start",
+    "docs": "lerna run docs --",
     "cypress": "cypress run",
     "cypress:open": "cypress open",
     "changeset": "changeset",

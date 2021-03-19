@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright 2021 Frank Ballmeyer
+ * This code is released under the MIT license.
+ * SPDX-License-Identifier: MIT
+ */
+
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { EntityCustomFunction } from '@ballware/meta-interface';
 import { MetaContext, CrudContext, EditModes } from '@ballware/react-contexts';

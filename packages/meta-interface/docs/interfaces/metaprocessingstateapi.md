@@ -41,9 +41,9 @@ Name | Type |
 
 **Returns:** (`state`: *string* \| *number*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: [processingstate.ts:46](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/processingstate.ts#L46)
+Defined in: [processingstate.ts:46](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/processingstate.ts#L46)
 
-Defined in: [processingstate.ts:46](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/processingstate.ts#L46)
+Defined in: [processingstate.ts:46](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/processingstate.ts#L46)
 
 ___
 
@@ -75,9 +75,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [processingstate.ts:32](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/processingstate.ts#L32)
+Defined in: [processingstate.ts:32](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/processingstate.ts#L32)
 
-Defined in: [processingstate.ts:32](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/processingstate.ts#L32)
+Defined in: [processingstate.ts:32](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/processingstate.ts#L32)
 
 ___
 
@@ -106,6 +106,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [processingstate.ts:19](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/processingstate.ts#L19)
+Defined in: [processingstate.ts:19](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/processingstate.ts#L19)
 
-Defined in: [processingstate.ts:19](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/processingstate.ts#L19)
+Defined in: [processingstate.ts:19](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/processingstate.ts#L19)

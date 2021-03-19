@@ -27,7 +27,7 @@ Basic authentication response containing user token
 
 access token to make api request on behalf of authenticated user
 
-Defined in: [auth.ts:15](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L15)
+Defined in: [auth.ts:15](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L15)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 number of seconds the access token will expire in
 
-Defined in: [auth.ts:21](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L21)
+Defined in: [auth.ts:21](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L21)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Timestamp the access token was issued
 
-Defined in: [auth.ts:24](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L24)
+Defined in: [auth.ts:24](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L24)
 
 ___
 
@@ -57,4 +57,4 @@ ___
 
 refresh token to grant a new access token for extended authentication session
 
-Defined in: [auth.ts:18](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L18)
+Defined in: [auth.ts:18](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L18)

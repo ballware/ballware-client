@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright 2021 Frank Ballmeyer
+ * This code is released under the MIT license.
+ * SPDX-License-Identifier: MIT
+ */
+
 import {
   EditLayoutItem,
   EditLayoutItemOptions,
@@ -301,9 +308,13 @@ const EditorComponent = ({
   }
 };
 
+/**
+ * Create ui items with devextreme components *
+ * @returns created react component
+ */
 export const DxRenderFactoryProvider = ({
   children,
-}: PropsWithChildren<DevExtremeRenderFactoryProps>) => {
+}: PropsWithChildren<{}>) => {
   const [value, setValue] = useState<RenderFactoryContextState>({});
 
   useEffect(() => {

@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright 2021 Frank Ballmeyer
+ * This code is released under the MIT license.
+ * SPDX-License-Identifier: MIT
+ */
+
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FileUploader } from 'devextreme-react/file-uploader';

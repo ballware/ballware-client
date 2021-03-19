@@ -20,7 +20,7 @@ Default edit modes for items
 
 Edit new created item in detail view
 
-Defined in: [packages/react-contexts/src/editcontext.ts:28](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/editcontext.ts#L28)
+Defined in: [packages/react-contexts/src/editcontext.ts:28](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-contexts/src/editcontext.ts#L28)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Edit item in detail view
 
-Defined in: [packages/react-contexts/src/editcontext.ts:23](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/editcontext.ts#L23)
+Defined in: [packages/react-contexts/src/editcontext.ts:23](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-contexts/src/editcontext.ts#L23)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 View item in detail view (readonly)
 
-Defined in: [packages/react-contexts/src/editcontext.ts:18](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-contexts/src/editcontext.ts#L18)
+Defined in: [packages/react-contexts/src/editcontext.ts:18](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-contexts/src/editcontext.ts#L18)

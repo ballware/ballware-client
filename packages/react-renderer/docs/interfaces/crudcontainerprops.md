@@ -19,7 +19,7 @@ Properties for crudcontainer component
 
 Layout item metadata for crudcontainer item
 
-Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:25](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/crudcontainer.tsx#L25)
+Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:25](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/crudcontainer.tsx#L25)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Head params provided by parent container
 
-Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:30](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer/src/common/crudcontainer.tsx#L30)
+Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:30](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/crudcontainer.tsx#L30)

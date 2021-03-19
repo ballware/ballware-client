@@ -16,14 +16,19 @@
 
 ### DxRenderFactoryProvider
 
-▸ `Const`**DxRenderFactoryProvider**(`__namedParameters`: *PropsWithChildren*<[*DevExtremeRenderFactoryProps*](interfaces/devextremerenderfactoryprops.md)\>): *Element*
+▸ `Const`**DxRenderFactoryProvider**(`__namedParameters`: { `children?`: *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal*  }): *Element*
+
+Create ui items with devextreme components *
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`__namedParameters` | *PropsWithChildren*<[*DevExtremeRenderFactoryProps*](interfaces/devextremerenderfactoryprops.md)\> |
+`__namedParameters` | *object* |
+`__namedParameters.children?` | *null* \| *boolean* \| *ReactElement*<any, string \| JSXElementConstructor<any\>\> \| ReactText \| ReactFragment \| *ReactPortal* |
 
 **Returns:** *Element*
 
-Defined in: [dxrenderfactoryprovider.tsx:304](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx#L304)
+created react component
+
+Defined in: [packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx:315](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx#L315)

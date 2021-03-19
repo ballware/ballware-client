@@ -1,3 +1,10 @@
+/**
+ * @license
+ * Copyright 2021 Frank Ballmeyer
+ * This code is released under the MIT license.
+ * SPDX-License-Identifier: MIT
+ */
+
 import React, { useContext } from 'react';
 import { Container } from '../../layout/container';
 import { TabPanel, Item as TabItem } from 'devextreme-react/tab-panel';

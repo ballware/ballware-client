@@ -49,9 +49,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L143)
+Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L143)
 
-Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L143)
+Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L143)
 
 ___
 
@@ -77,9 +77,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L118)
+Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L118)
 
-Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L118)
+Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L118)
 
 ___
 
@@ -123,9 +123,9 @@ Name | Type |
 
 **Returns:** *Promise*<T\>
 
-Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L76)
+Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L76)
 
-Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L76)
+Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L76)
 
 ___
 
@@ -157,9 +157,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L92)
+Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L92)
 
-Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L92)
+Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L92)
 
 ___
 
@@ -189,9 +189,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*Session*](session.md)\>
 
-Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L156)
+Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L156)
 
-Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L156)
+Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L156)
 
 ___
 
@@ -223,9 +223,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L106)
+Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L106)
 
-Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L106)
+Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L106)
 
 ___
 
@@ -257,6 +257,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L129)
+Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L129)
 
-Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/identity-interface/src/auth.ts#L129)
+Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L129)

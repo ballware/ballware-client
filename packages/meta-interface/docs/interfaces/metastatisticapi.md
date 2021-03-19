@@ -41,9 +41,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [statistic.ts:443](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L443)
+Defined in: [statistic.ts:443](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/statistic.ts#L443)
 
-Defined in: [statistic.ts:443](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L443)
+Defined in: [statistic.ts:443](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/statistic.ts#L443)
 
 ___
 
@@ -72,6 +72,6 @@ Name | Type |
 
 **Returns:** *Promise*<[*CompiledStatistic*](compiledstatistic.md)\>
 
-Defined in: [statistic.ts:431](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L431)
+Defined in: [statistic.ts:431](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/statistic.ts#L431)
 
-Defined in: [statistic.ts:431](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/statistic.ts#L431)
+Defined in: [statistic.ts:431](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/statistic.ts#L431)

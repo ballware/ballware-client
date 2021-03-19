@@ -19,7 +19,7 @@ Properties for statistic provider
 
 Unique identifier of statistic item
 
-Defined in: [statisticprovider.tsx:38](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-provider/src/statisticprovider.tsx#L38)
+Defined in: [statisticprovider.tsx:38](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-provider/src/statisticprovider.tsx#L38)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Query params used to fetch statistic payload
 
-Defined in: [statisticprovider.tsx:43](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/react-provider/src/statisticprovider.tsx#L43)
+Defined in: [statisticprovider.tsx:43](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-provider/src/statisticprovider.tsx#L43)

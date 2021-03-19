@@ -21,7 +21,7 @@ Detail layout definition for expandable detail view in grid/list
 
 Number of columns for display layout
 
-Defined in: [entity.ts:92](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/entity.ts#L92)
+Defined in: [entity.ts:92](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/entity.ts#L92)
 
 ___
 
@@ -38,7 +38,7 @@ Name | Type |
 `lg`? | *number* |
 `sm`? | *number* |
 
-Defined in: [entity.ts:97](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/entity.ts#L97)
+Defined in: [entity.ts:97](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/entity.ts#L97)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 Optional fixed height of detail layout
 
-Defined in: [entity.ts:102](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/entity.ts#L102)
+Defined in: [entity.ts:102](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/entity.ts#L102)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 List of detail layout items
 
-Defined in: [entity.ts:107](https://github.com/ballware/ballware-client/blob/e25f4ba/packages/meta-interface/src/entity.ts#L107)
+Defined in: [entity.ts:107](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/entity.ts#L107)
