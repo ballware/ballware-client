@@ -33,7 +33,8 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "docs": "typedoc --plugin typedoc-plugin-markdown"
+    "docs": "typedoc --plugin typedoc-plugin-markdown",
+    "prepublish": "npm run build"
   },
   "peerDependencies": {
     "axios": ">=0.21.0",
@@ -63,5 +64,6 @@
   ],
   "dependencies": {
     "@ballware/meta-interface": "^6.1.0"
-  }
+  },
+  "gitHead": "82afc07945123fb1ac91471e34568bbba8727f1d"
 }

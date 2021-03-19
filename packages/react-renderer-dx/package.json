@@ -28,6 +28,7 @@
     "i18next": ">=19.9.2",
     "lodash": ">=4.17.21",
     "moment": ">=2.29.1",
+    "prepublish": "npm run build",
     "react": ">=16",
     "react-i18next": ">=11.8.7",
     "react-router-dom": ">=5.2.0"
@@ -94,5 +95,6 @@
     "react-iframe": "^1.8.0",
     "react-is": "^17.0.1",
     "react-media": "^1.10.0"
-  }
+  },
+  "gitHead": "82afc07945123fb1ac91471e34568bbba8727f1d"
 }
