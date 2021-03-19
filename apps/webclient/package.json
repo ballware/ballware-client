@@ -1,16 +1,16 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.1.0-alpha.2",
+  "version": "6.1.0",
   "private": true,
   "dependencies": {
-    "@ballware/identity-backend": "^6.1.0-alpha.2",
-    "@ballware/identity-interface": "^6.1.0-alpha.2",
-    "@ballware/meta-backend": "^6.1.0-alpha.2",
-    "@ballware/meta-interface": "^6.1.0-alpha.2",
-    "@ballware/react-contexts": "^6.1.0-alpha.2",
-    "@ballware/react-provider": "^6.1.0-alpha.2",
-    "@ballware/react-renderer": "^6.1.0-alpha.2",
-    "@ballware/react-renderer-dx": "^6.1.0-alpha.2",
+    "@ballware/identity-backend": "^6.1.0",
+    "@ballware/identity-interface": "^6.1.0",
+    "@ballware/meta-backend": "^6.1.0",
+    "@ballware/meta-interface": "^6.1.0",
+    "@ballware/react-contexts": "^6.1.0",
+    "@ballware/react-provider": "^6.1.0",
+    "@ballware/react-renderer": "^6.1.0",
+    "@ballware/react-renderer-dx": "^6.1.0",
     "i18next-browser-languagedetector": "^6.0.1"
   },
   "scripts": {

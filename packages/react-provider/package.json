@@ -1,6 +1,6 @@
 {
   "name": "@ballware/react-provider",
-  "version": "6.1.0-alpha.2",
+  "version": "6.1.0",
   "description": "Ballware Application Builder - React provider for contexts",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
@@ -36,13 +36,13 @@
     "docs": "typedoc --plugin typedoc-plugin-markdown"
   },
   "peerDependencies": {
-    "oidc-client": ">=1.11.5",
     "axios": ">=0.21.1",
     "lodash": ">=4.17.20",
     "moment": ">=2.29.1",
-    "uuid": ">=8.3.2",
+    "oidc-client": ">=1.11.5",
     "react": ">=16",
-    "react-router-dom": ">=5.2.0"
+    "react-router-dom": ">=5.2.0",
+    "uuid": ">=8.3.2"
   },
   "husky": {
     "hooks": {
@@ -67,15 +67,15 @@
     }
   ],
   "devDependencies": {
-    "oidc-client": "^1.11.5",
     "axios": "^0.21.1",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
+    "oidc-client": "^1.11.5",
     "uuid": "^8.3.2"
   },
   "dependencies": {
-    "@ballware/identity-interface": "^6.1.0-alpha.2",
-    "@ballware/meta-interface": "^6.1.0-alpha.2",
-    "@ballware/react-contexts": "^6.1.0-alpha.2"
+    "@ballware/identity-interface": "^6.1.0",
+    "@ballware/meta-interface": "^6.1.0",
+    "@ballware/react-contexts": "^6.1.0"
   }
 }

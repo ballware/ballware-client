@@ -1,6 +1,6 @@
 {
   "name": "@ballware/identity-backend",
-  "version": "6.1.0-alpha.2",
+  "version": "6.1.0",
   "description": "Ballware Application Builder - Client for identity provider backend",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "axios": ">=0.21.0"
   },
   "dependencies": {
-    "@ballware/identity-interface": "^6.1.0-alpha.2"
+    "@ballware/identity-interface": "^6.1.0"
   },
   "husky": {
     "hooks": {
@@ -64,6 +64,6 @@
     }
   ],
   "devDependencies": {
-    "axios": "^0.21.1" 
+    "axios": "^0.21.1"
   }
 }
