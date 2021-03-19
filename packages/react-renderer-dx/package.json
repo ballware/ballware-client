@@ -20,7 +20,8 @@
     "analyze": "size-limit --why",
     "docs": "typedoc --plugin typedoc-plugin-markdown",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run build"
   },
   "peerDependencies": {
     "devextreme": ">=20.2.5",
@@ -28,7 +29,6 @@
     "i18next": ">=19.9.2",
     "lodash": ">=4.17.21",
     "moment": ">=2.29.1",
-    "prepublish": "npm run build",
     "react": ">=16",
     "react-i18next": ">=11.8.7",
     "react-router-dom": ">=5.2.0"
