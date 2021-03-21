@@ -1,2 +1,4 @@
 .env.development.local
 .config-overrides.js
+node_modules
+build
