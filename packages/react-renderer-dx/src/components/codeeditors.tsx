@@ -13,7 +13,7 @@ import React, {
 } from 'react';
 
 import JSON5 from 'json5';
-import { BeautifiedAceEditor, AceEditorRef } from './ace';
+import { CodeMirrorEditor, CodeMirrorEditorRef } from './codemirror';
 
 export interface CodeEditorRef {
   getValue: () => string;
@@ -29,7 +29,7 @@ export interface CodeEditorProps {
 
 export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
   ({ readOnly, setValue, defaultValue, height }, ref) => {
-    const editorRef = useRef<AceEditorRef>(null);
+    const editorRef = useRef<CodeMirrorEditorRef>(null);
 
     useImperativeHandle(ref, () => ({
       getValue: () => {
@@ -72,7 +72,7 @@ export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
     } catch {}
 
     return (
-      <BeautifiedAceEditor
+      <CodeMirrorEditor
         ref={editorRef}
         readOnly={readOnly}
         width={'100%'}
@@ -87,7 +87,7 @@ export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
 
 export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
   ({ readOnly, defaultValue, setValue, height }, ref) => {
-    const editorRef = useRef<AceEditorRef>(null);
+    const editorRef = useRef<CodeMirrorEditorRef>(null);
 
     useImperativeHandle(ref, () => ({
       getValue: () => {
@@ -99,7 +99,7 @@ export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
     }));
 
     return (
-      <BeautifiedAceEditor
+      <CodeMirrorEditor
         ref={editorRef}
         readOnly={readOnly}
         width={'100%'}
@@ -114,7 +114,7 @@ export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
 
 export const SqlEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
   ({ readOnly, defaultValue, setValue, height }, ref) => {
-    const editorRef = useRef<AceEditorRef>(null);
+    const editorRef = useRef<CodeMirrorEditorRef>(null);
 
     useImperativeHandle(ref, () => ({
       getValue: () => {
@@ -126,7 +126,7 @@ export const SqlEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
     }));
 
     return (
-      <BeautifiedAceEditor
+      <CodeMirrorEditor
         ref={editorRef}
         readOnly={readOnly}
         width={'100%'}
