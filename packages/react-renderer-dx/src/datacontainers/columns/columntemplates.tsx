@@ -497,7 +497,7 @@ export function createColumnConfiguration<
 ): Array<ColumnType> {
   const gridColumns =
     columns
-      ?.sort((a, b) => ((a.position ?? 0) <= (b.position ?? 0) ? -1 : 1))
+      ?.sort((a, b) => ((a.position ?? 0) < (b.position ?? 0) ? -1 : (a.position ?? 0) > (b.position ?? 0) ? 1 : 0))
       .map(c => createColumn<ColumnType>(t, c, lookups, lookupParams)) ?? [];
 
   switch (mode) {
