@@ -22,31 +22,35 @@ import {
   GridLayoutColumn,
 } from '@ballware/meta-interface';
 import DataGrid, { Editing } from 'devextreme-react/data-grid';
+import Toolbar, { Item } from 'devextreme-react/toolbar';
 import {
   createColumnConfiguration,
   renderCellTemplates,
 } from '../columns/columntemplates';
 import { LookupContext, EditContext } from '@ballware/react-contexts';
-import { dxDataGridColumn, dxDataGridRowObject } from 'devextreme/ui/data_grid';
+import dxDataGrid, { dxDataGridColumn, dxDataGridRowObject } from 'devextreme/ui/data_grid';
 import { EditItemsContext } from '@ballware/react-renderer';
 import { componentToEditorRef } from '../../editing/items/common';
+import { dxElement } from 'devextreme/core/element';
+import { dxToolbarItem, dxToolbarOptions } from 'devextreme/ui/toolbar';
+import { CodeEditor } from '../../editing/items/codeeditor';
 
 export interface DetailGridRef {
   getValue: () => Array<Record<string, unknown>>;
   setValue: (value: Array<Record<string, unknown>>) => void;
 }
 
-export interface DetailGridItemOptions {
+export interface DetailGridItemOptions {  
   add?: boolean;
   update?: boolean;
   delete?: boolean;
   columns: Array<GridLayoutColumn>;
+  showSource?: boolean;
 }
 
 export interface DetailGridProps {
   readonly: boolean;
-  //mode: EditModes;
-  defaultValue: Array<Record<string, unknown>>;
+  getValue: (dataMember?: string) => Record<string, unknown> | Array<Record<string, unknown>>;
   setValue: (value: Array<Record<string, unknown>>) => void;
   layoutItem: EditLayoutItemOptions;
   onInitialized: () => void;
@@ -54,7 +58,7 @@ export interface DetailGridProps {
 
 export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
   (
-    { readonly, defaultValue, setValue, onInitialized, layoutItem },
+    { readonly, getValue, setValue, onInitialized, layoutItem },
     ref
   ): JSX.Element => {
     const [allowAdd] = useState<boolean>(
@@ -70,8 +74,15 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
         false
     );
 
+    const [allowShowSource] = useState<boolean>(
+      (layoutItem.itemoptions as DetailGridItemOptions).showSource ?? false
+    );
+
+    const [showSource, setShowSource] = useState<boolean>(false);
+
+
     const {
-      getValue,
+      editorValueChanged,
       detailGridRowValidating,
       initNewDetailItem,
       detailEditorPreparing,
@@ -159,7 +170,7 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
             }
           };
 
-          e.editorOptions.valueChangeEvent = 'focusout';
+          e.editorOptions.valueChangeEvent = 'blur change focusout';
         }
       },
       [
@@ -204,6 +215,27 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
       [initNewDetailItem]
     );
 
+    const onToolbarPreparing = useCallback(({ toolbarOptions }: { component?: dxDataGrid, element?: dxElement, model?: any, toolbarOptions?: dxToolbarOptions }) => {
+
+      if (allowShowSource && setShowSource && toolbarOptions?.items) {
+        toolbarOptions.items.unshift({
+          locateInMenu: 'auto',
+          location: 'after',
+          widget: 'dxButton',
+          showText: 'inMenu',
+          options: {
+            hint: t('datacontainer.actions.showSource'),
+            text: t('datacontainer.actions.showSource'),
+            icon: 'bi bi-code',
+            onClick: () => {
+              setShowSource(true);
+            },
+          },
+        } as dxToolbarItem);
+      }
+
+    }, [allowShowSource, setShowSource]);
+
     const columnConfiguration = useMemo(() => {
       const options = layoutItem.itemoptions as DetailGridItemOptions;
 
@@ -222,18 +254,21 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
       <React.Fragment>
         {dataMember &&
           getValue &&
+          editorValueChanged &&
           detailGridRowValidating &&
           initNewDetailItem &&
           detailEditorPreparing &&
           detailEditorValueChanged &&
           detailEditorEntered && (
-            <DataGrid
+            <React.Fragment>{!showSource && <DataGrid
               ref={gridRef}
               width={layoutItem.width}
+              height={layoutItem.height}
               repaintChangesOnly
               columnAutoWidth
               allowColumnResizing
-              dataSource={defaultValue}
+              dataSource={getValue(dataMember)}
+              onToolbarPreparing={onToolbarPreparing}
               onEditorPreparing={onGridEditorPreparing}
               onInitNewRow={e => onInitNewDetailItem(dataMember, e.data)}
               onRowValidating={onGridRowValidating}
@@ -248,9 +283,17 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
                 allowDeleting={allowDelete}
               />
               {renderCellTemplates({
-                lookupParams: getValue(),
+                lookupParams: getValue() as Record<string, unknown>,
               })}
-            </DataGrid>
+            </DataGrid>}
+            {showSource && <React.Fragment><Toolbar className={'w-100'}><Item location="after" widget="dxButton" locateInMenu={'auto'} showText={'inMenu'} options={{
+              hint: t('datacontainer.actions.showList'),
+              text: t('datacontainer.actions.showList'),
+              icon: 'bi bi-table',
+              onClick: () => {
+                setShowSource(false);
+              },
+            }} /></Toolbar><CodeEditor layoutItem={layoutItem} dialect={'json'} /></React.Fragment>}</React.Fragment>
           )}
       </React.Fragment>
     );

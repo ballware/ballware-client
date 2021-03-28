@@ -83,7 +83,7 @@ export const DetailTree = ({ layoutItem }: DetailTreeProps) => {
         <DetailTreeContainer
           ref={editorRef}
           readonly={readonly ?? false}
-          defaultValue={getValue(layoutItem.dataMember)}
+          getValue={getValue}
           setValue={value => {
             layoutItem.dataMember &&
               editorValueChanged(

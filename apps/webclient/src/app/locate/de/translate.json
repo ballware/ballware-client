@@ -43,7 +43,9 @@
                 "show": "Anzeigen",
                 "edit": "Bearbeiten",
                 "remove": "Entfernen",
-                "print": "Drucken"                
+                "print": "Drucken",
+                "showSource": "Als Quellcode zeigen",
+                "showList": "Als Liste zeigen"                
             },
             "messages": {
                 "loading": "Lade Daten",

@@ -11,6 +11,8 @@ import React, {
   useImperativeHandle,
   forwardRef,
   useContext,
+  useState,
+  useCallback,
 } from 'react';
 
 import {
@@ -24,9 +26,13 @@ import {
   RenderCellTemplatesProps,
 } from '../columns/columntemplates';
 import { LookupContext } from '@ballware/react-contexts';
-import { dxTreeListColumn, dxTreeListRowObject } from 'devextreme/ui/tree_list';
+import dxTreeList, { dxTreeListColumn, dxTreeListRowObject } from 'devextreme/ui/tree_list';
 import { EditItemsContext } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
+import { dxElement } from 'devextreme/core/element';
+import { dxToolbarItem, dxToolbarOptions } from 'devextreme/ui/toolbar';
+import { Item, Toolbar } from 'devextreme-react/toolbar';
+import { CodeEditor } from '../../editing/items/codeeditor';
 
 export interface DetailTreeRef {
   getValue: () => Array<Record<string, unknown>>;
@@ -38,21 +44,21 @@ export interface DetailTreeItemOptions {
   update?: boolean;
   delete?: boolean;
   columns: Array<GridLayoutColumn>;
+  showSource?: boolean;
 }
 
 export interface DetailTreeProps {
   readonly: boolean;
-  defaultValue: Array<Record<string, unknown>>;
+  getValue: (dataMember?: string) => Record<string, unknown> | Array<Record<string, unknown>>;
   setValue: (value: Array<Record<string, unknown>>) => void;
   layoutItem: EditLayoutItemOptions;
 }
 
 export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
-  ({ readonly, defaultValue, setValue, layoutItem }, ref): JSX.Element => {
+  ({ readonly, getValue, setValue, layoutItem }, ref): JSX.Element => {
     const { t } = useTranslation();
 
-    const {
-      getValue,
+    const {      
       detailGridRowValidating,
       initNewDetailItem,
       detailEditorPreparing,
@@ -62,6 +68,13 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
     const { lookups } = useContext(LookupContext);
 
     const treeRef = useRef<TreeList>(null);
+
+    const [allowShowSource] = useState<boolean>(
+      (layoutItem.itemoptions as DetailTreeItemOptions).showSource ?? false
+    );
+
+    const [showSource, setShowSource] = useState<boolean>(false);
+
 
     useImperativeHandle(ref, () => ({
       getValue: () => {
@@ -124,7 +137,7 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
           }
         };
 
-        e.editorOptions.valueChangeEvent = 'focusout';
+        e.editorOptions.valueChangeEvent = 'blur change focusout';
       }
     };
 
@@ -155,6 +168,27 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
       }
     };
 
+    const onToolbarPreparing = useCallback(({ toolbarOptions }: { component?: dxTreeList, element?: dxElement, model?: any, toolbarOptions?: dxToolbarOptions }) => {
+
+      if (allowShowSource && setShowSource && toolbarOptions?.items) {
+        toolbarOptions.items.unshift({
+          locateInMenu: 'auto',
+          location: 'after',
+          widget: 'dxButton',
+          showText: 'inMenu',
+          options: {
+            hint: t('datacontainer.actions.showSource'),
+            text: t('datacontainer.actions.showSource'),
+            icon: 'bi bi-code',
+            onClick: () => {
+              setShowSource(true);
+            },
+          },
+        } as dxToolbarItem);
+      }
+
+    }, [allowShowSource, setShowSource]);
+
     const columnConfiguration = useMemo(
       () =>
         getValue &&
@@ -162,7 +196,7 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
           t,
           options.columns,
           lookups,
-          getValue(),
+          getValue() as Record<string, unknown>,
           'detail',
           undefined,
           undefined
@@ -170,14 +204,15 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
       [t, options, lookups, getValue]
     );
 
-    return (
+    return (<React.Fragment>{!showSource && 
       <TreeList
         ref={treeRef}
         width={layoutItem.width}
         repaintChangesOnly
         columnAutoWidth
         allowColumnResizing
-        dataSource={defaultValue}
+        dataSource={getValue(dataMember)}
+        onToolbarPreparing={onToolbarPreparing}
         onEditorPreparing={treeEditorPreparing}
         onInitNewRow={e =>
           dataMember && onInitNewDetailItem(dataMember, e.data)
@@ -198,7 +233,16 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
           renderCellTemplates({
             lookupParams: getValue(),
           } as RenderCellTemplatesProps)}
-      </TreeList>
+      </TreeList>}
+      {showSource && <React.Fragment><Toolbar className={'w-100'}><Item location="after" widget="dxButton" locateInMenu={'auto'} showText={'inMenu'} options={{
+              hint: t('datacontainer.actions.showList'),
+              text: t('datacontainer.actions.showList'),
+              icon: 'bi bi-table',
+              onClick: () => {
+                setShowSource(false);
+              },
+            }} /></Toolbar><CodeEditor layoutItem={layoutItem} dialect={'json'} /></React.Fragment>}
+      </React.Fragment>
     );
   }
 );

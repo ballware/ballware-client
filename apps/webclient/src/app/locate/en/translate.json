@@ -43,7 +43,9 @@
                 "show": "Show",
                 "edit": "Edit",
                 "remove": "Remove",
-                "print": "Print"                
+                "print": "Print",
+                "showSource": "Show source",
+                "showList": "Show list"                                
             },
             "messages": {
                 "loading": "Loading data",

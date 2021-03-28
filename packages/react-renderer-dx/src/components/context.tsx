@@ -7,7 +7,7 @@
 
 import React, { PropsWithChildren, useEffect } from 'react';
 
-import 'bootstrap/dist/css/bootstrap-grid.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import 'devextreme/dist/css/dx.common.css';

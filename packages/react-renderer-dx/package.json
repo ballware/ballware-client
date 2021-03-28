@@ -71,6 +71,7 @@
     }
   ],
   "devDependencies": {
+    "@types/codemirror": "^0.0.108",
     "@types/moment-duration-format": "^2.2.2",
     "i18next": "^19.9.2",
     "react-i18next": "^11.8.6"

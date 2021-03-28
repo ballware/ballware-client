@@ -81,7 +81,7 @@ export const DetailGrid = ({ layoutItem }: DetailGridProps) => {
         <DetailGridContainer
           ref={editorRef}
           readonly={readonly ?? false}
-          defaultValue={getValue(layoutItem.dataMember)}
+          getValue={getValue}
           setValue={value => {
             layoutItem.dataMember &&
               editorValueChanged(
