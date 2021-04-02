@@ -77,6 +77,16 @@ export interface CrudContextState {
   editLayout?: string;
 
   /**
+   * Importing file
+   */
+  importing?: boolean;
+
+  /**
+   * Exporting items
+   */
+  exporting?: boolean;
+
+  /**
    * Refresh after edit operation pending
    */
   refreshing?: boolean;
@@ -145,6 +155,26 @@ export interface CrudContextState {
   customEdit?: (
     customFunction: EntityCustomFunction,
     items?: Array<CrudItem>
+  ) => void;
+
+  /**
+   * Export items
+   * @param customFunction Selected export function
+   * @param items Selected items for export
+   */
+  export?: (
+    customFunction: EntityCustomFunction,
+    items?: Array<CrudItem>
+  ) => void;
+
+  /**
+   * Import items
+   * @param customFunction Selected import function
+   * @param file Uploaded file to import
+   */
+   import?: (
+    customFunction: EntityCustomFunction,
+    file: File
   ) => void;
 }
 
