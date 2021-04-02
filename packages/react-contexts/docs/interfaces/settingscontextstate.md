@@ -33,7 +33,7 @@ Context for providing environment dependend application functionality
 
 API key for usage with google services
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:40](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L40)
+Defined in: [packages/react-contexts/src/settingscontext.ts:40](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L40)
 
 ___
 
@@ -49,9 +49,9 @@ Factory for creating data adapter for user authentication
 
 **Returns:** ResourceOwnerAuthApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:45](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L45)
+Defined in: [packages/react-contexts/src/settingscontext.ts:45](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L45)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:45](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L45)
+Defined in: [packages/react-contexts/src/settingscontext.ts:45](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L45)
 
 ___
 
@@ -67,9 +67,9 @@ Factory for creating data adapter for role list data access
 
 **Returns:** IdentityRoleApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:55](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L55)
+Defined in: [packages/react-contexts/src/settingscontext.ts:55](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L55)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:55](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L55)
+Defined in: [packages/react-contexts/src/settingscontext.ts:55](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L55)
 
 ___
 
@@ -85,9 +85,9 @@ Factory for creating data adapter for user list data access
 
 **Returns:** IdentityUserApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:50](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L50)
+Defined in: [packages/react-contexts/src/settingscontext.ts:50](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L50)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:50](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L50)
+Defined in: [packages/react-contexts/src/settingscontext.ts:50](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L50)
 
 ___
 
@@ -103,9 +103,9 @@ Factory for creating data adapter for tenant data access
 
 **Returns:** MetaAttachmentApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:70](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L70)
+Defined in: [packages/react-contexts/src/settingscontext.ts:70](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L70)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:70](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L70)
+Defined in: [packages/react-contexts/src/settingscontext.ts:70](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L70)
 
 ___
 
@@ -121,9 +121,9 @@ Factory for creating data adapter for print document data access
 
 **Returns:** MetaDocumentApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:95](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L95)
+Defined in: [packages/react-contexts/src/settingscontext.ts:95](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L95)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:95](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L95)
+Defined in: [packages/react-contexts/src/settingscontext.ts:95](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L95)
 
 ___
 
@@ -139,9 +139,9 @@ Factory for creating data adapter for documentation data access
 
 **Returns:** MetaDocumentationApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:100](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L100)
+Defined in: [packages/react-contexts/src/settingscontext.ts:100](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L100)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:100](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L100)
+Defined in: [packages/react-contexts/src/settingscontext.ts:100](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L100)
 
 ___
 
@@ -157,9 +157,9 @@ Factory for creating data adapter for entity metadata access
 
 **Returns:** MetaEntityApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:60](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L60)
+Defined in: [packages/react-contexts/src/settingscontext.ts:60](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L60)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:60](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L60)
+Defined in: [packages/react-contexts/src/settingscontext.ts:60](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L60)
 
 ___
 
@@ -181,9 +181,9 @@ Name | Type |
 
 **Returns:** MetaGenericEntityApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:110](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L110)
+Defined in: [packages/react-contexts/src/settingscontext.ts:110](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L110)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:110](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L110)
+Defined in: [packages/react-contexts/src/settingscontext.ts:110](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L110)
 
 ___
 
@@ -199,9 +199,9 @@ Factory for creating data adapter for lookup data access
 
 **Returns:** MetaLookupApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:80](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L80)
+Defined in: [packages/react-contexts/src/settingscontext.ts:80](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L80)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:80](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L80)
+Defined in: [packages/react-contexts/src/settingscontext.ts:80](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L80)
 
 ___
 
@@ -217,9 +217,9 @@ Factory for creating data adapter for page data access
 
 **Returns:** MetaPageApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:105](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L105)
+Defined in: [packages/react-contexts/src/settingscontext.ts:105](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L105)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:105](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L105)
+Defined in: [packages/react-contexts/src/settingscontext.ts:105](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L105)
 
 ___
 
@@ -235,9 +235,9 @@ Factory for creating data adapter for pick values data access
 
 **Returns:** MetaPickvalueApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:90](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L90)
+Defined in: [packages/react-contexts/src/settingscontext.ts:90](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L90)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:90](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L90)
+Defined in: [packages/react-contexts/src/settingscontext.ts:90](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L90)
 
 ___
 
@@ -253,9 +253,9 @@ Factory for creating data adapter for processing state data access
 
 **Returns:** MetaProcessingstateApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:85](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L85)
+Defined in: [packages/react-contexts/src/settingscontext.ts:85](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L85)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:85](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L85)
+Defined in: [packages/react-contexts/src/settingscontext.ts:85](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L85)
 
 ___
 
@@ -271,9 +271,9 @@ Factory for creating data adapter for statistic data access
 
 **Returns:** MetaStatisticApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:75](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L75)
+Defined in: [packages/react-contexts/src/settingscontext.ts:75](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L75)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:75](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L75)
+Defined in: [packages/react-contexts/src/settingscontext.ts:75](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L75)
 
 ___
 
@@ -289,9 +289,9 @@ Factory for creating data adapter for tenant data access
 
 **Returns:** MetaTenantApi
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:65](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L65)
+Defined in: [packages/react-contexts/src/settingscontext.ts:65](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L65)
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:65](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L65)
+Defined in: [packages/react-contexts/src/settingscontext.ts:65](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L65)
 
 ___
 
@@ -301,4 +301,4 @@ ___
 
 Current version of application
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:35](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/settingscontext.ts#L35)
+Defined in: [packages/react-contexts/src/settingscontext.ts:35](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/settingscontext.ts#L35)

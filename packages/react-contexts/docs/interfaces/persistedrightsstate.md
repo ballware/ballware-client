@@ -29,7 +29,7 @@ Persisted part of rights state in application store
 
 Last login try error message
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/rightscontext.ts#L43)
+Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/rightscontext.ts#L43)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 Number of seconds the access token expires in
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/rightscontext.ts#L38)
+Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/rightscontext.ts#L38)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Refresh token
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/rightscontext.ts#L33)
+Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/rightscontext.ts#L33)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 User rights for current user
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/rightscontext.ts#L18)
+Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/rightscontext.ts#L18)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 Access token timeout stamp
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/rightscontext.ts#L23)
+Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/rightscontext.ts#L23)
 
 ___
 
@@ -79,4 +79,4 @@ ___
 
 Access token
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/rightscontext.ts#L28)
+Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/rightscontext.ts#L28)

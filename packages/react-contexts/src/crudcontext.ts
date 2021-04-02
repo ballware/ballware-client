@@ -162,7 +162,7 @@ export interface CrudContextState {
    * @param customFunction Selected export function
    * @param items Selected items for export
    */
-  export?: (
+  exportItems?: (
     customFunction: EntityCustomFunction,
     items?: Array<CrudItem>
   ) => void;
@@ -172,7 +172,7 @@ export interface CrudContextState {
    * @param customFunction Selected import function
    * @param file Uploaded file to import
    */
-   import?: (
+   importItems?: (
     customFunction: EntityCustomFunction,
     file: File
   ) => void;

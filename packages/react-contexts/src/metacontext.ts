@@ -203,14 +203,14 @@ export interface MetaContextState {
    * @param identifier Identifier of custom import function
    * @param file Uploaded file to import
    */
-  import?: (identifier: string, file: File) => void;
+  importItems?: (identifier: string, file: File) => void;
 
   /**
    * Export list of items
    * @param identifier Identifier of custom export function
    * @param ids List of item ids to export
    */
-  export?: (identifier: string, ids: string[]) => void;
+  exportItems?: (identifier: string, ids: string[]) => void;
 
   /**
    * Prepare grid layout by custom script

@@ -27,7 +27,7 @@ Context for page layout functionality
 
 Custom param provided by custom page scripts
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:33](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L33)
+Defined in: [packages/react-contexts/src/pagecontext.ts:33](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L33)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Documentation text provided for display
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:38](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L38)
+Defined in: [packages/react-contexts/src/pagecontext.ts:38](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L38)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Current provided page layout
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:23](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L23)
+Defined in: [packages/react-contexts/src/pagecontext.ts:23](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L23)
 
 ___
 
@@ -69,9 +69,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:43](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L43)
+Defined in: [packages/react-contexts/src/pagecontext.ts:43](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L43)
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:43](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L43)
+Defined in: [packages/react-contexts/src/pagecontext.ts:43](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L43)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Page param provided by param editors or url
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:28](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L28)
+Defined in: [packages/react-contexts/src/pagecontext.ts:28](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L28)
 
 ___
 
@@ -114,9 +114,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:82](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L82)
+Defined in: [packages/react-contexts/src/pagecontext.ts:82](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L82)
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:82](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L82)
+Defined in: [packages/react-contexts/src/pagecontext.ts:82](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L82)
 
 ___
 
@@ -143,9 +143,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:61](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L61)
+Defined in: [packages/react-contexts/src/pagecontext.ts:61](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L61)
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:61](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L61)
+Defined in: [packages/react-contexts/src/pagecontext.ts:61](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L61)
 
 ___
 
@@ -175,9 +175,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:69](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L69)
+Defined in: [packages/react-contexts/src/pagecontext.ts:69](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L69)
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:69](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L69)
+Defined in: [packages/react-contexts/src/pagecontext.ts:69](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L69)
 
 ___
 
@@ -201,9 +201,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:54](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L54)
+Defined in: [packages/react-contexts/src/pagecontext.ts:54](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L54)
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:54](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L54)
+Defined in: [packages/react-contexts/src/pagecontext.ts:54](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L54)
 
 ___
 
@@ -219,6 +219,6 @@ Hide documentation for display
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:48](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L48)
+Defined in: [packages/react-contexts/src/pagecontext.ts:48](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L48)
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:48](https://github.com/ballware/ballware-client/blob/a03724f/packages/react-contexts/src/pagecontext.ts#L48)
+Defined in: [packages/react-contexts/src/pagecontext.ts:48](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/pagecontext.ts#L48)
