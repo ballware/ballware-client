@@ -52,7 +52,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [attachmentprovider.tsx:29](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/attachmentprovider.tsx#L29)
+Defined in: [attachmentprovider.tsx:29](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/attachmentprovider.tsx#L29)
 
 ___
 
@@ -70,7 +70,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [authorizationcoderightsprovider.tsx:101](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/authorizationcoderightsprovider.tsx#L101)
+Defined in: [authorizationcoderightsprovider.tsx:101](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L101)
 
 ___
 
@@ -88,7 +88,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [crudprovider.tsx:40](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/crudprovider.tsx#L40)
+Defined in: [crudprovider.tsx:40](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/crudprovider.tsx#L40)
 
 ___
 
@@ -106,7 +106,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [editprovider.tsx:44](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/editprovider.tsx#L44)
+Defined in: [editprovider.tsx:44](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/editprovider.tsx#L44)
 
 ___
 
@@ -124,7 +124,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [lookupprovider.tsx:227](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/lookupprovider.tsx#L227)
+Defined in: [lookupprovider.tsx:227](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/lookupprovider.tsx#L227)
 
 ___
 
@@ -142,7 +142,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [metaprovider.tsx:61](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/metaprovider.tsx#L61)
+Defined in: [metaprovider.tsx:61](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/metaprovider.tsx#L61)
 
 ___
 
@@ -160,7 +160,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [notificationprovider.tsx:29](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/notificationprovider.tsx#L29)
+Defined in: [notificationprovider.tsx:29](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/notificationprovider.tsx#L29)
 
 ___
 
@@ -178,7 +178,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [pageprovider.tsx:46](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/pageprovider.tsx#L46)
+Defined in: [pageprovider.tsx:46](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/pageprovider.tsx#L46)
 
 ___
 
@@ -196,7 +196,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [providerfactory.tsx:32](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/providerfactory.tsx#L32)
+Defined in: [providerfactory.tsx:32](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/providerfactory.tsx#L32)
 
 ___
 
@@ -214,7 +214,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [resourceownerrightsprovider.tsx:81](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/resourceownerrightsprovider.tsx#L81)
+Defined in: [resourceownerrightsprovider.tsx:81](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/resourceownerrightsprovider.tsx#L81)
 
 ___
 
@@ -232,7 +232,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [settingsprovider.tsx:120](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/settingsprovider.tsx#L120)
+Defined in: [settingsprovider.tsx:120](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/settingsprovider.tsx#L120)
 
 ___
 
@@ -250,7 +250,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [statisticprovider.tsx:49](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/statisticprovider.tsx#L49)
+Defined in: [statisticprovider.tsx:49](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/statisticprovider.tsx#L49)
 
 ___
 
@@ -268,4 +268,4 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [tenantprovider.tsx:51](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/tenantprovider.tsx#L51)
+Defined in: [tenantprovider.tsx:51](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/tenantprovider.tsx#L51)
