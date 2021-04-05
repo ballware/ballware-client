@@ -18,4 +18,4 @@ Properties for import file upload dialog
 
 Custom function for import
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:126](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L126)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:126](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L126)

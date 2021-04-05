@@ -24,6 +24,6 @@ Navigation menu display/hide toggled
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:60](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L60)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:60](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L60)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:60](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L60)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:60](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L60)

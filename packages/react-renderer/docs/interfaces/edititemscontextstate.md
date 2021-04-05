@@ -34,25 +34,25 @@ Context providing environmental functionality for rendered edit layout
 
 ### EditProvider
 
-• `Optional` **EditProvider**: (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\>) => *Element*
+• `Optional` **EditProvider**: (`props`: *PropsWithChildren*<{ `editFunction`: *undefined* \| EntityCustomFunction ; `editLayout`: *undefined* \| EditLayout ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\>) => *Element*
 
 Factory for generating new edit provider
 
 #### Type declaration:
 
-▸ (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\>): *Element*
+▸ (`props`: *PropsWithChildren*<{ `editFunction`: *undefined* \| EntityCustomFunction ; `editLayout`: *undefined* \| EditLayout ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\>): *Element*
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`props` | *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\> |
+`props` | *PropsWithChildren*<{ `editFunction`: *undefined* \| EntityCustomFunction ; `editLayout`: *undefined* \| EditLayout ; `item`: ValueType \| *CrudItem* \| *CrudItem*[]  }\> |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:263](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L263)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:264](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L264)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:263](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L263)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:264](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L264)
 
 ___
 
@@ -82,9 +82,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:217](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L217)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:218](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L218)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:217](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L217)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:218](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L218)
 
 ___
 
@@ -117,9 +117,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:230](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L230)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:231](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L231)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:230](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L230)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:231](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L231)
 
 ___
 
@@ -152,9 +152,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:171](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L171)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:172](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L172)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:171](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L171)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:172](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L172)
 
 ___
 
@@ -187,9 +187,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:157](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L157)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:158](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L158)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:157](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L157)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:158](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L158)
 
 ___
 
@@ -227,9 +227,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:187](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L187)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:188](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L188)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:187](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L187)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:188](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L188)
 
 ___
 
@@ -265,9 +265,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:203](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L203)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:204](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L204)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:203](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L203)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:204](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L204)
 
 ___
 
@@ -297,9 +297,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:133](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L133)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:134](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L134)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:133](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L133)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:134](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L134)
 
 ___
 
@@ -328,9 +328,9 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:145](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L145)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:146](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L146)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:145](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L145)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:146](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L146)
 
 ___
 
@@ -354,9 +354,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:118](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L118)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:119](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L119)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:118](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L118)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:119](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L119)
 
 ___
 
@@ -383,9 +383,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:125](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L125)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:126](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L126)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:125](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L125)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:126](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L126)
 
 ___
 
@@ -412,9 +412,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:87](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L87)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:88](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L88)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:87](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L87)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:88](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L88)
 
 ___
 
@@ -441,9 +441,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:80](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L80)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:81](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L81)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:80](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L80)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:81](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L81)
 
 ___
 
@@ -475,9 +475,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:96](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L96)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:97](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L97)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:96](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L96)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:97](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L97)
 
 ___
 
@@ -507,9 +507,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:108](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L108)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:109](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L109)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:108](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L108)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:109](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L109)
 
 ___
 
@@ -547,9 +547,9 @@ Name | Type |
 
 **Returns:** T
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:244](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L244)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:245](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L245)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:244](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L244)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:245](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L245)
 
 ___
 
@@ -573,9 +573,9 @@ Name | Type |
 
 **Returns:** LookupDescriptor \| LookupCreator
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:67](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L67)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:68](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L68)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:67](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L67)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:68](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L68)
 
 ___
 
@@ -607,9 +607,9 @@ Name | Type |
 
 **Returns:** T
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:61](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L61)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:62](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L62)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:61](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L61)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:62](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L62)
 
 ___
 
@@ -636,9 +636,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:255](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L255)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:256](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L256)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:255](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L255)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:256](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L256)
 
 ___
 
@@ -656,9 +656,9 @@ Check if edit form is read only
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:73](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L73)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:74](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L74)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:73](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L73)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:74](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L74)
 
 ___
 
@@ -684,6 +684,6 @@ Name | Type |
 
 **Returns:** *undefined* \| *Element*[]
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:52](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L52)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:53](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L53)
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:52](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/edititemscontext.tsx#L52)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:53](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L53)

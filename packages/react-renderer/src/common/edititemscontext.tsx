@@ -23,6 +23,7 @@ import {
   EditLayoutItem,
   EditLayoutItemOptions,
   EditUtil,
+  EntityCustomFunction,
   GridLayoutColumn,
   ValueType,
 } from '@ballware/meta-interface';
@@ -264,7 +265,7 @@ export interface EditItemsContextState {
     props: PropsWithChildren<{
       editLayout: EditLayout | undefined;
       item: CrudItem | Array<CrudItem> | ValueType;
-      functionIdentifier?: string | undefined;
+      editFunction: EntityCustomFunction | undefined;
     }>
   ) => JSX.Element;
 }

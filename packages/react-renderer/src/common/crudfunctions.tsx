@@ -20,6 +20,7 @@ import {
   CrudContext,
   MetaContext,
   EditModes,
+  DefaultEditFunction,
 } from '@ballware/react-contexts';
 import { RenderFactoryContext } from '../renderfactorycontext';
 
@@ -90,6 +91,7 @@ export const CrudFunctions = ({
           mode={EditModes.CREATE}
           editLayout={getEditLayoutForIdentifier(editLayout)}
           item={item}
+          editFunction={DefaultEditFunction}
         >
           <EditPopup
             title={t('datacontainer.titles.add', { entity: displayName })}
@@ -101,6 +103,7 @@ export const CrudFunctions = ({
           mode={EditModes.VIEW}
           editLayout={getEditLayoutForIdentifier(editLayout)}
           item={item}
+          editFunction={DefaultEditFunction}
         >
           <EditPopup
             title={t('datacontainer.titles.view', { entity: displayName })}
@@ -112,6 +115,7 @@ export const CrudFunctions = ({
           mode={EditModes.EDIT}
           editLayout={getEditLayoutForIdentifier(editLayout)}
           item={item}
+          editFunction={DefaultEditFunction}
         >
           <EditPopup
             title={t('datacontainer.titles.edit', { entity: displayName })}
@@ -131,7 +135,7 @@ export const CrudFunctions = ({
               customEditFunction?.editLayout
             )}
             item={customEditParam as Record<string, unknown>}
-            functionIdentifier={customEditFunction?.id}
+            editFunction={customEditFunction}
           >
             <EditPopup title={`${customEditFunction?.text}`} />
           </EditProvider>

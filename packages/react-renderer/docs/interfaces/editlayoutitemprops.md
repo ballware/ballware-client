@@ -19,7 +19,7 @@ Properties for edit layout item
 
 Number of layout columns used for layout item
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:212](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L212)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:212](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L212)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Layout item metadata
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:207](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L207)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:207](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L207)

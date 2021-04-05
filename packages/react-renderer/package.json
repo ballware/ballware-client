@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@ballware/meta-interface": "^6.2.0",
-    "@ballware/react-contexts": "^6.2.2"
+    "@ballware/react-contexts": "^6.2.4"
   },
   "peerDependencies": {
     "i18next": ">=19.9.2",
