@@ -34,6 +34,26 @@ export interface EditUtil {
 }
 
 /**
+ * Additional options for custom import function
+ */
+export interface ImportFunctionOptions {
+  /**
+   * Data format for import
+   */
+  format: 'xml' | 'json' | 'csv',  
+}
+
+/**
+ * Additional options for custom export function
+ */
+export interface ExportFunctionOptions {
+  /**
+   * Data format for export
+   */
+  format: 'xml' | 'json' | 'csv',  
+}
+
+/**
  * Interface of custom crud function definition
  */
 export interface EntityCustomFunction {
@@ -51,8 +71,10 @@ export interface EntityCustomFunction {
    * Function operation type
    * add: Function is creating new business objects
    * edit: Function is editing existing selected business objects
+   * import: Function to import external data 
+   * export: Function to export data 
    */
-  type: 'add' | 'edit';
+  type: 'add' | 'edit' | 'import' | 'export';
 
   /**
    * Display text of function
@@ -80,6 +102,11 @@ export interface EntityCustomFunction {
    * If not set the primary edit layout will be used
    */
   editLayout: string;
+
+  /**
+   * Function type specific additional options
+   */
+  options?: ImportFunctionOptions | ExportFunctionOptions;
 }
 
 /**

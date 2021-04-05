@@ -30,37 +30,41 @@ export interface MetaGenericEntityApi {
    * Fetch single business object by id
    *
    * @param token Access token required for authentication
+   * @param functionIdentifier Identifier of edit function
    * @param id Id of business object
    * @returns Promise containing instance of business object
    */
-  byId: (token: string, id: string) => Promise<CrudItem>;
+  byId: (token: string, functionIdentifier: string, id: string) => Promise<CrudItem>;
 
   /**
    * Fetch prepared new instance of business object
    *
    * @param token Access token required for authentication
+   * @param functionIdentifier Identifier of edit function
    * @param params Parameter values for initialization of business object
    * @returns Promise containing new generated instance of business object
    */
-  new: (token: string, params?: QueryParams) => Promise<CrudItem>;
+  new: (token: string, functionIdentifier: string, params?: QueryParams) => Promise<CrudItem>;
 
   /**
    * Save modified instance of business object
    *
    * @param token Access token required for authentication
+   * @param functionIdentifier Identifier of edit function
    * @param item Modified instance of business object
    * @returns Promise resolved when save operation has finished
    */
-  save: (token: string, item: CrudItem) => Promise<void>;
+  save: (token: string, functionIdentifier: string, item: CrudItem) => Promise<void>;
 
   /**
    * Save multiple modified instances of business object
    *
    * @param token Access token required for authentication
+   * @param functionIdentifier Identifier of edit function
    * @param items Modified instances of business object
    * @returns Promise resolved when save operation has finished
    */
-  saveBatch: (token: string, items: CrudItem[]) => Promise<void>;
+  saveBatch: (token: string, functionIdentifier: string, items: CrudItem[]) => Promise<void>;
 
   /**
    * Drop existing instance of business object
@@ -70,4 +74,24 @@ export interface MetaGenericEntityApi {
    * @returns Promise resolved when drop operation has finished
    */
   drop: (token: string, id: string) => Promise<void>;
+
+  /**
+   * Import business objects from uploaded file
+   * 
+   * @param token Access token required for authentication
+   * @param functionIdentifier Identifier of import function
+   * @param file Uploaded file containing objects to import
+   * @returns Promise resolved when drop operation has finished
+   */
+  importItems: (token: string, functionIdentifier: string, file: File) => Promise<void>;
+
+  /**
+   * Export business objects to download file
+   * 
+   * @param token Access token required for authentication
+   * @param functionIdentifier Identifier of import function
+   * @param ids Selected object ids to export
+   * @returns Promise resolved when download is ready, containing download url 
+   */
+  exportItems: (token: string, functionIdentifier: string, ids: string[]) => Promise<string>;
 }
