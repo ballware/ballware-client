@@ -202,15 +202,17 @@ export interface MetaContextState {
    * Import uploaded file
    * @param identifier Identifier of custom import function
    * @param file Uploaded file to import
+   * @returns Promise resolved when import completed
    */
-  importItems?: (identifier: string, file: File) => void;
+  importItems?: (identifier: string, file: File) => Promise<void>;
 
   /**
    * Export list of items
    * @param identifier Identifier of custom export function
    * @param ids List of item ids to export
+   * @returns Promise resolved with url to export file
    */
-  exportItems?: (identifier: string, ids: string[]) => void;
+  exportItems?: (identifier: string, ids: string[]) => Promise<string>;
 
   /**
    * Prepare grid layout by custom script

@@ -161,21 +161,31 @@ export interface CrudContextState {
    * Export items
    * @param customFunction Selected export function
    * @param items Selected items for export
+   * @returns Promise resolved with url to exported file
    */
   exportItems?: (
     customFunction: EntityCustomFunction,
     items?: Array<CrudItem>
-  ) => void;
+  ) => Promise<string>;
 
   /**
    * Import items
-   * @param customFunction Selected import function
-   * @param file Uploaded file to import
+   * @param customFunction Selected import function   
    */
    importItems?: (
+    customFunction: EntityCustomFunction
+  ) => void;
+
+  /**
+   * Import file containing items with selected import function
+   * @param customFunction Selected import function 
+   * @param file Uploaded file to import
+   * @returns Promise resolved when import completed
+   */
+   importFile?: (
     customFunction: EntityCustomFunction,
     file: File
-  ) => void;
+  ) => Promise<void>;
 }
 
 export const CrudContext = createContext({} as CrudContextState);

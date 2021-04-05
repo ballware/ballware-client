@@ -35,9 +35,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>\>
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:25](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/lookupcontext.ts#L25)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:25](https://github.com/ballware/ballware-client/blob/77ab18c/packages/react-contexts/src/lookupcontext.ts#L25)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:25](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/lookupcontext.ts#L25)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:25](https://github.com/ballware/ballware-client/blob/77ab18c/packages/react-contexts/src/lookupcontext.ts#L25)
 
 ___
 
@@ -55,6 +55,6 @@ Fetch list of lookup records
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:18](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/lookupcontext.ts#L18)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:18](https://github.com/ballware/ballware-client/blob/77ab18c/packages/react-contexts/src/lookupcontext.ts#L18)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:18](https://github.com/ballware/ballware-client/blob/f0c9e54/packages/react-contexts/src/lookupcontext.ts#L18)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:18](https://github.com/ballware/ballware-client/blob/77ab18c/packages/react-contexts/src/lookupcontext.ts#L18)
