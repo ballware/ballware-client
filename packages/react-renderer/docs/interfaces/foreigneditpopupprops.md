@@ -34,9 +34,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:136](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L136)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:147](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L147)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:136](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L136)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:147](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L147)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 Edit function identifier
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:125](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L125)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:136](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L136)
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 Selected items for foreign edit
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:130](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L130)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:141](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L141)

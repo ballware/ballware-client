@@ -33,9 +33,9 @@ Name | Type |
 
 **Returns:** *any*
 
-Defined in: [packages/react-renderer/src/common/toolbar.ts:23](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/toolbar.ts#L23)
+Defined in: [packages/react-renderer/src/common/toolbar.ts:23](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/toolbar.ts#L23)
 
-Defined in: [packages/react-renderer/src/common/toolbar.ts:23](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/toolbar.ts#L23)
+Defined in: [packages/react-renderer/src/common/toolbar.ts:23](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/toolbar.ts#L23)
 
 ___
 
@@ -62,6 +62,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/toolbar.ts:17](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/toolbar.ts#L17)
+Defined in: [packages/react-renderer/src/common/toolbar.ts:17](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/toolbar.ts#L17)
 
-Defined in: [packages/react-renderer/src/common/toolbar.ts:17](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/common/toolbar.ts#L17)
+Defined in: [packages/react-renderer/src/common/toolbar.ts:17](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/common/toolbar.ts#L17)

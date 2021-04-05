@@ -18,6 +18,7 @@ Context providing rendered items from render plugin
 - [Editor](renderfactorycontextstate.md#editor)
 - [ForeignEditPopup](renderfactorycontextstate.md#foreigneditpopup)
 - [IframePopup](renderfactorycontextstate.md#iframepopup)
+- [ImportPopup](renderfactorycontextstate.md#importpopup)
 - [Navigation](renderfactorycontextstate.md#navigation)
 - [Notification](renderfactorycontextstate.md#notification)
 - [Page](renderfactorycontextstate.md#page)
@@ -47,9 +48,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:251](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L251)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:262](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L262)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:251](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L251)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:262](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L262)
 
 ___
 
@@ -71,9 +72,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:256](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L256)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:267](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L267)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:256](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L256)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:267](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L267)
 
 ___
 
@@ -96,9 +97,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:246](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L246)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:257](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L257)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:246](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L246)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:257](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L257)
 
 ___
 
@@ -120,9 +121,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:323](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L323)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:334](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L334)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:323](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L323)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:334](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L334)
 
 ___
 
@@ -144,9 +145,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:333](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L333)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:344](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L344)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:333](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L333)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:344](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L344)
 
 ___
 
@@ -168,9 +169,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:298](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L298)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:309](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L309)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:298](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L298)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:309](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L309)
 
 ___
 
@@ -192,9 +193,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:313](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L313)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:324](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L324)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:313](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L313)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:324](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L324)
 
 ___
 
@@ -216,9 +217,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:303](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L303)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:314](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L314)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:303](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L303)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:314](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L314)
 
 ___
 
@@ -240,9 +241,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:328](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L328)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:339](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L339)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:328](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L328)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:339](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L339)
 
 ___
 
@@ -264,9 +265,33 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:318](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L318)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:329](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L329)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:318](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L318)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:329](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L329)
+
+___
+
+### ImportPopup
+
+• `Optional` **ImportPopup**: (`props`: [*ImportPopupProps*](importpopupprops.md)) => *Element*
+
+Import upload popup
+
+#### Type declaration:
+
+▸ (`props`: [*ImportPopupProps*](importpopupprops.md)): *Element*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`props` | [*ImportPopupProps*](importpopupprops.md) |
+
+**Returns:** *Element*
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:349](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L349)
+
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:349](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L349)
 
 ___
 
@@ -288,9 +313,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:263](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L263)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:274](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L274)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:263](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L263)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:274](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L274)
 
 ___
 
@@ -312,9 +337,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:278](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L278)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:289](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L289)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:278](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L278)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:289](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L289)
 
 ___
 
@@ -336,9 +361,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:283](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L283)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:294](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L294)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:283](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L283)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:294](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L294)
 
 ___
 
@@ -360,9 +385,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:293](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L293)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:304](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L304)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:293](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L293)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:304](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L304)
 
 ___
 
@@ -384,9 +409,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:288](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L288)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:299](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L299)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:288](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L288)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:299](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L299)
 
 ___
 
@@ -408,9 +433,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:308](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L308)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:319](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L319)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:308](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L308)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:319](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L319)
 
 ___
 
@@ -432,9 +457,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:268](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L268)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:279](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L279)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:268](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L268)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:279](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L279)
 
 ___
 
@@ -456,6 +481,6 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:273](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L273)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:284](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L284)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:273](https://github.com/ballware/ballware-client/blob/88ab695/packages/react-renderer/src/renderfactorycontext.ts#L273)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:284](https://github.com/ballware/ballware-client/blob/d3c33ca/packages/react-renderer/src/renderfactorycontext.ts#L284)

@@ -11,6 +11,7 @@ import {
   CrudItem,
   EditLayoutItem,
   EditLayoutItemOptions,
+  EntityCustomFunction,
   GridLayoutColumn,
   PageLayoutItem,
   PageToolbarItem,
@@ -113,6 +114,16 @@ export interface DeletePopupProps {
    * Identifier of item to be dropped
    */
   id: string;
+}
+
+/**
+ * Properties for import file upload dialog
+ */
+ export interface ImportPopupProps {  
+  /**
+   * Custom function for import
+   */
+  importFunction: EntityCustomFunction;
 }
 
 /**
@@ -331,6 +342,11 @@ export interface RenderFactoryContextState {
    * Provide detail edit popup
    */
   DetailEditPopup?: (props: DetailEditPopupProps) => JSX.Element;
+
+  /**
+   * Import upload popup
+   */
+  ImportPopup?: (props: ImportPopupProps) => JSX.Element;
 }
 
 export const RenderFactoryContext = createContext<RenderFactoryContextState>(

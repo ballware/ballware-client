@@ -38,7 +38,7 @@ export const CrudFunctions = ({
 
   const { lookups, lookupsComplete } = useContext(LookupContext);
 
-  const { EditPopup, DeletePopup, IframePopup, ForeignEditPopup } = useContext(
+  const { EditPopup, DeletePopup, IframePopup, ForeignEditPopup, ImportPopup } = useContext(
     RenderFactoryContext
   );
 
@@ -58,6 +58,7 @@ export const CrudFunctions = ({
     viewing,
     editing,
     deleteing,
+    importing,
     customEditing,
     customEditFunction,
     customEditParam,
@@ -183,6 +184,7 @@ export const CrudFunctions = ({
           id={item.Id}
         />
       )}
+      {ImportPopup && importing && customEditFunction && <ImportPopup importFunction={customEditFunction} />}
       {displayName &&
         getEditLayout &&
         lookups &&
