@@ -43,9 +43,9 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [attachment.ts:42](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L42)
+Defined in: [attachment.ts:42](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L42)
 
-Defined in: [attachment.ts:42](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L42)
+Defined in: [attachment.ts:42](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L42)
 
 ___
 
@@ -74,9 +74,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [attachment.ts:19](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L19)
+Defined in: [attachment.ts:19](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L19)
 
-Defined in: [attachment.ts:19](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L19)
+Defined in: [attachment.ts:19](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L19)
 
 ___
 
@@ -108,9 +108,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [attachment.ts:52](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L52)
+Defined in: [attachment.ts:52](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L52)
 
-Defined in: [attachment.ts:52](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L52)
+Defined in: [attachment.ts:52](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L52)
 
 ___
 
@@ -142,6 +142,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [attachment.ts:32](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L32)
+Defined in: [attachment.ts:32](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L32)
 
-Defined in: [attachment.ts:32](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/attachment.ts#L32)
+Defined in: [attachment.ts:32](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/attachment.ts#L32)

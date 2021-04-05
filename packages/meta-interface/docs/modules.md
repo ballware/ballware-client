@@ -28,8 +28,10 @@
 - [EntityCustomFunction](interfaces/entitycustomfunction.md)
 - [EntityGridOptions](interfaces/entitygridoptions.md)
 - [EntityMapOptions](interfaces/entitymapoptions.md)
+- [ExportFunctionOptions](interfaces/exportfunctionoptions.md)
 - [GridLayout](interfaces/gridlayout.md)
 - [GridLayoutColumn](interfaces/gridlayoutcolumn.md)
+- [ImportFunctionOptions](interfaces/importfunctionoptions.md)
 - [MetaAttachmentApi](interfaces/metaattachmentapi.md)
 - [MetaDocumentApi](interfaces/metadocumentapi.md)
 - [MetaDocumentationApi](interfaces/metadocumentationapi.md)
@@ -104,7 +106,7 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [rights.ts:49](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/rights.ts#L49)
+Defined in: [rights.ts:49](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/rights.ts#L49)
 
 ___
 
@@ -114,7 +116,7 @@ ___
 
 Generic data container type containing parameter values for data queries
 
-Defined in: [common.ts:11](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/common.ts#L11)
+Defined in: [common.ts:11](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/common.ts#L11)
 
 ___
 
@@ -124,7 +126,7 @@ ___
 
 Possible value types for business object properties
 
-Defined in: [cruditem.ts:11](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/cruditem.ts#L11)
+Defined in: [cruditem.ts:11](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/cruditem.ts#L11)
 
 ## Functions
 
@@ -147,7 +149,7 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [rights.ts:95](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/rights.ts#L95)
+Defined in: [rights.ts:95](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/rights.ts#L95)
 
 ___
 
@@ -172,4 +174,4 @@ Name | Type | Description |
 
 true if access is allowed, false if not
 
-Defined in: [rights.ts:68](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/rights.ts#L68)
+Defined in: [rights.ts:68](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/rights.ts#L68)

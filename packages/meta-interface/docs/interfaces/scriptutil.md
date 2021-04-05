@@ -40,9 +40,9 @@ Get date with first day of previous year
 
 **Returns:** Date
 
-Defined in: [scriptutil.ts:66](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L66)
+Defined in: [scriptutil.ts:66](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L66)
 
-Defined in: [scriptutil.ts:66](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L66)
+Defined in: [scriptutil.ts:66](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L66)
 
 ___
 
@@ -58,9 +58,9 @@ Get date with first day of current year
 
 **Returns:** Date
 
-Defined in: [scriptutil.ts:55](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L55)
+Defined in: [scriptutil.ts:55](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L55)
 
-Defined in: [scriptutil.ts:55](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L55)
+Defined in: [scriptutil.ts:55](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L55)
 
 ___
 
@@ -82,9 +82,9 @@ Name | Type |
 
 **Returns:** Date
 
-Defined in: [scriptutil.ts:45](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L45)
+Defined in: [scriptutil.ts:45](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L45)
 
-Defined in: [scriptutil.ts:45](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L45)
+Defined in: [scriptutil.ts:45](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L45)
 
 ___
 
@@ -100,9 +100,9 @@ Get Date with last day of previous year
 
 **Returns:** Date
 
-Defined in: [scriptutil.ts:71](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L71)
+Defined in: [scriptutil.ts:71](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L71)
 
-Defined in: [scriptutil.ts:71](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L71)
+Defined in: [scriptutil.ts:71](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L71)
 
 ___
 
@@ -118,9 +118,9 @@ Get Date with last day of current year
 
 **Returns:** Date
 
-Defined in: [scriptutil.ts:60](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L60)
+Defined in: [scriptutil.ts:60](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L60)
 
-Defined in: [scriptutil.ts:60](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L60)
+Defined in: [scriptutil.ts:60](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L60)
 
 ___
 
@@ -143,9 +143,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:129](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L129)
+Defined in: [scriptutil.ts:129](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L129)
 
-Defined in: [scriptutil.ts:129](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L129)
+Defined in: [scriptutil.ts:129](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L129)
 
 ___
 
@@ -170,9 +170,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:137](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L137)
+Defined in: [scriptutil.ts:137](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L137)
 
-Defined in: [scriptutil.ts:137](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L137)
+Defined in: [scriptutil.ts:137](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L137)
 
 ___
 
@@ -196,9 +196,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:111](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L111)
+Defined in: [scriptutil.ts:111](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L111)
 
-Defined in: [scriptutil.ts:111](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L111)
+Defined in: [scriptutil.ts:111](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L111)
 
 ___
 
@@ -222,9 +222,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:120](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L120)
+Defined in: [scriptutil.ts:120](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L120)
 
-Defined in: [scriptutil.ts:120](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L120)
+Defined in: [scriptutil.ts:120](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L120)
 
 ___
 
@@ -246,9 +246,9 @@ Name | Type |
 
 **Returns:** Date
 
-Defined in: [scriptutil.ts:50](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L50)
+Defined in: [scriptutil.ts:50](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L50)
 
-Defined in: [scriptutil.ts:50](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L50)
+Defined in: [scriptutil.ts:50](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L50)
 
 ___
 
@@ -274,9 +274,9 @@ Name | Type |
 
 **Returns:** *Record*<string, unknown\> \| *Record*<string, unknown\>[]
 
-Defined in: [scriptutil.ts:28](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L28)
+Defined in: [scriptutil.ts:28](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L28)
 
-Defined in: [scriptutil.ts:28](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L28)
+Defined in: [scriptutil.ts:28](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L28)
 
 ___
 
@@ -302,9 +302,9 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [scriptutil.ts:38](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L38)
+Defined in: [scriptutil.ts:38](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L38)
 
-Defined in: [scriptutil.ts:38](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L38)
+Defined in: [scriptutil.ts:38](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L38)
 
 ___
 
@@ -320,9 +320,9 @@ Request current user access token
 
 **Returns:** *string*
 
-Defined in: [scriptutil.ts:15](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L15)
+Defined in: [scriptutil.ts:15](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L15)
 
-Defined in: [scriptutil.ts:15](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L15)
+Defined in: [scriptutil.ts:15](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L15)
 
 ___
 
@@ -338,9 +338,9 @@ Generate new UUID
 
 **Returns:** *string*
 
-Defined in: [scriptutil.ts:20](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L20)
+Defined in: [scriptutil.ts:20](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L20)
 
-Defined in: [scriptutil.ts:20](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L20)
+Defined in: [scriptutil.ts:20](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L20)
 
 ___
 
@@ -367,9 +367,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:103](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L103)
+Defined in: [scriptutil.ts:103](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L103)
 
-Defined in: [scriptutil.ts:103](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L103)
+Defined in: [scriptutil.ts:103](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L103)
 
 ___
 
@@ -399,9 +399,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:91](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L91)
+Defined in: [scriptutil.ts:91](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L91)
 
-Defined in: [scriptutil.ts:91](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L91)
+Defined in: [scriptutil.ts:91](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L91)
 
 ___
 
@@ -428,6 +428,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [scriptutil.ts:79](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L79)
+Defined in: [scriptutil.ts:79](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L79)
 
-Defined in: [scriptutil.ts:79](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/scriptutil.ts#L79)
+Defined in: [scriptutil.ts:79](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/scriptutil.ts#L79)

@@ -44,9 +44,9 @@ Name | Type |
 
 **Returns:** *Promise*<unknown[]\>
 
-Defined in: [lookup.ts:98](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L98)
+Defined in: [lookup.ts:98](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L98)
 
-Defined in: [lookup.ts:98](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L98)
+Defined in: [lookup.ts:98](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L98)
 
 ___
 
@@ -78,9 +78,9 @@ Name | Type |
 
 **Returns:** *Promise*<unknown[]\>
 
-Defined in: [lookup.ts:111](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L111)
+Defined in: [lookup.ts:111](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L111)
 
-Defined in: [lookup.ts:111](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L111)
+Defined in: [lookup.ts:111](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L111)
 
 ___
 
@@ -111,9 +111,9 @@ Name | Type |
 
 **Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: [lookup.ts:32](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L32)
+Defined in: [lookup.ts:32](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L32)
 
-Defined in: [lookup.ts:32](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L32)
+Defined in: [lookup.ts:32](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L32)
 
 ___
 
@@ -144,9 +144,9 @@ Name | Type |
 
 **Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: [lookup.ts:57](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L57)
+Defined in: [lookup.ts:57](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L57)
 
-Defined in: [lookup.ts:57](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L57)
+Defined in: [lookup.ts:57](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L57)
 
 ___
 
@@ -180,9 +180,9 @@ Name | Type |
 
 **Returns:** (`id`: *string*) => *Promise*<Record<string, unknown\>\>
 
-Defined in: [lookup.ts:85](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L85)
+Defined in: [lookup.ts:85](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L85)
 
-Defined in: [lookup.ts:85](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L85)
+Defined in: [lookup.ts:85](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L85)
 
 ___
 
@@ -211,9 +211,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [lookup.ts:19](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L19)
+Defined in: [lookup.ts:19](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L19)
 
-Defined in: [lookup.ts:19](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L19)
+Defined in: [lookup.ts:19](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L19)
 
 ___
 
@@ -242,9 +242,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [lookup.ts:44](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L44)
+Defined in: [lookup.ts:44](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L44)
 
-Defined in: [lookup.ts:44](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L44)
+Defined in: [lookup.ts:44](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L44)
 
 ___
 
@@ -276,6 +276,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [lookup.ts:70](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L70)
+Defined in: [lookup.ts:70](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L70)
 
-Defined in: [lookup.ts:70](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/lookup.ts#L70)
+Defined in: [lookup.ts:70](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/lookup.ts#L70)

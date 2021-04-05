@@ -37,6 +37,6 @@ Name | Type |
 
 **Returns:** *Promise*<[*CompiledPageData*](compiledpagedata.md)\>
 
-Defined in: [page.ts:388](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/page.ts#L388)
+Defined in: [page.ts:388](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/page.ts#L388)
 
-Defined in: [page.ts:388](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-interface/src/page.ts#L388)
+Defined in: [page.ts:388](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/page.ts#L388)
