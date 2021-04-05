@@ -38,6 +38,7 @@
 
 - [AttachmentContext](modules.md#attachmentcontext)
 - [CrudContext](modules.md#crudcontext)
+- [DefaultEditFunction](modules.md#defaulteditfunction)
 - [EditContext](modules.md#editcontext)
 - [LookupContext](modules.md#lookupcontext)
 - [MetaContext](modules.md#metacontext)
@@ -72,7 +73,7 @@ Name | Type |
 
 **Returns:** [*AutocompleteStoreDescriptor*](interfaces/autocompletestoredescriptor.md)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:73](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/lookupcontext.ts#L73)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:73](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L73)
 
 ___
 
@@ -96,7 +97,7 @@ Name | Type |
 
 **Returns:** [*LookupDescriptor*](interfaces/lookupdescriptor.md)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:67](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/lookupcontext.ts#L67)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:67](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L67)
 
 ## Variables
 
@@ -104,7 +105,7 @@ Defined in: [packages/react-contexts/src/lookupcontext.ts:67](https://github.com
 
 • `Const` **AttachmentContext**: *Context*<[*AttachmentContextState*](interfaces/attachmentcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/attachmentcontext.ts:46](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/attachmentcontext.ts#L46)
+Defined in: [packages/react-contexts/src/attachmentcontext.ts:46](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/attachmentcontext.ts#L46)
 
 ___
 
@@ -112,7 +113,15 @@ ___
 
 • `Const` **CrudContext**: *Context*<[*CrudContextState*](interfaces/crudcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:192](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/crudcontext.ts#L192)
+Defined in: [packages/react-contexts/src/crudcontext.ts:192](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/crudcontext.ts#L192)
+
+___
+
+### DefaultEditFunction
+
+• `Const` **DefaultEditFunction**: EntityCustomFunction
+
+Defined in: [packages/react-contexts/src/editcontext.ts:31](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L31)
 
 ___
 
@@ -120,7 +129,7 @@ ___
 
 • `Const` **EditContext**: *Context*<[*EditContextState*](interfaces/editcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/editcontext.ts:61](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L61)
+Defined in: [packages/react-contexts/src/editcontext.ts:68](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L68)
 
 ___
 
@@ -128,7 +137,7 @@ ___
 
 • `Const` **LookupContext**: *Context*<[*LookupContextState*](interfaces/lookupcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:160](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/lookupcontext.ts#L160)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:160](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L160)
 
 ___
 
@@ -136,7 +145,7 @@ ___
 
 • `Const` **MetaContext**: *Context*<[*MetaContextState*](interfaces/metacontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:371](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/metacontext.ts#L371)
+Defined in: [packages/react-contexts/src/metacontext.ts:371](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/metacontext.ts#L371)
 
 ___
 
@@ -144,7 +153,7 @@ ___
 
 • `Const` **NotificationContext**: *Context*<[*NotificationContextState*](interfaces/notificationcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:58](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/notificationcontext.ts#L58)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:58](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/notificationcontext.ts#L58)
 
 ___
 
@@ -152,7 +161,7 @@ ___
 
 • `Const` **NotificationDisplayContext**: *Context*<[*NotificationDisplayContextState*](interfaces/notificationdisplaycontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:61](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/notificationcontext.ts#L61)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:61](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/notificationcontext.ts#L61)
 
 ___
 
@@ -160,7 +169,7 @@ ___
 
 • `Const` **PageContext**: *Context*<[*PageContextState*](interfaces/pagecontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/pagecontext.ts:90](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/pagecontext.ts#L90)
+Defined in: [packages/react-contexts/src/pagecontext.ts:90](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/pagecontext.ts#L90)
 
 ___
 
@@ -168,7 +177,7 @@ ___
 
 • `Const` **ProviderFactoryContext**: *Context*<[*ProviderFactoryContextState*](interfaces/providerfactorycontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:89](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/providerfactorycontext.ts#L89)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:89](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L89)
 
 ___
 
@@ -176,7 +185,7 @@ ___
 
 • `Const` **RightsContext**: *Context*<[*RightsContextState*](interfaces/rightscontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:103](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/rightscontext.ts#L103)
+Defined in: [packages/react-contexts/src/rightscontext.ts:103](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/rightscontext.ts#L103)
 
 ___
 
@@ -184,7 +193,7 @@ ___
 
 • `Const` **SettingsContext**: *Context*<[*SettingsContextState*](interfaces/settingscontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/settingscontext.ts:113](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/settingscontext.ts#L113)
+Defined in: [packages/react-contexts/src/settingscontext.ts:113](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/settingscontext.ts#L113)
 
 ___
 
@@ -192,7 +201,7 @@ ___
 
 • `Const` **StatisticContext**: *Context*<[*StatisticContextState*](interfaces/statisticcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/statisticcontext.ts:48](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/statisticcontext.ts#L48)
+Defined in: [packages/react-contexts/src/statisticcontext.ts:48](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/statisticcontext.ts#L48)
 
 ___
 
@@ -200,4 +209,4 @@ ___
 
 • `Const` **TenantContext**: *Context*<[*TenantContextState*](interfaces/tenantcontextstate.md)\>
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:41](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/tenantcontext.ts#L41)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:41](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/tenantcontext.ts#L41)

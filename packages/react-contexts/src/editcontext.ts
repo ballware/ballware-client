@@ -6,7 +6,7 @@
  */
 
 import { createContext } from 'react';
-import { CrudItem, ValueType, EditLayout } from '@ballware/meta-interface';
+import { CrudItem, ValueType, EditLayout, EntityCustomFunction } from '@ballware/meta-interface';
 
 /**
  * Default edit modes for items
@@ -28,6 +28,13 @@ export enum EditModes {
   CREATE = 'CREATE',
 }
 
+export const DefaultEditFunction = {
+  id: 'primary',
+  type: 'edit',
+  text: 'Default edit operation',  
+  editLayout: 'primary'
+} as EntityCustomFunction
+
 /**
  * Context for functionality to edit a specific item
  */
@@ -48,9 +55,9 @@ export interface EditContextState {
   item?: CrudItem | Array<CrudItem> | ValueType;
 
   /**
-   * Function identifier when editing with custom function
+   * Edit function (custom or DefaultEditFunction)
    */
-  functionIdentifier?: string;
+  editFunction?: EntityCustomFunction;
 
   /**
    * Replacing edited item

@@ -21,7 +21,7 @@ Context for providing tenant metadata
 
 Unique name of tenant
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:21](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/tenantcontext.ts#L21)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:21](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/tenantcontext.ts#L21)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Navigation layout metadata for tenant
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:26](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/tenantcontext.ts#L26)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:26](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/tenantcontext.ts#L26)
 
 ___
 
@@ -57,9 +57,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/tenantcontext.ts#L38)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/tenantcontext.ts#L38)
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/tenantcontext.ts#L38)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/tenantcontext.ts#L38)
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 List of pages for tenant
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:31](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/tenantcontext.ts#L31)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:31](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/tenantcontext.ts#L31)

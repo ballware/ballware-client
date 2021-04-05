@@ -8,13 +8,23 @@ Context for functionality to edit a specific item
 
 ### Properties
 
+- [editFunction](editcontextstate.md#editfunction)
 - [editLayout](editcontextstate.md#editlayout)
-- [functionIdentifier](editcontextstate.md#functionidentifier)
 - [item](editcontextstate.md#item)
 - [mode](editcontextstate.md#mode)
 - [setItem](editcontextstate.md#setitem)
 
 ## Properties
+
+### editFunction
+
+• `Optional` **editFunction**: EntityCustomFunction
+
+Edit function (custom or DefaultEditFunction)
+
+Defined in: [packages/react-contexts/src/editcontext.ts:60](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L60)
+
+___
 
 ### editLayout
 
@@ -22,17 +32,7 @@ Context for functionality to edit a specific item
 
 Edit layout for rendering form
 
-Defined in: [packages/react-contexts/src/editcontext.ts:43](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L43)
-
-___
-
-### functionIdentifier
-
-• `Optional` **functionIdentifier**: *string*
-
-Function identifier when editing with custom function
-
-Defined in: [packages/react-contexts/src/editcontext.ts:53](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L53)
+Defined in: [packages/react-contexts/src/editcontext.ts:50](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L50)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 Edited item
 
-Defined in: [packages/react-contexts/src/editcontext.ts:48](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L48)
+Defined in: [packages/react-contexts/src/editcontext.ts:55](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L55)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Current editing mode
 
-Defined in: [packages/react-contexts/src/editcontext.ts:38](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L38)
+Defined in: [packages/react-contexts/src/editcontext.ts:45](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L45)
 
 ___
 
@@ -74,6 +74,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/editcontext.ts:58](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L58)
+Defined in: [packages/react-contexts/src/editcontext.ts:65](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L65)
 
-Defined in: [packages/react-contexts/src/editcontext.ts:58](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/editcontext.ts#L58)
+Defined in: [packages/react-contexts/src/editcontext.ts:65](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/editcontext.ts#L65)

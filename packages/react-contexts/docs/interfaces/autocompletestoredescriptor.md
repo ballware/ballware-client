@@ -24,6 +24,6 @@ Fetch list of autocomplete entries
 
 **Returns:** *Promise*<unknown[]\>
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:35](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/lookupcontext.ts#L35)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:35](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L35)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:35](https://github.com/ballware/ballware-client/blob/fc69a2b/packages/react-contexts/src/lookupcontext.ts#L35)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:35](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L35)
