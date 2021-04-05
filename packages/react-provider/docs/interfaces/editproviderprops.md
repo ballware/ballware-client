@@ -8,12 +8,22 @@ Edit provider properties
 
 ### Properties
 
+- [editFunction](editproviderprops.md#editfunction)
 - [editLayout](editproviderprops.md#editlayout)
-- [functionIdentifier](editproviderprops.md#functionidentifier)
 - [item](editproviderprops.md#item)
 - [mode](editproviderprops.md#mode)
 
 ## Properties
+
+### editFunction
+
+• `Optional` **editFunction**: EntityCustomFunction
+
+Edit operation
+
+Defined in: [editprovider.tsx:38](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/editprovider.tsx#L38)
+
+___
 
 ### editLayout
 
@@ -21,17 +31,7 @@ Edit provider properties
 
 Edit layout used for edit operation
 
-Defined in: [editprovider.tsx:23](https://github.com/ballware/ballware-client/blob/b80f26b/packages/react-provider/src/editprovider.tsx#L23)
-
-___
-
-### functionIdentifier
-
-• `Optional` **functionIdentifier**: *string*
-
-Custom edit function identifier if custom edit operation
-
-Defined in: [editprovider.tsx:38](https://github.com/ballware/ballware-client/blob/b80f26b/packages/react-provider/src/editprovider.tsx#L38)
+Defined in: [editprovider.tsx:23](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/editprovider.tsx#L23)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Item to be edited
 
-Defined in: [editprovider.tsx:28](https://github.com/ballware/ballware-client/blob/b80f26b/packages/react-provider/src/editprovider.tsx#L28)
+Defined in: [editprovider.tsx:28](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/editprovider.tsx#L28)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 Edit mode for edit operation
 
-Defined in: [editprovider.tsx:33](https://github.com/ballware/ballware-client/blob/b80f26b/packages/react-provider/src/editprovider.tsx#L33)
+Defined in: [editprovider.tsx:33](https://github.com/ballware/ballware-client/blob/7c13abb/packages/react-provider/src/editprovider.tsx#L33)

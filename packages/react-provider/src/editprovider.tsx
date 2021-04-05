@@ -11,7 +11,7 @@ import {
   EditContext,
   EditContextState,
 } from '@ballware/react-contexts';
-import { CrudItem, ValueType, EditLayout } from '@ballware/meta-interface';
+import { CrudItem, ValueType, EditLayout, EntityCustomFunction } from '@ballware/meta-interface';
 
 /**
  * Edit provider properties
@@ -33,9 +33,9 @@ export interface EditProviderProps {
   mode: EditModes;
 
   /**
-   * Custom edit function identifier if custom edit operation
+   * Edit operation
    */
-  functionIdentifier?: string;
+  editFunction?: EntityCustomFunction;
 }
 
 /**
@@ -44,14 +44,14 @@ export interface EditProviderProps {
 export const EditProvider = ({
   item,
   mode,
-  functionIdentifier,
+  editFunction,
   editLayout,
   children,
 }: PropsWithChildren<EditProviderProps>): JSX.Element => {
   const [changedItem, setChangedItem] = useState(item);
   const [value, setValue] = useState({
     mode: mode,
-    functionIdentifier: functionIdentifier,
+    editFunction: editFunction,
     editLayout: editLayout,
   } as EditContextState);
 
