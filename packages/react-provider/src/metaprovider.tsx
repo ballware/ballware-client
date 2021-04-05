@@ -371,12 +371,13 @@ export const MetaProvider = ({
                 )
               : item,
           query: (query, params) => entityApi.query(token, query, params),
-          byId: id => entityApi.byId(token, id),
+          byId: (functionIdentifier, id) => entityApi.byId(token, functionIdentifier, id),
           create: params => entityApi.new(token, params),
-          save: item => entityApi.save(token, item),
-          saveBatch: items => entityApi.saveBatch(token, items),
+          save: (functionIdentifier, item) => entityApi.save(token, functionIdentifier, item),
+          saveBatch: (functionIdentifier, items) => entityApi.saveBatch(token, functionIdentifier, items),
           drop: id => entityApi.drop(token, id),
-
+          importItems: (functionIdentifier, file) => entityApi.importItems(token, functionIdentifier, file),
+          exportItems: (functionIdentifier, ids) => entityApi.exportItems(token, functionIdentifier, ids),
           prepareCustomFunction: (identifier, selection, execute, message) => {
             if (metaData.compiledCustomScripts?.prepareCustomFunction) {
               metaData.compiledCustomScripts.prepareCustomFunction(

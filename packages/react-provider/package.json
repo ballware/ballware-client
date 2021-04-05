@@ -76,8 +76,8 @@
   },
   "dependencies": {
     "@ballware/identity-interface": "^6.1.1",
-    "@ballware/meta-interface": "^6.1.1",
-    "@ballware/react-contexts": "^6.1.1"
+    "@ballware/meta-interface": "^6.2.0",
+    "@ballware/react-contexts": "^6.2.2"
   },
   "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
 }

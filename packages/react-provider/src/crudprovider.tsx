@@ -58,6 +58,8 @@ export const CrudProvider = ({
     save,
     saveBatch,
     drop,
+    exportItems,
+    importItems
   } = useContext(MetaContext);
 
   useEffect(() => {
@@ -73,6 +75,8 @@ export const CrudProvider = ({
       save &&
       saveBatch &&
       drop &&
+      exportItems &&
+      importItems &&
       fetchParams
     ) {
       setValue({
@@ -111,7 +115,7 @@ export const CrudProvider = ({
             }
           : undefined,
         add: editLayout => {
-          create(headParams)
+          create('primary', headParams)
             .then(result => {
               setValue(previousValue => {
                 return {
@@ -125,7 +129,7 @@ export const CrudProvider = ({
             .catch(reason => showError(reason));
         },
         view: (id, editLayout) => {
-          byId(id)
+          byId('primary', id)
             .then(result => {
               setValue(previousValue => {
                 return {
@@ -139,7 +143,7 @@ export const CrudProvider = ({
             .catch(reason => showError(reason));
         },
         edit: (id, editLayout) => {
-          byId(id)
+          byId('primary', id)
             .then(result => {
               setValue(previousValue => {
                 return {
@@ -159,8 +163,10 @@ export const CrudProvider = ({
               adding: false,
               viewing: false,
               editing: false,
-              deleteing: false,
+              deleteing: false,              
               customEditing: false,
+              importing: false,
+              exporting: false,
               editLayout: undefined,
               item: undefined,
               customEditFunction: undefined,
@@ -169,7 +175,7 @@ export const CrudProvider = ({
           });
         },
         remove: id => {
-          byId(id)
+          byId('primary', id)
             .then(result => {
               setValue(previousValue => {
                 return {
@@ -181,10 +187,10 @@ export const CrudProvider = ({
             })
             .catch(reason => showError(reason));
         },
-        save: item => {
+        save: (item, customFunction) => {
           const saveItem = { ...item };
 
-          save(mapOutgoingItem(saveItem))
+          save(customFunction?.id ?? 'primary', mapOutgoingItem(saveItem))
             .then(() => {
               showInfo('editing.notifications.saved');
               setValue(previousValue => {
@@ -207,10 +213,10 @@ export const CrudProvider = ({
               showError(reason.toString());
             });
         },
-        saveBatch: items => {
+        saveBatch: (items, customFunction) => {
           const mappedItems = items.map(i => mapOutgoingItem(i));
 
-          saveBatch(mappedItems)
+          saveBatch(customFunction?.id ?? 'primary', mappedItems)
             .then(() => {
               showInfo('editing.notifications.saved');
               setValue(previousValue => {
@@ -252,6 +258,26 @@ export const CrudProvider = ({
               setRefreshing(true);
             })
             .catch(reason => showError(reason));
+        },
+        exportItems: (customFunction, items) => {
+          if (items && items.length > 0) {
+            return exportItems(customFunction.id, items?.map(i => i.Id));
+          } else {
+            showInfo('editing.notifications.noitems');
+            return Promise.resolve(undefined);
+          }
+        },
+        importItems: (customFunction) => {          
+          setValue(previousValue => {
+            return {
+              ...previousValue,
+              importing: true,
+              customEditFunction: customFunction              
+            };
+          });
+        },
+        importFile: (customFunction, file) => {
+          return importItems(customFunction.id, file).catch(reason => showError(reason));
         },
         customEdit: (customFunction, items) => {
           prepareCustomFunction(
