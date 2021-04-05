@@ -39,9 +39,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:39](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L39)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:39](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L39)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:39](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L39)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:39](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L39)
 
 ___
 
@@ -63,33 +63,33 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:44](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L44)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:44](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L44)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:44](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L44)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:44](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L44)
 
 ___
 
 ### EditProvider
 
-• `Optional` **EditProvider**: (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: *CrudItem* \| *CrudItem*[] \| ValueType ; `mode`: [*EditModes*](../enums/editmodes.md)  }\>) => *Element*
+• `Optional` **EditProvider**: (`props`: *PropsWithChildren*<{ `editFunction`: *undefined* \| EntityCustomFunction ; `editLayout`: *undefined* \| EditLayout ; `item`: *CrudItem* \| *CrudItem*[] \| ValueType ; `mode`: [*EditModes*](../enums/editmodes.md)  }\>) => *Element*
 
 Instantiate item edit provider
 
 #### Type declaration:
 
-▸ (`props`: *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: *CrudItem* \| *CrudItem*[] \| ValueType ; `mode`: [*EditModes*](../enums/editmodes.md)  }\>): *Element*
+▸ (`props`: *PropsWithChildren*<{ `editFunction`: *undefined* \| EntityCustomFunction ; `editLayout`: *undefined* \| EditLayout ; `item`: *CrudItem* \| *CrudItem*[] \| ValueType ; `mode`: [*EditModes*](../enums/editmodes.md)  }\>): *Element*
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`props` | *PropsWithChildren*<{ `editLayout`: *undefined* \| EditLayout ; `functionIdentifier?`: *string* ; `item`: *CrudItem* \| *CrudItem*[] \| ValueType ; `mode`: [*EditModes*](../enums/editmodes.md)  }\> |
+`props` | *PropsWithChildren*<{ `editFunction`: *undefined* \| EntityCustomFunction ; `editLayout`: *undefined* \| EditLayout ; `item`: *CrudItem* \| *CrudItem*[] \| ValueType ; `mode`: [*EditModes*](../enums/editmodes.md)  }\> |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:69](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L69)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:69](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L69)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:69](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L69)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:69](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L69)
 
 ___
 
@@ -112,9 +112,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:54](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L54)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:54](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L54)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:54](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L54)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:54](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L54)
 
 ___
 
@@ -136,9 +136,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:27](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L27)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:27](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L27)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:27](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L27)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:27](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L27)
 
 ___
 
@@ -161,9 +161,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:59](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L59)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:59](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L59)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:59](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L59)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:59](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L59)
 
 ___
 
@@ -185,9 +185,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:20](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L20)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:20](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L20)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:20](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L20)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:20](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L20)
 
 ___
 
@@ -209,9 +209,9 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:81](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L81)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:81](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L81)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:81](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L81)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:81](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L81)
 
 ___
 
@@ -234,6 +234,6 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:64](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L64)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:64](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L64)
 
-Defined in: [packages/react-contexts/src/providerfactorycontext.ts:64](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/providerfactorycontext.ts#L64)
+Defined in: [packages/react-contexts/src/providerfactorycontext.ts:64](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/providerfactorycontext.ts#L64)

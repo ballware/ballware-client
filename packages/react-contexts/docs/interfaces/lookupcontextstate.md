@@ -35,9 +35,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:145](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L145)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:145](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L145)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:145](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L145)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:145](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L145)
 
 ___
 
@@ -67,9 +67,9 @@ Name | Type |
 
 **Returns:** *undefined* \| [*LookupDescriptor*](lookupdescriptor.md)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:153](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L153)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:153](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L153)
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:153](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L153)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:153](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L153)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 Container for created lookups
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:131](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L131)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:131](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L131)
 
 ___
 
@@ -89,4 +89,4 @@ ___
 
 True if requested lookups are completely available
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:139](https://github.com/ballware/ballware-client/blob/13e0b60/packages/react-contexts/src/lookupcontext.ts#L139)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:139](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L139)

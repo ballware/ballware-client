@@ -6,7 +6,7 @@
  */
 
 import { createContext, PropsWithChildren } from 'react';
-import { CrudItem, ValueType, EditLayout } from '@ballware/meta-interface';
+import { CrudItem, ValueType, EditLayout, EntityCustomFunction } from '@ballware/meta-interface';
 
 import { EditModes } from './editcontext';
 
@@ -71,7 +71,7 @@ export interface ProviderFactoryContextState {
       mode: EditModes;
       editLayout: EditLayout | undefined;
       item: CrudItem | Array<CrudItem> | ValueType;
-      functionIdentifier?: string | undefined;
+      editFunction: EntityCustomFunction | undefined;
     }>
   ) => JSX.Element;
 
