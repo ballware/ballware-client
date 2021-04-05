@@ -8,11 +8,11 @@
 import { QueryParams } from '@ballware/meta-interface';
 
 /**
- * Convert param object to url parameter
+ * Convert param object to additional url parameter
  * @param params Object containing url parameter
  * @returns Url encoded string containing parameter
  */
-export function paramsToUrl(params: QueryParams) {
+export function additionalParamsToUrl(params: QueryParams) {
   let result = '';
 
   if (params) {
@@ -28,8 +28,6 @@ export function paramsToUrl(params: QueryParams) {
       }
     });
   }
-
-  if (result.startsWith('&')) result = result.replace('&', '?');
 
   return result;
 }

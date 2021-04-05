@@ -12,7 +12,7 @@ import {
   StatisticLayout,
   QueryParams,
 } from '@ballware/meta-interface';
-import { paramsToUrl } from './util';
+import { additionalParamsToUrl } from './util';
 import * as JSON5 from 'json5';
 import axios from 'axios';
 
@@ -104,7 +104,7 @@ const metadataFunc = (serviceBaseUrl: string) => (
   token: string,
   identifier: string
 ): Promise<CompiledStatistic> => {
-  const url = `${serviceBaseUrl}api/statistic/metadataforidentifier/${identifier}`;
+  const url = `${serviceBaseUrl}api/statistic/metadataforidentifier?identifier=${encodeURIComponent(identifier)}`;
 
   return axios
     .get<Statistic>(url, { headers: { Authorization: `Bearer ${token}` } })
@@ -116,7 +116,7 @@ const dataFunc = (serviceBaseUrl: string) => (
   identifier: string,
   params: QueryParams
 ): Promise<Array<Record<string, unknown>>> => {
-  const url = `${serviceBaseUrl}api/statistic/dataforidentifier/${identifier}/${paramsToUrl(
+  const url = `${serviceBaseUrl}api/statistic/dataforidentifier?identifier=${encodeURIComponent(identifier)}${additionalParamsToUrl(
     params
   )}`;
 

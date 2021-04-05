@@ -33,7 +33,7 @@ Name | Type |
 
 **Returns:** CompiledStatistic
 
-Defined in: [statistic.ts:33](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/statistic.ts#L33)
+Defined in: [statistic.ts:33](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/statistic.ts#L33)
 
 ___
 
@@ -53,7 +53,7 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [attachment.ts:70](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/attachment.ts#L70)
+Defined in: [attachment.ts:70](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/attachment.ts#L70)
 
 ___
 
@@ -74,7 +74,7 @@ Name | Type |
 
 Adapter object providing data operations
 
-Defined in: [document.ts:40](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/document.ts#L40)
+Defined in: [document.ts:40](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/document.ts#L40)
 
 ___
 
@@ -94,7 +94,7 @@ Name | Type |
 
 Adapter object providing data operations
 
-Defined in: [documentation.ts:29](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/documentation.ts#L29)
+Defined in: [documentation.ts:29](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/documentation.ts#L29)
 
 ___
 
@@ -114,7 +114,7 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [entity.ts:552](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/entity.ts#L552)
+Defined in: [entity.ts:552](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/entity.ts#L552)
 
 ___
 
@@ -134,7 +134,7 @@ Name | Type |
 
 Adapter object providing data operations
 
-Defined in: [genericentity.ts:100](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/genericentity.ts#L100)
+Defined in: [genericentity.ts:134](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/genericentity.ts#L134)
 
 ___
 
@@ -154,7 +154,7 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [lookup.ts:119](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/lookup.ts#L119)
+Defined in: [lookup.ts:119](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/lookup.ts#L119)
 
 ___
 
@@ -174,7 +174,7 @@ Name | Type |
 
 Adapter object providing data operations
 
-Defined in: [page.ts:191](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/page.ts#L191)
+Defined in: [page.ts:191](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/page.ts#L191)
 
 ___
 
@@ -194,7 +194,7 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [pickvalue.ts:44](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/pickvalue.ts#L44)
+Defined in: [pickvalue.ts:44](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/pickvalue.ts#L44)
 
 ___
 
@@ -214,7 +214,7 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [processingstate.ts:58](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/processingstate.ts#L58)
+Defined in: [processingstate.ts:58](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/processingstate.ts#L58)
 
 ___
 
@@ -234,7 +234,7 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [statistic.ts:135](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/statistic.ts#L135)
+Defined in: [statistic.ts:135](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/statistic.ts#L135)
 
 ___
 
@@ -254,4 +254,4 @@ Name | Type | Description |
 
 Adapter object providing data operations
 
-Defined in: [tenant.ts:63](https://github.com/ballware/ballware-client/blob/88ab695/packages/meta-backend/src/tenant.ts#L63)
+Defined in: [tenant.ts:63](https://github.com/ballware/ballware-client/blob/7110fcc/packages/meta-backend/src/tenant.ts#L63)
