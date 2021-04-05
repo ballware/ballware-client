@@ -57,30 +57,34 @@ export interface MetaContextState {
 
   /**
    * Fetch item by id
+   * @param functionIdentifier Identifier of edit function
    * @param id: Unique identifier of item to fetch
    * @returns Promise resolving item by id if available
    */
-  byId?: (id: string) => Promise<CrudItem>;
+  byId?: (functionIdentifier: string, id: string) => Promise<CrudItem>;
 
   /**
    * Fetch new prepared item for add
+   * @param functionIdentifier Identifier of edit function
    * @param params Optional parameter values for initialization
    */
-  create?: (params?: QueryParams) => Promise<CrudItem>;
+  create?: (functionIdentifier: string, params?: QueryParams) => Promise<CrudItem>;
 
   /**
    * Save changed or add new item
+   * @param functionIdentifier Identifier of edit function
    * @param item Changed or new created item
    * @returns Promise resolving when save operation has completed
    */
-  save?: (item: CrudItem) => Promise<void>;
+  save?: (functionIdentifier: string, item: CrudItem) => Promise<void>;
 
   /**
    * Save collection of changed or new created items
+   * @param functionIdentifier Identifier of edit function
    * @param items Collection of items
    * @returns Promise resolving when save operation has completed
    */
-  saveBatch?: (items: CrudItem[]) => Promise<void>;
+  saveBatch?: (functionIdentifier: string, items: CrudItem[]) => Promise<void>;
 
   /**
    * Drop item by id
