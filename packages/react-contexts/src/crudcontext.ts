@@ -131,15 +131,16 @@ export interface CrudContextState {
   /**
    * Save changed/added item
    * @param item Edited item
+   * @param customFunction Custom edit function
    */
-  save?: (item: CrudItem) => void;
+  save?: (item: CrudItem, customFunction: EntityCustomFunction) => void;
 
   /**
    * Save changed/added multiple items
    * @param items Edited items
+   * @param customFunction Custom edit function
    */
-
-  saveBatch?: (items: CrudItem[]) => void;
+  saveBatch?: (items: CrudItem[], customFunction: EntityCustomFunction) => void;
 
   /**
    * Drop item
