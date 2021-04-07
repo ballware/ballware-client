@@ -5,12 +5,12 @@
   "dependencies": {
     "@ballware/identity-backend": "^6.1.1",
     "@ballware/identity-interface": "^6.1.1",
-    "@ballware/meta-backend": "^6.1.1",
-    "@ballware/meta-interface": "^6.1.1",
-    "@ballware/react-contexts": "^6.1.1",
-    "@ballware/react-provider": "^6.1.2",
-    "@ballware/react-renderer": "^6.1.1",
-    "@ballware/react-renderer-dx": "^6.1.3"
+    "@ballware/meta-backend": "^6.2.0",
+    "@ballware/meta-interface": "^6.2.0",
+    "@ballware/react-contexts": "^6.2.4",
+    "@ballware/react-provider": "^6.2.2",
+    "@ballware/react-renderer": "^6.2.1",
+    "@ballware/react-renderer-dx": "^6.2.0"
   },
   "scripts": {
     "start": "set HTTPS=true&&react-app-rewired --max-http-header-size=32768 start",
@@ -66,6 +66,7 @@
     "oidc-client": "^1.11.5",
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",
+    "react-app-rewire-alias": "^1.0.3",
     "react-app-rewired": "^2.1.8",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.7",

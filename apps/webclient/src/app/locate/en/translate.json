@@ -44,6 +44,8 @@
                 "edit": "Edit",
                 "remove": "Remove",
                 "print": "Print",
+                "export": "Export",
+                "import": "Import",
                 "showSource": "Show source",
                 "showList": "Show list"                                
             },
@@ -65,7 +67,12 @@
             },
             "notifications": {
                 "saved": "Successfully saved",
-                "removed": "Successfully removed"
+                "removed": "Successfully removed",
+                "noitems": "No selected records"
+            },
+            "import": {
+                "popuptitle": "Import file",
+                "popupmessage": "Upload file containing data for import"
             }
         },
         "documentation": {

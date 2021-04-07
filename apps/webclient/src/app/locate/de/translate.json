@@ -44,6 +44,8 @@
                 "edit": "Bearbeiten",
                 "remove": "Entfernen",
                 "print": "Drucken",
+                "export": "Exportieren",
+                "import": "Importieren",
                 "showSource": "Als Quellcode zeigen",
                 "showList": "Als Liste zeigen"                
             },
@@ -65,7 +67,12 @@
             },
             "notifications": {
                 "saved": "Erfolgreich gespeichert",
-                "removed": "Erfolgreich entfernt"
+                "removed": "Erfolgreich entfernt",
+                "noitems": "Es wurden keine Datensätze ausgewählt"
+            },
+            "import": {
+                "popuptitle": "Datei importieren",
+                "popupmessage": "Datei mit Daten für den Import hochladen"
             }
         },
         "documentation": {
