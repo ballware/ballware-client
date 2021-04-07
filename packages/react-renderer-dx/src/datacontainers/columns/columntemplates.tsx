@@ -14,6 +14,7 @@ import {
   AutocompleteCreator,
   LookupStoreDescriptor,
   LookupContext,
+  DefaultEditFunction,
 } from '@ballware/react-contexts';
 import { EditItemsProvider } from '@ballware/react-renderer';
 import { createLookupDataSource } from '../../util/datasource';
@@ -400,7 +401,7 @@ const TemplateColumn = ({
       }
       case 'popup': {
         return (
-          <EditProvider item={item} editLayout={undefined}>
+          <EditProvider item={item} editLayout={undefined} editFunction={DefaultEditFunction}>
             <EditItemsProvider>
               <DetailEditPopup
                 readonly={!editing}

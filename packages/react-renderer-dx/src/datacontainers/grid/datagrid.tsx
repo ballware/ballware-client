@@ -46,15 +46,19 @@ export interface DataGridProps {
   showReload: boolean;
   showAdd: boolean;
   showPrint: boolean;
+  showExport: boolean;
+  showImport: boolean;
   customFunctions: Array<EntityCustomFunction>;
   onReloadClick: (e: { target: Element }) => void;
   onAddClick: (e: { target: Element }) => void;
   onPrintClick: (e: { items: Array<CrudItem>; target: Element }) => void;
+  onExportClick: (e: { items: Array<CrudItem>; target: Element }) => void;
+  onImportClick: (e: { items: Array<CrudItem>; target: Element }) => void;
   onCustomFunctionClick: (e: {
     items: Array<CrudItem>;
     target: Element;
     id: string;
-  }) => void;
+  }) => void;  
   onRowDblClick: (e: {
     event: dxEvent;
     data: CrudItem;
@@ -72,10 +76,14 @@ export const DataGrid = ({
   showReload,
   showPrint,
   showAdd,
+  showImport,
+  showExport,
   customFunctions,
   exportFileName,
   onRowDblClick,
   onPrintClick,
+  onExportClick,
+  onImportClick,
   onAddClick,
   onCustomFunctionClick,
   onReloadClick,
@@ -139,6 +147,46 @@ export const DataGrid = ({
             icon: 'bi bi-printer-fill',
             onClick: (e: { event: { currentTarget: Element } }) => {
               onPrintClick({
+                items: selectedRowData.current,
+                target: e.event.currentTarget,
+              });
+            },
+          },
+        });
+      }
+
+      if (showImport && e.toolbarOptions?.items) {
+        e.toolbarOptions.items.unshift({
+          locateInMenu: 'auto',
+          location: 'after',
+          widget: 'dxButton',
+          showText: 'inMenu',
+          options: {
+            hint: t('datacontainer.actions.import'),
+            text: t('datacontainer.actions.import'),
+            icon: 'bi bi-upload',
+            onClick: (e: { event: { currentTarget: Element } }) => {
+              onImportClick({
+                items: selectedRowData.current,
+                target: e.event.currentTarget,
+              });
+            },
+          },
+        });
+      }
+
+      if (showExport && e.toolbarOptions?.items) {
+        e.toolbarOptions.items.unshift({
+          locateInMenu: 'auto',
+          location: 'after',
+          widget: 'dxButton',
+          showText: 'inMenu',
+          options: {
+            hint: t('datacontainer.actions.export'),
+            text: t('datacontainer.actions.export'),
+            icon: 'bi bi-download',
+            onClick: (e: { event: { currentTarget: Element } }) => {
+              onExportClick({
                 items: selectedRowData.current,
                 target: e.event.currentTarget,
               });

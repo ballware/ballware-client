@@ -70,6 +70,7 @@ import { MultiLookupToolbarItem } from './layout/toolbaritems/multilookup';
 import { LookupToolbarItem } from './layout/toolbaritems/lookup';
 import { FilterBar } from './layout/filterbar';
 import { ExternalLinkEditPopup } from './editing/externallinkeditpopup';
+import { ImportPopup } from './editing/importpopup';
 
 export interface DevExtremeRenderFactoryProps {}
 
@@ -339,6 +340,7 @@ export const DxRenderFactoryProvider = ({
         ForeignEditPopup: props => <ForeignEditPopup {...props} />,
         DetailEditPopup: props => <DetailEditPopup {...props} />,
         IframePopup: props => <ExternalLinkEditPopup {...props} />,
+        ImportPopup: props => <ImportPopup {...props} />,
       };
     });
   }, []);

@@ -86,7 +86,7 @@ export const ForeignEditPopup = ({
             editLayout={getEditLayoutForIdentifier(
               customEditFunction?.editLayout
             )}
-            functionIdentifier={customEditFunction?.id}
+            editFunction={customEditFunction}
           >
             <EditPopup title={`${customEditFunction?.text}`} />
           </EditProvider>

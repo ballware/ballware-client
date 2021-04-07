@@ -10,6 +10,7 @@ import { GridLayoutColumn } from '@ballware/meta-interface';
 import { getByPath, EditItemsContext } from '@ballware/react-renderer';
 
 import { RenderFactoryContext } from '@ballware/react-renderer';
+import { DefaultEditFunction } from '@ballware/react-contexts';
 
 export type OptionButtons =
   | 'add'
@@ -65,6 +66,7 @@ export const TableColumn = ({
           <EditProvider
             item={getByPath(data, dataMember) as Record<string, unknown>}
             editLayout={undefined}
+            editFunction={DefaultEditFunction}
           >
             <DetailEditPopup
               readonly={column.readonly ?? false}

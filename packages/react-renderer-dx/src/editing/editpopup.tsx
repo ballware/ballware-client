@@ -33,7 +33,7 @@ export const EditPopup = (props: EditPopupProps) => {
   const { t } = useTranslation();
 
   const { close } = useContext(CrudContext);
-  const { mode, editLayout, functionIdentifier } = useContext(EditContext);
+  const { mode, editLayout, editFunction } = useContext(EditContext);
 
   const formRef = React.useRef<EditFormRef>(null);
 
@@ -69,7 +69,7 @@ export const EditPopup = (props: EditPopupProps) => {
             <ScrollView>
               <EditForm
                 ref={formRef}
-                functionIdentifier={functionIdentifier}
+                editFunction={editFunction}
                 editLayout={editLayout}
               />
             </ScrollView>

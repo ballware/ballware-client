@@ -9,7 +9,7 @@ import React, { useContext, useMemo } from 'react';
 
 import { DetailLayout, CrudItem } from '@ballware/meta-interface';
 import ScrollView from 'devextreme-react/scroll-view';
-import { EditModes } from '@ballware/react-contexts';
+import { DefaultEditFunction, EditModes } from '@ballware/react-contexts';
 import { ProviderFactoryContext } from '@ballware/react-contexts';
 import {
   RenderFactoryContext,
@@ -46,6 +46,7 @@ export const GridDetail = ({ item, detailLayout }: GridDetailProps) => {
             mode={EditModes.EDIT}
             editLayout={undefined}
             item={item}
+            editFunction={DefaultEditFunction}
           >
             <EditItemsProvider>{items}</EditItemsProvider>
           </EditProvider>

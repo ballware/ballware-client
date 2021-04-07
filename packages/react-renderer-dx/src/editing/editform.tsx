@@ -14,7 +14,7 @@ import React, {
 } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { EditLayout, CrudItem } from '@ballware/meta-interface';
+import { EditLayout, CrudItem, EntityCustomFunction } from '@ballware/meta-interface';
 
 import { ValidationGroup } from 'devextreme-react/validation-group';
 import { ValidationSummary } from 'devextreme-react/validation-summary';
@@ -34,13 +34,13 @@ export interface EditFormRef {
 }
 
 export interface EditFormProps {
-  functionIdentifier?: string;
+  editFunction?: EntityCustomFunction;
   editLayout: EditLayout;
 }
 
 export const EditForm = forwardRef<EditFormRef, EditFormProps>(
   (
-    { functionIdentifier, editLayout }: EditFormProps,
+    { editFunction, editLayout }: EditFormProps,
     ref: React.Ref<EditFormRef>
   ) => {
     const [preparedEditLayout, setPreparedEditLayout] = useState<EditLayout>();
@@ -65,18 +65,18 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
             return validationResult?.isValid ?? false;
           },
           submit: () => {
-            if (functionIdentifier && evaluateCustomFunction) {
+            if (editFunction && editFunction.id !== 'primary' && evaluateCustomFunction) {
               evaluateCustomFunction(
-                functionIdentifier,
+                editFunction.id,
                 item as Record<string, unknown>,
                 evaluatedItem => {
                   if (Array.isArray(evaluatedItem)) {
                     if (saveBatch) {
-                      saveBatch(evaluatedItem);
+                      saveBatch(evaluatedItem, editFunction);
                     }
                   } else {
                     if (save) {
-                      save(evaluatedItem as CrudItem);
+                      save(evaluatedItem as CrudItem, editFunction);
                     }
                   }
                 },
@@ -86,14 +86,14 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
                   }
                 }
               );
-            } else {
+            } else if (editFunction) {
               if (Array.isArray(item)) {
                 if (saveBatch) {
-                  saveBatch(item as Array<CrudItem>);
+                  saveBatch(item as Array<CrudItem>, editFunction);
                 }
               } else {
                 if (save) {
-                  save(item as CrudItem);
+                  save(item as CrudItem, editFunction);
                 }
               }
             }
@@ -105,7 +105,7 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
         saveBatch,
         showWarning,
         evaluateCustomFunction,
-        functionIdentifier,
+        editFunction,
         item,
       ]
     );

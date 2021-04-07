@@ -56,6 +56,12 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   const [addMenuItems, setAddMenuItems] = useState<
     Array<{ id: string; text: string; customFunction?: EntityCustomFunction }>
   >();
+  const [exportMenuItems, setExportMenuItems] = useState<
+    Array<{ id: string; text: string; customFunction?: EntityCustomFunction }>
+  >();
+  const [importMenuItems, setImportMenuItems] = useState<
+    Array<{ id: string; text: string; customFunction?: EntityCustomFunction }>
+  >();
 
   const { lookups } = useContext(LookupContext);
   const {
@@ -83,7 +89,9 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
     remove,
     customEdit,
     save,
-    fetchedItems,
+    exportItems,
+    importItems,
+    fetchedItems,    
   } = useContext(CrudContext);
 
   const actionRows = useRef<Array<CrudItem>>();
@@ -91,6 +99,8 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   const actionMenu = useRef<ActionSheet>(null);
   const printMenu = useRef<ActionSheet>(null);
   const addMenu = useRef<ActionSheet>(null);
+  const exportMenu = useRef<ActionSheet>(null);
+  const importMenu = useRef<ActionSheet>(null);
 
   const viewExecute = useCallback(
     (row: CrudItem, _target: Element) => {
@@ -238,7 +248,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
       if (customFunctions && customFunctionAllowed) {
         const additionalFunctions = customFunctions
-          ?.filter(f => f.type === 'edit' && customFunctionAllowed(f, row))
+          ?.filter(f => (f.type === 'edit' || f.type === 'export') && customFunctionAllowed(f, row))
           .map(f => Object.assign({}, f, { row: row, originalTarget: target }));
 
         additionalFunctions?.forEach(f => actions.push(f));
@@ -324,6 +334,46 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
     [add, customEdit, editLayout]
   );
 
+  const exportMenuItemClicked = useCallback(
+    (e: {
+      itemData?: {
+        id: string;
+        text: string;
+        customFunction?: EntityCustomFunction;
+      };
+    }) => {
+      if (e.itemData 
+        && e.itemData.customFunction
+        && exportItems         
+        && actionRows.current) {
+        
+        exportItems(e.itemData.customFunction, actionRows.current).then(response => {
+          if (response) {
+            window.open(response, '_blank');
+          }
+        });
+      }                 
+    },
+    [exportItems]
+  );
+
+  const importMenuItemClicked = useCallback(
+    (e: {
+      itemData?: {
+        id: string;
+        text: string;
+        customFunction?: EntityCustomFunction;
+      };
+    }) => {
+      if (e.itemData 
+        && e.itemData.customFunction
+        && importItems) {        
+          importItems(e.itemData.customFunction);
+      }  
+    },
+    [importItems]
+  );
+
   const addButtonClicked = useCallback(
     (e: { target: Element }) => {
       if (addMenu.current && addMenuItems && addMenuItems.length > 1) {
@@ -347,6 +397,32 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
       }
     },
     [printMenu]
+  );
+
+  const exportButtonClicked = useCallback(
+    (e: { target: Element; items: Array<CrudItem> }) => {
+      actionRows.current = e.items;
+
+      if (exportMenu.current && exportMenuItems && exportMenuItems.length > 0) {
+        exportMenu.current.instance.option('dataSource', exportMenuItems);
+        exportMenu.current.instance.option('target', e.target);
+        exportMenu.current.instance.option('visible', true);
+      }
+    },
+    [exportMenu, exportMenuItems]
+  );
+
+  const importButtonClicked = useCallback(
+    (e: { target: Element; items: Array<CrudItem> }) => {
+      actionRows.current = e.items;
+
+      if (importMenu.current && importMenuItems && importMenuItems.length > 0) {
+        importMenu.current.instance.option('dataSource', importMenuItems);
+        importMenu.current.instance.option('target', e.target);
+        importMenu.current.instance.option('visible', true);
+      }
+    },
+    [importMenu, importMenuItems]
   );
 
   const customFunctionButtonClicked = useCallback(
@@ -513,24 +589,36 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
       addAllowed &&
       customFunctionAllowed
     ) {
-      const items = [];
+      const addItems = [];
 
       if (addAllowed()) {
-        items.push({
+        addItems.push({
           id: 'none',
           text: t('datacontainer.actions.add', { entity: displayName }),
         });
       }
 
-      items.push(
+      addItems.push(
         ...customFunctions
           ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
           .map(f => {
             return { id: f.id, text: f.text, customFunction: f };
           })
       );
-
-      setAddMenuItems(items);
+      
+      setAddMenuItems(addItems);
+      setExportMenuItems(
+        customFunctions
+          ?.filter(f => f.type === 'export' && customFunctionAllowed(f))
+          .map(f => {
+            return { id: f.id, text: f.text, customFunction: f };
+          }));
+      setImportMenuItems(
+        customFunctions
+          ?.filter(f => f.type === 'import' && customFunctionAllowed(f))
+          .map(f => {
+            return { id: f.id, text: f.text, customFunction: f };
+          }));
     }
   }, [t, displayName, customFunctions, addAllowed, customFunctionAllowed]);
 
@@ -614,7 +702,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   const headCustomFunctions = useMemo(
     () =>
       renderGrid && customFunctionAllowed
-        ? customFunctions?.filter(f => f.multi && customFunctionAllowed(f))
+        ? customFunctions?.filter(f => f.multi && f.type === 'edit' && customFunctionAllowed(f))
         : null,
     [renderGrid, customFunctions, customFunctionAllowed]
   );
@@ -622,7 +710,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   const dataSource = useMemo(
     () =>
       fetchedItems && save
-        ? createEditableGridDatasource(fetchedItems, save)
+        ? createEditableGridDatasource(fetchedItems, (item) => save(item, { id: 'primary', type: 'edit', text: 'Default', editLayout: 'primary' }))
         : undefined,
     [fetchedItems, save]
   );
@@ -646,11 +734,15 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
                 customFunctions={headCustomFunctions ?? []}
                 showReload={true}
                 showAdd={(addMenuItems && addMenuItems?.length > 0) ?? false}
-                showPrint={true}
+                showPrint={(preparedGridLayout.allowMultiselect && documents && documents.length > 0) ?? false}
+                showExport={(exportMenuItems && exportMenuItems.length > 0) ?? false}
+                showImport={(importMenuItems && importMenuItems.length > 0) ?? false}
                 onReloadClick={() => load(fetchParams)}
                 onCustomFunctionClick={customFunctionButtonClicked}
                 onAddClick={addButtonClicked}
                 onPrintClick={printButtonClicked}
+                onExportClick={exportButtonClicked}
+                onImportClick={importButtonClicked}
                 onRowDblClick={onRowDblClick}
                 exportFileName={`${displayName}_${moment().format('YYYYMMDD')}`}
                 layout={preparedGridLayout}
@@ -709,6 +801,24 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
               showCancelButton
               usePopover={!matches.small}
               onItemClick={addMenuItemClicked}
+            />
+          )}
+          {exportMenuItems && (<ActionSheet
+              ref={exportMenu}
+              width={'auto'}
+              title={t('datacontainer.actions.export', { entity: displayName })}
+              showCancelButton
+              usePopover={!matches.small}
+              onItemClick={exportMenuItemClicked}
+            />
+          )}
+          {importMenuItems && (<ActionSheet
+              ref={importMenu}
+              width={'auto'}
+              title={t('datacontainer.actions.import', { entity: displayName })}
+              showCancelButton
+              usePopover={!matches.small}
+              onItemClick={importMenuItemClicked}
             />
           )}
         </React.Fragment>

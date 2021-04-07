@@ -32,6 +32,7 @@ import {
   EditItemsProvider,
 } from '@ballware/react-renderer';
 import { TableColumn } from './tablecolumns';
+import { DefaultEditFunction } from '@ballware/react-contexts';
 
 export interface DetailTableRef {
   getValue: () => Array<Record<string, unknown>>;
@@ -94,7 +95,7 @@ export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
             {rows.map(row => (
               <React.Fragment>
                 {EditProvider && (
-                  <EditProvider item={row} editLayout={undefined}>
+                  <EditProvider item={row} editLayout={undefined} editFunction={DefaultEditFunction}>
                     <EditItemsProvider>
                       <TableRow key={rowKey++}>
                         {options?.columns?.map(column => (
