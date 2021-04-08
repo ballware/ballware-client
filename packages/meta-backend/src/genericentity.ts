@@ -49,7 +49,7 @@ const newFunc = (baseUrl: string) => (
   const queryParams = params ? additionalParamsToUrl(params) : undefined;
 
   const url = queryParams
-    ? `${baseUrl}/newquery?identifier=${encodeURIComponent(functionIdentifier)}&${queryParams}`
+    ? `${baseUrl}/newquery?identifier=${encodeURIComponent(functionIdentifier)}${queryParams}`
     : `${baseUrl}/new?identifier=${encodeURIComponent(functionIdentifier)}`;
 
   return axios

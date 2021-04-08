@@ -372,7 +372,7 @@ export const MetaProvider = ({
               : item,
           query: (query, params) => entityApi.query(token, query, params),
           byId: (functionIdentifier, id) => entityApi.byId(token, functionIdentifier, id),
-          create: params => entityApi.new(token, params),
+          create: (functionIdentifier, params) => entityApi.new(token, functionIdentifier, params),
           save: (functionIdentifier, item) => entityApi.save(token, functionIdentifier, item),
           saveBatch: (functionIdentifier, items) => entityApi.saveBatch(token, functionIdentifier, items),
           drop: id => entityApi.drop(token, id),
