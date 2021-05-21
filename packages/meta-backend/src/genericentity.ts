@@ -116,13 +116,18 @@ const importFunc = (baseUrl: string) => (
 };
 
 const exportFunc = (baseUrl: string) => (
-  _token: string,
+  token: string,
   functionIdentifier: string,
   ids: string[]
 ): Promise<string> => {
-  const url = `${baseUrl}/export?identifier=${encodeURIComponent(functionIdentifier)}${ids.map(u => `&id=${encodeURIComponent(u)}`).join('')}`;
+  const url = `${baseUrl}/exporturl?identifier=${encodeURIComponent(functionIdentifier)}`;
 
-  return Promise.resolve(url);
+  return axios.post<string>(url, `${ids.map(u => `id=${encodeURIComponent(u)}`).join('&')}`, {
+    headers: {      
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Bearer ${token}`,      
+    },     
+  }).then(response => `${baseUrl}/download?id=${encodeURIComponent(response.data)}`);
 };
 
 
