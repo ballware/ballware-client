@@ -81,33 +81,34 @@ const compilePage = (pageData: PageData): CompiledPageData => {
     }
 
     if (customScripts.paramsInitialized) {
-      const compiledArgs = ['hidden', 'lookups', 'util', 'actions'];
+      const compiledArgs = ['hidden', 'lookups', 'util', 'actions', 'pageParam'];
       const compiledFn = Function.apply(
         Function,
         compiledArgs.concat(customScripts.paramsInitialized)
       );
 
       compiledPageData.compiledCustomScripts.paramsInitialized = compiledFn
-        ? (hidden, lookups, util, actions) =>
-            compiledFn.apply(compiledFn, [hidden, lookups, util, actions])
+        ? (hidden, lookups, util, actions, pageParam) =>
+            compiledFn.apply(compiledFn, [hidden, lookups, util, actions, pageParam])
         : undefined;
     }
 
     if (customScripts.paramEditorInitialized) {
-      const compiledArgs = ['name', 'editUtil', 'lookups', 'util', 'actions'];
+      const compiledArgs = ['name', 'editUtil', 'lookups', 'util', 'actions', 'pageParam'];
       const compiledFn = Function.apply(
         Function,
         compiledArgs.concat(customScripts.paramEditorInitialized)
       );
 
       compiledPageData.compiledCustomScripts.paramEditorInitialized = compiledFn
-        ? (name, editUtil, lookups, util, actions) =>
+        ? (name, editUtil, lookups, util, actions, pageParam) =>
             compiledFn.apply(compiledFn, [
               name,
               editUtil,
               lookups,
               util,
               actions,
+              pageParam,
             ])
         : undefined;
     }
@@ -120,6 +121,7 @@ const compilePage = (pageData: PageData): CompiledPageData => {
         'lookups',
         'util',
         'actions',
+        'pageParam',
       ];
       const compiledFn = Function.apply(
         Function,
@@ -127,7 +129,7 @@ const compilePage = (pageData: PageData): CompiledPageData => {
       );
 
       compiledPageData.compiledCustomScripts.paramEditorValueChanged = compiledFn
-        ? (name, value, editUtil, lookups, util, actions) =>
+        ? (name, value, editUtil, lookups, util, actions, pageParam) =>
             compiledFn.apply(compiledFn, [
               name,
               value,
@@ -135,6 +137,7 @@ const compilePage = (pageData: PageData): CompiledPageData => {
               lookups,
               util,
               actions,
+              pageParam,
             ])
         : undefined;
     }
@@ -147,6 +150,7 @@ const compilePage = (pageData: PageData): CompiledPageData => {
         'lookups',
         'util',
         'actions',
+        'pageParam',
         'param',
       ];
       const compiledFn = Function.apply(
@@ -155,7 +159,7 @@ const compilePage = (pageData: PageData): CompiledPageData => {
       );
 
       compiledPageData.compiledCustomScripts.paramEditorEvent = compiledFn
-        ? (name, event, editUtil, lookups, util, actions, param) =>
+        ? (name, event, editUtil, lookups, util, actions, pageParam, param) =>
             compiledFn.apply(compiledFn, [
               name,
               event,
@@ -163,6 +167,7 @@ const compilePage = (pageData: PageData): CompiledPageData => {
               lookups,
               util,
               actions,
+              pageParam,
               param,
             ])
         : undefined;

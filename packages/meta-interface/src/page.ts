@@ -266,12 +266,14 @@ export interface CompiledPageCustomScripts {
    * @param lookups Lookup definitions prepared for page
    * @param util Utility for performing misc operations
    * @param actions Container containing action triggers for page
+   * @param pageParam Current or predefined page param
    */
   paramsInitialized?: (
     hidden: boolean,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions
+    actions: ScriptActions,
+    pageParam?: Record<string, unknown>
   ) => void;
 
   /**
@@ -282,13 +284,15 @@ export interface CompiledPageCustomScripts {
    * @param lookups Lookup definitions prepared for page
    * @param util Utility for performing misc operations
    * @param actions Container containing action triggers for page
+   * @param pageParam Current or predefined page param
    */
   paramEditorInitialized?: (
     name: string,
     editUtil: EditUtil,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions
+    actions: ScriptActions,
+    pageParam?: Record<string, unknown>
   ) => void;
 
   /**
@@ -300,6 +304,7 @@ export interface CompiledPageCustomScripts {
    * @param lookups Lookup definitions prepared for page
    * @param util Utility for performing misc operations
    * @param actions Container containing action triggers for page
+   * @param pageParam Current or predefined page param
    */
   paramEditorValueChanged?: (
     name: string,
@@ -307,7 +312,8 @@ export interface CompiledPageCustomScripts {
     editUtil: EditUtil,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    actions: ScriptActions
+    actions: ScriptActions,
+    pageParam?: Record<string, unknown>
   ) => void;
 
   /**
@@ -319,6 +325,7 @@ export interface CompiledPageCustomScripts {
    * @param lookups Lookup definitions prepared for page
    * @param util Utility for performing misc operations
    * @param actions Container containing action triggers for page
+   * @param pageParam Current or predefined page param
    * @param param Additional parameter to item event
    */
   paramEditorEvent?: (
@@ -328,6 +335,7 @@ export interface CompiledPageCustomScripts {
     lookups: Record<string, unknown>,
     util: ScriptUtil,
     actions: ScriptActions,
+    pageParam?: Record<string, unknown>,
     param?: Record<string, unknown>
   ) => void;
 }

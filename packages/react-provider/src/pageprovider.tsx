@@ -29,6 +29,10 @@ import {
   LookupRequest,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
+import { useHistory, useLocation } from 'react-router';
+
+import qs from 'qs';
+import isEqual from 'lodash/isEqual';
 
 /**
  * Properties for page provider
@@ -47,13 +51,17 @@ export const PageProvider = ({
   identifier,
   children,
 }: PropsWithChildren<PageProviderProps>): JSX.Element => {
+
+  const { search } = useLocation();
+  const { push } = useHistory();
+
   const [documentationEntity, setDocumentationEntity] = useState<
     string | undefined
   >();
   const [pageData, setPageData] = useState<CompiledPageData | undefined>();
-  const [pageParam, setPageParam] = useState<
-    Record<string, unknown> | undefined
-  >();
+  //const [pageParam, setPageParam] = useState<
+  //  Record<string, unknown> | undefined
+  //>();
   const [customParam, setCustomParam] = useState<unknown | undefined>();
   const [value, setValue] = useState({} as PageContextState);
 
@@ -68,6 +76,25 @@ export const PageProvider = ({
     (entity: string) => setDocumentationEntity(entity),
     [setDocumentationEntity]
   );
+
+  const setPageParam = useCallback((pageParam: Record<string, unknown>) => {
+    const currentPageParam = qs.parse(search, { ignoreQueryPrefix: true })?.page;
+    const nextPageParam = qs.parse(qs.stringify({ page: pageParam }))?.page ?? {};
+
+    if (!isEqual(currentPageParam, nextPageParam)) {
+      push({ search: qs.stringify({ page: pageParam }) });
+    }
+
+    if (!isEqual(value.pageParam, nextPageParam)) {
+
+      setValue(previousValue => {
+        return {
+          ...previousValue,
+          pageParam: pageParam,
+        } as PageContextState;
+      });
+    }
+  }, [search, push, value]);
 
   useEffect(() => {
     if (
@@ -151,6 +178,9 @@ export const PageProvider = ({
 
   useEffect(() => {
     if (token && pageData && lookups && lookupsComplete) {
+
+      const currentPageParam = qs.parse(search, { ignoreQueryPrefix: true })?.page as Record<string, unknown>;
+
       if (pageData.compiledCustomScripts?.prepareCustomParam) {
         pageData.compiledCustomScripts.prepareCustomParam(
           lookups,
@@ -169,7 +199,8 @@ export const PageProvider = ({
             hidden,
             lookups,
             createUtil(token),
-            scriptActions
+            scriptActions,
+            currentPageParam
           );
         }
       };
@@ -181,7 +212,8 @@ export const PageProvider = ({
             editUtil,
             lookups,
             createUtil(token),
-            scriptActions
+            scriptActions,
+            currentPageParam
           );
         }
       };
@@ -198,7 +230,8 @@ export const PageProvider = ({
             editUtil,
             lookups,
             createUtil(token),
-            scriptActions
+            scriptActions,
+            currentPageParam
           );
         }
       };
@@ -217,6 +250,7 @@ export const PageProvider = ({
             lookups,
             createUtil(token),
             scriptActions,
+            currentPageParam,
             param
           );
         }
@@ -233,7 +267,7 @@ export const PageProvider = ({
         } as PageContextState;
       });
     }
-  }, [token, pageData, lookups, lookupsComplete, scriptActions]);
+  }, [token, pageData, lookups, lookupsComplete, scriptActions, search]);
 
   useEffect(() => {
     if (createLookups && pageData) {
@@ -297,14 +331,26 @@ export const PageProvider = ({
     }
   }, [pageData]);
 
-  useEffect(() => {
+  /*
+  useEffect(() => {    
     setValue(previousValue => {
       return {
         ...previousValue,
         pageParam: pageParam,
       } as PageContextState;
     });
-  }, [pageParam]);
+
+    if (search && pageParam) {
+      const currentPageParam = qs.parse(search)?.page ?? {};
+      const nextPageParam = qs.parse(qs.stringify({ page: pageParam }))?.page ?? {};
+
+      if (!isEqual(currentPageParam, nextPageParam)) {
+        push({ search: qs.stringify({ page: pageParam }) });
+      }
+    }
+
+  }, [search, push, pageParam]);
+  */
 
   return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
 };
