@@ -28,6 +28,7 @@ export const SessionButton = () => {
   const {
     timeout_in,
     rights,
+    expired,
     logout,
     refresh,
     changePassword,
@@ -46,8 +47,8 @@ export const SessionButton = () => {
         moment(timeout_in).diff(moment(), 'seconds')
       );
 
-      if (timeout_diff === 0 && logout) {
-        logout();
+      if (timeout_diff === 0 && expired) {
+        expired();
       } else {
         setTimeoutIn(timeout_diff);
       }

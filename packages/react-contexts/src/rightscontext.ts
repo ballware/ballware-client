@@ -61,6 +61,11 @@ export interface RightsContextState extends PersistedRightsState {
   logout?: () => void;
 
   /**
+   * Session expired notification
+   */
+  expired?: () => void;
+
+  /**
    * Register new user for application
    * @param username Requested unique user name
    * @param displayname Display name of new user

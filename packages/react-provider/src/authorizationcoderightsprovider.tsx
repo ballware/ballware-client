@@ -220,6 +220,24 @@ export const AuthorizationCodeRightsProvider = ({
 
             userManager.signoutRedirect();
           },
+          expired: () => {
+            setValue(previousValue => {
+              return {
+                ...previousValue,
+                rights: undefined,
+                issued: undefined,
+                timeout_in: undefined,
+                token: undefined,
+                refresh_token: undefined,
+                expires_in: undefined,
+                error: undefined,
+              };
+            });
+
+            showInfo('rights.notifications.sessionexpired');
+
+            userManager.signinRedirect();
+          },
           refresh: () => {
             userManager.signinSilent().then(user => {
               if (user) {
