@@ -1,6 +1,6 @@
 {
   "name": "@ballware/react-provider",
-  "version": "6.2.3",
+  "version": "6.3.0",
   "description": "Ballware Application Builder - React provider for contexts",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
