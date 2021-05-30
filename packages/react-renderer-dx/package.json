@@ -1,5 +1,5 @@
 {
-  "version": "6.2.0",
+  "version": "6.3.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -78,7 +78,7 @@
   },
   "dependencies": {
     "@ballware/meta-interface": "^6.2.0",
-    "@ballware/react-contexts": "^6.2.4",
+    "@ballware/react-contexts": "^6.3.0",
     "@ballware/react-renderer": "^6.2.1",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
