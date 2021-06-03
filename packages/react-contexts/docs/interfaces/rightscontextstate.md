@@ -16,6 +16,7 @@ Context for providing user session functionality
 
 - [changePassword](rightscontextstate.md#changepassword)
 - [error](rightscontextstate.md#error)
+- [expired](rightscontextstate.md#expired)
 - [expires\_in](rightscontextstate.md#expires_in)
 - [forgotPassword](rightscontextstate.md#forgotpassword)
 - [login](rightscontextstate.md#login)
@@ -54,9 +55,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:90](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L90)
+Defined in: [packages/react-contexts/src/rightscontext.ts:95](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L95)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:90](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L90)
+Defined in: [packages/react-contexts/src/rightscontext.ts:95](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L95)
 
 ___
 
@@ -68,7 +69,25 @@ Last login try error message
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[error](persistedrightsstate.md#error)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L43)
+Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L43)
+
+___
+
+### expired
+
+• `Optional` **expired**: () => *void*
+
+Session expired notification
+
+#### Type declaration:
+
+▸ (): *void*
+
+**Returns:** *void*
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:66](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L66)
+
+Defined in: [packages/react-contexts/src/rightscontext.ts:66](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L66)
 
 ___
 
@@ -80,7 +99,7 @@ Number of seconds the access token expires in
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[expires_in](persistedrightsstate.md#expires_in)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L38)
+Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L38)
 
 ___
 
@@ -104,9 +123,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:75](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L75)
+Defined in: [packages/react-contexts/src/rightscontext.ts:80](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L80)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:75](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L75)
+Defined in: [packages/react-contexts/src/rightscontext.ts:80](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L80)
 
 ___
 
@@ -136,9 +155,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:56](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L56)
+Defined in: [packages/react-contexts/src/rightscontext.ts:56](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L56)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:56](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L56)
+Defined in: [packages/react-contexts/src/rightscontext.ts:56](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L56)
 
 ___
 
@@ -154,9 +173,9 @@ Logout current user
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:61](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L61)
+Defined in: [packages/react-contexts/src/rightscontext.ts:61](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L61)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:61](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L61)
+Defined in: [packages/react-contexts/src/rightscontext.ts:61](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L61)
 
 ___
 
@@ -172,9 +191,9 @@ Switch to account management
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:95](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L95)
+Defined in: [packages/react-contexts/src/rightscontext.ts:100](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L100)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:95](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L95)
+Defined in: [packages/react-contexts/src/rightscontext.ts:100](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L100)
 
 ___
 
@@ -190,9 +209,9 @@ Refresh user session with refresh token
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:100](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L100)
+Defined in: [packages/react-contexts/src/rightscontext.ts:105](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L105)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:100](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L100)
+Defined in: [packages/react-contexts/src/rightscontext.ts:105](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L105)
 
 ___
 
@@ -204,7 +223,7 @@ Refresh token
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[refresh_token](persistedrightsstate.md#refresh_token)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L33)
+Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L33)
 
 ___
 
@@ -234,9 +253,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:69](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L69)
+Defined in: [packages/react-contexts/src/rightscontext.ts:74](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L74)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:69](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L69)
+Defined in: [packages/react-contexts/src/rightscontext.ts:74](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L74)
 
 ___
 
@@ -266,9 +285,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:83](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L83)
+Defined in: [packages/react-contexts/src/rightscontext.ts:88](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L88)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:83](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L83)
+Defined in: [packages/react-contexts/src/rightscontext.ts:88](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L88)
 
 ___
 
@@ -280,7 +299,7 @@ User rights for current user
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[rights](persistedrightsstate.md#rights)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L18)
+Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L18)
 
 ___
 
@@ -292,7 +311,7 @@ Access token timeout stamp
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[timeout_in](persistedrightsstate.md#timeout_in)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L23)
+Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L23)
 
 ___
 
@@ -304,4 +323,4 @@ Access token
 
 Inherited from: [PersistedRightsState](persistedrightsstate.md).[token](persistedrightsstate.md#token)
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/rightscontext.ts#L28)
+Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L28)

@@ -32,6 +32,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [page.ts:224](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/page.ts#L224)
+Defined in: [page.ts:234](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L234)
 
-Defined in: [page.ts:224](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/page.ts#L224)
+Defined in: [page.ts:234](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L234)

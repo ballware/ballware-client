@@ -63,9 +63,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:605](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L605)
+Defined in: [entity.ts:605](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L605)
 
-Defined in: [entity.ts:605](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L605)
+Defined in: [entity.ts:605](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L605)
 
 ___
 
@@ -103,9 +103,9 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [entity.ts:624](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L624)
+Defined in: [entity.ts:624](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L624)
 
-Defined in: [entity.ts:624](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L624)
+Defined in: [entity.ts:624](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L624)
 
 ___
 
@@ -144,9 +144,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:564](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L564)
+Defined in: [entity.ts:564](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L564)
 
-Defined in: [entity.ts:564](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L564)
+Defined in: [entity.ts:564](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L564)
 
 ___
 
@@ -185,9 +185,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:545](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L545)
+Defined in: [entity.ts:545](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L545)
 
-Defined in: [entity.ts:545](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L545)
+Defined in: [entity.ts:545](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L545)
 
 ___
 
@@ -226,9 +226,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:507](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L507)
+Defined in: [entity.ts:507](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L507)
 
-Defined in: [entity.ts:507](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L507)
+Defined in: [entity.ts:507](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L507)
 
 ___
 
@@ -267,9 +267,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:488](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L488)
+Defined in: [entity.ts:488](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L488)
 
-Defined in: [entity.ts:488](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L488)
+Defined in: [entity.ts:488](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L488)
 
 ___
 
@@ -313,9 +313,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [entity.ts:585](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L585)
+Defined in: [entity.ts:585](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L585)
 
-Defined in: [entity.ts:585](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L585)
+Defined in: [entity.ts:585](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L585)
 
 ___
 
@@ -354,9 +354,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:526](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L526)
+Defined in: [entity.ts:526](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L526)
 
-Defined in: [entity.ts:526](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L526)
+Defined in: [entity.ts:526](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L526)
 
 ___
 
@@ -393,9 +393,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:675](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L675)
+Defined in: [entity.ts:675](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L675)
 
-Defined in: [entity.ts:675](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L675)
+Defined in: [entity.ts:675](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L675)
 
 ___
 
@@ -405,7 +405,7 @@ ___
 
 Custom rights check operations
 
-Defined in: [entity.ts:410](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L410)
+Defined in: [entity.ts:410](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L410)
 
 ___
 
@@ -438,9 +438,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:640](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L640)
+Defined in: [entity.ts:640](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L640)
 
-Defined in: [entity.ts:640](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L640)
+Defined in: [entity.ts:640](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L640)
 
 ___
 
@@ -479,9 +479,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:657](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L657)
+Defined in: [entity.ts:657](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L657)
 
-Defined in: [entity.ts:657](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L657)
+Defined in: [entity.ts:657](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L657)
 
 ___
 
@@ -511,9 +511,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:440](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L440)
+Defined in: [entity.ts:440](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L440)
 
-Defined in: [entity.ts:440](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L440)
+Defined in: [entity.ts:440](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L440)
 
 ___
 
@@ -549,9 +549,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:470](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L470)
+Defined in: [entity.ts:470](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L470)
 
-Defined in: [entity.ts:470](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L470)
+Defined in: [entity.ts:470](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L470)
 
 ___
 
@@ -584,9 +584,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:454](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L454)
+Defined in: [entity.ts:454](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L454)
 
-Defined in: [entity.ts:454](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L454)
+Defined in: [entity.ts:454](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L454)
 
 ___
 
@@ -613,9 +613,9 @@ Name | Type |
 
 **Returns:** *Record*<string, unknown\>
 
-Defined in: [entity.ts:419](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L419)
+Defined in: [entity.ts:419](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L419)
 
-Defined in: [entity.ts:419](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L419)
+Defined in: [entity.ts:419](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L419)
 
 ___
 
@@ -644,6 +644,6 @@ Name | Type |
 
 **Returns:** *Record*<string, unknown\>
 
-Defined in: [entity.ts:428](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L428)
+Defined in: [entity.ts:428](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L428)
 
-Defined in: [entity.ts:428](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L428)
+Defined in: [entity.ts:428](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L428)

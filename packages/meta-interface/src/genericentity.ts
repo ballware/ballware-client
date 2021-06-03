@@ -27,6 +27,20 @@ export interface MetaGenericEntityApi {
   ) => Promise<Array<CrudItem>>;
 
   /**
+   * Query count of business objects by search params
+   *
+   * @param token Access token required for authentication
+   * @param query Identifier of list query
+   * @param params Parameter values for query
+   * @returns Promise containing count of resulting business objects
+   */
+   count: (
+    token: string,
+    query: string,
+    params?: QueryParams
+  ) => Promise<number>;
+
+  /**
    * Fetch single business object by id
    *
    * @param token Access token required for authentication

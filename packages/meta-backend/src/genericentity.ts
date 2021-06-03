@@ -29,6 +29,22 @@ const queryFunc = (baseUrl: string) => (
     .then(response => response.data);
 };
 
+const countFunc = (baseUrl: string) => (
+  token: string,
+  query: string,
+  params?: QueryParams
+): Promise<number> => {
+  const queryParams = params ? additionalParamsToUrl(params) : undefined;
+
+  const url = queryParams
+    ? `${baseUrl}/count?identifier=${encodeURIComponent(query)}${queryParams}`
+    : `${baseUrl}/count?identifier=${encodeURIComponent(query)}`;
+
+  return axios
+    .get<{ count: number }>(url, { headers: { Authorization: `Bearer ${token}` } })
+    .then(response => response.data?.count);
+};
+
 const byIdFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
@@ -141,6 +157,7 @@ export function createMetaBackendGenericEntityApi(
 ): MetaGenericEntityApi {
   return {
     query: queryFunc(entityBaseUrl),
+    count: countFunc(entityBaseUrl),
     byId: byIdFunc(entityBaseUrl),
     new: newFunc(entityBaseUrl),
     save: saveFunc(entityBaseUrl),

@@ -27,7 +27,7 @@ Interface of custom crud function definition
 Identifier of edit layout definition used by function.
 If not set the primary edit layout will be used
 
-Defined in: [entity.ts:104](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L104)
+Defined in: [entity.ts:104](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L104)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Identifier of owning business object
 
-Defined in: [entity.ts:63](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L63)
+Defined in: [entity.ts:63](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L63)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 Set if function uses a propritary editor.
 If set, prepareCustomFunction has to supply editor url as callback parameter
 
-Defined in: [entity.ts:98](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L98)
+Defined in: [entity.ts:98](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L98)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 CSS class for icon
 
-Defined in: [entity.ts:87](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L87)
+Defined in: [entity.ts:87](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L87)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 Unique id of custom function
 
-Defined in: [entity.ts:68](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L68)
+Defined in: [entity.ts:68](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L68)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 Set if function supports batch operations of multiple business object instances
 
-Defined in: [entity.ts:92](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L92)
+Defined in: [entity.ts:92](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L92)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 Function type specific additional options
 
-Defined in: [entity.ts:109](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L109)
+Defined in: [entity.ts:109](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L109)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 Display text of function
 
-Defined in: [entity.ts:82](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L82)
+Defined in: [entity.ts:82](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L82)
 
 ___
 
@@ -112,4 +112,4 @@ edit: Function is editing existing selected business objects
 import: Function to import external data
 export: Function to export data
 
-Defined in: [entity.ts:77](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L77)
+Defined in: [entity.ts:77](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L77)

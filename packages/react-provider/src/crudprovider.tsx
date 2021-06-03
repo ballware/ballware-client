@@ -53,6 +53,7 @@ export const CrudProvider = ({
     mapOutgoingItem,
     headParams,
     query,
+    count,
     create,
     byId,
     save,
@@ -70,6 +71,7 @@ export const CrudProvider = ({
       mapIncomingItem &&
       mapOutgoingItem &&
       query &&
+      count &&
       create &&
       byId &&
       save &&
@@ -114,6 +116,28 @@ export const CrudProvider = ({
               }
             }
           : undefined,
+        count: queryIdentifier ?
+            params => {
+              count(queryIdentifier, params)
+              .then((result: number) => {
+                setValue(previousValue => {
+                  return {
+                    ...previousValue,
+                    fetchedItemCount: result,
+                  };
+                });
+              })
+              .catch(reason => {
+                showError(reason);
+                setValue(previousValue => {
+                  return {
+                    ...previousValue,
+                    fetchedItemCount: undefined
+                  };
+                });
+              });
+            }
+            : undefined,
         add: editLayout => {
           create('primary', headParams)
             .then(result => {

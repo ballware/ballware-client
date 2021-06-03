@@ -56,6 +56,14 @@ export interface MetaContextState {
   query?: (query: string, params?: QueryParams) => Promise<Array<CrudItem>>;
 
   /**
+   * Fetch count of items
+   * @param query Identifier of query to use for fetch
+   * @param params Optional parameter values for query
+   * @returns Promise resolving count of fetchable items
+   */
+   count?: (query: string, params?: QueryParams) => Promise<number>;
+
+  /**
    * Fetch item by id
    * @param functionIdentifier Identifier of edit function
    * @param id: Unique identifier of item to fetch

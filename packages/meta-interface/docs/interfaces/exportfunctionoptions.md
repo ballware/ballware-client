@@ -18,4 +18,4 @@ Additional options for custom export function
 
 Data format for export
 
-Defined in: [entity.ts:53](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L53)
+Defined in: [entity.ts:53](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L53)

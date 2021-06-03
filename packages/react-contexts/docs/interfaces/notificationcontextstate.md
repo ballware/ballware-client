@@ -27,9 +27,9 @@ Hide current shown user notification
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:35](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L35)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:35](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L35)
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:35](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L35)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:35](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L35)
 
 ___
 
@@ -53,9 +53,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:30](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L30)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:30](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L30)
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:30](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L30)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:30](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L30)
 
 ___
 
@@ -79,9 +79,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:18](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L18)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:18](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L18)
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:18](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L18)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:18](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L18)
 
 ___
 
@@ -105,6 +105,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:24](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L24)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:24](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L24)
 
-Defined in: [packages/react-contexts/src/notificationcontext.ts:24](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/notificationcontext.ts#L24)
+Defined in: [packages/react-contexts/src/notificationcontext.ts:24](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/notificationcontext.ts#L24)

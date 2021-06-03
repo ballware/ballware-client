@@ -37,6 +37,6 @@ Name | Type |
 
 **Returns:** *Promise*<[*CompiledTenant*](compiledtenant.md)\>
 
-Defined in: [tenant.ts:103](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/tenant.ts#L103)
+Defined in: [tenant.ts:103](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L103)
 
-Defined in: [tenant.ts:103](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/tenant.ts#L103)
+Defined in: [tenant.ts:103](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L103)

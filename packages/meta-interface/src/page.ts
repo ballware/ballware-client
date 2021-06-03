@@ -17,6 +17,16 @@ export interface TabItemOptions {
    * Display text in tab panel
    */
   caption: string;
+
+  /**
+   * Identifier of business object for count display
+   */
+  entity?: string;
+
+  /**
+   * Identifier of list query for count display
+   */
+  query?: string;
 }
 
 /**

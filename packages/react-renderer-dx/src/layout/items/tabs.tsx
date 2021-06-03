@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import {
   PageLayoutItem,
   QueryParams,
@@ -13,7 +13,41 @@ import {
 } from '@ballware/meta-interface';
 import { Container } from '../container';
 import { TabPanel, Item as TabItem } from 'devextreme-react/tab-panel';
+import { LoadIndicator } from 'devextreme-react/load-indicator';
 import { RenderFactoryContext } from '@ballware/react-renderer';
+import { MetaContext, ProviderFactoryContext } from '@ballware/react-contexts';
+
+const TabCountIndicator = ({ query, params }: { query: string, params?: QueryParams}) => {
+
+  const [itemCount, setItemCount] = useState<number>();
+
+  const { count } = useContext(MetaContext);  
+  
+  useEffect(() => {
+    if (count) {
+      count(query, params).then(result => {
+        setItemCount(result);
+      });
+    }
+  }, [count, params]);
+
+  if (itemCount) {
+    return <React.Fragment>{`(${itemCount})`}</React.Fragment>
+  } else {
+    return <LoadIndicator height={12} width={12} />;
+  }
+}
+
+const TabHeader = ({ options, params }: { options: TabItemOptions, params?: QueryParams}) => {
+
+  const { LookupProvider, MetaProvider } = useContext(ProviderFactoryContext);
+
+  if (!options?.entity) {
+    return <span className="dx-tab-text">{options?.caption}</span>;
+  } else {
+    return (<React.Fragment>{(LookupProvider && MetaProvider) && <LookupProvider><MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown>} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'} params={params}/></span></MetaProvider></LookupProvider>}</React.Fragment>);
+  }
+}
 
 export interface LayoutTabProps {
   layoutItem: PageLayoutItem;
@@ -28,11 +62,12 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
 
   const tabItems = useMemo(
     () =>
-      layoutItem.items?.map(tab => (
-        <TabItem
+      layoutItem.items?.map(tab => {
+        const tabOptions = tab.options?.itemoptions as TabItemOptions;
+       
+        return (<TabItem
           key={`tab-${tabscount++}`}
-          title={(tab.options?.itemoptions as TabItemOptions)?.caption}
-        >
+          tabRender={() => <TabHeader options={tabOptions}/>}          >
           <Container height={layoutItem.options?.height}>
             {PageLayoutItem &&
               tab.items &&
@@ -46,14 +81,15 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
               ))}
           </Container>
         </TabItem>
-      )),
+        );        
+      }),
     [PageLayoutItem, layoutItem, key, params, tabscount]
   );
 
   return (
     <TabPanel
       height={layoutItem.options?.height}
-      deferRendering={false}
+      deferRendering={true}
       showNavButtons
       swipeEnabled={false}
     >

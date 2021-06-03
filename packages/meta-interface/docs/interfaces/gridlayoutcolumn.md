@@ -51,7 +51,7 @@ Accept alternative custom user input as value (only for editors with select list
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[acceptCustomValue](editlayoutitemoptions.md#acceptcustomvalue)
 
-Defined in: [entity.ts:195](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L195)
+Defined in: [entity.ts:195](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L195)
 
 ___
 
@@ -63,7 +63,7 @@ Display text for label
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[caption](editlayoutitemoptions.md#caption)
 
-Defined in: [entity.ts:144](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L144)
+Defined in: [entity.ts:144](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L144)
 
 ___
 
@@ -75,7 +75,7 @@ Property of business object the editor is attached to
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[dataMember](editlayoutitemoptions.md#datamember)
 
-Defined in: [entity.ts:149](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L149)
+Defined in: [entity.ts:149](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L149)
 
 ___
 
@@ -87,7 +87,7 @@ Display data member in lookup query result (only for editors with select list fu
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[displayExpr](editlayoutitemoptions.md#displayexpr)
 
-Defined in: [entity.ts:180](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L180)
+Defined in: [entity.ts:180](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L180)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 Custom edit function executed on inline editing
 
-Defined in: [entity.ts:300](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L300)
+Defined in: [entity.ts:300](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L300)
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 Enable inline editing of column value in table
 
-Defined in: [entity.ts:295](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L295)
+Defined in: [entity.ts:295](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L295)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 Fixing position of column in table
 
-Defined in: [entity.ts:270](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L270)
+Defined in: [entity.ts:270](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L270)
 
 ___
 
@@ -129,7 +129,7 @@ Optional fixed height for editor component
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[height](editlayoutitemoptions.md#height)
 
-Defined in: [entity.ts:185](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L185)
+Defined in: [entity.ts:185](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L185)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 Hiding priority of column for hiding columns on small screens
 
-Defined in: [entity.ts:285](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L285)
+Defined in: [entity.ts:285](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L285)
 
 ___
 
@@ -151,7 +151,7 @@ Hint displayed as tooltip on editor
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[hint](editlayoutitemoptions.md#hint)
 
-Defined in: [entity.ts:205](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L205)
+Defined in: [entity.ts:205](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L205)
 
 ___
 
@@ -163,7 +163,7 @@ Editor component specific additional options
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[itemoptions](editlayoutitemoptions.md#itemoptions)
 
-Defined in: [entity.ts:215](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L215)
+Defined in: [entity.ts:215](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L215)
 
 ___
 
@@ -175,7 +175,7 @@ Static item list used as select list (only for editors with select list function
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[items](editlayoutitemoptions.md#items)
 
-Defined in: [entity.ts:210](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L210)
+Defined in: [entity.ts:210](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L210)
 
 ___
 
@@ -187,7 +187,7 @@ Data member of business object containing select list (only for editors with sel
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[itemsMember](editlayoutitemoptions.md#itemsmember)
 
-Defined in: [entity.ts:200](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L200)
+Defined in: [entity.ts:200](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L200)
 
 ___
 
@@ -199,7 +199,7 @@ Lookup identifier (only for editors with select list functionality)
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[lookup](editlayoutitemoptions.md#lookup)
 
-Defined in: [entity.ts:164](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L164)
+Defined in: [entity.ts:164](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L164)
 
 ___
 
@@ -212,7 +212,7 @@ The current business object property value of data member will be supplied as pa
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[lookupParam](editlayoutitemoptions.md#lookupparam)
 
-Defined in: [entity.ts:170](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L170)
+Defined in: [entity.ts:170](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L170)
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 Identifier of edit layout used in popup edit box
 
-Defined in: [entity.ts:305](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L305)
+Defined in: [entity.ts:305](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L305)
 
 ___
 
@@ -232,7 +232,7 @@ ___
 
 Position of column in table (ascending sorted left to right)
 
-Defined in: [entity.ts:280](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L280)
+Defined in: [entity.ts:280](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L280)
 
 ___
 
@@ -242,7 +242,7 @@ ___
 
 Precision for displaying floating numbers
 
-Defined in: [entity.ts:265](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L265)
+Defined in: [entity.ts:265](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L265)
 
 ___
 
@@ -254,7 +254,7 @@ If set, the property is not changeable by user
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[readonly](editlayoutitemoptions.md#readonly)
 
-Defined in: [entity.ts:159](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L159)
+Defined in: [entity.ts:159](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L159)
 
 ___
 
@@ -266,7 +266,7 @@ If set, property of business object is required to have a value
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[required](editlayoutitemoptions.md#required)
 
-Defined in: [entity.ts:154](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L154)
+Defined in: [entity.ts:154](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L154)
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 Default sorting setting of column
 
-Defined in: [entity.ts:275](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L275)
+Defined in: [entity.ts:275](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L275)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 Type of table column (specific for used rendering engine)
 
-Defined in: [entity.ts:260](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L260)
+Defined in: [entity.ts:260](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L260)
 
 ___
 
@@ -298,7 +298,7 @@ List of custom validation rules (Have to be checked in editorValidating custom s
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[validations](editlayoutitemoptions.md#validations)
 
-Defined in: [entity.ts:220](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L220)
+Defined in: [entity.ts:220](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L220)
 
 ___
 
@@ -310,7 +310,7 @@ Value data member in lookup query result (only for editors with select list func
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[valueExpr](editlayoutitemoptions.md#valueexpr)
 
-Defined in: [entity.ts:175](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L175)
+Defined in: [entity.ts:175](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L175)
 
 ___
 
@@ -320,7 +320,7 @@ ___
 
 Default value for column visibility
 
-Defined in: [entity.ts:290](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L290)
+Defined in: [entity.ts:290](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L290)
 
 ___
 
@@ -332,4 +332,4 @@ Optional fixed width for editor component
 
 Inherited from: [EditLayoutItemOptions](editlayoutitemoptions.md).[width](editlayoutitemoptions.md#width)
 
-Defined in: [entity.ts:190](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/entity.ts#L190)
+Defined in: [entity.ts:190](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L190)

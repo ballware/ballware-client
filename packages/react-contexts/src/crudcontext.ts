@@ -32,6 +32,11 @@ export interface CrudContextState {
   fetchedItems?: Array<CrudItem>;
 
   /**
+   * Count of items to be fetched
+   */
+  fetchItemCount?: number;
+
+  /**
    * Current item for crud operations
    */
   item?: CrudItem;
@@ -96,6 +101,12 @@ export interface CrudContextState {
    * @param params Provided query params
    */
   load?: (params?: QueryParams) => void;
+
+  /**
+   * Count items to be fetched
+   * @param params Provided query params
+   */
+  count?: (params?: QueryParams) => void;
 
   /**
    * Add new item

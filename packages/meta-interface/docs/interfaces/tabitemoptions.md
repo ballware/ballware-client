@@ -9,6 +9,8 @@ Options for layout item type 'tab'
 ### Properties
 
 - [caption](tabitemoptions.md#caption)
+- [entity](tabitemoptions.md#entity)
+- [query](tabitemoptions.md#query)
 
 ## Properties
 
@@ -18,4 +20,24 @@ Options for layout item type 'tab'
 
 Display text in tab panel
 
-Defined in: [page.ts:19](https://github.com/ballware/ballware-client/blob/cea3b48/packages/meta-interface/src/page.ts#L19)
+Defined in: [page.ts:19](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L19)
+
+___
+
+### entity
+
+• `Optional` **entity**: *string*
+
+Identifier of business object for count display
+
+Defined in: [page.ts:24](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L24)
+
+___
+
+### query
+
+• `Optional` **query**: *string*
+
+Identifier of list query for count display
+
+Defined in: [page.ts:29](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L29)

@@ -21,7 +21,7 @@ Descriptor for lookup and autocomplete datasource
 
 Display property in fetched data items
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:60](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L60)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:60](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/lookupcontext.ts#L60)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Data access adapter for fetching data for lookup/autocomplete source
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:50](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L50)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:50](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/lookupcontext.ts#L50)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Type of lookup descriptor
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:45](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L45)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:45](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/lookupcontext.ts#L45)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 Value property in fetched data items
 
-Defined in: [packages/react-contexts/src/lookupcontext.ts:55](https://github.com/ballware/ballware-client/blob/d7ee5ae/packages/react-contexts/src/lookupcontext.ts#L55)
+Defined in: [packages/react-contexts/src/lookupcontext.ts:55](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/lookupcontext.ts#L55)
