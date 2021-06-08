@@ -26,7 +26,7 @@ import {
   UserInfoMappingFunc,
 } from '@ballware/identity-interface';
 
-import { UserManager, WebStorageStateStore } from 'oidc-client';
+import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
 
 /**
  * Property set for authorization code flow rights provider
@@ -116,7 +116,7 @@ export const AuthorizationCodeRightsProvider = ({
 
   const { version } = useContext(SettingsContext);
   const { showInfo, showError } = useContext(NotificationContext);
-  const { push, replace, location } = useHistory();
+  const { push, replace } = useHistory();
 
   useEffect(() => {
     if (
@@ -126,10 +126,13 @@ export const AuthorizationCodeRightsProvider = ({
       post_logout_redirect_uri &&
       response_type &&
       scope &&
-      userinfoMapper &&
-      location
-    ) {
-      if (!userManager && !location.pathname?.startsWith('/signin-oidc')) {
+      userinfoMapper
+    ) {      
+
+      Log.logger = console;
+
+      if (window.location.href.indexOf("signin-oidc") === -1) {
+
         const newUserManager = new UserManager({
           authority,
           client_id: client,
@@ -140,6 +143,8 @@ export const AuthorizationCodeRightsProvider = ({
           scope,
           userStore: new WebStorageStateStore({ store: window.sessionStorage }),
         });
+  
+        setUserManager(newUserManager);  
 
         newUserManager.getUser().then(user => {
           if (user) {
@@ -150,11 +155,9 @@ export const AuthorizationCodeRightsProvider = ({
               email: user.profile.preferred_username,
               issued: new Date(),
             } as SessionWithUserInfo;
-
+    
             const mappedSession = userinfoMapper(session, user.profile);
-
-            setUserManager(newUserManager);
-
+    
             setValue(previousValue => {
               return {
                 ...previousValue,
@@ -174,14 +177,11 @@ export const AuthorizationCodeRightsProvider = ({
             console.log('No user authenticated, switch to sign in');
             newUserManager.signinRedirect();
           }
-
-          setUserManager(newUserManager);
         });
       }
     }
   }, [
-    push,
-    location,
+    push,    
     authority,
     client,
     secret,
@@ -189,7 +189,6 @@ export const AuthorizationCodeRightsProvider = ({
     post_logout_redirect_uri,
     response_type,
     scope,
-    userManager,
     userinfoMapper,
   ]);
 
