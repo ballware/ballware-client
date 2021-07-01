@@ -5,8 +5,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { Rights } from '@ballware/meta-interface';
-
 /**
  * Basic authentication response containing user token
  */
@@ -36,28 +34,6 @@ export interface SessionWithUserInfo extends Session, Record<string, unknown> {
 }
 
 /**
- * Session extended with application specific user rights
- */
-export interface MappedSessionWithUserRights extends SessionWithUserInfo {
-  /**
-   * Collection of user rights
-   */
-  rights: Rights;
-}
-
-/**
- * Application specific mapping function for fetching additional information from authentication response (claims, rights...)
- *
- * @param sessionWithUserInfo - Response from login
- * @param userinfo - Response from userinfo endpoint with additional content
- * @returns - Extended session object with additional information
- */
-export type UserInfoMappingFunc = <T extends MappedSessionWithUserRights>(
-  sessionWithUserInfo: SessionWithUserInfo,
-  userinfo: Record<string, unknown>
-) => T;
-
-/**
  * API for resource owner based authentication flow.
  *
  * @remarks
@@ -70,15 +46,13 @@ export interface ResourceOwnerAuthApi {
    * @param password - Password for authentication
    * @param client - Client identifier for identifying application in OAuth service
    * @param secret - Secrect for client identifier
-   * @param userinfoMapper - Application specific mapping function for fetching additional information from authentication response
    * @returns Promise resolving user session instance
    */
   login: <T extends SessionWithUserInfo>(
     email: string,
     password: string,
     client: string,
-    secret: string,
-    userinfoMapper: UserInfoMappingFunc
+    secret: string
   ) => Promise<T>;
 
   /**

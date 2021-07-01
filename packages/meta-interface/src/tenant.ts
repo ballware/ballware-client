@@ -5,8 +5,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { Rights } from './rights';
-
 /**
  * Navigation tree item
  */
@@ -83,11 +81,11 @@ export interface CompiledTenant {
 
   /**
    * Custom script for access rights check of pages
-   * @param rights Assigned user rights
+   * @param userinfo Assigned user rights
    * @param page Page identifier
    * @returns true if access allowed, false if access denied
    */
-  pageVisible: (rights: Rights, page: string) => boolean;
+  pageVisible: (userinfo: Record<string, unknown>, page: string) => boolean;
 }
 
 /**

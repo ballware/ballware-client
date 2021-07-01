@@ -23,7 +23,6 @@ import { Route, useHistory } from 'react-router-dom';
 
 import {
   SessionWithUserInfo,
-  UserInfoMappingFunc,
 } from '@ballware/identity-interface';
 
 import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
@@ -71,11 +70,6 @@ export interface AuthorizationCodeRightsProviderProps {
    * Optional uri for redirect to account management portal for authenticated user
    */
   account_management_uri?: string;
-
-  /**
-   * Mapping function to map additional content of userinfo endpoint to user rights instance
-   */
-  userinfoMapper: UserInfoMappingFunc;
 }
 
 /**
@@ -106,7 +100,6 @@ export const AuthorizationCodeRightsProvider = ({
   post_logout_redirect_uri,
   response_type,
   scope,
-  userinfoMapper,
   account_management_uri,
   children,
 }: PropsWithChildren<AuthorizationCodeRightsProviderProps>): JSX.Element => {
@@ -125,8 +118,7 @@ export const AuthorizationCodeRightsProvider = ({
       redirect_uri &&
       post_logout_redirect_uri &&
       response_type &&
-      scope &&
-      userinfoMapper
+      scope
     ) {      
 
       Log.logger = console;
@@ -148,7 +140,7 @@ export const AuthorizationCodeRightsProvider = ({
 
         newUserManager.getUser().then(user => {
           if (user) {
-            const session = {
+            let session = {
               access_token: user.access_token,
               expires_in: user.expires_in,
               identifier: user.profile.sub,
@@ -156,19 +148,19 @@ export const AuthorizationCodeRightsProvider = ({
               issued: new Date(),
             } as SessionWithUserInfo;
     
-            const mappedSession = userinfoMapper(session, user.profile);
-    
+            session = Object.assign(session, user.profile);
+
             setValue(previousValue => {
               return {
                 ...previousValue,
-                token: mappedSession.access_token,
-                refresh_token: mappedSession.refresh_token,
-                expires_in: mappedSession.expires_in,
+                token: session.access_token,
+                refresh_token: session.refresh_token,
+                expires_in: session.expires_in,
                 issued: new Date(),
-                rights: mappedSession.rights,
-                timeout_in: mappedSession.expires_in
+                session: session,
+                timeout_in: session.expires_in
                   ? moment(new Date())
-                      .add(mappedSession.expires_in, 'seconds')
+                      .add(session.expires_in, 'seconds')
                       .toDate()
                   : undefined,
               };
@@ -188,8 +180,7 @@ export const AuthorizationCodeRightsProvider = ({
     redirect_uri,
     post_logout_redirect_uri,
     response_type,
-    scope,
-    userinfoMapper,
+    scope
   ]);
 
   useEffect(() => {
@@ -240,7 +231,7 @@ export const AuthorizationCodeRightsProvider = ({
           refresh: () => {
             userManager.signinSilent().then(user => {
               if (user) {
-                const session = {
+                let session = {
                   access_token: user.access_token,
                   expires_in: user.expires_in,
                   identifier: user.profile.sub,
@@ -248,19 +239,19 @@ export const AuthorizationCodeRightsProvider = ({
                   issued: new Date(),
                 } as SessionWithUserInfo;
 
-                const mappedSession = userinfoMapper(session, user.profile);
+                session = Object.assign(session, user.profile);
 
                 setValue(previousValue => {
                   return {
                     ...previousValue,
-                    token: mappedSession.access_token,
-                    refresh_token: mappedSession.refresh_token,
-                    expires_in: mappedSession.expires_in,
+                    token: session.access_token,
+                    refresh_token: session.refresh_token,
+                    expires_in: session.expires_in,
                     issued: new Date(),
-                    rights: mappedSession.rights,
-                    timeout_in: mappedSession.expires_in
+                    session: session,
+                    timeout_in: session.expires_in
                       ? moment(new Date())
-                          .add(mappedSession.expires_in, 'seconds')
+                          .add(session.expires_in, 'seconds')
                           .toDate()
                       : undefined,
                   };
@@ -279,7 +270,6 @@ export const AuthorizationCodeRightsProvider = ({
     showError,
     authority,
     client,
-    userinfoMapper,
     userManager,
   ]);
 
@@ -311,7 +301,7 @@ export const AuthorizationCodeRightsProvider = ({
         .signinRedirectCallback()
         .then(user => {
           if (user) {
-            const session = {
+            let session = {
               access_token: user.access_token,
               expires_in: user.expires_in,
               identifier: user.profile.sub,
@@ -319,21 +309,21 @@ export const AuthorizationCodeRightsProvider = ({
               issued: new Date(),
             } as SessionWithUserInfo;
 
-            const mappedSession = userinfoMapper(session, user.profile);
+            session = Object.assign(session, user.profile);
 
             setUserManager(newUserManager);
 
             setValue(previousValue => {
               return {
                 ...previousValue,
-                token: mappedSession.access_token,
-                refresh_token: mappedSession.refresh_token,
-                expires_in: mappedSession.expires_in,
+                token: session.access_token,
+                refresh_token: session.refresh_token,
+                expires_in: session.expires_in,
                 issued: new Date(),
-                rights: mappedSession.rights,
-                timeout_in: mappedSession.expires_in
+                session: session,
+                timeout_in: session.expires_in
                   ? moment(new Date())
-                      .add(mappedSession.expires_in, 'seconds')
+                      .add(session.expires_in, 'seconds')
                       .toDate()
                   : undefined,
               };
@@ -357,7 +347,6 @@ export const AuthorizationCodeRightsProvider = ({
     push,
     showInfo,
     showError,
-    userinfoMapper,
   ]);
 
   useEffect(() => {

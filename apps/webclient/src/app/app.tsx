@@ -12,8 +12,6 @@ import { CircularProgress } from '@material-ui/core';
 import { RenderFactoryContext } from '@ballware/react-renderer';
 
 import { DocumentViewer } from '../components/print/documentviewer';
-import { MappedSessionWithUserRights, SessionWithUserInfo } from '@ballware/identity-interface';
-import { Rights } from '@ballware/meta-interface';
 
 import { AuthorizationCodeRightsProvider } from '@ballware/react-provider';
 
@@ -33,19 +31,6 @@ const App = () => {
       </Application>}
     </I18nextProvider>
   </Suspense>);
-}
-
-function mapSession<T extends MappedSessionWithUserRights>(sessionWithUserInfo: SessionWithUserInfo, userinfo: Record<string, unknown>) {
-  return {
-    ...sessionWithUserInfo,
-    rights: {
-      BenutzerId: sessionWithUserInfo.identifier,
-      Email: sessionWithUserInfo.email,
-      PersonId: userinfo.person,
-      TenantId: userinfo.tenant,
-      Claims: userinfo.right,
-    } as Rights
-  } as T;
 }
 
 export interface AppComponentProps {
@@ -83,8 +68,7 @@ export const AppComponent = ({ authority, client_id, client_secret, application_
               post_logout_redirect_uri={application_uri} 
               response_type={'code'}
               scope={scope}
-              account_management_uri={account_management_uri}
-              userinfoMapper={mapSession}>
+              account_management_uri={account_management_uri}>
               <TenantProvider>
                 <Route path={"/"} component={MemorizedApp} />
                 <Notification />

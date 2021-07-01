@@ -5,7 +5,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { Rights } from './rights';
 import { ScriptUtil } from './scriptutil';
 import { EditUtil } from './entity';
 
@@ -241,20 +240,20 @@ export interface CompiledPageCustomScripts {
   /**
    * Check if user is allowed to view page in navigation
    *
-   * @param rights User rights container
+   * @param userinfo User rights container
    * @param page Identifier of page
    * @returns true if page is allowed, false if not
    */
-  pageVisible?: (rights: Rights, page: string) => boolean;
+  pageVisible?: (userinfo: Record<string, unknown>, page: string) => boolean;
 
   /**
    * Check if user is allowed to navigate to page
    *
-   * @param rights User rights container
+   * @param userinfo User rights container
    * @param page Identifier of page
    * @returns true if page is allowed, false if not
    */
-  pageEnabled?: (rights: Rights, page: string) => boolean;
+  pageEnabled?: (userinfo: Record<string, unknown>, page: string) => boolean;
 
   /**
    * Prepare custom param object containing values needed for other custom scripts

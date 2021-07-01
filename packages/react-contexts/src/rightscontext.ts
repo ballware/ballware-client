@@ -6,7 +6,7 @@
  */
 
 import { createContext } from 'react';
-import { Rights } from '@ballware/meta-interface';
+import { SessionWithUserInfo } from '@ballware/identity-interface';
 
 /**
  * Persisted part of rights state in application store
@@ -15,7 +15,7 @@ export interface PersistedRightsState {
   /**
    * User rights for current user
    */
-  rights?: Rights;
+  session?: SessionWithUserInfo;
 
   /**
    * Access token timeout stamp

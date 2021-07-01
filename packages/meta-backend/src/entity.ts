@@ -121,7 +121,7 @@ const compileEntityMetadata = (
 
     if (customScripts.extendedRightsCheck) {
       const compiledRightsCheckArgs = [
-        'rights',
+        'userinfo',
         'entity',
         'right',
         'param',
@@ -132,10 +132,10 @@ const compileEntityMetadata = (
         compiledRightsCheckArgs.concat(customScripts.extendedRightsCheck)
       );
 
-      compiledMetaData.compiledCustomScripts.extendedRightsCheck = compiledRightsCheckFn
-        ? (rights, entity, right, param, result) =>
+      compiledMetaData.compiledCustomScripts.rightsCheck = compiledRightsCheckFn
+        ? (userinfo, entity, right, param, result) =>
             compiledRightsCheckFn.apply(compiledRightsCheckFn, [
-              rights,
+              userinfo,
               entity,
               right,
               param,

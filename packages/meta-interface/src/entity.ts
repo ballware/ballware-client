@@ -8,7 +8,7 @@
 import { DocumentSelectEntry } from './document';
 import { ScriptUtil } from './scriptutil';
 import { CrudItem, ValueType } from './cruditem';
-import { ExtendedRightsCheckFunc } from './rights';
+import { RightsCheckFunc } from './rights';
 
 /**
  * Adapter for accessing editor objects in custom scripts
@@ -407,7 +407,7 @@ export interface CompiledEntityCustomScripts {
   /**
    * Custom rights check operations
    */
-  extendedRightsCheck?: ExtendedRightsCheckFunc;
+  rightsCheck?: RightsCheckFunc;
 
   /**
    * Prepare custom param for extendedRightsCheck if operation is not connected to specific business object

@@ -9,7 +9,6 @@ import {
   Session,
   SessionWithUserInfo,
   ResourceOwnerAuthApi,
-  MappedSessionWithUserRights,
 } from '@ballware/identity-interface';
 import axios from 'axios';
 
@@ -25,16 +24,12 @@ interface UserInfoResponse extends Record<string, unknown> {
 }
 
 const loginFunc = (serviceBaseUrl: string, scopes: string) => <
-  T extends MappedSessionWithUserRights
+  T extends SessionWithUserInfo
 >(
   email: string,
   password: string,
   client: string,
-  secret: string,
-  userinfoMapper: (
-    sessionWithUserInfo: SessionWithUserInfo,
-    userinfo: Record<string, unknown>
-  ) => T
+  secret: string
 ): Promise<T> => {
   return new Promise((resolve, reject) => {
     const tokenUrl = `${serviceBaseUrl}connect/token`;
@@ -70,9 +65,7 @@ const loginFunc = (serviceBaseUrl: string, scopes: string) => <
               email: userinfoResponse.data.preferred_username,
             } as T;
 
-            if (userinfoMapper) {
-              session = userinfoMapper(session, userinfoResponse.data);
-            }
+            session = Object.assign(session, userinfoResponse.data);
 
             resolve(session);
           })

@@ -27,7 +27,7 @@ export const SessionButton = () => {
 
   const {
     timeout_in,
-    rights,
+    session,
     expired,
     logout,
     refresh,
@@ -94,7 +94,7 @@ export const SessionButton = () => {
 
   return (
     <React.Fragment>
-      {timeoutIn > 0 && rights && (
+      {timeoutIn > 0 && session && (
         <IconButton color="inherit" onClick={e => setAnchorEl(e.currentTarget)}>
           <Badge color="error" badgeContent={badgeContent}>
             <AccountCircle />
@@ -114,19 +114,19 @@ export const SessionButton = () => {
           {timeoutIn > 0 && (
             <MenuItem onClick={onRefresh}>{t('session.refresh')}</MenuItem>
           )}
-          {rights && changePassword && (
+          {session && changePassword && (
             <MenuItem onClick={onChangePassword}>
               {t('session.changepassword')}
             </MenuItem>
           )}
-          {rights && manageAccount && (
+          {session && manageAccount && (
             <MenuItem onClick={onManageAccount}>
               {t('session.manageaccount')}
             </MenuItem>
           )}
-          {rights && (
+          {session && (
             <MenuItem onClick={onLogout}>
-              {t('session.logout', { user: rights.Email })}
+              {t('session.logout', { user: session.email })}
             </MenuItem>
           )}
         </Menu>

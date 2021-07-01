@@ -21,7 +21,7 @@ import { RenderFactoryContext } from '@ballware/react-renderer';
 export interface RoutesProps {}
 
 export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
-  const { rights } = useContext(RightsContext);
+  const { session } = useContext(RightsContext);
   const { navigation, pages, pageAllowed } = useContext(TenantContext);
   const { Page } = useContext(RenderFactoryContext);
   const { LookupProvider, PageProvider } = useContext(ProviderFactoryContext);
@@ -45,7 +45,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
     if (
       LookupProvider &&
       PageProvider &&
-      rights &&
+      session &&
       pages &&
       pageAllowed &&
       Page
@@ -79,7 +79,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
     navigation,
     pages,
     pageAllowed,
-    rights,
+    session,
     LookupProvider,
     PageProvider,
     Page,
