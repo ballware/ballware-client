@@ -1,6 +1,6 @@
 {
   "name": "@ballware/identity-backend",
-  "version": "6.1.1",
+  "version": "6.5.0",
   "description": "Ballware Application Builder - Client for identity provider backend",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
