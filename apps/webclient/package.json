@@ -1,16 +1,16 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.4.0",
+  "version": "6.6.0",
   "private": true,
   "dependencies": {
-    "@ballware/identity-backend": "^6.5.0",
-    "@ballware/identity-interface": "^6.5.0",
-    "@ballware/meta-backend": "^6.5.0",
-    "@ballware/meta-interface": "^6.5.0",
-    "@ballware/react-contexts": "^6.5.0",
-    "@ballware/react-provider": "^6.5.0",
-    "@ballware/react-renderer": "^6.5.0",
-    "@ballware/react-renderer-dx": "^6.5.0"
+    "@ballware/identity-backend": "^6.6.0",
+    "@ballware/identity-interface": "^6.6.0",
+    "@ballware/meta-backend": "^6.6.0",
+    "@ballware/meta-interface": "^6.6.0",
+    "@ballware/react-contexts": "^6.6.0",
+    "@ballware/react-provider": "^6.6.0",
+    "@ballware/react-renderer": "^6.6.0",
+    "@ballware/react-renderer-dx": "^6.6.0"
   },
   "scripts": {
     "start": "set HTTPS=true&&react-app-rewired --max-http-header-size=32768 start",
