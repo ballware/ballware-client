@@ -22,7 +22,7 @@ Layout item tree element
 
 Number of cols for layouting child editor items (only for container types)
 
-Defined in: [page.ts:146](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L146)
+Defined in: [page.ts:145](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L145)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 Number of cols occupied by editor in layout
 
-Defined in: [page.ts:151](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L151)
+Defined in: [page.ts:150](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L150)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 Child layout components (only for container types)
 
-Defined in: [page.ts:157](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L157)
+Defined in: [page.ts:156](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L156)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 Options for layout item
 
-Defined in: [page.ts:141](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L141)
+Defined in: [page.ts:140](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L140)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 Type identifier for layout item
 
-Defined in: [page.ts:129](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L129)
+Defined in: [page.ts:128](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L128)

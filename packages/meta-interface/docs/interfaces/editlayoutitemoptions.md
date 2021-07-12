@@ -39,7 +39,7 @@ Available Options for edit/detail layout items
 
 Accept alternative custom user input as value (only for editors with select list functionality)
 
-Defined in: [entity.ts:195](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L195)
+Defined in: [entity.ts:195](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L195)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Display text for label
 
-Defined in: [entity.ts:144](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L144)
+Defined in: [entity.ts:144](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L144)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 Property of business object the editor is attached to
 
-Defined in: [entity.ts:149](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L149)
+Defined in: [entity.ts:149](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L149)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 Display data member in lookup query result (only for editors with select list functionality)
 
-Defined in: [entity.ts:180](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L180)
+Defined in: [entity.ts:180](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L180)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 Optional fixed height for editor component
 
-Defined in: [entity.ts:185](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L185)
+Defined in: [entity.ts:185](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L185)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 Hint displayed as tooltip on editor
 
-Defined in: [entity.ts:205](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L205)
+Defined in: [entity.ts:205](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L205)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 Editor component specific additional options
 
-Defined in: [entity.ts:215](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L215)
+Defined in: [entity.ts:215](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L215)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 Static item list used as select list (only for editors with select list functionality)
 
-Defined in: [entity.ts:210](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L210)
+Defined in: [entity.ts:210](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L210)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 Data member of business object containing select list (only for editors with select list functionality)
 
-Defined in: [entity.ts:200](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L200)
+Defined in: [entity.ts:200](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L200)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 Lookup identifier (only for editors with select list functionality)
 
-Defined in: [entity.ts:164](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L164)
+Defined in: [entity.ts:164](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L164)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 Optional data member for lookup query (only for editors with select list functionality).
 The current business object property value of data member will be supplied as parameter to lookup query
 
-Defined in: [entity.ts:170](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L170)
+Defined in: [entity.ts:170](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L170)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 If set, the property is not changeable by user
 
-Defined in: [entity.ts:159](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L159)
+Defined in: [entity.ts:159](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L159)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 If set, property of business object is required to have a value
 
-Defined in: [entity.ts:154](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L154)
+Defined in: [entity.ts:154](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L154)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 List of custom validation rules (Have to be checked in editorValidating custom script)
 
-Defined in: [entity.ts:220](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L220)
+Defined in: [entity.ts:220](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L220)
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 Value data member in lookup query result (only for editors with select list functionality)
 
-Defined in: [entity.ts:175](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L175)
+Defined in: [entity.ts:175](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L175)
 
 ___
 
@@ -190,4 +190,4 @@ ___
 
 Optional fixed width for editor component
 
-Defined in: [entity.ts:190](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L190)
+Defined in: [entity.ts:190](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L190)

@@ -56,22 +56,20 @@ export const TenantProvider = ({
   const [value, setValue] = useState({} as TenantContextState);
 
   const { metaTenantApiFactory } = useContext(SettingsContext);
-  const { rights, token } = useContext(RightsContext);
+  const { session, token } = useContext(RightsContext);
   const { showError } = useContext(NotificationContext);
 
-  const pageAllowed = useCallback(
-    (page: string) => {
-      if (tenant && rights) {
-        if (tenant.pageVisible) {
-          return tenant.pageVisible(rights, page);
+  const hasRight = useCallback(
+    (right: string) => {
+      if (tenant && session) {
+        if (tenant.hasRight) {
+          return tenant.hasRight(session, right);
         }
-
-        return true;
       }
 
       return false;
     },
-    [tenant, rights]
+    [tenant, session]
   );
 
   useEffect(() => {
@@ -79,39 +77,39 @@ export const TenantProvider = ({
       showError &&
       metaTenantApiFactory &&
       token &&
-      rights &&
-      rights.TenantId
+      session &&
+      session.tenant
     ) {
       const api = metaTenantApiFactory();
 
       api
-        .metadataForTenant(token, rights.TenantId)
+        .metadataForTenant(token, session.tenant as string)
         .then(result => setTenant(result))
         .catch(reason => showError(reason));
     } else {
       setTenant(undefined);
       setPages(undefined);
     }
-  }, [showError, metaTenantApiFactory, token, rights]);
+  }, [showError, metaTenantApiFactory, token, session]);
 
   useEffect(() => {
-    if (tenant && rights) {
+    if (tenant && session) {
       if (tenant.navigation?.items) {
         setPages(findPages(tenant.navigation.items));
       } else {
         setPages([]);
       }
     }
-  }, [tenant, rights]);
+  }, [tenant, session]);
 
   useEffect(() => {
     setValue({
       name: tenant?.name,
       navigation: tenant?.navigation,
       pages,
-      pageAllowed,
+      hasRight,
     } as TenantContextState);
-  }, [tenant, pages, pageAllowed]);
+  }, [tenant, pages, hasRight]);
 
   return (
     <TenantContext.Provider value={value}>{children}</TenantContext.Provider>

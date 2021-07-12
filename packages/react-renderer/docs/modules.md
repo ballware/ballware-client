@@ -54,7 +54,7 @@
 
 • `Const` **EditItemsContext**: *Context*<[*EditItemsContextState*](interfaces/edititemscontextstate.md)\>
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:273](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L273)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:273](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/edititemscontext.tsx#L273)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 Provides environmental functionality for edit layout items
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:294](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L294)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:294](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/edititemscontext.tsx#L294)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • `Const` **RenderFactoryContext**: *Context*<[*RenderFactoryContextState*](interfaces/renderfactorycontextstate.md)\>
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:352](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L352)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:352](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L352)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • `Const` **ToolbarItemsContext**: *Context*<[*ToolbarItemsContextState*](interfaces/toolbaritemscontextstate.md)\>
 
-Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:76](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L76)
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:76](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/toolbaritemscontext.tsx#L76)
 
 ## Functions
 
@@ -98,7 +98,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:36](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/crudcontainer.tsx#L36)
+Defined in: [packages/react-renderer/src/common/crudcontainer.tsx:36](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/crudcontainer.tsx#L36)
 
 ___
 
@@ -116,7 +116,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/common/crudfunctions.tsx:35](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/crudfunctions.tsx#L35)
+Defined in: [packages/react-renderer/src/common/crudfunctions.tsx:35](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/crudfunctions.tsx#L35)
 
 ___
 
@@ -134,7 +134,7 @@ Name | Type |
 
 **Returns:** *Element*
 
-Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:86](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/toolbaritemscontext.tsx#L86)
+Defined in: [packages/react-renderer/src/common/toolbaritemscontext.tsx:86](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/toolbaritemscontext.tsx#L86)
 
 ___
 
@@ -155,7 +155,7 @@ Name | Type | Description |
 
 Value of property if found in tree
 
-Defined in: [packages/react-renderer/src/common/databinding.ts:14](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/databinding.ts#L14)
+Defined in: [packages/react-renderer/src/common/databinding.ts:14](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/databinding.ts#L14)
 
 ___
 
@@ -175,7 +175,7 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/databinding.ts:43](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/databinding.ts#L43)
+Defined in: [packages/react-renderer/src/common/databinding.ts:43](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/databinding.ts#L43)
 
 ___
 
@@ -194,4 +194,4 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/common/customhooks.ts:15](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/customhooks.ts#L15)
+Defined in: [packages/react-renderer/src/common/customhooks.ts:15](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/customhooks.ts#L15)

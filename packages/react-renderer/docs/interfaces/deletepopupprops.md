@@ -20,7 +20,7 @@ Properties for delete popup
 
 Identifier of item to be dropped
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:116](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L116)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:116](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L116)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Content message in popup
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:111](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L111)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:111](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L111)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Title text for delete popup
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:106](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L106)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:106](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L106)

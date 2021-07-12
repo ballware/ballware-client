@@ -22,4 +22,4 @@ Validate editors in edit items provider
 
 true if validation passes
 
-Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:288](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/common/edititemscontext.tsx#L288)
+Defined in: [packages/react-renderer/src/common/edititemscontext.tsx:288](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/common/edititemscontext.tsx#L288)

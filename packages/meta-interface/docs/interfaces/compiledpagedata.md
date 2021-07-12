@@ -23,7 +23,7 @@ Page metadata
 
 Container for custom script operations
 
-Defined in: [page.ts:392](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L392)
+Defined in: [page.ts:391](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L391)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 Unique identifier of page
 
-Defined in: [page.ts:360](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L360)
+Defined in: [page.ts:359](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L359)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 Layout definition
 
-Defined in: [page.ts:370](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L370)
+Defined in: [page.ts:369](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L369)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 Collection of lookup definitions
 
-Defined in: [page.ts:375](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L375)
+Defined in: [page.ts:374](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L374)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 Display name for navigation
 
-Defined in: [page.ts:365](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L365)
+Defined in: [page.ts:364](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L364)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 Collection of picklist definitions
 
-Defined in: [page.ts:387](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L387)
+Defined in: [page.ts:386](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L386)

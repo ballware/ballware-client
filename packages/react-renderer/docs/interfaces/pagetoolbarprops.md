@@ -20,7 +20,7 @@ Properties for page toolbar component
 
 Identifier for showing documentation
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:157](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L157)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:157](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L157)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Toolbar items metadata
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:167](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L167)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:167](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L167)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Title of page
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:162](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L162)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:162](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L162)

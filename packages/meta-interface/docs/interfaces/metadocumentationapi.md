@@ -37,6 +37,6 @@ Name | Type |
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: [documentation.ts:19](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/documentation.ts#L19)
+Defined in: [documentation.ts:19](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/documentation.ts#L19)
 
-Defined in: [documentation.ts:19](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/documentation.ts#L19)
+Defined in: [documentation.ts:19](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/documentation.ts#L19)

@@ -4,10 +4,6 @@
 
 ## Table of contents
 
-### Enumerations
-
-- [EntityRights](enums/entityrights.md)
-
 ### Interfaces
 
 - [CompiledEntityCustomScripts](interfaces/compiledentitycustomscripts.md)
@@ -49,7 +45,6 @@
 - [PageLayoutItem](interfaces/pagelayoutitem.md)
 - [PageLayoutItemOptions](interfaces/pagelayoutitemoptions.md)
 - [PageToolbarItem](interfaces/pagetoolbaritem.md)
-- [Rights](interfaces/rights.md)
 - [ScriptActions](interfaces/scriptactions.md)
 - [ScriptUtil](interfaces/scriptutil.md)
 - [StatisticChartOptions](interfaces/statisticchartoptions.md)
@@ -61,26 +56,35 @@
 
 ### Type aliases
 
-- [ExtendedRightsCheckFunc](modules.md#extendedrightscheckfunc)
 - [QueryParams](modules.md#queryparams)
+- [RightsCheckFunc](modules.md#rightscheckfunc)
 - [ValueType](modules.md#valuetype)
-
-### Functions
-
-- [hasAnyRight](modules.md#hasanyright)
-- [hasRight](modules.md#hasright)
 
 ## Type aliases
 
-### ExtendedRightsCheckFunc
+### QueryParams
 
-Ƭ **ExtendedRightsCheckFunc**: (`rights`: [*Rights*](interfaces/rights.md), `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `param`: *Record*<string, unknown\> \| *undefined*, `result`: *boolean*) => *boolean*
+Ƭ **QueryParams**: *Record*<string, string \| number \| boolean \| (string \| number \| boolean)[]\>
+
+Generic data container type containing parameter values for data queries
+
+Defined in: [common.ts:11](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/common.ts#L11)
+
+___
+
+### RightsCheckFunc
+
+Ƭ **RightsCheckFunc**: (`userinfo`: *Record*<string, unknown\>, `application`: *string*, `entity`: *string*, `readOnly`: *boolean*, `right`: *string*, `param`: *Record*<string, unknown\> \| *undefined*, `result`: *boolean*) => *boolean*
 
 Definition for extended rights check function for custom script right checks
 
 **`param`** Container with current user rights
 
+**`param`** Requested business object application scope
+
 **`param`** Requested business object type
+
+**`param`** Object container in explicit readonly mode
 
 **`param`** Requested right
 
@@ -92,31 +96,23 @@ Definition for extended rights check function for custom script right checks
 
 #### Type declaration:
 
-▸ (`rights`: [*Rights*](interfaces/rights.md), `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `param`: *Record*<string, unknown\> \| *undefined*, `result`: *boolean*): *boolean*
+▸ (`userinfo`: *Record*<string, unknown\>, `application`: *string*, `entity`: *string*, `readOnly`: *boolean*, `right`: *string*, `param`: *Record*<string, unknown\> \| *undefined*, `result`: *boolean*): *boolean*
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`rights` | [*Rights*](interfaces/rights.md) |
+`userinfo` | *Record*<string, unknown\> |
+`application` | *string* |
 `entity` | *string* |
-`right` | [*EntityRights*](enums/entityrights.md) \| *string* |
+`readOnly` | *boolean* |
+`right` | *string* |
 `param` | *Record*<string, unknown\> \| *undefined* |
 `result` | *boolean* |
 
 **Returns:** *boolean*
 
-Defined in: [rights.ts:49](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/rights.ts#L49)
-
-___
-
-### QueryParams
-
-Ƭ **QueryParams**: *Record*<string, string \| number \| boolean \| (string \| number \| boolean)[]\>
-
-Generic data container type containing parameter values for data queries
-
-Defined in: [common.ts:11](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/common.ts#L11)
+Defined in: [rights.ts:20](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/rights.ts#L20)
 
 ___
 
@@ -126,52 +122,4 @@ ___
 
 Possible value types for business object properties
 
-Defined in: [cruditem.ts:11](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/cruditem.ts#L11)
-
-## Functions
-
-### hasAnyRight
-
-▸ **hasAnyRight**(`rights`: [*Rights*](interfaces/rights.md), `application`: *string*, `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md)): *boolean*
-
-Function for checking any access right for business object operations
-
-#### Parameters:
-
-Name | Type | Description |
-:------ | :------ | :------ |
-`rights` | [*Rights*](interfaces/rights.md) | Container with current user rights   |
-`application` | *string* | Application scope the business object is nested in   |
-`entity` | *string* | Business object type identifier   |
-`right` | [*EntityRights*](enums/entityrights.md) | Requested right   |
-
-**Returns:** *boolean*
-
-true if access is allowed, false if not
-
-Defined in: [rights.ts:95](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/rights.ts#L95)
-
-___
-
-### hasRight
-
-▸ **hasRight**(`rights`: [*Rights*](interfaces/rights.md), `application`: *string*, `entity`: *string*, `right`: [*EntityRights*](enums/entityrights.md) \| *string*, `extendedRightCheckFunc?`: [*ExtendedRightsCheckFunc*](modules.md#extendedrightscheckfunc), `param?`: *Record*<string, unknown\>): *boolean*
-
-Function for checking specific access right for business object operations
-
-#### Parameters:
-
-Name | Type | Description |
-:------ | :------ | :------ |
-`rights` | [*Rights*](interfaces/rights.md) | Container with current user rights   |
-`application` | *string* | Application scope the business object is nested in   |
-`entity` | *string* | Business object type identifier   |
-`right` | [*EntityRights*](enums/entityrights.md) \| *string* | Requested right   |
-`extendedRightCheckFunc?` | [*ExtendedRightsCheckFunc*](modules.md#extendedrightscheckfunc) | Extended rights check function   |
-`param?` | *Record*<string, unknown\> | Extra param for custom rights check   |
-
-**Returns:** *boolean*
-
-true if access is allowed, false if not
-
-Defined in: [rights.ts:68](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/rights.ts#L68)
+Defined in: [cruditem.ts:11](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/cruditem.ts#L11)

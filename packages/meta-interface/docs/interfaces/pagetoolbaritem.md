@@ -24,7 +24,7 @@ Toolbar element
 
 Display text
 
-Defined in: [page.ts:177](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L177)
+Defined in: [page.ts:176](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L176)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 Initial value of toolbar component
 
-Defined in: [page.ts:192](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L192)
+Defined in: [page.ts:191](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L191)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 Identifier for lookup (only for components with select lists)
 
-Defined in: [page.ts:182](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L182)
+Defined in: [page.ts:181](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L181)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 Unique name of toolbar element
 
-Defined in: [page.ts:172](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L172)
+Defined in: [page.ts:171](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L171)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 Component type specific options
 
-Defined in: [page.ts:197](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L197)
+Defined in: [page.ts:196](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L196)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 Type identifier of toolbar component
 
-Defined in: [page.ts:167](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L167)
+Defined in: [page.ts:166](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L166)
 
 ___
 
@@ -84,4 +84,4 @@ ___
 
 Optional fixed width of toolbar component
 
-Defined in: [page.ts:187](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L187)
+Defined in: [page.ts:186](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L186)

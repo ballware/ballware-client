@@ -20,7 +20,7 @@ Options for layout item type 'tab'
 
 Display text in tab panel
 
-Defined in: [page.ts:19](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L19)
+Defined in: [page.ts:18](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L18)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 Identifier of business object for count display
 
-Defined in: [page.ts:24](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L24)
+Defined in: [page.ts:23](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L23)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 Identifier of list query for count display
 
-Defined in: [page.ts:29](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L29)
+Defined in: [page.ts:28](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L28)

@@ -31,4 +31,4 @@ Name | Type |
 
 created react component
 
-Defined in: [packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx:315](https://github.com/ballware/ballware-client/blob/d6ff9c8/packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx#L315)
+Defined in: [packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx:316](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer-dx/src/dxrenderfactoryprovider.tsx#L316)

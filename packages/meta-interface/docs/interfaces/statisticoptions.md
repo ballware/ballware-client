@@ -18,4 +18,4 @@ Options for layout item type 'statistic'
 
 Identifier of statistic definition
 
-Defined in: [page.ts:94](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L94)
+Defined in: [page.ts:93](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L93)

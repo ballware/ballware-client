@@ -20,7 +20,7 @@ Definition of page specific custom scripts
 
 ### pageEnabled
 
-• `Optional` **pageEnabled**: (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
+• `Optional` **pageEnabled**: (`userinfo`: *Record*<string, unknown\>, `page`: *string*) => *boolean*
 
 Check if user is allowed to navigate to page
 
@@ -32,26 +32,26 @@ Check if user is allowed to navigate to page
 
 #### Type declaration:
 
-▸ (`rights`: [*Rights*](rights.md), `page`: *string*): *boolean*
+▸ (`userinfo`: *Record*<string, unknown\>, `page`: *string*): *boolean*
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`rights` | [*Rights*](rights.md) |
+`userinfo` | *Record*<string, unknown\> |
 `page` | *string* |
 
 **Returns:** *boolean*
 
-Defined in: [page.ts:257](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L257)
+Defined in: [page.ts:256](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L256)
 
-Defined in: [page.ts:257](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L257)
+Defined in: [page.ts:256](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L256)
 
 ___
 
 ### pageVisible
 
-• `Optional` **pageVisible**: (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
+• `Optional` **pageVisible**: (`userinfo`: *Record*<string, unknown\>, `page`: *string*) => *boolean*
 
 Check if user is allowed to view page in navigation
 
@@ -63,20 +63,20 @@ Check if user is allowed to view page in navigation
 
 #### Type declaration:
 
-▸ (`rights`: [*Rights*](rights.md), `page`: *string*): *boolean*
+▸ (`userinfo`: *Record*<string, unknown\>, `page`: *string*): *boolean*
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`rights` | [*Rights*](rights.md) |
+`userinfo` | *Record*<string, unknown\> |
 `page` | *string* |
 
 **Returns:** *boolean*
 
-Defined in: [page.ts:248](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L248)
+Defined in: [page.ts:247](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L247)
 
-Defined in: [page.ts:248](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L248)
+Defined in: [page.ts:247](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L247)
 
 ___
 
@@ -121,9 +121,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [page.ts:341](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L341)
+Defined in: [page.ts:340](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L340)
 
-Defined in: [page.ts:341](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L341)
+Defined in: [page.ts:340](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L340)
 
 ___
 
@@ -162,9 +162,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [page.ts:299](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L299)
+Defined in: [page.ts:298](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L298)
 
-Defined in: [page.ts:299](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L299)
+Defined in: [page.ts:298](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L298)
 
 ___
 
@@ -206,9 +206,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [page.ts:319](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L319)
+Defined in: [page.ts:318](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L318)
 
-Defined in: [page.ts:319](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L319)
+Defined in: [page.ts:318](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L318)
 
 ___
 
@@ -244,9 +244,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [page.ts:281](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L281)
+Defined in: [page.ts:280](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L280)
 
-Defined in: [page.ts:281](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L281)
+Defined in: [page.ts:280](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L280)
 
 ___
 
@@ -276,6 +276,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [page.ts:266](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L266)
+Defined in: [page.ts:265](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L265)
 
-Defined in: [page.ts:266](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L266)
+Defined in: [page.ts:265](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L265)

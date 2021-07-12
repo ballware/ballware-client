@@ -20,7 +20,7 @@ Navigation tree item
 
 Collection of child items (only for 'group' and 'section')
 
-Defined in: [tenant.ts:42](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L42)
+Defined in: [tenant.ts:40](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L40)
 
 ___
 
@@ -38,7 +38,7 @@ Name | Type | Description |
 `page`? | *string* | Page identifier if item type is 'page'   |
 `url`? | *string* | Optional url for external page not part of application   |
 
-Defined in: [tenant.ts:22](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L22)
+Defined in: [tenant.ts:20](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L20)
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 Type of navigation item
 
-Defined in: [tenant.ts:17](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L17)
+Defined in: [tenant.ts:15](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L15)

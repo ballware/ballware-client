@@ -30,7 +30,7 @@ Defintion of metadata for business object
 
 Application scope the business object is nested in
 
-Defined in: [entity.ts:692](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L692)
+Defined in: [entity.ts:692](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L692)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 Base url of crud operations REST API
 
-Defined in: [entity.ts:707](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L707)
+Defined in: [entity.ts:707](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L707)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 Container for custom script operations
 
-Defined in: [entity.ts:740](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L740)
+Defined in: [entity.ts:740](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L740)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 Collection of defined custom functions
 
-Defined in: [entity.ts:745](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L745)
+Defined in: [entity.ts:745](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L745)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 Display name of business object
 
-Defined in: [entity.ts:702](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L702)
+Defined in: [entity.ts:702](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L702)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 Collection of defined edit layouts
 
-Defined in: [entity.ts:755](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L755)
+Defined in: [entity.ts:755](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L755)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 Unique identifier of business object
 
-Defined in: [entity.ts:697](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L697)
+Defined in: [entity.ts:697](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L697)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 Collection of defined grid layouts
 
-Defined in: [entity.ts:750](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L750)
+Defined in: [entity.ts:750](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L750)
 
 ___
 
@@ -132,9 +132,9 @@ Name | Type |
 
 **Returns:** [*CrudItem*](cruditem.md)
 
-Defined in: [entity.ts:717](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L717)
+Defined in: [entity.ts:717](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L717)
 
-Defined in: [entity.ts:717](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L717)
+Defined in: [entity.ts:717](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L717)
 
 ___
 
@@ -166,9 +166,9 @@ Name | Type |
 
 **Returns:** [*CrudItem*](cruditem.md)
 
-Defined in: [entity.ts:731](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L731)
+Defined in: [entity.ts:731](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L731)
 
-Defined in: [entity.ts:731](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L731)
+Defined in: [entity.ts:731](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L731)
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 Collection of defined lookups
 
-Defined in: [entity.ts:760](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L760)
+Defined in: [entity.ts:760](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L760)
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 Collection of defined picklists
 
-Defined in: [entity.ts:772](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L772)
+Defined in: [entity.ts:772](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L772)
 
 ___
 
@@ -198,4 +198,4 @@ ___
 
 Member of business object containing current state code
 
-Defined in: [entity.ts:777](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L777)
+Defined in: [entity.ts:777](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L777)

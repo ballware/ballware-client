@@ -46,6 +46,6 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [statistic.ts:364](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/statistic.ts#L364)
+Defined in: [statistic.ts:364](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/statistic.ts#L364)
 
-Defined in: [statistic.ts:364](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/statistic.ts#L364)
+Defined in: [statistic.ts:364](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/statistic.ts#L364)

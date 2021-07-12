@@ -63,9 +63,9 @@ Check if add operation is allowed for current user
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:130](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L130)
+Defined in: [packages/react-contexts/src/metacontext.ts:130](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L130)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:130](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L130)
+Defined in: [packages/react-contexts/src/metacontext.ts:130](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L130)
 
 ___
 
@@ -94,9 +94,9 @@ Name | Type |
 
 **Returns:** *Promise*<CrudItem\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:72](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L72)
+Defined in: [packages/react-contexts/src/metacontext.ts:72](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L72)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:72](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L72)
+Defined in: [packages/react-contexts/src/metacontext.ts:72](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L72)
 
 ___
 
@@ -125,9 +125,9 @@ Name | Type |
 
 **Returns:** *Promise*<number\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:64](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L64)
+Defined in: [packages/react-contexts/src/metacontext.ts:64](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L64)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:64](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L64)
+Defined in: [packages/react-contexts/src/metacontext.ts:64](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L64)
 
 ___
 
@@ -154,9 +154,9 @@ Name | Type |
 
 **Returns:** *Promise*<CrudItem\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:79](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L79)
+Defined in: [packages/react-contexts/src/metacontext.ts:79](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L79)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:79](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L79)
+Defined in: [packages/react-contexts/src/metacontext.ts:79](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L79)
 
 ___
 
@@ -185,9 +185,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:166](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L166)
+Defined in: [packages/react-contexts/src/metacontext.ts:166](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L166)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:166](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L166)
+Defined in: [packages/react-contexts/src/metacontext.ts:166](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L166)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 Collection of available custom crud functions for entity
 
-Defined in: [packages/react-contexts/src/metacontext.ts:34](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L34)
+Defined in: [packages/react-contexts/src/metacontext.ts:34](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L34)
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 Prepared custom param object used by custom scripts
 
-Defined in: [packages/react-contexts/src/metacontext.ts:107](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L107)
+Defined in: [packages/react-contexts/src/metacontext.ts:107](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L107)
 
 ___
 
@@ -243,9 +243,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:343](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L343)
+Defined in: [packages/react-contexts/src/metacontext.ts:343](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L343)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:343](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L343)
+Defined in: [packages/react-contexts/src/metacontext.ts:343](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L343)
 
 ___
 
@@ -280,9 +280,9 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:359](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L359)
+Defined in: [packages/react-contexts/src/metacontext.ts:359](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L359)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:359](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L359)
+Defined in: [packages/react-contexts/src/metacontext.ts:359](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L359)
 
 ___
 
@@ -292,7 +292,7 @@ ___
 
 Display name of generic entity
 
-Defined in: [packages/react-contexts/src/metacontext.ts:29](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L29)
+Defined in: [packages/react-contexts/src/metacontext.ts:29](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L29)
 
 ___
 
@@ -302,7 +302,7 @@ ___
 
 Collection of available print documents for entity
 
-Defined in: [packages/react-contexts/src/metacontext.ts:117](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L117)
+Defined in: [packages/react-contexts/src/metacontext.ts:117](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L117)
 
 ___
 
@@ -328,9 +328,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:102](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L102)
+Defined in: [packages/react-contexts/src/metacontext.ts:102](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L102)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:102](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L102)
+Defined in: [packages/react-contexts/src/metacontext.ts:102](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L102)
 
 ___
 
@@ -356,9 +356,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:151](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L151)
+Defined in: [packages/react-contexts/src/metacontext.ts:151](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L151)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:151](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L151)
+Defined in: [packages/react-contexts/src/metacontext.ts:151](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L151)
 
 ___
 
@@ -384,9 +384,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:144](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L144)
+Defined in: [packages/react-contexts/src/metacontext.ts:144](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L144)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:144](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L144)
+Defined in: [packages/react-contexts/src/metacontext.ts:144](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L144)
 
 ___
 
@@ -419,9 +419,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:277](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L277)
+Defined in: [packages/react-contexts/src/metacontext.ts:277](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L277)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:277](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L277)
+Defined in: [packages/react-contexts/src/metacontext.ts:277](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L277)
 
 ___
 
@@ -457,9 +457,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:327](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L327)
+Defined in: [packages/react-contexts/src/metacontext.ts:327](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L327)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:327](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L327)
+Defined in: [packages/react-contexts/src/metacontext.ts:327](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L327)
 
 ___
 
@@ -492,9 +492,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:263](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L263)
+Defined in: [packages/react-contexts/src/metacontext.ts:263](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L263)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:263](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L263)
+Defined in: [packages/react-contexts/src/metacontext.ts:263](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L263)
 
 ___
 
@@ -527,9 +527,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:249](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L249)
+Defined in: [packages/react-contexts/src/metacontext.ts:249](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L249)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:249](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L249)
+Defined in: [packages/react-contexts/src/metacontext.ts:249](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L249)
 
 ___
 
@@ -568,9 +568,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:309](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L309)
+Defined in: [packages/react-contexts/src/metacontext.ts:309](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L309)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:309](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L309)
+Defined in: [packages/react-contexts/src/metacontext.ts:309](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L309)
 
 ___
 
@@ -606,9 +606,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:292](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L292)
+Defined in: [packages/react-contexts/src/metacontext.ts:292](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L292)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:292](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L292)
+Defined in: [packages/react-contexts/src/metacontext.ts:292](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L292)
 
 ___
 
@@ -641,9 +641,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:206](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L206)
+Defined in: [packages/react-contexts/src/metacontext.ts:206](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L206)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:206](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L206)
+Defined in: [packages/react-contexts/src/metacontext.ts:206](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L206)
 
 ___
 
@@ -672,9 +672,9 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:227](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L227)
+Defined in: [packages/react-contexts/src/metacontext.ts:227](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L227)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:227](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L227)
+Defined in: [packages/react-contexts/src/metacontext.ts:227](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L227)
 
 ___
 
@@ -700,9 +700,9 @@ Name | Type |
 
 **Returns:** *undefined* \| EditLayout
 
-Defined in: [packages/react-contexts/src/metacontext.ts:48](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L48)
+Defined in: [packages/react-contexts/src/metacontext.ts:48](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L48)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:48](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L48)
+Defined in: [packages/react-contexts/src/metacontext.ts:48](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L48)
 
 ___
 
@@ -728,9 +728,9 @@ Name | Type |
 
 **Returns:** *undefined* \| GridLayout
 
-Defined in: [packages/react-contexts/src/metacontext.ts:41](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L41)
+Defined in: [packages/react-contexts/src/metacontext.ts:41](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L41)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:41](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L41)
+Defined in: [packages/react-contexts/src/metacontext.ts:41](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L41)
 
 ___
 
@@ -740,7 +740,7 @@ ___
 
 Param object inherited by container (page or parent entity for example)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:112](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L112)
+Defined in: [packages/react-contexts/src/metacontext.ts:112](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L112)
 
 ___
 
@@ -769,9 +769,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:219](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L219)
+Defined in: [packages/react-contexts/src/metacontext.ts:219](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L219)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:219](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L219)
+Defined in: [packages/react-contexts/src/metacontext.ts:219](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L219)
 
 ___
 
@@ -801,9 +801,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:372](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L372)
+Defined in: [packages/react-contexts/src/metacontext.ts:372](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L372)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:372](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L372)
+Defined in: [packages/react-contexts/src/metacontext.ts:372](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L372)
 
 ___
 
@@ -829,9 +829,9 @@ Name | Type |
 
 **Returns:** *CrudItem*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:176](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L176)
+Defined in: [packages/react-contexts/src/metacontext.ts:176](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L176)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:176](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L176)
+Defined in: [packages/react-contexts/src/metacontext.ts:176](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L176)
 
 ___
 
@@ -857,9 +857,9 @@ Name | Type |
 
 **Returns:** *CrudItem*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:183](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L183)
+Defined in: [packages/react-contexts/src/metacontext.ts:183](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L183)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:183](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L183)
+Defined in: [packages/react-contexts/src/metacontext.ts:183](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L183)
 
 ___
 
@@ -892,9 +892,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:192](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L192)
+Defined in: [packages/react-contexts/src/metacontext.ts:192](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L192)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:192](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L192)
+Defined in: [packages/react-contexts/src/metacontext.ts:192](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L192)
 
 ___
 
@@ -921,9 +921,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:240](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L240)
+Defined in: [packages/react-contexts/src/metacontext.ts:240](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L240)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:240](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L240)
+Defined in: [packages/react-contexts/src/metacontext.ts:240](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L240)
 
 ___
 
@@ -947,9 +947,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:233](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L233)
+Defined in: [packages/react-contexts/src/metacontext.ts:233](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L233)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:233](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L233)
+Defined in: [packages/react-contexts/src/metacontext.ts:233](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L233)
 
 ___
 
@@ -976,9 +976,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:124](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L124)
+Defined in: [packages/react-contexts/src/metacontext.ts:124](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L124)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:124](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L124)
+Defined in: [packages/react-contexts/src/metacontext.ts:124](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L124)
 
 ___
 
@@ -1004,9 +1004,9 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:158](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L158)
+Defined in: [packages/react-contexts/src/metacontext.ts:158](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L158)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:158](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L158)
+Defined in: [packages/react-contexts/src/metacontext.ts:158](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L158)
 
 ___
 
@@ -1035,9 +1035,9 @@ Name | Type |
 
 **Returns:** *Promise*<CrudItem[]\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:56](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L56)
+Defined in: [packages/react-contexts/src/metacontext.ts:56](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L56)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:56](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L56)
+Defined in: [packages/react-contexts/src/metacontext.ts:56](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L56)
 
 ___
 
@@ -1066,9 +1066,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:87](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L87)
+Defined in: [packages/react-contexts/src/metacontext.ts:87](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L87)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:87](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L87)
+Defined in: [packages/react-contexts/src/metacontext.ts:87](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L87)
 
 ___
 
@@ -1097,9 +1097,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [packages/react-contexts/src/metacontext.ts:95](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L95)
+Defined in: [packages/react-contexts/src/metacontext.ts:95](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L95)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:95](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L95)
+Defined in: [packages/react-contexts/src/metacontext.ts:95](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L95)
 
 ___
 
@@ -1125,6 +1125,6 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-contexts/src/metacontext.ts:137](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L137)
+Defined in: [packages/react-contexts/src/metacontext.ts:137](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L137)
 
-Defined in: [packages/react-contexts/src/metacontext.ts:137](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/metacontext.ts#L137)
+Defined in: [packages/react-contexts/src/metacontext.ts:137](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/metacontext.ts#L137)

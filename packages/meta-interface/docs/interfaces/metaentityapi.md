@@ -38,9 +38,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*DocumentSelectEntry*](documentselectentry.md)[]\>
 
-Defined in: [entity.ts:803](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L803)
+Defined in: [entity.ts:803](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L803)
 
-Defined in: [entity.ts:803](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L803)
+Defined in: [entity.ts:803](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L803)
 
 ___
 
@@ -69,6 +69,6 @@ Name | Type |
 
 **Returns:** *Promise*<[*CompiledEntityMetadata*](compiledentitymetadata.md)\>
 
-Defined in: [entity.ts:791](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L791)
+Defined in: [entity.ts:791](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L791)
 
-Defined in: [entity.ts:791](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L791)
+Defined in: [entity.ts:791](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L791)

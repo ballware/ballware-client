@@ -40,9 +40,9 @@ Check if route is allowed to be accessed by authenticated user
 
 **Returns:** *boolean*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:71](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L71)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:71](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L71)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:71](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L71)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:71](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L71)
 
 ___
 

@@ -30,14 +30,14 @@ const compileTenant = (tenant: Tenant): CompiledTenant => {
   } as CompiledTenant;
 
   if (tenant.RightsCheckScript) {
-    const compiledArgs = ['rights', 'page'];
+    const compiledArgs = ['userinfo', 'right'];
     const compiledFn = Function.apply(
       Function,
       compiledArgs.concat(tenant.RightsCheckScript)
     );
 
-    compiledTenant.pageVisible = compiledFn
-      ? (rights, page) => compiledFn.apply(compiledFn, [rights, page])
+    compiledTenant.hasRight = compiledFn
+      ? (userinfo, right) => compiledFn.apply(compiledFn, [userinfo, right])
       : () => true;
   }
 

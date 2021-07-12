@@ -38,9 +38,9 @@ Name | Type |
 
 **Returns:** *unknown*
 
-Defined in: [entity.ts:24](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L24)
+Defined in: [entity.ts:24](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L24)
 
-Defined in: [entity.ts:24](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L24)
+Defined in: [entity.ts:24](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L24)
 
 ___
 
@@ -70,6 +70,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [entity.ts:33](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L33)
+Defined in: [entity.ts:33](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L33)
 
-Defined in: [entity.ts:33](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/entity.ts#L33)
+Defined in: [entity.ts:33](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/entity.ts#L33)

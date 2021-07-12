@@ -8,12 +8,40 @@ Context for providing tenant metadata
 
 ### Properties
 
+- [hasRight](tenantcontextstate.md#hasright)
 - [name](tenantcontextstate.md#name)
 - [navigation](tenantcontextstate.md#navigation)
-- [pageAllowed](tenantcontextstate.md#pageallowed)
 - [pages](tenantcontextstate.md#pages)
 
 ## Properties
+
+### hasRight
+
+• `Optional` **hasRight**: (`right`: *string*) => *boolean*
+
+Check if right is permitted for current user
+
+**`param`** Right identifier
+
+**`returns`** true if access is allowed
+
+#### Type declaration:
+
+▸ (`right`: *string*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`right` | *string* |
+
+**Returns:** *boolean*
+
+Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/tenantcontext.ts#L38)
+
+Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/tenantcontext.ts#L38)
+
+___
 
 ### name
 
@@ -21,7 +49,7 @@ Context for providing tenant metadata
 
 Unique name of tenant
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:21](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/tenantcontext.ts#L21)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:21](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/tenantcontext.ts#L21)
 
 ___
 
@@ -31,35 +59,7 @@ ___
 
 Navigation layout metadata for tenant
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:26](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/tenantcontext.ts#L26)
-
-___
-
-### pageAllowed
-
-• `Optional` **pageAllowed**: (`page`: *string*) => *boolean*
-
-Check if access to page is allowed for current user
-
-**`param`** Unique identifier of page
-
-**`returns`** true if access is allowed
-
-#### Type declaration:
-
-▸ (`page`: *string*): *boolean*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`page` | *string* |
-
-**Returns:** *boolean*
-
-Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/tenantcontext.ts#L38)
-
-Defined in: [packages/react-contexts/src/tenantcontext.ts:38](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/tenantcontext.ts#L38)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:26](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/tenantcontext.ts#L26)
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 List of pages for tenant
 
-Defined in: [packages/react-contexts/src/tenantcontext.ts:31](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/tenantcontext.ts#L31)
+Defined in: [packages/react-contexts/src/tenantcontext.ts:31](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/tenantcontext.ts#L31)

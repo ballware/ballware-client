@@ -122,10 +122,12 @@ const compileEntityMetadata = (
     if (customScripts.extendedRightsCheck) {
       const compiledRightsCheckArgs = [
         'userinfo',
+        'application',
         'entity',
+        'readOnly',
         'right',
         'param',
-        'result',
+        'result'
       ];
       const compiledRightsCheckFn = Function.apply(
         Function,
@@ -133,13 +135,15 @@ const compileEntityMetadata = (
       );
 
       compiledMetaData.compiledCustomScripts.rightsCheck = compiledRightsCheckFn
-        ? (userinfo, entity, right, param, result) =>
+        ? (userinfo, application, entity, readOnly, right, param, result) =>
             compiledRightsCheckFn.apply(compiledRightsCheckFn, [
               userinfo,
+              application,
               entity,
+              readOnly,
               right,
               param,
-              result,
+              result
             ])
         : undefined;
     }

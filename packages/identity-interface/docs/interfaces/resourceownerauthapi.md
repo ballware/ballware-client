@@ -49,9 +49,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L143)
+Defined in: [auth.ts:117](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L117)
 
-Defined in: [auth.ts:143](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L143)
+Defined in: [auth.ts:117](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L117)
 
 ___
 
@@ -77,15 +77,15 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L118)
+Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L92)
 
-Defined in: [auth.ts:118](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L118)
+Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L92)
 
 ___
 
 ### login
 
-• **login**: <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*, `userinfoMapper`: [*UserInfoMappingFunc*](../modules.md#userinfomappingfunc)) => *Promise*<T\>
+• **login**: <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*) => *Promise*<T\>
 
 Authenticate user with mail and password.
 
@@ -97,13 +97,11 @@ Authenticate user with mail and password.
 
 **`param`** Secrect for client identifier
 
-**`param`** Application specific mapping function for fetching additional information from authentication response
-
 **`returns`** Promise resolving user session instance
 
 #### Type declaration:
 
-▸ <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*, `userinfoMapper`: [*UserInfoMappingFunc*](../modules.md#userinfomappingfunc)): *Promise*<T\>
+▸ <T\>(`email`: *string*, `password`: *string*, `client`: *string*, `secret`: *string*): *Promise*<T\>
 
 #### Type parameters:
 
@@ -119,13 +117,12 @@ Name | Type |
 `password` | *string* |
 `client` | *string* |
 `secret` | *string* |
-`userinfoMapper` | [*UserInfoMappingFunc*](../modules.md#userinfomappingfunc) |
 
 **Returns:** *Promise*<T\>
 
-Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L76)
+Defined in: [auth.ts:51](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L51)
 
-Defined in: [auth.ts:76](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L76)
+Defined in: [auth.ts:51](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L51)
 
 ___
 
@@ -157,9 +154,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L92)
+Defined in: [auth.ts:66](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L66)
 
-Defined in: [auth.ts:92](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L92)
+Defined in: [auth.ts:66](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L66)
 
 ___
 
@@ -189,9 +186,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*Session*](session.md)\>
 
-Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L156)
+Defined in: [auth.ts:130](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L130)
 
-Defined in: [auth.ts:156](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L156)
+Defined in: [auth.ts:130](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L130)
 
 ___
 
@@ -223,9 +220,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L106)
+Defined in: [auth.ts:80](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L80)
 
-Defined in: [auth.ts:106](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L106)
+Defined in: [auth.ts:80](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L80)
 
 ___
 
@@ -257,6 +254,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L129)
+Defined in: [auth.ts:103](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L103)
 
-Defined in: [auth.ts:129](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/auth.ts#L129)
+Defined in: [auth.ts:103](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/auth.ts#L103)

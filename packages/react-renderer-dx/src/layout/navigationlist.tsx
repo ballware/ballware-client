@@ -50,7 +50,7 @@ const ListItemLink = (props: any) => {
 
 export const NavigationList = () => {
   const classes = useStyles();
-  const { pageAllowed, navigation } = useContext(TenantContext);
+  const { hasRight, navigation } = useContext(TenantContext);
 
   const renderItems = useCallback(
     (items: Array<NavigationLayoutItem>) => {
@@ -90,8 +90,8 @@ export const NavigationList = () => {
 
             try {
               pageVisible =
-                pageAllowed && item.options.page
-                  ? pageAllowed(item.options.page)
+                hasRight && item.options.page
+                  ? hasRight(`generic.page.${item.options.page ?? 'unknown'}`)
                   : false;
             } catch (exception) {
               console.error(
@@ -119,7 +119,7 @@ export const NavigationList = () => {
         }
       });
     },
-    [pageAllowed, classes.nested]
+    [hasRight, classes.nested]
   );
 
   const Group = ({
@@ -147,6 +147,6 @@ export const NavigationList = () => {
   };
 
   return (
-    <List>{navigation && pageAllowed && renderItems(navigation?.items)}</List>
+    <List>{navigation && hasRight && renderItems(navigation?.items)}</List>
   );
 };

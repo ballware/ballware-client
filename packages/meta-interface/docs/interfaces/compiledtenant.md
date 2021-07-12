@@ -8,12 +8,43 @@ Metadata for tenant
 
 ### Properties
 
+- [hasRight](compiledtenant.md#hasright)
 - [id](compiledtenant.md#id)
 - [name](compiledtenant.md#name)
 - [navigation](compiledtenant.md#navigation)
-- [pageVisible](compiledtenant.md#pagevisible)
 
 ## Properties
+
+### hasRight
+
+• **hasRight**: (`userinfo`: *Record*<string, unknown\>, `right`: *string*) => *boolean*
+
+Custom script for access rights check of tenant
+
+**`param`** Assigned user rights
+
+**`param`** Requested right
+
+**`returns`** true if access allowed, false if access denied
+
+#### Type declaration:
+
+▸ (`userinfo`: *Record*<string, unknown\>, `right`: *string*): *boolean*
+
+#### Parameters:
+
+Name | Type |
+:------ | :------ |
+`userinfo` | *Record*<string, unknown\> |
+`right` | *string* |
+
+**Returns:** *boolean*
+
+Defined in: [tenant.ts:88](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L88)
+
+Defined in: [tenant.ts:88](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L88)
+
+___
 
 ### id
 
@@ -21,7 +52,7 @@ Metadata for tenant
 
 Unique identifier of tenant
 
-Defined in: [tenant.ts:72](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L72)
+Defined in: [tenant.ts:70](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L70)
 
 ___
 
@@ -31,7 +62,7 @@ ___
 
 Display name of tenant
 
-Defined in: [tenant.ts:77](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L77)
+Defined in: [tenant.ts:75](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L75)
 
 ___
 
@@ -41,35 +72,4 @@ ___
 
 Navigation metadata for tenant
 
-Defined in: [tenant.ts:82](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L82)
-
-___
-
-### pageVisible
-
-• **pageVisible**: (`rights`: [*Rights*](rights.md), `page`: *string*) => *boolean*
-
-Custom script for access rights check of pages
-
-**`param`** Assigned user rights
-
-**`param`** Page identifier
-
-**`returns`** true if access allowed, false if access denied
-
-#### Type declaration:
-
-▸ (`rights`: [*Rights*](rights.md), `page`: *string*): *boolean*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`rights` | [*Rights*](rights.md) |
-`page` | *string* |
-
-**Returns:** *boolean*
-
-Defined in: [tenant.ts:90](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L90)
-
-Defined in: [tenant.ts:90](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/tenant.ts#L90)
+Defined in: [tenant.ts:80](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/tenant.ts#L80)

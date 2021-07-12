@@ -22,7 +22,7 @@ export interface RoutesProps {}
 
 export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
   const { session } = useContext(RightsContext);
-  const { navigation, pages, pageAllowed } = useContext(TenantContext);
+  const { navigation, pages, hasRight } = useContext(TenantContext);
   const { Page } = useContext(RenderFactoryContext);
   const { LookupProvider, PageProvider } = useContext(ProviderFactoryContext);
 
@@ -47,7 +47,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
       PageProvider &&
       session &&
       pages &&
-      pageAllowed &&
+      hasRight &&
       Page
     ) {
       renderedPages.push(
@@ -56,7 +56,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
             key={pageKey++}
             path={`/${p.options.url?.toLowerCase() ??
               'unknown'}/:action(view|edit)?/:id?`}
-            allowed={() => pageAllowed(p.options.page ?? 'unknown')}
+            allowed={() => hasRight(`generic.page.${p.options.page ?? 'unknown'}`)}
             render={() => (
               <LookupProvider>
                 <PageProvider identifier={p.options.page ?? 'unknown'}>
@@ -78,7 +78,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
   }, [
     navigation,
     pages,
-    pageAllowed,
+    hasRight,
     session,
     LookupProvider,
     PageProvider,

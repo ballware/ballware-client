@@ -19,7 +19,7 @@ Options for statistic map
 
 Data item property containing location
 
-Defined in: [statistic.ts:209](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/statistic.ts#L209)
+Defined in: [statistic.ts:209](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/statistic.ts#L209)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Data item property containing tooltip text
 
-Defined in: [statistic.ts:214](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/statistic.ts#L214)
+Defined in: [statistic.ts:214](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/statistic.ts#L214)

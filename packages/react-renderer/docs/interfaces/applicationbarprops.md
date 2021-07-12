@@ -20,7 +20,7 @@ Properties for application bar component
 
 Width of navigation drawer
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:45](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L45)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:45](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L45)
 
 ___
 
@@ -36,9 +36,9 @@ Burger menu button toggled
 
 **Returns:** *void*
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:50](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L50)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:50](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L50)
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:50](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L50)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:50](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L50)
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 Title text for application bar
 
-Defined in: [packages/react-renderer/src/renderfactorycontext.ts:40](https://github.com/ballware/ballware-client/blob/d8b5d6b/packages/react-renderer/src/renderfactorycontext.ts#L40)
+Defined in: [packages/react-renderer/src/renderfactorycontext.ts:40](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-renderer/src/renderfactorycontext.ts#L40)

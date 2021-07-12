@@ -29,7 +29,7 @@ Options for layout item type 'map'
 
 Business object property containing display text
 
-Defined in: [page.ts:84](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L84)
+Defined in: [page.ts:83](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L83)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 Identifier of edit layout for crud operations
 
-Defined in: [page.ts:74](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L74)
+Defined in: [page.ts:73](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L73)
 
 ___
 
@@ -51,7 +51,7 @@ Identifier of business object
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[entity](crudcontaineroptions.md#entity)
 
-Defined in: [page.ts:39](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L39)
+Defined in: [page.ts:38](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L38)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Optional fixed height of component
 
-Defined in: [page.ts:69](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L69)
+Defined in: [page.ts:68](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L68)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Business object property containing coordinates
 
-Defined in: [page.ts:79](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L79)
+Defined in: [page.ts:78](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L78)
 
 ___
 
@@ -83,4 +83,4 @@ Identifier of list query
 
 Inherited from: [CrudContainerOptions](crudcontaineroptions.md).[query](crudcontaineroptions.md#query)
 
-Defined in: [page.ts:44](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L44)
+Defined in: [page.ts:43](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L43)

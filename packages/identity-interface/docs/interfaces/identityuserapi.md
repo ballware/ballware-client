@@ -36,9 +36,9 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>\>
 
-Defined in: [user.ts:27](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/user.ts#L27)
+Defined in: [user.ts:27](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/user.ts#L27)
 
-Defined in: [user.ts:27](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/user.ts#L27)
+Defined in: [user.ts:27](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/user.ts#L27)
 
 ___
 
@@ -64,6 +64,6 @@ Name | Type |
 
 **Returns:** *Promise*<Record<string, unknown\>[]\>
 
-Defined in: [user.ts:18](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/user.ts#L18)
+Defined in: [user.ts:18](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/user.ts#L18)
 
-Defined in: [user.ts:18](https://github.com/ballware/ballware-client/blob/88ab695/packages/identity-interface/src/user.ts#L18)
+Defined in: [user.ts:18](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/identity-interface/src/user.ts#L18)

@@ -80,12 +80,12 @@ export interface CompiledTenant {
   navigation?: NavigationLayout;
 
   /**
-   * Custom script for access rights check of pages
+   * Custom script for access rights check of tenant
    * @param userinfo Assigned user rights
-   * @param page Page identifier
+   * @param right Requested right
    * @returns true if access allowed, false if access denied
    */
-  pageVisible: (userinfo: Record<string, unknown>, page: string) => boolean;
+  hasRight: (userinfo: Record<string, unknown>, right: string) => boolean;
 }
 
 /**

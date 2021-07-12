@@ -27,7 +27,7 @@ Options for layout item type 'crudcontainer'
 
 Identifier of business object
 
-Defined in: [page.ts:39](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L39)
+Defined in: [page.ts:38](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L38)
 
 ___
 
@@ -37,4 +37,4 @@ ___
 
 Identifier of list query
 
-Defined in: [page.ts:44](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/page.ts#L44)
+Defined in: [page.ts:43](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/page.ts#L43)

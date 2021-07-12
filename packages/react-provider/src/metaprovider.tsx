@@ -13,9 +13,7 @@ import React, {
 } from 'react';
 import {
   CompiledEntityMetadata,
-  EntityRights,
   CrudItem,
-  hasRight,
   QueryParams,
 } from '@ballware/meta-interface';
 import {
@@ -26,6 +24,7 @@ import {
   LookupContext,
   NotificationContext,
   LookupRequest,
+  TenantContext,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
 import { useHistory } from 'react-router-dom';
@@ -79,9 +78,11 @@ export const MetaProvider = ({
   const { metaEntityApiFactory, metaGenericEntityApiFactory } = useContext(
     SettingsContext
   );
-  const { token, rights } = useContext(RightsContext);
+  const { token, session } = useContext(RightsContext);
   const { lookups, lookupsComplete, createLookups } = useContext(LookupContext);
   const { showError } = useContext(NotificationContext);
+
+  const { hasRight } = useContext(TenantContext);
 
   const history = useHistory();
 
@@ -90,18 +91,15 @@ export const MetaProvider = ({
       return (
         metaData &&
         customParam &&
-        rights &&
+        session &&
+        hasRight &&
         !readOnly &&
-        hasRight(
-          rights,
-          metaData.application,
-          metaData.entity,
-          right,
-          metaData.compiledCustomScripts?.extendedRightsCheck,
-          metaData.compiledCustomScripts?.rightsParamForHead
+        (metaData.compiledCustomScripts?.rightsCheck ?
+          metaData.compiledCustomScripts?.rightsCheck(session, metaData.application, metaData.entity, readOnly, right, metaData.compiledCustomScripts?.rightsParamForHead
             ? metaData.compiledCustomScripts.rightsParamForHead(customParam)
-            : undefined
-        )
+            : undefined,
+            hasRight(`${metaData.application}.${metaData.entity}.${right}`))
+          : hasRight(`${metaData.application}.${metaData.entity}.${right}`))
       );
     };
 
@@ -109,23 +107,14 @@ export const MetaProvider = ({
       return (
         metaData &&
         customParam &&
-        rights &&
-        (!readOnly ||
-          right === EntityRights.RIGHT_VIEW ||
-          right === EntityRights.RIGHT_PRINT) &&
-        hasRight(
-          rights,
-          metaData.application,
-          metaData.entity,
-          right,
-          metaData.compiledCustomScripts?.extendedRightsCheck,
-          metaData.compiledCustomScripts?.rightsParamForItem
-            ? metaData.compiledCustomScripts.rightsParamForItem(
-                item,
-                customParam
-              )
-            : undefined
-        )
+        session &&      
+        hasRight &&  
+        (metaData.compiledCustomScripts?.rightsCheck ?
+          metaData.compiledCustomScripts?.rightsCheck(session, metaData.application, metaData.entity, readOnly, right, metaData.compiledCustomScripts?.rightsParamForItem
+            ? metaData.compiledCustomScripts.rightsParamForItem(item, customParam)
+            : undefined, 
+            hasRight(`${metaData.application}.${metaData.entity}.${right}`))               
+          : hasRight(`${metaData.application}.${metaData.entity}.${right}`))
       );
     };
 
@@ -133,18 +122,18 @@ export const MetaProvider = ({
       history.push(`/print?docId=${doc}${ids.map(u => `&id=${u}`).join('')}`);
     };
 
-    if (metaData && customParam && rights && documents) {
+    if (metaData && customParam && session && documents && hasRight) {
       setValue(previousValue => {
         return {
           ...previousValue,
           print: print,
-          addAllowed: () => headAllowed(EntityRights.RIGHT_ADD),
-          viewAllowed: item => itemAllowed(item, EntityRights.RIGHT_VIEW),
-          editAllowed: item => itemAllowed(item, EntityRights.RIGHT_EDIT),
-          dropAllowed: item => itemAllowed(item, EntityRights.RIGHT_DELETE),
+          addAllowed: () => headAllowed('add'),
+          viewAllowed: item => itemAllowed(item, 'view'),
+          editAllowed: item => itemAllowed(item, 'edit'),
+          dropAllowed: item => itemAllowed(item, 'delete'),
           printAllowed: item =>
             documents?.length > 0 &&
-            itemAllowed(item, EntityRights.RIGHT_PRINT),
+            itemAllowed(item, 'print'),
           customFunctionAllowed: (customFunction, item) =>
             customFunction.type === 'edit' && item
               ? itemAllowed(item, customFunction.id)
@@ -152,7 +141,7 @@ export const MetaProvider = ({
         } as MetaContextState;
       });
     }
-  }, [metaData, customParam, rights, documents, history, readOnly]);
+  }, [metaData, customParam, session, documents, history, readOnly, hasRight]);
 
   useEffect(() => {
     let fetchingCanceled = false;

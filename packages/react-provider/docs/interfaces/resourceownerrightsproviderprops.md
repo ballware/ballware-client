@@ -10,7 +10,6 @@ Resource owner rights provider properties
 
 - [client](resourceownerrightsproviderprops.md#client)
 - [secret](resourceownerrightsproviderprops.md#secret)
-- [userinfoMapper](resourceownerrightsproviderprops.md#userinfomapper)
 
 ## Properties
 
@@ -20,7 +19,7 @@ Resource owner rights provider properties
 
 Client id for auth provider
 
-Defined in: [resourceownerrightsprovider.tsx:34](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/resourceownerrightsprovider.tsx#L34)
+Defined in: [resourceownerrightsprovider.tsx:30](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/resourceownerrightsprovider.tsx#L30)
 
 ___
 
@@ -30,14 +29,4 @@ ___
 
 Client secret for auth provider
 
-Defined in: [resourceownerrightsprovider.tsx:39](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/resourceownerrightsprovider.tsx#L39)
-
-___
-
-### userinfoMapper
-
-• **userinfoMapper**: UserInfoMappingFunc
-
-Mapping function to map additional content of userinfo endpoint to user rights instance
-
-Defined in: [resourceownerrightsprovider.tsx:44](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/resourceownerrightsprovider.tsx#L44)
+Defined in: [resourceownerrightsprovider.tsx:35](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/resourceownerrightsprovider.tsx#L35)

@@ -31,11 +31,11 @@ export interface TenantContextState {
   pages?: Array<NavigationLayoutItem>;
 
   /**
-   * Check if access to page is allowed for current user
-   * @param page Unique identifier of page
+   * Check if right is permitted for current user
+   * @param page Right identifier
    * @returns true if access is allowed
    */
-  pageAllowed?: (page: string) => boolean;
+  hasRight?: (right: string) => boolean;
 }
 
 export const TenantContext = createContext({} as TenantContextState);

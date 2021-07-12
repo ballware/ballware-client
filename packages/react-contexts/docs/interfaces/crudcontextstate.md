@@ -61,9 +61,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:115](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L115)
+Defined in: [packages/react-contexts/src/crudcontext.ts:115](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L115)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:115](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L115)
+Defined in: [packages/react-contexts/src/crudcontext.ts:115](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L115)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 Adding current item
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:52](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L52)
+Defined in: [packages/react-contexts/src/crudcontext.ts:52](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L52)
 
 ___
 
@@ -89,9 +89,9 @@ Cancel/close edit operation
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:134](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L134)
+Defined in: [packages/react-contexts/src/crudcontext.ts:134](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L134)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:134](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L134)
+Defined in: [packages/react-contexts/src/crudcontext.ts:134](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L134)
 
 ___
 
@@ -115,9 +115,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:109](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L109)
+Defined in: [packages/react-contexts/src/crudcontext.ts:109](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L109)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:109](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L109)
+Defined in: [packages/react-contexts/src/crudcontext.ts:109](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L109)
 
 ___
 
@@ -144,9 +144,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:167](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L167)
+Defined in: [packages/react-contexts/src/crudcontext.ts:167](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L167)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:167](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L167)
+Defined in: [packages/react-contexts/src/crudcontext.ts:167](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L167)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 Function for current custom edit operation
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:72](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L72)
+Defined in: [packages/react-contexts/src/crudcontext.ts:72](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L72)
 
 ___
 
@@ -166,7 +166,7 @@ ___
 
 Prepared edit param for custom edit operation
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:77](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L77)
+Defined in: [packages/react-contexts/src/crudcontext.ts:77](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L77)
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 Custom edit operation active
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:67](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L67)
+Defined in: [packages/react-contexts/src/crudcontext.ts:67](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L67)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 Deleting current item
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:62](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L62)
+Defined in: [packages/react-contexts/src/crudcontext.ts:62](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L62)
 
 ___
 
@@ -210,9 +210,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:160](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L160)
+Defined in: [packages/react-contexts/src/crudcontext.ts:160](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L160)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:160](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L160)
+Defined in: [packages/react-contexts/src/crudcontext.ts:160](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L160)
 
 ___
 
@@ -239,9 +239,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:129](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L129)
+Defined in: [packages/react-contexts/src/crudcontext.ts:129](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L129)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:129](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L129)
+Defined in: [packages/react-contexts/src/crudcontext.ts:129](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L129)
 
 ___
 
@@ -251,7 +251,7 @@ ___
 
 Edit layout for current edit operation
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:82](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L82)
+Defined in: [packages/react-contexts/src/crudcontext.ts:82](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L82)
 
 ___
 
@@ -261,7 +261,7 @@ ___
 
 Editing current item
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:57](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L57)
+Defined in: [packages/react-contexts/src/crudcontext.ts:57](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L57)
 
 ___
 
@@ -290,9 +290,9 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:178](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L178)
+Defined in: [packages/react-contexts/src/crudcontext.ts:178](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L178)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:178](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L178)
+Defined in: [packages/react-contexts/src/crudcontext.ts:178](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L178)
 
 ___
 
@@ -302,7 +302,7 @@ ___
 
 Exporting items
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:92](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L92)
+Defined in: [packages/react-contexts/src/crudcontext.ts:92](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L92)
 
 ___
 
@@ -312,7 +312,7 @@ ___
 
 Count of items to be fetched
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:37](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L37)
+Defined in: [packages/react-contexts/src/crudcontext.ts:37](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L37)
 
 ___
 
@@ -322,7 +322,7 @@ ___
 
 Fetch params used for current item fetch
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:27](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L27)
+Defined in: [packages/react-contexts/src/crudcontext.ts:27](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L27)
 
 ___
 
@@ -332,7 +332,7 @@ ___
 
 Fetched items from data provider
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:32](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L32)
+Defined in: [packages/react-contexts/src/crudcontext.ts:32](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L32)
 
 ___
 
@@ -361,9 +361,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:197](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L197)
+Defined in: [packages/react-contexts/src/crudcontext.ts:197](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L197)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:197](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L197)
+Defined in: [packages/react-contexts/src/crudcontext.ts:197](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L197)
 
 ___
 
@@ -387,9 +387,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:187](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L187)
+Defined in: [packages/react-contexts/src/crudcontext.ts:187](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L187)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:187](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L187)
+Defined in: [packages/react-contexts/src/crudcontext.ts:187](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L187)
 
 ___
 
@@ -399,7 +399,7 @@ ___
 
 Importing file
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:87](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L87)
+Defined in: [packages/react-contexts/src/crudcontext.ts:87](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L87)
 
 ___
 
@@ -409,7 +409,7 @@ ___
 
 Currently fetching items
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:22](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L22)
+Defined in: [packages/react-contexts/src/crudcontext.ts:22](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L22)
 
 ___
 
@@ -419,7 +419,7 @@ ___
 
 Current item for crud operations
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:42](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L42)
+Defined in: [packages/react-contexts/src/crudcontext.ts:42](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L42)
 
 ___
 
@@ -443,9 +443,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:103](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L103)
+Defined in: [packages/react-contexts/src/crudcontext.ts:103](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L103)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:103](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L103)
+Defined in: [packages/react-contexts/src/crudcontext.ts:103](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L103)
 
 ___
 
@@ -455,7 +455,7 @@ ___
 
 Refresh after edit operation pending
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:97](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L97)
+Defined in: [packages/react-contexts/src/crudcontext.ts:97](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L97)
 
 ___
 
@@ -479,9 +479,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:140](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L140)
+Defined in: [packages/react-contexts/src/crudcontext.ts:140](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L140)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:140](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L140)
+Defined in: [packages/react-contexts/src/crudcontext.ts:140](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L140)
 
 ___
 
@@ -508,9 +508,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:147](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L147)
+Defined in: [packages/react-contexts/src/crudcontext.ts:147](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L147)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:147](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L147)
+Defined in: [packages/react-contexts/src/crudcontext.ts:147](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L147)
 
 ___
 
@@ -537,9 +537,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:154](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L154)
+Defined in: [packages/react-contexts/src/crudcontext.ts:154](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L154)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:154](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L154)
+Defined in: [packages/react-contexts/src/crudcontext.ts:154](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L154)
 
 ___
 
@@ -566,9 +566,9 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:122](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L122)
+Defined in: [packages/react-contexts/src/crudcontext.ts:122](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L122)
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:122](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L122)
+Defined in: [packages/react-contexts/src/crudcontext.ts:122](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L122)
 
 ___
 
@@ -578,4 +578,4 @@ ___
 
 Viewing current item
 
-Defined in: [packages/react-contexts/src/crudcontext.ts:47](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/crudcontext.ts#L47)
+Defined in: [packages/react-contexts/src/crudcontext.ts:47](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/crudcontext.ts#L47)

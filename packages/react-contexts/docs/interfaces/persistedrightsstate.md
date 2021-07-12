@@ -17,7 +17,7 @@ Persisted part of rights state in application store
 - [error](persistedrightsstate.md#error)
 - [expires\_in](persistedrightsstate.md#expires_in)
 - [refresh\_token](persistedrightsstate.md#refresh_token)
-- [rights](persistedrightsstate.md#rights)
+- [session](persistedrightsstate.md#session)
 - [timeout\_in](persistedrightsstate.md#timeout_in)
 - [token](persistedrightsstate.md#token)
 
@@ -29,7 +29,7 @@ Persisted part of rights state in application store
 
 Last login try error message
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L43)
+Defined in: [packages/react-contexts/src/rightscontext.ts:43](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/rightscontext.ts#L43)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 Number of seconds the access token expires in
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L38)
+Defined in: [packages/react-contexts/src/rightscontext.ts:38](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/rightscontext.ts#L38)
 
 ___
 
@@ -49,17 +49,17 @@ ___
 
 Refresh token
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L33)
+Defined in: [packages/react-contexts/src/rightscontext.ts:33](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/rightscontext.ts#L33)
 
 ___
 
-### rights
+### session
 
-• `Optional` **rights**: Rights
+• `Optional` **session**: *SessionWithUserInfo*
 
 User rights for current user
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L18)
+Defined in: [packages/react-contexts/src/rightscontext.ts:18](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/rightscontext.ts#L18)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 Access token timeout stamp
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L23)
+Defined in: [packages/react-contexts/src/rightscontext.ts:23](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/rightscontext.ts#L23)
 
 ___
 
@@ -79,4 +79,4 @@ ___
 
 Access token
 
-Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/37e08ea/packages/react-contexts/src/rightscontext.ts#L28)
+Defined in: [packages/react-contexts/src/rightscontext.ts:28](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-contexts/src/rightscontext.ts#L28)

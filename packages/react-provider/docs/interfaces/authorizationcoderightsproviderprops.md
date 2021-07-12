@@ -16,7 +16,6 @@ Property set for authorization code flow rights provider
 - [response\_type](authorizationcoderightsproviderprops.md#response_type)
 - [scope](authorizationcoderightsproviderprops.md#scope)
 - [secret](authorizationcoderightsproviderprops.md#secret)
-- [userinfoMapper](authorizationcoderightsproviderprops.md#userinfomapper)
 
 ## Properties
 
@@ -26,7 +25,7 @@ Property set for authorization code flow rights provider
 
 Optional uri for redirect to account management portal for authenticated user
 
-Defined in: [authorizationcoderightsprovider.tsx:73](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L73)
+Defined in: [authorizationcoderightsprovider.tsx:72](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L72)
 
 ___
 
@@ -36,7 +35,7 @@ ___
 
 Url of authentication provider
 
-Defined in: [authorizationcoderightsprovider.tsx:38](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L38)
+Defined in: [authorizationcoderightsprovider.tsx:37](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L37)
 
 ___
 
@@ -46,7 +45,7 @@ ___
 
 Client application identifier
 
-Defined in: [authorizationcoderightsprovider.tsx:43](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L43)
+Defined in: [authorizationcoderightsprovider.tsx:42](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L42)
 
 ___
 
@@ -56,7 +55,7 @@ ___
 
 Url in application called after user has logged out
 
-Defined in: [authorizationcoderightsprovider.tsx:58](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L58)
+Defined in: [authorizationcoderightsprovider.tsx:57](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L57)
 
 ___
 
@@ -66,7 +65,7 @@ ___
 
 Url in application called for result of login
 
-Defined in: [authorizationcoderightsprovider.tsx:53](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L53)
+Defined in: [authorizationcoderightsprovider.tsx:52](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L52)
 
 ___
 
@@ -76,7 +75,7 @@ ___
 
 Response type returned to application from authentication provider
 
-Defined in: [authorizationcoderightsprovider.tsx:63](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L63)
+Defined in: [authorizationcoderightsprovider.tsx:62](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L62)
 
 ___
 
@@ -86,7 +85,7 @@ ___
 
 Authentication scopes needed by application
 
-Defined in: [authorizationcoderightsprovider.tsx:68](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L68)
+Defined in: [authorizationcoderightsprovider.tsx:67](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L67)
 
 ___
 
@@ -96,14 +95,4 @@ ___
 
 Optional client secret needed for client application
 
-Defined in: [authorizationcoderightsprovider.tsx:48](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L48)
-
-___
-
-### userinfoMapper
-
-• **userinfoMapper**: UserInfoMappingFunc
-
-Mapping function to map additional content of userinfo endpoint to user rights instance
-
-Defined in: [authorizationcoderightsprovider.tsx:78](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/authorizationcoderightsprovider.tsx#L78)
+Defined in: [authorizationcoderightsprovider.tsx:47](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/authorizationcoderightsprovider.tsx#L47)

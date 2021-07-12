@@ -19,10 +19,6 @@ import {
 import { SettingsContext, NotificationContext } from '@ballware/react-contexts';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
-import {
-  MappedSessionWithUserRights,
-  UserInfoMappingFunc,
-} from '@ballware/identity-interface';
 
 /**
  * Resource owner rights provider properties
@@ -37,11 +33,6 @@ export interface ResourceOwnerRightsProviderProps {
    * Client secret for auth provider
    */
   secret: string;
-
-  /**
-   * Mapping function to map additional content of userinfo endpoint to user rights instance
-   */
-  userinfoMapper: UserInfoMappingFunc;
 }
 
 /**
@@ -81,7 +72,6 @@ function storeRightsState(state: PersistedRightsState): void {
 export const ResourceOwnerRightsProvider = ({
   client,
   secret,
-  userinfoMapper,
   children,
 }: PropsWithChildren<ResourceOwnerRightsProviderProps>): JSX.Element => {
   const [token, setToken] = useState<string>();
@@ -107,10 +97,6 @@ export const ResourceOwnerRightsProvider = ({
         }
 
         setValue(persistedState);
-
-        if (!persistedState.rights) {
-          push('/login');
-        }
       } else {
         push('/login');
       }
@@ -127,12 +113,11 @@ export const ResourceOwnerRightsProvider = ({
           version: version,
           login: (username, password, redirect) => {
             api
-              .login<MappedSessionWithUserRights>(
+              .login(
                 username,
                 password,
                 client,
-                secret,
-                userinfoMapper
+                secret
               )
               .then(session => {
                 setToken(session.access_token);
@@ -260,7 +245,6 @@ export const ResourceOwnerRightsProvider = ({
     showError,
     client,
     secret,
-    userinfoMapper,
     token,
     refreshToken,
   ]);

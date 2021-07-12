@@ -48,9 +48,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*CrudItem*](cruditem.md)\>
 
-Defined in: [genericentity.ts:51](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L51)
+Defined in: [genericentity.ts:51](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L51)
 
-Defined in: [genericentity.ts:51](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L51)
+Defined in: [genericentity.ts:51](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L51)
 
 ___
 
@@ -82,9 +82,9 @@ Name | Type |
 
 **Returns:** *Promise*<number\>
 
-Defined in: [genericentity.ts:37](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L37)
+Defined in: [genericentity.ts:37](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L37)
 
-Defined in: [genericentity.ts:37](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L37)
+Defined in: [genericentity.ts:37](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L37)
 
 ___
 
@@ -113,9 +113,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [genericentity.ts:90](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L90)
+Defined in: [genericentity.ts:90](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L90)
 
-Defined in: [genericentity.ts:90](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L90)
+Defined in: [genericentity.ts:90](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L90)
 
 ___
 
@@ -147,9 +147,9 @@ Name | Type |
 
 **Returns:** *Promise*<string\>
 
-Defined in: [genericentity.ts:110](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L110)
+Defined in: [genericentity.ts:110](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L110)
 
-Defined in: [genericentity.ts:110](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L110)
+Defined in: [genericentity.ts:110](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L110)
 
 ___
 
@@ -181,9 +181,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [genericentity.ts:100](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L100)
+Defined in: [genericentity.ts:100](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L100)
 
-Defined in: [genericentity.ts:100](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L100)
+Defined in: [genericentity.ts:100](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L100)
 
 ___
 
@@ -215,9 +215,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*CrudItem*](cruditem.md)\>
 
-Defined in: [genericentity.ts:61](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L61)
+Defined in: [genericentity.ts:61](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L61)
 
-Defined in: [genericentity.ts:61](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L61)
+Defined in: [genericentity.ts:61](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L61)
 
 ___
 
@@ -249,9 +249,9 @@ Name | Type |
 
 **Returns:** *Promise*<[*CrudItem*](cruditem.md)[]\>
 
-Defined in: [genericentity.ts:23](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L23)
+Defined in: [genericentity.ts:23](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L23)
 
-Defined in: [genericentity.ts:23](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L23)
+Defined in: [genericentity.ts:23](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L23)
 
 ___
 
@@ -283,9 +283,9 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [genericentity.ts:71](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L71)
+Defined in: [genericentity.ts:71](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L71)
 
-Defined in: [genericentity.ts:71](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L71)
+Defined in: [genericentity.ts:71](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L71)
 
 ___
 
@@ -317,6 +317,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [genericentity.ts:81](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L81)
+Defined in: [genericentity.ts:81](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L81)
 
-Defined in: [genericentity.ts:81](https://github.com/ballware/ballware-client/blob/37e08ea/packages/meta-interface/src/genericentity.ts#L81)
+Defined in: [genericentity.ts:81](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/meta-interface/src/genericentity.ts#L81)

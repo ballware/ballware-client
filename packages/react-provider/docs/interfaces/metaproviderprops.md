@@ -21,7 +21,7 @@ Properties for generic meta provider
 
 Entity identifier of generic entity
 
-Defined in: [metaprovider.tsx:40](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/metaprovider.tsx#L40)
+Defined in: [metaprovider.tsx:39](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/metaprovider.tsx#L39)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Optional paraemeter provided by parent component (page and suchlike)
 
-Defined in: [metaprovider.tsx:50](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/metaprovider.tsx#L50)
+Defined in: [metaprovider.tsx:49](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/metaprovider.tsx#L49)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Custom param provided by parent component
 
-Defined in: [metaprovider.tsx:55](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/metaprovider.tsx#L55)
+Defined in: [metaprovider.tsx:54](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/metaprovider.tsx#L54)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 Provide only readonly functionality
 
-Defined in: [metaprovider.tsx:45](https://github.com/ballware/ballware-client/blob/2d75549/packages/react-provider/src/metaprovider.tsx#L45)
+Defined in: [metaprovider.tsx:44](https://github.com/ballware/ballware-client/blob/5f55ce4/packages/react-provider/src/metaprovider.tsx#L44)
