@@ -8,7 +8,7 @@
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { ToolbarItemRef } from '@ballware/react-renderer';
 import { makeStyles } from '@material-ui/core';
-import Component from 'devextreme/core/component';
+import { Component } from 'devextreme/core/component';
 
 export interface ToolbarItemProps {
   toolbarItem: PageToolbarItem;

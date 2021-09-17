@@ -7,7 +7,7 @@
 
 import { EditLayoutItemOptions } from '@ballware/meta-interface';
 import { EditorRef } from '@ballware/react-renderer';
-import Component from 'devextreme/core/component';
+import { Component }  from 'devextreme/core/component';
 
 export interface EditItemProps {
   layoutItem: EditLayoutItemOptions;

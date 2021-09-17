@@ -71,9 +71,9 @@
     }
   ],
   "devDependencies": {
-    "@types/codemirror": "^0.0.108",
+    "@types/codemirror": "^5.60.2",
     "@types/moment-duration-format": "^2.2.2",
-    "i18next": "^19.9.2",
+    "i18next": "^20.6.1",
     "react-i18next": "^11.8.6"
   },
   "dependencies": {
@@ -83,11 +83,11 @@
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.1.1",
     "bootstrap-icons": "^1.4.0",
     "codemirror": "^5.60.0",
-    "devextreme": "^20.2.5",
-    "devextreme-react": "^20.2.5",
+    "devextreme": "^21.1.5",
+    "devextreme-react": "^21.1.5",
     "jquery": "^3.6.0",
     "jshint": "^2.12.0",
     "jsonlint": "^1.6.3",

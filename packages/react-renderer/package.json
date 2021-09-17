@@ -69,7 +69,7 @@
     }
   ],
   "devDependencies": {
-    "i18next": "^19.9.2",
+    "i18next": "^20.6.1",
     "react-i18next": "^11.8.6"
   },
   "gitHead": "69630e91be06a44328c7139f724863f50c13b184"

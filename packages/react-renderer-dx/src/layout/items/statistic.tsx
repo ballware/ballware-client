@@ -169,13 +169,13 @@ const MyStatisticElement = () => {
                   {data?.map(item => (
                     <Marker
                       key={markersKey++}
-                      location={[
+                      location={
                         getByPath(item, options.locationField) as {
                           lat: number;
                           lng: number;
-                        },
-                      ]}
-                      tooltip={{ text: getByPath(item, options.tooltipField) }}
+                        }
+                      }
+                      tooltip={getByPath(item, options.tooltipField) as object}
                     />
                   ))}
                 </Map>
