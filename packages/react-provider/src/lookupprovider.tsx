@@ -295,14 +295,14 @@ export const LookupProvider = ({
         newLookups['userLookup'] = createUserLookup(
           () => token as string,
           identityUserApiFactory(),
-          'Id',
-          'Name'
+          'id',
+          'name'
         );
         newLookups['roleLookup'] = createRoleLookup(
           () => token as string,
           identityRoleApiFactory(),
-          'Id',
-          'Name'
+          'id',
+          'name'
         );
 
         requests?.forEach(l => {
