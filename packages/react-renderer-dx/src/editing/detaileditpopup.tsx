@@ -13,7 +13,7 @@ import {
   DialogContent,
   DialogActions,
   Button,
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   GridLayoutColumn,
   CrudItem,
@@ -103,7 +103,7 @@ export const DetailEditPopup = ({
                 </Button>
               )}
               {t && !readonly && (
-                <Button onClick={() => setOpen(false)} color="default">
+                <Button onClick={() => setOpen(false)}>
                   {t('editing.actions.cancel')}
                 </Button>
               )}

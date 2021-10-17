@@ -9,7 +9,7 @@ import React from 'react';
 
 import { Item } from './item';
 
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 
 export interface ContainerProps {
   embedded?: boolean;

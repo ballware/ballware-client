@@ -16,7 +16,7 @@
    useTheme,
    useMediaQuery,
    DialogContentText,
- } from '@material-ui/core';
+ } from '@mui/material';
  import { CrudContext } from '@ballware/react-contexts';
  import { ImportPopupProps } from '@ballware/react-renderer';
  import { useTranslation } from 'react-i18next';
@@ -35,11 +35,10 @@ import { FileUploader } from 'devextreme-react';
        {t && importFile && close && (
          <Dialog
            open
-           onClose={() => close()}
+           onClose={(_event, reason) => { if (reason !== 'backdropClick') close() }}
            fullScreen={fullScreen}
            maxWidth={'lg'}
            fullWidth
-           disableBackdropClick
          >
            <DialogTitle id="form-dialog-title">{t('editing.import.popuptitle')}</DialogTitle>
            <DialogContent>
@@ -53,7 +52,7 @@ import { FileUploader } from 'devextreme-react';
             />
            </DialogContent>
            <DialogActions>             
-             <Button onClick={() => close()} color="default">
+             <Button onClick={() => close()}>
                {t('editing.actions.close')}
              </Button>
            </DialogActions>

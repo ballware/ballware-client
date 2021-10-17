@@ -13,16 +13,13 @@ import React, {
   PropsWithChildren,
 } from 'react';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import Box from '@material-ui/core/Box';
+import { useTheme, styled } from '@mui/material/styles';
+import { CssBaseline, Drawer, Hidden, Box } from '@mui/material';
 
 import { RenderFactoryContext } from '@ballware/react-renderer';
 import { SessionButton } from './sessionbutton';
 import { TenantContext } from '@ballware/react-contexts';
-
+/*
 const useStyles = (drawerWidth: string | number) =>
   makeStyles(theme => ({
     root: {
@@ -52,7 +49,7 @@ const useStyles = (drawerWidth: string | number) =>
       height: `calc(100% - ${64}px)`,
     },
   }));
-
+*/
 export interface ApplicationProps {
   drawerWidth?: string | number;
 }
@@ -61,8 +58,10 @@ export const Application = ({
   drawerWidth,
   children,
 }: PropsWithChildren<ApplicationProps>) => {
-  const classes = useStyles(drawerWidth ?? 240)();
+  //const classes = useStyles(drawerWidth ?? 240)();
+
   const theme = useTheme();
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const { ApplicationBar, Navigation } = useContext(RenderFactoryContext);
@@ -78,7 +77,6 @@ export const Application = ({
         {ApplicationBar && (
           <ApplicationBar
             title={navigation?.title}
-            drawerWidth={drawerWidth ?? 240}
             onMenuToggle={onToggleMenu}
           >
             <SessionButton />
@@ -86,7 +84,7 @@ export const Application = ({
         )}
       </React.Fragment>
     ),
-    [drawerWidth, ApplicationBar, onToggleMenu, navigation]
+    [ApplicationBar, onToggleMenu, navigation]
   );
   const MemorizedNavigation = useMemo(
     () => () => (
@@ -97,21 +95,40 @@ export const Application = ({
     [Navigation, onToggleMenu]
   );
 
+  const RootDiv = useMemo(() => styled('div')({
+    display: 'flex',
+    height: '100vh',
+  }), []);
+
+  const Nav = useMemo(() => styled('nav')({
+    [theme.breakpoints.up('md')]: {
+      width: drawerWidth ?? 240,
+      flexShrink: 0
+    }
+  }), [theme]);
+
+  const ToolbarPlaceholder = useMemo(() => styled('div')(theme.mixins.toolbar), [theme]);
+
+  const ContentContainer = useMemo(() => styled('div')({
+    height: `calc(100% - ${64}px)`
+  }), []);
+
   return (
-    <div className={classes.root}>
+    <RootDiv>
       <CssBaseline />
       <MemorizedApplicationBar />
-      <nav className={classes.drawer}>
+      <Nav>
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden mdUp implementation="css">
           <Drawer
-            className={classes.drawer}
             variant="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}
             onClose={onToggleMenu}
-            classes={{
-              paper: classes.drawerPaper,
+            sx={{ 
+              width: drawerWidth ?? 240,
+              flexShrink: 0,
+              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
             }}
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
@@ -121,10 +138,10 @@ export const Application = ({
           </Drawer>
         </Hidden>
         <Hidden smDown implementation="css">
-          <Drawer
-            className={classes.drawer}
-            classes={{
-              paper: classes.drawerPaper,
+          <Drawer sx={{ 
+              width: drawerWidth ?? 240,
+              flexShrink: 0,
+              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
             }}
             variant="permanent"
             open
@@ -132,11 +149,19 @@ export const Application = ({
             <MemorizedNavigation />
           </Drawer>
         </Hidden>
-      </nav>
-      <Box className={classes.content}>
-        <div className={classes.toolbar} />
-        <div className={classes.client}>{children}</div>
+      </Nav>
+      <Box sx={{      
+          padding: theme.spacing(1),
+          [theme.breakpoints.up('sm')]: {
+            width: `calc(100% - ${drawerWidth ?? 240}px)`
+          },
+          [theme.breakpoints.down('sm')]: {
+            width: '100%'
+          }
+        }}>
+        <ToolbarPlaceholder/>
+        <ContentContainer>{children}</ContentContainer>
       </Box>
-    </div>
+    </RootDiv>
   );
 };

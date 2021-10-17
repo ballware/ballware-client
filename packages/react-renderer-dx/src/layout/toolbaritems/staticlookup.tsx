@@ -6,7 +6,7 @@
  */
 
 import React, { useContext } from 'react';
-
+import { useTheme } from '@mui/material/styles';
 import { ToolbarItemsContext } from '@ballware/react-renderer';
 import {
   componentToToolbarItemRef,
@@ -16,7 +16,9 @@ import {
 import { SelectBox } from 'devextreme-react';
 
 export const StaticLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
-  const classes = useDefaultToolbarItemStyles();
+
+  const theme = useTheme();
+  const style = useDefaultToolbarItemStyles(theme);
 
   const { name, caption, defaultValue, width, options } = toolbarItem;
 
@@ -28,7 +30,7 @@ export const StaticLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
     <React.Fragment>
       {paramEditorInitialized && paramEditorValueChanged && (
         <SelectBox
-          className={classes.toolbaritem}
+          style={style}
           items={options.items as []}
           noDataText={caption}
           width={width ?? '400px'}

@@ -25,10 +25,20 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
   
   useEffect(() => {
     if (count) {
+      var canceled = false;
+
       count(query, params).then(result => {
-        setItemCount(result);
+        if (!canceled) {
+          setItemCount(result);
+        }
       });
+
+      return () => {
+        canceled = true;
+      }
     }
+
+    return () => {};
   }, [count, params]);
 
   if (itemCount) {

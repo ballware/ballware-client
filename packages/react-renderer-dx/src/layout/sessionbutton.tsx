@@ -9,16 +9,13 @@ import React, { useCallback, useContext, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 import moment from 'moment';
 import 'moment-duration-format';
 
 import { useInterval } from '@ballware/react-renderer';
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Badge from '@material-ui/core/Badge';
+import { IconButton, Menu, MenuItem, Badge } from '@mui/material';
 import { RightsContext } from '@ballware/react-contexts';
 
 export const SessionButton = () => {

@@ -17,7 +17,7 @@ import {
   DialogContent,
   DialogActions,
   Button,
-} from '@material-ui/core';
+} from '@mui/material';
 
 import { EditForm, EditFormRef } from './editform';
 import { EditModes, CrudContext, EditContext } from '@ballware/react-contexts';
@@ -43,8 +43,8 @@ export const EditPopup = (props: EditPopupProps) => {
     }
   }, [formRef]);
 
-  const cancelClicked = useCallback(() => {
-    if (close) {
+  const cancelClicked = useCallback((reason : "backdropClick" | "escapeKeyDown") => {
+    if (close && reason !== 'backdropClick') {
       close();
     }
   }, [close]);
@@ -58,11 +58,10 @@ export const EditPopup = (props: EditPopupProps) => {
       {editLayout && (
         <Dialog
           open
-          onClose={cancelClicked}
+          onClose={(_event, reason) => cancelClicked(reason)}
           fullScreen={fullScreen}
           maxWidth={'lg'}
           fullWidth
-          disableBackdropClick
         >
           <DialogTitle id="form-dialog-title">{title}</DialogTitle>
           <DialogContent>
@@ -81,12 +80,12 @@ export const EditPopup = (props: EditPopupProps) => {
               </Button>
             )}
             {t && mode !== EditModes.VIEW && (
-              <Button onClick={cancelClicked} color="default">
+              <Button onClick={() => cancelClicked("escapeKeyDown")}>
                 {t('editing.actions.cancel')}
               </Button>
             )}
             {t && mode === EditModes.VIEW && (
-              <Button onClick={cancelClicked} color="default">
+              <Button onClick={() => cancelClicked("escapeKeyDown")}>
                 {t('editing.actions.close')}
               </Button>
             )}

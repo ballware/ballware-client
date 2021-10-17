@@ -6,12 +6,10 @@
  */
 
 import React, { useMemo, useEffect, useContext, useState } from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import HelpIcon from '@material-ui/icons/Help';
+import { useTheme } from '@mui/material/styles';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import HelpIcon from '@mui/icons-material/Help';
 import {
-  makeStyles,
   Toolbar,
   Typography,
   IconButton,
@@ -19,8 +17,9 @@ import {
   Divider,
   DialogActions,
   Button,
-} from '@material-ui/core';
-import { Dialog, DialogContent } from '@material-ui/core';
+  useMediaQuery
+} from '@mui/material';
+import { Dialog, DialogContent } from '@mui/material';
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { PageContext } from '@ballware/react-contexts';
 import {
@@ -29,6 +28,7 @@ import {
 } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
 
+/*
 const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
   },
 }));
-
+*/
 export interface FilterBarProps {
   documentationIdentifier?: string;
   title?: string;
@@ -53,7 +53,7 @@ export const FilterBar = ({
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
-  const classes = useStyles();
+  //const classes = useStyles();
   const [popupOpen, setPopupOpen] = useState(false);
   const [initialized, setInitialized] = useState(false);
 
@@ -91,7 +91,7 @@ export const FilterBar = ({
       {t && (
         <Toolbar>
           {title && (
-            <Typography className={classes.title} variant="h6">
+            <Typography sx={{ flexGrow: 1 }} variant="h6">
               {title}
             </Typography>
           )}
@@ -107,7 +107,7 @@ export const FilterBar = ({
           )}
           <Hidden mdUp implementation="css">
             <IconButton
-              className={classes.toolbarItem}
+              sx={{ marginRight: theme.spacing(1) }}
               onClick={handleFilterClick}
             >
               <FilterListIcon />

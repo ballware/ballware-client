@@ -7,6 +7,8 @@
 
 import React, { useContext, useMemo } from 'react';
 
+import { useTheme } from '@mui/material/styles';
+
 import {
   LookupContext,
   LookupDescriptor,
@@ -22,7 +24,8 @@ import { createLookupDataSource } from '../../util/datasource';
 import { TagBox } from 'devextreme-react';
 
 export const MultiLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
-  const classes = useDefaultToolbarItemStyles();
+  const theme = useTheme();
+  const style = useDefaultToolbarItemStyles(theme);
 
   const { name, caption, defaultValue, lookup, width } = toolbarItem;
 
@@ -49,7 +52,7 @@ export const MultiLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
     <React.Fragment>
       {paramEditorInitialized && paramEditorValueChanged && mylookup && (
         <TagBox
-          className={classes.toolbaritem}
+          style={style}
           dataSource={dataSource}
           noDataText={caption}
           width={width ?? '400px'}

@@ -15,7 +15,7 @@ import {
   DialogContent,
   DialogActions,
   Button,
-} from '@material-ui/core';
+} from '@mui/material';
 
 import Iframe from 'react-iframe';
 import { CrudContext } from '@ballware/react-contexts';
@@ -42,11 +42,10 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
   return (
     <Dialog
       open
-      onClose={cancelClicked}
+      onClose={(_event, reason) => { if (reason !== 'backdropClick') cancelClicked() }}
       fullScreen={fullScreen}
       maxWidth={'lg'}
       fullWidth
-      disableBackdropClick
     >
       <DialogTitle id="form-dialog-title">{title}</DialogTitle>
       <DialogContent>
@@ -62,7 +61,7 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
       </DialogContent>
       <DialogActions>
         {t && (
-          <Button onClick={cancelClicked} color="default">
+          <Button onClick={cancelClicked}>
             {t('editing.actions.close')}
           </Button>
         )}

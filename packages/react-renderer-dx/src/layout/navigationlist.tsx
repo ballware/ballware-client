@@ -8,25 +8,21 @@
 import React, { useCallback, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
-import Collapse from '@material-ui/core/Collapse';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import { useTheme } from '@mui/material/styles';
+import { Divider, Collapse, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 import { TenantContext } from '@ballware/react-contexts';
 
+/*
 const useStyles = makeStyles(theme => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
 }));
-
+*/
 const ListItemLink = (props: any) => {
   const { icon, primary, to, className } = props;
 
@@ -49,7 +45,7 @@ const ListItemLink = (props: any) => {
 };
 
 export const NavigationList = () => {
-  const classes = useStyles();
+  const theme = useTheme();
   const { hasRight, navigation } = useContext(TenantContext);
 
   const renderItems = useCallback(
@@ -105,7 +101,7 @@ export const NavigationList = () => {
               return (
                 <ListItemLink
                   key={itemKey++}
-                  className={classes.nested}
+                  sx={{ paddingLeft: theme.spacing(4) }}
                   to={`/${item.options.url}`}
                   primary={item.options.caption}
                 />
@@ -119,7 +115,7 @@ export const NavigationList = () => {
         }
       });
     },
-    [hasRight, classes.nested]
+    [hasRight]
   );
 
   const Group = ({

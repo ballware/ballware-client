@@ -7,6 +7,8 @@
 
 import React, { PropsWithChildren, useEffect } from 'react';
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -16,6 +18,8 @@ import 'devextreme/dist/css/dx.material.blue.light.css';
 import moment from 'moment';
 import deMessages from 'devextreme/localization/messages/de.json';
 import { locale, loadMessages } from 'devextreme/localization';
+
+const theme = createTheme();
 
 export interface ContextProps {}
 
@@ -29,5 +33,5 @@ export const Context = ({ children }: PropsWithChildren<ContextProps>) => {
     );
   }, []);
 
-  return <React.Fragment>{children}</React.Fragment>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

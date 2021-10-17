@@ -7,14 +7,14 @@
 
 import React, { PropsWithChildren } from 'react';
 
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Divider from '@material-ui/core/Divider';
+import { IconButton, Divider } from '@mui/material';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useTheme } from '@mui/material/styles';
+import { styled } from '@mui/system';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { NavigationList } from './navigationlist';
-
+/*
 const useStyles = makeStyles(theme => ({
   drawerHeader: {
     display: 'flex',
@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-end',
   },
 }));
-
+*/
 export interface NavigationProps {
   onMenuToggle?: () => void;
 }
@@ -33,12 +33,13 @@ export const Navigation = ({
   onMenuToggle,
   children,
 }: PropsWithChildren<NavigationProps>) => {
-  const classes = useStyles();
   const theme = useTheme();
+
+  const StyledDiv = styled('div')({ ...theme.mixins.toolbar, display: 'flex', alignItems: 'center', padding: theme.spacing(0, 1), justifyContent: 'flex-end' });
 
   return (
     <React.Fragment>
-      <div className={classes.drawerHeader}>
+      <StyledDiv>
         {onMenuToggle && (
           <IconButton onClick={onMenuToggle}>
             {theme.direction === 'ltr' ? (
@@ -48,7 +49,7 @@ export const Navigation = ({
             )}
           </IconButton>
         )}
-      </div>
+      </StyledDiv>
       <Divider />
       <NavigationList />
       {children && (

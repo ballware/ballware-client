@@ -7,62 +7,44 @@
 
 import React, { PropsWithChildren } from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = (drawerWidth: string | number) =>
-  makeStyles(theme => ({
-    appBar: {
-      [theme.breakpoints.up('md')]: {
-        marginLeft: drawerWidth,
-      },
-      zIndex: theme.zIndex.drawer + 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
-    },
-    toolbar: theme.mixins.toolbar,
-    title: {
-      flexGrow: 1,
-    },
-  }));
+import { AppBar, Toolbar, IconButton, Typography, Hidden } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export interface ApplicationBarProps {
   title?: string;
-  drawerWidth: string | number;
   onMenuToggle?: () => void;
 }
 
 export const ApplicationBar = ({
   title,
-  drawerWidth,
   onMenuToggle,
   children,
 }: PropsWithChildren<ApplicationBarProps>) => {
-  const classes = useStyles(drawerWidth)();
-
+  
+  const theme = useTheme();
+  
   return (
-    <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar className={classes.toolbar}>
+    <AppBar position="fixed" sx={{ 
+        zIndex: theme.zIndex.drawer + 1
+      }}>
+      <Toolbar>
         {onMenuToggle && (
-          <IconButton
-            color="inherit"
-            edge="start"
-            onClick={onMenuToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Hidden smUp>
+              <IconButton
+                color="inherit"
+                edge="start"
+                onClick={onMenuToggle}
+                sx={{ 
+                  marginRight: theme.spacing(2),
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+          </Hidden>
         )}
         {title && (
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
             {title}
           </Typography>
         )}

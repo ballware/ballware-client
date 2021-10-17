@@ -15,7 +15,7 @@ import {
   Button,
   useTheme,
   useMediaQuery,
-} from '@material-ui/core';
+} from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { HtmlEditor } from '../components/htmleditor';
 
@@ -57,7 +57,7 @@ export const DocumentationPopup = ({
       </DialogContent>
       <DialogActions>
         {t && (
-          <Button onClick={onClose} color="default">
+          <Button onClick={onClose}>
             {t('documentation.actions.close')}
           </Button>
         )}

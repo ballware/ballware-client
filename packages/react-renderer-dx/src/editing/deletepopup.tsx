@@ -16,7 +16,7 @@ import {
   useTheme,
   useMediaQuery,
   DialogContentText,
-} from '@material-ui/core';
+} from '@mui/material';
 import { CrudContext } from '@ballware/react-contexts';
 import { DeletePopupProps } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
@@ -34,11 +34,10 @@ export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
       {t && drop && close && (
         <Dialog
           open
-          onClose={() => close()}
+          onClose={(_event, reason) => { if (reason !== 'backdropClick') close() }}
           fullScreen={fullScreen}
           maxWidth={'lg'}
           fullWidth
-          disableBackdropClick
         >
           <DialogTitle id="form-dialog-title">{title}</DialogTitle>
           <DialogContent>
@@ -48,7 +47,7 @@ export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
             <Button onClick={() => drop(id)} color="primary">
               {t('editing.actions.remove')}
             </Button>
-            <Button onClick={() => close()} color="default">
+            <Button onClick={() => close()}>
               {t('editing.actions.cancel')}
             </Button>
           </DialogActions>

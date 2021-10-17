@@ -19,13 +19,12 @@ import {
 import {
   TableContainer,
   Paper,
-  makeStyles,
   Table,
   TableHead,
   TableBody,
   TableRow,
   TableCell,
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   setByPath,
   EditItemsContext,
@@ -52,16 +51,16 @@ export interface DetailTableProps {
   setValue: (value: Array<Record<string, unknown>>) => void;
   layoutItem: EditLayoutItemOptions;
 }
-
+/*
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
-
+*/
 export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
   ({ readonly, defaultValue, setValue, layoutItem }, ref): JSX.Element => {
-    const classes = useStyles();
+    //const classes = useStyles();
 
     const { EditProvider } = useContext(EditItemsContext);
 
@@ -83,7 +82,7 @@ export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
 
     return (
       <TableContainer component={Paper}>
-        <Table className={classes.table} size={'small'}>
+        <Table sx={{ minWidth: 650 }} size={'small'}>
           <TableHead>
             <TableRow>
               {options?.columns?.map(column => (

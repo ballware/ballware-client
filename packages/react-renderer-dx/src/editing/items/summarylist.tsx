@@ -15,24 +15,26 @@ import {
 } from '@ballware/react-renderer';
 
 import {
-  makeStyles,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-} from '@material-ui/core';
-import ErrorIcon from '@material-ui/icons/Error';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import HelpIcon from '@material-ui/icons/Help';
-import { EditLayoutItem } from '@ballware/meta-interface';
+} from '@mui/material';
 
+import { useTheme } from '@mui/material/styles';
+
+import ErrorIcon from '@mui/icons-material/Error';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import HelpIcon from '@mui/icons-material/Help';
+import { EditLayoutItem } from '@ballware/meta-interface';
+/*
 const useSummaryStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     backgroundColor: theme.palette.background.paper,
   },
 }));
-
+*/
 export interface SummaryElementOptions {
   icon?: string;
   hintExpr?: string;
@@ -52,7 +54,8 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
   const [value, setValue] = useState<Record<string, unknown>>();
   const [prepared, setPrepared] = useState(false);
 
-  const classes = useSummaryStyles();
+  //const classes = useSummaryStyles();
+  const theme = useTheme();
 
   useEffect(() => {
     if (
@@ -147,7 +150,10 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
 
     return (
       <FieldSet layoutItem={layoutItem.options}>
-        <List className={classes.root}>{entries}</List>
+        <List sx={{
+          width: '100%',
+          backgroundColor: theme.palette.background.paper,
+        }}>{entries}</List>
       </FieldSet>
     );
   }
