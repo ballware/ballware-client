@@ -8,7 +8,7 @@ import i18n from './locate/i18n';
 
 import { SettingsContext, ProviderFactoryContext } from '@ballware/react-contexts';
 
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@mui/material';
 import { RenderFactoryContext } from '@ballware/react-renderer';
 
 import { DocumentViewer } from '../components/print/documentviewer';

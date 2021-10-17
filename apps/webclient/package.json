@@ -1,6 +1,6 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.6.4",
+  "version": "6.7.0",
   "private": true,
   "dependencies": {
     "@ballware/identity-backend": "^6.6.0",
@@ -9,8 +9,8 @@
     "@ballware/meta-interface": "^6.6.0",
     "@ballware/react-contexts": "^6.6.0",
     "@ballware/react-provider": "^6.6.0",
-    "@ballware/react-renderer": "^6.6.0",
-    "@ballware/react-renderer-dx": "^6.6.0"
+    "@ballware/react-renderer": "^6.7.0",
+    "@ballware/react-renderer-dx": "^6.7.0"
   },
   "scripts": {
     "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",
@@ -36,9 +36,6 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/core": "^4.11.2",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/lab": "^4.0.0-alpha.57",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",

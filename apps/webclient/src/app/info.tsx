@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import Button from '@material-ui/core/Button';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import { DialogContent, DialogContentText, DialogActions } from '@material-ui/core';
+import { Button, DialogTitle, Dialog, DialogContent, DialogContentText, DialogActions } from '@mui/material';
+
 import { SettingsContext } from '@ballware/react-contexts';
 
 export interface InfoDialogProps {
