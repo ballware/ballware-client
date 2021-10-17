@@ -40,11 +40,6 @@ export interface ApplicationBarProps {
   title?: string;
 
   /**
-   * Width of navigation drawer
-   */
-  drawerWidth: string | number;
-
-  /**
    * Burger menu button toggled
    */
   onMenuToggle?: () => void;
