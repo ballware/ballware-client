@@ -44,7 +44,13 @@ export function createEditableGridDatasource(
       return Promise.resolve(items);
     },
     byKey: function(key: string) {
-      return Promise.resolve(items?.find(item => item.Id === key));
+      const item = items?.find(item => item.Id === key);
+
+      if (!item) {
+        throw `Item with key ${key} not found`;
+      }
+      
+      return Promise.resolve(item);
     },
     update: function(key: string, values: CrudItem) {
       let item = items?.find(item => item[keyProperty] === key);

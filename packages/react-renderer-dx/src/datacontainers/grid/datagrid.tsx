@@ -21,7 +21,7 @@ import {
   Paging,
 } from 'devextreme-react/data-grid';
 import DataSource from 'devextreme/data/data_source';
-import { dxDataGridColumn, dxDataGridRowObject } from 'devextreme/ui/data_grid';
+import { dxDataGridColumn, dxDataGridRowObject, EditingStartEvent } from 'devextreme/ui/data_grid';
 import {
   CrudItem,
   GridLayout,
@@ -234,11 +234,7 @@ export const DataGrid = ({
       }
     };
 
-    const onEditingStart = (e: {
-      cancel?: boolean;
-      data?: CrudItem;
-      column?: { dataField: string };
-    }) => {
+    const onEditingStart = (e: EditingStartEvent) => {
       e.cancel = !e.data || !editAllowed || !editAllowed(e.data);
 
       if (!e.cancel && e.column) {

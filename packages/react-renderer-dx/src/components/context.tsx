@@ -18,6 +18,12 @@ import 'devextreme/dist/css/dx.material.blue.light.css';
 import moment from 'moment';
 import deMessages from 'devextreme/localization/messages/de.json';
 import { locale, loadMessages } from 'devextreme/localization';
+import dxTextBox from 'devextreme/ui/text_box';
+import dxSelectBox from 'devextreme/ui/select_box';
+import dxTextArea from 'devextreme/ui/text_area';
+import dxDateBox from 'devextreme/ui/date_box';
+import dxNumberBox from 'devextreme/ui/number_box';
+import dxTagBox from 'devextreme/ui/tag_box';
 
 const theme = createTheme();
 
@@ -31,6 +37,42 @@ export const Context = ({ children }: PropsWithChildren<ContextProps>) => {
     moment.locale(
       navigator.languages ? navigator.languages[0] : navigator.language
     );
+
+    dxTextBox.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    });
+
+    dxSelectBox.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    });
+
+    dxTagBox.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    });
+
+    dxTextArea.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    });
+
+    dxDateBox.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    });
+
+    dxNumberBox.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    });
   }, []);
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;

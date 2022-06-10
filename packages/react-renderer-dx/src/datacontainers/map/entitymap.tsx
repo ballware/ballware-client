@@ -186,7 +186,7 @@ export const EntityMap = ({
 
         actionMenu.current.instance.option(
           'title',
-          getByPath(row, displayMember)
+          getByPath(row, displayMember) as string
         );
         actionMenu.current.instance.option('dataSource', actions);
         actionMenu.current.instance.option('target', target);
@@ -320,7 +320,11 @@ export const EntityMap = ({
 
   const addButtonClicked = useCallback(
     (target?: Element) => {
-      const addMenuItems = addMenu.current?.instance?.option('dataSource');
+      const addMenuItems = addMenu.current?.instance?.option('dataSource') as Array<{
+        id: string;
+        text: string;
+        customFunction?: EntityCustomFunction;
+      }>;
 
       if (addMenu.current && addMenuItems?.length > 1) {
         addMenu.current.instance.option('target', target);

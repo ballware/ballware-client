@@ -77,12 +77,14 @@ export const DateBox = ({ layoutItem, type }: DateBoxProps) => {
           case 'readonly':
             return readonly;
         }
+
+        return undefined;
       },
       setOption: (option, newValue) => {
         switch (option) {
           case 'value':
             valueNotificationRef.current = false;
-            editorRef.current?.instance.option('value', newValue);
+            editorRef.current?.instance.option('value', newValue as Date);
             valueNotificationRef.current = true;
             break;
           case 'required':

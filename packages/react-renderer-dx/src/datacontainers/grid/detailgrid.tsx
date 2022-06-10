@@ -98,7 +98,7 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
 
     useImperativeHandle(ref, () => ({
       getValue: () => {
-        return gridRef.current?.instance.option('dataSource');
+        return gridRef.current?.instance.option('dataSource') as Record<string, unknown>[];
       },
       setValue: newValue => {
         gridRef.current?.instance.option('dataSource', newValue);

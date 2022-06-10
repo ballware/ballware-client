@@ -7,13 +7,23 @@
 
 import { EditLayoutItemOptions } from '@ballware/meta-interface';
 import { EditorRef } from '@ballware/react-renderer';
-import { Component }  from 'devextreme/core/component';
 
 export interface EditItemProps {
   layoutItem: EditLayoutItemOptions;
 }
 
-export const componentToEditorRef = (component: Component) => {
+export interface EditComponentWithOptions {
+  /**
+    * Gets the value of a single property.
+    */
+  option<TPropertyName extends string, TValue = unknown>(optionName: TPropertyName): TValue;
+  /**
+    * Updates the value of a single property.
+    */
+  option<TPropertyName extends string, TValue = unknown>(optionName: TPropertyName, optionValue: TValue): void;
+}
+
+export const componentToEditorRef = (component: EditComponentWithOptions) => {
   return {
     getOption: option => component.option(option),
     setOption: (option, value) => component.option(option, value),

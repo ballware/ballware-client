@@ -67,12 +67,14 @@ export const NumberBox = ({ layoutItem }: NumberBoxProps) => {
           case 'readonly':
             return readonly;
         }
+
+        return undefined;
       },
       setOption: (option, newValue) => {
         switch (option) {
           case 'value':
             valueNotificationRef.current = false;
-            editorRef.current?.instance.option('value', newValue);
+            editorRef.current?.instance.option('value', newValue as number);
             valueNotificationRef.current = true;
             break;
           case 'required':
@@ -82,6 +84,8 @@ export const NumberBox = ({ layoutItem }: NumberBoxProps) => {
             setReadonly(readOnly() || (newValue as boolean));
             break;
         }
+
+        return undefined;
       },
     } as EditorRef;
 

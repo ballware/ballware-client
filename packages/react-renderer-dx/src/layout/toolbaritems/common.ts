@@ -8,10 +8,20 @@
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { ToolbarItemRef } from '@ballware/react-renderer';
 import { Theme } from '@mui/material/styles';
-import { Component } from 'devextreme/core/component';
 
 export interface ToolbarItemProps {
   toolbarItem: PageToolbarItem;
+}
+
+export interface ToolbarComponentWithOptions {
+  /**
+    * Gets the value of a single property.
+    */
+  option<TPropertyName extends string, TValue = unknown>(optionName: TPropertyName): TValue;
+  /**
+    * Updates the value of a single property.
+    */
+  option<TPropertyName extends string, TValue = unknown>(optionName: TPropertyName, optionValue: TValue): void;
 }
 
 export const useDefaultToolbarItemStyles = (theme: Theme) => {
@@ -22,7 +32,7 @@ export const useDefaultToolbarItemStyles = (theme: Theme) => {
   };
 };
 
-export const componentToToolbarItemRef = (component: Component) => {
+export const componentToToolbarItemRef = (component: ToolbarComponentWithOptions) => {
   return {
     getOption: option => component.option(option),
     setOption: (option, value) => component.option(option, value),

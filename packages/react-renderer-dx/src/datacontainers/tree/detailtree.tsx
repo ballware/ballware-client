@@ -78,7 +78,7 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
 
     useImperativeHandle(ref, () => ({
       getValue: () => {
-        return treeRef.current?.instance.option('dataSource');
+        return treeRef.current?.instance.option('dataSource') as any[];
       },
       setValue: newValue => {
         treeRef.current?.instance.option('dataSource', newValue);
