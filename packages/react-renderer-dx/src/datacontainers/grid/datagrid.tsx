@@ -21,7 +21,7 @@ import {
   Paging,
 } from 'devextreme-react/data-grid';
 import DataSource from 'devextreme/data/data_source';
-import { dxDataGridColumn, dxDataGridRowObject, EditingStartEvent } from 'devextreme/ui/data_grid';
+import dxDataGrid, { dxDataGridColumn, dxDataGridRowObject, EditingStartEvent, RowKeyInfo } from 'devextreme/ui/data_grid';
 import {
   CrudItem,
   GridLayout,
@@ -29,7 +29,7 @@ import {
   EntityCustomFunction,
 } from '@ballware/meta-interface';
 import { GridDetail } from './griddetail';
-import { dxEvent } from 'devextreme/events';
+import { Cancelable, dxEvent, EventInfo } from 'devextreme/events';
 import { dxElement } from 'devextreme/core/element';
 import { dxToolbarItem, dxToolbarOptions } from 'devextreme/ui/toolbar';
 import { MetaContext, CrudContext, EditModes } from '@ballware/react-contexts';
@@ -64,6 +64,9 @@ export interface DataGridProps {
     data: CrudItem;
     element: dxElement;
   }) => void;
+  isMasterDetailExpandable?: (e: {
+    data: CrudItem
+  }) => boolean;
 }
 
 export const DataGrid = ({
@@ -87,6 +90,7 @@ export const DataGrid = ({
   onAddClick,
   onCustomFunctionClick,
   onReloadClick,
+  isMasterDetailExpandable
 }: DataGridProps) => {
   const { t } = useTranslation();
 
@@ -314,6 +318,13 @@ export const DataGrid = ({
       }
     };
 
+    const onRowExpanding = (e: Cancelable & EventInfo<dxDataGrid<CrudItem, string>> & RowKeyInfo<string>) => {
+      
+      const rowData = e.component.getVisibleRows().find(row => row.rowType === 'data' && row.key === e.key);
+      
+      e.cancel = rowData && isMasterDetailExpandable && !isMasterDetailExpandable({ data: rowData});
+    };
+
     return (
       <DxDataGrid
         ref={grid}
@@ -330,6 +341,7 @@ export const DataGrid = ({
           selectedRowData.current = e.selectedRowsData as CrudItem[];
         }}
         onToolbarPreparing={onToolbarPreparing}
+        onRowExpanding={onRowExpanding}
         customizeColumns={
           mode === 'large' ? onCustomizeColumnsDisableHidingPriority : undefined
         }
@@ -392,6 +404,7 @@ export const DataGrid = ({
     onPrintClick,
     onReloadClick,
     onRowDblClick,
+    isMasterDetailExpandable,
     editorValueChanged,
     editorEntered,
   ]);

@@ -744,6 +744,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
                 onExportClick={exportButtonClicked}
                 onImportClick={importButtonClicked}
                 onRowDblClick={onRowDblClick}
+                isMasterDetailExpandable={(e) => optionButtonAllowed('view', e.data)}
                 exportFileName={`${displayName}_${moment().format('YYYYMMDD')}`}
                 layout={preparedGridLayout}
                 summary={summaryConfiguration}
