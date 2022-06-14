@@ -188,7 +188,7 @@ const MyStatisticElement = () => {
 
           return (
             <PivotGrid
-              style={{ height: options.height ?? 'calc(100vh - 140px)' }}
+              style={{ height: layout.height ?? 'calc(100vh - 140px)' }}
               allowSortingBySummary
               allowSorting
               allowExpandAll

@@ -322,7 +322,7 @@ export const DataGrid = ({
       
       const rowData = e.component.getVisibleRows().find(row => row.rowType === 'data' && row.key === e.key);
       
-      e.cancel = rowData && isMasterDetailExpandable && !isMasterDetailExpandable({ data: rowData});
+      e.cancel = rowData && isMasterDetailExpandable && !isMasterDetailExpandable({ data: rowData.data});
     };
 
     return (
