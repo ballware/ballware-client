@@ -41,7 +41,7 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
     return () => {};
   }, [count, params]);
 
-  if (itemCount) {
+  if (itemCount !== undefined) {
     return <React.Fragment>{`(${itemCount})`}</React.Fragment>
   } else {
     return <LoadIndicator height={12} width={12} />;
