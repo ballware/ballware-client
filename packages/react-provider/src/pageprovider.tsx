@@ -33,6 +33,8 @@ import { useHistory, useLocation } from 'react-router';
 
 import qs from 'qs';
 import isEqual from 'lodash/isEqual';
+import get from 'lodash/get';
+import set from 'lodash/set';
 
 /**
  * Properties for page provider
@@ -59,9 +61,7 @@ export const PageProvider = ({
     string | undefined
   >();
   const [pageData, setPageData] = useState<CompiledPageData | undefined>();
-  //const [pageParam, setPageParam] = useState<
-  //  Record<string, unknown> | undefined
-  //>();
+  const [currentPageParam, setCurrentPageParam] = useState<Record<string, unknown> | undefined>();
   const [customParam, setCustomParam] = useState<unknown | undefined>();
   const [value, setValue] = useState({} as PageContextState);
 
@@ -77,24 +77,39 @@ export const PageProvider = ({
     [setDocumentationEntity]
   );
 
-  const setPageParam = useCallback((pageParam: Record<string, unknown>) => {
-    const currentPageParam = qs.parse(search, { ignoreQueryPrefix: true })?.page;
-    const nextPageParam = qs.parse(qs.stringify({ page: pageParam }))?.page ?? {};
+  const setPageParam = useCallback((nextPageParam: Record<string, unknown>) => {
+    const globalRouterState = qs.parse(search, {ignoreQueryPrefix: true});
+
+    //const currentRouterPageParam = get(globalRouterState, 'page', {} as Record<string, unknown>);
+    
+    if (!isEqual(currentPageParam, nextPageParam)) {
+      set(globalRouterState, 'page', nextPageParam);
+
+      push({ search: qs.stringify(globalRouterState) });
+    }
 
     if (!isEqual(currentPageParam, nextPageParam)) {
-      push({ search: qs.stringify({ page: pageParam }) });
+      setCurrentPageParam(nextPageParam);      
+    }
+  }, [search, push]);
+
+  useEffect(() => {
+
+    if (search && !currentPageParam) {
+      const globalRouterState = qs.parse(search, {ignoreQueryPrefix: true});
+      setCurrentPageParam(get(globalRouterState, 'page', {} as Record<string, unknown>));
     }
 
-    if (!isEqual(value.pageParam, nextPageParam)) {
+  }, [currentPageParam, search]);
 
-      setValue(previousValue => {
-        return {
-          ...previousValue,
-          pageParam: pageParam,
-        } as PageContextState;
-      });
-    }
-  }, [search, push, value]);
+  useEffect(() => {
+    setValue(previousValue => {
+      return {
+        ...previousValue,
+        pageParam: currentPageParam,
+      } as PageContextState;
+    });
+  }, [currentPageParam]);
 
   useEffect(() => {
     if (
@@ -178,9 +193,6 @@ export const PageProvider = ({
 
   useEffect(() => {
     if (token && pageData && lookups && lookupsComplete) {
-
-      const currentPageParam = qs.parse(search, { ignoreQueryPrefix: true })?.page as Record<string, unknown>;
-
       if (pageData.compiledCustomScripts?.prepareCustomParam) {
         pageData.compiledCustomScripts.prepareCustomParam(
           lookups,
@@ -267,7 +279,7 @@ export const PageProvider = ({
         } as PageContextState;
       });
     }
-  }, [token, pageData, lookups, lookupsComplete, scriptActions, search]);
+  }, [token, pageData, lookups, lookupsComplete, scriptActions, currentPageParam]);
 
   useEffect(() => {
     if (createLookups && pageData) {

@@ -41,6 +41,11 @@ export interface CrudContainerOptions {
    * Identifier of list query
    */
   query?: string;
+
+  /**
+   * Identifier for page state
+   */
+  identifier?: string;
 }
 
 /**

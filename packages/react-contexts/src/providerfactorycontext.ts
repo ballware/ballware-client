@@ -45,6 +45,7 @@ export interface ProviderFactoryContextState {
     props: PropsWithChildren<{
       query: string | undefined;
       initialFetchParams: Record<string, unknown> | undefined;
+      identifier: string | undefined;
     }>
   ) => JSX.Element;
 

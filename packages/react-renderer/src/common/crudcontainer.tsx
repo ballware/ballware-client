@@ -72,7 +72,8 @@ export const CrudContainer = ({
                   ?.query ?? 'primary'
               }
               initialFetchParams={params}
-            >
+              identifier={(layoutItem.options?.itemoptions as CrudContainerOptions)?.identifier}
+              >
               <CrudFunctions>
                 <React.Fragment>
                   {layoutItem.items?.map((item, index) => (

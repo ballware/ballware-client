@@ -164,7 +164,7 @@ export const CrudFunctions = ({
               initialCustomParam={{}}
             >
               <AttachmentProvider>
-                <CrudProvider query={undefined} initialFetchParams={{}}>
+                <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
                   <ForeignEditPopup
                     functionIdentifier={customEditFunction.id}
                     selection={customEditParam as CrudItem[]}
