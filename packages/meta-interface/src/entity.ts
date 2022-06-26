@@ -9,6 +9,7 @@ import { DocumentSelectEntry } from './document';
 import { ScriptUtil } from './scriptutil';
 import { CrudItem, ValueType } from './cruditem';
 import { RightsCheckFunc } from './rights';
+import { QueryParams } from './common';
 
 /**
  * Adapter for accessing editor objects in custom scripts
@@ -652,7 +653,8 @@ export interface CompiledEntityCustomScripts {
    * @param util Utility for performing misc operations
    * @param executeCallback Execute custom function with prepared params
    * @param messageCallback Show notification message to user
-   * @param selection Current selected business objects (only for function type 'edit')
+   * @param params Optional additional query params provided by parent
+   * @param selection Current selected business objects (only for function type 'edit')   
    */
   prepareCustomFunction?: (
     identifier: string,
@@ -660,6 +662,7 @@ export interface CompiledEntityCustomScripts {
     util: ScriptUtil,
     executeCallback: (param: Record<string, unknown>) => void,
     messageCallback: (message: string) => void,
+    params?: QueryParams,
     selection?: Array<CrudItem>
   ) => void;
 

@@ -97,7 +97,7 @@ export const PageProvider = ({
 
     if (search && !currentPageParam) {
       const globalRouterState = qs.parse(search, {ignoreQueryPrefix: true});
-      setCurrentPageParam(get(globalRouterState, 'page', {} as Record<string, unknown>));
+      setCurrentPageParam(get(globalRouterState, 'page', {} as Record<string, unknown>) as Record<string, unknown>);
     }
 
   }, [currentPageParam, search]);

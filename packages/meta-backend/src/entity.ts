@@ -459,6 +459,7 @@ const compileEntityMetadata = (
         'util',
         'executeCallback',
         'messageCallback',
+        'params',
         'selection',
       ];
       const compiledFn = Function.apply(
@@ -473,6 +474,7 @@ const compileEntityMetadata = (
             util,
             executeCallback,
             messageCallback,
+            params,
             selection
           ) =>
             compiledFn.apply(compiledFn, [
@@ -481,6 +483,7 @@ const compileEntityMetadata = (
               util,
               executeCallback,
               messageCallback,
+              params,
               selection,
             ])
         : undefined;

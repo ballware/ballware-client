@@ -188,12 +188,14 @@ export interface MetaContextState {
    * @param selection Collection of selected items
    * @param execute Execute callback containing prepared edit item data
    * @param message Message callback for notifying user with reason why edit operation is canceled
+   * @param params Optional parameter values for initialization
    */
   prepareCustomFunction?: (
     identifier: string,
-    selection: Array<Record<string, unknown>> | undefined,
+    selection: Array<CrudItem> | undefined,
     execute: (param: Record<string, unknown>) => void,
-    message: (message: string) => void
+    message: (message: string) => void,
+    params?: QueryParams
   ) => void;
 
   /**
@@ -201,7 +203,7 @@ export interface MetaContextState {
    * @param identifier Identifier of custom function
    * @param param Edited data in operation
    * @param save Save callback for storing item data in backend
-   * @param messsage Message callback for notifying user with reason why save operation is declined
+   * @param messsage Message callback for notifying user with reason why save operation is declined   
    */
   evaluateCustomFunction?: (
     identifier: string,

@@ -368,7 +368,7 @@ export const MetaProvider = ({
           drop: id => entityApi.drop(token, id),
           importItems: (functionIdentifier, file) => entityApi.importItems(token, functionIdentifier, file),
           exportItems: (functionIdentifier, ids) => entityApi.exportItems(token, functionIdentifier, ids),
-          prepareCustomFunction: (identifier, selection, execute, message) => {
+          prepareCustomFunction: (identifier, selection, execute, message, params) => {
             if (metaData.compiledCustomScripts?.prepareCustomFunction) {
               metaData.compiledCustomScripts.prepareCustomFunction(
                 identifier,
@@ -376,7 +376,8 @@ export const MetaProvider = ({
                 createUtil(token),
                 execute,
                 message,
-                selection as CrudItem[]
+                params,
+                selection
               );
             } else {
               selection?.forEach(s => execute(s));
