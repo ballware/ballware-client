@@ -1,15 +1,15 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.8.1",
+  "version": "6.8.2",
   "private": true,
   "dependencies": {
     "@ballware/identity-backend": "^6.6.0",
     "@ballware/identity-interface": "^6.6.0",
-    "@ballware/meta-backend": "^6.6.0",
-    "@ballware/meta-interface": "^6.6.0",
-    "@ballware/react-contexts": "^6.6.0",
-    "@ballware/react-provider": "^6.6.0",
-    "@ballware/react-renderer": "^6.7.0",
+    "@ballware/meta-backend": "^6.8.0",
+    "@ballware/meta-interface": "^6.8.0",
+    "@ballware/react-contexts": "^6.8.0",
+    "@ballware/react-provider": "^6.8.0",
+    "@ballware/react-renderer": "^6.8.0",
     "@ballware/react-renderer-dx": "^6.8.1",
     "@mui/material": "^5.0.0"
   },
