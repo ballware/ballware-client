@@ -15,13 +15,11 @@
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint src --fix",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "docs": "typedoc --plugin typedoc-plugin-markdown",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "prepublish": "npm run build"
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "devextreme": ">=20.2.5",
