@@ -65,6 +65,7 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
                 <CrudProvider
                   query={gridProps?.query ?? 'primary'}
                   initialFetchParams={gridProps?.fetchParams}
+                  identifier={undefined}
                 >
                   <CrudFunctions>
                     <EntityGrid

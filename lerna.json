@@ -4,5 +4,6 @@
   ],
   "npmClient": "yarn",
   "version": "6.6.0",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "useNx": true
 }
