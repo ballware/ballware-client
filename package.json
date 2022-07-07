@@ -31,6 +31,5 @@
     "version:canary": "changeset version --snapshot canary",
     "release:canary": "changeset publish --tag canary"
   },
-  "dependencies": {},
   "version": "0.0.0"
 }
