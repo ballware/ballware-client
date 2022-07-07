@@ -5,8 +5,13 @@ dist
 
 node_modules
 package-lock.json
-yarn.lock
-!/yarn.lock
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 .yalc
 yalc.lock
