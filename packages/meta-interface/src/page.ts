@@ -96,6 +96,11 @@ export interface StatisticOptions {
    * Identifier of statistic definition
    */
   statistic: string;
+
+  /**
+   * Identifier for page state
+   */
+  identifier?: string;
 }
 
 /**
