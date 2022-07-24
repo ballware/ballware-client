@@ -1448,7 +1448,7 @@
 
 "@ballware/react-renderer-dx@^6.8.1", "@ballware/react-renderer-dx@file:/Users/frank/Documents/GitHub/ballware-client/packages/react-renderer-dx":
   "resolved" "file:packages/react-renderer-dx"
-  "version" "6.8.1"
+  "version" "6.9.0"
   dependencies:
     "@ballware/meta-interface" "^6.6.0"
     "@ballware/react-contexts" "^6.6.0"
