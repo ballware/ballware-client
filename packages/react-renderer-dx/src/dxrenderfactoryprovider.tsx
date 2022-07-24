@@ -102,8 +102,11 @@ const PageLayoutComponent = ({
       return (
         <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
           <Statistic
-            identifier={
+            statistic={
               (layoutItem.options?.itemoptions as StatisticOptions)?.statistic
+            }
+            identifier={
+              (layoutItem.options?.itemoptions as StatisticOptions)?.identifier
             }
             params={params as Record<string, unknown>}
           />
@@ -119,6 +122,9 @@ const PageLayoutComponent = ({
             layout={
               (layoutItem.options?.itemoptions as EntityGridOptions)?.layout ??
               'primary'
+            }
+            identifier={
+              (layoutItem.options?.itemoptions as EntityGridOptions)?.identifier
             }
           />
         </Item>

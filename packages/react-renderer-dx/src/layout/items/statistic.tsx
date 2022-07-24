@@ -23,11 +23,11 @@ import {
   ValueAxis,
 } from 'devextreme-react/chart';
 import { Map, Marker } from 'devextreme-react/map';
-import { chartSeriesObject } from 'devextreme/viz/chart';
+import { LegendClickEvent } from 'devextreme/viz/chart';
 import moment from 'moment';
 import { getByPath } from '@ballware/react-renderer';
-import PivotGrid from 'devextreme-react/pivot-grid';
-import { PivotGridDataSourceField } from 'devextreme/ui/pivot_grid/data_source';
+import PivotGrid, { FieldPanel, StateStoring } from 'devextreme-react/pivot-grid';
+import { Field } from 'devextreme/ui/pivot_grid/data_source';
 import {
   ProviderFactoryContext,
   StatisticContext,
@@ -36,18 +36,19 @@ import {
 } from '@ballware/react-contexts';
 
 export interface StatisticProps {
+  statistic: string;
   identifier: string;
   params: Record<string, unknown>;
 }
 
-const MyStatisticElement = () => {
+const MyStatisticElement = ({ identifier }: { identifier: string }) => {
   const { googlekey } = useContext(SettingsContext);
   const { customParam } = useContext(PageContext);
   const { name, params, data, layout, argumentAxisCustomizeText } = useContext(
     StatisticContext
   );
 
-  const onLegendClick = useCallback((e: { target?: chartSeriesObject }) => {
+  const onLegendClick = useCallback((e: LegendClickEvent) => {
     if (e.target) {
       if (e.target.isVisible()) {
         e.target.hide();
@@ -217,11 +218,14 @@ const MyStatisticElement = () => {
                       ? { type: f.format, precision: f.precision }
                       : null,
                     width: f.width,
-                  } as PivotGridDataSourceField;
+                  } as Field;
                 }),
                 store: data,
               }}
-            />
+            >
+              <FieldPanel visible />
+              <StateStoring enabled={identifier ? true : false} type={"localStorage"} storageKey={identifier} />
+            </PivotGrid>
           );
         }
       }
@@ -243,14 +247,14 @@ const MyStatisticElement = () => {
   );
 };
 
-const StatisticContainer = ({ identifier, params }: StatisticProps) => {
+const StatisticContainer = ({ statistic, identifier, params }: StatisticProps) => {
   const { StatisticProvider } = useContext(ProviderFactoryContext);
 
   return (
     <React.Fragment>
       {StatisticProvider && (
-        <StatisticProvider identifier={identifier} params={params}>
-          <MyStatisticElement />
+        <StatisticProvider identifier={statistic} params={params}>
+          <MyStatisticElement identifier={identifier} />
         </StatisticProvider>
       )}
     </React.Fragment>
