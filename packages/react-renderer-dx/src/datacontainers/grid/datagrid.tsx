@@ -19,6 +19,7 @@ import {
   MasterDetail,
   ColumnChooser,
   Paging,
+  StateStoring,
 } from 'devextreme-react/data-grid';
 import DataSource from 'devextreme/data/data_source';
 import dxDataGrid, { dxDataGridColumn, dxDataGridRowObject, EditingStartEvent, RowKeyInfo } from 'devextreme/ui/data_grid';
@@ -36,6 +37,7 @@ import { MetaContext, CrudContext, EditModes } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 
 export interface DataGridProps {
+  identifier?: string;
   height: string;
   mode: 'large' | 'medium' | 'small';
   layout: GridLayout;
@@ -70,6 +72,7 @@ export interface DataGridProps {
 }
 
 export const DataGrid = ({
+  identifier,
   mode,
   height,
   dataSource,
@@ -381,6 +384,7 @@ export const DataGrid = ({
             <GridDetail detailLayout={layout.details} item={props.data} />
           )}
         />
+        <StateStoring enabled={identifier ? true : false} type={"localStorage"} storageKey={identifier}/>
       </DxDataGrid>
     );
   }, [
