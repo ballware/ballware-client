@@ -45,9 +45,10 @@ import { useTranslation } from 'react-i18next';
 export interface GridProps {
   layout: string;
   height?: string;
+  identifier?: string;
 }
 
-export const EntityGrid = ({ layout, height }: GridProps) => {
+export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
   const { t } = useTranslation();
 
   const [preparedGridLayout, setPreparedGridLayout] = useState<GridLayout>();
@@ -731,6 +732,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
           summaryConfiguration &&
           dataSource /* && !matches.small*/ && (
               <DataGrid
+                identifier={identifier}
                 customFunctions={headCustomFunctions ?? []}
                 showReload={true}
                 showAdd={(addMenuItems && addMenuItems?.length > 0) ?? false}
