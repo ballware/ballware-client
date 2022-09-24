@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "lerna": "^5.5.2",
     "tsdx": "^0.14.1"
   },
   "workspaces": [
