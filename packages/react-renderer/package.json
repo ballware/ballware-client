@@ -27,7 +27,7 @@
   },
   "peerDependencies": {
     "i18next": ">=19.9.2",
-    "react": ">=16",
+    "react": ">=18",
     "react-i18next": ">=11.8.6",
     "react-router-dom": ">=5.2.0"
   },
@@ -70,7 +70,7 @@
   ],
   "devDependencies": {
     "i18next": "^20.6.1",
-    "react-i18next": "^11.8.6"
+    "react-i18next": "^11.18.6"
   },
   "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
 }

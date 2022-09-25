@@ -13,7 +13,6 @@ import {
   Toolbar,
   Typography,
   IconButton,
-  Hidden,
   Divider,
   DialogActions,
   Button,
@@ -105,24 +104,25 @@ export const FilterBar = ({
               <HelpIcon />
             </IconButton>
           )}
-          <Hidden mdUp implementation="css">
-            <IconButton
-              sx={{ marginRight: theme.spacing(1) }}
-              onClick={handleFilterClick}
-            >
-              <FilterListIcon />
-            </IconButton>
-            {popupOpen && (
-              <Dialog open={popupOpen} fullWidth maxWidth={'sm'}>
-                <ToolbarItemsProvider>{dialogContent}</ToolbarItemsProvider>
-                <DialogActions>
-                  <Button onClick={() => setPopupOpen(false)} color="primary">
-                    {t('filterbar.actions.close')}
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            )}
-          </Hidden>
+          <IconButton              
+            sx={{ 
+              display: { md: 'none', sm: 'block' },
+              marginRight: theme.spacing(1) 
+            }}
+            onClick={handleFilterClick}
+          >
+            <FilterListIcon />
+          </IconButton>
+          {popupOpen && (
+            <Dialog open={popupOpen} fullWidth maxWidth={'sm'} sx={{ display: { md: 'none', sm: 'block' } }}>
+              <ToolbarItemsProvider>{dialogContent}</ToolbarItemsProvider>
+              <DialogActions>
+                <Button onClick={() => setPopupOpen(false)} color="primary">
+                  {t('filterbar.actions.close') as string}
+                </Button>
+              </DialogActions>
+            </Dialog>
+          )}
         </Toolbar>
       )}
       <Divider />

@@ -49,7 +49,7 @@ export const DocumentationPopup = ({
     >
       {t && (
         <DialogTitle id="form-dialog-title">
-          {t('documentation.popuptitle', { entity: title })}
+          {t('documentation.popuptitle', { entity: title }) as string}
         </DialogTitle>
       )}
       <DialogContent>
@@ -58,7 +58,7 @@ export const DocumentationPopup = ({
       <DialogActions>
         {t && (
           <Button onClick={onClose}>
-            {t('documentation.actions.close')}
+            {t('documentation.actions.close') as string}
           </Button>
         )}
       </DialogActions>

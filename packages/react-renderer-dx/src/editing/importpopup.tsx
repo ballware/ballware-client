@@ -40,9 +40,9 @@ import { FileUploader } from 'devextreme-react';
            maxWidth={'lg'}
            fullWidth
          >
-           <DialogTitle id="form-dialog-title">{t('editing.import.popuptitle')}</DialogTitle>
+           <DialogTitle id="form-dialog-title">{t('editing.import.popuptitle') as string}</DialogTitle>
            <DialogContent>
-             <DialogContentText>{t('editing.import.popupmessage')}</DialogContentText>
+             <DialogContentText>{t('editing.import.popupmessage') as string}</DialogContentText>
              <FileUploader                
                 multiple={false}
                 accept={'*'}
@@ -53,7 +53,7 @@ import { FileUploader } from 'devextreme-react';
            </DialogContent>
            <DialogActions>             
              <Button onClick={() => close()}>
-               {t('editing.actions.close')}
+               {t('editing.actions.close') as string}
              </Button>
            </DialogActions>
          </Dialog>

@@ -11,7 +11,7 @@ import React, {
   useContext,
   PropsWithChildren
 } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import qs from 'qs';
 import isEqual from 'lodash/isEqual';

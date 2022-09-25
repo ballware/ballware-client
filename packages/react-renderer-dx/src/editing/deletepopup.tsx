@@ -45,10 +45,10 @@ export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
           </DialogContent>
           <DialogActions>
             <Button onClick={() => drop(id)} color="primary">
-              {t('editing.actions.remove')}
+              {t('editing.actions.remove') as string}
             </Button>
             <Button onClick={() => close()}>
-              {t('editing.actions.cancel')}
+              {t('editing.actions.cancel') as string}
             </Button>
           </DialogActions>
         </Dialog>

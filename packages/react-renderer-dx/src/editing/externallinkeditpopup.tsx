@@ -62,7 +62,7 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
       <DialogActions>
         {t && (
           <Button onClick={cancelClicked}>
-            {t('editing.actions.close')}
+            {t('editing.actions.close') as string} 
           </Button>
         )}
       </DialogActions>

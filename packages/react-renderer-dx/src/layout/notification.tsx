@@ -7,8 +7,7 @@
 
 import React, { useContext } from 'react';
 
-import { Snackbar } from '@mui/material';
-import MuiAlert from '@mui/lab/Alert';
+import { Snackbar, Alert } from '@mui/material';
 import {
   NotificationContext,
   NotificationDisplayContext,
@@ -29,14 +28,14 @@ export const Notification = () => {
           autoHideDuration={4000}
           onClose={() => hide()}
         >
-          <MuiAlert
+          <Alert
             elevation={6}
             variant="filled"
             severity={message.type}
             onClose={() => hide()}
           >
-            {t(message.text)}
-          </MuiAlert>
+            {t(message.text) as string}
+          </Alert>
         </Snackbar>
       )}
     </React.Fragment>

@@ -109,21 +109,21 @@ export const SessionButton = () => {
           onClose={onMenuClose}
         >
           {timeoutIn > 0 && (
-            <MenuItem onClick={onRefresh}>{t('session.refresh')}</MenuItem>
+            <MenuItem onClick={onRefresh}>{t('session.refresh') as string}</MenuItem>
           )}
           {session && changePassword && (
             <MenuItem onClick={onChangePassword}>
-              {t('session.changepassword')}
+              {t('session.changepassword') as string}
             </MenuItem>
           )}
           {session && manageAccount && (
             <MenuItem onClick={onManageAccount}>
-              {t('session.manageaccount')}
+              {t('session.manageaccount') as string}
             </MenuItem>
           )}
           {session && (
             <MenuItem onClick={onLogout}>
-              {t('session.logout', { user: session.email })}
+              {t('session.logout', { user: session.email }) as string}
             </MenuItem>
           )}
         </Menu>

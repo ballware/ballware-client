@@ -71,7 +71,7 @@ export const DetailEditPopup = ({
               setOpen(true);
             }}
           >
-            {t('editing.actions.open')}
+            {t('editing.actions.open') as string}
           </Button>
           <Dialog open={open} fullWidth maxWidth={'lg'}>
             <DialogTitle>{column.caption}</DialogTitle>
@@ -99,17 +99,17 @@ export const DetailEditPopup = ({
             <DialogActions>
               {t && !readonly && (
                 <Button onClick={onApply} color="primary">
-                  {t('editing.actions.apply')}
+                  {t('editing.actions.apply') as string}
                 </Button>
               )}
               {t && !readonly && (
                 <Button onClick={() => setOpen(false)}>
-                  {t('editing.actions.cancel')}
+                  {t('editing.actions.cancel') as string}
                 </Button>
               )}
               {t && readonly && (
                 <Button onClick={() => setOpen(false)} color="primary">
-                  {t('editing.actions.close')}
+                  {t('editing.actions.close') as string}
                 </Button>
               )}
             </DialogActions>

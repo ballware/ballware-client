@@ -14,7 +14,7 @@ import React, {
 } from 'react';
 
 import { useTheme, styled } from '@mui/material/styles';
-import { CssBaseline, Drawer, Hidden, Box } from '@mui/material';
+import { CssBaseline, Drawer, Box } from '@mui/material';
 
 import { RenderFactoryContext } from '@ballware/react-renderer';
 import { SessionButton } from './sessionbutton';
@@ -118,37 +118,35 @@ export const Application = ({
       <CssBaseline />
       <MemorizedApplicationBar />
       <Nav>
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden mdUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={onToggleMenu}
-            sx={{ 
-              width: drawerWidth ?? 240,
-              flexShrink: 0,
-              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <MemorizedNavigation />
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer sx={{ 
-              width: drawerWidth ?? 240,
-              flexShrink: 0,
-              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
-            }}
-            variant="permanent"
-            open
-          >
-            <MemorizedNavigation />
-          </Drawer>
-        </Hidden>
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}        
+        <Drawer
+          variant="temporary"
+          anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+          open={mobileOpen}
+          onClose={onToggleMenu}
+          sx={{ 
+            display: { md: 'none', sm: 'block' },
+            width: drawerWidth ?? 240,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
+          }}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          <MemorizedNavigation />
+        </Drawer>        
+        <Drawer sx={{ 
+            display: { sm: 'none', md: 'block' },
+            width: drawerWidth ?? 240,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
+          }}
+          variant="permanent"
+          open
+        >
+          <MemorizedNavigation />
+        </Drawer>
       </Nav>
       <Box sx={{      
           padding: theme.spacing(1),

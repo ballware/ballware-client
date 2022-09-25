@@ -71,8 +71,10 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
 
     return (
       <Switch>
-        {renderedPages}
-        {children}
+        <React.Fragment>
+          {renderedPages}
+          {children}
+        </React.Fragment>
       </Switch>
     );
   }, [

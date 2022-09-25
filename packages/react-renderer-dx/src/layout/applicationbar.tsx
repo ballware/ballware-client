@@ -7,7 +7,7 @@
 
 import React, { PropsWithChildren } from 'react';
 
-import { AppBar, Toolbar, IconButton, Typography, Hidden } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -29,19 +29,18 @@ export const ApplicationBar = ({
         zIndex: theme.zIndex.drawer + 1
       }}>
       <Toolbar>
-        {onMenuToggle && (
-          <Hidden smUp>
-              <IconButton
-                color="inherit"
-                edge="start"
-                onClick={onMenuToggle}
-                sx={{ 
-                  marginRight: theme.spacing(2),
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-          </Hidden>
+        {onMenuToggle && (          
+          <IconButton
+            color="inherit"
+            edge="start"
+            onClick={onMenuToggle}
+            sx={{ 
+              display: { sm: 'none', xs: 'block' },
+              marginRight: theme.spacing(2),
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
         )}
         {title && (
           <Typography variant="h6" sx={{ flexGrow: 1 }}>

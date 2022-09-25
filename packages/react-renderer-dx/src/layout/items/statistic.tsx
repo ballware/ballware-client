@@ -37,11 +37,11 @@ import {
 
 export interface StatisticProps {
   statistic: string;
-  identifier: string;
+  identifier?: string;
   params: Record<string, unknown>;
 }
 
-const MyStatisticElement = ({ identifier }: { identifier: string }) => {
+const MyStatisticElement = ({ identifier }: { identifier?: string }) => {
   const { googlekey } = useContext(SettingsContext);
   const { customParam } = useContext(PageContext);
   const { name, params, data, layout, argumentAxisCustomizeText } = useContext(

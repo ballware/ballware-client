@@ -29,7 +29,7 @@ import {
   LookupRequest,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import qs from 'qs';
 import isEqual from 'lodash/isEqual';

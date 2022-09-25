@@ -37,21 +37,21 @@ export const NotificationProvider = ({
     { type: 'error' | 'info' | 'warning'; text: string } | undefined
   >();
 
-  const showInfo = useCallback(message => {
+  const showInfo = useCallback((message: string) => {
     if (message) {
       setMessage({ type: 'info', text: message.toString() });
       console.info(message);
     }
   }, []);
 
-  const showWarning = useCallback(message => {
+  const showWarning = useCallback((message: string) => {
     if (message) {
       setMessage({ type: 'warning', text: message.toString() });
       console.warn(message);
     }
   }, []);
 
-  const showError = useCallback(message => {
+  const showError = useCallback((message: string) => {
     if (message) {
       setMessage({ type: 'error', text: message.toString() });
       console.error(message);

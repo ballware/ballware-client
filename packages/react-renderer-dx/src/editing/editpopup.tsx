@@ -76,17 +76,17 @@ export const EditPopup = (props: EditPopupProps) => {
           <DialogActions>
             {t && mode !== EditModes.VIEW && (
               <Button onClick={saveClicked} color="primary">
-                {t('editing.actions.apply')}
+                {t('editing.actions.apply') as string}
               </Button>
             )}
             {t && mode !== EditModes.VIEW && (
               <Button onClick={() => cancelClicked("escapeKeyDown")}>
-                {t('editing.actions.cancel')}
+                {t('editing.actions.cancel') as string}
               </Button>
             )}
             {t && mode === EditModes.VIEW && (
               <Button onClick={() => cancelClicked("escapeKeyDown")}>
-                {t('editing.actions.close')}
+                {t('editing.actions.close') as string}
               </Button>
             )}
           </DialogActions>
