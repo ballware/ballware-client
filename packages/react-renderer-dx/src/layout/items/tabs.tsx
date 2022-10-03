@@ -78,7 +78,7 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
         return (<TabItem
           key={`tab-${tabscount++}`}
           tabRender={() => <TabHeader options={tabOptions}/>}          >
-          <Container height={layoutItem.options?.height}>
+          <Container height={layoutItem.options?.height ?? '100%'}>
             {PageLayoutItem &&
               tab.items &&
               tab.items.map(item => (
@@ -98,7 +98,7 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
 
   return (
     <TabPanel
-      height={layoutItem.options?.height}
+      height={layoutItem.options?.height ?? '100%'}      
       deferRendering={true}
       showNavButtons
       swipeEnabled={false}

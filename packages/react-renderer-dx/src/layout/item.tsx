@@ -12,10 +12,11 @@ import { Grid } from '@mui/material';
 export interface ItemProps {
   colCount?: number;
   colSpan?: number;
+  height?: string;
   children: JSX.Element | Array<JSX.Element>;
 }
 
-export const Item = ({ colSpan, colCount, children }: ItemProps) => {
+export const Item = ({ colSpan, colCount, children, height }: ItemProps) => {
   const xsWidth = 12;
   const lgWidth = (((colSpan ?? 1) / (colCount ?? 1)) * 12) as
     | boolean
@@ -34,7 +35,7 @@ export const Item = ({ colSpan, colCount, children }: ItemProps) => {
     | 12;
 
   return (
-    <Grid item xs={xsWidth} lg={lgWidth}>
+    <Grid item xs={xsWidth} lg={lgWidth} height={height}>
       {children}
     </Grid>
   );

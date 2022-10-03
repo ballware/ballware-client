@@ -50,7 +50,7 @@ export const Page = (): JSX.Element => {
           customParam &&
           layout.items &&
           PageLayoutItem && (
-            <Container>
+            <Container height='100%'>
               {layout.items &&
                 layout.items.map(item => (
                   <PageLayoutItem

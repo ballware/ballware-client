@@ -114,10 +114,10 @@ const PageLayoutComponent = ({
       );
     case 'grid':
       return (
-        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
+        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan} height={(layoutItem.options?.itemoptions as EntityGridOptions)?.height ?? '100%'}>
           <EntityGrid
             height={
-              (layoutItem.options?.itemoptions as EntityGridOptions)?.height
+              (layoutItem.options?.itemoptions as EntityGridOptions)?.height ?? '100%'
             }
             layout={
               (layoutItem.options?.itemoptions as EntityGridOptions)?.layout ??
@@ -131,7 +131,7 @@ const PageLayoutComponent = ({
       );
     case 'map':
       return (
-        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
+        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan} height={(layoutItem.options?.itemoptions as EntityMapOptions)?.height ?? '100%'}>
           <EntityMap
             height={
               (layoutItem.options?.itemoptions as EntityMapOptions)?.height
@@ -156,7 +156,7 @@ const PageLayoutComponent = ({
         `Usage of deprecated layout item type 'entitygrid'. Instead use 'crudcontainer' with nested 'grid'`
       );
       return (
-        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
+        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan} height={(layoutItem.options?.itemoptions as EntityGridOptions)?.height ?? '100%'}>
           <CrudContainer layoutItem={layoutItem} params={params}>
             <EntityGrid
               height={
