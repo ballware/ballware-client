@@ -63,6 +63,7 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
             >
               <AttachmentProvider>
                 <CrudProvider
+                  identifier={undefined}
                   query={gridProps?.query ?? 'primary'}
                   initialFetchParams={gridProps?.fetchParams}
                 >

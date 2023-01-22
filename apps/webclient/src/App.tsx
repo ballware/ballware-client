@@ -4,7 +4,7 @@ import './App.css';
 
 import { SettingsProvider, ProviderFactory } from '@ballware/react-provider';
 
-import { createIdentityBackendUserApi, createIdentityBackendRoleApi } from '@ballware/identity-backend';
+import { createKeycloakBackendUserApi, createKeycloakBackendRoleApi } from '@ballware/identity-keycloak';
 import { createMetaBackendEntityApi, 
   createMetaBackendTenantApi, 
   createMetaBackendGenericEntityApi,   
@@ -38,8 +38,8 @@ function App() {
   return (<SettingsProvider 
       appversion={process.env.REACT_APP_VERSION}
       googlekey={googlekey}      
-      identityUserApiFactory={() => createIdentityBackendUserApi(identityBaseUrl)}
-      identityRoleApiFactory={() => createIdentityBackendRoleApi(identityBaseUrl)}
+      identityUserApiFactory={() => createKeycloakBackendUserApi(identityBaseUrl)}
+      identityRoleApiFactory={() => createKeycloakBackendRoleApi(identityBaseUrl)}
       metaEntityApiFactory={() => createMetaBackendEntityApi(metaBaseUrl)}
       metaTenantApiFactory={() => createMetaBackendTenantApi(metaBaseUrl)}
       metaAttachmentApiFactory={() => createMetaBackendAttachmentApi(metaBaseUrl)}

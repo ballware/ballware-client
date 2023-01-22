@@ -1,0 +1,71 @@
+{
+  "name": "@ballware/identity-keycloak",
+  "version": "6.8.0",
+  "description": "Ballware Application Builder - Client for identity keycloak backend",
+  "author": "frank@ballmeyer.com",
+  "license": "MIT",
+  "homepage": "https://github.com/ballware/ballware-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballware/ballware-client.git",
+    "directory": "packages/identity-backend"
+  },
+  "bugs": {
+    "url": "https://github.com/ballware/ballware-client/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint --fix",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "docs": "typedoc --plugin typedoc-plugin-markdown",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "axios": ">=0.21.0"
+  },
+  "dependencies": {
+    "@ballware/identity-interface": "^6.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "module": "dist/ballware-identity-keycloak.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/ballware-identity-keycloak.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/ballware-identity-keycloak.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "axios": "^0.21.1"
+  },
+  "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
+}
