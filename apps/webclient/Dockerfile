@@ -1,4 +1,4 @@
-FROM node:lts as build-deps
+FROM node:16-bullseye as build-deps
 WORKDIR /usr/src/app
 COPY package.json ./
 RUN npm install
