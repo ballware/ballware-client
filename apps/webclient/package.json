@@ -1,6 +1,6 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.9.0",
+  "version": "6.9.1",
   "private": true,
   "dependencies": {
     "@ballware/identity-backend": "^6.6.0",

@@ -50,7 +50,7 @@ function App() {
       metaDocumentApiFactory={() => createMetaBackendDocumentApi(metaBaseUrl, documentBaseUrl)}
       metaDocumentationApiFactory={() => createMetaBackendDocumentationApi(metaBaseUrl)}
       metaPageApiFactory={() => createMetaBackendPageApi(metaBaseUrl)}
-      metaGenericEntityApiFactory={(entityBaseUrl) => createMetaBackendGenericEntityApi(entityBaseUrl)}>
+      metaGenericEntityApiFactory={(entityBaseUrl) => createMetaBackendGenericEntityApi(entityBaseUrl?.replaceAll('{meta}', metaBaseUrl).replaceAll('{identity}', identityBaseUrl))}>
       <ProviderFactory>
         <DxRenderFactoryProvider>
           <AppComponent authority={identityBaseUrl} scope={identityScopes} application_uri={applicationBaseUrl} client_id={identityClientId} client_secret={identityClientSecret} account_management_uri={managementUri} />        
