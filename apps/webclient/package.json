@@ -5,9 +5,9 @@
   "dependencies": {
     "@ballware/identity-backend": "^6.6.0",
     "@ballware/identity-keycloak": "^6.8.0",
-    "@ballware/identity-interface": "^6.9.1",
+    "@ballware/identity-interface": "^6.6.0",
     "@ballware/meta-backend": "^6.8.0",
-    "@ballware/meta-interface": "^6.8.0",
+    "@ballware/meta-interface": "^6.9.1",
     "@ballware/react-contexts": "^6.8.0",
     "@ballware/react-provider": "^6.8.0",
     "@ballware/react-renderer": "^6.8.0",
