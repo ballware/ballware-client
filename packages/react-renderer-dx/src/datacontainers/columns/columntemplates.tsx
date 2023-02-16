@@ -349,7 +349,7 @@ const TemplateColumn = ({
               columnOptions.items ??
               (columnOptions.itemsMember
                 ? (item[columnOptions.itemsMember] as Array<object>)
-                : [])
+                : (columnOptions.lookupMember ? getByPath(lookupParams, columnOptions.lookupMember) as Array<object> : []))
             }
             displayExpr={columnOptions.displayExpr ?? 'Text'}
             valueExpr={columnOptions.valueExpr ?? 'Value'}
