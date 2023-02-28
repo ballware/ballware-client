@@ -392,12 +392,13 @@ export const CrudProvider = ({
           prepareCustomFunction(
             customFunction.id,
             items,
-            param => {
+            (param, text) => {
               setValue(previousValue => {
                 return {
                   ...previousValue,
                   customEditing: true,
                   customEditFunction: customFunction,
+                  customEditTitle: text ?? customFunction.text,
                   customEditParam: param,
                 };
               });

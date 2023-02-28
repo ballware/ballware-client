@@ -72,6 +72,11 @@ export interface CrudContextState {
   customEditFunction?: EntityCustomFunction;
 
   /**
+   * Title displayed in custom edit operation
+   */
+  customEditTitle?: string;
+
+  /**
    * Prepared edit param for custom edit operation
    */
   customEditParam?: unknown;

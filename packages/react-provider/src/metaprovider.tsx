@@ -380,7 +380,7 @@ export const MetaProvider = ({
                 selection
               );
             } else {
-              selection?.forEach(s => execute(s));
+              selection?.forEach(s => execute(s, undefined));
             }
           },
           evaluateCustomFunction: (identifier, param, save, message) => {

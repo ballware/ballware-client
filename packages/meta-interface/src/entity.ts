@@ -665,7 +665,7 @@ export interface CompiledEntityCustomScripts {
     identifier: string,
     lookups: Record<string, unknown>,
     util: ScriptUtil,
-    executeCallback: (param: Record<string, unknown>) => void,
+    executeCallback: (param: Record<string, unknown>, text: string|undefined) => void,
     messageCallback: (message: string) => void,
     params?: QueryParams,
     selection?: Array<CrudItem>

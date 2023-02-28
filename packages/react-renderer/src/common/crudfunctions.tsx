@@ -62,6 +62,7 @@ export const CrudFunctions = ({
     importing,
     customEditing,
     customEditFunction,
+    customEditTitle,
     customEditParam,
     editLayout,
     item,
@@ -137,7 +138,7 @@ export const CrudFunctions = ({
             item={customEditParam as Record<string, unknown>}
             editFunction={customEditFunction}
           >
-            <EditPopup title={`${customEditFunction?.text}`} />
+            <EditPopup title={`${customEditTitle ?? customEditFunction?.text}`} />
           </EditProvider>
         )}
       {IframePopup && customEditing && customEditFunction?.externalEditor && (

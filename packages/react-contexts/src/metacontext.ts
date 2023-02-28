@@ -193,7 +193,7 @@ export interface MetaContextState {
   prepareCustomFunction?: (
     identifier: string,
     selection: Array<CrudItem> | undefined,
-    execute: (param: Record<string, unknown>) => void,
+    execute: (param: Record<string, unknown>, text: string | undefined) => void,
     message: (message: string) => void,
     params?: QueryParams
   ) => void;
