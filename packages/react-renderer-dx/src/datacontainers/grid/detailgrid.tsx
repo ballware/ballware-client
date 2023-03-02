@@ -128,6 +128,7 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
 
           const defaultValueChanged = e.editorOptions.onValueChanged;
           const defaultFocusIn = e.editorOptions.onFocusIn;
+          const defaultFocusOut = e.editorOptions.onFocusOut;
 
           e.editorOptions.onValueChanged = (args: {
             component: any;
@@ -159,6 +160,14 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
             }
           };
 
+          e.editorOptions.onFocusOut = (args: any) => {
+            if (defaultFocusOut) defaultFocusOut(args);
+
+            if (gridRef.current?.instance.hasEditData()) {
+              gridRef.current?.instance.saveEditData();
+            }
+          }
+
           e.editorOptions.onInitialized = (args: any) => {
             if (dataMember && detailEditorInitialized && e.row && e.dataField) {
               detailEditorInitialized(
@@ -170,7 +179,7 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
             }
           };
 
-          e.editorOptions.valueChangeEvent = 'blur change focusout';
+          e.editorOptions.valueChangeEvent = 'blur change focusout keyup';
         }
       },
       [
