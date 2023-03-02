@@ -28,6 +28,8 @@ import {
 import { EditItemsContext, EditorRef } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
 
+import { compileGetter } from "devextreme/utils";
+
 export interface LookupBoxProps extends EditItemProps {}
 
 export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
@@ -158,6 +160,20 @@ export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
       },
     } as EditorRef;
 
+    const displayValueGetter = compileGetter(layoutItem.displayExpr ?? lookup?.displayMember ?? 'Name');
+    const hintValueGetter = layoutItem.hintExpr ? compileGetter(layoutItem.hintExpr) : undefined;
+
+    const Item = (item: Record<string, unknown>) => {
+      const displayValue = displayValueGetter(item);
+      const hintValue = hintValueGetter ? hintValueGetter(item) : undefined;
+
+      if (displayValue && hintValue) {                
+        return <React.Fragment>{displayValue}<br/><small>{hintValue}</small></React.Fragment>;  
+      }      
+
+      return <React.Fragment>{displayValue}</React.Fragment>;
+    };
+
     return (
       <FieldSet layoutItem={layoutItem}>
         <SelectBox
@@ -167,8 +183,10 @@ export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
           readOnly={readonly}
           dataSource={dataSource}
           items={items}
-          displayExpr={layoutItem.displayExpr ?? lookup?.displayMember}
+          displayExpr={item => displayValueGetter(item)}
           valueExpr={layoutItem.valueExpr ?? lookup?.valueMember}
+          searchExpr={hintValueGetter ? [(item: Record<string, unknown>) => displayValueGetter(item), (item: Record<string, unknown>) => hintValueGetter(item)] : [(item: Record<string, unknown>) => displayValueGetter(item)]}
+          itemRender={Item}
           showClearButton
           searchEnabled
           acceptCustomValue={acceptCustomValue}
@@ -187,7 +205,7 @@ export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
           onFocusIn={() =>
             layoutItem.dataMember && editorEntered(layoutItem.dataMember)
           }
-        >
+        >          
           <Validator>
             {required && <RequiredRule />}
             {required && (

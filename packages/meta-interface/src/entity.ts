@@ -181,6 +181,11 @@ export interface EditLayoutItemOptions {
   displayExpr?: string;
 
   /**
+   * Additional hint data member in lookup query result (only for editors with select list functionality)
+   */
+  hintExpr?: string;
+
+  /**
    * Optional fixed height for editor component
    */
   height?: string;

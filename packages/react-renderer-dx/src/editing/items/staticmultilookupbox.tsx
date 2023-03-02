@@ -16,6 +16,7 @@ import Validator, {
   CustomRule,
   RequiredRule,
 } from 'devextreme-react/validator';
+import { compileGetter } from 'devextreme/utils';
 
 export interface StaticMultiLookupBoxProps extends EditItemProps {}
 
@@ -89,6 +90,20 @@ export const StaticMultiLookupBox = ({
       },
     } as EditorRef;
 
+    const displayValueGetter = compileGetter(layoutItem.displayExpr ?? 'Text');
+    const hintValueGetter = layoutItem.hintExpr ? compileGetter(layoutItem.hintExpr) : undefined;
+
+    const Item = (item: Record<string, unknown>) => {
+      const displayValue = displayValueGetter(item);
+      const hintValue = hintValueGetter ? hintValueGetter(item) : undefined;
+
+      if (displayValue && hintValue) {                
+        return <React.Fragment>{displayValue}<br/><small>{hintValue}</small></React.Fragment>;  
+      }      
+
+      return <React.Fragment>{displayValue}</React.Fragment>;
+    };
+
     return (
       <FieldSet layoutItem={layoutItem}>
         <TagBox
@@ -99,7 +114,9 @@ export const StaticMultiLookupBox = ({
               ? getValue(layoutItem.itemsMember)
               : []
           }
-          displayExpr={layoutItem.displayExpr ?? 'Text'}
+          displayExpr={item => displayValueGetter(item)}
+          searchExpr={hintValueGetter ? [(item: Record<string, unknown>) => displayValueGetter(item), (item: Record<string, unknown>) => hintValueGetter(item)] : [(item: Record<string, unknown>) => displayValueGetter(item)]}
+          itemRender={Item}
           valueExpr={layoutItem.valueExpr ?? 'Value'}
           defaultValue={getValue(layoutItem.dataMember)}
           readOnly={readonly}

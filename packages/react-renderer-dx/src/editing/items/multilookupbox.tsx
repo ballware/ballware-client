@@ -26,6 +26,7 @@ import Validator, {
   CustomRule,
   RequiredRule,
 } from 'devextreme-react/validator';
+import { compileGetter } from 'devextreme/utils';
 
 export interface MultiLookupBoxProps extends EditItemProps {}
 
@@ -134,6 +135,20 @@ export const MultiLookupBox = ({ layoutItem }: MultiLookupBoxProps) => {
       },
     } as EditorRef;
 
+    const displayValueGetter = compileGetter(layoutItem.displayExpr ?? lookup?.displayMember ?? 'Name');
+    const hintValueGetter = layoutItem.hintExpr ? compileGetter(layoutItem.hintExpr) : undefined;
+
+    const Item = (item: Record<string, unknown>) => {
+      const displayValue = displayValueGetter(item);
+      const hintValue = hintValueGetter ? hintValueGetter(item) : undefined;
+
+      if (displayValue && hintValue) {                
+        return <React.Fragment>{displayValue}<br/><small>{hintValue}</small></React.Fragment>;  
+      }      
+
+      return <React.Fragment>{displayValue}</React.Fragment>;
+    };
+
     return (
       <FieldSet layoutItem={layoutItem}>
         <TagBox
@@ -142,8 +157,10 @@ export const MultiLookupBox = ({ layoutItem }: MultiLookupBoxProps) => {
           defaultValue={getValue(layoutItem.dataMember)}
           readOnly={readonly}
           dataSource={dataSource}
-          displayExpr={layoutItem.displayExpr ?? lookup?.displayMember}
+          displayExpr={item => displayValueGetter(item)}
           valueExpr={layoutItem.valueExpr ?? lookup?.valueMember}
+          searchExpr={hintValueGetter ? [(item: Record<string, unknown>) => displayValueGetter(item), (item: Record<string, unknown>) => hintValueGetter(item)] : [(item: Record<string, unknown>) => displayValueGetter(item)]}
+          itemRender={Item}
           showClearButton
           searchEnabled
           onInitialized={() =>
