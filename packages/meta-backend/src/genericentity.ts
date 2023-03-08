@@ -108,12 +108,13 @@ const removeFunc = (baseUrl: string) => (
   id: string
 ): Promise<void> => {
   const url = `${baseUrl}/remove/${id}`;
-
+    
   return new Promise((resolve, reject) => {
     axios.delete(url, { headers: { Authorization: `Bearer ${token}` } })
       .then(() => resolve())
       .catch((reason) => {
-        reject(reason.response?.data ?? reason);
+        // Reject reason in body
+        reject(reason.response?.data ?? reason); 
       });
   });  
 };
