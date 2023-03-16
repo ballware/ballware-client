@@ -107,7 +107,7 @@ export const AuthorizationCodeRightsProvider = ({
 
   const [value, setValue] = useState<RightsContextState>({});
 
-  const { version } = useContext(SettingsContext);
+  const { version, identityUserApiFactory, metaTenantApiFactory } = useContext(SettingsContext);
   const { showInfo, showError } = useContext(NotificationContext);
   const { push, replace } = useHistory();
 
@@ -118,7 +118,8 @@ export const AuthorizationCodeRightsProvider = ({
       redirect_uri &&
       post_logout_redirect_uri &&
       response_type &&
-      scope
+      scope &&
+      metaTenantApiFactory
     ) {      
 
       Log.logger = console;
@@ -140,30 +141,35 @@ export const AuthorizationCodeRightsProvider = ({
 
         newUserManager.getUser().then(user => {
           if (user) {
-            let session = {
-              access_token: user.access_token,
-              expires_in: user.expires_in,
-              identifier: user.profile.sub,
-              email: user.profile.preferred_username,
-              issued: new Date(),
-            } as SessionWithUserInfo;
-    
-            session = Object.assign(session, user.profile);
+            metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {            
 
-            setValue(previousValue => {
-              return {
-                ...previousValue,
-                token: session.access_token,
-                refresh_token: session.refresh_token,
-                expires_in: session.expires_in,
-                issued: new Date(),
-                session: session,
-                timeout_in: session.expires_in
-                  ? moment(new Date())
-                      .add(session.expires_in, 'seconds')
-                      .toDate()
-                  : undefined,
-              };
+              let session = {
+                access_token: user.access_token,
+                expires_in: user.expires_in,
+                identifier: user.profile.sub,
+                email: user.profile.preferred_username,
+                issued: new Date()                
+              } as SessionWithUserInfo;
+      
+              session = Object.assign(session, user.profile);
+
+              setValue(previousValue => {
+                return {
+                  ...previousValue,
+                  token: session.access_token,
+                  refresh_token: session.refresh_token,
+                  expires_in: session.expires_in,
+                  issued: new Date(),
+                  session: session,
+                  timeout_in: session.expires_in
+                    ? moment(new Date())
+                        .add(session.expires_in, 'seconds')
+                        .toDate()
+                    : undefined,
+                  tenant: session.tenant as string,
+                  allowedTenants: allowedTenants
+                };
+              });
             });
           } else {
             console.log('No user authenticated, switch to sign in');
@@ -180,11 +186,12 @@ export const AuthorizationCodeRightsProvider = ({
     redirect_uri,
     post_logout_redirect_uri,
     response_type,
-    scope
+    scope,
+    metaTenantApiFactory
   ]);
 
   useEffect(() => {
-    if (version && showInfo && showError && userManager) {
+    if (version && showInfo && showError && userManager && metaTenantApiFactory && identityUserApiFactory) {
       setValue(previousValue => {
         return {
           ...previousValue,
@@ -203,6 +210,8 @@ export const AuthorizationCodeRightsProvider = ({
                 refresh_token: undefined,
                 expires_in: undefined,
                 error: undefined,
+                tenant: undefined,
+                allowedTenants: undefined
               };
             });
 
@@ -221,6 +230,8 @@ export const AuthorizationCodeRightsProvider = ({
                 refresh_token: undefined,
                 expires_in: undefined,
                 error: undefined,
+                tenant: undefined,
+                allowedTenants: undefined
               };
             });
 
@@ -231,34 +242,49 @@ export const AuthorizationCodeRightsProvider = ({
           refresh: () => {
             userManager.signinSilent().then(user => {
               if (user) {
-                let session = {
-                  access_token: user.access_token,
-                  expires_in: user.expires_in,
-                  identifier: user.profile.sub,
-                  email: user.profile.preferred_username,
-                  issued: new Date(),
-                } as SessionWithUserInfo;
-
-                session = Object.assign(session, user.profile);
-
-                setValue(previousValue => {
-                  return {
-                    ...previousValue,
-                    token: session.access_token,
-                    refresh_token: session.refresh_token,
-                    expires_in: session.expires_in,
+                metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {  
+                  let session = {
+                    access_token: user.access_token,
+                    expires_in: user.expires_in,
+                    identifier: user.profile.sub,
+                    email: user.profile.preferred_username,
                     issued: new Date(),
-                    session: session,
-                    timeout_in: session.expires_in
-                      ? moment(new Date())
-                          .add(session.expires_in, 'seconds')
-                          .toDate()
-                      : undefined,
-                  };
+                  } as SessionWithUserInfo;
+
+                  session = Object.assign(session, user.profile);
+
+                  setValue(previousValue => {
+                    return {
+                      ...previousValue,
+                      token: session.access_token,
+                      refresh_token: session.refresh_token,
+                      expires_in: session.expires_in,
+                      issued: new Date(),
+                      session: session,
+                      timeout_in: session.expires_in
+                        ? moment(new Date())
+                            .add(session.expires_in, 'seconds')
+                            .toDate()
+                        : undefined,
+                      tenant: session.tenant as string,
+                      allowedTenants: allowedTenants
+                    };
+                  });
                 });
               }
             });
-          },
+          },          
+          switchTenant: (tenant) => {
+            userManager.getUser().then(user => {
+              if (user) {
+                identityUserApiFactory().switchTenantFunc(user.access_token, tenant).then(() => {
+                  showInfo('rights.notifications.logoutfortenantswitch');
+
+                  userManager.signinRedirect();
+                });
+              }              
+            });            
+          }
         };
       });
     }
@@ -271,6 +297,8 @@ export const AuthorizationCodeRightsProvider = ({
     authority,
     client,
     userManager,
+    metaTenantApiFactory,
+    identityUserApiFactory
   ]);
 
   const loginRedirectCallback = useCallback(() => {
@@ -283,7 +311,8 @@ export const AuthorizationCodeRightsProvider = ({
       scope &&
       push &&
       showInfo &&
-      showError
+      showError &&
+      metaTenantApiFactory
     ) {
       const newUserManager = new UserManager({
         response_mode: 'query',
@@ -301,37 +330,41 @@ export const AuthorizationCodeRightsProvider = ({
         .signinRedirectCallback()
         .then(user => {
           if (user) {
-            let session = {
-              access_token: user.access_token,
-              expires_in: user.expires_in,
-              identifier: user.profile.sub,
-              email: user.profile.preferred_username,
-              issued: new Date(),
-            } as SessionWithUserInfo;
-
-            session = Object.assign(session, user.profile);
-
-            setUserManager(newUserManager);
-
-            setValue(previousValue => {
-              return {
-                ...previousValue,
-                token: session.access_token,
-                refresh_token: session.refresh_token,
-                expires_in: session.expires_in,
+            metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {
+              let session = {
+                access_token: user.access_token,
+                expires_in: user.expires_in,
+                identifier: user.profile.sub,
+                email: user.profile.preferred_username,
                 issued: new Date(),
-                session: session,
-                timeout_in: session.expires_in
-                  ? moment(new Date())
-                      .add(session.expires_in, 'seconds')
-                      .toDate()
-                  : undefined,
-              };
+              } as SessionWithUserInfo;
+
+              session = Object.assign(session, user.profile);
+
+              setUserManager(newUserManager);
+
+              setValue(previousValue => {
+                return {
+                  ...previousValue,
+                  token: session.access_token,
+                  refresh_token: session.refresh_token,
+                  expires_in: session.expires_in,
+                  issued: new Date(),
+                  session: session,
+                  timeout_in: session.expires_in
+                    ? moment(new Date())
+                        .add(session.expires_in, 'seconds')
+                        .toDate()
+                    : undefined,
+                  tenant: session.tenant as string,
+                  allowedTenants: allowedTenants
+                };
+              });
+
+              push('/');
+
+              showInfo('rights.notifications.loginsuccess');
             });
-
-            push('/');
-
-            showInfo('rights.notifications.loginsuccess');
           }
         })
         .catch(reason => showError(reason));
@@ -347,6 +380,7 @@ export const AuthorizationCodeRightsProvider = ({
     push,
     showInfo,
     showError,
+    metaTenantApiFactory
   ]);
 
   useEffect(() => {

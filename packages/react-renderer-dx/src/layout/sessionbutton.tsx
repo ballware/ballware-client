@@ -30,6 +30,9 @@ export const SessionButton = () => {
     refresh,
     changePassword,
     manageAccount,
+    tenant,
+    allowedTenants,
+    switchTenant
   } = useContext(RightsContext);
   const [timeoutIn, setTimeoutIn] = React.useState(
     timeout_in ? moment(timeout_in).diff(moment(), 'seconds') : 0
@@ -84,6 +87,12 @@ export const SessionButton = () => {
     }
   }, [manageAccount]);
 
+  const onSwitchTenant = useCallback((tenant: string) => {
+    if (switchTenant) {
+      switchTenant(tenant);
+    }
+  }, [switchTenant]);
+
   const badgeContent = useMemo(
     () => `${moment.duration(timeoutIn, 'seconds').format('m:ss')}`,
     [timeoutIn]
@@ -120,6 +129,9 @@ export const SessionButton = () => {
             <MenuItem onClick={onManageAccount}>
               {t('session.manageaccount')}
             </MenuItem>
+          )}
+          {session && allowedTenants && (
+            allowedTenants.filter(at => at.Id !== tenant).map(allowedTenant => <MenuItem key={allowedTenant.Id} onClick={() => onSwitchTenant(allowedTenant.Id)}>{t('session.switchtenant', { tenant: allowedTenant.Name })}</MenuItem>)            
           )}
           {session && (
             <MenuItem onClick={onLogout}>

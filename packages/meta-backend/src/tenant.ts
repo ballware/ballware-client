@@ -55,6 +55,14 @@ const metadataFunc = (serviceBaseUrl: string) => (
     .then(response => compileTenant(response.data));
 };
 
+const allowedTenantFunc = (serviceBaseUrl: string) => (token: string): Promise<{ Id: string, Name: string}[]> => {
+  const url = `${serviceBaseUrl}api/tenant/allowed`;
+
+  return axios
+    .get<{ Id: string, Name: string}[]>(url, { headers: { Authorization: `Bearer ${token}` } })
+    .then(response => response.data);
+}
+
 /**
  * Create adapter for tenant fetch operations with ballware.meta.service
  * @param serviceBaseUrl Base URL to connect to ballware.meta.service
@@ -65,5 +73,6 @@ export function createMetaBackendTenantApi(
 ): MetaTenantApi {
   return {
     metadataForTenant: metadataFunc(serviceBaseUrl),
+    allowed: allowedTenantFunc(serviceBaseUrl)
   } as MetaTenantApi;
 }

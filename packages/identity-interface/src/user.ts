@@ -23,9 +23,16 @@ export interface IdentityUserApi {
    * @param token - access token required for authentication
    * @returns Promise resoling single element with id and display text for requested identifier
    */
-
   selectByIdFunc: (
     token: string,
     identifier: string
   ) => Promise<Record<string, unknown>>;
+
+  /**
+   * Switch current user to tenant
+   * 
+   * @param tenant - identifier of destination tenant
+   * @returns Promise resolved when tenant switch is completed
+   */
+  switchTenantFunc: (token: string, tenant: string) => Promise<void>;
 }

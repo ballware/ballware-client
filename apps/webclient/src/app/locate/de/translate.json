@@ -13,7 +13,8 @@
             "refresh": "Sitzung verlängern",
             "changepassword": "Passwort ändern",
             "logout": "{{user}} abmelden",
-            "manageaccount": "Benutzerprofil bearbeiten"
+            "manageaccount": "Benutzerprofil bearbeiten",
+            "switchtenant": "In Umgebung {{tenant}} wechseln"
         },
         "attachment": {
             "messages": {
@@ -98,7 +99,8 @@
                 "registeredsuccess": "Registrierung erfolgreich",
                 "forgotpasswordsuccess": "Vorgang erfolgreich, Mail mit weiteren Anweisungen wurde versendet",
                 "resetpasswordsuccess": "Passwort erfolgreich zurückgesetzt",
-                "changepasswordsuccess": "Passwort erfolgreich geändert"
+                "changepasswordsuccess": "Passwort erfolgreich geändert",
+                "logoutfortenantswitch": "Benutzer wird ab- und wieder angemeldet für Umgebungswechsel"
             }
         }
     }

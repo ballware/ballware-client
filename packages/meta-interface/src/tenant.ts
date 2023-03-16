@@ -99,4 +99,5 @@ export interface MetaTenantApi {
    * @returns Promise containing compiled tenant metadata
    */
   metadataForTenant: (token: string, tenant: string) => Promise<CompiledTenant>;
+  allowed: (token: string) => Promise<{ Id: string, Name: string}[]>;
 }

@@ -33,6 +33,18 @@ const selectByIdFunc = (serviceBaseUrl: string) => (
     .then(response => response.data);
 };
 
+const switchTenantFunc = (serviceBaseUrl: string) => (
+  token: string,
+  tenant: string
+): Promise<void> => {
+  const url = `${serviceBaseUrl}ballware-user-api/tenant?tenant=${tenant}`;
+
+  return axios
+    .post(url, undefined, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+};
+ 
 /**
  * Create API adapter for ballware.identity.server user list access
  * @param serviceBaseUrl Base url for ballware.identity.server to use
@@ -43,5 +55,6 @@ export function createKeycloakBackendUserApi(
   return {
     selectListFunc: selectListFunc(serviceBaseUrl),
     selectByIdFunc: selectByIdFunc(serviceBaseUrl),
+    switchTenantFunc: switchTenantFunc(serviceBaseUrl)
   } as IdentityUserApi;
 }

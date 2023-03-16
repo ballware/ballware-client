@@ -41,6 +41,11 @@ export interface PersistedRightsState {
    * Last login try error message
    */
   error?: string;
+
+  /**
+   * Current active tenant
+   */
+  tenant?: string;
 }
 
 /**
@@ -103,6 +108,16 @@ export interface RightsContextState extends PersistedRightsState {
    * Refresh user session with refresh token
    */
   refresh?: () => void;
+
+  /**
+   * Switch to other tenant
+   */
+  switchTenant?: (tenant: string) => void;
+
+  /**
+   * List of allowed tenants for current user
+   */
+  allowedTenants?: Array<{ Id: string, Name: string }>;
 }
 
 export const RightsContext = createContext({} as RightsContextState);
