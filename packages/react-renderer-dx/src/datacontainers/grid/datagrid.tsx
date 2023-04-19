@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useMemo, useContext, useRef, useEffect, useCallback, useState } from 'react';
+import React, { useMemo, useContext, useRef, useEffect, useCallback } from 'react';
 
 import {
   DataGrid as DxDataGrid,
@@ -31,7 +31,7 @@ import {
 import { GridDetail } from './griddetail';
 import { Cancelable, dxEvent, EventInfo } from 'devextreme/events';
 import { dxElement } from 'devextreme/core/element';
-import { dxToolbarItem, dxToolbarOptions } from 'devextreme/ui/toolbar';
+import { dxToolbarItem } from 'devextreme/ui/toolbar';
 import { MetaContext, CrudContext, EditModes } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 import { ToolbarItem } from 'devextreme/ui/data_grid';
