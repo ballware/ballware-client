@@ -48,7 +48,14 @@
                 "export": "Exportieren",
                 "import": "Importieren",
                 "showSource": "Als Quellcode zeigen",
-                "showList": "Als Liste zeigen"                
+                "showList": "Als Liste zeigen",
+                "selectall": "Alle auswählen",
+                "unselectall": "Auswahl aufheben",
+                "selection": "Auswahl: {{count}}",
+                "selectionhint": {
+                    "normal": "Aktuell ausgewählte Zeilen",
+                    "danger": "Achtung: Nicht alle ausgewählten Zeilen befinden sich im sichtbaren Bereich"
+                }
             },
             "messages": {
                 "loading": "Lade Daten",

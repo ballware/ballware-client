@@ -47,7 +47,14 @@
                 "export": "Export",
                 "import": "Import",
                 "showSource": "Show source",
-                "showList": "Show list"                                
+                "showList": "Show list",
+                "selectall": "Select all",
+                "unselectall": "Unselect all",
+                "selection": "Selection: {{count}}",
+                "selectionhint": {
+                    "normal": "Selected rows",
+                    "danger": "Attention: Not all selected rows are visible on screen"
+                }                    
             },
             "messages": {
                 "loading": "Loading data",
