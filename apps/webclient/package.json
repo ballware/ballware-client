@@ -1,6 +1,6 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.12.0",
+  "version": "6.13.0",
   "private": true,
   "dependencies": {
     "@ballware/identity-backend": "^6.12.0",
@@ -11,7 +11,7 @@
     "@ballware/react-contexts": "^6.12.0",
     "@ballware/react-provider": "^6.12.0",
     "@ballware/react-renderer": "^6.12.0",
-    "@ballware/react-renderer-dx": "^6.12.0",
+    "@ballware/react-renderer-dx": "^6.13.0",
     "@mui/material": "^5.0.0"
   },
   "scripts": {
