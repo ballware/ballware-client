@@ -34,6 +34,10 @@ import {
   PageContext,
   SettingsContext,
 } from '@ballware/react-contexts';
+import { ExportingEvent } from 'devextreme/ui/pivot_grid';
+import { Workbook } from 'exceljs';
+import { exportPivotGrid } from 'devextreme/excel_exporter';
+import saveAs from 'file-saver';
 
 export interface StatisticProps {
   identifier: string;
@@ -89,12 +93,12 @@ const MyStatisticElement = () => {
                 <ArgumentAxis
                   argumentType={options.argumentAxis.argumentType}
                   visualRange={
-                    options.argumentAxis.visualRangeTo
-                      ? [
-                          options.argumentAxis.visualRangeFrom ?? 0,
-                          options.argumentAxis.visualRangeTo,
-                        ]
-                      : null
+                      options.argumentAxis.visualRangeTo
+                        ? [
+                            options.argumentAxis.visualRangeFrom ?? 0,
+                            options.argumentAxis.visualRangeTo,
+                          ]
+                        : undefined                    
                   }
                   tickInterval={options.argumentAxis.tickInterval}
                   label={{
@@ -186,6 +190,23 @@ const MyStatisticElement = () => {
         case 'pivot': {
           const options = layout.options as StatisticPivotOptions;
 
+          const onExporting = (e: ExportingEvent) => {
+            const workbook = new Workbook();
+            const worksheet = workbook.addWorksheet(name)
+      
+            exportPivotGrid({
+              component: e.component,
+              worksheet
+            }).then(() => {
+              workbook.xlsx.writeBuffer().then(buffer => {
+                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), `${layout.title}_${moment().format('YYYYMMDD')}.xlsx`);
+              })
+      
+            });
+      
+            e.cancel = true;  
+          };
+
           return (
             <PivotGrid
               style={{ height: layout.height ?? 'calc(100vh - 140px)' }}
@@ -196,8 +217,9 @@ const MyStatisticElement = () => {
               fieldChooser={{ enabled: true }}
               export={{
                 enabled: true,
-                fileName: `${layout.title}_${moment().format('YYYYMMDD')}`,
+                //fileName: `${layout.title}_${moment().format('YYYYMMDD')}`,
               }}
+              onExporting={onExporting}
               showRowTotals={options.showRowTotals ?? false}
               showRowGrandTotals={options.showRowGrandTotals ?? false}
               dataSource={{

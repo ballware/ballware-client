@@ -64,7 +64,7 @@ export const MultiLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
           maxDisplayedTags={3}
           displayExpr={mylookup.displayMember}
           valueExpr={mylookup.valueMember}
-          defaultValue={defaultValue}
+          defaultValue={defaultValue as any[]}
           onInitialized={(e: any) => {
             paramEditorInitialized(
               name,

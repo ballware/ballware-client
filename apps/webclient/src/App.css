@@ -25,13 +25,6 @@ footer {
   padding-top: 35px;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 800px;
-}
-
 .dx-field > .dx-field-label {
   width: 20%;
 }

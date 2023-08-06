@@ -21,7 +21,8 @@ import {
   Paging
 } from 'devextreme-react/data-grid';
 import DataSource from 'devextreme/data/data_source';
-import dxDataGrid, { Toolbar, dxDataGridColumn, dxDataGridRowObject, EditingStartEvent, RowKeyInfo } from 'devextreme/ui/data_grid';
+import { exportDataGrid } from 'devextreme/excel_exporter';
+import dxDataGrid, { Toolbar, dxDataGridColumn, dxDataGridRowObject, EditingStartEvent, RowKeyInfo, ExportingEvent } from 'devextreme/ui/data_grid';
 import {
   CrudItem,
   GridLayout,
@@ -36,6 +37,8 @@ import { MetaContext, CrudContext, EditModes } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 import { ToolbarItem } from 'devextreme/ui/data_grid';
 import dxButton from 'devextreme/ui/button';
+import { Workbook } from 'exceljs';
+import { saveAs } from 'file-saver';
 
 export interface DataGridProps {
   height: string;
@@ -443,6 +446,24 @@ export const DataGrid = ({
       e.cancel = rowData && isMasterDetailExpandable && !isMasterDetailExpandable({ data: rowData.data});
     };
 
+    const onExporting = (e: ExportingEvent<any, any>) => {
+      const workbook = new Workbook();
+      const worksheet = workbook.addWorksheet(displayName)
+
+      exportDataGrid({
+        component: e.component,
+        worksheet,
+        autoFilterEnabled: true
+      }).then(() => {
+        workbook.xlsx.writeBuffer().then(buffer => {
+          saveAs(new Blob([buffer], { type: 'application/octet-stream' }), exportFileName + ".xlsx");
+        })
+
+      });
+
+      e.cancel = true;  
+    };
+
     return (
       <DxDataGrid
         ref={grid}
@@ -482,6 +503,7 @@ export const DataGrid = ({
                 })
             : undefined
         }
+        onExporting={onExporting}
       >
         <Paging enabled={mode === 'large'} />
         {mode === 'large' && <ColumnChooser enabled />}
@@ -495,9 +517,9 @@ export const DataGrid = ({
         <SearchPanel visible />
         {mode === 'large' && <FilterRow visible />}
         {mode === 'large' && <GroupPanel visible />}
-        <Export enabled fileName={exportFileName} />
+        <Export enabled allowExportSelectedData={layout.allowMultiselect}/>
         <MasterDetail
-          enabled={layout.details ?? false}
+          enabled={!!(layout.details ?? false)}
           render={(props: { data: CrudItem }) => (
             <GridDetail detailLayout={layout.details} item={props.data} />
           )}

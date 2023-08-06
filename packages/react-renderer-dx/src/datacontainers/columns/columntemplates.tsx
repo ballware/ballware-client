@@ -296,7 +296,7 @@ const TemplateColumn = ({
         return (
           <CheckBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as boolean}
             onValueChanged={onValueChanged}
             onInitialized={e => {
               if (editing) e.component?.focus();
@@ -307,7 +307,7 @@ const TemplateColumn = ({
         return (
           <NumberBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as number}
             onValueChanged={onValueChanged}
             onInitialized={e => {
               if (editing) e.component?.focus();
@@ -344,7 +344,7 @@ const TemplateColumn = ({
         return (
           <TagBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as any[]}
             dataSource={
               columnOptions.items ??
               (columnOptions.itemsMember
@@ -388,7 +388,7 @@ const TemplateColumn = ({
         return (
           <TagBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as any[]}
             dataSource={dataSource}
             displayExpr={columnOptions.displayExpr ?? lookup?.displayMember}
             valueExpr={columnOptions.valueExpr ?? lookup?.valueMember}

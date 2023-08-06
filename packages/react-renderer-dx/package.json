@@ -24,8 +24,8 @@
     "prepublish": "npm run build"
   },
   "peerDependencies": {
-    "devextreme": ">=20.2.5",
-    "devextreme-react": ">=20.2.5",
+    "devextreme": ">=23.1.4",
+    "devextreme-react": ">=23.1.4",
     "i18next": ">=19.9.2",
     "lodash": ">=4.17.21",
     "moment": ">=2.29.1",
@@ -72,6 +72,7 @@
   ],
   "devDependencies": {
     "@types/codemirror": "^5.60.2",
+    "@types/file-saver": "^2.0.5",
     "@types/moment-duration-format": "^2.2.2",
     "i18next": "^20.6.1",
     "react-i18next": "^11.8.6"
@@ -89,8 +90,10 @@
     "bootstrap": "^5.1.1",
     "bootstrap-icons": "^1.4.0",
     "codemirror": "^5.60.0",
-    "devextreme": "^21.2.8",
-    "devextreme-react": "^21.2.8",
+    "devextreme": "^23.1.4",
+    "devextreme-react": "^23.1.4",
+    "exceljs": "^4.3.0",
+    "file-saver": "^2.0.5",
     "jquery": "^3.6.0",
     "jshint": "^2.12.0",
     "jsonlint": "^1.6.3",
