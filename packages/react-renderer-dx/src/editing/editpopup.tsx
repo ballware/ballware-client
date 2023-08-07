@@ -10,8 +10,6 @@ import React, { useCallback, useContext } from 'react';
 import ScrollView from 'devextreme-react/scroll-view';
 
 import {
-  useTheme,
-  useMediaQuery,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -22,6 +20,8 @@ import {
 import { EditForm, EditFormRef } from './editform';
 import { EditModes, CrudContext, EditContext } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export interface EditPopupProps {
   title: string;
@@ -49,13 +49,11 @@ export const EditPopup = (props: EditPopupProps) => {
     }
   }, [close]);
 
-  const theme = useTheme();
-  const fullScreen =
-    useMediaQuery(theme.breakpoints.down('sm')) || editLayout?.fullscreen;
+  const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small  || editLayout?.fullscreen;
 
   return (
     <React.Fragment>
-      {editLayout && (
+      {editLayout && (        
         <Dialog
           open
           onClose={(_event, reason) => cancelClicked(reason)}

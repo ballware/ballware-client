@@ -105,7 +105,7 @@
     "react-codemirror2": "^7.2.1",
     "react-iframe": "^1.8.0",
     "react-is": "^17.0.1",
-    "react-media": "^1.10.0"
+    "react-media": "^2.0.0-rc.1"
   },
   "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
 }

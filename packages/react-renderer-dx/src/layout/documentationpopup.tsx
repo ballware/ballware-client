@@ -13,11 +13,11 @@ import {
   DialogContent,
   DialogActions,
   Button,
-  useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { HtmlEditor } from '../components/htmleditor';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export interface DocumentationPopupProps {
   title: string;
@@ -36,8 +36,7 @@ export const DocumentationPopup = ({
     close();
   };
 
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small;
 
   return (
     <Dialog

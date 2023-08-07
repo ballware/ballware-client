@@ -16,8 +16,7 @@ import {
   Hidden,
   Divider,
   DialogActions,
-  Button,
-  useMediaQuery
+  Button
 } from '@mui/material';
 import { Dialog, DialogContent } from '@mui/material';
 import { PageToolbarItem } from '@ballware/meta-interface';
@@ -27,6 +26,8 @@ import {
   ToolbarItemsProvider,
 } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 /*
 const useStyles = makeStyles(theme => ({
@@ -52,7 +53,9 @@ export const FilterBar = ({
   const { t } = useTranslation();
 
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
+  const largeOrMediumScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).medium || useMedia({ queries: GLOBAL_MEDIA_QUERIES }).large;
+  
   //const classes = useStyles();
   const [popupOpen, setPopupOpen] = useState(false);
   const [initialized, setInitialized] = useState(false);
@@ -80,11 +83,11 @@ export const FilterBar = ({
 
   useEffect(() => {
     if (!initialized && paramsInitialized) {
-      paramsInitialized(!matches);
+      paramsInitialized(!largeOrMediumScreen);
 
       setInitialized(true);
     }
-  }, [initialized, paramsInitialized, matches]);
+  }, [initialized, paramsInitialized, largeOrMediumScreen]);
 
   return (
     <React.Fragment>
@@ -95,7 +98,7 @@ export const FilterBar = ({
               {title}
             </Typography>
           )}
-          {matches && <ToolbarItemsProvider>{children}</ToolbarItemsProvider>}
+          {largeOrMediumScreen && <ToolbarItemsProvider>{children}</ToolbarItemsProvider>}
           {documentationIdentifier && loadDocumentation && (
             <IconButton
               color="primary"

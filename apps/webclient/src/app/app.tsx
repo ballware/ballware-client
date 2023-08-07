@@ -1,5 +1,6 @@
 import React, { Suspense, useContext, useEffect, useMemo } from 'react';
 import { Router, Route } from 'react-router-dom';
+import { LoadIndicator } from 'devextreme-react/load-indicator';
 
 import { history } from './history';
 
@@ -8,7 +9,6 @@ import i18n from './locate/i18n';
 
 import { SettingsContext, ProviderFactoryContext } from '@ballware/react-contexts';
 
-import { CircularProgress } from '@mui/material';
 import { RenderFactoryContext } from '@ballware/react-renderer';
 
 import { DocumentViewer } from '../components/print/documentviewer';
@@ -78,6 +78,6 @@ export const AppComponent = ({ authority, client_id, client_secret, application_
         </Context>
       </Router>
     } else {
-      return <CircularProgress/>;
+      return <LoadIndicator/>;
     }
   }

@@ -13,18 +13,18 @@
    DialogContent,
    DialogActions,
    Button,
-   useTheme,
-   useMediaQuery,
    DialogContentText,
  } from '@mui/material';
  import { CrudContext } from '@ballware/react-contexts';
  import { ImportPopupProps } from '@ballware/react-renderer';
  import { useTranslation } from 'react-i18next';
 import { FileUploader } from 'devextreme-react';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
  
  export const ImportPopup = ({ importFunction }: ImportPopupProps) => {
-   const theme = useTheme();
-   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+   
+   const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small;
  
    const { t } = useTranslation();
  

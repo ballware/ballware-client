@@ -8,8 +8,6 @@
 import React, { useCallback, useContext } from 'react';
 
 import {
-  useTheme,
-  useMediaQuery,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -21,6 +19,8 @@ import Iframe from 'react-iframe';
 import { CrudContext } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 import { IframePopupProps } from '@ballware/react-renderer';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export const ExternalLinkEditPopup = (props: IframePopupProps) => {
   const { title, url } = props;
@@ -36,8 +36,7 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
     }
   }, [close]);
 
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm')) || fullscreen;
+  const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small || fullscreen;
 
   return (
     <Dialog
