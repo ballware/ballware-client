@@ -11,8 +11,7 @@ import { CrudContext } from '@ballware/react-contexts';
 import { DeletePopupProps } from '@ballware/react-renderer';
 import { useMedia } from 'react-media';
 import { useTranslation } from 'react-i18next';
-import { Popup } from 'devextreme-react';
-import { Position, ToolbarItem } from 'devextreme-react/popup';
+import { Popup, Position, ToolbarItem } from 'devextreme-react/popup';
 import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
