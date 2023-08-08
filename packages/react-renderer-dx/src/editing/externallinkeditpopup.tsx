@@ -7,20 +7,14 @@
 
 import React, { useCallback, useContext } from 'react';
 
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-} from '@mui/material';
-
 import Iframe from 'react-iframe';
 import { CrudContext } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 import { IframePopupProps } from '@ballware/react-renderer';
 import { useMedia } from 'react-media';
 import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { Popup } from 'devextreme-react';
+import { Position, ToolbarItem } from 'devextreme-react/popup';
 
 export const ExternalLinkEditPopup = (props: IframePopupProps) => {
   const { title, url } = props;
@@ -39,16 +33,20 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
   const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small || fullscreen;
 
   return (
-    <Dialog
-      open
-      onClose={(_event, reason) => { if (reason !== 'backdropClick') cancelClicked() }}
+    <Popup visible
+      title={title}
       fullScreen={fullScreen}
-      maxWidth={'lg'}
-      fullWidth
-    >
-      <DialogTitle id="form-dialog-title">{title}</DialogTitle>
-      <DialogContent>
-        <Iframe
+      >
+      <Position            
+        at="center"
+        my="center"
+        of={window}
+      />      
+      <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+        text: t('editing.actions.close'),
+        onClick: () => cancelClicked()
+      }} />
+      <Iframe
           allowFullScreen
           scrolling={'no'}
           frameBorder={0}
@@ -57,14 +55,6 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
           height={'100%'}
           url={url}
         />
-      </DialogContent>
-      <DialogActions>
-        {t && (
-          <Button onClick={cancelClicked}>
-            {t('editing.actions.close')}
-          </Button>
-        )}
-      </DialogActions>
-    </Dialog>
+    </Popup>
   );
 };
