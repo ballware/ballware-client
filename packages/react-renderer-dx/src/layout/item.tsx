@@ -7,8 +7,6 @@
 
 import React from 'react';
 
-import { Grid } from '@mui/material';
-
 export interface ItemProps {
   colCount?: number;
   colSpan?: number;
@@ -16,7 +14,7 @@ export interface ItemProps {
 }
 
 export const Item = ({ colSpan, colCount, children }: ItemProps) => {
-  const xsWidth = 12;
+  const xsWidth = 1;
   const lgWidth = (((colSpan ?? 1) / (colCount ?? 1)) * 12) as
     | boolean
     | 'auto'
@@ -34,8 +32,8 @@ export const Item = ({ colSpan, colCount, children }: ItemProps) => {
     | 12;
 
   return (
-    <Grid item xs={xsWidth} lg={lgWidth}>
+    <div className={`col-xs-${xsWidth} col-lg-${lgWidth}`}>
       {children}
-    </Grid>
+    </div>
   );
 };

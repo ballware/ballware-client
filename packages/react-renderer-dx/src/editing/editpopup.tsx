@@ -51,9 +51,10 @@ export const EditPopup = (props: EditPopupProps) => {
         <Popup visible
           title={title}
           fullScreen={fullScreen}
-          width="auto"          
-          minWidth="500px"
+          width="auto"    
           height="auto"
+          maxHeight="90vh"
+          maxWidth="90vw"
           >
           <Position            
             at="center"
