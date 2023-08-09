@@ -7,16 +7,11 @@
 
 import React, { useContext } from 'react';
 
-import { useTheme } from '@mui/material/styles';
 import { ToolbarItemsContext } from '@ballware/react-renderer';
-import { ToolbarItemProps, useDefaultToolbarItemStyles } from './common';
+import { ToolbarItemProps } from './common';
 import { Button } from 'devextreme-react';
 
 export const ButtonToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
-
-  const theme = useTheme();
-
-  const buttonStyle = useDefaultToolbarItemStyles(theme);
 
   const { name, width, caption } = toolbarItem;
 
@@ -28,7 +23,6 @@ export const ButtonToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
     <React.Fragment>
       {paramEditorInitialized && paramEditorEvent && (
         <Button
-          style={buttonStyle}
           width={width ?? 'auto'}
           text={caption}
           onClick={() => {

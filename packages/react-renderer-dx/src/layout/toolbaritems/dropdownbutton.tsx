@@ -6,22 +6,17 @@
  */
 
 import React, { useContext } from 'react';
-import { useTheme } from '@mui/material/styles';
 
 import { ToolbarItemsContext } from '@ballware/react-renderer';
 import {
   componentToToolbarItemRef,
-  ToolbarItemProps,
-  useDefaultToolbarItemStyles,
+  ToolbarItemProps
 } from './common';
 import { DropDownButton } from 'devextreme-react';
 
 export const DropDownButtonToolbarItem = ({
   toolbarItem,
 }: ToolbarItemProps) => {
-
-  const theme = useTheme();
-  const style = useDefaultToolbarItemStyles(theme);
 
   const { name, width, options, caption } = toolbarItem;
 
@@ -33,7 +28,6 @@ export const DropDownButtonToolbarItem = ({
     <React.Fragment>
       {paramEditorInitialized && paramEditorEvent && (
         <DropDownButton
-          style={style}
           width={width ?? '180px'}
           text={caption}
           dataSource={options.items as any[]}
