@@ -5,144 +5,102 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useCallback, useContext } from 'react';
-import { Link } from 'react-router-dom';
-
-import { useTheme } from '@mui/material/styles';
-import { Divider, Collapse, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import React, { useCallback, useContext, useMemo } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 import { TenantContext } from '@ballware/react-contexts';
-
-/*
-const useStyles = makeStyles(theme => ({
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
-}));
-*/
-const ListItemLink = (props: any) => {
-  const { icon, primary, to, className } = props;
-
-  const renderLink = React.useMemo<any>(
-    () =>
-      React.forwardRef((itemProps, ref: any) => (
-        <Link ref={ref} to={to} {...itemProps} />
-      )),
-    [to]
-  );
-
-  return (
-    <li>
-      <ListItem button component={renderLink} className={className}>
-        {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
-        <ListItemText primary={primary} />
-      </ListItem>
-    </li>
-  );
-};
+import { TreeView } from 'devextreme-react';
+import { ItemClickEvent } from 'devextreme/ui/tree_view';
 
 export const NavigationList = () => {
-  const theme = useTheme();
+  const history = useHistory();
   const { hasRight, navigation } = useContext(TenantContext);
 
-  const renderItems = useCallback(
-    (items: Array<NavigationLayoutItem>) => {
-      let itemKey = 1;
+  interface TreeItem {
+    text?: string;
+    url?: string;
+    items: TreeItem[]
+  }
 
-      return items?.map(item => {
-        switch (item.type) {
-          case 'group': {
-            const children = item.items ? renderItems(item.items) : [];
+  const itemList = useMemo(() => {
+    let items = [] as TreeItem[];
 
-            if (children && children.length > 0) {
-              return (
-                <Group key={itemKey++} caption={item.options.caption ?? ''}>
-                  {children}
-                </Group>
-              );
+    if (navigation && hasRight && navigation.items) {
+      const transformSubItems = (items: NavigationLayoutItem[]): TreeItem[] => {
+          const result = [] as TreeItem[];
+
+          items?.forEach(item => {
+            switch (item.type) {
+              case 'group':
+                const groupItem = {} as TreeItem;
+
+                groupItem.text = item.options?.caption;
+                groupItem.items = transformSubItems(item.items ?? []);
+
+                if (groupItem.items && groupItem.items.length > 0) {
+                  result.push(groupItem);
+                }
+                break;
+              case 'section':
+                {
+                  result.push(...transformSubItems(item.items ?? []));
+                }
+                break;
+              case 'page':
+                {
+                  let pageVisible = true;
+
+                  try {
+                    pageVisible = (item.options.page && item.options.url)
+                        ? hasRight(`generic.page.${item.options.page ?? 'unknown'}`)
+                        : false;
+                  } catch (exception) {
+                    console.error(
+                      'Exception in user code: Tenant custom script pageVisible ' +
+                        exception
+                    );
+                    pageVisible = false;
+                  }
+
+                  if (pageVisible) { 
+                    result.push({
+                      text: item.options?.caption,
+                      url: item.options?.url
+                    } as TreeItem);
+                  }
+                }
+                break;
             }
+          });
 
-            return <React.Fragment key={itemKey++} />;
-          }
-          case 'section': {
-            const children = item.items ? renderItems(item.items) : [];
+        return result;
+      };
 
-            if (children?.length > 0) {
-              return (
-                <React.Fragment key={itemKey++}>
-                  <Divider />
-                  {children}
-                </React.Fragment>
-              );
-            }
+      items = transformSubItems(navigation.items);
+    }
 
-            return <React.Fragment key={itemKey++} />;
-          }
-          case 'page': {
-            let pageVisible = true;
+    return items;
+  }, [navigation, hasRight]);
 
-            try {
-              pageVisible =
-                hasRight && item.options.page
-                  ? hasRight(`generic.page.${item.options.page ?? 'unknown'}`)
-                  : false;
-            } catch (exception) {
-              console.error(
-                'Exception in user code: Tenant custom script pageVisible ' +
-                  exception
-              );
-              pageVisible = false;
-            }
+  const onItemClick = useCallback((e: ItemClickEvent) => {
+    if (history) {
+      const layoutItem = e.itemData as TreeItem;
 
-            if (pageVisible) {
-              return (
-                <ListItemLink
-                  key={itemKey++}
-                  sx={{ paddingLeft: theme.spacing(4) }}
-                  to={`/${item.options.url}`}
-                  primary={item.options.caption}
-                />
-              );
-            } else {
-              return <React.Fragment key={itemKey++} />;
-            }
-          }
-          default:
-            return <React.Fragment key={itemKey++} />;
+      if (layoutItem.url) {
+        history.push(`/${layoutItem.url}`);
+      } else {
+        if (e.itemData?.expanded) {
+          e.component.collapseItem(e.itemData);
+        } else {
+          e.component.expandItem(e.itemData);
         }
-      });
-    },
-    [hasRight]
-  );
+      }
+    }
+  }, [history]);
 
-  const Group = ({
-    caption,
-    children,
-  }: {
-    caption: string;
-    children: Array<JSX.Element>;
-  }) => {
-    const [open, setOpen] = React.useState(false);
-
-    return (
-      <React.Fragment>
-        <ListItem button onClick={() => setOpen(!open)}>
-          <ListItemText primary={caption} />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            {children}
-          </List>
-        </Collapse>
-      </React.Fragment>
-    );
-  };
-
-  return (
-    <List>{navigation && hasRight && renderItems(navigation?.items)}</List>
-  );
+  return <TreeView 
+    items={itemList} 
+    onItemClick={onItemClick}
+    />;
 };
