@@ -42,16 +42,18 @@ export const FilterBar = ({
   const toolbarItems = useMemo(() => {
     const itemList = [] as dxToolbarItem[];
 
-    itemList.push({
-      location: 'before',
-      template: 'title',
-      locateInMenu: 'never',
-    });
-
+    if (title) {
+      itemList.push({
+        location: 'before',
+        text: title,
+        locateInMenu: 'never',
+      });  
+    }
+    
     items?.forEach(item => {
       itemList.push({
         location: 'after',
-        template: 'item',
+        template: 'toolbaritem',
         locateInMenu: 'auto',
         options: {
           item
@@ -68,7 +70,7 @@ export const FilterBar = ({
     }
 
     return itemList;
-  }, [PageToolbarItem, items, documentationIdentifier, loadDocumentation]);
+  }, [PageToolbarItem, items, documentationIdentifier, loadDocumentation, title]);
 
   useEffect(() => {
     if (!initialized && paramsInitialized) {
@@ -82,12 +84,11 @@ export const FilterBar = ({
     <React.Fragment>
       {t && toolbarItems && (
         <ToolbarItemsProvider>
-          <Toolbar items={toolbarItems}>
-            <Template name="title" render={() => <h6>{title}</h6> }/>
+          <Toolbar items={toolbarItems}>            
             {loadDocumentation && documentationIdentifier && 
               <Template name="documentation" render={() => <Button icon="bi bi-question-circle" onClick={() => loadDocumentation(documentationIdentifier)} />} />
             }
-            {PageToolbarItem && <Template name="item" render={(item: dxToolbarItem) => <PageToolbarItem item={item.options.item}/>}/>}
+            {PageToolbarItem && <Template name="toolbaritem" render={(item: dxToolbarItem) => <PageToolbarItem item={item.options.item}/>}/>}
           </Toolbar>
         </ToolbarItemsProvider>
       )}

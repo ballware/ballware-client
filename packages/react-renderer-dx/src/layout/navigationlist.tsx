@@ -6,15 +6,17 @@
  */
 
 import React, { useCallback, useContext, useMemo } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 import { TenantContext } from '@ballware/react-contexts';
 import { TreeView } from 'devextreme-react';
 import { ItemClickEvent } from 'devextreme/ui/tree_view';
 
-export const NavigationList = () => {
-  const history = useHistory();
+export interface NavigationListProps {
+  onPageSelected?: (url: string) => void;
+}
+
+export const NavigationList = ({ onPageSelected }: NavigationListProps) => {
   const { hasRight, navigation } = useContext(TenantContext);
 
   interface TreeItem {
@@ -84,11 +86,11 @@ export const NavigationList = () => {
   }, [navigation, hasRight]);
 
   const onItemClick = useCallback((e: ItemClickEvent) => {
-    if (history) {
+    if (onPageSelected) {
       const layoutItem = e.itemData as TreeItem;
 
       if (layoutItem.url) {
-        history.push(`/${layoutItem.url}`);
+        onPageSelected(layoutItem.url);
       } else {
         if (e.itemData?.expanded) {
           e.component.collapseItem(e.itemData);
@@ -97,9 +99,11 @@ export const NavigationList = () => {
         }
       }
     }
-  }, [history]);
+  }, [onPageSelected]);
 
   return <TreeView 
+    className="w-100"
+    noDataText={undefined}
     items={itemList} 
     onItemClick={onItemClick}
     />;

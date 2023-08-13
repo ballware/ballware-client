@@ -13,12 +13,12 @@ import React, {
   PropsWithChildren,
 } from 'react';
 
-import { useTheme, styled } from '@mui/material/styles';
-import { CssBaseline, Drawer, Hidden, Box } from '@mui/material';
-
 import { RenderFactoryContext } from '@ballware/react-renderer';
-import { SessionButton } from './sessionbutton';
 import { TenantContext } from '@ballware/react-contexts';
+import { Drawer, Template } from 'devextreme-react';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useHistory } from 'react-router-dom';
 /*
 const useStyles = (drawerWidth: string | number) =>
   makeStyles(theme => ({
@@ -51,25 +51,35 @@ const useStyles = (drawerWidth: string | number) =>
   }));
 */
 export interface ApplicationProps {
-  drawerWidth?: string | number;
+  drawerWidth?: number;
 }
 
 export const Application = ({
   drawerWidth,
   children,
 }: PropsWithChildren<ApplicationProps>) => {
-  //const classes = useStyles(drawerWidth ?? 240)();
 
-  const theme = useTheme();
-
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const history = useHistory();
+  const mediaQuery = useMedia({ queries: GLOBAL_MEDIA_QUERIES });
+    
+  const [menuOpen, setMenuOpen] = useState(mediaQuery.large);
 
   const { ApplicationBar, Navigation } = useContext(RenderFactoryContext);
   const { navigation } = useContext(TenantContext);
 
   const onToggleMenu = useCallback(() => {
-    setMobileOpen(!mobileOpen);
-  }, [setMobileOpen, mobileOpen]);
+    setMenuOpen(!menuOpen);
+  }, [setMenuOpen, menuOpen]);
+
+  const onPageSelected = useCallback((url: string) => {
+    if (history && url) {
+      history.push(`/${url}`);
+
+      if (mediaQuery.small || mediaQuery.medium) {
+        setMenuOpen(false);
+      }
+    }
+  }, [history, mediaQuery]);
 
   const MemorizedApplicationBar = useMemo(
     () => () => (
@@ -78,90 +88,53 @@ export const Application = ({
           <ApplicationBar
             title={navigation?.title}
             onMenuToggle={onToggleMenu}
-          >
-            <SessionButton />
-          </ApplicationBar>
+          />
         )}
       </React.Fragment>
     ),
     [ApplicationBar, onToggleMenu, navigation]
   );
+
   const MemorizedNavigation = useMemo(
     () => () => (
       <React.Fragment>
-        {Navigation && <Navigation onMenuToggle={onToggleMenu} />}
+        {Navigation && <Navigation onPageSelected={onPageSelected} />}
       </React.Fragment>
     ),
-    [Navigation, onToggleMenu]
+    [Navigation, onPageSelected]
   );
 
-  const RootDiv = useMemo(() => styled('div')({
-    display: 'flex',
-    height: '100vh',
-  }), []);
 
+
+  /*
   const Nav = useMemo(() => styled('nav')({
     [theme.breakpoints.up('md')]: {
       width: drawerWidth ?? 240,
       flexShrink: 0
     }
   }), [theme]);
+  */
 
+  /*
   const ToolbarPlaceholder = useMemo(() => styled('div')(theme.mixins.toolbar), [theme]);
 
   const ContentContainer = useMemo(() => styled('div')({
     height: `calc(100% - ${64}px)`
   }), []);
-
+  */
   return (
-    <RootDiv>
-      <CssBaseline />
+    <div className="container-fluid vh-100 vw-100 px-0 d-flex flex-column overflow-hidden" style={{ backgroundColor: '#e0e0e0' }}>
       <MemorizedApplicationBar />
-      <Nav>
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden mdUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={onToggleMenu}
-            sx={{ 
-              width: drawerWidth ?? 240,
-              flexShrink: 0,
-              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <MemorizedNavigation />
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer sx={{ 
-              width: drawerWidth ?? 240,
-              flexShrink: 0,
-              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
-            }}
-            variant="permanent"
-            open
-          >
-            <MemorizedNavigation />
-          </Drawer>
-        </Hidden>
-      </Nav>
-      <Box sx={{      
-          padding: theme.spacing(1),
-          [theme.breakpoints.up('sm')]: {
-            width: `calc(100% - ${drawerWidth ?? 240}px)`
-          },
-          [theme.breakpoints.down('sm')]: {
-            width: '100%'
-          }
-        }}>
-        <ToolbarPlaceholder/>
-        <ContentContainer>{children}</ContentContainer>
-      </Box>
-    </RootDiv>
+      <Drawer className="flex-fill pt-2" openedStateMode={mediaQuery.small ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
+        <Template name="navigation">      
+          <div className="h-100" style={{ width: drawerWidth ?? 240, backgroundColor: '#e0e0e0' }}>
+            <MemorizedNavigation/>
+          </div>          
+        </Template>
+        <div className="h-100 p-2">
+          {children}
+        </div>        
+      </Drawer>      
+    </div>
   );
 };

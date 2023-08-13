@@ -127,6 +127,7 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
         {preparedEditLayout && EditLayoutItem && (
           <EditItemsProvider>
             <ValidationGroup
+              className='container-fluid'
               ref={validationGroupRef}
               onInitialized={e => e.component?.validate()}
             >
