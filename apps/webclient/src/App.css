@@ -25,6 +25,10 @@ footer {
   padding-top: 35px;
 }
 
+.application {
+  background-color: #e0e0e0;
+}
+
 .applicationbar.dx-toolbar {
   color: #fff;
   background-color: #0d6efd;

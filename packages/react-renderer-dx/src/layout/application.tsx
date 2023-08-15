@@ -123,11 +123,11 @@ export const Application = ({
   }), []);
   */
   return (
-    <div className="container-fluid vh-100 vw-100 px-0 d-flex flex-column overflow-hidden" style={{ backgroundColor: '#e0e0e0' }}>
+    <div className="application container-fluid vh-100 vw-100 px-0 d-flex flex-column overflow-hidden">
       <MemorizedApplicationBar />
       <Drawer className="flex-fill pt-2" openedStateMode={mediaQuery.small ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
         <Template name="navigation">      
-          <div className="h-100" style={{ width: drawerWidth ?? 240, backgroundColor: '#e0e0e0' }}>
+          <div className="h-100" style={{ width: drawerWidth ?? 240 }}>
             <MemorizedNavigation/>
           </div>          
         </Template>
