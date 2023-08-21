@@ -7,8 +7,6 @@
 
 import { PropsWithChildren, useEffect } from 'react';
 
-//import { ThemeProvider, createTheme } from '@mui/material/styles';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -26,8 +24,6 @@ import dxDateBox from 'devextreme/ui/date_box';
 import dxNumberBox from 'devextreme/ui/number_box';
 import dxTagBox from 'devextreme/ui/tag_box';
 import React from 'react';
-
-//const theme = createTheme();
 
 export const Context = ({ children }: PropsWithChildren) => {
   useEffect(() => {
