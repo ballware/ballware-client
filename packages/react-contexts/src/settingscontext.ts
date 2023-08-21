@@ -32,12 +32,12 @@ export interface SettingsContextState {
   /**
    * Current version of application
    */
-  version?: string;
+  version: string;
 
   /**
    * API key for usage with google services
    */
-  googlekey?: string;
+  googlekey: string;
 
   /**
    * Factory for creating data adapter for user authentication
@@ -47,67 +47,67 @@ export interface SettingsContextState {
   /**
    * Factory for creating data adapter for user list data access
    */
-  identityUserApiFactory?: () => IdentityUserApi;
+  identityUserApiFactory: () => IdentityUserApi;
 
   /**
    * Factory for creating data adapter for role list data access
    */
-  identityRoleApiFactory?: () => IdentityRoleApi;
+  identityRoleApiFactory: () => IdentityRoleApi;
 
   /**
    * Factory for creating data adapter for entity metadata access
    */
-  metaEntityApiFactory?: () => MetaEntityApi;
+  metaEntityApiFactory: () => MetaEntityApi;
 
   /**
    * Factory for creating data adapter for tenant data access
    */
-  metaTenantApiFactory?: () => MetaTenantApi;
+  metaTenantApiFactory: () => MetaTenantApi;
 
   /**
    * Factory for creating data adapter for tenant data access
    */
-  metaAttachmentApiFactory?: () => MetaAttachmentApi;
+  metaAttachmentApiFactory: () => MetaAttachmentApi;
 
   /**
    * Factory for creating data adapter for statistic data access
    */
-  metaStatisticApiFactory?: () => MetaStatisticApi;
+  metaStatisticApiFactory: () => MetaStatisticApi;
 
   /**
    * Factory for creating data adapter for lookup data access
    */
-  metaLookupApiFactory?: () => MetaLookupApi;
+  metaLookupApiFactory: () => MetaLookupApi;
 
   /**
    * Factory for creating data adapter for processing state data access
    */
-  metaProcessingstateApiFactory?: () => MetaProcessingstateApi;
+  metaProcessingstateApiFactory: () => MetaProcessingstateApi;
 
   /**
    * Factory for creating data adapter for pick values data access
    */
-  metaPickvalueApiFactory?: () => MetaPickvalueApi;
+  metaPickvalueApiFactory: () => MetaPickvalueApi;
 
   /**
    * Factory for creating data adapter for print document data access
    */
-  metaDocumentApiFactory?: () => MetaDocumentApi;
+  metaDocumentApiFactory: () => MetaDocumentApi;
 
   /**
    * Factory for creating data adapter for documentation data access
    */
-  metaDocumentationApiFactory?: () => MetaDocumentationApi;
+  metaDocumentationApiFactory: () => MetaDocumentationApi;
 
   /**
    * Factory for creating data adapter for page data access
    */
-  metaPageApiFactory?: () => MetaPageApi;
+  metaPageApiFactory: () => MetaPageApi;
 
   /**
    * Factory for creating data adapter for generic entity crud operations
    */
-  metaGenericEntityApiFactory?: (baseUrl: string) => MetaGenericEntityApi;
+  metaGenericEntityApiFactory: (baseUrl: string) => MetaGenericEntityApi;
 }
 
 export const SettingsContext = createContext({} as SettingsContextState);

@@ -17,14 +17,14 @@ export interface ProviderFactoryContextState {
   /**
    * Instantiate page provider
    */
-  PageProvider?: (
+  PageProvider: (
     props: PropsWithChildren<{ identifier: string }>
   ) => JSX.Element;
 
   /**
    * Instantiate generic entity metadata provider
    */
-  MetaProvider?: (
+  MetaProvider: (
     props: PropsWithChildren<{
       entity: string;
       readOnly: boolean;
@@ -36,12 +36,12 @@ export interface ProviderFactoryContextState {
   /**
    * Instantiate attachment provider
    */
-  AttachmentProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
+  AttachmentProvider: (props: PropsWithChildren<{}>) => JSX.Element;
 
   /**
    * Instanticate crud provider
    */
-  CrudProvider?: (
+  CrudProvider: (
     props: PropsWithChildren<{
       query: string | undefined;
       initialFetchParams: Record<string, unknown> | undefined;
@@ -52,22 +52,22 @@ export interface ProviderFactoryContextState {
   /**
    * Instanticate lookup provider
    */
-  LookupProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
+  LookupProvider: (props: PropsWithChildren<{}>) => JSX.Element;
 
   /**
    * Instantiate notification provider
    */
-  NotificationProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
+  NotificationProvider: (props: PropsWithChildren<{}>) => JSX.Element;
 
   /**
    * Instantiate tenant provider
    */
-  TenantProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
+  TenantProvider: (props: PropsWithChildren<{}>) => JSX.Element;
 
   /**
    * Instantiate item edit provider
    */
-  EditProvider?: (
+  EditProvider: (
     props: PropsWithChildren<{
       mode: EditModes;
       editLayout: EditLayout | undefined;
@@ -79,7 +79,7 @@ export interface ProviderFactoryContextState {
   /**
    * Instantiate statistic provider
    */
-  StatisticProvider?: (
+  StatisticProvider: (
     props: PropsWithChildren<{
       identifier: string;
       params: Record<string, unknown> | undefined;

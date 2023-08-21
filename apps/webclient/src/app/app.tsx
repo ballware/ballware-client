@@ -65,7 +65,7 @@ const AppHost = () => {
     console.log('Rehydrating Application');
 
     return (<React.Fragment>
-      {(NotificationProvider && TenantProvider && Context && Notification && PrivateRoute && Application && Routes) &&
+      {(Context && Notification && PrivateRoute && Application && Routes) &&
         <BrowserRouter>
           <Context>
             <NotificationProvider>

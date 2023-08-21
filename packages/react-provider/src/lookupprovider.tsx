@@ -411,22 +411,8 @@ export const LookupProvider = ({
     getGenericLookupByIdentifier: undefined,
   } as LookupContextState);
 
-  useEffect(() => () => {
-
-    console.log('Resetting LookupProvider for reuse');
-
-    setRequestedLookups([]);
-    setLookups(undefined);
-    setLookupsComplete(false);
-  }, []);
-
   useEffect(() => {
     if (
-      identityUserApiFactory &&
-      identityRoleApiFactory &&
-      metaLookupApiFactory &&
-      metaPickvalueApiFactory &&
-      metaProcessingstateApiFactory &&
       token
     ) {
       setValue(previousValue => {

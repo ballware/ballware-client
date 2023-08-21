@@ -25,7 +25,7 @@ export const Routes = () => {
 
   const pageFactory = useCallback((p: NavigationLayoutItem) => {
     return <PrivateRoute allowed={() => hasRight ? hasRight(`generic.page.${p.options.page ?? 'unknown'}`) : false}>
-      {(LookupProvider && PageProvider && Page) && <LookupProvider>
+      {Page && <LookupProvider>
         <PageProvider identifier={p.options.page ?? 'unknown'}>
           <Page />
         </PageProvider>
