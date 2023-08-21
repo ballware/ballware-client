@@ -18,9 +18,7 @@ import Validator, {
 } from 'devextreme-react/validator';
 import { compileGetter } from 'devextreme/utils';
 
-export interface StaticLookupBoxProps extends EditItemProps {}
-
-export const StaticLookupBox = ({ layoutItem }: StaticLookupBoxProps) => {
+export const StaticLookupBox = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     getValue,

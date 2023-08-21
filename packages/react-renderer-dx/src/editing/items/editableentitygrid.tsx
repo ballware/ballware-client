@@ -13,8 +13,6 @@ import { EditItemProps } from './common';
 import { EntityGrid } from '../../datacontainers/grid/entitygrid';
 import { EditItemsContext, CrudFunctions } from '@ballware/react-renderer';
 
-export interface EditableEntityGridProps extends EditItemProps {}
-
 export interface EditableEntityGridItemOptions {
   uniqueKey?: string;
   query?: string;
@@ -26,7 +24,7 @@ export interface EditableEntityGridItemOptions {
   customParam?: Record<string, unknown>;
 }
 
-export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
+export const EditableEntityGrid = ({ layoutItem }: EditItemProps) => {
   const { editorPreparing } = useContext(EditItemsContext);
   const [prepared, setPrepared] = useState(false);
 

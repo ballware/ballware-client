@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   createContext,
   useEffect,
@@ -76,16 +76,11 @@ export interface ToolbarItemsContextState {
 export const ToolbarItemsContext = createContext<ToolbarItemsContextState>({});
 
 /**
- * Properties for toolbar items provider
- */
-export interface ToolbarItemsProviderProps {}
-
-/**
  * Provides environmental functionality for toolbar items
  */
 export const ToolbarItemsProvider = ({
   children,
-}: PropsWithChildren<ToolbarItemsProviderProps>) => {
+}: PropsWithChildren) => {
   const [value, setValue] = useState<ToolbarItemsContextState>({});
 
   const { lookups, lookupsComplete } = useContext(LookupContext);

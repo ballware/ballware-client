@@ -8,14 +8,12 @@
 import { RightsContext } from '@ballware/react-contexts';
 import { useInterval } from '@ballware/react-renderer';
 import { ContextMenu, Toolbar } from 'devextreme-react';
-import { ClickEvent } from 'devextreme/ui/button';
 import { ItemClickEvent } from 'devextreme/ui/context_menu';
 import { dxToolbarItem } from 'devextreme/ui/toolbar';
 import moment from 'moment';
-import 'moment-duration-format';
-import React, { useCallback, useContext, useMemo, useState } from 'react';
+import momentDurationFormatSetup from 'moment-duration-format';
+import React, { useContext, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-
 
 export interface ApplicationBarProps {
   title?: string;
@@ -31,6 +29,8 @@ export const ApplicationBar = ({
   title,
   onMenuToggle
 }: ApplicationBarProps) => {
+
+  momentDurationFormatSetup(moment);
 
   const { t } = useTranslation();
 
@@ -50,9 +50,8 @@ export const ApplicationBar = ({
     timeout_in ? moment(timeout_in).diff(moment(), 'seconds') : 0
   );
 
-  const [sessionMenuVisible, setSessionMenuVisible] = useState(false);
-  const [sessionMenuTarget, setSessionMenuTarget] = useState<Element|undefined>(undefined);
-
+  const sessionMenuRef = useRef<ContextMenu>(null);
+  
   useInterval(() => {
     if (timeout_in) {
       let timeout_diff = Math.max(
@@ -74,54 +73,6 @@ export const ApplicationBar = ({
     () => `${moment.duration(timeoutIn, 'seconds').format('m:ss')}`,
     [timeoutIn]
   );
-
-  const toolbarItems = useMemo(() => {
-    const itemList = [] as dxToolbarItem[];
-
-    if (onMenuToggle) {
-      itemList.push({
-        location: 'before',
-        widget: 'dxButton',
-        locateInMenu: 'never',
-        options: {        
-          elementAttr: {
-            class: 'menubutton'
-          },
-          icon: 'bi bi-list',
-          onClick: () => onMenuToggle()
-        }
-      });
-    }    
-
-    if (title) {
-      itemList.push({
-        location: 'before',        
-        locateInMenu: 'never',
-        text: title
-      });
-    }
-
-    if (session) {
-      itemList.push({
-        location: 'after',
-        locateInMenu: 'never',
-        widget: 'dxButton',
-        options: {
-          elementAttr: {
-            class: 'menubutton'
-          },
-          icon: 'bi bi-person-circle',
-          text: sessionTimeoutDisplayText,
-          onClick: (e: ClickEvent) => {
-            setSessionMenuTarget(e.element);
-            setSessionMenuVisible(true);
-          }
-        }      
-      });
-    }
-
-    return itemList;
-  }, [title, session, sessionTimeoutDisplayText, onMenuToggle]);
 
   const sessionMenuItems = useMemo(() => {
     const menuItems = [] as SessionMenuItem[];
@@ -156,14 +107,61 @@ export const ApplicationBar = ({
     }
     
     return menuItems;
-  }, [session, refresh, manageAccount, switchTenant, logout]);
+  }, [session, allowedTenants, tenant, t, refresh, manageAccount, switchTenant, logout]);
 
-  const onSessionMenuItemClick = useCallback((e: ItemClickEvent) => {
-    e.itemData 
-  }, []);
 
+  const toolbarItems = useMemo(() => {
+    const itemList = [] as dxToolbarItem[];
+
+    if (onMenuToggle) {
+      itemList.push({
+        location: 'before',
+        widget: 'dxButton',
+        locateInMenu: 'never',
+        options: {        
+          elementAttr: {
+            class: 'menubutton'
+          },
+          icon: 'bi bi-list',          
+          onClick: () => onMenuToggle()
+        }
+      });
+    }    
+
+    if (title) {
+      itemList.push({
+        location: 'before',        
+        locateInMenu: 'never',
+        text: title
+      });
+    }
+
+    if (session) {
+      itemList.push({
+        location: 'after',
+        locateInMenu: 'never',
+        widget: 'dxButton',
+        options: {
+          elementAttr: {
+            class: 'menubutton'
+          },
+          icon: 'bi bi-person-circle',
+          text: sessionTimeoutDisplayText,
+          items: sessionMenuItems,          
+          onClick: (e: ItemClickEvent) => {
+            sessionMenuRef.current?.instance.option('target', e.element);
+            sessionMenuRef.current?.instance.option('visible', true);
+          }
+        }      
+      });
+    }
+
+    return itemList;
+  }, [title, session, sessionMenuItems, sessionTimeoutDisplayText, onMenuToggle]);
+
+  
   return <React.Fragment>
-    <Toolbar items={toolbarItems} className='applicationbar shadow'/>
-    <ContextMenu hideOnOutsideClick items={sessionMenuItems} visible={sessionMenuVisible} target={sessionMenuTarget} onItemClick={onSessionMenuItemClick} onHiding={() => setSessionMenuVisible(false)}></ContextMenu>
+    <Toolbar items={toolbarItems} className={'applicationbar shadow'}/>
+    <ContextMenu ref={sessionMenuRef} hideOnOutsideClick items={sessionMenuItems}></ContextMenu>
   </React.Fragment>
 };

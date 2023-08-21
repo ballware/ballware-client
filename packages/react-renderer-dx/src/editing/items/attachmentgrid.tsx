@@ -17,9 +17,7 @@ import { FieldSet } from './fieldset';
 import { AttachmentGrid as DxAttachmentGrid } from '../../components/attachmentgrid';
 import { EditItemsContext } from '@ballware/react-renderer';
 
-export interface AttachmentGridProps extends EditItemProps {}
-
-export const AttachmentGrid = ({ layoutItem }: AttachmentGridProps) => {
+export const AttachmentGrid = ({ layoutItem }: EditItemProps) => {
   const { fetch, upload, open, drop } = useContext(AttachmentContext);
   const { showInfo, showWarning, showError } = useContext(NotificationContext);
   const { readOnly, getValue, editorPreparing } = useContext(EditItemsContext);

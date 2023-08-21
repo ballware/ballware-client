@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import { EditItemProps } from './common';
 import { FieldSet } from './fieldset';
@@ -13,9 +13,7 @@ import { EditItemsContext, EditorRef } from '@ballware/react-renderer';
 
 import { Button as DxButton } from 'devextreme-react/button';
 
-export interface ButtonProps extends EditItemProps {}
-
-export const Button = ({ layoutItem }: ButtonProps) => {
+export const Button = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     editorPreparing,

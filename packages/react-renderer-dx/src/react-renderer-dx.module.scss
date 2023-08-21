@@ -1,0 +1,31 @@
+:global {
+    .application {
+        background-color: #e0e0e0;
+    }
+
+    .applicationbar {
+        color: #fff;
+        background-color: #0d6efd;
+    }
+
+    .menubutton > .dx-button-content > .dx-icon {  
+        color: #fff;  
+    }
+
+    .menubutton > .dx-button-content > .dx-button-text {  
+        color: #fff;  
+    }
+
+    .dx-field > .dx-field-label {
+        width: 20%;
+    }
+
+    .dx-field > .dx-field-value {
+        width: 80%;
+    }
+
+    td > .dx-state-readonly:after {
+        border-bottom: none !important
+    }
+}
+  

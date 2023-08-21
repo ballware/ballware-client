@@ -4,9 +4,6 @@
  * This code is released under the MIT license.
  * SPDX-License-Identifier: MIT
  */
-
-import React from 'react';
-
 import { NavigationList } from './navigationlist';
 
 export interface NavigationProps {  

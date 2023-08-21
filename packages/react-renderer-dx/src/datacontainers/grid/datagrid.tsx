@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useMemo, useContext, useRef, useEffect, useCallback } from 'react';
+import { useMemo, useContext, useRef, useEffect, useCallback } from 'react';
 
 import {
   DataGrid as DxDataGrid,
@@ -467,7 +467,7 @@ export const DataGrid = ({
     return (
       <DxDataGrid
         ref={grid}
-        style={{ height: height ?? 'calc(100vh - 140px)' }}
+        height={height ?? '100%'}
         dataSource={dataSource}
         repaintChangesOnly
         remoteOperations={{ sorting: false, filtering: false }}

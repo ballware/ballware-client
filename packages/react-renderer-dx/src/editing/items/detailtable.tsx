@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 
 import { EditItemProps } from './common';
 import { FieldSet } from './fieldset';
@@ -15,9 +15,7 @@ import {
 } from '../../datacontainers/table/detailtable';
 import { EditItemsContext, EditorRef } from '@ballware/react-renderer';
 
-export interface DetailTableProps extends EditItemProps {}
-
-export const DetailTable = ({ layoutItem }: DetailTableProps) => {
+export const DetailTable = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     getValue,

@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 
 import { EditItemProps } from './common';
 
@@ -17,9 +17,7 @@ import {
 } from '../../datacontainers/grid/detailgrid';
 import { EditItemsContext, EditorRef } from '@ballware/react-renderer';
 
-export interface DetailGridProps extends EditItemProps {}
-
-export const DetailGrid = ({ layoutItem }: DetailGridProps) => {
+export const DetailGrid = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     getValue,

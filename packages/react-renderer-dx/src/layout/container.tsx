@@ -5,8 +5,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React from 'react';
-
 export interface ContainerProps {
   height?: string;
   children?: JSX.Element | Array<JSX.Element>;
@@ -18,7 +16,7 @@ export const Container = ({
 }: ContainerProps) => {
   
   const grid = (
-    <div style={height ? { height: height } : { height: 'auto' }} className={`row row-cols-xs-1 row-cols-lg-12}`}>  
+    <div style={height ? { height: height } : { height: undefined }} className={`${height ? '' : 'flex-fill overflow-hidden '}row row-cols-xs-1 row-cols-lg-12}`}>  
       {children}
     </div>   
   );

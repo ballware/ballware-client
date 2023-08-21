@@ -161,7 +161,7 @@ const MyStatisticElement = () => {
             <React.Fragment>
               {googlekey && (
                 <Map
-                  height={layout.height ?? '400px'}
+                  height={layout.height ?? '100%'}
                   width={'100%'}
                   autoAdjust
                   provider={'google'}
@@ -209,7 +209,7 @@ const MyStatisticElement = () => {
 
           return (
             <PivotGrid
-              style={{ height: layout.height ?? 'calc(100vh - 140px)' }}
+              height={layout.height ?? '100%'}
               allowSortingBySummary
               allowSorting
               allowExpandAll

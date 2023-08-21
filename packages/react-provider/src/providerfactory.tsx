@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useState, useEffect, PropsWithChildren } from 'react';
+import { useState, useEffect, PropsWithChildren } from 'react';
 
 import {
   ProviderFactoryContext,
@@ -22,16 +22,11 @@ import { StatisticProvider } from './statisticprovider';
 import { EditProvider } from './editprovider';
 
 /**
- * Provider factory properties
- */
-export interface ProviderFactoryProps {}
-
-/**
  * Provides functional provider factory components
  */
 export const ProviderFactory = ({
   children,
-}: PropsWithChildren<ProviderFactoryProps>): JSX.Element => {
+}: PropsWithChildren<{}>): JSX.Element => {
   const [value, setValue] = useState({} as ProviderFactoryContextState);
 
   useEffect(() => {

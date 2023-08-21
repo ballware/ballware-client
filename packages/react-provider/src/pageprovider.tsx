@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,
@@ -29,12 +29,10 @@ import {
   LookupRequest,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
-import { useHistory, useLocation } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 import qs from 'qs';
 import isEqual from 'lodash/isEqual';
-import get from 'lodash/get';
-import set from 'lodash/set';
 
 /**
  * Properties for page provider
@@ -54,15 +52,14 @@ export const PageProvider = ({
   children,
 }: PropsWithChildren<PageProviderProps>): JSX.Element => {
 
-  const { search } = useLocation();
-  const { push } = useHistory();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [documentationEntity, setDocumentationEntity] = useState<
     string | undefined
   >();
   const [pageData, setPageData] = useState<CompiledPageData | undefined>();
   const [currentPageParam, setCurrentPageParam] = useState<Record<string, unknown> | undefined>();
-  const [customParam, setCustomParam] = useState<unknown | undefined>();
+  const [customParam, setCustomParam] = useState<Record<string, unknown> | undefined>();
   const [value, setValue] = useState({} as PageContextState);
 
   const { metaPageApiFactory, metaDocumentationApiFactory } = useContext(
@@ -78,29 +75,29 @@ export const PageProvider = ({
   );
 
   const setPageParam = useCallback((nextPageParam: Record<string, unknown>) => {
-    const globalRouterState = qs.parse(search, {ignoreQueryPrefix: true});
-
+    
     //const currentRouterPageParam = get(globalRouterState, 'page', {} as Record<string, unknown>);
     
     if (!isEqual(currentPageParam, nextPageParam)) {
-      set(globalRouterState, 'page', nextPageParam);
-
-      push({ search: qs.stringify(globalRouterState) });
+      searchParams.set('page', qs.stringify(nextPageParam));
+      
+      setSearchParams(searchParams);
     }
 
     if (!isEqual(currentPageParam, nextPageParam)) {
       setCurrentPageParam(nextPageParam);      
     }
-  }, [search, push]);
+  }, [searchParams, setSearchParams, currentPageParam]);
 
   useEffect(() => {
 
-    if (search && !currentPageParam) {
-      const globalRouterState = qs.parse(search, {ignoreQueryPrefix: true});
-      setCurrentPageParam(get(globalRouterState, 'page', {} as Record<string, unknown>) as Record<string, unknown>);
+    if (searchParams && !currentPageParam) {
+      const nextPageParam = qs.parse(searchParams.get('page') ?? '');
+
+      setCurrentPageParam(nextPageParam as Record<string, unknown>);
     }
 
-  }, [currentPageParam, search]);
+  }, [currentPageParam, searchParams]);
 
   useEffect(() => {
     setValue(previousValue => {

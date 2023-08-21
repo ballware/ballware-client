@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 
 import { EditItemProps } from './common';
 import { FieldSet } from './fieldset';
@@ -16,9 +16,7 @@ import {
   RichTextEditorRef,
 } from '../../components/richtexteditor';
 
-export interface RichTextBoxProps extends EditItemProps {}
-
-export const RichTextBox = ({ layoutItem }: RichTextBoxProps) => {
+export const RichTextBox = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     getValue,

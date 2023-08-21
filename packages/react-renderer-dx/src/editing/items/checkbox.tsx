@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 
 import { EditItemProps } from './common';
 import { FieldSet } from './fieldset';
@@ -17,9 +17,7 @@ import Validator, {
   RequiredRule,
 } from 'devextreme-react/validator';
 
-export interface CheckBoxProps extends EditItemProps {}
-
-export const CheckBox = ({ layoutItem }: CheckBoxProps) => {
+export const CheckBox = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     getValue,

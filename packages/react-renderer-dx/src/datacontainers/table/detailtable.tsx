@@ -8,7 +8,7 @@
 import React, {
   useImperativeHandle,
   forwardRef,
-  useContext,
+  //useContext,
   useState,
 } from 'react';
 
@@ -16,6 +16,8 @@ import {
   EditLayoutItemOptions,
   GridLayoutColumn,
 } from '@ballware/meta-interface';
+
+/*
 import {
   TableContainer,
   Paper,
@@ -25,13 +27,16 @@ import {
   TableRow,
   TableCell,
 } from '@mui/material';
+*/
+/*
 import {
   setByPath,
   EditItemsContext,
   EditItemsProvider,
 } from '@ballware/react-renderer';
-import { TableColumn } from './tablecolumns';
-import { DefaultEditFunction } from '@ballware/react-contexts';
+*/
+//import { TableColumn } from './tablecolumns';
+//import { DefaultEditFunction } from '@ballware/react-contexts';
 
 export interface DetailTableRef {
   getValue: () => Array<Record<string, unknown>>;
@@ -59,10 +64,10 @@ const useStyles = makeStyles({
 });
 */
 export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
-  ({ readonly, defaultValue, setValue, layoutItem }, ref): JSX.Element => {
+  ({ /*readonly,*/ defaultValue, setValue/*, layoutItem*/ }, ref): JSX.Element => {
     //const classes = useStyles();
 
-    const { EditProvider } = useContext(EditItemsContext);
+    //const { EditProvider } = useContext(EditItemsContext);
 
     const [rows, setRows] = useState(defaultValue ?? []);
 
@@ -76,11 +81,12 @@ export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
       },
     }));
 
-    const options = layoutItem.itemoptions as DetailTableItemOptions;
+    //const options = layoutItem.itemoptions as DetailTableItemOptions;
 
-    let rowKey = 1;
+    //let rowKey = 1;
 
-    return (
+    return (<React.Fragment></React.Fragment>);
+    /*
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size={'small'}>
           <TableHead>
@@ -119,6 +125,6 @@ export const DetailTable = forwardRef<DetailTableRef, DetailTableProps>(
           </TableBody>
         </Table>
       </TableContainer>
-    );
+    );*/
   }
 );

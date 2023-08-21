@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useState, useEffect, PropsWithChildren } from 'react';
+import { useState, useEffect, PropsWithChildren } from 'react';
 import {
   EditModes,
   EditContext,

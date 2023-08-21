@@ -11,7 +11,7 @@ import DataSource from 'devextreme/data/data_source';
 
 export function createReadonlyDatasource(
   fetchFunc: () => Promise<Array<Record<string, unknown>>>,
-  mapFunction?: (item: any) => any,
+  mapFunction?: (item: Record<string, unknown>) => Record<string, unknown>,
   keyProperty = 'Id'
 ): DataSource {
   const dataStore = new CustomStore({
@@ -98,7 +98,7 @@ export function createLookupDataSource(
   byIdFunc: (id: string) => Promise<Record<string, unknown>>,
   keyProperty = 'Id'
 ): DataSource {
-  let valueCache: LookupCache = {};
+  const valueCache: LookupCache = {};
 
   const dataStore = new CustomStore({
     key: keyProperty,
@@ -108,7 +108,7 @@ export function createLookupDataSource(
         return result;
       });
     },
-    byKey: function(key) {
+    byKey: function(key: string|undefined) {
       if (
         typeof key === 'undefined' ||
         key === '00000000-0000-0000-0000-000000000000'

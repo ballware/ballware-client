@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,
@@ -27,7 +27,7 @@ import {
   TenantContext,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Properties for generic meta provider
@@ -84,7 +84,7 @@ export const MetaProvider = ({
 
   const { hasRight } = useContext(TenantContext);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const headAllowed = (right: string) => {
@@ -119,7 +119,7 @@ export const MetaProvider = ({
     };
 
     const print = (doc: string, ids: Array<string>) => {
-      history.push(`/print?docId=${doc}${ids.map(u => `&id=${u}`).join('')}`);
+      navigate(`/print?docId=${doc}${ids.map(u => `&id=${u}`).join('')}`);
     };
 
     if (metaData && customParam && session && documents && hasRight) {
@@ -141,7 +141,7 @@ export const MetaProvider = ({
         } as MetaContextState;
       });
     }
-  }, [metaData, customParam, session, documents, history, readOnly, hasRight]);
+  }, [metaData, customParam, session, documents, navigate, readOnly, hasRight]);
 
   useEffect(() => {
     let fetchingCanceled = false;

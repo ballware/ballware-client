@@ -18,11 +18,9 @@ import Validator, {
 } from 'devextreme-react/validator';
 import { compileGetter } from 'devextreme/utils';
 
-export interface StaticMultiLookupBoxProps extends EditItemProps {}
-
 export const StaticMultiLookupBox = ({
   layoutItem,
-}: StaticMultiLookupBoxProps) => {
+}: EditItemProps) => {
   const {
     readOnly,
     getValue,

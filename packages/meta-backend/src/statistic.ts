@@ -13,7 +13,7 @@ import {
   QueryParams,
 } from '@ballware/meta-interface';
 import { additionalParamsToUrl } from './util';
-import * as JSON5 from 'json5';
+import JSON5 from 'json5';
 import axios from 'axios';
 
 interface Statistic {

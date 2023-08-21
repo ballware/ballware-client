@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useContext,
   useState,
   useEffect,
@@ -29,11 +29,6 @@ import {
   MetaProcessingstateApi,
   MetaPickvalueApi,
 } from '@ballware/meta-interface';
-
-/**
- * Properties for lookup provider
- */
-export interface LookupProviderProps {}
 
 const createUserLookup = (
   token: () => string,
@@ -226,7 +221,7 @@ const createGenericLookupByIdentifier = (
  */
 export const LookupProvider = ({
   children,
-}: PropsWithChildren<LookupProviderProps>): JSX.Element => {
+}: PropsWithChildren<{}>): JSX.Element => {
   const [requestedLookups, setRequestedLookups] = useState([] as Array<string>);
   const [lookupsComplete, setLookupsComplete] = useState(false);
   const [lookups, setLookups] = useState<
@@ -416,6 +411,15 @@ export const LookupProvider = ({
     getGenericLookupByIdentifier: undefined,
   } as LookupContextState);
 
+  useEffect(() => () => {
+
+    console.log('Resetting LookupProvider for reuse');
+
+    setRequestedLookups([]);
+    setLookups(undefined);
+    setLookupsComplete(false);
+  }, []);
+
   useEffect(() => {
     if (
       identityUserApiFactory &&
@@ -456,6 +460,8 @@ export const LookupProvider = ({
   }, [lookups, requestedLookups]);
 
   useEffect(() => {
+    console.log(`Lookups complete ${lookupsComplete}`);
+
     setValue(previousValue => {
       return { ...previousValue, lookupsComplete };
     });

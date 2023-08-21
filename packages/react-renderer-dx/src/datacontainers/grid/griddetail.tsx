@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 
 import { DetailLayout, CrudItem } from '@ballware/meta-interface';
 import ScrollView from 'devextreme-react/scroll-view';

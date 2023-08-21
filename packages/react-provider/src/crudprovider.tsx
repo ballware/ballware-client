@@ -5,13 +5,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,
   PropsWithChildren
 } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 
 import qs from 'qs';
 import isEqual from 'lodash/isEqual';
@@ -62,7 +62,7 @@ export const CrudProvider = ({
   children,
 }: PropsWithChildren<CrudProviderProps>): JSX.Element => {
   const { search } = useLocation();
-  const { push } = useHistory();
+  const navigate = useNavigate();
 
   const [value, setValue] = useState({} as CrudContextState);
   const [refreshing, setRefreshing] = useState(false);
@@ -97,10 +97,10 @@ export const CrudProvider = ({
       if (!isEqual(myCurrentRouterState, currentRouterState)) {
         set(globalRouterState, identifier, currentRouterState);
 
-        push({ search: qs.stringify(globalRouterState) });
+        navigate({ search: qs.stringify(globalRouterState) });
       }
     }
-  }, [search, push, currentRouterState, identifier]);
+  }, [search, navigate, currentRouterState, identifier]);
 
   useEffect(() => {
     if (byId && mapIncomingItem && showError && currentRouterState) {

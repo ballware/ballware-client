@@ -269,7 +269,7 @@ export const EntityMap = ({
       if (customFunctions) {
         addMenuItems.push(
           ...customFunctions
-            ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
+            .filter(f => f.type === 'add' && customFunctionAllowed(f))
             .map(f => {
               return { id: f.id, text: f.text, customFunction: f };
             })
@@ -359,7 +359,7 @@ export const EntityMap = ({
         for (const marker of markers) {
           await mapRef.current?.instance.addMarker({
             location: getByPath(marker, locationMember),
-            onClick: () => onMarkerClicked(marker),
+            onClick: () => onMarkerClicked(marker)
           });
         }
       };

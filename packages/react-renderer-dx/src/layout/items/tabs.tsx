@@ -25,7 +25,7 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
   
   useEffect(() => {
     if (count) {
-      var canceled = false;
+      let canceled = false;
 
       count(query, params).then(result => {
         if (!canceled) {
@@ -76,20 +76,22 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
         const tabOptions = tab.options?.itemoptions as TabItemOptions;
        
         return (<TabItem
-          key={`tab-${tabscount++}`}
-          tabRender={() => <TabHeader options={tabOptions}/>}          >
-          <Container height={layoutItem.options?.height}>
-            {PageLayoutItem &&
-              tab.items &&
-              tab.items.map(item => (
-                <PageLayoutItem
-                  key={key++}
-                  colCount={tab.colCount}
-                  layoutItem={item}
-                  params={params}
-                />
-              ))}
-          </Container>
+          key={`tab-${tabscount++}`}                  
+          tabRender={() => <TabHeader options={tabOptions}/>}>
+          <div className="h-100 mw-100 d-flex flex-column overflow-hidden">
+            <Container height={layoutItem.options?.height}>
+              {PageLayoutItem &&
+                tab.items &&
+                tab.items.map(item => (
+                  <PageLayoutItem
+                    key={key++}
+                    colCount={tab.colCount}
+                    layoutItem={item}
+                    params={params}
+                  />
+                ))}
+            </Container>
+          </div>
         </TabItem>
         );        
       }),
@@ -98,7 +100,7 @@ export const LayoutTabs = ({ layoutItem, params }: LayoutTabProps) => {
 
   return (
     <TabPanel
-      height={layoutItem.options?.height}
+      height={layoutItem.options?.height ?? '100%'}
       deferRendering={true}
       showNavButtons
       swipeEnabled={false}

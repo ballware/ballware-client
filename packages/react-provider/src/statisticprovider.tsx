@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,

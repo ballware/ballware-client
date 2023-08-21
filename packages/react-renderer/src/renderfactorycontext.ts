@@ -18,7 +18,6 @@ import {
   QueryParams,
   ValueType,
 } from '@ballware/meta-interface';
-import { RouteProps } from 'react-router-dom';
 
 /**
  * Properties for application component
@@ -58,12 +57,17 @@ export interface NavigationProps {
 /**
  * Properties for auth protected routes
  */
-export interface PrivateRouteProps extends RouteProps {
+export interface PrivateRouteProps {
   /**
    * Check if route is allowed to be accessed by authenticated user
    * @return true if access is allowed
    */
   allowed: () => boolean;
+
+  /**
+   * Component to render when route is hit
+   */
+  children: JSX.Element
 }
 
 /**
@@ -249,7 +253,7 @@ export interface RenderFactoryContextState {
   /**
    * Provide context component with shared functionality for render plugin
    */
-  Context?: (props: PropsWithChildren<{}>) => JSX.Element;
+  Context?: (props: PropsWithChildren) => JSX.Element;
 
   /**
    * Provide application window component
@@ -276,17 +280,17 @@ export interface RenderFactoryContextState {
   /**
    * Provide routes for router
    */
-  Routes?: (props: {}) => JSX.Element;
+  Routes?: (props: Record<string, never>) => JSX.Element;
 
   /**
    * Provide notification component for display user notifications
    */
-  Notification?: (props: {}) => JSX.Element;
+  Notification?: (props: Record<string, never>) => JSX.Element;
 
   /**
    * Provide page component for displaying metadata page
    */
-  Page?: (props: {}) => JSX.Element;
+  Page?: (props: Record<string, never>) => JSX.Element;
 
   /**
    * Provide page toolbar component

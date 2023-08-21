@@ -30,9 +30,7 @@ import { useTranslation } from 'react-i18next';
 
 import { compileGetter } from "devextreme/utils";
 
-export interface LookupBoxProps extends EditItemProps {}
-
-export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
+export const LookupBox = ({ layoutItem }: EditItemProps) => {
   const { t } = useTranslation();
 
   const {

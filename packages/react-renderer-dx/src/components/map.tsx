@@ -16,7 +16,7 @@ import React, {
 
 import { Map } from 'devextreme-react/map';
 
-declare var google: any;
+declare const google: any;
 
 export interface LocationMapRef {
   getValue: () => { lat: number; lng: number };

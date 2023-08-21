@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useCallback, useContext } from 'react';
+import { useCallback, useContext } from 'react';
 
 import Iframe from 'react-iframe';
 import { CrudContext } from '@ballware/react-contexts';

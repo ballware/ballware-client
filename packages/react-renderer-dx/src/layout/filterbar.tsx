@@ -13,7 +13,6 @@ import {
   RenderFactoryContext,
   ToolbarItemsProvider,
 } from '@ballware/react-renderer';
-import { useTranslation } from 'react-i18next';
 import { useMedia } from 'react-media';
 import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 import { Button, Template, Toolbar } from 'devextreme-react';
@@ -30,9 +29,10 @@ export const FilterBar = ({
   title,
   items,
 }: FilterBarProps) => {
-  const { t } = useTranslation();
+  
+  const { medium, large } = useMedia({ queries: GLOBAL_MEDIA_QUERIES });
 
-  const largeOrMediumScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).medium || useMedia({ queries: GLOBAL_MEDIA_QUERIES }).large;
+  const largeOrMediumScreen = medium || large;
   
   const [initialized, setInitialized] = useState(false);
 
@@ -82,7 +82,7 @@ export const FilterBar = ({
 
   return (
     <React.Fragment>
-      {t && toolbarItems && (
+      {toolbarItems && (
         <ToolbarItemsProvider>
           <Toolbar items={toolbarItems}>            
             {loadDocumentation && documentationIdentifier && 

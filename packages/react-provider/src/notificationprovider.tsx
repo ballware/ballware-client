@@ -18,17 +18,13 @@ import {
   NotificationDisplayContextState,
 } from '@ballware/react-contexts';
 
-/**
- * Properties for notification provider
- */
-export interface NotificationProviderProps {}
 
 /**
  * Provides functionality for triggering and displaying user notifications
  */
 export const NotificationProvider = ({
   children,
-}: PropsWithChildren<NotificationProviderProps>): JSX.Element => {
+}: PropsWithChildren<{}>): JSX.Element => {
   const [value, setValue] = useState<NotificationContextState>({});
   const [displayValue, setDisplayValue] = useState<
     NotificationDisplayContextState
@@ -37,21 +33,21 @@ export const NotificationProvider = ({
     { type: 'error' | 'info' | 'warning'; text: string } | undefined
   >();
 
-  const showInfo = useCallback(message => {
+  const showInfo = useCallback((message: string) => {
     if (message) {
       setMessage({ type: 'info', text: message.toString() });
       console.info(message);
     }
   }, []);
 
-  const showWarning = useCallback(message => {
+  const showWarning = useCallback((message: string) => {
     if (message) {
       setMessage({ type: 'warning', text: message.toString() });
       console.warn(message);
     }
   }, []);
 
-  const showError = useCallback(message => {
+  const showError = useCallback((message: string) => {
     if (message) {
       setMessage({ type: 'error', text: message.toString() });
       console.error(message);

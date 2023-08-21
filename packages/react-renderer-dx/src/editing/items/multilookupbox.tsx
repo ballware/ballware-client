@@ -28,9 +28,7 @@ import Validator, {
 } from 'devextreme-react/validator';
 import { compileGetter } from 'devextreme/utils';
 
-export interface MultiLookupBoxProps extends EditItemProps {}
-
-export const MultiLookupBox = ({ layoutItem }: MultiLookupBoxProps) => {
+export const MultiLookupBox = ({ layoutItem }: EditItemProps) => {
   const {
     readOnly,
     getValue,

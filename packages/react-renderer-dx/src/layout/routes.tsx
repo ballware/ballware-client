@@ -5,26 +5,33 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { PropsWithChildren, useContext, useMemo } from 'react';
-import { Switch, Redirect } from 'react-router-dom';
+import { useCallback, useContext, useMemo } from 'react';
 
 import {
   ProviderFactoryContext,
-  RightsContext,
   TenantContext,
 } from '@ballware/react-contexts';
 
 import { PrivateRoute } from './privateroute';
 
 import { RenderFactoryContext } from '@ballware/react-renderer';
+import { Navigate, Route, Routes as ReactRoutes } from 'react-router-dom';
+import { NavigationLayoutItem } from '@ballware/meta-interface';
 
-export interface RoutesProps {}
-
-export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
-  const { session } = useContext(RightsContext);
+export const Routes = () => {
   const { navigation, pages, hasRight } = useContext(TenantContext);
   const { Page } = useContext(RenderFactoryContext);
   const { LookupProvider, PageProvider } = useContext(ProviderFactoryContext);
+
+  const pageFactory = useCallback((p: NavigationLayoutItem) => {
+    return <PrivateRoute allowed={() => hasRight ? hasRight(`generic.page.${p.options.page ?? 'unknown'}`) : false}>
+      {(LookupProvider && PageProvider && Page) && <LookupProvider>
+        <PageProvider identifier={p.options.page ?? 'unknown'}>
+          <Page />
+        </PageProvider>
+      </LookupProvider>}
+    </PrivateRoute>;
+  }, [LookupProvider, PageProvider, Page, hasRight]);
 
   return useMemo(() => {
     let pageKey = 1;
@@ -33,56 +40,28 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
 
     if (navigation?.defaultUrl) {
       renderedPages.push(
-        <Redirect
+        <Route
           key={pageKey++}
-          exact
           path="/"
-          to={`/${navigation?.defaultUrl}`}
+          element={<Navigate to={`/${navigation?.defaultUrl}`}/>}
         />
       );
     }
 
-    if (
-      LookupProvider &&
-      PageProvider &&
-      session &&
-      pages &&
-      hasRight &&
-      Page
+    if (pageFactory &&
+      pages
     ) {
       renderedPages.push(
         ...pages.map(p => (
-          <PrivateRoute
-            key={pageKey++}
-            path={`/${p.options.url?.toLowerCase() ??
-              'unknown'}/:action(view|edit)?/:id?`}
-            allowed={() => hasRight(`generic.page.${p.options.page ?? 'unknown'}`)}
-            render={() => (
-              <LookupProvider>
-                <PageProvider identifier={p.options.page ?? 'unknown'}>
-                  <Page />
-                </PageProvider>
-              </LookupProvider>
-            )}
-          />
-        ))
+          <Route key={pageKey++} path={`/${p.options.url?.toLowerCase() ??
+            'unknown'}/:action(view|edit)?/:id?`} Component={() => pageFactory(p)}/>))
       );
     }
 
-    return (
-      <Switch>
-        {renderedPages}
-        {children}
-      </Switch>
-    );
+    return <ReactRoutes>{renderedPages}</ReactRoutes>;
   }, [
     navigation,
     pages,
-    hasRight,
-    session,
-    LookupProvider,
-    PageProvider,
-    Page,
-    children,
+    pageFactory
   ]);
 };

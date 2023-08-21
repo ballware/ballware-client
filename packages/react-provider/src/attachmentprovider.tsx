@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,
@@ -19,16 +19,11 @@ import {
 } from '@ballware/react-contexts';
 
 /**
- * Properties for attachment provider
- */
-export interface AttachmentProviderProps {}
-
-/**
  * Provides attachment operations for files attached to records with unique owner id
  */
 export const AttachmentProvider = ({
   children,
-}: PropsWithChildren<AttachmentProviderProps>): JSX.Element => {
+}: PropsWithChildren<{}>): JSX.Element => {
   const [value, setValue] = useState({} as AttachmentContextState);
 
   const { metaAttachmentApiFactory } = useContext(SettingsContext);

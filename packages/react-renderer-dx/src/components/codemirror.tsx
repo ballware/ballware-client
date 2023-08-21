@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
     forwardRef,
   useEffect,
     useImperativeHandle,
@@ -19,8 +19,8 @@ import codeMirror from 'codemirror';
 import 'codemirror/mode/sql/sql';
 import 'codemirror/mode/javascript/javascript';
 
-import { JSHINT } from 'jshint';
-import jsonlint from 'jsonlint-mod';
+//import { JSHINT } from 'jshint';
+//import jsonlint from 'jsonlint-mod';
 
 import 'codemirror/theme/idea.css';
 
@@ -31,10 +31,10 @@ import 'codemirror/addon/selection/active-line';
 import 'codemirror/addon/edit/matchbrackets';
 
 
-declare let window: Record<string, unknown>;
+//declare let window: Record<string, unknown>;
 
-window.JSHINT = JSHINT;
-window.jsonlint = jsonlint;
+//window.JSHINT = JSHINT;
+//window.jsonlint = jsonlint;
 
 
   export interface CodeMirrorEditorRef {

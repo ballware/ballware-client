@@ -751,7 +751,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
                 mode={
                   matches.small ? 'small' : matches.medium ? 'medium' : 'large'
                 }
-                height={height ?? 'calc(100vh - 140px)'}
+                height={height ?? '100%'}
                 dataSource={dataSource}
                 columns={
                   matches.small

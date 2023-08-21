@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import {
   HtmlEditor as DxHtmlEditor,

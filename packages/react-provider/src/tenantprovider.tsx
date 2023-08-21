@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,
@@ -20,11 +20,6 @@ import {
   SettingsContext,
   NotificationContext,
 } from '@ballware/react-contexts';
-
-/**
- * Properties for tenant provider
- */
-export interface TenantProviderProps {}
 
 /**
  * Find pages in navigation tree
@@ -50,7 +45,7 @@ const findPages = (items: Array<NavigationLayoutItem>) => {
  */
 export const TenantProvider = ({
   children,
-}: PropsWithChildren<TenantProviderProps>): JSX.Element => {
+}: PropsWithChildren<{}>): JSX.Element => {
   const [tenant, setTenant] = useState<CompiledTenant>();
   const [pages, setPages] = useState<Array<NavigationLayoutItem>>();
   const [value, setValue] = useState({} as TenantContextState);

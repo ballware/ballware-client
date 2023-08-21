@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   createContext,
   useEffect,
@@ -14,7 +14,6 @@ import React, {
   useCallback,
   useImperativeHandle,
   forwardRef,
-  PropsWithChildren,
 } from 'react';
 
 import {
@@ -262,20 +261,16 @@ export interface EditItemsContextState {
    * Factory for generating new edit provider
    */
   EditProvider?: (
-    props: PropsWithChildren<{
+    props: {
       editLayout: EditLayout | undefined;
       item: CrudItem | Array<CrudItem> | ValueType;
       editFunction: EntityCustomFunction | undefined;
-    }>
+      children?: React.ReactNode
+    }
   ) => JSX.Element;
 }
 
 export const EditItemsContext = createContext<EditItemsContextState>({});
-
-/**
- * Properties for edit items provider
- */
-export interface EditItemsProviderProps {}
 
 /**
  * Reference for edit items provider
@@ -293,8 +288,8 @@ export interface EditItemsProviderRef {
  */
 export const EditItemsProvider = forwardRef<
   EditItemsProviderRef,
-  EditItemsProviderProps
->(({ children }: PropsWithChildren<EditItemsProviderProps>, ref) => {
+  { children?: React.ReactNode }
+>(({ children }: { children?: React.ReactNode }, ref) => {
   const [value, setValue] = useState<EditItemsContextState>({});
 
   const { EditLayoutItem } = useContext(RenderFactoryContext);

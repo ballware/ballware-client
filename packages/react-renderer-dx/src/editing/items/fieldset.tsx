@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { EditLayoutItemOptions } from '@ballware/meta-interface';
 
 export const FieldSet = ({

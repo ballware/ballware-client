@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useCallback, useContext, useMemo } from 'react';
+import { useCallback, useContext, useMemo } from 'react';
 
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 import { TenantContext } from '@ballware/react-contexts';
@@ -34,20 +34,19 @@ export const NavigationList = ({ onPageSelected }: NavigationListProps) => {
 
           items?.forEach(item => {
             switch (item.type) {
-              case 'group':
-                const groupItem = {} as TreeItem;
+              case 'group':{
+                  const groupItem = {} as TreeItem;
 
-                groupItem.text = item.options?.caption;
-                groupItem.items = transformSubItems(item.items ?? []);
+                  groupItem.text = item.options?.caption;
+                  groupItem.items = transformSubItems(item.items ?? []);
 
-                if (groupItem.items && groupItem.items.length > 0) {
-                  result.push(groupItem);
-                }
+                  if (groupItem.items && groupItem.items.length > 0) {
+                    result.push(groupItem);
+                  }
+                }                
                 break;
-              case 'section':
-                {
-                  result.push(...transformSubItems(item.items ?? []));
-                }
+              case 'section':                
+                result.push(...transformSubItems(item.items ?? []));                
                 break;
               case 'page':
                 {

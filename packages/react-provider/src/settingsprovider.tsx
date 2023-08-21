@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import {
   ResourceOwnerAuthApi,
   IdentityUserApi,

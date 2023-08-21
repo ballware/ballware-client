@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 
 import { DocumentationPopup } from './documentationpopup';
 import { LookupContext } from '@ballware/react-contexts';
@@ -24,11 +24,13 @@ export const Page = (): JSX.Element => {
   } = useContext(PageContext);
   const { lookups, lookupsComplete } = useContext(LookupContext);
 
-  if (resetDocumentation) {
-    let key = 1;
+  return useMemo(() => {
 
-    return (
-      <div className="mw-100 container-fluid shadow bg-white rounded">
+    console.log('Rehydrating page');
+
+    let key = 1;
+  
+    return <div className="h-100 mw-100 container-fluid shadow bg-white rounded d-flex flex-column overflow-hidden">
         {layout && lookups && lookupsComplete && customParam && PageToolbar && (
           <PageToolbar
             documentationIdentifier={layout.documentationEntity}
@@ -36,7 +38,7 @@ export const Page = (): JSX.Element => {
             items={layout.toolbaritems}
           />
         )}
-        {layout && documentation && (
+        {(layout && documentation && resetDocumentation) && (
           <DocumentationPopup
             title={layout.title ?? ''}
             documentation={documentation}
@@ -62,9 +64,7 @@ export const Page = (): JSX.Element => {
                 ))}
             </Container>
           )}
-      </div>
-    );
-  } else {
-    return <React.Fragment />;
+      </div>;
   }
+  , [PageLayoutItem, PageToolbar, resetDocumentation, customParam, documentation, layout, lookups, lookupsComplete, pageParam]);
 };

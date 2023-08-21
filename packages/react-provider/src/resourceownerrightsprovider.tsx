@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, {
+import {
   useState,
   useEffect,
   useContext,
@@ -18,7 +18,7 @@ import {
 } from '@ballware/react-contexts';
 import { SettingsContext, NotificationContext } from '@ballware/react-contexts';
 import moment from 'moment';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Resource owner rights provider properties
@@ -81,10 +81,10 @@ export const ResourceOwnerRightsProvider = ({
 
   const { identityAuthApiFactory, version } = useContext(SettingsContext);
   const { showInfo, showError } = useContext(NotificationContext);
-  const { push, replace } = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (push) {
+    if (navigate) {
       const persistedState = loadInitialRightsState();
 
       if (persistedState) {
@@ -98,10 +98,10 @@ export const ResourceOwnerRightsProvider = ({
 
         setValue(persistedState);
       } else {
-        push('/login');
+        navigate('/login');
       }
     }
-  }, [push]);
+  }, [navigate]);
 
   useEffect(() => {
     if (identityAuthApiFactory && version && showInfo && showError) {
@@ -140,7 +140,7 @@ export const ResourceOwnerRightsProvider = ({
                 });
 
                 showInfo('rights.notifications.loginsuccess');
-                replace(redirect);
+                navigate(redirect);
               })
               .catch(reason => {
                 showError(
@@ -170,7 +170,7 @@ export const ResourceOwnerRightsProvider = ({
                   };
                 });
                 showInfo('rights.notifications.logoutsuccess');
-                push('/login');
+                navigate('/login');
               })
               .catch(reason => showError(reason));
           },
@@ -179,7 +179,7 @@ export const ResourceOwnerRightsProvider = ({
               .register(username, password, displayname)
               .then(() => {
                 showInfo('rights.notifications.registeredsuccess');
-                push('/login');
+                navigate('/login');
               })
               .catch(reason => showError(reason));
           },
@@ -188,7 +188,7 @@ export const ResourceOwnerRightsProvider = ({
               .forgotPassword(email)
               .then(() => {
                 showInfo('rights.notifications.forgotpasswordsuccess');
-                push('/resetpassword');
+                navigate('/resetpassword');
               })
               .catch(reason => showError(reason));
           },
@@ -197,7 +197,7 @@ export const ResourceOwnerRightsProvider = ({
               .resetPassword(email, code, newPassword)
               .then(() => {
                 showInfo('rights.notifications.resetpasswordsuccess');
-                push('/login');
+                navigate('/login');
               })
               .catch(reason => showError(reason));
           },
@@ -237,8 +237,7 @@ export const ResourceOwnerRightsProvider = ({
       });
     }
   }, [
-    push,
-    replace,
+    navigate,
     identityAuthApiFactory,
     version,
     showInfo,

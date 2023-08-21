@@ -402,7 +402,7 @@ const TemplateColumn = ({
       case 'popup': {
         return (
           <EditProvider item={item} editLayout={undefined} editFunction={DefaultEditFunction}>
-            <EditItemsProvider>
+            <EditItemsProvider> 
               <DetailEditPopup
                 readonly={!editing}
                 column={columnOptions}

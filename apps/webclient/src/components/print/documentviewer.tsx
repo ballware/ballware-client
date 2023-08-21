@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Iframe from 'react-iframe';
 
 import { SettingsContext, RightsContext } from "@ballware/react-contexts";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const MuiDocumentViewer = () => {
 
-  const [url, setUrl] = useState(undefined as string);
+  const [url, setUrl] = useState<string|undefined>(undefined);
 
   const { metaDocumentApiFactory } = useContext(SettingsContext)
   const { token } = useContext(RightsContext);
-  const { location } = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
     if (metaDocumentApiFactory && token && location) {

@@ -19,7 +19,7 @@ import { RightsContext, RightsContextState } from '@ballware/react-contexts';
 
 import { SettingsContext, NotificationContext } from '@ballware/react-contexts';
 
-import { Route, useHistory } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import {
   SessionWithUserInfo,
@@ -109,7 +109,7 @@ export const AuthorizationCodeRightsProvider = ({
 
   const { version, identityUserApiFactory, metaTenantApiFactory } = useContext(SettingsContext);
   const { showInfo, showError } = useContext(NotificationContext);
-  const { push, replace } = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (
@@ -183,8 +183,7 @@ export const AuthorizationCodeRightsProvider = ({
         });
       }
     }
-  }, [
-    push,    
+  }, [    
     authority,
     client,
     secret,
@@ -294,8 +293,6 @@ export const AuthorizationCodeRightsProvider = ({
       });
     }
   }, [
-    push,
-    replace,
     version,
     showInfo,
     showError,
@@ -314,7 +311,7 @@ export const AuthorizationCodeRightsProvider = ({
       post_logout_redirect_uri &&
       response_type &&
       scope &&
-      push &&
+      navigate &&
       showInfo &&
       showError &&
       metaTenantApiFactory
@@ -366,7 +363,7 @@ export const AuthorizationCodeRightsProvider = ({
                 };
               });
 
-              push('/');
+              navigate('/');
 
               showInfo('rights.notifications.loginsuccess');
             });
@@ -382,14 +379,14 @@ export const AuthorizationCodeRightsProvider = ({
     post_logout_redirect_uri,
     response_type,
     scope,
-    push,
+    navigate,
     showInfo,
     showError,
     metaTenantApiFactory
   ]);
 
   useEffect(() => {
-    if (account_management_uri && push) {
+    if (account_management_uri) {
       setValue(previousValue => {
         return {
           ...previousValue,
@@ -399,17 +396,17 @@ export const AuthorizationCodeRightsProvider = ({
         };
       });
     }
-  }, [account_management_uri, push]);
+  }, [account_management_uri]);
 
   return (
     <RightsContext.Provider value={value}>
-      <Route
-        path="/signin-oidc"
-        render={() => (
-          <OidcAuthCallback redirectCallback={loginRedirectCallback} />
-        )}
-      />
-      <React.Fragment>{children}</React.Fragment>
+      <Routes>        
+        <Route
+          path="/signin-oidc"        
+          element={<OidcAuthCallback redirectCallback={loginRedirectCallback} />}
+        />
+        <Route path="*" element={children}/>
+      </Routes>      
     </RightsContext.Provider>
   );
 };

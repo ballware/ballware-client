@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 
 import { EditItemProps } from './common';
 import { FieldSet } from './fieldset';
@@ -13,9 +13,7 @@ import { LocationMap, LocationMapRef } from '../../components/map';
 import { EditItemsContext, EditorRef } from '@ballware/react-renderer';
 import { SettingsContext } from '@ballware/react-contexts';
 
-export interface MapProps extends EditItemProps {}
-
-export const Map = ({ layoutItem }: MapProps) => {
+export const Map = ({ layoutItem }: EditItemProps) => {
   const { googlekey } = useContext(SettingsContext);
   const {
     readOnly,

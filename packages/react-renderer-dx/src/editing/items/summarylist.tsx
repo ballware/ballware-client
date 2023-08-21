@@ -9,11 +9,11 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import { FieldSet } from './fieldset';
 import {
-  getByPath,
+  //getByPath,
   EditorRef,
   EditItemsContext,
 } from '@ballware/react-renderer';
-
+/*
 import {
   List,
   ListItem,
@@ -26,15 +26,9 @@ import { useTheme } from '@mui/material/styles';
 import ErrorIcon from '@mui/icons-material/Error';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HelpIcon from '@mui/icons-material/Help';
-import { EditLayoutItem } from '@ballware/meta-interface';
-/*
-const useSummaryStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
 */
+import { EditLayoutItem } from '@ballware/meta-interface';
+
 export interface SummaryElementOptions {
   icon?: string;
   hintExpr?: string;
@@ -55,7 +49,7 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
   const [prepared, setPrepared] = useState(false);
 
   //const classes = useSummaryStyles();
-  const theme = useTheme();
+  //const theme = useTheme();
 
   useEffect(() => {
     if (
@@ -106,6 +100,7 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
     editorInitialized(layoutItem.options.dataMember, editor);
   }
 
+  /*
   const statusIconFunc = (state: number) => {
     switch (state) {
       case 1:
@@ -118,14 +113,16 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
 
     return <React.Fragment></React.Fragment>;
   };
+  */
 
   if (prepared && value && layoutItem.options) {
-    let itemCount = 1;
+    //let itemCount = 1;
 
-    const entries = layoutItem.items?.map(it => {
-      const options = it.options?.itemoptions as SummaryElementOptions;
+    //const entries = layoutItem.items?.map(it => {
+    //  const options = it.options?.itemoptions as SummaryElementOptions;
 
-      return (
+    //  return (<React.Fragment></React.Fragment>);
+      /*
         <ListItem key={itemCount++}>
           {it.options?.valueExpr && (
             <ListItemIcon>
@@ -146,14 +143,18 @@ export const SummaryList = ({ layoutItem }: SummaryListProps) => {
           )}
         </ListItem>
       );
-    });
+      */
+    //});
 
     return (
       <FieldSet layoutItem={layoutItem.options}>
+        {/*
         <List sx={{
           width: '100%',
           backgroundColor: theme.palette.background.paper,
         }}>{entries}</List>
+        */
+        }
       </FieldSet>
     );
   }

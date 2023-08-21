@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "importHelpers": true,
+    "declaration": true,
+    "inlineSourceMap": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "$test/*": ["test/*"],
+      "@ballware/identity-backend": ["packages/identity-backend/src/index.ts"],
+      "@ballware/identity-interface": [
+        "packages/identity-interface/src/index.ts"
+      ],
+      "@ballware/identity-keycloak": [
+        "packages/identity-keycloak/src/index.ts"
+      ],
+      "@ballware/meta-backend": ["packages/meta-backend/src/index.ts"],
+      "@ballware/meta-interface": ["packages/meta-interface/src/index.ts"],
+      "@ballware/react-contexts": ["packages/react-contexts/src/index.ts"],
+      "@ballware/react-provider": ["packages/react-provider/src/index.ts"],
+      "@ballware/react-renderer": ["packages/react-renderer/src/index.ts"],
+      "@ballware/react-renderer-dx": ["packages/react-renderer-dx/src/index.ts"]
+    }
+  }
+}

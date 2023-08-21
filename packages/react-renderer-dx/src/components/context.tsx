@@ -5,15 +5,16 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { PropsWithChildren, useEffect } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+//import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.material.blue.light.css';
+import '../react-renderer-dx.module.scss';
 
 import moment from 'moment';
 import deMessages from 'devextreme/localization/messages/de.json';
@@ -24,12 +25,11 @@ import dxTextArea from 'devextreme/ui/text_area';
 import dxDateBox from 'devextreme/ui/date_box';
 import dxNumberBox from 'devextreme/ui/number_box';
 import dxTagBox from 'devextreme/ui/tag_box';
+import React from 'react';
 
-const theme = createTheme();
+//const theme = createTheme();
 
-export interface ContextProps {}
-
-export const Context = ({ children }: PropsWithChildren<ContextProps>) => {
+export const Context = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     loadMessages(deMessages);
     locale(navigator.language);
@@ -75,5 +75,5 @@ export const Context = ({ children }: PropsWithChildren<ContextProps>) => {
     });
   }, []);
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return <React.Fragment>{children}</React.Fragment>;
 };

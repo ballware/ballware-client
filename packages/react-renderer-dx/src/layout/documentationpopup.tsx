@@ -4,9 +4,6 @@
  * This code is released under the MIT license.
  * SPDX-License-Identifier: MIT
  */
-
-import React from 'react';
-
 import { useTranslation } from 'react-i18next';
 import { HtmlEditor } from '../components/htmleditor';
 import { useMedia } from 'react-media';

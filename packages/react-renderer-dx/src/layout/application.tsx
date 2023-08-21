@@ -18,7 +18,7 @@ import { TenantContext } from '@ballware/react-contexts';
 import { Drawer, Template } from 'devextreme-react';
 import { useMedia } from 'react-media';
 import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 /*
 const useStyles = (drawerWidth: string | number) =>
   makeStyles(theme => ({
@@ -59,7 +59,7 @@ export const Application = ({
   children,
 }: PropsWithChildren<ApplicationProps>) => {
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const mediaQuery = useMedia({ queries: GLOBAL_MEDIA_QUERIES });
     
   const [menuOpen, setMenuOpen] = useState(mediaQuery.large);
@@ -72,14 +72,14 @@ export const Application = ({
   }, [setMenuOpen, menuOpen]);
 
   const onPageSelected = useCallback((url: string) => {
-    if (history && url) {
-      history.push(`/${url}`);
+    if (url) {
+      navigate(`/${url}`);
 
       if (mediaQuery.small || mediaQuery.medium) {
         setMenuOpen(false);
       }
     }
-  }, [history, mediaQuery]);
+  }, [navigate, mediaQuery]);
 
   const MemorizedApplicationBar = useMemo(
     () => () => (
@@ -125,7 +125,7 @@ export const Application = ({
   return (
     <div className="application container-fluid vh-100 vw-100 px-0 d-flex flex-column overflow-hidden">
       <MemorizedApplicationBar />
-      <Drawer className="flex-fill pt-2" openedStateMode={mediaQuery.small ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
+      <Drawer className="flex-fill overflow-hidden pt-2" openedStateMode={mediaQuery.small ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
         <Template name="navigation">      
           <div className="h-100" style={{ width: drawerWidth ?? 240 }}>
             <MemorizedNavigation/>

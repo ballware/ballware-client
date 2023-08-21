@@ -16,54 +16,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint src --fix",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "docs": "typedoc --plugin typedoc-plugin-markdown",
-    "prepublish": "npm run build"
-  },
-  "peerDependencies": {
-    "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
+  "main": "./index.js",  
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
     }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "module": "dist/ballware-react-contexts.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/ballware-react-contexts.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/ballware-react-contexts.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "dependencies": {
-    "@ballware/identity-interface": "^6.12.0",
-    "@ballware/meta-interface": "^6.12.0"
   },
   "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
 }

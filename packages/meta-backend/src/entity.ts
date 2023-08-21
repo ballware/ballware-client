@@ -12,7 +12,7 @@ import {
   EditLayout,
   DocumentSelectEntry,
 } from '@ballware/meta-interface';
-import * as JSON5 from 'json5';
+import JSON5 from 'json5';
 import axios from 'axios';
 
 interface EntityMetadata {
