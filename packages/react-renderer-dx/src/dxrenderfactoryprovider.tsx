@@ -30,7 +30,6 @@ import { CodeEditor } from './editing/items/codeeditor';
 import { CheckBox } from './editing/items/checkbox';
 import { DateBox } from './editing/items/datebox';
 import { DetailGrid } from './editing/items/detailgrid';
-import { DetailTable } from './editing/items/detailtable';
 import { EditableEntityGrid } from './editing/items/editableentitygrid';
 import { DetailTree } from './editing/items/detailtree';
 import { LookupBox } from './editing/items/lookupbox';
@@ -45,7 +44,6 @@ import { StaticLookupBox } from './editing/items/staticlookupbox';
 import { MultiLookupBox } from './editing/items/multilookupbox';
 import { StaticMultiLookupBox } from './editing/items/staticmultilookupbox';
 import { MultiValueBox } from './editing/items/multivaluebox';
-import { SummaryList } from './editing/items/summarylist';
 import { Item } from './layout/item';
 import { Context } from './components/context';
 import { ApplicationBar } from './layout/applicationbar';
@@ -227,13 +225,7 @@ const EditLayoutComponent = ({
         <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
           <Tabs layoutItem={layoutItem} />
         </Item>
-      );
-    case 'summary':
-      return (
-        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
-          <SummaryList layoutItem={layoutItem} />
-        </Item>
-      );
+      );    
     default:
       return (
         <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
@@ -290,9 +282,7 @@ const EditorComponent = ({
     case 'richtext':
       return <RichTextBox layoutItem={options} />;
     case 'detailgrid':
-      return <DetailGrid layoutItem={options} />;
-    case 'detailtable':
-      return <DetailTable layoutItem={options} />;
+      return <DetailGrid layoutItem={options} />;    
     case 'detailtree':
       return <DetailTree layoutItem={options} />;
     case 'entitygrid':
