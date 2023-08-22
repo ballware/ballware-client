@@ -11,6 +11,9 @@ import {
   useContext,
   PropsWithChildren,
 } from 'react';
+
+import { useObservableState } from 'observable-hooks';
+
 import {
   CompiledEntityMetadata,
   CrudItem,
@@ -78,11 +81,14 @@ export const MetaProvider = ({
   const { metaEntityApiFactory, metaGenericEntityApiFactory } = useContext(
     SettingsContext
   );
-  const { token, session } = useContext(RightsContext);
+  const { token$, session$ } = useContext(RightsContext);
   const { lookups, lookupsComplete, createLookups } = useContext(LookupContext);
   const { showError } = useContext(NotificationContext);
 
   const { hasRight } = useContext(TenantContext);
+
+  const token = useObservableState(token$, undefined);
+  const session = useObservableState(session$, undefined);
 
   const navigate = useNavigate();
 

@@ -6,6 +6,7 @@
  */
 
 import { createContext } from 'react';
+import { Observable } from 'rxjs';
 import { SessionWithUserInfo } from '@ballware/identity-interface';
 
 /**
@@ -51,7 +52,7 @@ export interface PersistedRightsState {
 /**
  * Context for providing user session functionality
  */
-export interface RightsContextState extends PersistedRightsState {
+export interface RightsContextState {
   /**
    * Login user
    * @param username Login name for user
@@ -115,9 +116,39 @@ export interface RightsContextState extends PersistedRightsState {
   switchTenant?: (tenant: string) => void;
 
   /**
+   * User rights for current user
+   */
+  session$: Observable<SessionWithUserInfo|undefined>;
+
+  /**
+   * Access token timeout stamp
+   */
+  timeout_in$: Observable<Date|undefined>;
+
+  /**
+   * Access token
+   */
+  token$: Observable<string|undefined>;
+
+  /**
+   * Refresh token
+   */
+  refresh_token$: Observable<string|undefined>;
+
+  /**
+   * Last login try error message
+   */
+  error$: Observable<string|undefined>;
+
+  /**
+   * Current active tenant
+   */
+  tenant$: Observable<string|undefined>;
+
+  /**
    * List of allowed tenants for current user
    */
-  allowedTenants?: Array<{ Id: string, Name: string }>;
+  allowedTenants$: Observable<Array<{ Id: string, Name: string }>|undefined>;
 }
 
 export const RightsContext = createContext({} as RightsContextState);

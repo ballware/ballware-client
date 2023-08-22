@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 
+import { useObservableState } from 'observable-hooks';
+
 import Iframe from 'react-iframe';
 
 import { SettingsContext, RightsContext } from "@ballware/react-contexts";
@@ -10,7 +12,9 @@ const MuiDocumentViewer = () => {
   const [url, setUrl] = useState<string|undefined>(undefined);
 
   const { metaDocumentApiFactory } = useContext(SettingsContext)
-  const { token } = useContext(RightsContext);
+  const { token$ } = useContext(RightsContext);
+  
+  const token = useObservableState(token$, undefined);
   const location = useLocation();
 
   useEffect(() => {

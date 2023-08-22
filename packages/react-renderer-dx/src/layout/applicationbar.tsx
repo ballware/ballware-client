@@ -7,13 +7,16 @@
 
 import { RightsContext } from '@ballware/react-contexts';
 import { useInterval } from '@ballware/react-renderer';
-import { ContextMenu, Toolbar } from 'devextreme-react';
+import { ActionSheet, Toolbar } from 'devextreme-react';
 import { ItemClickEvent } from 'devextreme/ui/context_menu';
 import { dxToolbarItem } from 'devextreme/ui/toolbar';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import React, { useContext, useMemo, useRef } from 'react';
+import { useObservableState } from 'observable-hooks';
 import { useTranslation } from 'react-i18next';
+import { useMedia } from 'react-media';
+import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export interface ApplicationBarProps {
   title?: string;
@@ -34,23 +37,30 @@ export const ApplicationBar = ({
 
   const { t } = useTranslation();
 
+  const { small } = useMedia({ queries: GLOBAL_MEDIA_QUERIES });
+
   const {
-    timeout_in,
-    session,
+    timeout_in$,
+    session$,
     expired,
     logout,
     refresh,
     manageAccount,
-    tenant,
-    allowedTenants,
+    tenant$,
+    allowedTenants$,
     switchTenant
   } = useContext(RightsContext);
+
+  const timeout_in = useObservableState(timeout_in$, undefined);
+  const tenant = useObservableState(tenant$, undefined);
+  const allowedTenants = useObservableState(allowedTenants$, undefined);
+  const session = useObservableState(session$, undefined);
 
   const [timeoutIn, setTimeoutIn] = React.useState(
     timeout_in ? moment(timeout_in).diff(moment(), 'seconds') : 0
   );
 
-  const sessionMenuRef = useRef<ContextMenu>(null);
+  const sessionMenuRef = useRef<ActionSheet>(null);
   
   useInterval(() => {
     if (timeout_in) {
@@ -162,6 +172,6 @@ export const ApplicationBar = ({
   
   return <React.Fragment>
     <Toolbar items={toolbarItems} className={'applicationbar shadow'}/>
-    <ContextMenu ref={sessionMenuRef} hideOnOutsideClick items={sessionMenuItems}></ContextMenu>
+    <ActionSheet ref={sessionMenuRef} usePopover={!small} showTitle={false} width={'auto'} items={sessionMenuItems}/>
   </React.Fragment>
 };

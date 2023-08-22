@@ -13,6 +13,8 @@ import React, {
   useCallback,
 } from 'react';
 
+import { BehaviorSubject } from 'rxjs';
+
 import moment from 'moment';
 
 import { RightsContext, RightsContextState } from '@ballware/react-contexts';
@@ -105,7 +107,23 @@ export const AuthorizationCodeRightsProvider = ({
 }: PropsWithChildren<AuthorizationCodeRightsProviderProps>): JSX.Element => {
   const [userManager, setUserManager] = useState<UserManager>();
 
-  const [value, setValue] = useState<RightsContextState>({});
+  const [session$, ] = useState(new BehaviorSubject<SessionWithUserInfo|undefined>(undefined));
+  const [token$, ] = useState(new BehaviorSubject<string|undefined>(undefined));
+  const [refresh_token$, ] = useState(new BehaviorSubject<string|undefined>(undefined));
+  const [tenant$, ] = useState(new BehaviorSubject<string|undefined>(undefined));
+  const [allowedTenants$, ] = useState(new BehaviorSubject<Array<{ Id: string, Name: string }>|undefined>(undefined));
+  const [timeout_in$, ] = useState(new BehaviorSubject<Date|undefined>(undefined));
+  const [error$, ] = useState(new BehaviorSubject<string|undefined>(undefined));
+
+  const [value, setValue] = useState<RightsContextState>({
+    session$,
+    token$,
+    refresh_token$,
+    tenant$,
+    allowedTenants$,
+    timeout_in$,
+    error$
+  });
 
   const { version, identityUserApiFactory, metaTenantApiFactory } = useContext(SettingsContext);
   const { showInfo, showError } = useContext(NotificationContext);
@@ -153,6 +171,18 @@ export const AuthorizationCodeRightsProvider = ({
       
               session = Object.assign(session, user.profile);
 
+              session$.next(session);
+              token$.next(session.access_token);
+              refresh_token$.next(session.refresh_token);
+              timeout_in$.next(session.expires_in
+                ? moment(new Date())
+                    .add(session.expires_in, 'seconds')
+                    .toDate() 
+                : undefined);
+              tenant$.next(session.tenant as string);
+              allowedTenants$.next(allowedTenants);
+
+              /*
               setValue(previousValue => {
                 return {
                   ...previousValue,
@@ -170,6 +200,7 @@ export const AuthorizationCodeRightsProvider = ({
                   allowedTenants: allowedTenants
                 };
               });
+              */
             }).catch(reason => {
               if (reason?.response?.status === 401 || reason?.response?.status === 403) {
                 console.log('No user authenticated, switch to sign in');
@@ -183,16 +214,7 @@ export const AuthorizationCodeRightsProvider = ({
         });
       }
     }
-  }, [    
-    authority,
-    client,
-    secret,
-    redirect_uri,
-    post_logout_redirect_uri,
-    response_type,
-    scope,
-    metaTenantApiFactory
-  ]);
+  }, [authority, client, redirect_uri, post_logout_redirect_uri, response_type, scope, metaTenantApiFactory, secret, session$, token$, refresh_token$, timeout_in$, tenant$, allowedTenants$]);
 
   useEffect(() => {
     if (version && showInfo && showError && userManager && metaTenantApiFactory && identityUserApiFactory) {
@@ -204,40 +226,24 @@ export const AuthorizationCodeRightsProvider = ({
             userManager.signinRedirect(redirect);
           },
           logout: () => {
-            setValue(previousValue => {
-              return {
-                ...previousValue,
-                rights: undefined,
-                issued: undefined,
-                timeout_in: undefined,
-                token: undefined,
-                refresh_token: undefined,
-                expires_in: undefined,
-                error: undefined,
-                tenant: undefined,
-                allowedTenants: undefined
-              };
-            });
+            session$.next(undefined);
+            token$.next(undefined);
+            refresh_token$.next(undefined);
+            timeout_in$.next(undefined);
+            tenant$.next(undefined);
+            allowedTenants$.next(undefined);
 
             showInfo('rights.notifications.logoutsuccess');
 
             userManager.signoutRedirect();
           },
           expired: () => {
-            setValue(previousValue => {
-              return {
-                ...previousValue,
-                rights: undefined,
-                issued: undefined,
-                timeout_in: undefined,
-                token: undefined,
-                refresh_token: undefined,
-                expires_in: undefined,
-                error: undefined,
-                tenant: undefined,
-                allowedTenants: undefined
-              };
-            });
+            session$.next(undefined);
+            token$.next(undefined);
+            refresh_token$.next(undefined);
+            timeout_in$.next(undefined);
+            tenant$.next(undefined);
+            allowedTenants$.next(undefined);
 
             showInfo('rights.notifications.sessionexpired');
 
@@ -257,6 +263,18 @@ export const AuthorizationCodeRightsProvider = ({
 
                   session = Object.assign(session, user.profile);
 
+                  session$.next(session);
+                  token$.next(session.access_token);
+                  refresh_token$.next(session.refresh_token);
+                  timeout_in$.next(session.expires_in
+                    ? moment(new Date())
+                        .add(session.expires_in, 'seconds')
+                        .toDate() 
+                    : undefined);
+                  tenant$.next(session.tenant as string);
+                  allowedTenants$.next(allowedTenants);
+
+                  /*
                   setValue(previousValue => {
                     return {
                       ...previousValue,
@@ -274,6 +292,7 @@ export const AuthorizationCodeRightsProvider = ({
                       allowedTenants: allowedTenants
                     };
                   });
+                  */
                 });
               }
             });
@@ -292,16 +311,7 @@ export const AuthorizationCodeRightsProvider = ({
         };
       });
     }
-  }, [
-    version,
-    showInfo,
-    showError,
-    authority,
-    client,
-    userManager,
-    metaTenantApiFactory,
-    identityUserApiFactory
-  ]);
+  }, [version, showInfo, showError, userManager, metaTenantApiFactory, identityUserApiFactory, session$, token$, refresh_token$, timeout_in$, tenant$, allowedTenants$]);
 
   const loginRedirectCallback = useCallback(() => {
     if (
@@ -345,6 +355,18 @@ export const AuthorizationCodeRightsProvider = ({
 
               setUserManager(newUserManager);
 
+              session$.next(session);
+              token$.next(session.access_token);
+              refresh_token$.next(session.refresh_token);
+              timeout_in$.next(session.expires_in
+                ? moment(new Date())
+                    .add(session.expires_in, 'seconds')
+                    .toDate() 
+                : undefined);
+              tenant$.next(session.tenant as string);
+              allowedTenants$.next(allowedTenants);
+
+              /*
               setValue(previousValue => {
                 return {
                   ...previousValue,
@@ -362,6 +384,7 @@ export const AuthorizationCodeRightsProvider = ({
                   allowedTenants: allowedTenants
                 };
               });
+              */
 
               navigate('/');
 
@@ -382,7 +405,8 @@ export const AuthorizationCodeRightsProvider = ({
     navigate,
     showInfo,
     showError,
-    metaTenantApiFactory
+    metaTenantApiFactory,
+    session$, token$, refresh_token$, timeout_in$, tenant$, allowedTenants$
   ]);
 
   useEffect(() => {
@@ -406,7 +430,7 @@ export const AuthorizationCodeRightsProvider = ({
           element={<OidcAuthCallback redirectCallback={loginRedirectCallback} />}
         />
         <Route path="*" element={children}/>
-      </Routes>      
+      </Routes>        
     </RightsContext.Provider>
   );
 };

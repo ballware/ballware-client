@@ -11,6 +11,9 @@ import {
   useContext,
   PropsWithChildren,
 } from 'react';
+
+import { useObservableState } from 'observable-hooks';
+
 import {
   RightsContext,
   SettingsContext,
@@ -27,7 +30,9 @@ export const AttachmentProvider = ({
   const [value, setValue] = useState({} as AttachmentContextState);
 
   const { metaAttachmentApiFactory } = useContext(SettingsContext);
-  const { token } = useContext(RightsContext);
+  const { token$ } = useContext(RightsContext);
+
+  const token = useObservableState(token$, undefined);
 
   useEffect(() => {
     if (token && metaAttachmentApiFactory) {

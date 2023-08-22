@@ -12,6 +12,9 @@ import {
   useCallback,
   PropsWithChildren,
 } from 'react';
+
+import { useObservableState } from 'observable-hooks';
+
 import {
   LookupContext,
   LookupContextState,
@@ -238,7 +241,9 @@ export const LookupProvider = ({
     metaPickvalueApiFactory,
     metaProcessingstateApiFactory,
   } = useContext(SettingsContext);
-  const { token } = useContext(RightsContext);
+  const { token$ } = useContext(RightsContext);
+
+  const token = useObservableState(token$, undefined);
 
   const getGenericLookupByIdentifier = useCallback(
     (identifier: string, valueExpr: string, displayExpr: string) => {

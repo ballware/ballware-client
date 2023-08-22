@@ -13,6 +13,9 @@ import {
   useMemo,
   PropsWithChildren,
 } from 'react';
+
+import { useObservableState } from 'observable-hooks';
+
 import {
   CompiledPageData,
   ScriptActions,
@@ -66,8 +69,10 @@ export const PageProvider = ({
     SettingsContext
   );
   const { showInfo, showError } = useContext(NotificationContext);
-  const { token } = useContext(RightsContext);
+  const { token$ } = useContext(RightsContext);
   const { createLookups, lookups, lookupsComplete } = useContext(LookupContext);
+
+  const token = useObservableState(token$, undefined);
 
   const loadDocumentation = useCallback(
     (entity: string) => setDocumentationEntity(entity),

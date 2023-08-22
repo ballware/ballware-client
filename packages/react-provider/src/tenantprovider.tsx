@@ -12,6 +12,9 @@ import {
   useCallback,
   PropsWithChildren,
 } from 'react';
+
+import { useObservableState } from 'observable-hooks';
+
 import { CompiledTenant, NavigationLayoutItem } from '@ballware/meta-interface';
 import {
   TenantContext,
@@ -51,8 +54,27 @@ export const TenantProvider = ({
   const [value, setValue] = useState({} as TenantContextState);
 
   const { metaTenantApiFactory } = useContext(SettingsContext);
-  const { session, token } = useContext(RightsContext);
+  const { session$, token$ } = useContext(RightsContext);
   const { showError } = useContext(NotificationContext);
+
+  const session = useObservableState(session$, undefined);
+  const token = useObservableState(token$, undefined);
+
+  useEffect(() => {
+    if (
+      showError &&
+      token &&
+      session &&
+      session.tenant
+    ) {
+      const api = metaTenantApiFactory();
+  
+      api
+        .metadataForTenant(token, session.tenant as string)
+        .then(result => setTenant(result))
+        .catch(reason => showError(reason));
+    }  
+  }, [metaTenantApiFactory, showError, token, session]);
 
   const hasRight = useCallback(
     (right: string) => {
@@ -66,26 +88,6 @@ export const TenantProvider = ({
     },
     [tenant, session]
   );
-
-  useEffect(() => {
-    if (
-      showError &&
-      metaTenantApiFactory &&
-      token &&
-      session &&
-      session.tenant
-    ) {
-      const api = metaTenantApiFactory();
-
-      api
-        .metadataForTenant(token, session.tenant as string)
-        .then(result => setTenant(result))
-        .catch(reason => showError(reason));
-    } else {
-      setTenant(undefined);
-      setPages(undefined);
-    }
-  }, [showError, metaTenantApiFactory, token, session]);
 
   useEffect(() => {
     if (tenant && session) {

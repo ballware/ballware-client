@@ -11,6 +11,9 @@ import {
   useContext,
   PropsWithChildren,
 } from 'react';
+
+import { useObservableState } from 'observable-hooks';
+
 import {
   StatisticContext,
   StatisticContextState,
@@ -60,9 +63,11 @@ export const StatisticProvider = ({
 
   const { metaStatisticApiFactory } = useContext(SettingsContext);
   const { showError } = useContext(NotificationContext);
-  const { token } = useContext(RightsContext);
+  const { token$ } = useContext(RightsContext);
   const { customParam } = useContext(PageContext);
   const { lookups, lookupsComplete } = useContext(LookupContext);
+
+  const token = useObservableState(token$, undefined);
 
   useEffect(() => {
     if (token && identifier && showError && metaStatisticApiFactory) {
