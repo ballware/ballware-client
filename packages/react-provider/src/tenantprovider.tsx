@@ -9,13 +9,14 @@ import {
   useState,
   useEffect,
   useContext,
-  useCallback,
   PropsWithChildren,
 } from 'react';
 
+import { map, BehaviorSubject } from 'rxjs';
+
 import { useObservableState } from 'observable-hooks';
 
-import { CompiledTenant, NavigationLayoutItem } from '@ballware/meta-interface';
+import { CompiledTenant, NavigationLayout, NavigationLayoutItem } from '@ballware/meta-interface';
 import {
   TenantContext,
   TenantContextState,
@@ -49,16 +50,23 @@ const findPages = (items: Array<NavigationLayoutItem>) => {
 export const TenantProvider = ({
   children,
 }: PropsWithChildren<{}>): JSX.Element => {
-  const [tenant, setTenant] = useState<CompiledTenant>();
-  const [pages, setPages] = useState<Array<NavigationLayoutItem>>();
-  const [value, setValue] = useState({} as TenantContextState);
-
+  
+  const [tenantData$, ] = useState(new BehaviorSubject<CompiledTenant|undefined>(undefined));
+  
   const { metaTenantApiFactory } = useContext(SettingsContext);
-  const { session$, token$ } = useContext(RightsContext);
+  const { session$, token$, tenant$ } = useContext(RightsContext);
   const { showError } = useContext(NotificationContext);
 
+  const [value, setValue] = useState<TenantContextState>({    
+    name$: tenantData$.pipe(map((tenantData) => tenantData?.name)),
+    navigation$: tenantData$.pipe(map((tenantData) => tenantData?.navigation)),
+    pages$: tenantData$.pipe(map((tenantData) => (tenantData?.navigation?.items && findPages(tenantData?.navigation?.items))))
+  });
+
+  
   const session = useObservableState(session$, undefined);
   const token = useObservableState(token$, undefined);
+  const tenant = useObservableState(tenant$, undefined);
 
   useEffect(() => {
     if (
@@ -71,42 +79,17 @@ export const TenantProvider = ({
   
       api
         .metadataForTenant(token, session.tenant as string)
-        .then(result => setTenant(result))
+        .then(tenant => {
+          tenantData$.next(tenant);
+          
+          setValue((prev) => ({
+            ...prev,
+            hasRight: (right) => tenant.hasRight(session, right)
+          }));
+        })
         .catch(reason => showError(reason));
     }  
-  }, [metaTenantApiFactory, showError, token, session]);
-
-  const hasRight = useCallback(
-    (right: string) => {
-      if (tenant && session) {
-        if (tenant.hasRight) {
-          return tenant.hasRight(session, right);
-        }
-      }
-
-      return false;
-    },
-    [tenant, session]
-  );
-
-  useEffect(() => {
-    if (tenant && session) {
-      if (tenant.navigation?.items) {
-        setPages(findPages(tenant.navigation.items));
-      } else {
-        setPages([]);
-      }
-    }
-  }, [tenant, session]);
-
-  useEffect(() => {
-    setValue({
-      name: tenant?.name,
-      navigation: tenant?.navigation,
-      pages,
-      hasRight,
-    } as TenantContextState);
-  }, [tenant, pages, hasRight]);
+  }, [metaTenantApiFactory, showError, token, session, tenant, tenantData$]);
 
   return (
     <TenantContext.Provider value={value}>{children}</TenantContext.Provider>

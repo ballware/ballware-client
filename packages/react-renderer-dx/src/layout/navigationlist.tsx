@@ -7,6 +7,8 @@
 
 import { useCallback, useContext, useMemo } from 'react';
 
+import { useObservableState } from 'observable-hooks';
+
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 import { TenantContext } from '@ballware/react-contexts';
 import { TreeView } from 'devextreme-react';
@@ -17,7 +19,9 @@ export interface NavigationListProps {
 }
 
 export const NavigationList = ({ onPageSelected }: NavigationListProps) => {
-  const { hasRight, navigation } = useContext(TenantContext);
+  const { hasRight, navigation$ } = useContext(TenantContext);
+
+  const navigation = useObservableState(navigation$, undefined);
 
   interface TreeItem {
     text?: string;

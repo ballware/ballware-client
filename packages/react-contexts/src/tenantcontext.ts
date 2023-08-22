@@ -6,6 +6,9 @@
  */
 
 import { createContext } from 'react';
+
+import { Observable } from 'rxjs';
+
 import {
   NavigationLayout,
   NavigationLayoutItem,
@@ -18,24 +21,24 @@ export interface TenantContextState {
   /**
    * Unique name of tenant
    */
-  name?: string;
+  name$: Observable<string|undefined>;
 
   /**
    * Navigation layout metadata for tenant
    */
-  navigation?: NavigationLayout;
+  navigation$: Observable<NavigationLayout|undefined>;
 
   /**
    * List of pages for tenant
    */
-  pages?: Array<NavigationLayoutItem>;
+  pages$: Observable<Array<NavigationLayoutItem>|undefined>;
 
   /**
    * Check if right is permitted for current user
    * @param page Right identifier
    * @returns true if access is allowed
    */
-  hasRight?: (right: string) => boolean;
+  hasRight?: ((right: string) => boolean)|undefined;
 }
 
 export const TenantContext = createContext({} as TenantContextState);

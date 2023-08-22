@@ -5,7 +5,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { useCallback, useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
+
+import { useSubscription, useObservableState } from 'observable-hooks';
 
 import {
   ProviderFactoryContext,
@@ -19,19 +21,12 @@ import { Navigate, Route, Routes as ReactRoutes } from 'react-router-dom';
 import { NavigationLayoutItem } from '@ballware/meta-interface';
 
 export const Routes = () => {
-  const { navigation, pages, hasRight } = useContext(TenantContext);
+  const { navigation$, pages$, hasRight } = useContext(TenantContext);
   const { Page } = useContext(RenderFactoryContext);
   const { LookupProvider, PageProvider } = useContext(ProviderFactoryContext);
 
-  const pageFactory = useCallback((p: NavigationLayoutItem) => {
-    return <PrivateRoute allowed={() => hasRight ? hasRight(`generic.page.${p.options.page ?? 'unknown'}`) : false}>
-      {Page && <LookupProvider>
-        <PageProvider identifier={p.options.page ?? 'unknown'}>
-          <Page />
-        </PageProvider>
-      </LookupProvider>}
-    </PrivateRoute>;
-  }, [LookupProvider, PageProvider, Page, hasRight]);
+  const navigation = useObservableState(navigation$, undefined);
+  const pages = useObservableState(pages$, undefined);
 
   return useMemo(() => {
     let pageKey = 1;
@@ -48,9 +43,17 @@ export const Routes = () => {
       );
     }
 
-    if (pageFactory &&
-      pages
-    ) {
+    if (Page && hasRight && pages) {
+      const pageFactory = (p: NavigationLayoutItem) => {
+        return <PrivateRoute allowed={() => hasRight(`generic.page.${p.options.page ?? 'unknown'}`)}>
+          {Page && <LookupProvider>
+            <PageProvider identifier={p.options.page ?? 'unknown'}>
+              <Page />
+            </PageProvider>
+          </LookupProvider>}
+        </PrivateRoute>;
+      };
+
       renderedPages.push(
         ...pages.map(p => (
           <Route key={pageKey++} path={`/${p.options.url?.toLowerCase() ??
@@ -62,6 +65,9 @@ export const Routes = () => {
   }, [
     navigation,
     pages,
-    pageFactory
+    LookupProvider,
+    PageProvider,
+    Page, 
+    hasRight
   ]);
 };

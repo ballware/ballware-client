@@ -13,6 +13,8 @@ import React, {
   PropsWithChildren,
 } from 'react';
 
+import { useObservableState } from 'observable-hooks';
+
 import { RenderFactoryContext } from '@ballware/react-renderer';
 import { TenantContext } from '@ballware/react-contexts';
 import { Drawer, Template } from 'devextreme-react';
@@ -65,7 +67,9 @@ export const Application = ({
   const [menuOpen, setMenuOpen] = useState(mediaQuery.large);
 
   const { ApplicationBar, Navigation } = useContext(RenderFactoryContext);
-  const { navigation } = useContext(TenantContext);
+  const { navigation$ } = useContext(TenantContext);
+
+  const navigation = useObservableState(navigation$, undefined);
 
   const onToggleMenu = useCallback(() => {
     setMenuOpen(!menuOpen);
