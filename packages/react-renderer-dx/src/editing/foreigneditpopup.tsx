@@ -16,6 +16,7 @@ import {
   ForeignEditPopupProps,
   RenderFactoryContext,
 } from '@ballware/react-renderer';
+import { useObservableState } from 'observable-hooks';
 
 export const ForeignEditPopup = ({
   functionIdentifier,
@@ -30,11 +31,13 @@ export const ForeignEditPopup = ({
   const { EditPopup } = useContext(RenderFactoryContext);
 
   const { EditProvider } = useContext(ProviderFactoryContext);
-  const { lookupsComplete } = useContext(LookupContext);
+  const { lookupsComplete$ } = useContext(LookupContext);
   const { getEditLayout, customFunctions } = useContext(MetaContext);
   const { customEdit, customEditing, customEditParam } = useContext(
     CrudContext
   );
+
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
 
   const getEditLayoutForIdentifier = useCallback(
     (layoutIdentifier: string) => {

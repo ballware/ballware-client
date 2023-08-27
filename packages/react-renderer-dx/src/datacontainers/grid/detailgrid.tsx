@@ -34,6 +34,7 @@ import { componentToEditorRef } from '../../editing/items/common';
 import { dxElement } from 'devextreme/core/element';
 import { dxToolbarItem, dxToolbarOptions } from 'devextreme/ui/toolbar';
 import { CodeEditor } from '../../editing/items/codeeditor';
+import { useObservableState } from 'observable-hooks';
 
 export interface DetailGridRef {
   getValue: () => Array<Record<string, unknown>>;
@@ -90,9 +91,11 @@ export const DetailGrid = forwardRef<DetailGridRef, DetailGridProps>(
       detailEditorValueChanged,
       detailEditorEntered,
     } = useContext(EditItemsContext);
-    const { lookups } = useContext(LookupContext);
+    const { lookups$ } = useContext(LookupContext);
     const { item } = useContext(EditContext);
     const gridRef = useRef<DataGrid>(null);
+
+    const lookups = useObservableState(lookups$, undefined);
 
     const { t } = useTranslation();
 

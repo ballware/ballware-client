@@ -6,6 +6,7 @@
  */
 
 import { createContext } from 'react';
+import { Observable } from 'rxjs';
 
 /**
  * Data access adapter for fetching lookup data
@@ -128,15 +129,15 @@ export interface LookupContextState {
   /**
    * Container for created lookups
    */
-  lookups?: Record<
-    string,
-    LookupDescriptor | LookupCreator | AutocompleteCreator | Array<unknown>
-  >;
+  lookups$: Observable<Record<
+      string,
+      LookupDescriptor | LookupCreator | AutocompleteCreator | Array<unknown>
+    >|undefined>;
 
   /**
    * True if requested lookups are completely available
    */
-  lookupsComplete?: boolean;
+  lookupsComplete$: Observable<boolean|undefined>;
 
   /**
    * Request list of static required lookups in consumer

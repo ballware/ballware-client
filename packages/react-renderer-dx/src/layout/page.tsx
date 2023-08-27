@@ -12,17 +12,26 @@ import { LookupContext } from '@ballware/react-contexts';
 import { PageContext } from '@ballware/react-contexts';
 import { RenderFactoryContext } from '@ballware/react-renderer';
 import { Container } from './container';
+import { useObservableState } from 'observable-hooks';
 
 export const Page = (): JSX.Element => {
   const { PageLayoutItem, PageToolbar } = useContext(RenderFactoryContext);
   const {
-    layout,
-    customParam,
-    documentation,
-    pageParam,
+    layout$,
+    customParam$,
+    documentation$,
+    pageParam$,
     resetDocumentation,
   } = useContext(PageContext);
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups$, lookupsComplete$ } = useContext(LookupContext);
+
+  const lookups = useObservableState(lookups$, undefined);
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
+
+  const layout = useObservableState(layout$, undefined);
+  const customParam = useObservableState(customParam$, undefined);
+  const documentation = useObservableState(documentation$, undefined);
+  const pageParam = useObservableState(pageParam$, undefined);
 
   return useMemo(() => {
 

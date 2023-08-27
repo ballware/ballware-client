@@ -82,13 +82,16 @@ export const MetaProvider = ({
     SettingsContext
   );
   const { token$, session$ } = useContext(RightsContext);
-  const { lookups, lookupsComplete, createLookups } = useContext(LookupContext);
+  const { lookups$, lookupsComplete$, createLookups } = useContext(LookupContext);
   const { showError } = useContext(NotificationContext);
 
   const { hasRight } = useContext(TenantContext);
 
   const token = useObservableState(token$, undefined);
   const session = useObservableState(session$, undefined);
+
+  const lookups = useObservableState(lookups$, undefined);
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
 
   const navigate = useNavigate();
 

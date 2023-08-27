@@ -14,6 +14,7 @@ import {
 import { PageContext, ProviderFactoryContext } from '@ballware/react-contexts';
 import { CrudFunctions } from './crudfunctions';
 import { RenderFactoryContext } from '../renderfactorycontext';
+import { useObservableState } from 'observable-hooks';
 
 /**
  * Properties for crudcontainer component
@@ -44,8 +45,10 @@ export const CrudContainer = ({
     AttachmentProvider,
     CrudProvider,
   } = useContext(ProviderFactoryContext);
-  const { customParam } = useContext(PageContext);
+  const { customParam$ } = useContext(PageContext);
   const { PageLayoutItem } = useContext(RenderFactoryContext);
+
+  const customParam = useObservableState(customParam$, undefined);
 
   if (
     customParam &&

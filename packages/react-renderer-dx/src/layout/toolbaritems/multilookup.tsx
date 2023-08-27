@@ -19,15 +19,18 @@ import {
 } from './common';
 import { createLookupDataSource } from '../../util/datasource';
 import { TagBox } from 'devextreme-react';
+import { useObservableState } from 'observable-hooks';
 
 export const MultiLookupToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
 
   const { name, caption, defaultValue, lookup, width } = toolbarItem;
 
-  const { lookups } = useContext(LookupContext);
+  const { lookups$ } = useContext(LookupContext);
   const { paramEditorInitialized, paramEditorValueChanged } = useContext(
     ToolbarItemsContext
   );
+
+  const lookups = useObservableState(lookups$, undefined);
 
   const mylookup =
     lookups && lookup ? (lookups[lookup] as LookupDescriptor) : undefined;

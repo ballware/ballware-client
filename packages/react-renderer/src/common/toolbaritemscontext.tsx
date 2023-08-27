@@ -22,6 +22,7 @@ import {
   LookupContext,
   PageContext,
 } from '@ballware/react-contexts';
+import { useObservableState } from 'observable-hooks';
 
 /**
  * Context providing environmental functionality for toolbar items
@@ -83,13 +84,16 @@ export const ToolbarItemsProvider = ({
 }: PropsWithChildren) => {
   const [value, setValue] = useState<ToolbarItemsContextState>({});
 
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups$, lookupsComplete$ } = useContext(LookupContext);
   const {
     paramsInitialized,
     paramEditorInitialized,
     paramEditorValueChanged,
     paramEditorEvent,
   } = useContext(PageContext);
+
+  const lookups = useObservableState(lookups$, undefined);
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
 
   const toolbarItems = useMemo(() => {
     return {} as Record<string, ToolbarItemRef>;

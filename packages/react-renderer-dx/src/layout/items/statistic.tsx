@@ -38,6 +38,7 @@ import { ExportingEvent } from 'devextreme/ui/pivot_grid';
 import { Workbook } from 'exceljs';
 import { exportPivotGrid } from 'devextreme/excel_exporter';
 import saveAs from 'file-saver';
+import { useObservableState } from 'observable-hooks';
 
 export interface StatisticProps {
   identifier: string;
@@ -46,11 +47,13 @@ export interface StatisticProps {
 
 const MyStatisticElement = () => {
   const { googlekey } = useContext(SettingsContext);
-  const { customParam } = useContext(PageContext);
+  const { customParam$ } = useContext(PageContext);
   const { name, params, data, layout, argumentAxisCustomizeText } = useContext(
     StatisticContext
   );
 
+  const customParam = useObservableState(customParam$, undefined);
+  
   const onLegendClick = useCallback((e: { target?: chartSeriesObject }) => {
     if (e.target) {
       if (e.target.isVisible()) {

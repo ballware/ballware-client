@@ -41,6 +41,7 @@ import { dxEvent } from 'devextreme/events';
 import { DataGrid } from './datagrid';
 import { dxDataGridColumn } from 'devextreme/ui/data_grid';
 import { useTranslation } from 'react-i18next';
+import { useObservableState } from 'observable-hooks';
 
 export interface GridProps {
   layout: string;
@@ -63,7 +64,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
     Array<{ id: string; text: string; customFunction?: EntityCustomFunction }>
   >();
 
-  const { lookups } = useContext(LookupContext);
+  const { lookups$ } = useContext(LookupContext);
   const {
     getGridLayout,
     displayName,
@@ -93,6 +94,8 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
     importItems,
     fetchedItems,    
   } = useContext(CrudContext);
+
+  const lookups = useObservableState(lookups$, undefined);
 
   const actionRows = useRef<Array<CrudItem>>();
 

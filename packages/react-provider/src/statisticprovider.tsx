@@ -64,10 +64,15 @@ export const StatisticProvider = ({
   const { metaStatisticApiFactory } = useContext(SettingsContext);
   const { showError } = useContext(NotificationContext);
   const { token$ } = useContext(RightsContext);
-  const { customParam } = useContext(PageContext);
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { customParam$ } = useContext(PageContext);
+  const { lookups$, lookupsComplete$ } = useContext(LookupContext);
 
   const token = useObservableState(token$, undefined);
+
+  const lookups = useObservableState(lookups$, undefined);
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
+
+  const customParam = useObservableState(customParam$, undefined);
 
   useEffect(() => {
     if (token && identifier && showError && metaStatisticApiFactory) {

@@ -7,6 +7,7 @@
 
 import { ScriptUtil } from './scriptutil';
 import { EditUtil } from './entity';
+import { Observable } from 'rxjs';
 
 /**
  * Options for layout item type 'tab'
@@ -410,5 +411,5 @@ export interface MetaPageApi {
   pageDataForIdentifier: (
     token: string,
     page: string
-  ) => Promise<CompiledPageData>;
+  ) => Observable<CompiledPageData>;
 }

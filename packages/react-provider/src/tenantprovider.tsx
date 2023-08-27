@@ -16,7 +16,7 @@ import { map, BehaviorSubject } from 'rxjs';
 
 import { useObservableState } from 'observable-hooks';
 
-import { CompiledTenant, NavigationLayout, NavigationLayoutItem } from '@ballware/meta-interface';
+import { CompiledTenant, NavigationLayoutItem } from '@ballware/meta-interface';
 import {
   TenantContext,
   TenantContextState,

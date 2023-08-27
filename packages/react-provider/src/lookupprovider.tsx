@@ -9,7 +9,6 @@ import {
   useContext,
   useState,
   useEffect,
-  useCallback,
   PropsWithChildren,
 } from 'react';
 
@@ -32,6 +31,7 @@ import {
   MetaProcessingstateApi,
   MetaPickvalueApi,
 } from '@ballware/meta-interface';
+import { BehaviorSubject } from 'rxjs';
 
 const createUserLookup = (
   token: () => string,
@@ -225,15 +225,15 @@ const createGenericLookupByIdentifier = (
 export const LookupProvider = ({
   children,
 }: PropsWithChildren<{}>): JSX.Element => {
-  const [requestedLookups, setRequestedLookups] = useState([] as Array<string>);
-  const [lookupsComplete, setLookupsComplete] = useState(false);
-  const [lookups, setLookups] = useState<
-    | Record<
-        string,
-        LookupDescriptor | LookupCreator | AutocompleteCreator | Array<unknown>
-      >
-    | undefined
-  >();
+  const [lookupsComplete$, ] = useState(new BehaviorSubject<boolean>(false));
+  const [lookups$, ] = useState(new BehaviorSubject<
+      Record<
+          string,
+          LookupDescriptor | LookupCreator | AutocompleteCreator | Array<unknown>
+        >
+      | undefined
+    >(undefined));
+
   const {
     identityUserApiFactory,
     identityRoleApiFactory,
@@ -243,220 +243,162 @@ export const LookupProvider = ({
   } = useContext(SettingsContext);
   const { token$ } = useContext(RightsContext);
 
+  const [value, setNewValue] = useState({
+    lookups$,
+    lookupsComplete$
+  } as LookupContextState);
+
   const token = useObservableState(token$, undefined);
 
-  const getGenericLookupByIdentifier = useCallback(
-    (identifier: string, valueExpr: string, displayExpr: string) => {
-      if (token && metaLookupApiFactory) {
-        const lookupApi = metaLookupApiFactory();
-
-        return createGenericLookupByIdentifier(
-          () => token,
-          lookupApi,
-          identifier,
-          valueExpr,
-          displayExpr
-        );
-      }
-
-      return undefined;
-    },
-    [metaLookupApiFactory, token]
-  );
-
-  const createLookups = useCallback(
-    (requests: Array<LookupRequest>) => {
-      if (
+  useEffect(() => {
+    if (token &&             
         metaLookupApiFactory &&
         metaProcessingstateApiFactory &&
         metaPickvalueApiFactory &&
         identityUserApiFactory &&
-        identityRoleApiFactory &&
-        token
-      ) {
-        setRequestedLookups([
-          'userLookup',
-          'roleLookup',
-          ...requests.map(l => l.identifier),
-        ]);
-        setLookupsComplete(false);
+        identityRoleApiFactory) {
 
-        const lookupApi = metaLookupApiFactory();
-        const processingstateApi = metaProcessingstateApiFactory();
-        const pickvalueApi = metaPickvalueApiFactory();
-        const newLookups = {} as Record<
-          string,
-          | LookupDescriptor
-          | LookupCreator
-          | AutocompleteCreator
-          | Array<unknown>
-        >;
-
-        newLookups['userLookup'] = createUserLookup(
-          () => token as string,
-          identityUserApiFactory(),
-          'id',
-          'name'
-        );
-        newLookups['roleLookup'] = createRoleLookup(
-          () => token as string,
-          identityRoleApiFactory(),
-          'id',
-          'name'
-        );
-
-        requests?.forEach(l => {
-          if (l.type) {
-            switch (l.type) {
-              case 'lookup':
-                if (l.lookupId && l.valueMember && l.displayMember) {
-                  newLookups[l.identifier] = createGenericLookup(
-                    () => token as string,
-                    lookupApi,
-                    l.lookupId,
-                    l.valueMember,
-                    l.displayMember
-                  );
-                } else {
-                  console.error(
-                    `Missing params for lookup type 'lookup': lookupId: ${l.lookupId}, valueMember: ${l.valueMember}, displayMember: ${l.displayMember}`
-                  );
-                }
-                break;
-              case 'lookupwithparam':
-                if (l.lookupId && l.valueMember && l.displayMember) {
-                  newLookups[l.identifier] = createGenericLookupWithParam(
-                    () => token as string,
-                    lookupApi,
-                    l.lookupId,
-                    l.valueMember,
-                    l.displayMember
-                  );
-                } else {
-                  console.error(
-                    `Missing params for lookup type 'lookupwithparam': lookupId: ${l.lookupId}, valueMember: ${l.valueMember}, displayMember: ${l.displayMember}`
-                  );
-                }
-                break;
-              case 'pickvalue':
-                newLookups[l.identifier] = createGenericPickvalueLookup(
-                  () => token as string,
-                  pickvalueApi,
-                  l.entity as string,
-                  l.field as string,
-                  l.valueMember,
-                  l.displayMember
-                );
-                break;
-              case 'autocomplete':
-                if (l.lookupId) {
-                  newLookups[l.identifier] = createGenericAutocomplete(
-                    () => token as string,
-                    lookupApi,
-                    l.lookupId
-                  );
-                } else {
-                  console.error(
-                    `Missing params for lookup type 'autocomplete': lookupId: ${l.lookupId}`
-                  );
-                }
-                break;
-              case 'autocompletewithparam':
-                if (l.lookupId) {
-                  newLookups[l.identifier] = createGenericAutocompleteWithParam(
-                    () => token as string,
-                    lookupApi,
-                    l.lookupId
-                  );
-                } else {
-                  console.error(
-                    `Missing params for lookup type 'autocompletewithparam': lookupId: ${l.lookupId}`
-                  );
-                }
-                break;
-              case 'state':
-                newLookups[l.identifier] = createGenericStateLookup(
-                  () => token as string,
-                  processingstateApi,
-                  l.entity as string,
-                  l.valueMember,
-                  l.displayMember
-                );
-                break;
-              case 'stateallowed':
-                newLookups[l.identifier] = createGenericAllowedStateLookup(
-                  () => token as string,
-                  processingstateApi,
-                  l.entity as string,
-                  l.valueMember,
-                  l.displayMember
-                );
-                break;
-            }
-          }
-        });
-
-        setLookups(newLookups);
-      }
-    },
-    [
-      metaLookupApiFactory,
-      metaProcessingstateApiFactory,
-      metaPickvalueApiFactory,
-      identityUserApiFactory,
-      identityRoleApiFactory,
-      token,
-    ]
-  );
-
-  const [value, setValue] = useState({
-    lookups: lookups,
-    lookupsComplete: false,
-    createLookups: undefined,
-    getGenericLookupByIdentifier: undefined,
-  } as LookupContextState);
-
-  useEffect(() => {
-    if (
-      token
-    ) {
-      setValue(previousValue => {
-        return {
-          ...previousValue,
-          createLookups,
-          getGenericLookupByIdentifier,
+      const getGenericLookupByIdentifier = (identifier: string, valueExpr: string, displayExpr: string) => {
+          const lookupApi = metaLookupApiFactory();
+  
+          return createGenericLookupByIdentifier(
+            () => token,
+            lookupApi,
+            identifier,
+            valueExpr,
+            displayExpr
+          );
         };
-      });
+        
+      const createLookups = (requests: Array<LookupRequest>) => {
+            
+          const lookupApi = metaLookupApiFactory();
+          const processingstateApi = metaProcessingstateApiFactory();
+          const pickvalueApi = metaPickvalueApiFactory();
+          const newLookups = {} as Record<
+            string,
+            | LookupDescriptor
+            | LookupCreator
+            | AutocompleteCreator
+            | Array<unknown>
+          >;
+  
+          newLookups['userLookup'] = createUserLookup(
+            () => token as string,
+            identityUserApiFactory(),
+            'id',
+            'name'
+          );
+          newLookups['roleLookup'] = createRoleLookup(
+            () => token as string,
+            identityRoleApiFactory(),
+            'id',
+            'name'
+          );
+  
+          requests?.forEach(l => {
+            if (l.type) {
+              switch (l.type) {
+                case 'lookup':
+                  if (l.lookupId && l.valueMember && l.displayMember) {
+                    newLookups[l.identifier] = createGenericLookup(
+                      () => token as string,
+                      lookupApi,
+                      l.lookupId,
+                      l.valueMember,
+                      l.displayMember
+                    );
+                  } else {
+                    console.error(
+                      `Missing params for lookup type 'lookup': lookupId: ${l.lookupId}, valueMember: ${l.valueMember}, displayMember: ${l.displayMember}`
+                    );
+                  }
+                  break;
+                case 'lookupwithparam':
+                  if (l.lookupId && l.valueMember && l.displayMember) {
+                    newLookups[l.identifier] = createGenericLookupWithParam(
+                      () => token as string,
+                      lookupApi,
+                      l.lookupId,
+                      l.valueMember,
+                      l.displayMember
+                    );
+                  } else {
+                    console.error(
+                      `Missing params for lookup type 'lookupwithparam': lookupId: ${l.lookupId}, valueMember: ${l.valueMember}, displayMember: ${l.displayMember}`
+                    );
+                  }
+                  break;
+                case 'pickvalue':
+                  newLookups[l.identifier] = createGenericPickvalueLookup(
+                    () => token as string,
+                    pickvalueApi,
+                    l.entity as string,
+                    l.field as string,
+                    l.valueMember,
+                    l.displayMember
+                  );
+                  break;
+                case 'autocomplete':
+                  if (l.lookupId) {
+                    newLookups[l.identifier] = createGenericAutocomplete(
+                      () => token as string,
+                      lookupApi,
+                      l.lookupId
+                    );
+                  } else {
+                    console.error(
+                      `Missing params for lookup type 'autocomplete': lookupId: ${l.lookupId}`
+                    );
+                  }
+                  break;
+                case 'autocompletewithparam':
+                  if (l.lookupId) {
+                    newLookups[l.identifier] = createGenericAutocompleteWithParam(
+                      () => token as string,
+                      lookupApi,
+                      l.lookupId
+                    );
+                  } else {
+                    console.error(
+                      `Missing params for lookup type 'autocompletewithparam': lookupId: ${l.lookupId}`
+                    );
+                  }
+                  break;
+                case 'state':
+                  newLookups[l.identifier] = createGenericStateLookup(
+                    () => token as string,
+                    processingstateApi,
+                    l.entity as string,
+                    l.valueMember,
+                    l.displayMember
+                  );
+                  break;
+                case 'stateallowed':
+                  newLookups[l.identifier] = createGenericAllowedStateLookup(
+                    () => token as string,
+                    processingstateApi,
+                    l.entity as string,
+                    l.valueMember,
+                    l.displayMember
+                  );
+                  break;
+              }
+            }
+          });
+  
+          lookups$.next(newLookups);          
+          lookupsComplete$.next(true);
+        };
+
+        setNewValue((prev) => ({
+          ...prev,
+          getGenericLookupByIdentifier,
+          createLookups
+        }));
     }
-  }, [
-    getGenericLookupByIdentifier,
-    identityUserApiFactory,
-    identityRoleApiFactory,
-    metaLookupApiFactory,
-    metaPickvalueApiFactory,
-    metaProcessingstateApiFactory,
-    token,
-    createLookups,
-  ]);
 
-  useEffect(() => {
-    if (lookups) {
-      const mylookups = requestedLookups.map(l => lookups[l]);
-
-      setValue(previousValue => {
-        return { ...previousValue, lookups, lookupsComplete: false };
-      });
-      setLookupsComplete(mylookups.length > 0 && mylookups.every(Boolean));
-    }
-  }, [lookups, requestedLookups]);
-
-  useEffect(() => {
-    console.log(`Lookups complete ${lookupsComplete}`);
-
-    setValue(previousValue => {
-      return { ...previousValue, lookupsComplete };
-    });
-  }, [lookupsComplete]);
+  }, [identityUserApiFactory, identityRoleApiFactory, metaLookupApiFactory, metaPickvalueApiFactory, metaProcessingstateApiFactory, token, lookups$, lookupsComplete$]);
 
   return (
     <LookupContext.Provider value={value}>{children}</LookupContext.Provider>

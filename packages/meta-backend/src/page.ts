@@ -7,7 +7,8 @@
 
 import { MetaPageApi, CompiledPageData } from '@ballware/meta-interface';
 import JSON5 from 'json5';
-import axios from 'axios';
+import { Observable, map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
 
 interface PageData {
   Identifier: string;
@@ -180,12 +181,15 @@ const compilePage = (pageData: PageData): CompiledPageData => {
 const pageDataForIdentifier = (metaServiceBaseUrl: string) => (
   token: string,
   page: string
-): Promise<CompiledPageData> => {
+): Observable<CompiledPageData> => {
   const url = `${metaServiceBaseUrl}api/page/pagedataforidentifier/${page}`;
 
-  return axios
-    .get<PageData>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => compilePage(response.data));
+  return ajax<PageData>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(r => compilePage(r.response)));
+
+  //return axios
+  //  .get<PageData>(url, { headers: { Authorization: `Bearer ${token}` } })
+  //  .then(response => compilePage(response.data));
 };
 
 /**

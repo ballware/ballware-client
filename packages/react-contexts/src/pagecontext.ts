@@ -6,6 +6,9 @@
  */
 
 import { createContext } from 'react';
+
+import { Observable } from 'rxjs';
+
 import {
   EditUtil,
   ValueType,
@@ -20,22 +23,22 @@ export interface PageContextState {
   /**
    * Current provided page layout
    */
-  layout?: PageLayout;
+  layout$: Observable<PageLayout|undefined>;
 
   /**
    * Page param provided by param editors or url
    */
-  pageParam?: QueryParams;
+  pageParam$: Observable<QueryParams|undefined>;
 
   /**
    * Custom param provided by custom page scripts
    */
-  customParam?: Record<string, unknown>;
+  customParam$: Observable<Record<string, unknown>|undefined>;
 
   /**
    * Documentation text provided for display
    */
-  documentation?: string | undefined;
+  documentation$: Observable<string|undefined>;
 
   /**
    * Load documentation for documentation identifier

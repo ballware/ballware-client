@@ -39,6 +39,7 @@ import {
 import { EditorRef } from './editor';
 import { RenderFactoryContext } from '../renderfactorycontext';
 import { getByPath, setByPath } from './databinding';
+import { useObservableState } from 'observable-hooks';
 
 /**
  * Context providing environmental functionality for rendered edit layout
@@ -294,7 +295,7 @@ export const EditItemsProvider = forwardRef<
 
   const { EditLayoutItem } = useContext(RenderFactoryContext);
   const { EditProvider } = useContext(ProviderFactoryContext);
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups$, lookupsComplete$ } = useContext(LookupContext);
   const {
     editorPreparing,
     editorInitialized,
@@ -307,6 +308,9 @@ export const EditItemsProvider = forwardRef<
     initNewDetailItem,
   } = useContext(MetaContext);
   const { item, mode } = useContext(EditContext);
+
+  const lookups = useObservableState(lookups$, undefined);
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
 
   useImperativeHandle(ref, () => ({
     validate: () => {

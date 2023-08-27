@@ -7,7 +7,7 @@
 
 import { useContext, useMemo } from 'react';
 
-import { useSubscription, useObservableState } from 'observable-hooks';
+import { useObservableState } from 'observable-hooks';
 
 import {
   ProviderFactoryContext,

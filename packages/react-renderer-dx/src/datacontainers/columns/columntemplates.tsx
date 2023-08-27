@@ -33,6 +33,7 @@ import {
   getByPath,
   setByPath,
 } from '@ballware/react-renderer';
+import { useObservableState } from 'observable-hooks';
 
 export type OptionButtons =
   | 'add'
@@ -256,9 +257,11 @@ const TemplateColumn = ({
   const { detailGridCellPreparing, EditProvider } = useContext(
     EditItemsContext
   );
-  const { lookups, getGenericLookupByIdentifier } = useContext(LookupContext);
+  const { lookups$, getGenericLookupByIdentifier } = useContext(LookupContext);
 
   const [prepared, setPrepared] = useState<boolean>();
+
+  const lookups = useObservableState(lookups$, undefined);
 
   const columnOptions = useMemo(() => {
     return { ...column } as GridLayoutColumn;

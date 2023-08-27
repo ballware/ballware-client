@@ -23,6 +23,7 @@ import {
   DefaultEditFunction,
 } from '@ballware/react-contexts';
 import { RenderFactoryContext } from '../renderfactorycontext';
+import { useObservableState } from 'observable-hooks';
 
 /**
  * Properties for crud functions component
@@ -37,7 +38,7 @@ export const CrudFunctions = ({
 }: PropsWithChildren<CrudFunctionsProps>) => {
   const { t } = useTranslation();
 
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups$, lookupsComplete$ } = useContext(LookupContext);
 
   const { EditPopup, DeletePopup, IframePopup, ForeignEditPopup, ImportPopup } = useContext(
     RenderFactoryContext
@@ -67,6 +68,9 @@ export const CrudFunctions = ({
     editLayout,
     item,
   } = useContext(CrudContext);
+
+  const lookups = useObservableState(lookups$, undefined);
+  const lookupsComplete = useObservableState(lookupsComplete$, undefined);
 
   useEffect(() => {
     if (load && fetchParams) {

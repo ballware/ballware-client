@@ -33,6 +33,7 @@ import { dxElement } from 'devextreme/core/element';
 import { dxToolbarItem, dxToolbarOptions } from 'devextreme/ui/toolbar';
 import { Item, Toolbar } from 'devextreme-react/toolbar';
 import { CodeEditor } from '../../editing/items/codeeditor';
+import { useObservableState } from 'observable-hooks';
 
 export interface DetailTreeRef {
   getValue: () => Array<Record<string, unknown>>;
@@ -65,7 +66,9 @@ export const DetailTree = forwardRef<DetailTreeRef, DetailTreeProps>(
       detailEditorValueChanged,
       detailEditorEntered,
     } = useContext(EditItemsContext);
-    const { lookups } = useContext(LookupContext);
+    const { lookups$ } = useContext(LookupContext);
+
+    const lookups = useObservableState(lookups$, undefined);
 
     const treeRef = useRef<TreeList>(null);
 
