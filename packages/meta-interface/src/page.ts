@@ -5,9 +5,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 import { ScriptUtil } from './scriptutil';
 import { EditUtil } from './entity';
-import { Observable } from 'rxjs';
 
 /**
  * Options for layout item type 'tab'

@@ -10,6 +10,8 @@ import JSON5 from 'json5';
 import moment from 'moment';
 import axios from 'axios';
 
+import { catchError, throwError } from 'rxjs';
+
 import { ScriptUtil } from '@ballware/meta-interface';
 import {
   LookupDescriptor,
@@ -118,10 +120,14 @@ export const createUtil = (token: string): ScriptUtil => {
     ) => {
       ((lookup as LookupDescriptor).store as LookupStoreDescriptor)
         .listFunc()
-        .then(result => {
+        .pipe(catchError((error) => {
+          console.error(error);
+
+          return throwError(() => error);
+        }))
+        .subscribe(result => {
           callback(result);
-        })
-        .catch(reason => console.error(reason));
+        });
     },
     withLookupById: (
       lookup: unknown,
@@ -130,10 +136,14 @@ export const createUtil = (token: string): ScriptUtil => {
     ) => {
       ((lookup as LookupDescriptor).store as LookupStoreDescriptor)
         .byIdFunc(id)
-        .then(result => {
+        .pipe(catchError((error) => {
+          console.error(error);
+
+          return throwError(() => error);
+        }))
+        .subscribe(result => {
           callback(result);
-        })
-        .catch(reason => console.error(reason));
+        });
     },
     withAutocompleteList: (
       autocomplete: unknown,
@@ -141,10 +151,14 @@ export const createUtil = (token: string): ScriptUtil => {
     ) => {
       (autocomplete as LookupDescriptor).store
         .listFunc()
-        .then(result => {
+        .pipe(catchError((error) => {
+          console.error(error);
+
+          return throwError(() => error);
+        }))
+        .subscribe(result => {
           callback(result);
-        })
-        .catch(reason => console.error(reason));
+        });
     },
     getJson: (url, success, failure) => {
       axios

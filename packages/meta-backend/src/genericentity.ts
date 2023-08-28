@@ -11,146 +11,169 @@ import {
   QueryParams,
 } from '@ballware/meta-interface';
 import { additionalParamsToUrl } from './util';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const queryFunc = (baseUrl: string) => (
   token: string,
   query: string,
   params?: QueryParams
-): Promise<Array<CrudItem>> => {
+) => {
   const queryParams = params ? additionalParamsToUrl(params) : undefined;
 
   const url = queryParams
     ? `${baseUrl}/query?identifier=${encodeURIComponent(query)}${queryParams}`
     : `${baseUrl}/all?identifier=${encodeURIComponent(query)}`;
 
-  return axios
-    .get(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<Array<CrudItem>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const countFunc = (baseUrl: string) => (
   token: string,
   query: string,
   params?: QueryParams
-): Promise<number> => {
+) => {
   const queryParams = params ? additionalParamsToUrl(params) : undefined;
 
   const url = queryParams
     ? `${baseUrl}/count?identifier=${encodeURIComponent(query)}${queryParams}`
     : `${baseUrl}/count?identifier=${encodeURIComponent(query)}`;
 
-  return axios
-    .get<{ count: number }>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data?.count);
+  return ajax<{ count: number }>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response?.count))
+    .pipe(catchApiError);
 };
 
 const byIdFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
   id: string
-): Promise<CrudItem> => {
+) => {
   const url = `${baseUrl}/byId?identifier=${encodeURIComponent(functionIdentifier)}&id=${encodeURIComponent(id)}`;
 
-  return axios
-    .get(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<CrudItem>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const newFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
   params?: QueryParams
-): Promise<CrudItem> => {
+) => {
   const queryParams = params ? additionalParamsToUrl(params) : undefined;
 
   const url = queryParams
     ? `${baseUrl}/newquery?identifier=${encodeURIComponent(functionIdentifier)}${queryParams}`
     : `${baseUrl}/new?identifier=${encodeURIComponent(functionIdentifier)}`;
 
-  return axios
-    .get(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<CrudItem>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);  
 };
 
 const saveFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
   item: object
-): Promise<void> => {
+) => {
   const url = `${baseUrl}/save?identifier=${encodeURIComponent(functionIdentifier)}`;
 
-  return axios.post(url, JSON.stringify(item), {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  return ajax<void>({ 
+      url, 
+      method: 'POST',
+      headers: { 
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(item)
+    })    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);  
 };
 
 const saveBatchFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
   items: object[]
-): Promise<void> => {
+) => {
   const url = `${baseUrl}/savebatch?identifier=${encodeURIComponent(functionIdentifier)}`;
 
-  return axios.post(url, JSON.stringify(items), {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  return ajax<void>({ 
+      url, 
+      method: 'POST',
+      headers: { 
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(items)
+    })    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);  
 };
 
 const removeFunc = (baseUrl: string) => (
   token: string,
   id: string
-): Promise<void> => {
+) => {
   const url = `${baseUrl}/remove/${id}`;
-    
-  return new Promise((resolve, reject) => {
-    axios.delete(url, { headers: { Authorization: `Bearer ${token}` } })
-      .then(() => resolve())
-      .catch((reason) => {
-        // Reject reason in body
-        reject(reason.response?.data ?? reason); 
-      });
-  });  
+  
+  return ajax<void>({ 
+      url, 
+      method: 'DELETE',
+      headers: { 
+        Authorization: `Bearer ${token}`
+      }
+    })    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);  
 };
 
 const importFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
   file: File
-): Promise<void> => {
+) => {
   const url = `${baseUrl}/import?identifier=${encodeURIComponent(functionIdentifier)}`;
 
   const formData = new FormData();
 
   formData.append('files[]', file);
 
-  return axios.post(url, formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  return ajax<void>({ 
+      url, 
+      method: 'POST',
+      headers: { 
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data',
+      },
+      body: formData
+    })    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);  
 };
 
 const exportFunc = (baseUrl: string) => (
   token: string,
   functionIdentifier: string,
   ids: string[]
-): Promise<string> => {
+) => {
   const url = `${baseUrl}/exporturl?identifier=${encodeURIComponent(functionIdentifier)}`;
 
-  return axios.post<string>(url, `${ids.map(u => `id=${encodeURIComponent(u)}`).join('&')}`, {
-    headers: {      
-      'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: `Bearer ${token}`,      
-    },     
-  }).then(response => `${baseUrl}/download?id=${encodeURIComponent(response.data)}`);
+  return ajax<string>({ 
+      url, 
+      method: 'POST',
+      headers: { 
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `${ids.map(u => `id=${encodeURIComponent(u)}`).join('&')}`
+    })    
+    .pipe(map((response) => `${baseUrl}/download?id=${encodeURIComponent(response.response)}`))
+    .pipe(catchApiError);  
 };
 
 

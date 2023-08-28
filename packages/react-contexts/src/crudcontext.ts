@@ -6,6 +6,9 @@
  */
 
 import { createContext } from 'react';
+
+import { Observable } from 'rxjs';
+
 import {
   CrudItem,
   EntityCustomFunction,
@@ -183,7 +186,7 @@ export interface CrudContextState {
   exportItems?: (
     customFunction: EntityCustomFunction,
     items?: Array<CrudItem>
-  ) => Promise<string>;
+  ) => Observable<string>;
 
   /**
    * Import items
@@ -202,7 +205,7 @@ export interface CrudContextState {
    importFile?: (
     customFunction: EntityCustomFunction,
     file: File
-  ) => Promise<void>;
+  ) => Observable<void>;
 }
 
 export const CrudContext = createContext({} as CrudContextState);

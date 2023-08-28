@@ -25,6 +25,8 @@ import {
   MetaContext,
   NotificationContext,
 } from '@ballware/react-contexts';
+import { catchApiError } from './error';
+import { catchError, of, throwError } from 'rxjs';
 
 /**
  * Properties for crud provider component
@@ -105,17 +107,19 @@ export const CrudProvider = ({
   useEffect(() => {
     if (byId && mapIncomingItem && showError && currentRouterState) {
       if (currentRouterState.id && currentRouterState.operation) {
-        byId('primary', currentRouterState.id).then(item => {
-          setValue(previousValue => {
-            return {
-              ...previousValue,
-              viewing: currentRouterState.operation === 'view',
-              editing: currentRouterState.operation === 'edit',
-              item: mapIncomingItem(item),
-              editLayout: currentRouterState.editLayout            
-            };
-          });  
-        }).catch(reason => showError(reason));;
+        byId('primary', currentRouterState.id)
+          .pipe(s => catchApiError(s, showError))
+          .subscribe(item => {
+            setValue(previousValue => {
+              return {
+                ...previousValue,
+                viewing: currentRouterState.operation === 'view',
+                editing: currentRouterState.operation === 'edit',
+                item: mapIncomingItem(item),
+                editLayout: currentRouterState.editLayout            
+              };
+            });  
+          });
       } else {
         setValue(previousValue => {
           return {
@@ -177,19 +181,21 @@ export const CrudProvider = ({
                 });
 
                 query(queryIdentifier, params)
-                  .then((result: Array<CrudItem>) => {
-                    setFetchedItems(result.map(item => mapIncomingItem(item)));
-
+                  .pipe(s => catchApiError(s, showError))
+                  .pipe(catchError((error) => {
+                    setFetchedItems([]);
                     setValue(previousValue => {
                       return {
                         ...previousValue,
                         isLoading: false
                       };
                     });
-                  })
-                  .catch(reason => {
-                    showError(reason);
-                    setFetchedItems([]);
+
+                    return throwError(() => error);
+                  }))
+                  .subscribe((result: Array<CrudItem>) => {
+                    setFetchedItems(result.map(item => mapIncomingItem(item)));
+
                     setValue(previousValue => {
                       return {
                         ...previousValue,
@@ -203,28 +209,31 @@ export const CrudProvider = ({
         count: queryIdentifier ?
             params => {
               count(queryIdentifier, params)
-              .then((result: number) => {
-                setValue(previousValue => {
-                  return {
-                    ...previousValue,
-                    fetchedItemCount: result,
-                  };
+                .pipe(s => catchApiError(s, showError))
+                .pipe(catchError((error) => {
+                  setValue(previousValue => {
+                    return {
+                      ...previousValue,
+                      fetchedItemCount: undefined
+                    };
+                  });
+
+                  return throwError(() => error);
+                }))
+                .subscribe((result: number) => {
+                  setValue(previousValue => {
+                    return {
+                      ...previousValue,
+                      fetchedItemCount: result,
+                    };
+                  });
                 });
-              })
-              .catch(reason => {
-                showError(reason);
-                setValue(previousValue => {
-                  return {
-                    ...previousValue,
-                    fetchedItemCount: undefined
-                  };
-                });
-              });
             }
             : undefined,
         add: editLayout => {
           create('primary', headParams)
-            .then(result => {
+            .pipe(s => catchApiError(s, showError))
+            .subscribe(result => {
               setValue(previousValue => {
                 return {
                   ...previousValue,
@@ -233,8 +242,7 @@ export const CrudProvider = ({
                   item: mapIncomingItem(result),
                 };
               });
-            })
-            .catch(reason => showError(reason));
+            });
         },
         view: (id, editLayout) => {
           setCurrentRouterState(previousValue => {
@@ -285,7 +293,8 @@ export const CrudProvider = ({
         },
         remove: id => {
           byId('primary', id)
-            .then(result => {
+            .pipe(s => catchApiError(s, showError))
+            .subscribe(result => {
               setValue(previousValue => {
                 return {
                   ...previousValue,
@@ -293,14 +302,14 @@ export const CrudProvider = ({
                   item: mapIncomingItem(result),
                 };
               });
-            })
-            .catch(reason => showError(reason));
+            });
         },
         save: (item, customFunction) => {
           const saveItem = { ...item };
 
           save(customFunction?.id ?? 'primary', mapOutgoingItem(saveItem))
-            .then(() => {
+            .pipe(s => catchApiError(s, showError))
+            .subscribe(() => {
               showInfo('editing.notifications.saved');
               setValue(previousValue => {
                 return {
@@ -317,16 +326,14 @@ export const CrudProvider = ({
               });
 
               setRefreshing(true);
-            })
-            .catch(reason => {
-              showError(reason.toString());
             });
         },
         saveBatch: (items, customFunction) => {
           const mappedItems = items.map(i => mapOutgoingItem(i));
 
           saveBatch(customFunction?.id ?? 'primary', mappedItems)
-            .then(() => {
+            .pipe(s => catchApiError(s, showError))
+            .subscribe(() => {
               showInfo('editing.notifications.saved');
               setValue(previousValue => {
                 return {
@@ -343,12 +350,12 @@ export const CrudProvider = ({
               });
 
               setRefreshing(true);
-            })
-            .catch(reason => showError(reason));
+            });
         },
         drop: id => {
           drop(id)
-            .then(() => {
+            .pipe(s => catchApiError(s, showError))
+            .subscribe(() => {
               showInfo('editing.notifications.removed');
               setValue(previousValue => {
                 return {
@@ -365,15 +372,14 @@ export const CrudProvider = ({
               });
 
               setRefreshing(true);
-            })
-            .catch(reason => showError(reason));
+            });
         },
         exportItems: (customFunction, items) => {
           if (items && items.length > 0) {
             return exportItems(customFunction.id, items?.map(i => i.Id));
           } else {
             showInfo('editing.notifications.noitems');
-            return Promise.resolve(undefined);
+            return of(undefined);
           }
         },
         importItems: (customFunction) => {          
@@ -386,7 +392,8 @@ export const CrudProvider = ({
           });
         },
         importFile: (customFunction, file) => {
-          return importItems(customFunction.id, file).catch(reason => showError(reason));
+          return importItems(customFunction.id, file)
+            .pipe(s => catchApiError(s, showError));
         },
         customEdit: (customFunction, items) => {
           prepareCustomFunction(

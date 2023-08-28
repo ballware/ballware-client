@@ -14,7 +14,9 @@ import {
 } from '@ballware/meta-interface';
 import { additionalParamsToUrl } from './util';
 import JSON5 from 'json5';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 interface Statistic {
   Id: string;
@@ -103,28 +105,26 @@ export const compileStatistic = (statistic: Statistic): CompiledStatistic => {
 const metadataFunc = (serviceBaseUrl: string) => (
   token: string,
   identifier: string
-): Promise<CompiledStatistic> => {
+) => {
   const url = `${serviceBaseUrl}api/statistic/metadataforidentifier?identifier=${encodeURIComponent(identifier)}`;
 
-  return axios
-    .get<Statistic>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => compileStatistic(response.data));
+  return ajax<CompiledStatistic>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(response => response.response))
+    .pipe(catchApiError);
 };
 
 const dataFunc = (serviceBaseUrl: string) => (
   token: string,
   identifier: string,
   params: QueryParams
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}api/statistic/dataforidentifier?identifier=${encodeURIComponent(identifier)}${additionalParamsToUrl(
     params
   )}`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(response => response.response))
+    .pipe(catchApiError);
 };
 
 /**

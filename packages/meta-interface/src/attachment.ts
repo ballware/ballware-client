@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Interface for owner specific attachments operations
  */
@@ -19,7 +21,7 @@ export interface MetaAttachmentApi {
   queryByOwner: (
     token: string,
     owner: string
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Upload new attachment
@@ -29,7 +31,7 @@ export interface MetaAttachmentApi {
    * @param file - Uploaded file
    * @returns Promise resolved when upload finished
    */
-  upload: (token: string, owner: string, file: File) => Promise<void>;
+  upload: (token: string, owner: string, file: File) => Observable<void>;
 
   /**
    * Fetch file url for display/download
@@ -39,7 +41,7 @@ export interface MetaAttachmentApi {
    * @param fileName - File name from metadata
    * @returns Promise with URL for download of file
    */
-  open: (token: string, owner: string, fileName: string) => Promise<string>;
+  open: (token: string, owner: string, fileName: string) => Observable<string>;
 
   /**
    * Remove existing attachment
@@ -49,5 +51,5 @@ export interface MetaAttachmentApi {
    * @param fileName - File name from metadata
    * @returns Promise resolved when remove operation finished
    */
-  remove: (token: string, owner: string, fileName: string) => Promise<void>;
+  remove: (token: string, owner: string, fileName: string) => Observable<void>;
 }

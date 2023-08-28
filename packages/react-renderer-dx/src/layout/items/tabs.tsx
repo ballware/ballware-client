@@ -27,7 +27,7 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
     if (count) {
       let canceled = false;
 
-      count(query, params).then(result => {
+      count(query, params).subscribe(result => {
         if (!canceled) {
           setItemCount(result);
         }

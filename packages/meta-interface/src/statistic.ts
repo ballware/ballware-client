@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 import { QueryParams } from './common';
 import { ScriptUtil } from './scriptutil';
 
@@ -431,7 +433,7 @@ export interface MetaStatisticApi {
   metadataForStatistic: (
     token: string,
     identifier: string
-  ) => Promise<CompiledStatistic>;
+  ) => Observable<CompiledStatistic>;
 
   /**
    * Fetch content data for statistic
@@ -444,5 +446,5 @@ export interface MetaStatisticApi {
     token: string,
     identifier: string,
     params?: QueryParams
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 }

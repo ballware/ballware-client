@@ -31,6 +31,8 @@ import {
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
 import { useNavigate } from 'react-router-dom';
+import { catchApiError } from './error';
+import { catchError, throwError } from 'rxjs';
 
 /**
  * Properties for generic meta provider
@@ -160,22 +162,24 @@ export const MetaProvider = ({
 
       api
         .metadataForEntity(token, entity)
-        .then(result => {
-          if (!fetchingCanceled) {
-            setMetaData(result);
-          }
-        })
-        .catch(reason => {
-          showError(reason);
-
+        .pipe(s => catchApiError(s, showError))
+        .pipe(catchError((error) => {
           if (!fetchingCanceled) {
             setMetaData(undefined);
+          }
+
+          return throwError(() => error);
+        }))
+        .subscribe(result => {
+          if (!fetchingCanceled) {
+            setMetaData(result);
           }
         });
 
       api
         .documentsForEntity(token, entity)
-        .then(result => {
+        .pipe(s => catchApiError(s, showError))
+        .subscribe(result => {
           if (!fetchingCanceled) {
             setDocuments(
               result.map(r => {
@@ -188,8 +192,7 @@ export const MetaProvider = ({
               })
             );
           }
-        })
-        .catch(reason => showError(reason));
+        });
     }
 
     return () => {

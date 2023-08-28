@@ -13,7 +13,7 @@ import {
   PropsWithChildren,
 } from 'react';
 
-import { BehaviorSubject, Observable, combineLatest, map, of, shareReplay, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, map, of, switchMap } from 'rxjs';
 
 import { useObservable, useObservableState } from 'observable-hooks';
 
@@ -33,6 +33,7 @@ import {
   LookupRequest,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
+import { catchApiError } from './error';
 /*
 import { useSearchParams } from 'react-router-dom';
 
@@ -183,14 +184,14 @@ export const PageProvider = ({
 
         api
           .loadDocumentationForEntity(token, identifier)
-          .then(result => {
+          .pipe(s => catchApiError(s, showError))
+          .subscribe(result => {
             if (result) {
               documentation$.next(result as string);            
             } else {
               showInfo('documentation.notifications.nodocumentation');
             }
-          })
-          .catch(reason => showError(reason));
+          });
       }
 
       const resetDocumentation = () => {

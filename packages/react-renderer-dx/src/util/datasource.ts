@@ -9,8 +9,10 @@ import { CrudItem } from '@ballware/meta-interface';
 import CustomStore from 'devextreme/data/custom_store';
 import DataSource from 'devextreme/data/data_source';
 
+import { Observable, lastValueFrom, tap } from 'rxjs';
+
 export function createReadonlyDatasource(
-  fetchFunc: () => Promise<Array<Record<string, unknown>>>,
+  fetchFunc: () => Observable<Array<Record<string, unknown>>>,
   mapFunction?: (item: Record<string, unknown>) => Record<string, unknown>,
   keyProperty = 'Id'
 ): DataSource {
@@ -18,9 +20,7 @@ export function createReadonlyDatasource(
     loadMode: 'raw',
     key: keyProperty,
     load: function() {
-      return fetchFunc().then(result => {
-        return result;
-      });
+      return lastValueFrom(fetchFunc());
     },
   });
 
@@ -94,8 +94,8 @@ interface LookupCache {
 }
 
 export function createLookupDataSource(
-  fetchListFunc: () => Promise<Array<Record<string, unknown>>>,
-  byIdFunc: (id: string) => Promise<Record<string, unknown>>,
+  fetchListFunc: () => Observable<Array<Record<string, unknown>>>,
+  byIdFunc: (id: string) => Observable<Record<string, unknown>>,
   keyProperty = 'Id'
 ): DataSource {
   const valueCache: LookupCache = {};
@@ -104,9 +104,7 @@ export function createLookupDataSource(
     key: keyProperty,
     loadMode: 'raw',
     load: function() {
-      return fetchListFunc().then(result => {
-        return result;
-      });
+      return lastValueFrom(fetchListFunc());
     },
     byKey: function(key: string|undefined) {
       if (
@@ -120,11 +118,11 @@ export function createLookupDataSource(
         return valueCache[key];
       }
 
-      return byIdFunc(key).then(result => {
+      return lastValueFrom(byIdFunc(key).pipe(tap((result) => {
         valueCache[key] = result;
 
         return result;
-      });
+      })));
     },
   });
 
@@ -136,14 +134,12 @@ export function createLookupDataSource(
 }
 
 export function createAutocompleteDataSource(
-  fetchFunc: () => Promise<Array<unknown>>
+  fetchFunc: () => Observable<Array<unknown>>
 ): DataSource {
   const dataStore = new CustomStore({
     loadMode: 'raw',
     load: function() {
-      return fetchFunc().then(result => {
-        return result;
-      });
+      return lastValueFrom(fetchFunc());
     },
   });
 

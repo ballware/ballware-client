@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Select list entry of available document list for printing
  */
@@ -34,7 +36,7 @@ export interface MetaDocumentApi {
   selectListPrintDocumentsForEntity: (
     token: string,
     entity: string
-  ) => Promise<Array<DocumentSelectEntry>>;
+  ) => Observable<Array<DocumentSelectEntry>>;
 
   /**
    * Generate viewer url for document
@@ -43,5 +45,5 @@ export interface MetaDocumentApi {
    * @param search Query expression for generating document
    * @returns Promise containing url for rendering document
    */
-  viewerUrl: (token: string, search: string) => Promise<string>;
+  viewerUrl: (token: string, search: string) => Observable<string>;
 }

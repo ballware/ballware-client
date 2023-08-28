@@ -11,7 +11,9 @@ import {
   NavigationLayout,
 } from '@ballware/meta-interface';
 import JSON5 from 'json5';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 interface Tenant {
   Id: string;
@@ -47,20 +49,22 @@ const compileTenant = (tenant: Tenant): CompiledTenant => {
 const metadataFunc = (serviceBaseUrl: string) => (
   token: string,
   tenant: string
-): Promise<CompiledTenant> => {
+) => {
   const url = `${serviceBaseUrl}api/tenant/metadatafortenant/${tenant}`;
 
-  return axios
-    .get<Tenant>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => compileTenant(response.data));
+  return ajax<Tenant>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(response => compileTenant(response.response)))
+    .pipe(catchApiError);
 };
 
-const allowedTenantFunc = (serviceBaseUrl: string) => (token: string): Promise<{ Id: string, Name: string}[]> => {
+const allowedTenantFunc = (serviceBaseUrl: string) => (
+  token: string
+) => {
   const url = `${serviceBaseUrl}api/tenant/allowed`;
 
-  return axios
-    .get<{ Id: string, Name: string}[]>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<{ Id: string, Name: string}[]>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(response => response.response))
+    .pipe(catchApiError);
 }
 
 /**

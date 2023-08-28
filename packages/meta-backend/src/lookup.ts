@@ -6,109 +6,99 @@
  */
 
 import { MetaLookupApi } from '@ballware/meta-interface';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const selectListForLookupFunc = (serviceBaseUrl: string) => (
   token: string,
   lookupId: string
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}api/lookup/selectlistforlookup/${lookupId}`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const selectByIdForLookupFunc = (serviceBaseUrl: string) => (
   token: string,
   lookupId: string
-) => (id: string): Promise<Record<string, unknown>> => {
+) => (id: string) => {
   const url = `${serviceBaseUrl}api/lookup/selectbyidforlookup/${lookupId}/${id}`;
 
-  return axios
-    .get<Record<string, unknown>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Record<string, unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const selectListForLookupIdentifierFunc = (serviceBaseUrl: string) => (
   token: string,
   identifier: string
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}api/lookup/selectlistforlookupidentifier/${identifier}`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const selectByIdForLookupIdentifierFunc = (serviceBaseUrl: string) => (
   token: string,
   identifier: string
-) => (id: string): Promise<Record<string, unknown>> => {
+) => (id: string) => {
   const url = `${serviceBaseUrl}api/lookup/selectbyidforlookupidentifier/${identifier}/${id}`;
 
-  return axios
-    .get<Record<string, unknown>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Record<string, unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const selectListForLookupWithParamFunc = (serviceBaseUrl: string) => (
   token: string,
   lookupId: string,
   param: unknown
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}api/lookup/selectlistforlookupwithparam/${lookupId}/${param}`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const selectByIdForLookupWithParamFunc = (serviceBaseUrl: string) => (
   token: string,
   lookupId: string,
   param: unknown
-) => (id: string): Promise<Record<string, unknown>> => {
+) => (id: string) => {
   const url = `${serviceBaseUrl}api/lookup/selectbyidforlookupwithparam/${lookupId}/${param}/${id}`;
 
-  return axios
-    .get<Record<string, unknown>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Record<string, unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const autoCompleteForLookupFunc = (serviceBaseUrl: string) => (
   token: string,
   lookupId: string
-): Promise<Array<unknown>> => {
+) => {
   const url = `${serviceBaseUrl}api/lookup/autocompleteforlookup/${lookupId}`;
 
-  return axios
-    .get<Array<unknown>>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<Array<unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const autoCompleteForLookupWithParamFunc = (serviceBaseUrl: string) => (
   token: string,
   lookupId: string,
   param: unknown
-): Promise<Array<unknown>> => {
+) => {
   const url = `${serviceBaseUrl}api/lookup/autocompleteforlookupwithparam/${lookupId}/${param}`;
 
-  return axios
-    .get<Array<unknown>>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<Array<unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 /**

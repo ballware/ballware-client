@@ -6,43 +6,45 @@
  */
 
 import { IdentityUserApi } from '@ballware/identity-interface';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const selectListFunc = (serviceBaseUrl: string) => (
   token: string
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}ballware-user-api/selectlist`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(r => r.response))
+    .pipe(catchApiError);
 };
 
 const selectByIdFunc = (serviceBaseUrl: string) => (
   token: string,
   identifier: string
-): Promise<Record<string, unknown>> => {
+) => {
   const url = `${serviceBaseUrl}ballware-user-api/selectbyid/${identifier}`;
 
-  return axios
-    .get<Record<string, unknown>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Record<string, unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(r => r.response))
+    .pipe(catchApiError);
 };
 
 const switchTenantFunc = (serviceBaseUrl: string) => (
   token: string,
   tenant: string
-): Promise<void> => {
+) => {
   const url = `${serviceBaseUrl}ballware-user-api/tenant?tenant=${tenant}`;
 
-  return axios
-    .post(url, undefined, {
+  return ajax<void>({ 
+      url, 
+      method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
-    });
+      body: undefined
+    })
+    .pipe(map(r => r.response))
+    .pipe(catchApiError);
 };
  
 /**

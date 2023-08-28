@@ -7,7 +7,6 @@
 
 import { createContext } from 'react';
 import {
-  ResourceOwnerAuthApi,
   IdentityUserApi,
   IdentityRoleApi,
 } from '@ballware/identity-interface';
@@ -38,11 +37,6 @@ export interface SettingsContextState {
    * API key for usage with google services
    */
   googlekey: string;
-
-  /**
-   * Factory for creating data adapter for user authentication
-   */
-  identityAuthApiFactory?: () => ResourceOwnerAuthApi;
 
   /**
    * Factory for creating data adapter for user list data access

@@ -13,3 +13,4 @@ export * from './rights';
 export * from './scriptutil';
 export * from './statistic';
 export * from './tenant';
+export * from './error';

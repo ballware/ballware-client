@@ -16,14 +16,14 @@ export interface LookupStoreDescriptor {
    * Fetch list of lookup records
    * @returns Promise resolving list of available lookup records
    */
-  listFunc: () => Promise<Array<Record<string, unknown>>>;
+  listFunc: () => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch lookup record by id
    * @param id Id of lookup record
    * @returns Promise resolving single lookup record for id
    */
-  byIdFunc: (id: string) => Promise<Record<string, unknown>>;
+  byIdFunc: (id: string) => Observable<Record<string, unknown>>;
 }
 
 /**
@@ -33,7 +33,7 @@ export interface AutocompleteStoreDescriptor {
   /**
    * Fetch list of autocomplete entries
    */
-  listFunc: () => Promise<Array<unknown>>;
+  listFunc: () => Observable<Array<unknown>>;
 }
 
 /**

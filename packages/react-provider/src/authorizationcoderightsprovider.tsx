@@ -13,7 +13,7 @@ import React, {
   useCallback,
 } from 'react';
 
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, catchError, throwError } from 'rxjs';
 
 import moment from 'moment';
 
@@ -24,10 +24,12 @@ import { SettingsContext, NotificationContext } from '@ballware/react-contexts';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import {
+  IdentityApiError,
   SessionWithUserInfo,
 } from '@ballware/identity-interface';
 
 import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
+import { catchApiError } from './error';
 
 /**
  * Property set for authorization code flow rights provider
@@ -159,54 +161,37 @@ export const AuthorizationCodeRightsProvider = ({
 
         newUserManager.getUser().then(user => {
           if (user) {
-            metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {            
+            metaTenantApiFactory().allowed(user.access_token)
+              .pipe(catchError((error: IdentityApiError) => {
+                if (error.status === 401 || error.status === 403) {
+                  console.log('No user authenticated, switch to sign in');
+                  newUserManager.signinRedirect();
+                } 
 
-              let session = {
-                access_token: user.access_token,
-                expires_in: user.expires_in,
-                identifier: user.profile.sub,
-                email: user.profile.preferred_username,
-                issued: new Date()                
-              } as SessionWithUserInfo;
-      
-              session = Object.assign(session, user.profile);
+                return throwError(() => error);
+              }))
+              .subscribe(allowedTenants => {            
+                let session = {
+                  access_token: user.access_token,
+                  expires_in: user.expires_in,
+                  identifier: user.profile.sub,
+                  email: user.profile.preferred_username,
+                  issued: new Date()                
+                } as SessionWithUserInfo;
+        
+                session = Object.assign(session, user.profile);
 
-              session$.next(session);
-              token$.next(session.access_token);
-              refresh_token$.next(session.refresh_token);
-              timeout_in$.next(session.expires_in
-                ? moment(new Date())
-                    .add(session.expires_in, 'seconds')
-                    .toDate() 
-                : undefined);
-              tenant$.next(session.tenant as string);
-              allowedTenants$.next(allowedTenants);
-
-              /*
-              setValue(previousValue => {
-                return {
-                  ...previousValue,
-                  token: session.access_token,
-                  refresh_token: session.refresh_token,
-                  expires_in: session.expires_in,
-                  issued: new Date(),
-                  session: session,
-                  timeout_in: session.expires_in
-                    ? moment(new Date())
-                        .add(session.expires_in, 'seconds')
-                        .toDate()
-                    : undefined,
-                  tenant: session.tenant as string,
-                  allowedTenants: allowedTenants
-                };
+                session$.next(session);
+                token$.next(session.access_token);
+                refresh_token$.next(session.refresh_token);
+                timeout_in$.next(session.expires_in
+                  ? moment(new Date())
+                      .add(session.expires_in, 'seconds')
+                      .toDate() 
+                  : undefined);
+                tenant$.next(session.tenant as string);
+                allowedTenants$.next(allowedTenants);
               });
-              */
-            }).catch(reason => {
-              if (reason?.response?.status === 401 || reason?.response?.status === 403) {
-                console.log('No user authenticated, switch to sign in');
-                newUserManager.signinRedirect();
-              }              
-            });
           } else {
             console.log('No user authenticated, switch to sign in');
             newUserManager.signinRedirect();
@@ -252,7 +237,7 @@ export const AuthorizationCodeRightsProvider = ({
           refresh: () => {
             userManager.signinSilent().then(user => {
               if (user) {
-                metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {  
+                metaTenantApiFactory().allowed(user.access_token).subscribe(allowedTenants => {  
                   let session = {
                     access_token: user.access_token,
                     expires_in: user.expires_in,
@@ -273,26 +258,6 @@ export const AuthorizationCodeRightsProvider = ({
                     : undefined);
                   tenant$.next(session.tenant as string);
                   allowedTenants$.next(allowedTenants);
-
-                  /*
-                  setValue(previousValue => {
-                    return {
-                      ...previousValue,
-                      token: session.access_token,
-                      refresh_token: session.refresh_token,
-                      expires_in: session.expires_in,
-                      issued: new Date(),
-                      session: session,
-                      timeout_in: session.expires_in
-                        ? moment(new Date())
-                            .add(session.expires_in, 'seconds')
-                            .toDate()
-                        : undefined,
-                      tenant: session.tenant as string,
-                      allowedTenants: allowedTenants
-                    };
-                  });
-                  */
                 });
               }
             });
@@ -300,7 +265,7 @@ export const AuthorizationCodeRightsProvider = ({
           switchTenant: (tenant) => {
             userManager.getUser().then(user => {
               if (user) {
-                identityUserApiFactory().switchTenantFunc(user.access_token, tenant).then(() => {
+                identityUserApiFactory().switchTenantFunc(user.access_token, tenant).subscribe(() => {
                   showInfo('rights.notifications.logoutfortenantswitch');
 
                   userManager.signinRedirect();
@@ -342,54 +307,36 @@ export const AuthorizationCodeRightsProvider = ({
         .signinRedirectCallback()
         .then(user => {
           if (user) {
-            metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {
-              let session = {
-                access_token: user.access_token,
-                expires_in: user.expires_in,
-                identifier: user.profile.sub,
-                email: user.profile.preferred_username,
-                issued: new Date(),
-              } as SessionWithUserInfo;
-
-              session = Object.assign(session, user.profile);
-
-              setUserManager(newUserManager);
-
-              session$.next(session);
-              token$.next(session.access_token);
-              refresh_token$.next(session.refresh_token);
-              timeout_in$.next(session.expires_in
-                ? moment(new Date())
-                    .add(session.expires_in, 'seconds')
-                    .toDate() 
-                : undefined);
-              tenant$.next(session.tenant as string);
-              allowedTenants$.next(allowedTenants);
-
-              /*
-              setValue(previousValue => {
-                return {
-                  ...previousValue,
-                  token: session.access_token,
-                  refresh_token: session.refresh_token,
-                  expires_in: session.expires_in,
+            metaTenantApiFactory().allowed(user.access_token)
+              .pipe(s => catchApiError(s, showError))
+              .subscribe(allowedTenants => {
+                let session = {
+                  access_token: user.access_token,
+                  expires_in: user.expires_in,
+                  identifier: user.profile.sub,
+                  email: user.profile.preferred_username,
                   issued: new Date(),
-                  session: session,
-                  timeout_in: session.expires_in
-                    ? moment(new Date())
-                        .add(session.expires_in, 'seconds')
-                        .toDate()
-                    : undefined,
-                  tenant: session.tenant as string,
-                  allowedTenants: allowedTenants
-                };
+                } as SessionWithUserInfo;
+
+                session = Object.assign(session, user.profile);
+
+                setUserManager(newUserManager);
+
+                session$.next(session);
+                token$.next(session.access_token);
+                refresh_token$.next(session.refresh_token);
+                timeout_in$.next(session.expires_in
+                  ? moment(new Date())
+                      .add(session.expires_in, 'seconds')
+                      .toDate() 
+                  : undefined);
+                tenant$.next(session.tenant as string);
+                allowedTenants$.next(allowedTenants);
+
+                navigate('/');
+
+                showInfo('rights.notifications.loginsuccess');
               });
-              */
-
-              navigate('/');
-
-              showInfo('rights.notifications.loginsuccess');
-            });
           }
         })
         .catch(reason => showError(reason));

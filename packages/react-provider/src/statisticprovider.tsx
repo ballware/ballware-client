@@ -30,6 +30,7 @@ import {
 } from '@ballware/meta-interface';
 import cloneDeep from 'lodash/cloneDeep';
 import { createUtil } from './scriptutil';
+import { catchApiError } from './error';
 
 /**
  * Properties for statistic provider
@@ -80,10 +81,10 @@ export const StatisticProvider = ({
 
       api
         .metadataForStatistic(token, identifier)
-        .then(result => {
+        .pipe(s => catchApiError(s, showError))
+        .subscribe(result => {
           setMetaData(result);
-        })
-        .catch(reason => showError(reason));
+        });
     }
   }, [token, identifier, showError, metaStatisticApiFactory]);
 
@@ -103,7 +104,8 @@ export const StatisticProvider = ({
 
       api
         .dataForStatistic(token, identifier, params)
-        .then(result => {
+        .pipe(s => catchApiError(s, showError))
+        .subscribe(result => {
           if (metaData.mappingScript) {
             const unpreparedLayout = cloneDeep(metaData.layout);
 
@@ -123,8 +125,7 @@ export const StatisticProvider = ({
             setData(result);
             setLayout(metaData.layout);
           }
-        })
-        .catch(reason => showError(reason));
+        });
     }
   }, [
     showError,

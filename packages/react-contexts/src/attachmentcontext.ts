@@ -7,6 +7,8 @@
 
 import { createContext } from 'react';
 
+import { Observable } from 'rxjs';
+
 /**
  * Context for attachment files functionality
  */
@@ -16,7 +18,7 @@ export interface AttachmentContextState {
    * @param id Owner id of attachments
    * @returns Promise resolving available attachment metadata
    */
-  fetch?: (id: string) => Promise<Array<Record<string, unknown>>>;
+  fetch?: (id: string) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Upload new attachment
@@ -24,7 +26,7 @@ export interface AttachmentContextState {
    * @param file Attachment file
    * @returns Promise resolving when upload has completed
    */
-  upload?: (id: string, file: File) => Promise<void>;
+  upload?: (id: string, file: File) => Observable<void>;
 
   /**
    * Request download url for attachment
@@ -32,7 +34,7 @@ export interface AttachmentContextState {
    * @param fileName Attachment file name from metadata
    * @returns Promise resolving Url for download attachment file
    */
-  open?: (id: string, fileName: string) => Promise<string>;
+  open?: (id: string, fileName: string) => Observable<string>;
 
   /**
    * Drop existing attachment
@@ -40,7 +42,7 @@ export interface AttachmentContextState {
    * @param fileName Attachment file name from metadata
    * @returns Promise resolving when drop has completed
    */
-  drop?: (id: string, fileName: string) => Promise<void>;
+  drop?: (id: string, fileName: string) => Observable<void>;
 }
 
 export const AttachmentContext = createContext({} as AttachmentContextState);

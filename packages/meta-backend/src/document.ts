@@ -6,30 +6,30 @@
  */
 
 import { MetaDocumentApi, DocumentSelectEntry } from '@ballware/meta-interface';
-import axios from 'axios';
+import { map, of } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const selectListPrintDocumentsForEntity = (metaServiceBaseUrl: string) => (
   token: string,
   entity: string
-): Promise<Array<DocumentSelectEntry>> => {
+) => {
   const url = `${metaServiceBaseUrl}api/document/selectlistdocumentsforentity/${entity}`;
 
-  return axios
-    .get<Array<DocumentSelectEntry>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<DocumentSelectEntry>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const viewerUrl = (documentServiceBaseUrl: string) => (
   token: string,
   search: string
-): Promise<string> => {
+) => {
   const url = `${documentServiceBaseUrl}viewer?token=${encodeURIComponent(
     token
   )}&${search}`;
 
-  return Promise.resolve(url);
+  return of(url);
 };
 
 /**

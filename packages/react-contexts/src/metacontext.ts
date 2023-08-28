@@ -6,6 +6,7 @@
  */
 
 import { createContext } from 'react';
+import { Observable } from 'rxjs';
 import {
   EntityCustomFunction,
   CrudItem,
@@ -53,7 +54,7 @@ export interface MetaContextState {
    * @param params Optional parameter values for query
    * @returns Promise resolving collection of fetched items
    */
-  query?: (query: string, params?: QueryParams) => Promise<Array<CrudItem>>;
+  query?: (query: string, params?: QueryParams) => Observable<Array<CrudItem>>;
 
   /**
    * Fetch count of items
@@ -61,7 +62,7 @@ export interface MetaContextState {
    * @param params Optional parameter values for query
    * @returns Promise resolving count of fetchable items
    */
-   count?: (query: string, params?: QueryParams) => Promise<number>;
+   count?: (query: string, params?: QueryParams) => Observable<number>;
 
   /**
    * Fetch item by id
@@ -69,14 +70,14 @@ export interface MetaContextState {
    * @param id: Unique identifier of item to fetch
    * @returns Promise resolving item by id if available
    */
-  byId?: (functionIdentifier: string, id: string) => Promise<CrudItem>;
+  byId?: (functionIdentifier: string, id: string) => Observable<CrudItem>;
 
   /**
    * Fetch new prepared item for add
    * @param functionIdentifier Identifier of edit function
    * @param params Optional parameter values for initialization
    */
-  create?: (functionIdentifier: string, params?: QueryParams) => Promise<CrudItem>;
+  create?: (functionIdentifier: string, params?: QueryParams) => Observable<CrudItem>;
 
   /**
    * Save changed or add new item
@@ -84,7 +85,7 @@ export interface MetaContextState {
    * @param item Changed or new created item
    * @returns Promise resolving when save operation has completed
    */
-  save?: (functionIdentifier: string, item: CrudItem) => Promise<void>;
+  save?: (functionIdentifier: string, item: CrudItem) => Observable<void>;
 
   /**
    * Save collection of changed or new created items
@@ -92,14 +93,14 @@ export interface MetaContextState {
    * @param items Collection of items
    * @returns Promise resolving when save operation has completed
    */
-  saveBatch?: (functionIdentifier: string, items: CrudItem[]) => Promise<void>;
+  saveBatch?: (functionIdentifier: string, items: CrudItem[]) => Observable<void>;
 
   /**
    * Drop item by id
    * @param id Unique identifier of item to drop
    * @returns Promise resolving when drop operation has completed
    */
-  drop?: (id: string) => Promise<void>;
+  drop?: (id: string) => Observable<void>;
 
   /**
    * Prepared custom param object used by custom scripts
@@ -218,7 +219,7 @@ export interface MetaContextState {
    * @param file Uploaded file to import
    * @returns Promise resolved when import completed
    */
-  importItems?: (identifier: string, file: File) => Promise<void>;
+  importItems?: (identifier: string, file: File) => Observable<void>;
 
   /**
    * Export list of items
@@ -226,7 +227,7 @@ export interface MetaContextState {
    * @param ids List of item ids to export
    * @returns Promise resolved with url to export file
    */
-  exportItems?: (identifier: string, ids: string[]) => Promise<string>;
+  exportItems?: (identifier: string, ids: string[]) => Observable<string>;
 
   /**
    * Prepare grid layout by custom script

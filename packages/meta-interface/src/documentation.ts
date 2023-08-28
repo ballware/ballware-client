@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Interface for documentation viewer operations
  */
@@ -19,5 +21,5 @@ export interface MetaDocumentationApi {
   loadDocumentationForEntity: (
     token: string,
     entity: string
-  ) => Promise<unknown>;
+  ) => Observable<unknown>;
 }

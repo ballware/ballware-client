@@ -13,7 +13,9 @@ import {
   DocumentSelectEntry,
 } from '@ballware/meta-interface';
 import JSON5 from 'json5';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 interface EntityMetadata {
   Application: string;
@@ -530,25 +532,23 @@ const compileEntityMetadata = (
 const metadataFunc = (serviceBaseUrl: string) => (
   token: string,
   entity: string
-): Promise<CompiledEntityMetadata> => {
+) => {
   const url = `${serviceBaseUrl}api/entity/metadataforentity/${entity}`;
 
-  return axios
-    .get<EntityMetadata>(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => compileEntityMetadata(response.data));
+  return ajax<EntityMetadata>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => compileEntityMetadata(response.response)))
+    .pipe(catchApiError);
 };
 
 const documentsForEntityFunc = (serviceBaseUrl: string) => (
   token: string,
   entity: string
-): Promise<Array<DocumentSelectEntry>> => {
+) => {
   const url = `${serviceBaseUrl}api/document/selectlistdocumentsforentity/${entity}`;
 
-  return axios
-    .get<Array<DocumentSelectEntry>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<DocumentSelectEntry>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 /**

@@ -10,3 +10,4 @@ export * from './settingsprovider';
 export * from './statisticprovider';
 export * from './tenantprovider';
 export * from './providerfactory';
+export * from './error';

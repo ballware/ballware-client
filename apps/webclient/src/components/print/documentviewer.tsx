@@ -21,7 +21,7 @@ const MuiDocumentViewer = () => {
     if (metaDocumentApiFactory && token && location) {
       const api = metaDocumentApiFactory(); 
 
-      api.viewerUrl(token, location.search).then(result => {
+      api.viewerUrl(token, location.search).subscribe(result => {
         setUrl(result);
       });
     }

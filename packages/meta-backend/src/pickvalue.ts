@@ -6,34 +6,32 @@
  */
 
 import { MetaPickvalueApi } from '@ballware/meta-interface';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const selectListForEntityAndField = (serviceBaseUrl: string) => (
   token: string,
   entity: string,
   field: string
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}api/pickvalue/selectlistforentityandfield/${entity}/${field}`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(response => response.response))
+    .pipe(catchApiError);
 };
 
 const selectByValueForEntityAndField = (serviceBaseUrl: string) => (
   token: string,
   entity: string,
   field: string
-) => (value: number | string): Promise<Record<string, unknown>> => {
+) => (value: number | string) => {
   const url = `${serviceBaseUrl}api/pickvalue/selectbyvalueforentityandfield/${entity}/${field}/${value}`;
 
-  return axios
-    .get<Record<string, unknown>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Record<string, unknown>>({ url, headers: { Authorization: `Bearer ${token}` }})
+    .pipe(map(response => response.response))
+    .pipe(catchApiError);
 };
 
 /**

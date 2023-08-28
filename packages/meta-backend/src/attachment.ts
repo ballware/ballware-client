@@ -6,60 +6,73 @@
  */
 
 import { MetaAttachmentApi } from '@ballware/meta-interface';
-import axios from 'axios';
+import { map, of } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const attachmentFetchFunc = (serviceBaseUrl: string) => (
   token: string,
   owner: string
-): Promise<Array<Record<string, unknown>>> => {
+) => {
   const url = `${serviceBaseUrl}api/file/all/${owner}`;
 
-  return axios
-    .get(url, { headers: { Authorization: `Bearer ${token}` } })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const attachmentUploadFunc = (serviceBaseUrl: string) => (
   token: string,
   owner: string,
   file: File
-): Promise<void> => {
+) => {
   const url = `${serviceBaseUrl}api/file/upload/${owner}`;
 
   const formData = new FormData();
 
   formData.append('files[]', file);
 
-  return axios.post(url, formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  return ajax<void>({ 
+    url, 
+    method: 'POST', 
+    headers: { 
+      Authorization: `Bearer ${token}`, 
+      'Content-Type': 'multipart/form-data' 
+    }, 
+    body: formData })    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 const attachmentOpenFunc = (serviceBaseUrl: string) => (
   _token: string,
   owner: string,
   fileName: string
-): Promise<string> => {
+) => {
   const url = `${serviceBaseUrl}api/file/byname/${owner}?file=${encodeURIComponent(
     fileName
   )}`;
 
-  return Promise.resolve(url);
+  return of(url);
 };
 
 const attachmentDeleteFunc = (serviceBaseUrl: string) => (
   token: string,
   owner: string,
   fileName: string
-): Promise<void> => {
+) => {
   const url = `${serviceBaseUrl}api/file/byname/${owner}?file=${encodeURIComponent(
     fileName
   )}`;
 
-  return axios.delete(url, { headers: { Authorization: `Bearer ${token}` } });
+  return ajax<void>({ 
+    url, 
+    method: 'DELETE', 
+    headers: { 
+      Authorization: `Bearer ${token}` 
+    }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 /**

@@ -24,6 +24,7 @@ import {
   SettingsContext,
   NotificationContext,
 } from '@ballware/react-contexts';
+import { catchApiError } from './error';
 
 /**
  * Find pages in navigation tree
@@ -79,15 +80,15 @@ export const TenantProvider = ({
   
       api
         .metadataForTenant(token, session.tenant as string)
-        .then(tenant => {
+        .pipe(s => catchApiError(s, showError))
+        .subscribe(tenant => {
           tenantData$.next(tenant);
           
           setValue((prev) => ({
             ...prev,
             hasRight: (right) => tenant.hasRight(session, right)
           }));
-        })
-        .catch(reason => showError(reason));
+        });        
     }  
   }, [metaTenantApiFactory, showError, token, session, tenant, tenantData$]);
 

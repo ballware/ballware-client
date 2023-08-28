@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Navigation tree item
  */
@@ -98,6 +100,6 @@ export interface MetaTenantApi {
    * @param tenant Identifier of tenant
    * @returns Promise containing compiled tenant metadata
    */
-  metadataForTenant: (token: string, tenant: string) => Promise<CompiledTenant>;
-  allowed: (token: string) => Promise<{ Id: string, Name: string}[]>;
+  metadataForTenant: (token: string, tenant: string) => Observable<CompiledTenant>;
+  allowed: (token: string) => Observable<{ Id: string, Name: string}[]>;
 }

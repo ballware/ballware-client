@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 import { QueryParams } from './common';
 import { CrudItem } from './cruditem';
 
@@ -24,7 +26,7 @@ export interface MetaGenericEntityApi {
     token: string,
     query: string,
     params?: QueryParams
-  ) => Promise<Array<CrudItem>>;
+  ) => Observable<Array<CrudItem>>;
 
   /**
    * Query count of business objects by search params
@@ -38,7 +40,7 @@ export interface MetaGenericEntityApi {
     token: string,
     query: string,
     params?: QueryParams
-  ) => Promise<number>;
+  ) => Observable<number>;
 
   /**
    * Fetch single business object by id
@@ -48,7 +50,7 @@ export interface MetaGenericEntityApi {
    * @param id Id of business object
    * @returns Promise containing instance of business object
    */
-  byId: (token: string, functionIdentifier: string, id: string) => Promise<CrudItem>;
+  byId: (token: string, functionIdentifier: string, id: string) => Observable<CrudItem>;
 
   /**
    * Fetch prepared new instance of business object
@@ -58,7 +60,7 @@ export interface MetaGenericEntityApi {
    * @param params Parameter values for initialization of business object
    * @returns Promise containing new generated instance of business object
    */
-  new: (token: string, functionIdentifier: string, params?: QueryParams) => Promise<CrudItem>;
+  new: (token: string, functionIdentifier: string, params?: QueryParams) => Observable<CrudItem>;
 
   /**
    * Save modified instance of business object
@@ -68,7 +70,7 @@ export interface MetaGenericEntityApi {
    * @param item Modified instance of business object
    * @returns Promise resolved when save operation has finished
    */
-  save: (token: string, functionIdentifier: string, item: CrudItem) => Promise<void>;
+  save: (token: string, functionIdentifier: string, item: CrudItem) => Observable<void>;
 
   /**
    * Save multiple modified instances of business object
@@ -78,7 +80,7 @@ export interface MetaGenericEntityApi {
    * @param items Modified instances of business object
    * @returns Promise resolved when save operation has finished
    */
-  saveBatch: (token: string, functionIdentifier: string, items: CrudItem[]) => Promise<void>;
+  saveBatch: (token: string, functionIdentifier: string, items: CrudItem[]) => Observable<void>;
 
   /**
    * Drop existing instance of business object
@@ -87,7 +89,7 @@ export interface MetaGenericEntityApi {
    * @param id Identifier of business object instance to drop
    * @returns Promise resolved when drop operation has finished
    */
-  drop: (token: string, id: string) => Promise<void>;
+  drop: (token: string, id: string) => Observable<void>;
 
   /**
    * Import business objects from uploaded file
@@ -97,7 +99,7 @@ export interface MetaGenericEntityApi {
    * @param file Uploaded file containing objects to import
    * @returns Promise resolved when drop operation has finished
    */
-  importItems: (token: string, functionIdentifier: string, file: File) => Promise<void>;
+  importItems: (token: string, functionIdentifier: string, file: File) => Observable<void>;
 
   /**
    * Export business objects to download file
@@ -107,5 +109,5 @@ export interface MetaGenericEntityApi {
    * @param ids Selected object ids to export
    * @returns Promise resolved when download is ready, containing download url 
    */
-  exportItems: (token: string, functionIdentifier: string, ids: string[]) => Promise<string>;
+  exportItems: (token: string, functionIdentifier: string, ids: string[]) => Observable<string>;
 }

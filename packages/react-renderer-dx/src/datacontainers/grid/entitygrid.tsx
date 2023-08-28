@@ -350,7 +350,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
         && exportItems         
         && actionRows.current) {
         
-        exportItems(e.itemData.customFunction, actionRows.current).then(response => {
+        exportItems(e.itemData.customFunction, actionRows.current).subscribe(response => {
           if (response) {
             window.open(response, '_blank');
           }

@@ -6,19 +6,19 @@
  */
 
 import { MetaDocumentationApi } from '@ballware/meta-interface';
-import axios from 'axios';
+import { map } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 const loadDocumentationForEntity = (metaServiceBaseUrl: string) => (
   token: string,
   entity: string
-): Promise<unknown> => {
+) => {
   const url = `${metaServiceBaseUrl}api/documentation/documentationforentity/${entity}`;
 
-  return axios
-    .get<Array<Record<string, unknown>>>(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-    .then(response => response.data);
+  return ajax<Array<Record<string, unknown>>>({ url, headers: { Authorization: `Bearer ${token}` }})    
+    .pipe(map((response) => response.response))
+    .pipe(catchApiError);
 };
 
 /**

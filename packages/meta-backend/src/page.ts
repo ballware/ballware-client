@@ -9,6 +9,7 @@ import { MetaPageApi, CompiledPageData } from '@ballware/meta-interface';
 import JSON5 from 'json5';
 import { Observable, map } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
+import { catchApiError } from './error';
 
 interface PageData {
   Identifier: string;
@@ -185,11 +186,8 @@ const pageDataForIdentifier = (metaServiceBaseUrl: string) => (
   const url = `${metaServiceBaseUrl}api/page/pagedataforidentifier/${page}`;
 
   return ajax<PageData>({ url, headers: { Authorization: `Bearer ${token}` }})
-    .pipe(map(r => compilePage(r.response)));
-
-  //return axios
-  //  .get<PageData>(url, { headers: { Authorization: `Bearer ${token}` } })
-  //  .then(response => compilePage(response.data));
+    .pipe(map(r => compilePage(r.response)))
+    .pipe(catchApiError);
 };
 
 /**

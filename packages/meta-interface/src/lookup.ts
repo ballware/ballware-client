@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Interface for fetching lookups
  */
@@ -19,7 +21,7 @@ export interface MetaLookupApi {
   selectListForLookup: (
     token: string,
     lookup: string
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch single element by lookup and id
@@ -32,7 +34,7 @@ export interface MetaLookupApi {
   selectByIdForLookup: (
     token: string,
     lookup: string
-  ) => (id: string) => Promise<Record<string, unknown>>;
+  ) => (id: string) => Observable<Record<string, unknown>>;
 
   /**
    * Fetch list by lookup identifier
@@ -44,7 +46,7 @@ export interface MetaLookupApi {
   selectListForLookupIdentifier: (
     token: string,
     identifier: string
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch single element by lookup identifier and id
@@ -57,7 +59,7 @@ export interface MetaLookupApi {
   selectByIdForLookupIdentifier: (
     token: string,
     identifier: string
-  ) => (id: string) => Promise<Record<string, unknown>>;
+  ) => (id: string) => Observable<Record<string, unknown>>;
 
   /**
    * Fetch list by lookup with param
@@ -71,7 +73,7 @@ export interface MetaLookupApi {
     token: string,
     lookup: string,
     param: unknown
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch single element by lookup with param and id
@@ -86,7 +88,7 @@ export interface MetaLookupApi {
     token: string,
     lookup: string,
     param: unknown
-  ) => (id: string) => Promise<Record<string, unknown>>;
+  ) => (id: string) => Observable<Record<string, unknown>>;
 
   /**
    * Fetch list of proposals for lookup
@@ -98,7 +100,7 @@ export interface MetaLookupApi {
   autoCompleteForLookup: (
     token: string,
     lookup: string
-  ) => Promise<Array<unknown>>;
+  ) => Observable<Array<unknown>>;
 
   /**
    * Fetch list of proposals for lookup with param
@@ -112,5 +114,5 @@ export interface MetaLookupApi {
     token: string,
     lookup: string,
     param: unknown
-  ) => Promise<Array<unknown>>;
+  ) => Observable<Array<unknown>>;
 }

@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Interface for processing state operations
  */
@@ -19,7 +21,7 @@ export interface MetaProcessingstateApi {
   selectListForEntity: (
     token: string,
     entity: string
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch select list containing all allowed states for business object ids
@@ -33,7 +35,7 @@ export interface MetaProcessingstateApi {
     token: string,
     entity: string,
     ids: Array<string>
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch single processing state by state number
@@ -46,5 +48,5 @@ export interface MetaProcessingstateApi {
   selectByStateForEntity: (
     token: string,
     entity: string
-  ) => (state: number | string) => Promise<Record<string, unknown>>;
+  ) => (state: number | string) => Observable<Record<string, unknown>>;
 }

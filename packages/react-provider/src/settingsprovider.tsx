@@ -7,7 +7,6 @@
 
 import { PropsWithChildren, useState } from 'react';
 import {
-  ResourceOwnerAuthApi,
   IdentityUserApi,
   IdentityRoleApi,
 } from '@ballware/identity-interface';
@@ -42,11 +41,6 @@ export interface SettingsProviderProps {
    * Google API key used by maps implementation
    */
   googlekey: string;
-
-  /**
-   * API factory for resource owner authentication functions
-   */
-  identityAuthApiFactory?: () => ResourceOwnerAuthApi;
 
   /**
    * API factory for access to user list
@@ -120,7 +114,6 @@ export interface SettingsProviderProps {
 export const SettingsProvider = ({
   appversion,
   googlekey,
-  identityAuthApiFactory,
   identityUserApiFactory,
   identityRoleApiFactory,
   metaEntityApiFactory,
@@ -139,7 +132,6 @@ export const SettingsProvider = ({
   const [value] = useState({
     version: appversion,
     googlekey,
-    identityAuthApiFactory,
     identityUserApiFactory,
     identityRoleApiFactory,
     metaEntityApiFactory,

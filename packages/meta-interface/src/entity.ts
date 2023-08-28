@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 import { DocumentSelectEntry } from './document';
 import { ScriptUtil } from './scriptutil';
 import { CrudItem, ValueType } from './cruditem';
@@ -804,7 +806,7 @@ export interface MetaEntityApi {
   metadataForEntity: (
     token: string,
     entity: string
-  ) => Promise<CompiledEntityMetadata>;
+  ) => Observable<CompiledEntityMetadata>;
 
   /**
    * Fetch available print documents for business object type
@@ -816,5 +818,5 @@ export interface MetaEntityApi {
   documentsForEntity: (
     token: string,
     entity: string
-  ) => Promise<Array<DocumentSelectEntry>>;
+  ) => Observable<Array<DocumentSelectEntry>>;
 }

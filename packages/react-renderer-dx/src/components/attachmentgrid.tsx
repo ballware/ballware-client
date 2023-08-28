@@ -9,14 +9,17 @@ import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FileUploader } from 'devextreme-react/file-uploader';
 import { DataGrid, Column } from 'devextreme-react/data-grid';
+
+import { Observable } from 'rxjs';
+
 import { createReadonlyDatasource } from '../util/datasource';
 
 export interface AttachmentGridProps {
   readonly: boolean;
-  fetchFunc: () => Promise<Array<Record<string, unknown>>>;
-  openFunc: (fileName: string) => Promise<string>;
-  uploadFunc: (file: File) => Promise<void>;
-  deleteFunc: (fileName: string) => Promise<void>;
+  fetchFunc: () => Observable<Array<Record<string, unknown>>>;
+  openFunc: (fileName: string) => Observable<string>;
+  uploadFunc: (file: File) => Observable<void>;
+  deleteFunc: (fileName: string) => Observable<void>;
   showInfo: (message: string) => void;
   showWarning: (message: string) => void;
   showError: (message: string) => void;
@@ -47,7 +50,7 @@ export const AttachmentGrid = ({
 
   const fileOpen = useCallback(
     (fileName: string) => {
-      openFunc(fileName).then(response => {
+      openFunc(fileName).subscribe(response => {
         window.open(response, '_blank');
       });
     },
@@ -58,11 +61,10 @@ export const AttachmentGrid = ({
     (fileName: string) => {
       if (t) {
         deleteFunc(fileName)
-          .then(() => {
+          .subscribe(() => {
             fileSource.reload();
             showInfo(t('attachment.messages.removed'));
-          })
-          .catch(reason => showError(reason));
+          });
       }
     },
     [t, deleteFunc, fileSource, showError, showInfo]

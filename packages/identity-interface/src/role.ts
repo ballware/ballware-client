@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Functions for accessing role information from identity provider
  */
@@ -15,7 +17,7 @@ export interface IdentityRoleApi {
    * @param token - access token required for authentication
    * @returns Promise resolving list of available roles with id and display text
    */
-  selectListFunc: (token: string) => Promise<Array<Record<string, unknown>>>;
+  selectListFunc: (token: string) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Returns a single existing role by identifier from identity system
@@ -26,5 +28,5 @@ export interface IdentityRoleApi {
   selectByIdFunc: (
     token: string,
     identifier: string
-  ) => Promise<Record<string, unknown>>;
+  ) => Observable<Record<string, unknown>>;
 }

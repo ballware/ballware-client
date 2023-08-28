@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Interface for pickvalue operations
  */
@@ -21,7 +23,7 @@ export interface MetaPickvalueApi {
     token: string,
     entity: string,
     field: string
-  ) => Promise<Array<Record<string, unknown>>>;
+  ) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Fetch single select list element for business object property
@@ -36,5 +38,5 @@ export interface MetaPickvalueApi {
     token: string,
     entity: string,
     field: string
-  ) => (value: number | string) => Promise<Record<string, unknown>>;
+  ) => (value: number | string) => Observable<Record<string, unknown>>;
 }

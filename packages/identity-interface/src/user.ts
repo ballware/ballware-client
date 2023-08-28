@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Observable } from 'rxjs';
+
 /**
  * Functions for accessing user information from identity provider
  */
@@ -15,7 +17,7 @@ export interface IdentityUserApi {
    * @param token - access token required for authentication
    * @returns Promise resolving list of available user with id and display text
    */
-  selectListFunc: (token: string) => Promise<Array<Record<string, unknown>>>;
+  selectListFunc: (token: string) => Observable<Array<Record<string, unknown>>>;
 
   /**
    * Returns a single existing user by identifier from identity system
@@ -26,7 +28,7 @@ export interface IdentityUserApi {
   selectByIdFunc: (
     token: string,
     identifier: string
-  ) => Promise<Record<string, unknown>>;
+  ) => Observable<Record<string, unknown>>;
 
   /**
    * Switch current user to tenant
@@ -34,5 +36,5 @@ export interface IdentityUserApi {
    * @param tenant - identifier of destination tenant
    * @returns Promise resolved when tenant switch is completed
    */
-  switchTenantFunc: (token: string, tenant: string) => Promise<void>;
+  switchTenantFunc: (token: string, tenant: string) => Observable<void>;
 }
