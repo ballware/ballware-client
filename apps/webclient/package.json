@@ -11,8 +11,7 @@
     "@ballware/react-contexts": "^6.12.0",
     "@ballware/react-provider": "^6.12.0",
     "@ballware/react-renderer": "^6.12.0",
-    "@ballware/react-renderer-dx": "^6.14.0",
-    "@mui/material": "^5.0.0"
+    "@ballware/react-renderer-dx": "^6.14.0"
   },
   "scripts": {
     "start": "cross-env HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",
