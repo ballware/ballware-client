@@ -1,6 +1,6 @@
 {
   "name": "@ballware/react-provider",
-  "version": "6.12.0",
+  "version": "6.15.0",
   "description": "Ballware Application Builder - React provider for contexts",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
@@ -79,7 +79,7 @@
   "dependencies": {
     "@ballware/identity-interface": "^6.12.0",
     "@ballware/meta-interface": "^6.12.0",
-    "@ballware/react-contexts": "^6.12.0",
+    "@ballware/react-contexts": "^6.15.0",
     "qs": "^6.10.1"
   },
   "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
