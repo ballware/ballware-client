@@ -1,10 +1,10 @@
 FROM node:16-bullseye as build-deps
 WORKDIR /usr/src/app
 COPY package.json ./
-RUN npm install
+RUN yarn install
 COPY . ./
 COPY config-overrides.docker.js ./config-overrides.js
-RUN npm run build
+RUN yarn build
 
 FROM nginx:stable-alpine
 
