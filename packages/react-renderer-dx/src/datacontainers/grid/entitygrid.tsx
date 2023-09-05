@@ -751,7 +751,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
                 mode={
                   matches.small ? 'small' : matches.medium ? 'medium' : 'large'
                 }
-                height={height ?? 'calc(100vh - 140px)'}
+                height={height ?? '100%'}
                 dataSource={dataSource}
                 columns={
                   matches.small
@@ -762,20 +762,6 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
                 }
               />
             )}
-          {/*(renderGrid && matches.small) && <DataList
-        height={height ?? 'calc(100vh - 140px)'}
-        layout={preparedGridLayout}
-        dataSource={dataSource}
-        showReload={true}
-        showAdd={addAllowed()}
-        showPrint={true}
-        customFunctions={customFunctions}
-        onReloadClick={() => load()}
-        onCustomFunctionClick={customFunctionButtonClicked}
-        onAddClick={addButtonClicked}
-        onPrintClick={printButtonClicked}
-        onRowDblClick={onRowDblClick}
-        />*/}
           <ActionSheet
             ref={actionMenu}
             width={'auto'}

@@ -32,7 +32,7 @@ export const Item = ({ colSpan, colCount, children }: ItemProps) => {
     | 12;
 
   return (
-    <div className={`col-xs-${xsWidth} col-lg-${lgWidth}`}>
+    <div className={`h-100 col-xs-${xsWidth} col-lg-${lgWidth}`}>
       {children}
     </div>
   );

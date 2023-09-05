@@ -19,37 +19,7 @@ import { Drawer, Template } from 'devextreme-react';
 import { useMedia } from 'react-media';
 import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 import { useHistory } from 'react-router-dom';
-/*
-const useStyles = (drawerWidth: string | number) =>
-  makeStyles(theme => ({
-    root: {
-      display: 'flex',
-      height: '100vh',
-    },
-    drawer: {
-      [theme.breakpoints.up('md')]: {
-        width: drawerWidth,
-        flexShrink: 0,
-      },
-    },
-    toolbar: theme.mixins.toolbar,
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    content: {
-      padding: theme.spacing(1),
-      [theme.breakpoints.up('md')]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-      },
-      [theme.breakpoints.down('sm')]: {
-        width: '100%',
-      },
-    },
-    client: {
-      height: `calc(100% - ${64}px)`,
-    },
-  }));
-*/
+
 export interface ApplicationProps {
   drawerWidth?: number;
 }
@@ -104,28 +74,10 @@ export const Application = ({
     [Navigation, onPageSelected]
   );
 
-
-
-  /*
-  const Nav = useMemo(() => styled('nav')({
-    [theme.breakpoints.up('md')]: {
-      width: drawerWidth ?? 240,
-      flexShrink: 0
-    }
-  }), [theme]);
-  */
-
-  /*
-  const ToolbarPlaceholder = useMemo(() => styled('div')(theme.mixins.toolbar), [theme]);
-
-  const ContentContainer = useMemo(() => styled('div')({
-    height: `calc(100% - ${64}px)`
-  }), []);
-  */
   return (
     <div className="application container-fluid vh-100 vw-100 px-0 d-flex flex-column overflow-hidden">
       <MemorizedApplicationBar />
-      <Drawer className="flex-fill pt-2" openedStateMode={mediaQuery.small ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
+      <Drawer className="flex-fill overflow-hidden pt-2" openedStateMode={mediaQuery.small ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
         <Template name="navigation">      
           <div className="h-100" style={{ width: drawerWidth ?? 240 }}>
             <MemorizedNavigation/>
