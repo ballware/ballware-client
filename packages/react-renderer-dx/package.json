@@ -1,5 +1,5 @@
 {
-  "version": "6.15.0",
+  "version": "6.16.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -78,8 +78,8 @@
   },
   "dependencies": {
     "@ballware/meta-interface": "^6.12.0",
-    "@ballware/react-contexts": "^6.15.0",
-    "@ballware/react-renderer": "^6.15.0",
+    "@ballware/react-contexts": "^6.16.0",
+    "@ballware/react-renderer": "^6.16.0",
     "@codemirror/lang-javascript": "^6.2.1",
     "@codemirror/lang-json": "^6.0.1",
     "@codemirror/lang-sql": "^6.5.4",
