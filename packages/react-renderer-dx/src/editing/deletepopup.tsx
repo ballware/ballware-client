@@ -9,14 +9,13 @@ import React, { useContext } from 'react';
 
 import { CrudContext } from '@ballware/react-contexts';
 import { DeletePopupProps } from '@ballware/react-renderer';
-import { useMedia } from 'react-media';
 import { useTranslation } from 'react-i18next';
 import { Popup, Position, ToolbarItem } from 'devextreme-react/popup';
-import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
   
-  const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small;
+  const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
 
   const { t } = useTranslation();
 

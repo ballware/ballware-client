@@ -17,7 +17,6 @@ import { ActionSheet } from 'devextreme-react/action-sheet';
 
 import { EntityCustomFunction, CrudItem } from '@ballware/meta-interface';
 
-import Media from 'react-media';
 import {
   MetaContext,
   CrudContext,
@@ -28,6 +27,7 @@ import Map from 'devextreme-react/map';
 import { SpeedDialAction } from 'devextreme-react/speed-dial-action';
 import { dxElement } from 'devextreme/core/element';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../../util/mediaquery';
 
 export interface EntityMapProps {
   height?: string;
@@ -43,6 +43,8 @@ export const EntityMap = ({
   height,
 }: EntityMapProps) => {
   const { t } = useTranslation();
+
+  const smallScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
 
   const selectedRowKeys = useRef<Array<string>>();
   const selectedRowData = useRef<Array<CrudItem>>();
@@ -415,51 +417,41 @@ export const EntityMap = ({
   ]);
 
   return (
-    <Media
-      queries={{
-        small: { maxWidth: 599 },
-        medium: { maxWidth: 1000 },
-        large: { minWidth: 1001 },
-      }}
-    >
-      {matches => (
-        <div style={{ height: height ?? '100%' }}>
-          {WrappedMap}
-          {t && displayName && false && (
-            <SpeedDialAction
-              icon="bi bi-plus"
-              label={t('datacontainer.actions.add', { entity: displayName })}
-              index={1}
-              onClick={e => addButtonClicked(e.element)}
-            />
-          )}
-          <ActionSheet
-            ref={actionMenu}
-            usePopover={!matches.small}
-            showCancelButton
-            onItemClick={actionItemClicked}
-          />
-          {t && documents && (
-            <ActionSheet
-              title={t('datacontainer.actions.print')}
-              usePopover={!matches.small}
-              ref={printMenu}
-              dataSource={documents}
-              onItemClick={printMenuItemClicked}
-            />
-          )}
-          {t && displayName && (
-            <ActionSheet
-              ref={addMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.add', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={addMenuItemClicked}
-            />
-          )}
-        </div>
+    <div style={{ height: height ?? '100%' }}>
+      {WrappedMap}
+      {t && displayName && false && (
+        <SpeedDialAction
+          icon="bi bi-plus"
+          label={t('datacontainer.actions.add', { entity: displayName })}
+          index={1}
+          onClick={e => addButtonClicked(e.element)}
+        />
       )}
-    </Media>
+      <ActionSheet
+        ref={actionMenu}
+        usePopover={!smallScreen}
+        showCancelButton
+        onItemClick={actionItemClicked}
+      />
+      {t && documents && (
+        <ActionSheet
+          title={t('datacontainer.actions.print')}
+          usePopover={!smallScreen}
+          ref={printMenu}
+          dataSource={documents}
+          onItemClick={printMenuItemClicked}
+        />
+      )}
+      {t && displayName && (
+        <ActionSheet
+          ref={addMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.add', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={addMenuItemClicked}
+        />
+      )}
+    </div>
   );
 };

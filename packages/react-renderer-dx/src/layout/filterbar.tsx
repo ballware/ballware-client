@@ -14,8 +14,7 @@ import {
   ToolbarItemsProvider,
 } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
-import { useMedia } from 'react-media';
-import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 import { Button, Template, Toolbar } from 'devextreme-react';
 import { dxToolbarItem } from 'devextreme/ui/toolbar';
 
@@ -32,7 +31,7 @@ export const FilterBar = ({
 }: FilterBarProps) => {
   const { t } = useTranslation();
 
-  const largeOrMediumScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).medium || useMedia({ queries: GLOBAL_MEDIA_QUERIES }).large;
+  const largeOrMediumScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.medium) || useMediaQuery(GLOBAL_MEDIA_QUERIES.large);
   
   const [initialized, setInitialized] = useState(false);
 

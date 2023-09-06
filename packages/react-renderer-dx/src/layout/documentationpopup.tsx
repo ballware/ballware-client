@@ -9,8 +9,7 @@ import React from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { HtmlEditor } from '../components/htmleditor';
-import { useMedia } from 'react-media';
-import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 import { Popup } from 'devextreme-react';
 import { Position, ToolbarItem } from 'devextreme-react/popup';
 
@@ -31,7 +30,7 @@ export const DocumentationPopup = ({
     close();
   };
 
-  const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small;
+  const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
 
   return (
     <Popup visible

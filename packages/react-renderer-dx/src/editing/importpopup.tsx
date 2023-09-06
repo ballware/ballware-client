@@ -11,13 +11,12 @@ import { CrudContext } from '@ballware/react-contexts';
 import { ImportPopupProps } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
 import { FileUploader, Popup } from 'devextreme-react';
-import { useMedia } from 'react-media';
-import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 import { Position, ToolbarItem } from 'devextreme-react/popup';
  
  export const ImportPopup = ({ importFunction }: ImportPopupProps) => {
    
-   const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small;
+   const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
  
    const { t } = useTranslation();
  

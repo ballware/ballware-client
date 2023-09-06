@@ -24,13 +24,13 @@ import {
   CrudItem,
 } from '@ballware/meta-interface';
 import moment from 'moment';
-import Media from 'react-media';
 import {
   createColumnConfiguration,
   OptionButtons,
 } from '../columns/columntemplates';
 import { createSummaryConfiguration } from './gridsummary';
 import { createEditableGridDatasource } from '../../util/datasource';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../../util/mediaquery';
 import {
   MetaContext,
   CrudContext,
@@ -49,6 +49,8 @@ export interface GridProps {
 
 export const EntityGrid = ({ layout, height }: GridProps) => {
   const { t } = useTranslation();
+  const smallScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
+  const mediumScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.medium);
 
   const [preparedGridLayout, setPreparedGridLayout] = useState<GridLayout>();
   const [editLayout, setEditLayout] = useState<string>();
@@ -716,100 +718,90 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
   );
 
   return (
-    <Media
-      queries={{
-        small: { maxWidth: 599 },
-        medium: { maxWidth: 1000 },
-        large: { minWidth: 1001 },
-      }}
-    >
-      {matches => (
-        <React.Fragment>
-          {renderGrid &&
-          load &&
-          preparedGridLayout &&
-          summaryConfiguration &&
-          dataSource /* && !matches.small*/ && (
-              <DataGrid
-                customFunctions={headCustomFunctions ?? []}
-                showReload={true}
-                showAdd={(addMenuItems && addMenuItems?.length > 0) ?? false}
-                showPrint={(preparedGridLayout.allowMultiselect && documents && documents.length > 0) ?? false}
-                showExport={(exportMenuItems && exportMenuItems.length > 0) ?? false}
-                showImport={(importMenuItems && importMenuItems.length > 0) ?? false}
-                onReloadClick={() => load(fetchParams)}
-                onCustomFunctionClick={customFunctionButtonClicked}
-                onAddClick={addButtonClicked}
-                onPrintClick={printButtonClicked}
-                onExportClick={exportButtonClicked}
-                onImportClick={importButtonClicked}
-                onRowDblClick={onRowDblClick}
-                isMasterDetailExpandable={(e) => optionButtonAllowed('view', e.data)}
-                exportFileName={`${displayName}_${moment().format('YYYYMMDD')}`}
-                layout={preparedGridLayout}
-                summary={summaryConfiguration}
-                mode={
-                  matches.small ? 'small' : matches.medium ? 'medium' : 'large'
-                }
-                height={height ?? '100%'}
-                dataSource={dataSource}
-                columns={
-                  matches.small
-                    ? smallColumnConfiguration
-                    : matches.medium
-                    ? mediumColumnConfiguration
-                    : largeColumnConfiguration
-                }
-              />
-            )}
-          <ActionSheet
-            ref={actionMenu}
-            width={'auto'}
-            title={t('datacontainer.actionsheet.title')}
-            usePopover={!matches.small}
-            showCancelButton
-            onItemClick={actionItemClicked}
+    <React.Fragment>
+      {renderGrid &&
+      load &&
+      preparedGridLayout &&
+      summaryConfiguration &&
+      dataSource && (
+          <DataGrid
+            customFunctions={headCustomFunctions ?? []}
+            showReload={true}
+            showAdd={(addMenuItems && addMenuItems?.length > 0) ?? false}
+            showPrint={(preparedGridLayout.allowMultiselect && documents && documents.length > 0) ?? false}
+            showExport={(exportMenuItems && exportMenuItems.length > 0) ?? false}
+            showImport={(importMenuItems && importMenuItems.length > 0) ?? false}
+            onReloadClick={() => load(fetchParams)}
+            onCustomFunctionClick={customFunctionButtonClicked}
+            onAddClick={addButtonClicked}
+            onPrintClick={printButtonClicked}
+            onExportClick={exportButtonClicked}
+            onImportClick={importButtonClicked}
+            onRowDblClick={onRowDblClick}
+            isMasterDetailExpandable={(e) => optionButtonAllowed('view', e.data)}
+            exportFileName={`${displayName}_${moment().format('YYYYMMDD')}`}
+            layout={preparedGridLayout}
+            summary={summaryConfiguration}
+            mode={
+              smallScreen ? 'small' : mediumScreen ? 'medium' : 'large'
+            }
+            height={height ?? '100%'}
+            dataSource={dataSource}
+            columns={
+              smallScreen
+                ? smallColumnConfiguration
+                : mediumScreen
+                ? mediumColumnConfiguration
+                : largeColumnConfiguration
+            }
           />
-          {documents && (
-            <ActionSheet
-              width={'auto'}
-              title={t('datacontainer.actions.print')}
-              usePopover={!matches.small}
-              ref={printMenu}
-              dataSource={documents}
-              onItemClick={printMenuItemClicked}
-            />
-          )}
-          {displayName && (
-            <ActionSheet
-              ref={addMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.add', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={addMenuItemClicked}
-            />
-          )}
-          {exportMenuItems && (<ActionSheet
-              ref={exportMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.export', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={exportMenuItemClicked}
-            />
-          )}
-          {importMenuItems && (<ActionSheet
-              ref={importMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.import', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={importMenuItemClicked}
-            />
-          )}
-        </React.Fragment>
+        )}
+      <ActionSheet
+        ref={actionMenu}
+        width={'auto'}
+        title={t('datacontainer.actionsheet.title')}
+        usePopover={!smallScreen}
+        showCancelButton
+        onItemClick={actionItemClicked}
+      />
+      {documents && (
+        <ActionSheet
+          width={'auto'}
+          title={t('datacontainer.actions.print')}
+          usePopover={!smallScreen}
+          ref={printMenu}
+          dataSource={documents}
+          onItemClick={printMenuItemClicked}
+        />
       )}
-    </Media>
+      {displayName && (
+        <ActionSheet
+          ref={addMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.add', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={addMenuItemClicked}
+        />
+      )}
+      {exportMenuItems && (<ActionSheet
+          ref={exportMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.export', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={exportMenuItemClicked}
+        />
+      )}
+      {importMenuItems && (<ActionSheet
+          ref={importMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.import', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={importMenuItemClicked}
+        />
+      )}
+    </React.Fragment>
   );
 };

@@ -11,8 +11,7 @@ import Iframe from 'react-iframe';
 import { CrudContext } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 import { IframePopupProps } from '@ballware/react-renderer';
-import { useMedia } from 'react-media';
-import { GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 import { Popup } from 'devextreme-react';
 import { Position, ToolbarItem } from 'devextreme-react/popup';
 
@@ -30,7 +29,7 @@ export const ExternalLinkEditPopup = (props: IframePopupProps) => {
     }
   }, [close]);
 
-  const fullScreen = useMedia({ queries: GLOBAL_MEDIA_QUERIES }).small || fullscreen;
+  const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small) || fullscreen;
 
   return (
     <Popup visible
