@@ -1,6 +1,6 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.16.0",
+  "version": "6.17.0",
   "private": true,
   "dependencies": {
     "@ballware/identity-backend": "^6.12.0",
@@ -8,10 +8,10 @@
     "@ballware/identity-keycloak": "^6.12.0",
     "@ballware/meta-backend": "^6.12.0",
     "@ballware/meta-interface": "^6.12.0",
-    "@ballware/react-contexts": "^6.16.0",
-    "@ballware/react-provider": "^6.16.0",
-    "@ballware/react-renderer": "^6.16.0",
-    "@ballware/react-renderer-dx": "^6.16.0"
+    "@ballware/react-contexts": "^6.17.0",
+    "@ballware/react-provider": "^6.17.0",
+    "@ballware/react-renderer": "^6.17.0",
+    "@ballware/react-renderer-dx": "^6.17.0"
   },
   "scripts": {
     "start": "cross-env HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",
