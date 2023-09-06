@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useContext } from 'react';
+import React, { ReactNode, useContext } from 'react';
 
 import { CrudContext } from '@ballware/react-contexts';
 import { ImportPopupProps } from '@ballware/react-renderer';
@@ -40,7 +40,7 @@ import { Position, ToolbarItem } from 'devextreme-react/popup';
           }} />
           <div className="dx-fieldset">
             <div className="dx-fieldset-header">
-              {t('editing.import.popupmessage')}
+              {t('editing.import.popupmessage') as ReactNode}
             </div>
             <FileUploader                
                 multiple={false}
