@@ -22,6 +22,7 @@ import dxTextArea from 'devextreme/ui/text_area';
 import dxDateBox from 'devextreme/ui/date_box';
 import dxNumberBox from 'devextreme/ui/number_box';
 import dxTagBox from 'devextreme/ui/tag_box';
+import dxHtmlEditor from 'devextreme/ui/html_editor';
 
 export interface ContextProps {}
 
@@ -69,6 +70,12 @@ export const Context = ({ children }: PropsWithChildren<ContextProps>) => {
         stylingMode: 'underlined'
       }
     });
+
+    dxHtmlEditor.defaultOptions({
+      options: {
+        stylingMode: 'underlined'
+      }
+    })
   }, []);
 
   return <React.Fragment>{children}</React.Fragment>;

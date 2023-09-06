@@ -86,7 +86,7 @@ const OidcAuthCallback = ({
     }
   }, [redirectCallback]);
 
-  return <React.Fragment>Login successful</React.Fragment>;
+  return <React.Fragment></React.Fragment>;
 };
 
 /**

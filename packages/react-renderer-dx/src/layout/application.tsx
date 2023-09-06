@@ -80,7 +80,7 @@ export const Application = ({
       <MemorizedApplicationBar />
       <Drawer className="flex-fill overflow-hidden pt-2" openedStateMode={smallScreen ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
         <Template name="navigation">      
-          <div className="h-100" style={{ width: drawerWidth ?? 240 }}>
+          <div className={`${smallScreen ? "application" : ""} h-100`} style={{ width: drawerWidth ?? 240 }}>
             <MemorizedNavigation/>
           </div>          
         </Template>
