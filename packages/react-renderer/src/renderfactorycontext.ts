@@ -27,7 +27,7 @@ export interface ApplicationProps {
   /**
    * Width of navigation drawer
    */
-  drawerWidth?: string | number;
+  drawerWidth?: number;
 }
 
 /**
@@ -52,7 +52,7 @@ export interface NavigationProps {
   /**
    * Navigation menu display/hide toggled
    */
-  onMenuToggle?: () => void;
+  onPageSelected?: (url: string) => void;
 }
 
 /**

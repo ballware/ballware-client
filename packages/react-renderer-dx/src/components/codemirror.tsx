@@ -13,98 +13,89 @@ import React, {
     useState,
 } from 'react';
 
-import 'codemirror/lib/codemirror.css';
+import { EditorView, basicSetup } from 'codemirror';
+import { EditorState } from "@codemirror/state"
+import { javascript } from '@codemirror/lang-javascript';
+import { json5, json5ParseLinter } from 'codemirror-json5';
+import { MSSQL, sql } from '@codemirror/lang-sql';
+import { linter, lintGutter }from '@codemirror/lint';
 
-import codeMirror from 'codemirror';
-import 'codemirror/mode/sql/sql';
-import 'codemirror/mode/javascript/javascript';
+export interface CodeMirrorEditorRef {
+  getValue: () => string;
+  setValue: (value: string) => void;
+}
 
-import { JSHINT } from 'jshint';
-import jsonlint from 'jsonlint-mod';
+export interface CodeMirrorEditorProps {
+  mode: 'javascript' | 'json5' | 'sqlserver';
+  readOnly?: boolean;
+  defaultValue?: string;
+  width?: string;
+  height?: string;
+  onChange?: (value?: string) => void;
+}
 
-import 'codemirror/theme/idea.css';
+export const CodeMirrorEditor = forwardRef<CodeMirrorEditorRef, CodeMirrorEditorProps>(
+  ({ mode, readOnly, defaultValue, width, height, onChange }, ref) => {
+    const [value, setValue] = useState(defaultValue);
+    const [editor, setEditor] = useState<EditorView|undefined>(undefined);
 
-import 'codemirror/addon/lint/lint';
-import 'codemirror/addon/lint/javascript-lint';
-import 'codemirror/addon/lint/json-lint';
-import 'codemirror/addon/selection/active-line';
-import 'codemirror/addon/edit/matchbrackets';
+    const editorRef = useRef<HTMLDivElement>(null);
 
+    useImperativeHandle(
+      ref,
+      () =>
+        ({
+          getValue: () => {
+            return value;
+          },
+          setValue: newValue => {
+            setValue(newValue);
+          },
+        } as CodeMirrorEditorRef)
+    );
 
-declare let window: Record<string, unknown>;
+    useEffect(() => {
+      if (editorRef.current && onChange && mode && !editor) {
+        const theme = EditorView.theme({
+          "&": { height: '100%' }
+        });
 
-window.JSHINT = JSHINT;
-window.jsonlint = jsonlint;
+        const extensions = [basicSetup, theme];
 
-
-  export interface CodeMirrorEditorRef {
-    getValue: () => string;
-    setValue: (value: string) => void;
-  }
-  
-  export interface CodeMirrorEditorProps {
-    mode: 'javascript' | 'json5' | 'sqlserver';
-    readOnly?: boolean;
-    defaultValue?: string;
-    width?: string;
-    height?: string;
-    onChange?: (value?: string) => void;
-  }
-  
-  export const CodeMirrorEditor = forwardRef<CodeMirrorEditorRef, CodeMirrorEditorProps>(
-    ({ mode, readOnly, defaultValue, width, height, onChange }, ref) => {
-      const [value, setValue] = useState(defaultValue);
-
-      const editorRef = useRef<HTMLDivElement>(null);
-  
-      useImperativeHandle(
-        ref,
-        () =>
-          ({
-            getValue: () => {
-              return value;
-            },
-            setValue: newValue => {
-              setValue(newValue);
-            },
-          } as CodeMirrorEditorRef)
-      );
-  
-      //let currentValue = defaultValue;
-  
-      /*
-      const onBlur = () => {
-        if (currentValue !== defaultValue && onChange) {
-          onChange(currentValue);
+        if (mode === 'json5') {
+          extensions.push(json5());
+          extensions.push(linter(json5ParseLinter()));
+        } else if (mode === 'javascript') {
+          extensions.push(javascript());            
+        } else if (mode === 'sqlserver') {
+          extensions.push(sql({ dialect: MSSQL }));
         }
-      };
-      */
-  
-      useEffect(() => {
-        if (editorRef.current && onChange && mode) {
-          const editor = codeMirror(editorRef.current, {
-            readOnly: readOnly,
-            mode: mode === 'json5' ? 'json' : mode === 'sqlserver' ? 'sql' : 'javascript',                
-            theme: 'idea',
-            lineNumbers: true,
-            lint: true,
-            lineWrapping: true,
-            gutters: ['CodeMirror-lint-markers'],
-            value: defaultValue ?? ""            
-          });
 
-          editor.setSize("100%", "100%");
-          editor.on('blur', (e) => {
-            if (e.getValue() !== defaultValue && onChange) {
-              onChange(e.getValue());
-            }
-          });
+        if (readOnly) {
+          extensions.push(EditorState.readOnly.of(true));
+        } else {
+          extensions.push(lintGutter());
+          extensions.push(EditorView.updateListener.of((e) => {
+            onChange(e.state.doc.toString());
+          }));
         }
-      }, [editorRef, mode, readOnly, defaultValue, onChange]);
 
-      return (
-        <div ref={editorRef} style={{ width: width ?? '100%', height: height ?? '400px'}}></div>
-      );
-    }
-  );
-  
+        const state = EditorState.create({
+          extensions: extensions,
+          doc: defaultValue ?? ""            
+        });
+
+        
+
+        setEditor(new EditorView({
+          parent: editorRef.current,                        
+          state          
+        }));
+      }
+    }, [editorRef, mode, readOnly, defaultValue, onChange, editor, setEditor]);
+
+    return (
+      <div ref={editorRef} style={{ width: width ?? '100%', height: height ?? '400px'}}></div>
+    );
+  }
+);

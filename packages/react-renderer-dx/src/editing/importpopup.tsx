@@ -5,26 +5,18 @@
  * SPDX-License-Identifier: MIT
  */
 
- import React, { useContext } from 'react';
+import React, { ReactNode, useContext } from 'react';
 
- import {
-   Dialog,
-   DialogTitle,
-   DialogContent,
-   DialogActions,
-   Button,
-   useTheme,
-   useMediaQuery,
-   DialogContentText,
- } from '@mui/material';
- import { CrudContext } from '@ballware/react-contexts';
- import { ImportPopupProps } from '@ballware/react-renderer';
- import { useTranslation } from 'react-i18next';
-import { FileUploader } from 'devextreme-react';
+import { CrudContext } from '@ballware/react-contexts';
+import { ImportPopupProps } from '@ballware/react-renderer';
+import { useTranslation } from 'react-i18next';
+import { FileUploader, Popup } from 'devextreme-react';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { Position, ToolbarItem } from 'devextreme-react/popup';
  
  export const ImportPopup = ({ importFunction }: ImportPopupProps) => {
-   const theme = useTheme();
-   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+   
+   const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
  
    const { t } = useTranslation();
  
@@ -33,30 +25,32 @@ import { FileUploader } from 'devextreme-react';
    return (
      <React.Fragment>
        {t && importFile && close && (
-         <Dialog
-           open
-           onClose={(_event, reason) => { if (reason !== 'backdropClick') close() }}
-           fullScreen={fullScreen}
-           maxWidth={'lg'}
-           fullWidth
-         >
-           <DialogTitle id="form-dialog-title">{t('editing.import.popuptitle')}</DialogTitle>
-           <DialogContent>
-             <DialogContentText>{t('editing.import.popupmessage')}</DialogContentText>
-             <FileUploader                
+        <Popup visible
+          title={t('editing.import.popuptitle')}
+          fullScreen={fullScreen}
+          >
+          <Position            
+            at="center"
+            my="center"
+            of={window}
+          />
+          <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+            text: t('editing.actions.close'),
+            onClick: () => close()
+          }} />
+          <div className="dx-fieldset">
+            <div className="dx-fieldset-header">
+              {t('editing.import.popupmessage') as ReactNode}
+            </div>
+            <FileUploader                
                 multiple={false}
                 accept={'*'}
                 uploadMode={'instantly'}
                 uploadFile={(file) => importFile(importFunction, file)}
                 onUploaded={() => close()}
             />
-           </DialogContent>
-           <DialogActions>             
-             <Button onClick={() => close()}>
-               {t('editing.actions.close')}
-             </Button>
-           </DialogActions>
-         </Dialog>
+          </div>
+        </Popup>
        )}
      </React.Fragment>
    );

@@ -28,7 +28,7 @@ export const Page = (): JSX.Element => {
     let key = 1;
 
     return (
-      <div style={{ height: 'calc(100vh - 140px)' }}>
+      <div className="h-100 mw-100 container-fluid shadow bg-white rounded d-flex flex-column overflow-hidden">
         {layout && lookups && lookupsComplete && customParam && PageToolbar && (
           <PageToolbar
             documentationIdentifier={layout.documentationEntity}

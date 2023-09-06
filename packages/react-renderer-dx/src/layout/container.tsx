@@ -7,38 +7,21 @@
 
 import React from 'react';
 
-import { Item } from './item';
-
-import { Grid } from '@mui/material';
-
 export interface ContainerProps {
-  embedded?: boolean;
-  colCount?: number;
-  colSpan?: number;
   height?: string;
   children?: JSX.Element | Array<JSX.Element>;
 }
 
 export const Container = ({
-  embedded,
-  colSpan,
-  colCount,
   height,
   children,
 }: ContainerProps) => {
+  
   const grid = (
-    <Grid container spacing={1} style={height ? { height: height } : undefined}>
+    <div style={height ? { height: height } : { height: undefined }} className={`${height ? '' : 'flex-fill overflow-hidden '}row row-cols-xs-1 row-cols-lg-12}`}>   
       {children}
-    </Grid>
+    </div>   
   );
-
-  if (embedded) {
-    return (
-      <Item colCount={colCount} colSpan={colSpan}>
-        {grid}
-      </Item>
-    );
-  }
 
   return grid;
 };

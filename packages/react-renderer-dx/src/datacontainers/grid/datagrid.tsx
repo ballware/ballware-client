@@ -467,7 +467,7 @@ export const DataGrid = ({
     return (
       <DxDataGrid
         ref={grid}
-        style={{ height: height ?? 'calc(100vh - 140px)' }}
+        style={{ height: height ?? '100%' }}
         dataSource={dataSource}
         repaintChangesOnly
         remoteOperations={{ sorting: false, filtering: false }}

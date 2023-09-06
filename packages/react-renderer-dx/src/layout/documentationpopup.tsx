@@ -7,17 +7,11 @@
 
 import React from 'react';
 
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { HtmlEditor } from '../components/htmleditor';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { Popup } from 'devextreme-react';
+import { Position, ToolbarItem } from 'devextreme-react/popup';
 
 export interface DocumentationPopupProps {
   title: string;
@@ -36,32 +30,23 @@ export const DocumentationPopup = ({
     close();
   };
 
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
 
   return (
-    <Dialog
-      open
-      onClose={onClose}
+    <Popup visible
+      title={t('documentation.popuptitle', { entity: title })}
       fullScreen={fullScreen}
-      fullWidth
-      maxWidth={'lg'}
-    >
-      {t && (
-        <DialogTitle id="form-dialog-title">
-          {t('documentation.popuptitle', { entity: title })}
-        </DialogTitle>
-      )}
-      <DialogContent>
-        <HtmlEditor readOnly defaultValue={documentation} />
-      </DialogContent>
-      <DialogActions>
-        {t && (
-          <Button onClick={onClose}>
-            {t('documentation.actions.close')}
-          </Button>
-        )}
-      </DialogActions>
-    </Dialog>
+      >
+      <Position            
+        at="center"
+        my="center"
+        of={window}
+      />
+      <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+        text: t('editing.actions.close'),
+        onClick: () => onClose()
+      }} />
+      <HtmlEditor readOnly defaultValue={documentation} />
+    </Popup>
   );
 };

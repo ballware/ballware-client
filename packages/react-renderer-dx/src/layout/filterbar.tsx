@@ -6,20 +6,7 @@
  */
 
 import React, { useMemo, useEffect, useContext, useState } from 'react';
-import { useTheme } from '@mui/material/styles';
-import FilterListIcon from '@mui/icons-material/FilterList';
-import HelpIcon from '@mui/icons-material/Help';
-import {
-  Toolbar,
-  Typography,
-  IconButton,
-  Hidden,
-  Divider,
-  DialogActions,
-  Button,
-  useMediaQuery
-} from '@mui/material';
-import { Dialog, DialogContent } from '@mui/material';
+
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { PageContext } from '@ballware/react-contexts';
 import {
@@ -27,17 +14,10 @@ import {
   ToolbarItemsProvider,
 } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { Button, Template, Toolbar } from 'devextreme-react';
+import { dxToolbarItem } from 'devextreme/ui/toolbar';
 
-/*
-const useStyles = makeStyles(theme => ({
-  title: {
-    flexGrow: 1,
-  },
-  toolbarItem: {
-    marginRight: theme.spacing(1),
-  },
-}));
-*/
 export interface FilterBarProps {
   documentationIdentifier?: string;
   title?: string;
@@ -51,81 +31,66 @@ export const FilterBar = ({
 }: FilterBarProps) => {
   const { t } = useTranslation();
 
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
-  //const classes = useStyles();
-  const [popupOpen, setPopupOpen] = useState(false);
+  const largeOrMediumScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.medium) || useMediaQuery(GLOBAL_MEDIA_QUERIES.large);
+  
   const [initialized, setInitialized] = useState(false);
 
   const { PageToolbarItem } = useContext(RenderFactoryContext);
   const { paramsInitialized, loadDocumentation } = useContext(PageContext);
 
-  const handleFilterClick = () => setPopupOpen(true);
+  const toolbarItems = useMemo(() => {
+    const itemList = [] as dxToolbarItem[];
 
-  let dialogContentKey = 1;
+    if (title) {
+      itemList.push({
+        location: 'before',
+        text: title,
+        locateInMenu: 'never',
+      });  
+    }
+    
+    items?.forEach(item => {
+      itemList.push({
+        location: 'after',
+        template: 'toolbaritem',
+        locateInMenu: 'auto',
+        options: {
+          item
+        }
+      });
+    })
 
-  const children = useMemo(() => {
-    if (PageToolbarItem) {
-      return items?.map((sp, index) => (
-        <PageToolbarItem key={index} item={sp} />
-      ));
+    if (documentationIdentifier) {
+      itemList.push({
+        location: 'after',
+        template: 'documentation',
+        locateInMenu: 'never'
+      });
     }
 
-    return undefined;
-  }, [PageToolbarItem, items]);
-
-  const dialogContent = children?.map((c: any) => (
-    <DialogContent key={dialogContentKey++}>{c}</DialogContent>
-  ));
+    return itemList;
+  }, [PageToolbarItem, items, documentationIdentifier, loadDocumentation, title]);
 
   useEffect(() => {
     if (!initialized && paramsInitialized) {
-      paramsInitialized(!matches);
+      paramsInitialized(!largeOrMediumScreen);
 
       setInitialized(true);
     }
-  }, [initialized, paramsInitialized, matches]);
+  }, [initialized, paramsInitialized, largeOrMediumScreen]);
 
   return (
     <React.Fragment>
-      {t && (
-        <Toolbar>
-          {title && (
-            <Typography sx={{ flexGrow: 1 }} variant="h6">
-              {title}
-            </Typography>
-          )}
-          {matches && <ToolbarItemsProvider>{children}</ToolbarItemsProvider>}
-          {documentationIdentifier && loadDocumentation && (
-            <IconButton
-              color="primary"
-              aria-label="Dokumentation"
-              onClick={() => loadDocumentation(documentationIdentifier)}
-            >
-              <HelpIcon />
-            </IconButton>
-          )}
-          <Hidden mdUp implementation="css">
-            <IconButton
-              sx={{ marginRight: theme.spacing(1) }}
-              onClick={handleFilterClick}
-            >
-              <FilterListIcon />
-            </IconButton>
-            {popupOpen && (
-              <Dialog open={popupOpen} fullWidth maxWidth={'sm'}>
-                <ToolbarItemsProvider>{dialogContent}</ToolbarItemsProvider>
-                <DialogActions>
-                  <Button onClick={() => setPopupOpen(false)} color="primary">
-                    {t('filterbar.actions.close')}
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            )}
-          </Hidden>
-        </Toolbar>
+      {t && toolbarItems && (
+        <ToolbarItemsProvider>
+          <Toolbar items={toolbarItems}>            
+            {loadDocumentation && documentationIdentifier && 
+              <Template name="documentation" render={() => <Button icon="bi bi-question-circle" onClick={() => loadDocumentation(documentationIdentifier)} />} />
+            }
+            {PageToolbarItem && <Template name="toolbaritem" render={(item: dxToolbarItem) => <PageToolbarItem item={item.options.item}/>}/>}
+          </Toolbar>
+        </ToolbarItemsProvider>
       )}
-      <Divider />
     </React.Fragment>
   );
 };

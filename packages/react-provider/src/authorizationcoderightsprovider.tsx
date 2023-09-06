@@ -170,6 +170,11 @@ export const AuthorizationCodeRightsProvider = ({
                   allowedTenants: allowedTenants
                 };
               });
+            }).catch(reason => {
+              if (reason?.response?.status === 401 || reason?.response?.status === 403) {
+                console.log('No user authenticated, switch to sign in');
+                newUserManager.signinRedirect();
+              }              
             });
           } else {
             console.log('No user authenticated, switch to sign in');

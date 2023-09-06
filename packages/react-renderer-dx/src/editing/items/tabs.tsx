@@ -44,6 +44,7 @@ export const Tabs = ({ layoutItem }: TabsProps) => {
 
     return (
       <TabPanel
+        className='pt-3'
         height={layoutItem.options?.height}
         deferRendering={false}
         scrollingEnabled

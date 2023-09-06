@@ -29,7 +29,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
   return useMemo(() => {
     let pageKey = 1;
 
-    const renderedPages = [] as Array<JSX.Element>;
+    const renderedPages = [children] as Array<JSX.Element>;
 
     if (navigation?.defaultUrl) {
       renderedPages.push(
@@ -72,7 +72,6 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
     return (
       <Switch>
         {renderedPages}
-        {children}
       </Switch>
     );
   }, [

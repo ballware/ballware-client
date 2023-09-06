@@ -23,7 +23,7 @@ const MuiDocumentViewer = () => {
     }
   }, [metaDocumentApiFactory, token, location]);
 
-  return <div style={{ height: '100%' }}>{url && <Iframe allowFullScreen scrolling={'no'} frameBorder={0} styles={{ border: 0 }} width={'100%'} height={'100%'} url={url} />}</div>;
+  return <div className="h-100 shadow bg-white rounded">{url && <Iframe allowFullScreen scrolling={'no'} frameBorder={0} styles={{ border: 0 }} width={'100%'} height={'100%'} url={url} />}</div>;
 }
 
 export const DocumentViewer = MuiDocumentViewer;

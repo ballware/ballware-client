@@ -1,6 +1,6 @@
 {
   "name": "@ballware/react-contexts",
-  "version": "6.12.0",
+  "version": "6.17.0",
   "description": "Ballware Application Builder - React contexts for meta and identity",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
@@ -37,7 +37,7 @@
     "prepublish": "npm run build"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=18.2"
   },
   "husky": {
     "hooks": {
@@ -65,5 +65,5 @@
     "@ballware/identity-interface": "^6.12.0",
     "@ballware/meta-interface": "^6.12.0"
   },
-  "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
+  "gitHead": "858e48c91100944eabe4ebd738161ab9cda57898"
 }

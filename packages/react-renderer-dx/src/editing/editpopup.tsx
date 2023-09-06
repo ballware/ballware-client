@@ -9,19 +9,12 @@ import React, { useCallback, useContext } from 'react';
 
 import ScrollView from 'devextreme-react/scroll-view';
 
-import {
-  useTheme,
-  useMediaQuery,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-} from '@mui/material';
-
 import { EditForm, EditFormRef } from './editform';
 import { EditModes, CrudContext, EditContext } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { Popup } from 'devextreme-react';
+import { Position, ToolbarItem } from 'devextreme-react/popup';
 
 export interface EditPopupProps {
   title: string;
@@ -49,48 +42,51 @@ export const EditPopup = (props: EditPopupProps) => {
     }
   }, [close]);
 
-  const theme = useTheme();
-  const fullScreen =
-    useMediaQuery(theme.breakpoints.down('sm')) || editLayout?.fullscreen;
+  const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small) || editLayout?.fullscreen;
 
   return (
     <React.Fragment>
-      {editLayout && (
-        <Dialog
-          open
-          onClose={(_event, reason) => cancelClicked(reason)}
+      {editLayout && (     
+        <Popup visible
+          title={title}
           fullScreen={fullScreen}
-          maxWidth={'lg'}
-          fullWidth
-        >
-          <DialogTitle id="form-dialog-title">{title}</DialogTitle>
-          <DialogContent>
-            <ScrollView>
+          width="auto"    
+          height="auto"
+          maxHeight="90vh"
+          maxWidth="90vw"
+          >
+          <Position            
+            at="center"
+            my="center"
+            of={window}
+          />
+          {t && mode !== EditModes.VIEW && (
+            <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+              type: 'primary',
+              text: t('editing.actions.apply'),
+              onClick: saveClicked
+            }} />
+          )}
+          {t && mode !== EditModes.VIEW && (
+            <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+              text: t('editing.actions.cancel'),
+              onClick: () => cancelClicked("escapeKeyDown")
+            }} />
+          )}
+          {t && mode === EditModes.VIEW && (
+            <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+              text: t('editing.actions.close'),
+              onClick: () => cancelClicked("escapeKeyDown")
+            }} />
+          )}
+          <ScrollView>
               <EditForm
                 ref={formRef}
                 editFunction={editFunction}
                 editLayout={editLayout}
               />
-            </ScrollView>
-          </DialogContent>
-          <DialogActions>
-            {t && mode !== EditModes.VIEW && (
-              <Button onClick={saveClicked} color="primary">
-                {t('editing.actions.apply')}
-              </Button>
-            )}
-            {t && mode !== EditModes.VIEW && (
-              <Button onClick={() => cancelClicked("escapeKeyDown")}>
-                {t('editing.actions.cancel')}
-              </Button>
-            )}
-            {t && mode === EditModes.VIEW && (
-              <Button onClick={() => cancelClicked("escapeKeyDown")}>
-                {t('editing.actions.close')}
-              </Button>
-            )}
-          </DialogActions>
-        </Dialog>
+          </ScrollView>
+        </Popup>
       )}
     </React.Fragment>
   );
