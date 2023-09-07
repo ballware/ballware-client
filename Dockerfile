@@ -8,6 +8,7 @@ RUN yarn set version 1.18.0
 RUN yarn install
 COPY . ./
 WORKDIR /usr/src/app/apps/webclient
+RUN yarn install
 RUN yarn build
 
 FROM nginx:stable-alpine
