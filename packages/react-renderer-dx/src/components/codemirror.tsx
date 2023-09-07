@@ -13,7 +13,7 @@ import React, {
     useState,
 } from 'react';
 
-import { EditorView } from '@codemirror/view';
+import { EditorView, basicSetup } from 'codemirror';
 import { EditorState } from "@codemirror/state"
 import { javascript } from '@codemirror/lang-javascript';
 import { json5, json5ParseLinter } from 'codemirror-json5';
@@ -60,7 +60,7 @@ export const CodeMirrorEditor = forwardRef<CodeMirrorEditorRef, CodeMirrorEditor
           "&": { height: '100%' }
         });
 
-        const extensions = [theme];
+        const extensions = [basicSetup, theme];
 
         if (mode === 'json5') {
           extensions.push(json5());
