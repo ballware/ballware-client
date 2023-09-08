@@ -93,6 +93,11 @@ export interface EntityMapOptions extends CrudContainerOptions {
  */
 export interface StatisticOptions {
   /**
+    * Optional fixed height of component
+    */
+  height?: string;
+
+  /**
    * Identifier of statistic definition
    */
   statistic: string;

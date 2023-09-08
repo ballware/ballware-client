@@ -41,10 +41,11 @@ import saveAs from 'file-saver';
 
 export interface StatisticProps {
   identifier: string;
+  height?: string;
   params: Record<string, unknown>;
 }
 
-const MyStatisticElement = () => {
+const MyStatisticElement = ({ height }: { height?: string }) => {
   const { googlekey } = useContext(SettingsContext);
   const { customParam } = useContext(PageContext);
   const { name, params, data, layout, argumentAxisCustomizeText } = useContext(
@@ -77,7 +78,7 @@ const MyStatisticElement = () => {
 
           return (
             <Chart
-              height={layout.height}
+              height={layout.height ?? height}
               title={layout.title ?? name}
               rotated={options.rotated ?? false}
               dataSource={data}
@@ -161,7 +162,7 @@ const MyStatisticElement = () => {
             <React.Fragment>
               {googlekey && (
                 <Map
-                  height={layout.height ?? '400px'}
+                  height={layout.height ?? height ?? '400px'}
                   width={'100%'}
                   autoAdjust
                   provider={'google'}
@@ -209,7 +210,7 @@ const MyStatisticElement = () => {
 
           return (
             <PivotGrid
-              style={{ height: layout.height ?? '100%' }}
+              style={{ height: layout.height ?? height ?? '100%' }}
               allowSortingBySummary
               allowSorting
               allowExpandAll
@@ -265,14 +266,14 @@ const MyStatisticElement = () => {
   );
 };
 
-const StatisticContainer = ({ identifier, params }: StatisticProps) => {
+const StatisticContainer = ({ identifier, height, params }: StatisticProps) => {
   const { StatisticProvider } = useContext(ProviderFactoryContext);
 
   return (
     <React.Fragment>
       {StatisticProvider && (
         <StatisticProvider identifier={identifier} params={params}>
-          <MyStatisticElement />
+          <MyStatisticElement height={height} />
         </StatisticProvider>
       )}
     </React.Fragment>

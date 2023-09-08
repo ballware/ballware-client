@@ -100,6 +100,9 @@ const PageLayoutComponent = ({
       return (
         <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
           <Statistic
+            height={
+              (layoutItem.options?.itemoptions as StatisticOptions)?.height
+            }
             identifier={
               (layoutItem.options?.itemoptions as StatisticOptions)?.statistic
             }
