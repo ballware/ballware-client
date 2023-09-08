@@ -13,7 +13,7 @@ import React, {
 } from 'react';
 
 import JSON5 from 'json5';
-import { CodeMirrorEditor, CodeMirrorEditorRef } from './codemirror';
+import { CodeMirrorEditor, CodeMirrorEditorOptions, CodeMirrorEditorRef } from './codemirror';
 
 export interface CodeEditorRef {
   getValue: () => string;
@@ -25,10 +25,11 @@ export interface CodeEditorProps {
   setValue?: (value?: string) => void;
   defaultValue: string | object;
   height: string;
+  options?: unknown;
 }
 
 export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
-  ({ readOnly, setValue, defaultValue, height }, ref) => {
+  ({ readOnly, setValue, defaultValue, height, options }, ref) => {
     const editorRef = useRef<CodeMirrorEditorRef>(null);
 
     useImperativeHandle(ref, () => ({
@@ -79,6 +80,7 @@ export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
         height={height ?? '200px'}
         mode={'json5'}
         defaultValue={initialValue}
+        options={options as CodeMirrorEditorOptions}
         onChange={onValueChanged}
       />
     );
@@ -86,7 +88,7 @@ export const JsonEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
 );
 
 export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
-  ({ readOnly, defaultValue, setValue, height }, ref) => {
+  ({ readOnly, defaultValue, setValue, height, options }, ref) => {
     const editorRef = useRef<CodeMirrorEditorRef>(null);
 
     useImperativeHandle(ref, () => ({
@@ -106,6 +108,7 @@ export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
         height={height ?? '200px'}
         mode={'javascript'}
         defaultValue={defaultValue as string}
+        options={options as CodeMirrorEditorOptions}
         onChange={value => setValue && setValue(value)}
       />
     );
@@ -113,7 +116,7 @@ export const JavascriptEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
 );
 
 export const SqlEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
-  ({ readOnly, defaultValue, setValue, height }, ref) => {
+  ({ readOnly, defaultValue, setValue, height, options }, ref) => {
     const editorRef = useRef<CodeMirrorEditorRef>(null);
 
     useImperativeHandle(ref, () => ({
@@ -133,6 +136,7 @@ export const SqlEditor = forwardRef<CodeEditorRef, CodeEditorProps>(
         height={height ?? '200px'}
         mode={'sqlserver'}
         defaultValue={defaultValue as string}
+        options={options as CodeMirrorEditorOptions}
         onChange={value => setValue && setValue(value)}
       />
     );
