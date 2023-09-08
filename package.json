@@ -5,10 +5,20 @@
     "lerna": "^6.4.1",
     "tsdx": "^0.14.1"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/meta-interface",
+      "packages/identity-interface",
+      "packages/meta-backend",
+      "packages/identity-backend",
+      "packages/identity-keycloak",
+      "packages/react-contexts",
+      "packages/react-provider",
+      "packages/react-renderer",
+      "packages/react-renderer-dx",
+      "apps/webclient"
+    ]
+  },
   "scripts": {
     "lerna": "lerna",
     "start": "lerna run start --stream --parallel",
@@ -20,9 +30,8 @@
     "typecheck:changed": "lerna run --since origin/master --include-dependents tsc --noEmit",
     "lint": "lerna run lint -- --fix",
     "lint:changed": "lerna run --since origin/master --include-dependents lint -- --fix",
-    "build": "lerna run build",
+    "build": "yarn workspaces run build",
     "build:changed": "lerna run --since origin/master --include-dependents build",
-    "prepublish": "lerna run prepublish",
     "start:app": "yarn run build && yarn --cwd example && yarn --cwd example start",
     "docs": "lerna run docs --",
     "cypress": "cypress run",

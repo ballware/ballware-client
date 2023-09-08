@@ -68,13 +68,18 @@
     }
   ],
   "devDependencies": {
+    "@types/lodash":"^4.14.0",
     "@types/qs": "^6.9.7",
     "@types/uuid": "^8.3.1",
+    "@types/react":"^18.2.0",
+    "@types/react-router-dom": "^5.3.0",
     "axios": "^0.21.1",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "oidc-client": "^1.11.5",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "react": "^18.2.0",
+    "react-router-dom": "^5.3.0"
   },
   "dependencies": {
     "@ballware/identity-interface": "^6.12.0",

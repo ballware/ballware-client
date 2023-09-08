@@ -1,13 +1,14 @@
 FROM node:18-bullseye as build-deps
 ENV NODE_OPTIONS=--openssl-legacy-provider
 WORKDIR /usr/src/app
+# RUN yarn set version 1.18.0
 COPY package.json ./
 COPY yarn.lock ./
 COPY lerna.json ./
-RUN yarn set version 1.18.0
-RUN yarn install
-COPY . ./
-WORKDIR /usr/src/app/apps/webclient
+COPY tsconfig.json ./
+COPY tsconfig.build.json ./
+COPY packages ./packages
+COPY apps ./apps
 RUN yarn install
 RUN yarn build
 
