@@ -30,6 +30,8 @@ export interface CodeMirrorEditorRef {
 }
 
 export interface CodeMirrorEditorOptions {
+  prefixCode?: string[],
+  suffixCode?: string[],
   snippets?: { label: string, info?: string, detail?: string, snippet: string }[] 
 }
 
@@ -113,8 +115,10 @@ export const CodeMirrorEditor = forwardRef<CodeMirrorEditorRef, CodeMirrorEditor
       }
     }, [editorRef, mode, readOnly, defaultValue, onChange, editor, setEditor]);
 
-    return (
-      <div ref={editorRef} style={{ width: width ?? '100%', height: height ?? '400px'}}></div>
-    );
+    return (<React.Fragment>
+      {options?.prefixCode && <React.Fragment>{options?.prefixCode.map((c, index) => <React.Fragment key={index}><code>{c}</code><br/></React.Fragment>)}</React.Fragment>}
+      <div ref={editorRef} style={{ width: width ?? '100%', height: height ?? '100%'}}></div>
+      {options?.suffixCode && <React.Fragment>{options?.suffixCode.map((c, index) => <React.Fragment key={index}><code>{c}</code><br/></React.Fragment>)}</React.Fragment>}
+    </React.Fragment>);
   }
 );

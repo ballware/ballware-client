@@ -7,7 +7,7 @@
     "@ballware/react-renderer-dx": "^6.17.5"
   },
   "scripts": {
-    "start": "cross-env HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",
     "build": "cross-env react-app-rewired --max-old-space-size=16384 build",
     "docker:build": "cross-env react-scripts --max-old-space-size=16384 build",
     "test": "cross-env react-app-rewired test"
