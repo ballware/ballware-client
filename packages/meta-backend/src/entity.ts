@@ -24,6 +24,7 @@ interface EntityMetadata {
   ItemReverseMappingScript: string;
   Lookups: string;
   Picklists: string;
+  Templates: string;
   CustomScripts?: string;
   CustomFunctions?: string;
   GridLayout: string;
@@ -106,6 +107,10 @@ const compileEntityMetadata = (
 
   if (metaData.Picklists) {
     compiledMetaData.picklists = JSON5.parse(metaData.Picklists);
+  }
+
+  if (metaData.Templates) {
+    compiledMetaData.templates = JSON5.parse(metaData.Templates);
   }
 
   if (metaData.CustomFunctions) {

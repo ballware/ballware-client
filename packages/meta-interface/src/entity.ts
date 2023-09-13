@@ -10,6 +10,7 @@ import { ScriptUtil } from './scriptutil';
 import { CrudItem, ValueType } from './cruditem';
 import { RightsCheckFunc } from './rights';
 import { QueryParams } from './common';
+import { Template } from './template';
 
 /**
  * Adapter for accessing editor objects in custom scripts
@@ -783,6 +784,11 @@ export interface CompiledEntityMetadata {
    * Collection of defined picklists
    */
   picklists: Array<{ identifier: string; entity: string; field: string }>;
+
+  /**
+   * List of entity templates
+   */
+  templates?: Array<Template>;
 
   /**
    * Member of business object containing current state code

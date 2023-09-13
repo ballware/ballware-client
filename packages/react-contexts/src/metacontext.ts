@@ -16,6 +16,7 @@ import {
   QueryParams,
   EditLayoutItemOptions,
   GridLayoutColumn,
+  Template,
 } from '@ballware/meta-interface';
 import { EditModes } from './editcontext';
 
@@ -32,6 +33,11 @@ export interface MetaContextState {
    * Collection of available custom crud functions for entity
    */
   customFunctions?: Array<EntityCustomFunction>;
+
+  /**
+   * List of entity layout item templates
+   */
+  templates?: Array<Template>;
 
   /**
    * Get grid layout by identifier from entity metadata

@@ -343,6 +343,7 @@ export const MetaProvider = ({
           ...previousValue,
           displayName: metaData.displayName ?? metaData.entity,
           customFunctions: metaData.customFunctions ?? [],
+          templates: metaData.templates ?? [],
           getGridLayout: identifier =>
             metaData.gridLayouts?.find(l => l.identifier === identifier),
           getEditLayout: identifier =>

@@ -9,6 +9,7 @@ import { createContext } from 'react';
 import {
   NavigationLayout,
   NavigationLayoutItem,
+  Template,
 } from '@ballware/meta-interface';
 
 /**
@@ -24,6 +25,11 @@ export interface TenantContextState {
    * Navigation layout metadata for tenant
    */
   navigation?: NavigationLayout;
+
+  /**
+   * List of tenant layout item templates
+   */
+  templates?: Array<Template>;
 
   /**
    * List of pages for tenant

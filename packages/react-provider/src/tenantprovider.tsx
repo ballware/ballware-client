@@ -106,6 +106,7 @@ export const TenantProvider = ({
     setValue({
       name: tenant?.name,
       navigation: tenant?.navigation,
+      templates: tenant?.templates ?? [],
       pages,
       hasRight,
     } as TenantContextState);
