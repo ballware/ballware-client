@@ -13,7 +13,6 @@ import React, {
 } from 'react';
 import {
   CompiledEntityMetadata,
-  CrudItem,
   QueryParams,
 } from '@ballware/meta-interface';
 import {
@@ -23,11 +22,9 @@ import {
   SettingsContext,
   LookupContext,
   NotificationContext,
-  LookupRequest,
-  TenantContext,
 } from '@ballware/react-contexts';
 import { createUtil } from './scriptutil';
-import { useHistory } from 'react-router-dom';
+import { extractLookupsFromEntityMetadata } from './shared/lookups';
 
 /**
  * Properties for generic meta provider
@@ -64,7 +61,10 @@ export const MetaProvider = ({
   initialCustomParam,
   children,
 }: PropsWithChildren<MetaProviderProps>): JSX.Element => {
-  const [value, setValue] = useState({} as MetaContextState);
+  
+  const [value, setValue] = useState({
+    readOnly
+  } as MetaContextState);
   const [metaData, setMetaData] = useState<
     CompiledEntityMetadata | undefined
   >();
@@ -75,73 +75,12 @@ export const MetaProvider = ({
     Array<{ id: string; text: string }> | undefined
   >();
 
-  const { metaEntityApiFactory, metaGenericEntityApiFactory } = useContext(
+  const { metaEntityApiFactory } = useContext(
     SettingsContext
   );
-  const { token, session } = useContext(RightsContext);
+  const { token } = useContext(RightsContext);
   const { lookups, lookupsComplete, createLookups } = useContext(LookupContext);
   const { showError } = useContext(NotificationContext);
-
-  const { hasRight } = useContext(TenantContext);
-
-  const history = useHistory();
-
-  useEffect(() => {
-    const headAllowed = (right: string) => {
-      return (
-        metaData &&
-        customParam &&
-        session &&
-        hasRight &&
-        !readOnly &&
-        (metaData.compiledCustomScripts?.rightsCheck ?
-          metaData.compiledCustomScripts?.rightsCheck(session, metaData.application, metaData.entity, readOnly, right, metaData.compiledCustomScripts?.rightsParamForHead
-            ? metaData.compiledCustomScripts.rightsParamForHead(customParam)
-            : undefined,
-            hasRight(`${metaData.application}.${metaData.entity}.${right}`))
-          : hasRight(`${metaData.application}.${metaData.entity}.${right}`))
-      );
-    };
-
-    const itemAllowed = (item: CrudItem, right: string) => {
-      return (
-        metaData &&
-        customParam &&
-        session &&      
-        hasRight &&  
-        (metaData.compiledCustomScripts?.rightsCheck ?
-          metaData.compiledCustomScripts?.rightsCheck(session, metaData.application, metaData.entity, readOnly, right, metaData.compiledCustomScripts?.rightsParamForItem
-            ? metaData.compiledCustomScripts.rightsParamForItem(item, customParam)
-            : undefined, 
-            hasRight(`${metaData.application}.${metaData.entity}.${right}`))               
-          : hasRight(`${metaData.application}.${metaData.entity}.${right}`))
-      );
-    };
-
-    const print = (doc: string, ids: Array<string>) => {
-      history.push(`/print?docId=${doc}${ids.map(u => `&id=${u}`).join('')}`);
-    };
-
-    if (metaData && customParam && session && documents && hasRight) {
-      setValue(previousValue => {
-        return {
-          ...previousValue,
-          print: print,
-          addAllowed: () => headAllowed('add'),
-          viewAllowed: item => itemAllowed(item, 'view'),
-          editAllowed: item => itemAllowed(item, 'edit'),
-          dropAllowed: item => itemAllowed(item, 'delete'),
-          printAllowed: item =>
-            documents?.length > 0 &&
-            itemAllowed(item, 'print'),
-          customFunctionAllowed: (customFunction, item) =>
-            customFunction.type === 'edit' && item
-              ? itemAllowed(item, customFunction.id)
-              : headAllowed(customFunction.id),
-        } as MetaContextState;
-      });
-    }
-  }, [metaData, customParam, session, documents, history, readOnly, hasRight]);
 
   useEffect(() => {
     let fetchingCanceled = false;
@@ -192,84 +131,23 @@ export const MetaProvider = ({
     setValue(previousValue => {
       return {
         ...previousValue,
-        metaData: metaData,
+        application: metaData?.application,
+        entity: metaData?.entity,
+        displayName: metaData?.displayName ?? metaData?.entity,
+        customFunctions: metaData?.customFunctions,
+        templates: metaData?.templates,
+        customScripts: metaData?.compiledCustomScripts,
+        mappingScripts: metaData?.mappingScripts,
+        gridLayouts: metaData?.gridLayouts,
+        editLayouts: metaData?.editLayouts,
+        baseUrl: metaData?.baseUrl      
       } as MetaContextState;
     });
   }, [metaData]);
 
   useEffect(() => {
     if (createLookups && metaData) {
-      const lookups = [] as Array<LookupRequest>;
-
-      if (metaData.lookups) {
-        lookups.push(
-          ...metaData.lookups.map(l => {
-            if (l.type === 1) {
-              if (l.hasParam) {
-                return {
-                  type: 'autocompletewithparam',
-                  identifier: l.identifier,
-                  lookupId: l.id,
-                } as LookupRequest;
-              } else {
-                return {
-                  type: 'autocomplete',
-                  identifier: l.identifier,
-                  lookupId: l.id,
-                } as LookupRequest;
-              }
-            } else {
-              if (l.hasParam) {
-                return {
-                  type: 'lookupwithparam',
-                  identifier: l.identifier,
-                  lookupId: l.id,
-                  valueMember: l.valueMember,
-                  displayMember: l.displayMember,
-                } as LookupRequest;
-              } else {
-                return {
-                  type: 'lookup',
-                  identifier: l.identifier,
-                  lookupId: l.id,
-                  valueMember: l.valueMember,
-                  displayMember: l.displayMember,
-                } as LookupRequest;
-              }
-            }
-          })
-        );
-      }
-
-      if (metaData.picklists) {
-        lookups.push(
-          ...metaData.picklists.map(p => {
-            return {
-              type: 'pickvalue',
-              identifier: p.identifier,
-              entity: p.entity,
-              field: p.field,
-            } as LookupRequest;
-          })
-        );
-      }
-
-      if (metaData.stateColumn) {
-        lookups.push(
-          ...[
-            {
-              type: 'state',
-              identifier: 'stateLookup',
-              entity: metaData.entity,
-            } as LookupRequest,
-            {
-              type: 'stateallowed',
-              identifier: 'allowedStateLookup',
-              entity: metaData.entity,
-            } as LookupRequest,
-          ]
-        );
-      }
+      const lookups = extractLookupsFromEntityMetadata(metaData);
 
       createLookups(lookups);
     }
@@ -327,232 +205,6 @@ export const MetaProvider = ({
       fetchingCanceled = true;
     };
   }, [lookupsComplete, metaData, initialCustomParam, lookups, token]);
-
-  useEffect(() => {
-    if (
-      token &&
-      metaData &&
-      customParam &&
-      lookupsComplete &&
-      metaGenericEntityApiFactory
-    ) {
-      const entityApi = metaGenericEntityApiFactory(metaData.baseUrl);
-
-      setValue(previousValue => {
-        return {
-          ...previousValue,
-          displayName: metaData.displayName ?? metaData.entity,
-          customFunctions: metaData.customFunctions ?? [],
-          templates: metaData.templates ?? [],
-          getGridLayout: identifier =>
-            metaData.gridLayouts?.find(l => l.identifier === identifier),
-          getEditLayout: identifier =>
-            metaData.editLayouts?.find(l => l.identifier === identifier),
-          mapIncomingItem: item =>
-            metaData.itemMappingScript
-              ? metaData.itemMappingScript(item, customParam, createUtil(token))
-              : item,
-          mapOutgoingItem: item =>
-            metaData.itemReverseMappingScript
-              ? metaData.itemReverseMappingScript(
-                  item,
-                  customParam,
-                  createUtil(token)
-                )
-              : item,
-          query: (query, params) => entityApi.query(token, query, params),
-          count: (query, params) => entityApi.count(token, query, params),
-          byId: (functionIdentifier, id) => entityApi.byId(token, functionIdentifier, id),
-          create: (functionIdentifier, params) => entityApi.new(token, functionIdentifier, params),
-          save: (functionIdentifier, item) => entityApi.save(token, functionIdentifier, item),
-          saveBatch: (functionIdentifier, items) => entityApi.saveBatch(token, functionIdentifier, items),
-          drop: id => entityApi.drop(token, id),
-          importItems: (functionIdentifier, file) => entityApi.importItems(token, functionIdentifier, file),
-          exportItems: (functionIdentifier, ids) => entityApi.exportItems(token, functionIdentifier, ids),
-          prepareCustomFunction: (identifier, selection, execute, message, params) => {
-            if (metaData.compiledCustomScripts?.prepareCustomFunction) {
-              metaData.compiledCustomScripts.prepareCustomFunction(
-                identifier,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token),
-                execute,
-                message,
-                params,
-                selection
-              );
-            } else {
-              selection?.forEach(s => execute(s, undefined));
-            }
-          },
-          evaluateCustomFunction: (identifier, param, save, message) => {
-            if (metaData.compiledCustomScripts?.evaluateCustomFunction) {
-              metaData.compiledCustomScripts.evaluateCustomFunction(
-                identifier,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token),
-                param,
-                save,
-                message
-              );
-            } else {
-              save(param);
-            }
-          },
-          prepareGridLayout: gridLayout => {
-            if (metaData.compiledCustomScripts?.prepareGridLayout) {
-              metaData.compiledCustomScripts.prepareGridLayout(
-                (lookups as Record<string, unknown>) ?? {},
-                customParam,
-                createUtil(token),
-                gridLayout
-              );
-            }
-          },
-          prepareEditLayout: (mode, editLayout) => {
-            if (metaData.compiledCustomScripts?.prepareEditLayout) {
-              metaData.compiledCustomScripts.prepareEditLayout(
-                mode,
-                (lookups as Record<string, unknown>) ?? {},
-                customParam,
-                createUtil(token),
-                editLayout
-              );
-            }
-          },
-          editorPreparing: (mode, item, layoutItem, identifier) => {
-            if (metaData.compiledCustomScripts?.editorPreparing) {
-              metaData.compiledCustomScripts.editorPreparing(
-                mode,
-                item,
-                layoutItem,
-                identifier,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
-              );
-            }
-          },
-          editorInitialized: (mode, item, editUtil, identifier) => {
-            if (metaData.compiledCustomScripts?.editorInitialized) {
-              metaData.compiledCustomScripts.editorInitialized(
-                mode,
-                item,
-                editUtil,
-                identifier,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
-              );
-            }
-          },
-          editorEntered: (mode, item, editUtil, identifier) => {
-            if (metaData.compiledCustomScripts?.editorEntered) {
-              metaData.compiledCustomScripts.editorEntered(
-                mode,
-                item,
-                editUtil,
-                identifier,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
-              );
-            }
-          },
-          editorValueChanged: (_mode, item, editUtil, identifier, value) => {
-            if (metaData.compiledCustomScripts?.editorValueChanged) {
-              metaData.compiledCustomScripts.editorValueChanged(
-                item,
-                editUtil,
-                identifier,
-                value,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
-              );
-            }
-          },
-          editorValidating: (
-            _mode,
-            item,
-            editUtil,
-            identifier,
-            value,
-            validation
-          ) => {
-            if (metaData.compiledCustomScripts?.editorValidating) {
-              return metaData.compiledCustomScripts.editorValidating(
-                item,
-                editUtil,
-                identifier,
-                value,
-                validation,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
-              );
-            } else {
-              return true;
-            }
-          },
-          editorEvent: (_mode, item, editUtil, identifier, event) => {
-            if (metaData.compiledCustomScripts?.editorEvent) {
-              metaData.compiledCustomScripts.editorEvent(
-                item,
-                editUtil,
-                identifier,
-                event,
-                (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
-              );
-            }
-          },
-          detailGridCellPreparing: (
-            mode,
-            item,
-            detailItem,
-            identifier,
-            options
-          ) => {
-            if (metaData.compiledCustomScripts?.detailGridCellPreparing) {
-              metaData.compiledCustomScripts.detailGridCellPreparing(
-                mode,
-                item as CrudItem,
-                detailItem,
-                identifier,
-                options,
-                createUtil(token)
-              );
-            }
-          },
-          detailGridRowValidating: (mode, item, detailItem, identifier) => {
-            if (metaData.compiledCustomScripts?.detailGridRowValidating) {
-              return metaData.compiledCustomScripts.detailGridRowValidating(
-                mode,
-                item as CrudItem,
-                detailItem,
-                identifier,
-                createUtil(token)
-              );
-            }
-
-            return undefined;
-          },
-          initNewDetailItem: (dataMember, item, detailItem) => {
-            if (metaData.compiledCustomScripts?.initNewDetailItem) {
-              metaData.compiledCustomScripts.initNewDetailItem(
-                dataMember,
-                item as CrudItem,
-                detailItem,
-                createUtil(token)
-              );
-            }
-          },
-        } as MetaContextState;
-      });
-    }
-  }, [
-    token,
-    metaData,
-    lookups,
-    lookupsComplete,
-    customParam,
-    metaGenericEntityApiFactory,
-  ]);
 
   return <MetaContext.Provider value={value}>{children}</MetaContext.Provider>;
 };

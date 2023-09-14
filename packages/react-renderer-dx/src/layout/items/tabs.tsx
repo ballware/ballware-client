@@ -15,13 +15,14 @@ import { Container } from '../container';
 import { TabPanel, Item as TabItem } from 'devextreme-react/tab-panel';
 import { LoadIndicator } from 'devextreme-react/load-indicator';
 import { RenderFactoryContext } from '@ballware/react-renderer';
-import { MetaContext, ProviderFactoryContext } from '@ballware/react-contexts';
+import { ProviderFactoryContext } from '@ballware/react-contexts';
+import { useMetaOperations } from '@ballware/react-provider';
 
 const TabCountIndicator = ({ query, params }: { query: string, params?: QueryParams}) => {
 
   const [itemCount, setItemCount] = useState<number>();
 
-  const { count } = useContext(MetaContext);  
+  const { count } = useMetaOperations();
   
   useEffect(() => {
     if (count) {

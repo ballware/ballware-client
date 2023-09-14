@@ -23,6 +23,7 @@ import {
   DefaultEditFunction,
 } from '@ballware/react-contexts';
 import { RenderFactoryContext } from '../renderfactorycontext';
+import { useMetaEditLayout } from '@ballware/react-provider';
 
 /**
  * Properties for crud functions component
@@ -50,7 +51,7 @@ export const CrudFunctions = ({
     CrudProvider,
     EditProvider,
   } = useContext(ProviderFactoryContext);
-  const { displayName, getEditLayout, documents } = useContext(MetaContext);
+  const { displayName, documents } = useContext(MetaContext);
   const {
     load,
     fetchParams,
@@ -67,6 +68,10 @@ export const CrudFunctions = ({
     editLayout,
     item,
   } = useContext(CrudContext);
+
+  const { 
+    getEditLayout
+  } = useMetaEditLayout();
 
   useEffect(() => {
     if (load && fetchParams) {

@@ -28,6 +28,7 @@ import { SpeedDialAction } from 'devextreme-react/speed-dial-action';
 import { dxElement } from 'devextreme/core/element';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../../util/mediaquery';
+import { useMetaAllowed, useMetaOperations } from '@ballware/react-provider';
 
 export interface EntityMapProps {
   height?: string;
@@ -55,15 +56,22 @@ export const EntityMap = ({
   const {
     displayName,
     customFunctions,
-    print,
-    documents,
+    documents    
+  } = useContext(MetaContext);
+
+  const {
     addAllowed,
     viewAllowed,
     editAllowed,
     dropAllowed,
     printAllowed,
     customFunctionAllowed,
-  } = useContext(MetaContext);
+  } = useMetaAllowed();
+
+  const {
+    print
+  } = useMetaOperations();
+
   const { add, view, edit, remove, customEdit, fetchedItems } = useContext(
     CrudContext
   );

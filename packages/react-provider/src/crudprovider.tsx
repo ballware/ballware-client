@@ -25,6 +25,7 @@ import {
   MetaContext,
   NotificationContext,
 } from '@ballware/react-contexts';
+import { useMetaOperations, useMetaMapping, useMetaCustomFunctions } from './hooks';
 
 /**
  * Properties for crud provider component
@@ -73,10 +74,17 @@ export const CrudProvider = ({
 
   const { showInfo, showError } = useContext(NotificationContext);
   const {
-    prepareCustomFunction,
+    headParams  
+  } = useContext(MetaContext);
+
+  const { prepareCustomFunction } = useMetaCustomFunctions();
+
+  const {
     mapIncomingItem,
-    mapOutgoingItem,
-    headParams,
+    mapOutgoingItem
+  } = useMetaMapping();
+
+  const {
     query,
     count,
     create,
@@ -86,7 +94,7 @@ export const CrudProvider = ({
     drop,
     exportItems,
     importItems
-  } = useContext(MetaContext);
+  } = useMetaOperations();
 
   useEffect(() => {
     if (identifier && currentRouterState) {

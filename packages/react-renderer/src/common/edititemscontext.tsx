@@ -29,13 +29,17 @@ import {
 } from '@ballware/meta-interface';
 import {
   ProviderFactoryContext,
-  MetaContext,
   EditContext,
   EditModes,
   LookupDescriptor,
   LookupCreator,
   LookupContext,
 } from '@ballware/react-contexts';
+
+import {
+  useMetaDetailItems,
+  useMetaEditing
+} from '@ballware/react-provider';
 
 import { EditorRef } from './editor';
 import { RenderFactoryContext } from '../renderfactorycontext';
@@ -301,16 +305,20 @@ export const EditItemsProvider = forwardRef<
   const { EditProvider } = useContext(ProviderFactoryContext);
   const { lookups, lookupsComplete } = useContext(LookupContext);
   const {
+    detailGridCellPreparing,
+    detailGridRowValidating,
+    initNewDetailItem,
+  } = useMetaDetailItems();
+
+  const {
     editorPreparing,
     editorInitialized,
     editorValidating,
     editorValueChanged,
     editorEntered,
     editorEvent,
-    detailGridCellPreparing,
-    detailGridRowValidating,
-    initNewDetailItem,
-  } = useContext(MetaContext);
+  } = useMetaEditing();
+
   const { item, mode } = useContext(EditContext);
 
   useImperativeHandle(ref, () => ({

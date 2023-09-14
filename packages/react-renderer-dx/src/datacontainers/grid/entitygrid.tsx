@@ -36,6 +36,13 @@ import {
   CrudContext,
   LookupContext,
 } from '@ballware/react-contexts';
+
+import {
+  useMetaGridLayout,
+  useMetaAllowed, 
+  useMetaOperations
+} from '@ballware/react-provider';
+
 import { dxElement } from 'devextreme/core/element';
 import { dxEvent } from 'devextreme/events';
 import { DataGrid } from './datagrid';
@@ -67,21 +74,31 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
   const { lookups } = useContext(LookupContext);
   const {
-    getGridLayout,
     displayName,
     customFunctions,
     headParams,
     customParam,
-    print,
-    documents,
+    documents,    
+  } = useContext(MetaContext);
+
+  const {
+    getGridLayout, 
+    prepareGridLayout
+  } = useMetaGridLayout();
+
+  const {
     addAllowed,
     viewAllowed,
     editAllowed,
     dropAllowed,
     printAllowed,
     customFunctionAllowed,
-    prepareGridLayout,
-  } = useContext(MetaContext);
+  } = useMetaAllowed();
+
+  const {
+    print
+  } = useMetaOperations();
+
   const {
     load,
     fetchParams,

@@ -61,6 +61,7 @@ const compileEntityMetadata = (
     displayName: metaData.DisplayName,
     baseUrl: metaData.BaseUrl,
     stateColumn: metaData.StateColumn,
+    mappingScripts: {}
   } as CompiledEntityMetadata;
 
   if (metaData.ItemMappingScript) {
@@ -70,7 +71,7 @@ const compileEntityMetadata = (
       compiledArgs.concat(metaData.ItemMappingScript)
     );
 
-    compiledMetaData.itemMappingScript = compiledFn
+    compiledMetaData.mappingScripts.mapItem = compiledFn
       ? (item, customParam, util) =>
           compiledFn.apply(compiledFn, [item, customParam, util])
       : item => item;
@@ -83,7 +84,7 @@ const compileEntityMetadata = (
       compiledArgs.concat(metaData.ItemReverseMappingScript)
     );
 
-    compiledMetaData.itemReverseMappingScript = compiledFn
+    compiledMetaData.mappingScripts.reverseMapItem = compiledFn
       ? (item, customParam, util) =>
           compiledFn.apply(compiledFn, [item, customParam, util])
       : item => item;
