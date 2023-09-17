@@ -1,7 +1,7 @@
 import { CrudItem, QueryParams } from "@ballware/meta-interface";
-import { LookupContext, MetaContext, RightsContext } from "@ballware/react-contexts";
-import { useContext, useMemo } from "react"
-import { createUtil } from "../../scriptutil";
+import { LookupContext, MetaContext } from "@ballware/react-contexts";
+import { useContext, useMemo } from "react";
+import { useScriptUtil } from "../util";
 
 export interface MetaCustomFunctionOperations {
   /**
@@ -37,17 +37,18 @@ export interface MetaCustomFunctionOperations {
 
 export const useMetaCustomFunctions = () => {
 
-    const { token } = useContext(RightsContext);
     const { lookups } = useContext(LookupContext);
     const { customScripts } = useContext(MetaContext);
 
+    const scriptUtil = useScriptUtil();
+
     return useMemo(() => ({
-        prepareCustomFunction: (customScripts && lookups && token) ? (identifier, selection, execute, message, params) => {
+        prepareCustomFunction: (customScripts && lookups && scriptUtil) ? (identifier, selection, execute, message, params) => {
             if (customScripts.prepareCustomFunction) {
                     customScripts.prepareCustomFunction(
                     identifier,
                     (lookups as Record<string, unknown>) ?? {},
-                    createUtil(token),
+                    scriptUtil,
                     execute,
                     message,
                     params,
@@ -57,12 +58,12 @@ export const useMetaCustomFunctions = () => {
               selection?.forEach(s => execute(s, undefined));
             }
           } : undefined,
-          evaluateCustomFunction: (customScripts && lookups && token) ? (identifier, param, save, message) => {
+          evaluateCustomFunction: (customScripts && lookups && scriptUtil) ? (identifier, param, save, message) => {
             if (customScripts.evaluateCustomFunction) {
                     customScripts.evaluateCustomFunction(
                     identifier,
                     (lookups as Record<string, unknown>) ?? {},
-                    createUtil(token),
+                    scriptUtil,
                     param,
                     save,
                     message
@@ -71,5 +72,5 @@ export const useMetaCustomFunctions = () => {
               save(param);
             }
           } : undefined,  
-    } as MetaCustomFunctionOperations), [customScripts, lookups, token]);
+    } as MetaCustomFunctionOperations), [customScripts, lookups, scriptUtil]);
 }

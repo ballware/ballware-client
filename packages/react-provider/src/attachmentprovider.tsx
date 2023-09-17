@@ -6,17 +6,12 @@
  */
 
 import React, {
-  useState,
-  useEffect,
-  useContext,
   PropsWithChildren,
 } from 'react';
 import {
-  RightsContext,
-  SettingsContext,
-  AttachmentContextState,
   AttachmentContext,
 } from '@ballware/react-contexts';
+import { useAttachmentApi } from './hooks';
 
 /**
  * Properties for attachment provider
@@ -29,29 +24,15 @@ export interface AttachmentProviderProps {}
 export const AttachmentProvider = ({
   children,
 }: PropsWithChildren<AttachmentProviderProps>): JSX.Element => {
-  const [value, setValue] = useState({} as AttachmentContextState);
-
-  const { metaAttachmentApiFactory } = useContext(SettingsContext);
-  const { token } = useContext(RightsContext);
-
-  useEffect(() => {
-    if (token && metaAttachmentApiFactory) {
-      const attachmentApi = metaAttachmentApiFactory();
-
-      setValue(previousValue => {
-        return {
-          ...previousValue,
-          fetch: id => attachmentApi.queryByOwner(token, id),
-          upload: (id, file) => attachmentApi.upload(token, id, file),
-          open: (id, fileName) => attachmentApi.open(token, id, fileName),
-          drop: (id, fileName) => attachmentApi.remove(token, id, fileName),
-        } as AttachmentContextState;
-      });
-    }
-  }, [token, metaAttachmentApiFactory]);
+  const attachmentApi = useAttachmentApi();
 
   return (
-    <AttachmentContext.Provider value={value}>
+    <AttachmentContext.Provider value={{
+        fetch: id => attachmentApi?.fetchQueryByOwner(id),
+        upload: (id, file) => attachmentApi?.fetchUpload(id, file),
+        open: (id, fileName) => attachmentApi?.fetchOpen(id, fileName),
+        drop: (id, fileName) => attachmentApi?.fetchRemove(id, fileName),      
+      }}>
       {children}
     </AttachmentContext.Provider>
   );

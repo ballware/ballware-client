@@ -1,7 +1,7 @@
 import { CrudItem, GridLayoutColumn } from "@ballware/meta-interface";
-import { EditModes, MetaContext, RightsContext } from "@ballware/react-contexts";
+import { EditModes, MetaContext } from "@ballware/react-contexts";
 import { useContext, useMemo } from "react";
-import { createUtil } from "../../scriptutil";
+import { useScriptUtil } from "../util";
 
 export interface MetaDetailItemOperations {
     /**
@@ -50,11 +50,12 @@ export interface MetaDetailItemOperations {
 
 export const useMetaDetailItems = () => {
 
-    const { token } = useContext(RightsContext);
     const { customScripts } = useContext(MetaContext);
 
+    const scriptUtil = useScriptUtil();
+
     return useMemo(() => ({
-        detailGridCellPreparing: (customScripts && token) ? (
+        detailGridCellPreparing: (customScripts && scriptUtil) ? (
             mode,
             item,
             detailItem,
@@ -68,30 +69,30 @@ export const useMetaDetailItems = () => {
                 detailItem,
                 identifier,
                 options,
-                createUtil(token)
+                scriptUtil
                 );
             }
         } : undefined,
-        detailGridRowValidating: (customScripts && token) ? (mode, item, detailItem, identifier) => {
+        detailGridRowValidating: (customScripts && scriptUtil) ? (mode, item, detailItem, identifier) => {
             if (customScripts.detailGridRowValidating) {
                 return customScripts.detailGridRowValidating(
                 mode,
                 item as CrudItem,
                 detailItem,
                 identifier,
-                createUtil(token)
+                scriptUtil
                 );
             }
 
             return undefined;
         } : undefined,
-        initNewDetailItem: (customScripts && token) ? (dataMember, item, detailItem) => {
+        initNewDetailItem: (customScripts && scriptUtil) ? (dataMember, item, detailItem) => {
             if (customScripts.initNewDetailItem) {
                 customScripts.initNewDetailItem(
                 dataMember,
                 item as CrudItem,
                 detailItem,
-                createUtil(token)
+                scriptUtil
                 );
             }
         } : undefined,

@@ -1,7 +1,7 @@
 import { EditLayout } from "@ballware/meta-interface";
-import { EditModes, LookupContext, MetaContext, RightsContext } from "@ballware/react-contexts";
-import { useContext, useMemo } from "react"
-import { createUtil } from "../../scriptutil";
+import { EditModes, LookupContext, MetaContext } from "@ballware/react-contexts";
+import { useContext, useMemo } from "react";
+import { useScriptUtil } from "../util";
 
 export interface MetaEditLayoutOperations {
     /**
@@ -21,22 +21,23 @@ export interface MetaEditLayoutOperations {
 
 export const useMetaEditLayout = () => {
 
-    const { token } = useContext(RightsContext);
     const { lookups } = useContext(LookupContext);
     const { editLayouts, customScripts, customParam } = useContext(MetaContext);
 
+    const scriptUtil = useScriptUtil();
+
     return useMemo(() => ({
         getEditLayout: editLayouts ? identifier => editLayouts.find(l => l.identifier === identifier): undefined,
-        prepareEditLayout: (token && customScripts && customParam && lookups) ? (mode, editLayout) => {
+        prepareEditLayout: (scriptUtil && customScripts && customParam && lookups) ? (mode, editLayout) => {
             if (customScripts?.prepareEditLayout) {
                 customScripts.prepareEditLayout(
                 mode,
                 (lookups as Record<string, unknown>) ?? {},
                 customParam,
-                createUtil(token),
+                scriptUtil,
                 editLayout
               );
             }
           } : undefined,   
-    } as MetaEditLayoutOperations), [editLayouts, customScripts, customParam, lookups, token]);
+    } as MetaEditLayoutOperations), [editLayouts, customScripts, customParam, lookups, scriptUtil]);
 }

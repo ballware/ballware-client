@@ -16,15 +16,13 @@ import {
   QueryParams,
 } from '@ballware/meta-interface';
 import {
-  RightsContext,
   MetaContext,
   MetaContextState,
-  SettingsContext,
   LookupContext,
   NotificationContext,
 } from '@ballware/react-contexts';
-import { createUtil } from './scriptutil';
 import { extractLookupsFromEntityMetadata } from './shared/lookups';
+import { useEntityApi, useScriptUtil } from './hooks';
 
 /**
  * Properties for generic meta provider
@@ -75,21 +73,19 @@ export const MetaProvider = ({
     Array<{ id: string; text: string }> | undefined
   >();
 
-  const { metaEntityApiFactory } = useContext(
-    SettingsContext
-  );
-  const { token } = useContext(RightsContext);
   const { lookups, lookupsComplete, createLookups } = useContext(LookupContext);
   const { showError } = useContext(NotificationContext);
+
+  const entityApi = useEntityApi();
+  const scriptUtil = useScriptUtil();
 
   useEffect(() => {
     let fetchingCanceled = false;
 
-    if (showError && entity && token && metaEntityApiFactory) {
-      const api = metaEntityApiFactory();
-
-      api
-        .metadataForEntity(token, entity)
+    if (showError && entity && entityApi) {
+      
+      entityApi
+        .fetchMetadataForEntity(entity)
         .then(result => {
           if (!fetchingCanceled) {
             setMetaData(result);
@@ -103,8 +99,8 @@ export const MetaProvider = ({
           }
         });
 
-      api
-        .documentsForEntity(token, entity)
+      entityApi
+        .fetchDocumentsForEntity(entity)
         .then(result => {
           if (!fetchingCanceled) {
             setDocuments(
@@ -125,7 +121,7 @@ export const MetaProvider = ({
     return () => {
       fetchingCanceled = true;
     };
-  }, [showError, entity, token, metaEntityApiFactory]);
+  }, [showError, entity, entityApi]);
 
   useEffect(() => {
     setValue(previousValue => {
@@ -183,11 +179,11 @@ export const MetaProvider = ({
   useEffect(() => {
     let fetchingCanceled = false;
 
-    if (lookupsComplete && metaData) {
+    if (lookupsComplete && metaData && scriptUtil) {
       if (metaData.compiledCustomScripts?.prepareCustomParam) {
         metaData.compiledCustomScripts.prepareCustomParam(
           lookups ?? {},
-          createUtil(token as string),
+          scriptUtil,
           p => {
             if (!fetchingCanceled) {
               setCustomParam(p);
@@ -204,7 +200,7 @@ export const MetaProvider = ({
     return () => {
       fetchingCanceled = true;
     };
-  }, [lookupsComplete, metaData, initialCustomParam, lookups, token]);
+  }, [lookupsComplete, metaData, initialCustomParam, lookups, scriptUtil]);
 
   return <MetaContext.Provider value={value}>{children}</MetaContext.Provider>;
 };

@@ -1,7 +1,7 @@
 import { EditLayoutItemOptions, EditUtil, ValueType } from "@ballware/meta-interface";
-import { EditModes, LookupContext, MetaContext, RightsContext } from "@ballware/react-contexts";
+import { EditModes, LookupContext, MetaContext } from "@ballware/react-contexts";
 import { useContext, useMemo } from "react";
-import { createUtil } from "../../scriptutil";
+import { useScriptUtil } from "../util";
 
 export interface MetaEditingFunctions {
     /**
@@ -100,12 +100,12 @@ export interface MetaEditingFunctions {
 
 export const useMetaEditing = () => {
 
-    const { token } = useContext(RightsContext);
     const { lookups } = useContext(LookupContext);
     const { customScripts } = useContext(MetaContext);
+    const scriptUtil = useScriptUtil();
     
     return useMemo(() => ({
-        editorPreparing: customScripts && lookups && token ? (mode, item, layoutItem, identifier) => {
+        editorPreparing: customScripts && lookups && scriptUtil ? (mode, item, layoutItem, identifier) => {
             if (customScripts?.editorPreparing) {
               customScripts.editorPreparing(
                 mode,
@@ -113,11 +113,11 @@ export const useMetaEditing = () => {
                 layoutItem,
                 identifier,
                 (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
+                scriptUtil
               );
             }
         } : undefined,
-        editorInitialized: customScripts && lookups && token ? (mode, item, editUtil, identifier) => {
+        editorInitialized: customScripts && lookups && scriptUtil ? (mode, item, editUtil, identifier) => {
             if (customScripts?.editorInitialized) {
                 customScripts.editorInitialized(
                 mode,
@@ -125,11 +125,11 @@ export const useMetaEditing = () => {
                 editUtil,
                 identifier,
                 (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
+                scriptUtil
                 );
             }
         } : undefined,
-        editorEntered: customScripts && lookups && token ? (mode, item, editUtil, identifier) => {
+        editorEntered: customScripts && lookups && scriptUtil ? (mode, item, editUtil, identifier) => {
             if (customScripts?.editorEntered) {
                 customScripts.editorEntered(
                 mode,
@@ -137,11 +137,11 @@ export const useMetaEditing = () => {
                 editUtil,
                 identifier,
                 (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
+                scriptUtil
                 );
             }
         } : undefined,
-        editorValueChanged: customScripts && lookups && token ?  (_mode, item, editUtil, identifier, value) => {
+        editorValueChanged: customScripts && lookups && scriptUtil ?  (_mode, item, editUtil, identifier, value) => {
             if (customScripts?.editorValueChanged) {
                 customScripts.editorValueChanged(
                 item,
@@ -149,11 +149,11 @@ export const useMetaEditing = () => {
                 identifier,
                 value,
                 (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
+                scriptUtil
                 );
             }
         } : undefined,
-        editorValidating: customScripts && lookups && token ? (
+        editorValidating: customScripts && lookups && scriptUtil ? (
             _mode,
             item,
             editUtil,
@@ -169,13 +169,13 @@ export const useMetaEditing = () => {
                 value,
                 validation,
                 (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
+                scriptUtil
                 );
             } else {
                 return true;
             }
         } : undefined,
-        editorEvent: customScripts && lookups && token ? (_mode, item, editUtil, identifier, event) => {
+        editorEvent: customScripts && lookups && scriptUtil ? (_mode, item, editUtil, identifier, event) => {
             if (customScripts?.editorEvent) {
                 customScripts.editorEvent(
                 item,
@@ -183,9 +183,9 @@ export const useMetaEditing = () => {
                 identifier,
                 event,
                 (lookups as Record<string, unknown>) ?? {},
-                createUtil(token)
+                scriptUtil
                 );
             }
         } : undefined,
-    } as MetaEditingFunctions), [token, lookups, customScripts]);
+    } as MetaEditingFunctions), [lookups, customScripts]);
 }

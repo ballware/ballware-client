@@ -22,19 +22,17 @@ import {
 import {
   PageContext,
   PageContextState,
-  RightsContext,
-  SettingsContext,
   NotificationContext,
   LookupContext,
-  LookupRequest,
 } from '@ballware/react-contexts';
-import { createUtil } from './scriptutil';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import qs from 'qs';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import set from 'lodash/set';
+import { useDocumentationApi, usePageApi, useScriptUtil } from './hooks';
+import { extractLookupsFromPageMetadata } from './shared/lookups';
 
 /**
  * Properties for page provider
@@ -65,12 +63,12 @@ export const PageProvider = ({
   const [customParam, setCustomParam] = useState<unknown | undefined>();
   const [value, setValue] = useState({} as PageContextState);
 
-  const { metaPageApiFactory, metaDocumentationApiFactory } = useContext(
-    SettingsContext
-  );
   const { showInfo, showError } = useContext(NotificationContext);
-  const { token } = useContext(RightsContext);
   const { createLookups, lookups, lookupsComplete } = useContext(LookupContext);
+
+  const pageApi = usePageApi();
+  const documentationApi = useDocumentationApi();
+  const scriptUtil = useScriptUtil();
 
   const loadDocumentation = useCallback(
     (entity: string) => setDocumentationEntity(entity),
@@ -115,14 +113,11 @@ export const PageProvider = ({
     if (
       showError &&
       showInfo &&
-      metaDocumentationApiFactory &&
-      token &&
+      documentationApi &&
       documentationEntity
     ) {
-      const api = metaDocumentationApiFactory();
-
-      api
-        .loadDocumentationForEntity(token, documentationEntity)
+      documentationApi
+        .fetchDocumentationForEntity(documentationEntity)
         .then(result => {
           if (result) {
             setValue(previousValue => {
@@ -148,8 +143,7 @@ export const PageProvider = ({
   }, [
     showError,
     showInfo,
-    metaDocumentationApiFactory,
-    token,
+    documentationApi,
     documentationEntity,
   ]);
 
@@ -179,24 +173,22 @@ export const PageProvider = ({
   }, [loadDocumentation, resetDocumentation]);
 
   useEffect(() => {
-    if (showError && metaPageApiFactory && identifier && token) {
-      const api = metaPageApiFactory();
-
-      api
-        .pageDataForIdentifier(token, identifier)
+    if (showError && pageApi && identifier) {      
+      pageApi
+        .fetchPageDataForIdentifier(identifier)
         .then(result => {
           setPageData(result);
         })
         .catch(reason => showError(reason));
     }
-  }, [showError, metaPageApiFactory, identifier, token]);
+  }, [showError, pageApi, identifier]);
 
   useEffect(() => {
-    if (token && pageData && lookups && lookupsComplete) {
+    if (scriptUtil && pageData && lookups && lookupsComplete) {
       if (pageData.compiledCustomScripts?.prepareCustomParam) {
         pageData.compiledCustomScripts.prepareCustomParam(
           lookups,
-          createUtil(token),
+          scriptUtil,
           p => {
             setCustomParam(p);
           }
@@ -210,7 +202,7 @@ export const PageProvider = ({
           pageData.compiledCustomScripts?.paramsInitialized(
             hidden,
             lookups,
-            createUtil(token),
+            scriptUtil,
             scriptActions,
             currentPageParam
           );
@@ -223,7 +215,7 @@ export const PageProvider = ({
             name,
             editUtil,
             lookups,
-            createUtil(token),
+            scriptUtil,
             scriptActions,
             currentPageParam
           );
@@ -241,7 +233,7 @@ export const PageProvider = ({
             value,
             editUtil,
             lookups,
-            createUtil(token),
+            scriptUtil,
             scriptActions,
             currentPageParam
           );
@@ -260,7 +252,7 @@ export const PageProvider = ({
             event,
             editUtil,
             lookups,
-            createUtil(token),
+            scriptUtil,
             scriptActions,
             currentPageParam,
             param
@@ -279,46 +271,11 @@ export const PageProvider = ({
         } as PageContextState;
       });
     }
-  }, [token, pageData, lookups, lookupsComplete, scriptActions, currentPageParam]);
+  }, [scriptUtil, pageData, lookups, lookupsComplete, scriptActions, currentPageParam]);
 
   useEffect(() => {
     if (createLookups && pageData) {
-      const lookupRequests = pageData.lookups?.map(l => {
-        if (l.type === 1) {
-          if (l.hasParam) {
-            return {
-              type: 'autocompletewithparam',
-              identifier: l.identifier,
-              lookupId: l.id,
-            } as LookupRequest;
-          } else {
-            return {
-              type: 'autocomplete',
-              identifier: l.identifier,
-              lookupId: l.id,
-            } as LookupRequest;
-          }
-        } else {
-          if (l.hasParam) {
-            return {
-              type: 'lookupwithparam',
-              identifier: l.identifier,
-              lookupId: l.id,
-              valueMember: l.valueMember,
-              displayMember: l.displayMember,
-            } as LookupRequest;
-          } else {
-            return {
-              type: 'lookup',
-              identifier: l.identifier,
-              lookupId: l.id,
-              valueMember: l.valueMember,
-              displayMember: l.displayMember,
-            } as LookupRequest;
-          }
-        }
-      });
-
+      const lookupRequests = extractLookupsFromPageMetadata(pageData);
       createLookups(lookupRequests);
     }
   }, [createLookups, pageData]);
@@ -342,27 +299,6 @@ export const PageProvider = ({
       }
     }
   }, [pageData]);
-
-  /*
-  useEffect(() => {    
-    setValue(previousValue => {
-      return {
-        ...previousValue,
-        pageParam: pageParam,
-      } as PageContextState;
-    });
-
-    if (search && pageParam) {
-      const currentPageParam = qs.parse(search)?.page ?? {};
-      const nextPageParam = qs.parse(qs.stringify({ page: pageParam }))?.page ?? {};
-
-      if (!isEqual(currentPageParam, nextPageParam)) {
-        push({ search: qs.stringify({ page: pageParam }) });
-      }
-    }
-
-  }, [search, push, pageParam]);
-  */
 
   return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
 };

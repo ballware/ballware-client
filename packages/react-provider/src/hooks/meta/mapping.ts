@@ -1,7 +1,7 @@
 import { CrudItem } from "@ballware/meta-interface";
-import { MetaContext, RightsContext } from "@ballware/react-contexts";
-import { useContext, useMemo } from "react"
-import { createUtil } from "../../scriptutil";
+import { MetaContext } from "@ballware/react-contexts";
+import { useContext, useMemo } from "react";
+import { useScriptUtil } from "../util";
 
 export interface MetaMappingOperations {
     /**
@@ -21,21 +21,22 @@ export interface MetaMappingOperations {
 
 export const useMetaMapping = () => {
 
-    const { token } = useContext(RightsContext);
     const { customParam, mappingScripts } = useContext(MetaContext);
 
+    const scriptUtil = useScriptUtil();
+
     return useMemo(() => ({
-        mapIncomingItem: (mappingScripts && customParam && token) ? (item =>
+        mapIncomingItem: (mappingScripts && customParam && scriptUtil) ? (item =>
             mappingScripts.mapItem
-            ? mappingScripts.mapItem(item, customParam, createUtil(token))
+            ? mappingScripts.mapItem(item, customParam, scriptUtil)
             : item) : undefined,
-        mapOutgoingItem: (mappingScripts && customParam && token) ? (item =>
+        mapOutgoingItem: (mappingScripts && customParam && scriptUtil) ? (item =>
             mappingScripts.reverseMapItem
             ? mappingScripts.reverseMapItem(
                 item,
                 customParam,
-                createUtil(token)
+                scriptUtil
                 )
             : item) : undefined,
-    } as MetaMappingOperations), [mappingScripts, customParam, token]);
+    } as MetaMappingOperations), [mappingScripts, customParam, scriptUtil]);
 }

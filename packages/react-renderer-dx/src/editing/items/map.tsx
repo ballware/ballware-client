@@ -11,12 +11,12 @@ import { EditItemProps } from './common';
 import { FieldSet } from './fieldset';
 import { LocationMap, LocationMapRef } from '../../components/map';
 import { EditItemsContext, EditorRef } from '@ballware/react-renderer';
-import { SettingsContext } from '@ballware/react-contexts';
+import { useGooglekey } from '@ballware/react-provider';
 
 export interface MapProps extends EditItemProps {}
 
 export const Map = ({ layoutItem }: MapProps) => {
-  const { googlekey } = useContext(SettingsContext);
+  const googlekey = useGooglekey();
   const {
     readOnly,
     getValue,

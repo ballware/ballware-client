@@ -1,7 +1,7 @@
 import { GridLayout } from "@ballware/meta-interface";
-import { LookupContext, MetaContext, RightsContext } from "@ballware/react-contexts";
+import { LookupContext, MetaContext } from "@ballware/react-contexts";
 import { useContext, useMemo } from "react"
-import { createUtil } from "../../scriptutil";
+import { useScriptUtil } from "../util";
 
 export interface MetaGridLayoutOperations {
     /**
@@ -20,21 +20,21 @@ export interface MetaGridLayoutOperations {
 
 export const useMetaGridLayout = () => {
 
-    const { token } = useContext(RightsContext);
     const { lookups } = useContext(LookupContext);
     const { gridLayouts, customScripts, customParam } = useContext(MetaContext);
+    const scriptUtil = useScriptUtil();
 
     return useMemo(() => ({
         getGridLayout: gridLayouts ? identifier => gridLayouts?.find(l => l.identifier === identifier) : undefined,
-        prepareGridLayout: (token && lookups) ? gridLayout => {
-            if (token && customScripts?.prepareGridLayout) {
+        prepareGridLayout: (scriptUtil && lookups) ? gridLayout => {
+            if (customScripts?.prepareGridLayout) {
                 customScripts.prepareGridLayout(
                     (lookups as Record<string, unknown>) ?? {},
                     customParam,
-                    createUtil(token),
+                    scriptUtil,
                     gridLayout
                 );
             }
           } : undefined,
-    } as MetaGridLayoutOperations), [gridLayouts, customScripts, customParam, token, lookups]);
+    } as MetaGridLayoutOperations), [gridLayouts, customScripts, customParam, scriptUtil, lookups]);
 }

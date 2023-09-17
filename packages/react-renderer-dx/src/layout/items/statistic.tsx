@@ -25,6 +25,7 @@ import {
 import { Map, Marker } from 'devextreme-react/map';
 import { chartSeriesObject } from 'devextreme/viz/chart';
 import moment from 'moment';
+import { useGooglekey } from '@ballware/react-provider';
 import { getByPath } from '@ballware/react-renderer';
 import PivotGrid from 'devextreme-react/pivot-grid';
 import { PivotGridDataSourceField } from 'devextreme/ui/pivot_grid/data_source';
@@ -32,7 +33,6 @@ import {
   ProviderFactoryContext,
   StatisticContext,
   PageContext,
-  SettingsContext,
 } from '@ballware/react-contexts';
 import { ExportingEvent } from 'devextreme/ui/pivot_grid';
 import { Workbook } from 'exceljs';
@@ -46,7 +46,7 @@ export interface StatisticProps {
 }
 
 const MyStatisticElement = ({ height }: { height?: string }) => {
-  const { googlekey } = useContext(SettingsContext);
+  const googlekey = useGooglekey();
   const { customParam } = useContext(PageContext);
   const { name, params, data, layout, argumentAxisCustomizeText } = useContext(
     StatisticContext

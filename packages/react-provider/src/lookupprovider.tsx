@@ -6,7 +6,6 @@
  */
 
 import React, {
-  useContext,
   useState,
   useEffect,
   useCallback,
@@ -22,13 +21,7 @@ import {
   LookupStoreDescriptor,
   AutocompleteStoreDescriptor,
 } from '@ballware/react-contexts';
-import { SettingsContext, RightsContext } from '@ballware/react-contexts';
-import { IdentityUserApi, IdentityRoleApi } from '@ballware/identity-interface';
-import {
-  MetaLookupApi,
-  MetaProcessingstateApi,
-  MetaPickvalueApi,
-} from '@ballware/meta-interface';
+import { useLookupApi, usePickvalueApi, useProcessingstateApi, useRoleApi, useUserApi } from './hooks';
 
 /**
  * Properties for lookup provider
@@ -36,16 +29,16 @@ import {
 export interface LookupProviderProps {}
 
 const createUserLookup = (
-  token: () => string,
-  api: IdentityUserApi,
+  fetchList: () => Promise<Array<Record<string, unknown>>>,
+  fetchById: (identifier: string) => Promise<Record<string, unknown>>,
   valueMember: string,
   displayMember: string
 ): LookupDescriptor => {
   return {
     type: 'lookup',
     store: {
-      listFunc: () => api.selectListFunc(token()),
-      byIdFunc: id => api.selectByIdFunc(token(), id),
+      listFunc: () => fetchList(),
+      byIdFunc: id => fetchById(id),
     } as LookupStoreDescriptor,
     valueMember: valueMember,
     displayMember: displayMember,
@@ -53,16 +46,16 @@ const createUserLookup = (
 };
 
 const createRoleLookup = (
-  token: () => string,
-  api: IdentityRoleApi,
+  fetchList: () => Promise<Array<Record<string, unknown>>>,
+  fetchById: (identifier: string) => Promise<Record<string, unknown>>,
   valueMember: string,
   displayMember: string
 ): LookupDescriptor => {
   return {
     type: 'lookup',
     store: {
-      listFunc: () => api.selectListFunc(token()),
-      byIdFunc: id => api.selectByIdFunc(token(), id),
+      listFunc: () => fetchList(),
+      byIdFunc: id => fetchById(id),
     } as LookupStoreDescriptor,
     valueMember: valueMember,
     displayMember: displayMember,
@@ -70,8 +63,8 @@ const createRoleLookup = (
 };
 
 const createGenericLookup = (
-  token: () => string,
-  api: MetaLookupApi,
+  fetchList: (lookup: string) => Promise<Array<Record<string, unknown>>>,
+  fetchById: (lookup: string, identifier: string) => Promise<Record<string, unknown>>,
   lookupId: string,
   valueMember: string,
   displayMember: string
@@ -79,8 +72,8 @@ const createGenericLookup = (
   return {
     type: 'lookup',
     store: {
-      listFunc: () => api.selectListForLookup(token(), lookupId),
-      byIdFunc: id => api.selectByIdForLookup(token(), lookupId)(id),
+      listFunc: () => fetchList(lookupId),
+      byIdFunc: id => fetchById(lookupId, id),
     } as LookupStoreDescriptor,
     valueMember: valueMember,
     displayMember: displayMember,
@@ -88,8 +81,8 @@ const createGenericLookup = (
 };
 
 const createGenericLookupWithParam = (
-  token: () => string,
-  api: MetaLookupApi,
+  fetchList: (lookup: string, param: unknown) => Promise<Array<Record<string, unknown>>>,
+  fetchById: (lookup: string, param: unknown, identifier: string) => Promise<Record<string, unknown>>,
   lookupId: string,
   valueMember: string,
   displayMember: string
@@ -98,10 +91,8 @@ const createGenericLookupWithParam = (
     return {
       type: 'lookup',
       store: {
-        listFunc: () =>
-          api.selectListForLookupWithParam(token(), lookupId, param),
-        byIdFunc: id =>
-          api.selectByIdForLookupWithParam(token(), lookupId, param)(id),
+        listFunc: () => fetchList(lookupId, param),
+        byIdFunc: id => fetchById(lookupId, param, id),
       } as LookupStoreDescriptor,
       valueMember: valueMember,
       displayMember: displayMember,
@@ -110,8 +101,8 @@ const createGenericLookupWithParam = (
 };
 
 const createGenericPickvalueLookup = (
-  token: () => string,
-  api: MetaPickvalueApi,
+  fetchList: (entity: string, field: string) => Promise<Array<Record<string, unknown>>>,
+  fetchById: (entity: string, field: string, identifier: string) => Promise<Record<string, unknown>>,
   entity: string,
   field: string,
   valueMember = 'Value',
@@ -120,9 +111,8 @@ const createGenericPickvalueLookup = (
   return {
     type: 'lookup',
     store: {
-      listFunc: () => api.selectListForEntityAndField(token(), entity, field),
-      byIdFunc: id =>
-        api.selectByValueForEntityAndField(token(), entity, field)(id),
+      listFunc: () => fetchList(entity, field),
+      byIdFunc: id => fetchById(entity, field, id),
     } as LookupStoreDescriptor,
     valueMember: valueMember,
     displayMember: displayMember,
@@ -130,37 +120,34 @@ const createGenericPickvalueLookup = (
 };
 
 const createGenericAutocomplete = (
-  token: () => string,
-  api: MetaLookupApi,
+  fetchList: (lookup: string) => Promise<Array<unknown>>,
   lookupId: string
 ): LookupDescriptor => {
   return {
     type: 'autocomplete',
     store: {
-      listFunc: () => api.autoCompleteForLookup(token(), lookupId),
+      listFunc: () => fetchList(lookupId),
     } as AutocompleteStoreDescriptor,
   } as LookupDescriptor;
 };
 
 const createGenericAutocompleteWithParam = (
-  token: () => string,
-  api: MetaLookupApi,
+  fetchList: (lookup: string, param: unknown) => Promise<Array<unknown>>,
   lookupId: string
 ): LookupCreator => {
   return (param): LookupDescriptor => {
     return {
       type: 'autocomplete',
       store: {
-        listFunc: () =>
-          api.autoCompleteForLookupWithParam(token(), lookupId, param),
+        listFunc: () => fetchList(lookupId, param),
       } as AutocompleteStoreDescriptor,
     };
   };
 };
 
 const createGenericStateLookup = (
-  token: () => string,
-  api: MetaProcessingstateApi,
+  fetchList: (entity: string) => Promise<Array<unknown>>,
+  fetchById: (entity: string, state: string) => Promise<Record<string, unknown>>,
   entity: string,
   valueMember = 'State',
   displayMember = 'Name'
@@ -168,8 +155,8 @@ const createGenericStateLookup = (
   return {
     type: 'lookup',
     store: {
-      listFunc: () => api.selectListForEntity(token(), entity),
-      byIdFunc: id => api.selectByStateForEntity(token(), entity)(id),
+      listFunc: () => fetchList(entity),
+      byIdFunc: id => fetchById(entity, id),
     } as LookupStoreDescriptor,
     valueMember: valueMember,
     displayMember: displayMember,
@@ -177,8 +164,8 @@ const createGenericStateLookup = (
 };
 
 const createGenericAllowedStateLookup = (
-  token: () => string,
-  api: MetaProcessingstateApi,
+  fetchList: (entity: string, param: string[]) => Promise<Array<Record<string, unknown>>>,
+  fetchById: (entity: string, state: string | number) => Promise<Record<string, unknown>>,
   entity: string,
   valueMember = 'State',
   displayMember = 'Name'
@@ -187,13 +174,8 @@ const createGenericAllowedStateLookup = (
     return {
       type: 'lookup',
       store: {
-        listFunc: () =>
-          api.selectListAllowedForEntityAndIds(
-            token(),
-            entity,
-            Array.isArray(param) ? param : [param]
-          ),
-        byIdFunc: id => api.selectByStateForEntity(token(), entity)(id),
+        listFunc: () => fetchList(entity, Array.isArray(param) ? param : [param]),
+        byIdFunc: id => fetchById(entity, id),
       } as LookupStoreDescriptor,
       valueMember: valueMember,
       displayMember: displayMember,
@@ -202,8 +184,8 @@ const createGenericAllowedStateLookup = (
 };
 
 const createGenericLookupByIdentifier = (
-  token: () => string,
-  api: MetaLookupApi,
+  fetchList: (lookup: string) => Promise<Array<Record<string, unknown>>>,
+  fetchById: (lookup: string, identifier: string) => Promise<Record<string, unknown>>,
   lookupIdentifier: string,
   valueMember: string,
   displayMember: string
@@ -211,10 +193,8 @@ const createGenericLookupByIdentifier = (
   return {
     type: 'lookup',
     store: {
-      listFunc: () =>
-        api.selectListForLookupIdentifier(token(), lookupIdentifier),
-      byIdFunc: id =>
-        api.selectByIdForLookupIdentifier(token(), lookupIdentifier)(id),
+      listFunc: () => fetchList(lookupIdentifier),
+      byIdFunc: id => fetchById(lookupIdentifier, id),
     } as LookupStoreDescriptor,
     valueMember: valueMember,
     displayMember: displayMember,
@@ -236,23 +216,19 @@ export const LookupProvider = ({
       >
     | undefined
   >();
-  const {
-    identityUserApiFactory,
-    identityRoleApiFactory,
-    metaLookupApiFactory,
-    metaPickvalueApiFactory,
-    metaProcessingstateApiFactory,
-  } = useContext(SettingsContext);
-  const { token } = useContext(RightsContext);
+
+  const roleApi = useRoleApi();
+  const userApi = useUserApi();
+  const lookupApi = useLookupApi();
+  const pickvalueApi = usePickvalueApi();
+  const processingstateApi = useProcessingstateApi();
 
   const getGenericLookupByIdentifier = useCallback(
     (identifier: string, valueExpr: string, displayExpr: string) => {
-      if (token && metaLookupApiFactory) {
-        const lookupApi = metaLookupApiFactory();
-
+      if (lookupApi) {
         return createGenericLookupByIdentifier(
-          () => token,
-          lookupApi,
+          lookupApi.fetchSelectListForLookupIdentifier,
+          lookupApi.fetchSelectByIdForLookupIdentifier,
           identifier,
           valueExpr,
           displayExpr
@@ -261,18 +237,17 @@ export const LookupProvider = ({
 
       return undefined;
     },
-    [metaLookupApiFactory, token]
+    [lookupApi]
   );
 
   const createLookups = useCallback(
     (requests: Array<LookupRequest>) => {
       if (
-        metaLookupApiFactory &&
-        metaProcessingstateApiFactory &&
-        metaPickvalueApiFactory &&
-        identityUserApiFactory &&
-        identityRoleApiFactory &&
-        token
+        lookupApi &&
+        processingstateApi &&
+        pickvalueApi &&
+        userApi &&
+        roleApi
       ) {
         setRequestedLookups([
           'userLookup',
@@ -281,9 +256,6 @@ export const LookupProvider = ({
         ]);
         setLookupsComplete(false);
 
-        const lookupApi = metaLookupApiFactory();
-        const processingstateApi = metaProcessingstateApiFactory();
-        const pickvalueApi = metaPickvalueApiFactory();
         const newLookups = {} as Record<
           string,
           | LookupDescriptor
@@ -293,14 +265,14 @@ export const LookupProvider = ({
         >;
 
         newLookups['userLookup'] = createUserLookup(
-          () => token as string,
-          identityUserApiFactory(),
+          userApi.fetchSelectList,
+          userApi.fetchSelectById,
           'id',
           'name'
         );
         newLookups['roleLookup'] = createRoleLookup(
-          () => token as string,
-          identityRoleApiFactory(),
+          roleApi.fetchSelectList,
+          roleApi.fetchSelectById,
           'id',
           'name'
         );
@@ -311,8 +283,8 @@ export const LookupProvider = ({
               case 'lookup':
                 if (l.lookupId && l.valueMember && l.displayMember) {
                   newLookups[l.identifier] = createGenericLookup(
-                    () => token as string,
-                    lookupApi,
+                    lookupApi.fetchSelectListForLookup,
+                    lookupApi.fetchSelectByIdForLookup,
                     l.lookupId,
                     l.valueMember,
                     l.displayMember
@@ -326,8 +298,8 @@ export const LookupProvider = ({
               case 'lookupwithparam':
                 if (l.lookupId && l.valueMember && l.displayMember) {
                   newLookups[l.identifier] = createGenericLookupWithParam(
-                    () => token as string,
-                    lookupApi,
+                    lookupApi.fetchSelectListForLookupWithParam,
+                    lookupApi.fetchSelectByIdForLookupWithParam,
                     l.lookupId,
                     l.valueMember,
                     l.displayMember
@@ -340,8 +312,8 @@ export const LookupProvider = ({
                 break;
               case 'pickvalue':
                 newLookups[l.identifier] = createGenericPickvalueLookup(
-                  () => token as string,
-                  pickvalueApi,
+                  pickvalueApi.fetchSelectListForEntityAndField,
+                  pickvalueApi.fetchSelectByValueForEntityAndField,
                   l.entity as string,
                   l.field as string,
                   l.valueMember,
@@ -351,8 +323,7 @@ export const LookupProvider = ({
               case 'autocomplete':
                 if (l.lookupId) {
                   newLookups[l.identifier] = createGenericAutocomplete(
-                    () => token as string,
-                    lookupApi,
+                    lookupApi.fetchAutoCompleteForLookup,
                     l.lookupId
                   );
                 } else {
@@ -364,8 +335,7 @@ export const LookupProvider = ({
               case 'autocompletewithparam':
                 if (l.lookupId) {
                   newLookups[l.identifier] = createGenericAutocompleteWithParam(
-                    () => token as string,
-                    lookupApi,
+                    lookupApi.fetchAutoCompleteForLookupWithParam,
                     l.lookupId
                   );
                 } else {
@@ -376,8 +346,8 @@ export const LookupProvider = ({
                 break;
               case 'state':
                 newLookups[l.identifier] = createGenericStateLookup(
-                  () => token as string,
-                  processingstateApi,
+                  processingstateApi.fetchSelectListForEntity,
+                  processingstateApi.fetchSelectByStateForEntity,
                   l.entity as string,
                   l.valueMember,
                   l.displayMember
@@ -385,8 +355,8 @@ export const LookupProvider = ({
                 break;
               case 'stateallowed':
                 newLookups[l.identifier] = createGenericAllowedStateLookup(
-                  () => token as string,
-                  processingstateApi,
+                  processingstateApi.fetchSelectListAllowedForEntityAndIds,
+                  processingstateApi.fetchSelectByStateForEntity,
                   l.entity as string,
                   l.valueMember,
                   l.displayMember
@@ -400,12 +370,11 @@ export const LookupProvider = ({
       }
     },
     [
-      metaLookupApiFactory,
-      metaProcessingstateApiFactory,
-      metaPickvalueApiFactory,
-      identityUserApiFactory,
-      identityRoleApiFactory,
-      token,
+      lookupApi,
+      processingstateApi,
+      pickvalueApi,
+      userApi,
+      roleApi
     ]
   );
 
@@ -418,12 +387,11 @@ export const LookupProvider = ({
 
   useEffect(() => {
     if (
-      identityUserApiFactory &&
-      identityRoleApiFactory &&
-      metaLookupApiFactory &&
-      metaPickvalueApiFactory &&
-      metaProcessingstateApiFactory &&
-      token
+      userApi &&
+      roleApi &&
+      lookupApi &&
+      pickvalueApi &&
+      processingstateApi
     ) {
       setValue(previousValue => {
         return {
@@ -435,12 +403,11 @@ export const LookupProvider = ({
     }
   }, [
     getGenericLookupByIdentifier,
-    identityUserApiFactory,
-    identityRoleApiFactory,
-    metaLookupApiFactory,
-    metaPickvalueApiFactory,
-    metaProcessingstateApiFactory,
-    token,
+    userApi,
+    roleApi,
+    lookupApi,
+    pickvalueApi,
+    processingstateApi,
     createLookups,
   ]);
 

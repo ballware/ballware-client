@@ -20,7 +20,6 @@ import { EntityCustomFunction, CrudItem } from '@ballware/meta-interface';
 import {
   MetaContext,
   CrudContext,
-  SettingsContext,
 } from '@ballware/react-contexts';
 import { getByPath } from '@ballware/react-renderer';
 import Map from 'devextreme-react/map';
@@ -28,7 +27,7 @@ import { SpeedDialAction } from 'devextreme-react/speed-dial-action';
 import { dxElement } from 'devextreme/core/element';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../../util/mediaquery';
-import { useMetaAllowed, useMetaOperations } from '@ballware/react-provider';
+import { useGooglekey, useMetaAllowed, useMetaOperations } from '@ballware/react-provider';
 
 export interface EntityMapProps {
   height?: string;
@@ -52,7 +51,6 @@ export const EntityMap = ({
 
   const mapRef = useRef<Map>(null);
 
-  const { googlekey } = useContext(SettingsContext);
   const {
     displayName,
     customFunctions,
@@ -71,6 +69,8 @@ export const EntityMap = ({
   const {
     print
   } = useMetaOperations();
+
+  const googlekey = useGooglekey();
 
   const { add, view, edit, remove, customEdit, fetchedItems } = useContext(
     CrudContext

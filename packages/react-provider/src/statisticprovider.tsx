@@ -14,9 +14,7 @@ import React, {
 import {
   StatisticContext,
   StatisticContextState,
-  RightsContext,
   NotificationContext,
-  SettingsContext,
   PageContext,
   LookupContext,
 } from '@ballware/react-contexts';
@@ -26,7 +24,7 @@ import {
   StatisticLayout,
 } from '@ballware/meta-interface';
 import cloneDeep from 'lodash/cloneDeep';
-import { createUtil } from './scriptutil';
+import { useScriptUtil, useStatisticApi } from './hooks';
 
 /**
  * Properties for statistic provider
@@ -58,41 +56,38 @@ export const StatisticProvider = ({
     Array<Record<string, unknown>> | undefined
   >();
 
-  const { metaStatisticApiFactory } = useContext(SettingsContext);
   const { showError } = useContext(NotificationContext);
-  const { token } = useContext(RightsContext);
   const { customParam } = useContext(PageContext);
   const { lookups, lookupsComplete } = useContext(LookupContext);
 
-  useEffect(() => {
-    if (token && identifier && showError && metaStatisticApiFactory) {
-      const api = metaStatisticApiFactory();
+  const statisticApi = useStatisticApi();
+  const scriptUtil = useScriptUtil();
 
-      api
-        .metadataForStatistic(token, identifier)
+  useEffect(() => {
+    if (identifier && showError && statisticApi) {
+      statisticApi
+        .fetchMetadataForStatistic(identifier)
         .then(result => {
           setMetaData(result);
         })
         .catch(reason => showError(reason));
     }
-  }, [token, identifier, showError, metaStatisticApiFactory]);
+  }, [identifier, showError, statisticApi]);
 
   useEffect(() => {
     if (
       showError &&
-      metaStatisticApiFactory &&
-      token &&
+      statisticApi &&
       identifier &&
       params &&
       metaData &&
       lookups &&
       lookupsComplete &&
-      customParam
-    ) {
-      const api = metaStatisticApiFactory();
-
-      api
-        .dataForStatistic(token, identifier, params)
+      customParam &&
+      scriptUtil
+    ) {      
+      statisticApi
+        .fetchDataForStatistic(identifier, params)
         .then(result => {
           if (metaData.mappingScript) {
             const unpreparedLayout = cloneDeep(metaData.layout);
@@ -103,7 +98,7 @@ export const StatisticProvider = ({
               customParam,
               params,
               lookups,
-              createUtil(token),
+              scriptUtil,
               (layout, result) => {
                 setData(result);
                 setLayout(layout);
@@ -118,18 +113,18 @@ export const StatisticProvider = ({
     }
   }, [
     showError,
-    metaStatisticApiFactory,
-    token,
+    statisticApi,
     identifier,
     params,
     metaData,
     lookups,
     lookupsComplete,
     customParam,
+    scriptUtil
   ]);
 
   useEffect(() => {
-    if (metaData && layout && params && data && token && customParam) {
+    if (metaData && layout && params && data && customParam && scriptUtil) {
       const argumentAxisCustomizeText = (value: unknown) => {
         if (metaData.customScripts?.argumentAxisCustomizeText) {
           return metaData.customScripts.argumentAxisCustomizeText(
@@ -137,7 +132,7 @@ export const StatisticProvider = ({
             value,
             params,
             customParam,
-            createUtil(token)
+            scriptUtil
           );
         }
 
@@ -156,7 +151,7 @@ export const StatisticProvider = ({
         } as StatisticContextState;
       });
     }
-  }, [metaData, layout, params, data, token, customParam]);
+  }, [metaData, layout, params, data, customParam, scriptUtil]);
 
   return (
     <StatisticContext.Provider value={value}>

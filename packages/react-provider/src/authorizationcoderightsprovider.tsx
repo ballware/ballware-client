@@ -107,7 +107,7 @@ export const AuthorizationCodeRightsProvider = ({
 
   const [value, setValue] = useState<RightsContextState>({});
 
-  const { version, identityUserApiFactory, metaTenantApiFactory } = useContext(SettingsContext);
+  const { version, identityUserApi, metaTenantApi } = useContext(SettingsContext);
   const { showInfo, showError } = useContext(NotificationContext);
   const { push, replace } = useHistory();
 
@@ -119,7 +119,7 @@ export const AuthorizationCodeRightsProvider = ({
       post_logout_redirect_uri &&
       response_type &&
       scope &&
-      metaTenantApiFactory
+      metaTenantApi
     ) {      
 
       Log.logger = console;
@@ -141,7 +141,7 @@ export const AuthorizationCodeRightsProvider = ({
 
         newUserManager.getUser().then(user => {
           if (user) {
-            metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {            
+            metaTenantApi.allowed(user.access_token).then(allowedTenants => {            
 
               let session = {
                 access_token: user.access_token,
@@ -192,11 +192,11 @@ export const AuthorizationCodeRightsProvider = ({
     post_logout_redirect_uri,
     response_type,
     scope,
-    metaTenantApiFactory
+    metaTenantApi
   ]);
 
   useEffect(() => {
-    if (version && showInfo && showError && userManager && metaTenantApiFactory && identityUserApiFactory) {
+    if (version && showInfo && showError && userManager && metaTenantApi && identityUserApi) {
       setValue(previousValue => {
         return {
           ...previousValue,
@@ -247,7 +247,7 @@ export const AuthorizationCodeRightsProvider = ({
           refresh: () => {
             userManager.signinSilent().then(user => {
               if (user) {
-                metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {  
+                metaTenantApi.allowed(user.access_token).then(allowedTenants => {  
                   let session = {
                     access_token: user.access_token,
                     expires_in: user.expires_in,
@@ -282,7 +282,7 @@ export const AuthorizationCodeRightsProvider = ({
           switchTenant: (tenant) => {
             userManager.getUser().then(user => {
               if (user) {
-                identityUserApiFactory().switchTenantFunc(user.access_token, tenant).then(() => {
+                identityUserApi.switchTenantFunc(user.access_token, tenant).then(() => {
                   showInfo('rights.notifications.logoutfortenantswitch');
 
                   userManager.signinRedirect();
@@ -302,8 +302,8 @@ export const AuthorizationCodeRightsProvider = ({
     authority,
     client,
     userManager,
-    metaTenantApiFactory,
-    identityUserApiFactory
+    metaTenantApi,
+    identityUserApi
   ]);
 
   const loginRedirectCallback = useCallback(() => {
@@ -317,7 +317,7 @@ export const AuthorizationCodeRightsProvider = ({
       push &&
       showInfo &&
       showError &&
-      metaTenantApiFactory
+      metaTenantApi
     ) {
       const newUserManager = new UserManager({
         response_mode: 'query',
@@ -335,7 +335,7 @@ export const AuthorizationCodeRightsProvider = ({
         .signinRedirectCallback()
         .then(user => {
           if (user) {
-            metaTenantApiFactory().allowed(user.access_token).then(allowedTenants => {
+            metaTenantApi.allowed(user.access_token).then(allowedTenants => {
               let session = {
                 access_token: user.access_token,
                 expires_in: user.expires_in,
@@ -385,11 +385,11 @@ export const AuthorizationCodeRightsProvider = ({
     push,
     showInfo,
     showError,
-    metaTenantApiFactory
+    metaTenantApi
   ]);
 
   useEffect(() => {
-    if (account_management_uri && push) {
+    if (account_management_uri) {
       setValue(previousValue => {
         return {
           ...previousValue,
