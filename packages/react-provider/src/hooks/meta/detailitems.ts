@@ -96,5 +96,5 @@ export const useMetaDetailItems = () => {
                 );
             }
         } : undefined,
-    }) as MetaDetailItemOperations, []);
+    }) as MetaDetailItemOperations, [customScripts, scriptUtil]);
 }

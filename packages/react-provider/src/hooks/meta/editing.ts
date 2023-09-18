@@ -187,5 +187,5 @@ export const useMetaEditing = () => {
                 );
             }
         } : undefined,
-    } as MetaEditingFunctions), [lookups, customScripts]);
+    } as MetaEditingFunctions), [lookups, customScripts, scriptUtil]);
 }

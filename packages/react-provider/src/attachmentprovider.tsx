@@ -16,7 +16,9 @@ import { useAttachmentApi } from './hooks';
 /**
  * Properties for attachment provider
  */
-export interface AttachmentProviderProps {}
+export interface AttachmentProviderProps {
+  owner: string
+}
 
 /**
  * Provides attachment operations for files attached to records with unique owner id
