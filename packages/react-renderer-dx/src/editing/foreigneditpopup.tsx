@@ -31,7 +31,7 @@ export const ForeignEditPopup = ({
   const { EditPopup } = useContext(RenderFactoryContext);
 
   const { EditProvider } = useContext(ProviderFactoryContext);
-  const { lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
   const { customFunctions } = useContext(MetaContext);
   const { customEdit, customEditing, customEditParam } = useContext(
     CrudContext
@@ -61,10 +61,10 @@ export const ForeignEditPopup = ({
   }, [functionIdentifier, customFunctions]);
 
   useEffect(() => {
-    if (customEdit && customEditFunction && selection && lookupsComplete) {
+    if (customEdit && customEditFunction && selection && lookups) {
       customEdit(customEditFunction, selection);
     }
-  }, [customEdit, customEditFunction, selection, lookupsComplete]);
+  }, [customEdit, customEditFunction, selection, lookups]);
 
   useEffect(() => {
     if (customEditing) {

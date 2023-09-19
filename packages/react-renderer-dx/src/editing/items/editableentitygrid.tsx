@@ -38,7 +38,6 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
   }, [editorPreparing, layoutItem]);
 
   const {
-    LookupProvider,
     CrudProvider,
     MetaProvider,
   } = useContext(ProviderFactoryContext);
@@ -49,30 +48,27 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
       {prepared &&
         layoutItem &&
         layoutItem.dataMember &&
-        LookupProvider &&
         CrudProvider &&
         MetaProvider && (
-          <LookupProvider>
-            <MetaProvider
-              entity={layoutItem.dataMember}
-              initialCustomParam={gridProps?.customParam ?? {}}
-              readOnly={gridProps?.readOnly ?? false}
-              headParams={gridProps?.headParams ?? {}}
+          <MetaProvider
+            entity={layoutItem.dataMember}
+            initialCustomParam={gridProps?.customParam ?? {}}
+            readOnly={gridProps?.readOnly ?? false}
+            headParams={gridProps?.headParams ?? {}}
+          >
+            <CrudProvider
+              identifier={undefined}
+              query={gridProps?.query ?? 'primary'}
+              initialFetchParams={gridProps?.fetchParams}
             >
-              <CrudProvider
-                identifier={undefined}
-                query={gridProps?.query ?? 'primary'}
-                initialFetchParams={gridProps?.fetchParams}
-              >
-                <CrudFunctions>
-                  <EntityGrid
-                    layout={gridProps?.layout ?? 'primary'}
-                    height={layoutItem.height}
-                  />
-                </CrudFunctions>
-              </CrudProvider>
-            </MetaProvider>
-          </LookupProvider>
+              <CrudFunctions>
+                <EntityGrid
+                  layout={gridProps?.layout ?? 'primary'}
+                  height={layoutItem.height}
+                />
+              </CrudFunctions>
+            </CrudProvider>
+          </MetaProvider>
         )}
     </React.Fragment>
   );

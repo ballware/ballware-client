@@ -10,6 +10,7 @@ import React, {
   useEffect,
   useContext,
   PropsWithChildren,
+  useMemo,
 } from 'react';
 import {
   CompiledEntityMetadata,
@@ -20,9 +21,10 @@ import {
   MetaContextState,
   LookupContext,
   NotificationContext,
+  Lookups,
 } from '@ballware/react-contexts';
 import { extractLookupsFromEntityMetadata } from './shared/lookups';
-import { useEntityApi, useScriptUtil } from './hooks';
+import { useEntityApi, useRequestLookups, useScriptUtil } from './hooks';
 
 /**
  * Properties for generic meta provider
@@ -73,22 +75,25 @@ export const MetaProvider = ({
     Array<{ id: string; text: string }> | undefined
   >();
 
-  const { lookups, lookupsComplete, createLookups } = useContext(LookupContext);
   const { showError } = useContext(NotificationContext);
 
   const entityApi = useEntityApi();
   const scriptUtil = useScriptUtil();
+  const requestLookups = useRequestLookups();
+
+  const [lookups, setLookups] = useState<Lookups | undefined>();
 
   useEffect(() => {
     let fetchingCanceled = false;
 
-    if (showError && entity && entityApi) {
+    if (showError && entity && entityApi && requestLookups) {
       
       entityApi
         .fetchMetadataForEntity(entity)
         .then(result => {
           if (!fetchingCanceled) {
             setMetaData(result);
+            setLookups(requestLookups(extractLookupsFromEntityMetadata(result)));
           }
         })
         .catch(reason => {
@@ -121,7 +126,7 @@ export const MetaProvider = ({
     return () => {
       fetchingCanceled = true;
     };
-  }, [showError, entity, entityApi]);
+  }, [showError, entity, entityApi, requestLookups]);
 
   useEffect(() => {
     setValue(previousValue => {
@@ -140,14 +145,6 @@ export const MetaProvider = ({
       } as MetaContextState;
     });
   }, [metaData]);
-
-  useEffect(() => {
-    if (createLookups && metaData) {
-      const lookups = extractLookupsFromEntityMetadata(metaData);
-
-      createLookups(lookups);
-    }
-  }, [createLookups, metaData]);
 
   useEffect(() => {
     setValue(previousValue => {
@@ -179,10 +176,10 @@ export const MetaProvider = ({
   useEffect(() => {
     let fetchingCanceled = false;
 
-    if (lookupsComplete && metaData && scriptUtil) {
+    if (lookups && metaData && scriptUtil) {
       if (metaData.compiledCustomScripts?.prepareCustomParam) {
         metaData.compiledCustomScripts.prepareCustomParam(
-          lookups ?? {},
+          lookups,
           scriptUtil,
           p => {
             if (!fetchingCanceled) {
@@ -200,7 +197,9 @@ export const MetaProvider = ({
     return () => {
       fetchingCanceled = true;
     };
-  }, [lookupsComplete, metaData, initialCustomParam, lookups, scriptUtil]);
+  }, [metaData, initialCustomParam, lookups, scriptUtil]);
 
-  return <MetaContext.Provider value={value}>{children}</MetaContext.Provider>;
+  return <LookupContext.Provider value={useMemo(() => ({ lookups }), [lookups])}>
+    <MetaContext.Provider value={value}>{children}</MetaContext.Provider>
+  </LookupContext.Provider>;
 };

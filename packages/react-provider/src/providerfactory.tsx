@@ -11,7 +11,6 @@ import {
   ProviderFactoryContext,
   ProviderFactoryContextState,
 } from '@ballware/react-contexts';
-import { LookupProvider } from './lookupprovider';
 import { PageProvider } from './pageprovider';
 import { MetaProvider } from './metaprovider';
 import { CrudProvider } from './crudprovider';
@@ -38,7 +37,6 @@ export const ProviderFactory = ({
       PageProvider,
       MetaProvider,
       CrudProvider,
-      LookupProvider,
       NotificationProvider,
       TenantProvider,
       EditProvider,

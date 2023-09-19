@@ -58,7 +58,7 @@ export const StatisticProvider = ({
 
   const { showError } = useContext(NotificationContext);
   const { customParam } = useContext(PageContext);
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
 
   const statisticApi = useStatisticApi();
   const scriptUtil = useScriptUtil();
@@ -82,7 +82,6 @@ export const StatisticProvider = ({
       params &&
       metaData &&
       lookups &&
-      lookupsComplete &&
       customParam &&
       scriptUtil
     ) {      
@@ -118,7 +117,6 @@ export const StatisticProvider = ({
     params,
     metaData,
     lookups,
-    lookupsComplete,
     customParam,
     scriptUtil
   ]);

@@ -121,6 +121,11 @@ export interface LookupRequest {
   field?: string;
 }
 
+export type Lookups = Record<
+  string,
+  LookupDescriptor | LookupCreator | AutocompleteCreator | Array<unknown>
+>;
+
 /**
  * Context for lookup request functionality
  */
@@ -128,33 +133,7 @@ export interface LookupContextState {
   /**
    * Container for created lookups
    */
-  lookups?: Record<
-    string,
-    LookupDescriptor | LookupCreator | AutocompleteCreator | Array<unknown>
-  >;
-
-  /**
-   * True if requested lookups are completely available
-   */
-  lookupsComplete?: boolean;
-
-  /**
-   * Request list of static required lookups in consumer
-   * @param lookups Collection of lookup requests
-   */
-  createLookups?: (lookups: Array<LookupRequest>) => void;
-
-  /**
-   * Request additional lookup by unique identifier
-   * @param identifier Unique global identifier of lookup
-   * @param valueExpr Value property in fetched items
-   * @param displayExpr Display property in fetched items
-   */
-  getGenericLookupByIdentifier?: (
-    identifier: string,
-    valueExpr: string,
-    displayExpr: string
-  ) => LookupDescriptor | undefined;
+  lookups?: Lookups;
 }
 
 export const LookupContext = createContext({} as LookupContextState);

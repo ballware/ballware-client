@@ -88,7 +88,7 @@ export const ToolbarItemsProvider = ({
 }: PropsWithChildren<ToolbarItemsProviderProps>) => {
   const [value, setValue] = useState<ToolbarItemsContextState>({});
 
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
   const {
     paramsInitialized,
     paramEditorInitialized,
@@ -118,7 +118,7 @@ export const ToolbarItemsProvider = ({
   }, [toolbarItems]);
 
   useEffect(() => {
-    if (lookups && lookupsComplete) {
+    if (lookups) {
       setValue(previousValue => {
         return {
           ...previousValue,
@@ -128,7 +128,7 @@ export const ToolbarItemsProvider = ({
         } as ToolbarItemsContextState;
       });
     }
-  }, [lookups, lookupsComplete]);
+  }, [lookups]);
 
   useEffect(() => {
     if (

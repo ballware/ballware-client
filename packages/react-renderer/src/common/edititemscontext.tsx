@@ -303,7 +303,7 @@ export const EditItemsProvider = forwardRef<
 
   const { EditLayoutItem } = useContext(RenderFactoryContext);
   const { EditProvider } = useContext(ProviderFactoryContext);
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
   const {
     detailGridCellPreparing,
     detailGridRowValidating,
@@ -387,7 +387,7 @@ export const EditItemsProvider = forwardRef<
   }, [EditLayoutItem]);
 
   useEffect(() => {
-    if (lookups && lookupsComplete) {
+    if (lookups) {
       setValue(previousValue => {
         return {
           ...previousValue,
@@ -397,7 +397,7 @@ export const EditItemsProvider = forwardRef<
         } as EditItemsContextState;
       });
     }
-  }, [lookups, lookupsComplete]);
+  }, [lookups]);
 
   useEffect(() => {
     if (

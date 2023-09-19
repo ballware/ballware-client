@@ -51,12 +51,12 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
 
 const TabHeader = ({ options, params }: { options: TabItemOptions, params?: QueryParams}) => {
 
-  const { LookupProvider, MetaProvider } = useContext(ProviderFactoryContext);
+  const { MetaProvider } = useContext(ProviderFactoryContext);
 
   if (!options?.entity) {
     return <span className="dx-tab-text">{options?.caption}</span>;
   } else {
-    return (<React.Fragment>{(LookupProvider && MetaProvider) && <LookupProvider><MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown>} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'} params={params}/></span></MetaProvider></LookupProvider>}</React.Fragment>);
+    return (<React.Fragment>{(MetaProvider) && <MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown>} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'} params={params}/></span></MetaProvider>}</React.Fragment>);
   }
 }
 

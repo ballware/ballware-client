@@ -24,6 +24,7 @@ import {
   PageContextState,
   NotificationContext,
   LookupContext,
+  Lookups,
 } from '@ballware/react-contexts';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -31,7 +32,7 @@ import qs from 'qs';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import set from 'lodash/set';
-import { useDocumentationApi, usePageApi, useScriptUtil } from './hooks';
+import { useDocumentationApi, usePageApi, useRequestLookups, useScriptUtil } from './hooks';
 import { extractLookupsFromPageMetadata } from './shared/lookups';
 
 /**
@@ -63,8 +64,11 @@ export const PageProvider = ({
   const [customParam, setCustomParam] = useState<unknown | undefined>();
   const [value, setValue] = useState({} as PageContextState);
 
+  const [lookups, setLookups] = useState<Lookups | undefined>();
+
   const { showInfo, showError } = useContext(NotificationContext);
-  const { createLookups, lookups, lookupsComplete } = useContext(LookupContext);
+
+  const requestLookups = useRequestLookups();
 
   const pageApi = usePageApi();
   const documentationApi = useDocumentationApi();
@@ -77,8 +81,6 @@ export const PageProvider = ({
 
   const setPageParam = useCallback((nextPageParam: Record<string, unknown>) => {
     const globalRouterState = qs.parse(search, {ignoreQueryPrefix: true});
-
-    //const currentRouterPageParam = get(globalRouterState, 'page', {} as Record<string, unknown>);
     
     if (!isEqual(currentPageParam, nextPageParam)) {
       set(globalRouterState, 'page', nextPageParam);
@@ -173,18 +175,19 @@ export const PageProvider = ({
   }, [loadDocumentation, resetDocumentation]);
 
   useEffect(() => {
-    if (showError && pageApi && identifier) {      
+    if (showError && pageApi && identifier && requestLookups) {      
       pageApi
         .fetchPageDataForIdentifier(identifier)
         .then(result => {
           setPageData(result);
+          setLookups(requestLookups(extractLookupsFromPageMetadata(result)));
         })
         .catch(reason => showError(reason));
     }
-  }, [showError, pageApi, identifier]);
+  }, [showError, pageApi, identifier, requestLookups]);
 
   useEffect(() => {
-    if (scriptUtil && pageData && lookups && lookupsComplete) {
+    if (scriptUtil && pageData && lookups) {
       if (pageData.compiledCustomScripts?.prepareCustomParam) {
         pageData.compiledCustomScripts.prepareCustomParam(
           lookups,
@@ -271,14 +274,7 @@ export const PageProvider = ({
         } as PageContextState;
       });
     }
-  }, [scriptUtil, pageData, lookups, lookupsComplete, scriptActions, currentPageParam]);
-
-  useEffect(() => {
-    if (createLookups && pageData) {
-      const lookupRequests = extractLookupsFromPageMetadata(pageData);
-      createLookups(lookupRequests);
-    }
-  }, [createLookups, pageData]);
+  }, [scriptUtil, pageData, lookups, scriptActions, currentPageParam]);
 
   useEffect(() => {
     if (pageData && customParam) {
@@ -300,5 +296,7 @@ export const PageProvider = ({
     }
   }, [pageData]);
 
-  return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
+  return <LookupContext.Provider value={useMemo(() => ({ lookups }), [lookups])}>
+    <PageContext.Provider value={value}>{children}</PageContext.Provider>
+  </LookupContext.Provider>;
 };

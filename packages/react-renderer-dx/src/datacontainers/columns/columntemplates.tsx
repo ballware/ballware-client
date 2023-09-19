@@ -33,6 +33,7 @@ import {
   getByPath,
   setByPath,
 } from '@ballware/react-renderer';
+import { useGenericLookupByIdentifier } from '@ballware/react-provider';
 
 export type OptionButtons =
   | 'add'
@@ -256,7 +257,8 @@ const TemplateColumn = ({
   const { detailGridCellPreparing, EditProvider } = useContext(
     EditItemsContext
   );
-  const { lookups, getGenericLookupByIdentifier } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
+  const getGenericLookupByIdentifier = useGenericLookupByIdentifier();
 
   const [prepared, setPrepared] = useState<boolean>();
 

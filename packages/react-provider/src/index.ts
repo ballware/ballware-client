@@ -1,6 +1,5 @@
 export * from './crudprovider';
 export * from './editprovider';
-export * from './lookupprovider';
 export * from './metaprovider';
 export * from './notificationprovider';
 export * from './pageprovider';

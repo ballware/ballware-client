@@ -45,11 +45,6 @@ export interface ProviderFactoryContextState {
   ) => JSX.Element;
 
   /**
-   * Instanticate lookup provider
-   */
-  LookupProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
-
-  /**
    * Instantiate notification provider
    */
   NotificationProvider?: (props: PropsWithChildren<{}>) => JSX.Element;

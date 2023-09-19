@@ -38,14 +38,13 @@ export const CrudFunctions = ({
 }: PropsWithChildren<CrudFunctionsProps>) => {
   const { t } = useTranslation();
 
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
 
   const { EditPopup, DeletePopup, IframePopup, ForeignEditPopup, ImportPopup } = useContext(
     RenderFactoryContext
   );
 
   const {
-    LookupProvider,
     MetaProvider,
     CrudProvider,
     EditProvider,
@@ -152,7 +151,6 @@ export const CrudFunctions = ({
         />
       )}
       {ForeignEditPopup &&
-        LookupProvider &&
         MetaProvider &&
         CrudProvider &&
         customEditing &&
@@ -160,28 +158,26 @@ export const CrudFunctions = ({
         customEditFunction?.entity &&
         close &&
         load && (
-          <LookupProvider>
-            <MetaProvider
-              entity={customEditFunction.entity}
-              readOnly={false}
-              headParams={{}}
-              initialCustomParam={{}}
-            >
-              <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
-                <ForeignEditPopup
-                  functionIdentifier={customEditFunction.id}
-                  selection={customEditParam as CrudItem[]}
-                  editingFinished={reload => {
-                    close();
+          <MetaProvider
+            entity={customEditFunction.entity}
+            readOnly={false}
+            headParams={{}}
+            initialCustomParam={{}}
+          >
+            <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
+              <ForeignEditPopup
+                functionIdentifier={customEditFunction.id}
+                selection={customEditParam as CrudItem[]}
+                editingFinished={reload => {
+                  close();
 
-                    if (reload) {
-                      load(fetchParams);
-                    }
-                  }}
-                />
-              </CrudProvider>
-            </MetaProvider>
-          </LookupProvider>
+                  if (reload) {
+                    load(fetchParams);
+                  }
+                }}
+              />
+            </CrudProvider>
+          </MetaProvider>
         )}
       {t && DeletePopup && deleteing && item && (
         <DeletePopup
@@ -195,7 +191,6 @@ export const CrudFunctions = ({
         getEditLayout &&
         lookups &&
         documents &&
-        lookupsComplete &&
         children}
     </React.Fragment>
   );

@@ -24,7 +24,7 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
   const { session } = useContext(RightsContext);
   const { navigation, pages, hasRight } = useContext(TenantContext);
   const { Page } = useContext(RenderFactoryContext);
-  const { LookupProvider, PageProvider } = useContext(ProviderFactoryContext);
+  const { PageProvider } = useContext(ProviderFactoryContext);
 
   return useMemo(() => {
     let pageKey = 1;
@@ -43,7 +43,6 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
     }
 
     if (
-      LookupProvider &&
       PageProvider &&
       session &&
       pages &&
@@ -58,11 +57,9 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
               'unknown'}/:action(view|edit)?/:id?`}
             allowed={() => hasRight(`generic.page.${p.options.page ?? 'unknown'}`)}
             render={() => (
-              <LookupProvider>
-                <PageProvider identifier={p.options.page ?? 'unknown'}>
-                  <Page />
-                </PageProvider>
-              </LookupProvider>
+              <PageProvider identifier={p.options.page ?? 'unknown'}>
+                <Page />
+              </PageProvider>
             )}
           />
         ))
@@ -79,7 +76,6 @@ export const Routes = ({ children }: PropsWithChildren<RoutesProps>) => {
     pages,
     hasRight,
     session,
-    LookupProvider,
     PageProvider,
     Page,
     children,
