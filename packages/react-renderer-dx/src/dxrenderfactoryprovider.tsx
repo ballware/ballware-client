@@ -21,7 +21,6 @@ import {
   RenderFactoryContextState,
 } from '@ballware/react-renderer';
 import { Page } from './layout/page';
-import { Notification } from './layout/notification';
 
 import { Tabs } from './editing/items/tabs';
 
@@ -321,7 +320,6 @@ export const DxRenderFactoryProvider = ({
         Navigation: props => <Navigation {...props} />,
         PrivateRoute: props => <PrivateRoute {...props} />,
         Routes: props => <Routes {...props} />,
-        Notification: () => <Notification />,
         Page: () => <Page />,
         PageToolbar: props => <FilterBar {...props} />,
         PageLayoutItem: props => <PageLayoutComponent {...props} />,

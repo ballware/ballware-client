@@ -17,7 +17,7 @@ import moment from 'moment';
 
 import { RightsContext, RightsContextState } from '@ballware/react-contexts';
 
-import { SettingsContext, NotificationContext } from '@ballware/react-contexts';
+import { SettingsContext } from '@ballware/react-contexts';
 
 import { Route, useHistory } from 'react-router-dom';
 
@@ -26,6 +26,7 @@ import {
 } from '@ballware/identity-interface';
 
 import { UserManager, WebStorageStateStore, Log } from 'oidc-client';
+import { useNotification } from './hooks';
 
 /**
  * Property set for authorization code flow rights provider
@@ -108,7 +109,7 @@ export const AuthorizationCodeRightsProvider = ({
   const [value, setValue] = useState<RightsContextState>({});
 
   const { version, identityUserApi, metaTenantApi } = useContext(SettingsContext);
-  const { showInfo, showError } = useContext(NotificationContext);
+  const { showInfo, showError } = useNotification();
   const { push, replace } = useHistory();
 
   useEffect(() => {

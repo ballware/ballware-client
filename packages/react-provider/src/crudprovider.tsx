@@ -23,9 +23,8 @@ import {
   CrudContext,
   CrudContextState,
   MetaContext,
-  NotificationContext,
 } from '@ballware/react-contexts';
-import { useMetaOperations, useMetaMapping, useMetaCustomFunctions } from './hooks';
+import { useMetaOperations, useMetaMapping, useMetaCustomFunctions, useNotification } from './hooks';
 
 /**
  * Properties for crud provider component
@@ -72,7 +71,7 @@ export const CrudProvider = ({
 
   const [currentRouterState, setCurrentRouterState] = useState<CrudRouterState>();
 
-  const { showInfo, showError } = useContext(NotificationContext);
+  const { showInfo, showError } = useNotification();
   const {
     headParams  
   } = useContext(MetaContext);

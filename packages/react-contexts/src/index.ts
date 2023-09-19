@@ -2,7 +2,6 @@ export * from './crudcontext';
 export * from './editcontext';
 export * from './lookupcontext';
 export * from './metacontext';
-export * from './notificationcontext';
 export * from './pagecontext';
 export * from './rightscontext';
 export * from './settingscontext';

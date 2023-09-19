@@ -14,7 +14,6 @@ import React, {
 import {
   StatisticContext,
   StatisticContextState,
-  NotificationContext,
   PageContext,
   LookupContext,
 } from '@ballware/react-contexts';
@@ -24,7 +23,7 @@ import {
   StatisticLayout,
 } from '@ballware/meta-interface';
 import cloneDeep from 'lodash/cloneDeep';
-import { useScriptUtil, useStatisticApi } from './hooks';
+import { useNotification, useScriptUtil, useStatisticApi } from './hooks';
 
 /**
  * Properties for statistic provider
@@ -56,7 +55,7 @@ export const StatisticProvider = ({
     Array<Record<string, unknown>> | undefined
   >();
 
-  const { showError } = useContext(NotificationContext);
+  const { showError } = useNotification();
   const { customParam } = useContext(PageContext);
   const { lookups } = useContext(LookupContext);
 

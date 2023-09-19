@@ -8,14 +8,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {
   EditContext,
-  NotificationContext,
 } from '@ballware/react-contexts';
 import { EditItemProps } from './common';
 
 import { FieldSet } from './fieldset';
 
 import { AttachmentGrid as DxAttachmentGrid } from '../../components/attachmentgrid';
-import { useAttachments } from '@ballware/react-provider';
+import { useAttachments, useNotification } from '@ballware/react-provider';
 import { EditItemsContext } from '@ballware/react-renderer';
 import { CrudItem } from '@ballware/meta-interface';
 
@@ -24,7 +23,7 @@ export interface AttachmentGridProps extends EditItemProps {}
 export const AttachmentGrid = ({ layoutItem }: AttachmentGridProps) => {
   const { item } = useContext(EditContext);
   const { fetch, upload, open, drop } = useAttachments((item as CrudItem)?.Id);
-  const { showInfo, showWarning, showError } = useContext(NotificationContext);
+  const { showInfo, showWarning, showError } = useNotification();
   const { readOnly, editorPreparing } = useContext(EditItemsContext);
   const [prepared, setPrepared] = useState<boolean>();
 

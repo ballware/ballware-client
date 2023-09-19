@@ -45,11 +45,6 @@ export interface ProviderFactoryContextState {
   ) => JSX.Element;
 
   /**
-   * Instantiate notification provider
-   */
-  NotificationProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
-
-  /**
    * Instantiate tenant provider
    */
   TenantProvider?: (props: PropsWithChildren<{}>) => JSX.Element;

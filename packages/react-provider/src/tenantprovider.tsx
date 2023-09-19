@@ -17,9 +17,8 @@ import {
   TenantContext,
   TenantContextState,
   RightsContext,
-  NotificationContext,
 } from '@ballware/react-contexts';
-import { useTenantApi } from './hooks';
+import { useNotification, useTenantApi } from './hooks';
 
 /**
  * Properties for tenant provider
@@ -56,7 +55,7 @@ export const TenantProvider = ({
   const [value, setValue] = useState({} as TenantContextState);
 
   const { session } = useContext(RightsContext);
-  const { showError } = useContext(NotificationContext);
+  const { showError } = useNotification();
 
   const tenantApi = useTenantApi();
 

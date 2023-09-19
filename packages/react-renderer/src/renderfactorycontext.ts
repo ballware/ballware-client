@@ -279,11 +279,6 @@ export interface RenderFactoryContextState {
   Routes?: (props: {}) => JSX.Element;
 
   /**
-   * Provide notification component for display user notifications
-   */
-  Notification?: (props: {}) => JSX.Element;
-
-  /**
    * Provide page component for displaying metadata page
    */
   Page?: (props: {}) => JSX.Element;

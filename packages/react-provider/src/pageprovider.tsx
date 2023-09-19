@@ -8,7 +8,6 @@
 import React, {
   useState,
   useEffect,
-  useContext,
   useCallback,
   useMemo,
   PropsWithChildren,
@@ -22,7 +21,6 @@ import {
 import {
   PageContext,
   PageContextState,
-  NotificationContext,
   LookupContext,
   Lookups,
 } from '@ballware/react-contexts';
@@ -32,7 +30,7 @@ import qs from 'qs';
 import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import set from 'lodash/set';
-import { useDocumentationApi, usePageApi, useRequestLookups, useScriptUtil } from './hooks';
+import { useDocumentationApi, useNotification, usePageApi, useRequestLookups, useScriptUtil } from './hooks';
 import { extractLookupsFromPageMetadata } from './shared/lookups';
 
 /**
@@ -66,7 +64,7 @@ export const PageProvider = ({
 
   const [lookups, setLookups] = useState<Lookups | undefined>();
 
-  const { showInfo, showError } = useContext(NotificationContext);
+  const { showInfo, showError } = useNotification();
 
   const requestLookups = useRequestLookups();
 

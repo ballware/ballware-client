@@ -20,11 +20,10 @@ import {
   MetaContext,
   MetaContextState,
   LookupContext,
-  NotificationContext,
   Lookups,
 } from '@ballware/react-contexts';
 import { extractLookupsFromEntityMetadata } from './shared/lookups';
-import { useEntityApi, useRequestLookups, useScriptUtil } from './hooks';
+import { useEntityApi, useNotification, useRequestLookups, useScriptUtil } from './hooks';
 
 /**
  * Properties for generic meta provider
@@ -75,7 +74,7 @@ export const MetaProvider = ({
     Array<{ id: string; text: string }> | undefined
   >();
 
-  const { showError } = useContext(NotificationContext);
+  const { showError } = useNotification();
 
   const entityApi = useEntityApi();
   const scriptUtil = useScriptUtil();

@@ -19,14 +19,13 @@ import { EditLayout, CrudItem, EntityCustomFunction } from '@ballware/meta-inter
 import { ValidationGroup } from 'devextreme-react/validation-group';
 import { ValidationSummary } from 'devextreme-react/validation-summary';
 import {
-  NotificationContext,
   CrudContext,
   EditContext,
 } from '@ballware/react-contexts';
 import { EditItemsProvider } from '@ballware/react-renderer';
 import { Container } from '../layout/container';
 import { RenderFactoryContext } from '@ballware/react-renderer';
-import { useMetaCustomFunctions, useMetaEditLayout } from '@ballware/react-provider';
+import { useMetaCustomFunctions, useMetaEditLayout, useNotification } from '@ballware/react-provider';
 
 export interface EditFormRef {
   validate(): boolean;
@@ -45,7 +44,7 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
   ) => {
     const [preparedEditLayout, setPreparedEditLayout] = useState<EditLayout>();
 
-    const { showWarning } = useContext(NotificationContext);
+    const { showWarning } = useNotification();
     
     const { save, saveBatch } = useContext(CrudContext);
     const { item, mode } = useContext(EditContext);

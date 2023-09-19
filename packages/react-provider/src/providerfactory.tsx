@@ -14,7 +14,6 @@ import {
 import { PageProvider } from './pageprovider';
 import { MetaProvider } from './metaprovider';
 import { CrudProvider } from './crudprovider';
-import { NotificationProvider } from './notificationprovider';
 import { TenantProvider } from './tenantprovider';
 import { StatisticProvider } from './statisticprovider';
 import { EditProvider } from './editprovider';
@@ -37,7 +36,6 @@ export const ProviderFactory = ({
       PageProvider,
       MetaProvider,
       CrudProvider,
-      NotificationProvider,
       TenantProvider,
       EditProvider,
       StatisticProvider,
