@@ -13,7 +13,7 @@ import {
   ValueType,
   EditLayout,
 } from '@ballware/meta-interface';
-import { MetaContext, EditContext } from '@ballware/react-contexts';
+import { EditContext } from '@ballware/react-contexts';
 import ValidationGroup from 'devextreme-react/validation-group';
 import ValidationSummary from 'devextreme-react/validation-summary';
 import { Container } from '../layout/container';
@@ -21,6 +21,7 @@ import { RenderFactoryContext } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
 import { Button, Popup } from 'devextreme-react';
 import { Position, ToolbarItem } from 'devextreme-react/popup';
+import { useMetaEditLayout } from '@ballware/react-provider';
 
 export interface DetailEditPopupProps {
   readonly: boolean;
@@ -38,9 +39,11 @@ export const DetailEditPopup = ({
   const [open, setOpen] = useState<boolean>(false);
   const [editLayout, setEditLayout] = useState<EditLayout>();
 
-  const { getEditLayout } = useContext(MetaContext);
   const { item } = useContext(EditContext);
   const { EditLayoutItem } = useContext(RenderFactoryContext);
+
+  const { getEditLayout } = useMetaEditLayout();
+
   const validationGroupRef = React.useRef<ValidationGroup>(null);
 
   useEffect(() => {

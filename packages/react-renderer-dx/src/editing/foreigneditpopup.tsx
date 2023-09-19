@@ -16,6 +16,7 @@ import {
   ForeignEditPopupProps,
   RenderFactoryContext,
 } from '@ballware/react-renderer';
+import { useMetaEditLayout } from '@ballware/react-provider';
 
 export const ForeignEditPopup = ({
   functionIdentifier,
@@ -31,10 +32,12 @@ export const ForeignEditPopup = ({
 
   const { EditProvider } = useContext(ProviderFactoryContext);
   const { lookupsComplete } = useContext(LookupContext);
-  const { getEditLayout, customFunctions } = useContext(MetaContext);
+  const { customFunctions } = useContext(MetaContext);
   const { customEdit, customEditing, customEditParam } = useContext(
     CrudContext
   );
+
+  const { getEditLayout } = useMetaEditLayout();
 
   const getEditLayoutForIdentifier = useCallback(
     (layoutIdentifier: string) => {

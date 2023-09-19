@@ -39,6 +39,7 @@ import { ToolbarItem } from 'devextreme/ui/data_grid';
 import dxButton from 'devextreme/ui/button';
 import { Workbook } from 'exceljs';
 import { saveAs } from 'file-saver';
+import { useMetaAllowed, useMetaEditing } from '@ballware/react-provider';
 
 export interface DataGridProps {
   height: string;
@@ -100,12 +101,13 @@ export const DataGrid = ({
   const { t } = useTranslation();
 
   const {
-    displayName,
-    editAllowed,
-    editorValueChanged,
-    editorEntered,
+    displayName
   } = useContext(MetaContext);
   const { customEdit, isLoading } = useContext(CrudContext);
+
+  const { editAllowed } = useMetaAllowed();
+  const { editorValueChanged, editorEntered } = useMetaEditing();
+
   const selectedRowKeys = useRef<Array<string>>([] as string[]);
   const selectedRowData = useRef<Array<CrudItem>>([] as CrudItem[]);
 
