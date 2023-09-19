@@ -41,7 +41,6 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
     LookupProvider,
     CrudProvider,
     MetaProvider,
-    AttachmentProvider,
   } = useContext(ProviderFactoryContext);
   const gridProps = layoutItem.itemoptions as EditableEntityGridItemOptions;
 
@@ -52,8 +51,7 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
         layoutItem.dataMember &&
         LookupProvider &&
         CrudProvider &&
-        MetaProvider &&
-        AttachmentProvider && (
+        MetaProvider && (
           <LookupProvider>
             <MetaProvider
               entity={layoutItem.dataMember}
@@ -61,20 +59,18 @@ export const EditableEntityGrid = ({ layoutItem }: EditableEntityGridProps) => {
               readOnly={gridProps?.readOnly ?? false}
               headParams={gridProps?.headParams ?? {}}
             >
-              <AttachmentProvider>
-                <CrudProvider
-                  identifier={undefined}
-                  query={gridProps?.query ?? 'primary'}
-                  initialFetchParams={gridProps?.fetchParams}
-                >
-                  <CrudFunctions>
-                    <EntityGrid
-                      layout={gridProps?.layout ?? 'primary'}
-                      height={layoutItem.height}
-                    />
-                  </CrudFunctions>
-                </CrudProvider>
-              </AttachmentProvider>
+              <CrudProvider
+                identifier={undefined}
+                query={gridProps?.query ?? 'primary'}
+                initialFetchParams={gridProps?.fetchParams}
+              >
+                <CrudFunctions>
+                  <EntityGrid
+                    layout={gridProps?.layout ?? 'primary'}
+                    height={layoutItem.height}
+                  />
+                </CrudFunctions>
+              </CrudProvider>
             </MetaProvider>
           </LookupProvider>
         )}

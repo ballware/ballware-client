@@ -41,7 +41,6 @@ export const CrudContainer = ({
   const {
     LookupProvider,
     MetaProvider,
-    AttachmentProvider,
     CrudProvider,
   } = useContext(ProviderFactoryContext);
   const { customParam } = useContext(PageContext);
@@ -52,7 +51,6 @@ export const CrudContainer = ({
     PageLayoutItem &&
     LookupProvider &&
     MetaProvider &&
-    AttachmentProvider &&
     CrudProvider
   ) {
     return (
@@ -65,30 +63,28 @@ export const CrudContainer = ({
           headParams={params ?? {}}
           initialCustomParam={customParam ?? {}}
         >
-          <AttachmentProvider>
-            <CrudProvider
-              query={
-                (layoutItem.options?.itemoptions as CrudContainerOptions)
-                  ?.query ?? 'primary'
-              }
-              initialFetchParams={params}
-              identifier={(layoutItem.options?.itemoptions as CrudContainerOptions)?.identifier}
-              >
-              <CrudFunctions>
-                <React.Fragment>
-                  {layoutItem.items?.map((item, index) => (
-                    <PageLayoutItem
-                      key={index}
-                      colCount={item.colCount}
-                      layoutItem={item}
-                      params={params}
-                    />
-                  ))}
-                </React.Fragment>
-                <React.Fragment>{children}</React.Fragment>
-              </CrudFunctions>
-            </CrudProvider>
-          </AttachmentProvider>
+          <CrudProvider
+            query={
+              (layoutItem.options?.itemoptions as CrudContainerOptions)
+                ?.query ?? 'primary'
+            }
+            initialFetchParams={params}
+            identifier={(layoutItem.options?.itemoptions as CrudContainerOptions)?.identifier}
+            >
+            <CrudFunctions>
+              <React.Fragment>
+                {layoutItem.items?.map((item, index) => (
+                  <PageLayoutItem
+                    key={index}
+                    colCount={item.colCount}
+                    layoutItem={item}
+                    params={params}
+                  />
+                ))}
+              </React.Fragment>
+              <React.Fragment>{children}</React.Fragment>
+            </CrudFunctions>
+          </CrudProvider>          
         </MetaProvider>
       </LookupProvider>
     );

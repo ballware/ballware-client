@@ -47,7 +47,6 @@ export const CrudFunctions = ({
   const {
     LookupProvider,
     MetaProvider,
-    AttachmentProvider,
     CrudProvider,
     EditProvider,
   } = useContext(ProviderFactoryContext);
@@ -155,7 +154,6 @@ export const CrudFunctions = ({
       {ForeignEditPopup &&
         LookupProvider &&
         MetaProvider &&
-        AttachmentProvider &&
         CrudProvider &&
         customEditing &&
         !customEditFunction?.externalEditor &&
@@ -169,21 +167,19 @@ export const CrudFunctions = ({
               headParams={{}}
               initialCustomParam={{}}
             >
-              <AttachmentProvider>
-                <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
-                  <ForeignEditPopup
-                    functionIdentifier={customEditFunction.id}
-                    selection={customEditParam as CrudItem[]}
-                    editingFinished={reload => {
-                      close();
+              <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
+                <ForeignEditPopup
+                  functionIdentifier={customEditFunction.id}
+                  selection={customEditParam as CrudItem[]}
+                  editingFinished={reload => {
+                    close();
 
-                      if (reload) {
-                        load(fetchParams);
-                      }
-                    }}
-                  />
-                </CrudProvider>
-              </AttachmentProvider>
+                    if (reload) {
+                      load(fetchParams);
+                    }
+                  }}
+                />
+              </CrudProvider>
             </MetaProvider>
           </LookupProvider>
         )}
