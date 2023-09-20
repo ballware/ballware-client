@@ -20,8 +20,8 @@ import {
   LookupDescriptor,
   LookupCreator,
   LookupContext,
-  PageContext,
 } from '@ballware/react-contexts';
+import { usePageParams } from '@ballware/react-provider';
 
 /**
  * Context providing environmental functionality for toolbar items
@@ -94,7 +94,7 @@ export const ToolbarItemsProvider = ({
     paramEditorInitialized,
     paramEditorValueChanged,
     paramEditorEvent,
-  } = useContext(PageContext);
+  } = usePageParams();
 
   const toolbarItems = useMemo(() => {
     return {} as Record<string, ToolbarItemRef>;

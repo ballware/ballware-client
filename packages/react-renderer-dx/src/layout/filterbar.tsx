@@ -9,6 +9,7 @@ import React, { useMemo, useEffect, useContext, useState } from 'react';
 
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { PageContext } from '@ballware/react-contexts';
+import { usePageParams } from '@ballware/react-provider';
 import {
   RenderFactoryContext,
   ToolbarItemsProvider,
@@ -36,7 +37,8 @@ export const FilterBar = ({
   const [initialized, setInitialized] = useState(false);
 
   const { PageToolbarItem } = useContext(RenderFactoryContext);
-  const { paramsInitialized, loadDocumentation } = useContext(PageContext);
+  const { loadDocumentation } = useContext(PageContext);
+  const { paramsInitialized } = usePageParams();
 
   const toolbarItems = useMemo(() => {
     const itemList = [] as dxToolbarItem[];

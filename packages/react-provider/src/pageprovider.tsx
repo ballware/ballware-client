@@ -15,8 +15,6 @@ import React, {
 import {
   CompiledPageData,
   ScriptActions,
-  EditUtil,
-  ValueType,
 } from '@ballware/meta-interface';
 import {
   PageContext,
@@ -197,78 +195,13 @@ export const PageProvider = ({
       } else {
         setCustomParam({});
       }
-
-      const paramsInitialized = (hidden: boolean) => {
-        if (pageData.compiledCustomScripts?.paramsInitialized) {
-          pageData.compiledCustomScripts?.paramsInitialized(
-            hidden,
-            lookups,
-            scriptUtil,
-            scriptActions,
-            currentPageParam
-          );
-        }
-      };
-
-      const paramEditorInitialized = (name: string, editUtil: EditUtil) => {
-        if (pageData.compiledCustomScripts?.paramEditorInitialized) {
-          pageData.compiledCustomScripts?.paramEditorInitialized(
-            name,
-            editUtil,
-            lookups,
-            scriptUtil,
-            scriptActions,
-            currentPageParam
-          );
-        }
-      };
-
-      const paramEditorValueChanged = (
-        name: string,
-        value: ValueType,
-        editUtil: EditUtil
-      ) => {
-        if (pageData.compiledCustomScripts?.paramEditorValueChanged) {
-          pageData.compiledCustomScripts?.paramEditorValueChanged(
-            name,
-            value,
-            editUtil,
-            lookups,
-            scriptUtil,
-            scriptActions,
-            currentPageParam
-          );
-        }
-      };
-
-      const paramEditorEvent = (
-        name: string,
-        event: string,
-        editUtil: EditUtil,
-        param?: Record<string, unknown>
-      ) => {
-        if (pageData.compiledCustomScripts?.paramEditorEvent) {
-          pageData.compiledCustomScripts?.paramEditorEvent(
-            name,
-            event,
-            editUtil,
-            lookups,
-            scriptUtil,
-            scriptActions,
-            currentPageParam,
-            param
-          );
-        }
-      };
-
+      
       setValue(previousValue => {
         return {
           ...previousValue,
           layout: pageData.layout,
-          paramsInitialized,
-          paramEditorInitialized,
-          paramEditorValueChanged,
-          paramEditorEvent,
+          customScripts: pageData.compiledCustomScripts,
+          scriptActions,
         } as PageContextState;
       });
     }
