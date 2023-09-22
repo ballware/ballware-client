@@ -1,6 +1,6 @@
 {
   "name": "@ballware/identity-keycloak",
-  "version": "6.17.5",
+  "version": "6.18.0",
   "description": "Ballware Application Builder - Client for identity keycloak backend",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "axios": ">=0.21.0"
   },
   "dependencies": {
-    "@ballware/identity-interface": "^6.17.5"
+    "@ballware/identity-interface": "^6.18.0"
   },
   "husky": {
     "hooks": {

@@ -1,10 +1,10 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.17.6",
+  "version": "6.18.1",
   "private": true,
   "dependencies": {
-    "@ballware/react-provider": "^6.17.5",
-    "@ballware/react-renderer-dx": "^6.17.6"
+    "@ballware/react-provider": "^6.18.1",
+    "@ballware/react-renderer-dx": "^6.18.0"
   },
   "scripts": {
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",

@@ -127,21 +127,23 @@ export const MetaProvider = ({
   }, [showError, entity, entityApi, requestLookups]);
 
   useEffect(() => {
-    setValue(previousValue => {
-      return {
-        ...previousValue,
-        application: metaData?.application,
-        entity: metaData?.entity,
-        displayName: metaData?.displayName ?? metaData?.entity,
-        customFunctions: metaData?.customFunctions,
-        templates: metaData?.templates,
-        customScripts: metaData?.compiledCustomScripts,
-        mappingScripts: metaData?.mappingScripts,
-        gridLayouts: metaData?.gridLayouts,
-        editLayouts: metaData?.editLayouts,
-        baseUrl: metaData?.baseUrl      
-      } as MetaContextState;
-    });
+    if (metaData) {
+      setValue(previousValue => {
+        return {
+          ...previousValue,
+          application: metaData.application,
+          entity: metaData.entity,
+          displayName: metaData.displayName ?? metaData.entity,
+          customFunctions: metaData.customFunctions,
+          templates: metaData.templates ?? [],
+          customScripts: metaData.compiledCustomScripts ?? {},
+          mappingScripts: metaData.mappingScripts ?? {},
+          gridLayouts: metaData.gridLayouts ?? [],
+          editLayouts: metaData.editLayouts ?? [],
+          baseUrl: metaData.baseUrl      
+        } as MetaContextState;
+      });
+    }
   }, [metaData]);
 
   useEffect(() => {
