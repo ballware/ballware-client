@@ -1,4 +1,4 @@
-import { CrudItem, QueryParams } from "@ballware/meta-interface";
+import { CrudItem } from "@ballware/meta-interface";
 import { LookupContext, MetaContext } from "@ballware/react-contexts";
 import { useContext, useMemo } from "react";
 import { useScriptUtil } from "../util";
@@ -10,14 +10,12 @@ export interface MetaCustomFunctionOperations {
    * @param selection Collection of selected items
    * @param execute Execute callback containing prepared edit item data
    * @param message Message callback for notifying user with reason why edit operation is canceled
-   * @param params Optional parameter values for initialization
    */
   prepareCustomFunction?: (
     identifier: string,
     selection: Array<CrudItem> | undefined,
     execute: (param: Record<string, unknown>, text: string | undefined) => void,
-    message: (message: string) => void,
-    params?: QueryParams
+    message: (message: string) => void
   ) => void;
 
   /**
@@ -38,12 +36,12 @@ export interface MetaCustomFunctionOperations {
 export const useMetaCustomFunctions = () => {
 
     const { lookups } = useContext(LookupContext);
-    const { customScripts } = useContext(MetaContext);
+    const { customScripts, headParams } = useContext(MetaContext);
 
     const scriptUtil = useScriptUtil();
 
     return useMemo(() => ({
-        prepareCustomFunction: (customScripts && lookups && scriptUtil) ? (identifier, selection, execute, message, params) => {
+        prepareCustomFunction: (customScripts && lookups && scriptUtil && headParams) ? (identifier, selection, execute, message) => {
             if (customScripts.prepareCustomFunction) {
                     customScripts.prepareCustomFunction(
                     identifier,
@@ -51,7 +49,7 @@ export const useMetaCustomFunctions = () => {
                     scriptUtil,
                     execute,
                     message,
-                    params,
+                    headParams,
                     selection
                 );
             } else {
@@ -72,5 +70,5 @@ export const useMetaCustomFunctions = () => {
               save(param);
             }
           } : undefined,  
-    } as MetaCustomFunctionOperations), [customScripts, lookups, scriptUtil]);
+    } as MetaCustomFunctionOperations), [customScripts, lookups, scriptUtil, headParams]);
 }

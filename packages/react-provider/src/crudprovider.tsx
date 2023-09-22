@@ -8,7 +8,6 @@
 import React, {
   useState,
   useEffect,
-  useContext,
   PropsWithChildren
 } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -18,11 +17,10 @@ import isEqual from 'lodash/isEqual';
 import get from 'lodash/get';
 import set from 'lodash/set';
 
-import { CrudItem, QueryParams } from '@ballware/meta-interface';
+import { CrudItem } from '@ballware/meta-interface';
 import {
   CrudContext,
   CrudContextState,
-  MetaContext,
 } from '@ballware/react-contexts';
 import { useMetaOperations, useMetaMapping, useMetaCustomFunctions, useNotification } from './hooks';
 
@@ -34,11 +32,6 @@ export interface CrudProviderProps {
    * Query identifier used for querying item list
    */
   query: string | undefined;
-
-  /**
-   * Fetch params prepared in parent container (page, parent entity)
-   */
-  initialFetchParams?: QueryParams;
 
   /**
    * Identifier for page state
@@ -57,7 +50,6 @@ interface CrudRouterState {
  */
 export const CrudProvider = ({
   query: queryIdentifier,
-  initialFetchParams,
   identifier,
   children,
 }: PropsWithChildren<CrudProviderProps>): JSX.Element => {
@@ -66,16 +58,12 @@ export const CrudProvider = ({
 
   const [value, setValue] = useState({} as CrudContextState);
   const [refreshing, setRefreshing] = useState(false);
-  const [fetchParams, setFetchParams] = useState(initialFetchParams ?? {});
   const [fetchedItems, setFetchedItems] = useState<CrudItem[]>();
 
   const [currentRouterState, setCurrentRouterState] = useState<CrudRouterState>();
 
   const { showInfo, showError } = useNotification();
-  const {
-    headParams  
-  } = useContext(MetaContext);
-
+  
   const { prepareCustomFunction } = useMetaCustomFunctions();
 
   const {
@@ -168,13 +156,11 @@ export const CrudProvider = ({
       saveBatch &&
       drop &&
       exportItems &&
-      importItems &&
-      fetchParams
+      importItems
     ) {
-      setValue({
-        fetchParams: fetchParams,
+      setValue({        
         load: queryIdentifier
-          ? params => {
+          ? () => {
               if (query) {
                 setValue(previousValue => {
                   return {
@@ -183,7 +169,7 @@ export const CrudProvider = ({
                   };
                 });
 
-                query(queryIdentifier, params)
+                query(queryIdentifier)
                   .then((result: Array<CrudItem>) => {
                     setFetchedItems(result.map(item => mapIncomingItem(item)));
 
@@ -208,8 +194,8 @@ export const CrudProvider = ({
             }
           : undefined,
         count: queryIdentifier ?
-            params => {
-              count(queryIdentifier, params)
+            () => {
+              count(queryIdentifier)
               .then((result: number) => {
                 setValue(previousValue => {
                   return {
@@ -230,7 +216,7 @@ export const CrudProvider = ({
             }
             : undefined,
         add: editLayout => {
-          create('primary', headParams)
+          create('primary')
             .then(result => {
               setValue(previousValue => {
                 return {
@@ -412,14 +398,12 @@ export const CrudProvider = ({
             },
             message => {
               showInfo(message);
-            },
-            headParams
+            }
           );
         },
       } as CrudContextState);
     }
   }, [
-    fetchParams,
     queryIdentifier,
     showError,
     showInfo,
@@ -432,28 +416,14 @@ export const CrudProvider = ({
     save,
     saveBatch,
     drop,
-    headParams,
   ]);
 
   useEffect(() => {
     if (refreshing && value?.load) {
-      value.load(fetchParams);
+      value.load();
       setRefreshing(false);
     }
-  }, [refreshing, value, fetchParams]);
-
-  useEffect(() => {
-    setFetchParams(initialFetchParams ?? {});
-  }, [initialFetchParams]);
-
-  useEffect(() => {
-    setValue(previousValue => {
-      return {
-        ...previousValue,
-        fetchParams: fetchParams,
-      };
-    });
-  }, [fetchParams]);
+  }, [refreshing, value]);
 
   return <CrudContext.Provider value={value}>{children}</CrudContext.Provider>;
 };

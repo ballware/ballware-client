@@ -52,7 +52,6 @@ export const CrudFunctions = ({
   const { displayName, documents } = useContext(MetaContext);
   const {
     load,
-    fetchParams,
     close,
     adding,
     viewing,
@@ -72,10 +71,10 @@ export const CrudFunctions = ({
   } = useMetaEditLayout();
 
   useEffect(() => {
-    if (load && fetchParams) {
-      load(fetchParams);
+    if (load) {
+      load();
     }
-  }, [load, fetchParams]);
+  }, [load]);
 
   const getEditLayoutForIdentifier = useCallback(
     (layoutIdentifier: string) => {
@@ -172,7 +171,7 @@ export const CrudFunctions = ({
                   close();
 
                   if (reload) {
-                    load(fetchParams);
+                    load();
                   }
                 }}
               />

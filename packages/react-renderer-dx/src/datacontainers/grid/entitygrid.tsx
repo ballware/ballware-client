@@ -101,7 +101,6 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
 
   const {
     load,
-    fetchParams,
     add,
     view,
     edit,
@@ -748,7 +747,7 @@ export const EntityGrid = ({ layout, height }: GridProps) => {
             showPrint={(preparedGridLayout.allowMultiselect && documents && documents.length > 0) ?? false}
             showExport={(exportMenuItems && exportMenuItems.length > 0) ?? false}
             showImport={(importMenuItems && importMenuItems.length > 0) ?? false}
-            onReloadClick={() => load(fetchParams)}
+            onReloadClick={() => load()}
             onCustomFunctionClick={customFunctionButtonClicked}
             onAddClick={addButtonClicked}
             onPrintClick={printButtonClicked}

@@ -1,7 +1,8 @@
-import { CrudItem, QueryParams } from "@ballware/meta-interface";
+import { CrudItem } from "@ballware/meta-interface";
 import { MetaContext, RightsContext, SettingsContext } from "@ballware/react-contexts";
 import { useContext, useMemo } from "react";
 import { useHistory } from "react-router-dom";
+import { useMetaMapping } from "./mapping";
 
 export interface MetaOperations {
     /**
@@ -10,7 +11,7 @@ export interface MetaOperations {
      * @param params Optional parameter values for query
      * @returns Promise resolving collection of fetched items
      */
-    query?: (query: string, params?: QueryParams) => Promise<Array<CrudItem>>;
+    query?: (query: string) => Promise<Array<CrudItem>>;
 
     /**
      * Fetch count of items
@@ -18,7 +19,7 @@ export interface MetaOperations {
      * @param params Optional parameter values for query
      * @returns Promise resolving count of fetchable items
      */
-    count?: (query: string, params?: QueryParams) => Promise<number>;
+    count?: (query: string) => Promise<number>;
 
     /**
      * Fetch item by id
@@ -33,7 +34,7 @@ export interface MetaOperations {
      * @param functionIdentifier Identifier of edit function
      * @param params Optional parameter values for initialization
      */
-    create?: (functionIdentifier: string, params?: QueryParams) => Promise<CrudItem>;
+    create?: (functionIdentifier: string) => Promise<CrudItem>;
 
     /**
      * Save changed or add new item
@@ -91,20 +92,21 @@ export const useMetaOperations = () => {
 
     const { token } = useContext(RightsContext);
 
-    const { baseUrl } = useContext(MetaContext);
+    const { baseUrl, headParams } = useContext(MetaContext);
+    const { mapIncomingItem, mapOutgoingItem } = useMetaMapping();
 
     return useMemo(() => {
         
-        if (metaGenericEntityApiFactory && baseUrl && token) {
+        if (metaGenericEntityApiFactory && baseUrl && headParams && token) {
             const entityApi = metaGenericEntityApiFactory(baseUrl);
 
             return {
-                query: (query, params) => entityApi.query(token, query, params),
-                count: (query, params) => entityApi.count(token, query, params),
-                byId: (functionIdentifier, id) => entityApi.byId(token, functionIdentifier, id),
-                create: (functionIdentifier, params) => entityApi.new(token, functionIdentifier, params),
-                save: (functionIdentifier, item) => entityApi.save(token, functionIdentifier, item),
-                saveBatch: (functionIdentifier, items) => entityApi.saveBatch(token, functionIdentifier, items),
+                query: (mapIncomingItem) ? (query) => entityApi.query(token, query, headParams).then(response => response?.map(item => mapIncomingItem(item))) : undefined,
+                count: (query) => entityApi.count(token, query, headParams),
+                byId: (mapIncomingItem) ? (functionIdentifier, id) => entityApi.byId(token, functionIdentifier, id).then(item => mapIncomingItem(item)) : undefined,
+                create: (mapIncomingItem) ? (functionIdentifier) => entityApi.new(token, functionIdentifier, headParams).then(item => mapIncomingItem(item)) : undefined,
+                save: (mapOutgoingItem) ? (functionIdentifier, item) => entityApi.save(token, functionIdentifier, item) : undefined,
+                saveBatch: (mapOutgoingItem) ? (functionIdentifier, items) => entityApi.saveBatch(token, functionIdentifier, items.map(item => mapOutgoingItem(item))) : undefined,
                 drop: id => entityApi.drop(token, id),
                 print: (doc, ids) => history.push(`/print?docId=${doc}${ids.map(u => `&id=${u}`).join('')}`),
                 importItems: (functionIdentifier, file) => entityApi.importItems(token, functionIdentifier, file),
@@ -114,5 +116,5 @@ export const useMetaOperations = () => {
         
         return {};
 
-    }, [metaGenericEntityApiFactory, baseUrl, token, history]);
+    }, [metaGenericEntityApiFactory, mapIncomingItem, mapOutgoingItem, baseUrl, headParams, token, history]);
 }

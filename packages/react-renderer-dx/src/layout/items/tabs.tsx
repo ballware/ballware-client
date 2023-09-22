@@ -18,7 +18,7 @@ import { RenderFactoryContext } from '@ballware/react-renderer';
 import { ProviderFactoryContext } from '@ballware/react-contexts';
 import { useMetaOperations } from '@ballware/react-provider';
 
-const TabCountIndicator = ({ query, params }: { query: string, params?: QueryParams}) => {
+const TabCountIndicator = ({ query }: { query: string }) => {
 
   const [itemCount, setItemCount] = useState<number>();
 
@@ -28,7 +28,7 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
     if (count) {
       var canceled = false;
 
-      count(query, params).then(result => {
+      count(query).then(result => {
         if (!canceled) {
           setItemCount(result);
         }
@@ -40,7 +40,7 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
     }
 
     return () => {};
-  }, [count, params]);
+  }, [count]);
 
   if (itemCount !== undefined) {
     return <React.Fragment>{`(${itemCount})`}</React.Fragment>
@@ -56,7 +56,7 @@ const TabHeader = ({ options, params }: { options: TabItemOptions, params?: Quer
   if (!options?.entity) {
     return <span className="dx-tab-text">{options?.caption}</span>;
   } else {
-    return (<React.Fragment>{(MetaProvider) && <MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown>} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'} params={params}/></span></MetaProvider>}</React.Fragment>);
+    return (<React.Fragment>{(MetaProvider) && <MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown> ?? {}} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'}/></span></MetaProvider>}</React.Fragment>);
   }
 }
 
