@@ -523,6 +523,29 @@ export interface CompiledEntityCustomScripts {
   ) => void;
 
   /**
+   * Manipulate materialized edit layout item template instance before rendering
+   *
+   * @param mode Edit mode (add, edit, view)
+   * @param lookups Lookup definitions prepared for business object
+   * @param customParam Current value of prepared custom param (previous result of prepareCustomParam function)
+   * @param util Utility for performing misc operations
+   * @param editLayout Edit layout instance
+   * @param scope Source scope of template definition
+   * @param identifier Identifier of template definition
+   * @param materializedItem Generated edit layout item instance of template
+   */
+  prepareMaterializedEditItem?: (
+    mode: string, 
+    lookups: Record<string, unknown>, 
+    customParam: unknown, 
+    util: ScriptUtil, 
+    editLayout: EditLayout, 
+    scope: 'tenant' | 'meta', 
+    identifier: string, 
+    materializedItem: EditLayoutItem
+  ) => void;
+
+  /**
    * Manipulate editor options before rendering
    *
    * @param mode Edit mode (add, edit, view)

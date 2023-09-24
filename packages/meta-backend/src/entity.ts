@@ -11,6 +11,7 @@ import {
   GridLayout,
   EditLayout,
   DocumentSelectEntry,
+  Template,
 } from '@ballware/meta-interface';
 import * as JSON5 from 'json5';
 import axios from 'axios';
@@ -39,6 +40,7 @@ interface EntityCustomScripts {
   prepareCustomParam?: string;
   prepareGridLayout?: string;
   prepareEditLayout?: string;
+  prepareMaterializedEditItem?: string;
   editorPreparing?: string;
   editorInitialized?: string;
   editorValueChanged?: string;
@@ -111,9 +113,12 @@ const compileEntityMetadata = (
   }
 
   if (metaData.Templates) {
-    compiledMetaData.templates = JSON5.parse(metaData.Templates);
-  }
-
+      compiledMetaData.templates = (JSON5.parse(metaData.Templates) as Array<{ identifier: string, definition: string }>).map(t => ({
+          identifier: t.identifier,
+          definition: JSON5.parse(t.definition)
+        } as Template))
+  };
+  
   if (metaData.CustomFunctions) {
     compiledMetaData.customFunctions = JSON5.parse(metaData.CustomFunctions);
   }
@@ -231,6 +236,37 @@ const compileEntityMetadata = (
               customParam,
               util,
               editLayout,
+            ])
+        : undefined;
+    }
+
+    if (customScripts.prepareMaterializedEditItem) {
+      const compiledArgs = [
+        'mode',
+        'lookups',
+        'customParam',
+        'util',
+        'editLayout',
+        'scope',
+        'identifier',
+        'materializedItem'
+      ];
+      const compiledFn = Function.apply(
+        Function,
+        compiledArgs.concat(customScripts.prepareMaterializedEditItem)
+      );
+
+      compiledMetaData.compiledCustomScripts.prepareMaterializedEditItem = compiledFn
+        ? (mode, lookups, customParam, util, editLayout, scope, identifier, materializedItem) =>
+            compiledFn.apply(compiledFn, [
+              mode,
+              lookups,
+              customParam,
+              util,
+              editLayout,
+              scope,
+              identifier,
+              materializedItem
             ])
         : undefined;
     }

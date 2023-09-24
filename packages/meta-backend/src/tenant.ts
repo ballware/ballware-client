@@ -30,7 +30,10 @@ const compileTenant = (tenant: Tenant): CompiledTenant => {
       ? (JSON5.parse(tenant.Navigation) as NavigationLayout)
       : ({} as NavigationLayout),
     templates: tenant.Templates 
-      ? (JSON5.parse(tenant.Templates) as Array<Template>)
+      ? (JSON5.parse(tenant.Templates) as Array<{ identifier: string, definition: string }>).map(t => ({
+            identifier: t.identifier,
+            definition: JSON5.parse(t.definition)
+          } as Template))        
       : ([]),
   } as CompiledTenant;
 
