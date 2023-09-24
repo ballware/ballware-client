@@ -1,5 +1,5 @@
 {
-  "version": "6.18.0",
+  "version": "6.19.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -77,9 +77,9 @@
     "react-i18next": "^11.8.6"
   },
   "dependencies": {
-    "@ballware/meta-interface": "^6.18.0",
-    "@ballware/react-contexts": "^6.18.0",
-    "@ballware/react-renderer": "^6.18.0",
+    "@ballware/meta-interface": "^6.19.0",
+    "@ballware/react-contexts": "^6.19.0",
+    "@ballware/react-renderer": "^6.19.0",
     "@codemirror/autocomplete": "^6.9.0",
     "@codemirror/commands": "^6.2.5",
     "@codemirror/lang-javascript": "^6.2.1",
