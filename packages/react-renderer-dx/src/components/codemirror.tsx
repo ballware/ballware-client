@@ -76,18 +76,18 @@ export const CodeMirrorEditor = forwardRef<CodeMirrorEditorRef, CodeMirrorEditor
         if (mode === 'json5') {
           extensions.push(json5());
           extensions.push(json5Language.data.of({
-            autocomplete: options ? options.snippets?.map(s => snippetCompletion(s.snippet, { label: s.label, info: s.info, detail: s.detail })) : []
+            autocomplete: options?.snippets?.map(s => snippetCompletion(s.snippet, { label: s.label, info: s.info, detail: s.detail })) ?? []
           }));           
           extensions.push(linter(json5ParseLinter()));
         } else if (mode === 'javascript') {
           extensions.push(javascript()); 
           extensions.push(javascriptLanguage.data.of({
-            autocomplete: options ? options.snippets?.map(s => snippetCompletion(s.snippet, { label: s.label, info: s.info, detail: s.detail })) : []
+            autocomplete: options?.snippets?.map(s => snippetCompletion(s.snippet, { label: s.label, info: s.info, detail: s.detail })) ?? []
           }));           
         } else if (mode === 'sqlserver') {
           extensions.push(sql({ dialect: MSSQL }));
           extensions.push(MSSQL.language.data.of({
-            autocomplete: options ? options.snippets?.map(s => snippetCompletion(s.snippet, { label: s.label, info: s.info, detail: s.detail })) : []
+            autocomplete: options?.snippets?.map(s => snippetCompletion(s.snippet, { label: s.label, info: s.info, detail: s.detail })) ?? []
           }));
         }
 
