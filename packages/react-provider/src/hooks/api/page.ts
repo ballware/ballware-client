@@ -12,7 +12,7 @@ export const usePageApi = () => {
     const { token } = useContext(RightsContext);
     const { metaPageApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchPageDataForIdentifier: (token) ? (page) => metaPageApi.pageDataForIdentifier(token, page) : undefined
-    } as PageApiOperations), [token, metaPageApi]);
+    return useMemo(() => token ? ({
+        fetchPageDataForIdentifier: (page) => metaPageApi.pageDataForIdentifier(token, page)
+    } as PageApiOperations) : undefined, [token, metaPageApi]);
 }

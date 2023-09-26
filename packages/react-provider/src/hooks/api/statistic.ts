@@ -17,8 +17,8 @@ export const useStatisticApi = () => {
     const { token } = useContext(RightsContext);
     const { metaStatisticApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchMetadataForStatistic: (token) ? (identifier) => metaStatisticApi.metadataForStatistic(token, identifier) : undefined,
-        fetchDataForStatistic: (token) ? (identifier, params) => metaStatisticApi.dataForStatistic(token, identifier, params) : undefined,
-    } as StatisticApiOperations), [token, metaStatisticApi]);
+    return useMemo(() => token ? ({
+        fetchMetadataForStatistic: (identifier) => metaStatisticApi.metadataForStatistic(token, identifier),
+        fetchDataForStatistic: (identifier, params) => metaStatisticApi.dataForStatistic(token, identifier, params),
+    } as StatisticApiOperations) : undefined, [token, metaStatisticApi]);
 }

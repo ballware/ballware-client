@@ -16,8 +16,8 @@ export const useEntityApi = () => {
     const { token } = useContext(RightsContext);
     const { metaEntityApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchMetadataForEntity: (token) ? (entity) => metaEntityApi.metadataForEntity(token, entity) : undefined,
-        fetchDocumentsForEntity: (token) ? (entity) => metaEntityApi.documentsForEntity(token, entity) : undefined
-    } as EntityApiOperations), [token, metaEntityApi]);
+    return useMemo(() => token ? ({
+        fetchMetadataForEntity: (entity) => metaEntityApi.metadataForEntity(token, entity),
+        fetchDocumentsForEntity: (entity) => metaEntityApi.documentsForEntity(token, entity)
+    } as EntityApiOperations) : undefined, [token, metaEntityApi]);
 }

@@ -14,10 +14,10 @@ export const useAttachmentApi = () => {
     const { token } = useContext(RightsContext);
     const { metaAttachmentApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchQueryByOwner: (token) ? (owner) => metaAttachmentApi.queryByOwner(token, owner) : undefined,
-        fetchUpload: (token) ? (owner, file) => metaAttachmentApi.upload(token, owner, file) : undefined,
-        fetchOpen: (token) ? (owner, fileName) => metaAttachmentApi.open(token, owner, fileName) : undefined,
-        fetchRemove: (token) ? (owner, fileName) => metaAttachmentApi.remove(token, owner, fileName) : undefined
-    } as AttachmentApiOperations), [token, metaAttachmentApi]);
+    return useMemo(() => token ? ({
+        fetchQueryByOwner: (owner) => metaAttachmentApi.queryByOwner(token, owner),
+        fetchUpload: (owner, file) => metaAttachmentApi.upload(token, owner, file),
+        fetchOpen: (owner, fileName) => metaAttachmentApi.open(token, owner, fileName),
+        fetchRemove: (owner, fileName) => metaAttachmentApi.remove(token, owner, fileName)
+    } as AttachmentApiOperations) : undefined, [token, metaAttachmentApi]);
 }

@@ -21,9 +21,9 @@ export const useProcessingstateApi = () => {
     const { token } = useContext(RightsContext);
     const { metaProcessingstateApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchSelectListForEntity: (token) ? (entity) => metaProcessingstateApi.selectListForEntity(token, entity) : undefined,
-        fetchSelectListAllowedForEntityAndIds: (token) ? (entity, ids) => metaProcessingstateApi.selectListAllowedForEntityAndIds(token, entity, ids) : undefined,
-        fetchSelectByStateForEntity: (token) ? (entity, state) => metaProcessingstateApi.selectByStateForEntity(token, entity)(state) : undefined
-    } as ProcessingstateApiOperations), [token, metaProcessingstateApi]);
+    return useMemo(() => token ? ({
+        fetchSelectListForEntity: (entity) => metaProcessingstateApi.selectListForEntity(token, entity),
+        fetchSelectListAllowedForEntityAndIds: (entity, ids) => metaProcessingstateApi.selectListAllowedForEntityAndIds(token, entity, ids),
+        fetchSelectByStateForEntity: (entity, state) => metaProcessingstateApi.selectByStateForEntity(token, entity)(state)
+    } as ProcessingstateApiOperations) : undefined, [token, metaProcessingstateApi]);
 }

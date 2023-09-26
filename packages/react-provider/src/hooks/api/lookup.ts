@@ -45,14 +45,14 @@ export const useLookupApi = () => {
     const { token } = useContext(RightsContext);
     const { metaLookupApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchSelectListForLookup: (token) ? (lookup) => metaLookupApi.selectListForLookup(token, lookup) : undefined,    
-        fetchSelectByIdForLookup: (token) ? (lookup, id) => metaLookupApi.selectByIdForLookup(token, lookup)(id) : undefined, 
-        fetchSelectListForLookupIdentifier: (token) ? (lookup) => metaLookupApi.selectListForLookupIdentifier(token, lookup) : undefined, 
-        fetchSelectByIdForLookupIdentifier: (token) ? (lookup, id) => metaLookupApi.selectByIdForLookupIdentifier(token, lookup)(id) : undefined, 
-        fetchSelectListForLookupWithParam: (token) ? (lookup, param) => metaLookupApi.selectListForLookupWithParam(token, lookup, param) : undefined, 
-        fetchSelectByIdForLookupWithParam: (token) ? (lookup, param, id) => metaLookupApi.selectByIdForLookupWithParam(token, lookup, param)(id) : undefined, 
-        fetchAutoCompleteForLookup: (token) ? (lookup) => metaLookupApi.autoCompleteForLookup(token, lookup) : undefined, 
-        fetchAutoCompleteForLookupWithParam: (token) ? (lookup, param) => metaLookupApi.autoCompleteForLookupWithParam(token, lookup, param) : undefined, 
-    } as LookupApiOperations), [token, metaLookupApi]);
+    return useMemo(() => token ? ({
+        fetchSelectListForLookup: (lookup) => metaLookupApi.selectListForLookup(token, lookup),    
+        fetchSelectByIdForLookup: (lookup, id) => metaLookupApi.selectByIdForLookup(token, lookup)(id), 
+        fetchSelectListForLookupIdentifier: (lookup) => metaLookupApi.selectListForLookupIdentifier(token, lookup), 
+        fetchSelectByIdForLookupIdentifier: (lookup, id) => metaLookupApi.selectByIdForLookupIdentifier(token, lookup)(id), 
+        fetchSelectListForLookupWithParam: (lookup, param) => metaLookupApi.selectListForLookupWithParam(token, lookup, param), 
+        fetchSelectByIdForLookupWithParam: (lookup, param, id) => metaLookupApi.selectByIdForLookupWithParam(token, lookup, param)(id), 
+        fetchAutoCompleteForLookup: (lookup) => metaLookupApi.autoCompleteForLookup(token, lookup), 
+        fetchAutoCompleteForLookupWithParam: (lookup, param) => metaLookupApi.autoCompleteForLookupWithParam(token, lookup, param), 
+    } as LookupApiOperations) : undefined, [token, metaLookupApi]);
 }

@@ -5,5 +5,5 @@ import { createUtil } from "../shared/scriptutil";
 export const useScriptUtil = () => {
     const { token } = useContext(RightsContext);
 
-    return token ? useMemo(() => createUtil(token), [token]) : undefined;
+    return useMemo(() => token ? createUtil(token) : undefined, [token]);
 }

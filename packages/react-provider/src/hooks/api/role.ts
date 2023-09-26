@@ -10,8 +10,8 @@ export const useRoleApi = () => {
     const { token } = useContext(RightsContext);
     const { identityRoleApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchSelectList: (token) ? () => identityRoleApi.selectListFunc(token) : undefined,
-        fetchSelectById: (token) ? (identifier) => identityRoleApi.selectByIdFunc(token, identifier) : undefined,
-    } as RoleApiOperations), [token, identityRoleApi]);
+    return useMemo(() => token ? ({
+        fetchSelectList: () => identityRoleApi.selectListFunc(token),
+        fetchSelectById: (identifier) => identityRoleApi.selectByIdFunc(token, identifier),
+    } as RoleApiOperations) : undefined, [token, identityRoleApi]);
 }

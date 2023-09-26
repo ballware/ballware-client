@@ -10,8 +10,8 @@ export const useUserApi = () => {
     const { token } = useContext(RightsContext);
     const { identityUserApi } = useContext(SettingsContext);
 
-    return useMemo(() => ({
-        fetchSelectList: (token) ? () => identityUserApi.selectListFunc(token) : undefined,
-        fetchSelectById: (token) ? (identifier) => identityUserApi.selectByIdFunc(token, identifier) : undefined,
-    } as UserApiOperations), [token, identityUserApi]);
+    return useMemo(() => token ? ({
+        fetchSelectList: () => identityUserApi.selectListFunc(token),
+        fetchSelectById: (identifier) => identityUserApi.selectByIdFunc(token, identifier),
+    } as UserApiOperations) : undefined, [token, identityUserApi]);
 }

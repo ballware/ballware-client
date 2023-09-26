@@ -195,8 +195,8 @@ export const useGenericLookupByIdentifier = () => {
     const pickvalueApi = usePickvalueApi();
     const processingstateApi = useProcessingstateApi();
   
-    if (roleApi && userApi && lookupApi && pickvalueApi && processingstateApi) {
-        return useCallback((requests: Array<LookupRequest>) => {
+    return useCallback((requests: Array<LookupRequest>) => {
+        if (roleApi && userApi && lookupApi && pickvalueApi && processingstateApi) {
             const newLookups = {} as Record<
                 string,
                 | LookupDescriptor
@@ -308,8 +308,9 @@ export const useGenericLookupByIdentifier = () => {
             });
         
             return newLookups;
-        }, [roleApi, userApi, lookupApi, pickvalueApi, processingstateApi]);
-    } else {
-      return undefined;
-    }
+        }
+
+        return undefined;
+    }, [roleApi, userApi, lookupApi, pickvalueApi, processingstateApi]);
+    
   }
