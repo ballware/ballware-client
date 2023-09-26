@@ -1,6 +1,6 @@
 {
   "name": "@ballware/react-contexts",
-  "version": "6.19.0",
+  "version": "6.19.1",
   "description": "Ballware Application Builder - React contexts for meta and identity",
   "license": "MIT",
   "author": "frank@ballmeyer.com",
@@ -62,8 +62,8 @@
     }
   ],
   "dependencies": {
-    "@ballware/identity-interface": "^6.19.0",
-    "@ballware/meta-interface": "^6.19.0"
+    "@ballware/identity-interface": "^6.19.1",
+    "@ballware/meta-interface": "^6.19.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
