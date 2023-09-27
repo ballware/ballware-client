@@ -68,6 +68,7 @@ import { LookupToolbarItem } from './layout/toolbaritems/lookup';
 import { FilterBar } from './layout/filterbar';
 import { ExternalLinkEditPopup } from './editing/externallinkeditpopup';
 import { ImportPopup } from './editing/importpopup';
+import { StatisticEditItem } from './editing/items/statistic';
 
 export interface DevExtremeRenderFactoryProps {}
 
@@ -293,6 +294,8 @@ const EditorComponent = ({
       return <AttachmentGrid layoutItem={options} />;
     case 'button':
       return <Button layoutItem={options} />;
+    case 'statistic':
+      return <StatisticEditItem layoutItem={options} />
     case 'empty':
       return <React.Fragment></React.Fragment>;
     default:
