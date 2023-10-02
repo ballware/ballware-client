@@ -139,8 +139,23 @@ export const EntityMap = ({
     (row: CrudItem, target: Element) => {
       const actions = [];
 
-      if (t && actionMenu.current) {
-        if (viewAllowed && viewAllowed(row)) {
+      if (t && viewAllowed && editAllowed && customFunctionAllowed && customFunctions && actionMenu.current) {
+
+        const defaultViewFunction = customFunctions
+          .map(f =>
+            Object.assign({}, f, { row: row, originalTarget: target })
+          )
+          .find(f => f.type === 'default_view' && customFunctionAllowed(f, row));
+
+        const defaultEditFunction = customFunctions
+          .map(f =>
+            Object.assign({}, f, { row: row, originalTarget: target })
+          )
+          .find(f => f.type === 'default_edit' && customFunctionAllowed(f, row));
+
+        if (defaultViewFunction) {
+          actions.push(defaultViewFunction);
+        } else if (viewAllowed && viewAllowed(row)) {
           actions.push({
             id: 'view',
             text: t('datacontainer.actions.show'),
@@ -151,7 +166,9 @@ export const EntityMap = ({
           });
         }
 
-        if (editAllowed && editAllowed(row)) {
+        if (defaultEditFunction) {
+          actions.push(defaultEditFunction);
+        } else if (editAllowed && editAllowed(row)) {
           actions.push({
             id: 'edit',
             text: t('datacontainer.actions.edit'),
@@ -261,7 +278,8 @@ export const EntityMap = ({
       displayName &&
       addMenu.current?.instance &&
       addAllowed &&
-      customFunctionAllowed
+      customFunctionAllowed &&
+      customFunctions
     ) {
       const addMenuItems: Array<{
         id: string;
@@ -269,22 +287,25 @@ export const EntityMap = ({
         customFunction?: EntityCustomFunction;
       }> = [];
 
-      if (addAllowed()) {
+      const defaultAddFunction = customFunctions        
+        .find(f => f.type === 'default_add' && customFunctionAllowed(f));
+
+      if (defaultAddFunction) {
+        addMenuItems.push({ id: defaultAddFunction.id, text: defaultAddFunction.text, customFunction: defaultAddFunction })
+      } else if (addAllowed()) {
         addMenuItems.push({
           id: 'none',
           text: t('datacontainer.actions.add', { entity: displayName }),
         });
       }
 
-      if (customFunctions) {
-        addMenuItems.push(
-          ...customFunctions
-            ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
-            .map(f => {
-              return { id: f.id, text: f.text, customFunction: f };
-            })
-        );
-      }
+      addMenuItems.push(
+        ...customFunctions
+          ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
+          .map(f => {
+            return { id: f.id, text: f.text, customFunction: f };
+          })
+      );      
 
       addMenu.current.instance.option('dataSource', addMenuItems);
     }
