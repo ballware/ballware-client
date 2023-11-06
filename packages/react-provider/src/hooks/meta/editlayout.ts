@@ -56,6 +56,8 @@ export const useMetaEditLayout = () => {
 
                             if (template) {
                                 item.type = template.type;
+                                item.colCount = template.colCount;
+                                item.colSpan = template.colSpan;
                                 item.options = template.options;
                                 item.items = template.items;
 
