@@ -1,9 +1,9 @@
 {
   "name": "@ballware/webclient",
-  "version": "6.21.0",
+  "version": "6.21.1",
   "private": true,
   "dependencies": {
-    "@ballware/react-provider": "^6.21.0",
+    "@ballware/react-provider": "^6.21.1",
     "@ballware/react-renderer-dx": "^6.21.0"
   },
   "scripts": {
