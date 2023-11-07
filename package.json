@@ -31,7 +31,7 @@
     "typecheck:changed": "lerna run --since origin/master --include-dependents tsc --noEmit",
     "lint": "lerna run lint -- --fix",
     "lint:changed": "lerna run --since origin/master --include-dependents lint -- --fix",
-    "build": "yarn workspaces run build",
+    "build": "lerna run build --",
     "build:changed": "lerna run --since origin/master --include-dependents build",
     "start:app": "yarn run build && yarn --cwd example && yarn --cwd example start",
     "docs": "lerna run docs --",
@@ -42,6 +42,6 @@
     "version:canary": "changeset version --snapshot canary",
     "release:canary": "changeset publish --tag canary"
   },
-  "dependencies": {},
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "packageManager": "yarn@4.0.1"
 }

@@ -15,7 +15,7 @@
     "access": "public"
   },
   "version": "6.21.0",
-  "license": "MIT",  
+  "license": "MIT",
   "type": "module",
   "source": "src/index.ts",
   "exports": {
@@ -25,14 +25,14 @@
   "types": "./dist/react-renderer-dx/src/index.d.ts",
   "main": "./dist/react-renderer-dx.cjs",
   "module": "./dist/react-renderer-dx.module.js",
-  "unpkg": "./dist/react-renderer-dx.umd.js",  
+  "unpkg": "./dist/react-renderer-dx.umd.js",
   "scripts": {
     "start": "microbundle watch",
     "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
     "docs": "typedoc --plugin typedoc-plugin-markdown",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
-  },    
+  },
   "devDependencies": {
     "@types/file-saver": "^2.0.5",
     "@types/moment-duration-format": "^2.2.2",
@@ -70,7 +70,7 @@
     "react-iframe": "^1.8.0",
     "react-is": "^17.0.1",
     "usehooks-ts": "^2.9.1"
-  },  
+  },
   "peerDependencies": {
     "devextreme": ">=23.1.4",
     "devextreme-react": ">=23.1.4",

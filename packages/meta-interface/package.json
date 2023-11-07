@@ -1,7 +1,7 @@
 {
   "name": "@ballware/meta-interface",
   "version": "6.21.0",
-  "description": "Ballware Application Builder - Interface for metadata provider",  
+  "description": "Ballware Application Builder - Interface for metadata provider",
   "author": "frank@ballmeyer.com",
   "license": "MIT",
   "homepage": "https://github.com/ballware/ballware-client",
@@ -25,7 +25,7 @@
   "types": "./dist/meta-interface/src/index.d.ts",
   "main": "./dist/meta-interface.cjs",
   "module": "./dist/meta-interface.module.js",
-  "unpkg": "./dist/meta-interface.umd.js",  
+  "unpkg": "./dist/meta-interface.umd.js",
   "scripts": {
     "start": "microbundle watch",
     "build": "microbundle",
@@ -36,6 +36,6 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
-  },  
+  },
   "gitHead": "f45bdb73dc9d10d43d916655dbadc692a3f6ca5f"
 }

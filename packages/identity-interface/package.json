@@ -1,5 +1,5 @@
 {
-  "name": "@ballware/identity-interface",  
+  "name": "@ballware/identity-interface",
   "version": "6.21.0",
   "description": "Ballware Application Builder - Interface for identity provider",
   "author": "frank@ballmeyer.com",
@@ -25,7 +25,7 @@
   "types": "./dist/identity-interface/src/index.d.ts",
   "main": "./dist/identity-interface.cjs",
   "module": "./dist/identity-interface.module.js",
-  "unpkg": "./dist/identity-interface.umd.js",  
+  "unpkg": "./dist/identity-interface.umd.js",
   "scripts": {
     "start": "microbundle watch",
     "build": "microbundle",
