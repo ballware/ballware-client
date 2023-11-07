@@ -30,14 +30,33 @@
     "start": "microbundle watch",
     "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react",
     "docs": "typedoc --plugin typedoc-plugin-markdown",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/addon-storysource": "^7.5.3",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/babel__preset-env": "^7",
     "@types/file-saver": "^2.0.5",
     "@types/moment-duration-format": "^2.2.2",
+    "@types/prop-types": "^15",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
     "i18next": "^20.6.1",
-    "react-i18next": "^11.8.6"
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.8.6",
+    "storybook": "^7.5.3"
   },
   "dependencies": {
     "@ballware/meta-interface": "^6.21.0",
