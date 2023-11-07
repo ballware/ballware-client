@@ -222,8 +222,8 @@ export const LookupBox = ({ layoutItem }: LookupBoxProps) => {
               <CustomRule
                 key={v.identifier}
                 validationCallback={(e: { value: any }) =>
-                  layoutItem.dataMember &&
-                  editorValidating(layoutItem.dataMember, v.identifier, e.value)
+                  !!(layoutItem.dataMember &&
+                  editorValidating(layoutItem.dataMember, v.identifier, e.value))
                 }
                 message={v.message}
               />

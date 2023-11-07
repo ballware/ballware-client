@@ -7,22 +7,24 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import {
-  AttachmentContext,
-  NotificationContext,
+  EditContext,
 } from '@ballware/react-contexts';
 import { EditItemProps } from './common';
 
 import { FieldSet } from './fieldset';
 
 import { AttachmentGrid as DxAttachmentGrid } from '../../components/attachmentgrid';
+import { useAttachments, useNotification } from '@ballware/react-provider';
 import { EditItemsContext } from '@ballware/react-renderer';
+import { CrudItem } from '@ballware/meta-interface';
 
 export interface AttachmentGridProps extends EditItemProps {}
 
 export const AttachmentGrid = ({ layoutItem }: AttachmentGridProps) => {
-  const { fetch, upload, open, drop } = useContext(AttachmentContext);
-  const { showInfo, showWarning, showError } = useContext(NotificationContext);
-  const { readOnly, getValue, editorPreparing } = useContext(EditItemsContext);
+  const { item } = useContext(EditContext);
+  const { fetch, upload, open, drop } = useAttachments((item as CrudItem)?.Id);
+  const { showInfo, showWarning, showError } = useNotification();
+  const { readOnly, editorPreparing } = useContext(EditItemsContext);
   const [prepared, setPrepared] = useState<boolean>();
 
   useEffect(() => {
@@ -36,7 +38,6 @@ export const AttachmentGrid = ({ layoutItem }: AttachmentGridProps) => {
     <React.Fragment>
       {layoutItem &&
         readOnly &&
-        getValue &&
         showInfo &&
         showError &&
         showWarning &&
@@ -48,10 +49,10 @@ export const AttachmentGrid = ({ layoutItem }: AttachmentGridProps) => {
           <FieldSet layoutItem={layoutItem}>
             <DxAttachmentGrid
               readonly={readOnly()}
-              fetchFunc={() => fetch(getValue('Id'))}
-              openFunc={fileName => open(getValue('Id'), fileName)}
-              uploadFunc={file => upload(getValue('Id'), file)}
-              deleteFunc={fileName => drop(getValue('Id'), fileName)}
+              fetchFunc={() => fetch()}
+              openFunc={fileName => open(fileName)}
+              uploadFunc={file => upload(file)}
+              deleteFunc={fileName => drop(fileName)}
               showInfo={showInfo}
               showWarning={showWarning}
               showError={showError}

@@ -7,7 +7,6 @@
 
 import React, { PropsWithChildren, useState } from 'react';
 import {
-  ResourceOwnerAuthApi,
   IdentityUserApi,
   IdentityRoleApi,
 } from '@ballware/identity-interface';
@@ -36,82 +35,77 @@ export interface SettingsProviderProps {
   /**
    * Current app version for display
    */
-  appversion?: string;
+  appversion: string;
 
   /**
    * Google API key used by maps implementation
    */
-  googlekey?: string;
+  googlekey: string;
 
   /**
-   * API factory for resource owner authentication functions
+   * Data access to user list
    */
-  identityAuthApiFactory?: () => ResourceOwnerAuthApi;
+  identityUserApi: IdentityUserApi;
 
   /**
-   * API factory for access to user list
+   * Data access to role list
    */
-  identityUserApiFactory?: () => IdentityUserApi;
+  identityRoleApi: IdentityRoleApi;
 
   /**
-   * API factory for access to role list
+   * Data access generic entity metadata
    */
-  identityRoleApiFactory?: () => IdentityRoleApi;
+  metaEntityApi: MetaEntityApi;
 
   /**
-   * API factory to access generic entity metadata
+   * Data access tenant metadata
    */
-  metaEntityApiFactory?: () => MetaEntityApi;
+  metaTenantApi: MetaTenantApi;
 
   /**
-   * API factory to access tenant metadata
+   * Data access attachments
    */
-  metaTenantApiFactory?: () => MetaTenantApi;
+  metaAttachmentApi: MetaAttachmentApi;
 
   /**
-   * API factory to access attachments
+   * Data access statistic metadata and data
    */
-  metaAttachmentApiFactory?: () => MetaAttachmentApi;
+  metaStatisticApi: MetaStatisticApi;
 
   /**
-   * API factory to access statistic metadata and data
+   * Data access lookup data
    */
-  metaStatisticApiFactory?: () => MetaStatisticApi;
+  metaLookupApi: MetaLookupApi;
 
   /**
-   * API factory to access lookup data
+   * Data access processing state functionality
    */
-  metaLookupApiFactory?: () => MetaLookupApi;
+  metaProcessingstateApi: MetaProcessingstateApi;
 
   /**
-   * API factory to access processing state functionality
+   * Data access pickvalue data
    */
-  metaProcessingstateApiFactory?: () => MetaProcessingstateApi;
+  metaPickvalueApi: MetaPickvalueApi;
 
   /**
-   * API factory to access pickvalue data
+   * Data access print document lists
    */
-  metaPickvalueApiFactory?: () => MetaPickvalueApi;
+  metaDocumentApi: MetaDocumentApi;
 
   /**
-   * API factory to access print document lists
+   * Data access documentation
    */
-  metaDocumentApiFactory?: () => MetaDocumentApi;
+  metaDocumentationApi: MetaDocumentationApi;
 
   /**
-   * API factory to access documentation
+   * Data access page metadata
    */
-  metaDocumentationApiFactory?: () => MetaDocumentationApi;
+  metaPageApi: MetaPageApi;
 
   /**
-   * API factory to access page metadata
+   * Factory to access generic entity crud operations
    */
-  metaPageApiFactory?: () => MetaPageApi;
-
-  /**
-   * API factory to access generic entity crud operations
-   */
-  metaGenericEntityApiFactory?: (baseUrl: string) => MetaGenericEntityApi;
+  metaGenericEntityApiFactory: (baseUrl: string) => MetaGenericEntityApi;
 }
 
 /**
@@ -120,38 +114,36 @@ export interface SettingsProviderProps {
 export const SettingsProvider = ({
   appversion,
   googlekey,
-  identityAuthApiFactory,
-  identityUserApiFactory,
-  identityRoleApiFactory,
-  metaEntityApiFactory,
-  metaTenantApiFactory,
-  metaAttachmentApiFactory,
-  metaStatisticApiFactory,
-  metaLookupApiFactory,
-  metaProcessingstateApiFactory,
-  metaPickvalueApiFactory,
-  metaDocumentApiFactory,
-  metaDocumentationApiFactory,
-  metaPageApiFactory,
+  identityUserApi,
+  identityRoleApi,
+  metaEntityApi,
+  metaTenantApi,
+  metaAttachmentApi,
+  metaStatisticApi,
+  metaLookupApi,
+  metaProcessingstateApi,
+  metaPickvalueApi,
+  metaDocumentApi,
+  metaDocumentationApi,
+  metaPageApi,
   metaGenericEntityApiFactory,
   children,
 }: PropsWithChildren<SettingsProviderProps>): JSX.Element => {
   const [value] = useState({
     version: appversion,
     googlekey,
-    identityAuthApiFactory,
-    identityUserApiFactory,
-    identityRoleApiFactory,
-    metaEntityApiFactory,
-    metaTenantApiFactory,
-    metaAttachmentApiFactory,
-    metaStatisticApiFactory,
-    metaLookupApiFactory,
-    metaProcessingstateApiFactory,
-    metaPickvalueApiFactory,
-    metaDocumentApiFactory,
-    metaDocumentationApiFactory,
-    metaPageApiFactory,
+    identityUserApi,
+    identityRoleApi,
+    metaEntityApi,
+    metaTenantApi,
+    metaAttachmentApi,
+    metaStatisticApi,
+    metaLookupApi,
+    metaProcessingstateApi,
+    metaPickvalueApi,
+    metaDocumentApi,
+    metaDocumentationApi,
+    metaPageApi,
     metaGenericEntityApiFactory,
   } as SettingsContextState);
 

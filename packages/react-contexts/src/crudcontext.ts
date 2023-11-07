@@ -9,7 +9,6 @@ import { createContext } from 'react';
 import {
   CrudItem,
   EntityCustomFunction,
-  QueryParams,
 } from '@ballware/meta-interface';
 
 /**
@@ -20,11 +19,6 @@ export interface CrudContextState {
    * Currently fetching items
    */
   isLoading?: boolean;
-
-  /**
-   * Fetch params used for current item fetch
-   */
-  fetchParams?: QueryParams;
 
   /**
    * Fetched items from data provider
@@ -103,15 +97,13 @@ export interface CrudContextState {
 
   /**
    * Fetch items
-   * @param params Provided query params
    */
-  load?: (params?: QueryParams) => void;
+  load?: () => void;
 
   /**
    * Count items to be fetched
-   * @param params Provided query params
    */
-  count?: (params?: QueryParams) => void;
+  count?: () => void;
 
   /**
    * Add new item

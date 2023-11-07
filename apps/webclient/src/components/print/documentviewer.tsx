@@ -9,21 +9,19 @@ const MuiDocumentViewer = () => {
 
   const [url, setUrl] = useState(undefined as string);
 
-  const { metaDocumentApiFactory } = useContext(SettingsContext)
+  const { metaDocumentApi } = useContext(SettingsContext)
   const { token } = useContext(RightsContext);
   const { location } = useHistory();
 
   useEffect(() => {
-    if (metaDocumentApiFactory && token && location) {
-      const api = metaDocumentApiFactory(); 
-
-      api.viewerUrl(token, location.search).then(result => {
+    if (metaDocumentApi && token && location) {
+      metaDocumentApi.viewerUrl(token, location.search).then(result => {
         setUrl(result);
       });
     }
-  }, [metaDocumentApiFactory, token, location]);
+  }, [metaDocumentApi, token, location]);
 
-  return <div style={{ height: '100%' }}>{url && <Iframe allowFullScreen scrolling={'no'} frameBorder={0} styles={{ border: 0 }} width={'100%'} height={'100%'} url={url} />}</div>;
+  return <div className="h-100 shadow bg-white rounded">{url && <Iframe allowFullScreen scrolling={'no'} frameBorder={0} styles={{ border: 0 }} width={'100%'} height={'100%'} url={url} />}</div>;
 }
 
 export const DocumentViewer = MuiDocumentViewer;

@@ -17,9 +17,8 @@ import {
   TenantContext,
   TenantContextState,
   RightsContext,
-  SettingsContext,
-  NotificationContext,
 } from '@ballware/react-contexts';
+import { useNotification, useTenantApi } from './hooks';
 
 /**
  * Properties for tenant provider
@@ -55,9 +54,10 @@ export const TenantProvider = ({
   const [pages, setPages] = useState<Array<NavigationLayoutItem>>();
   const [value, setValue] = useState({} as TenantContextState);
 
-  const { metaTenantApiFactory } = useContext(SettingsContext);
-  const { session, token } = useContext(RightsContext);
-  const { showError } = useContext(NotificationContext);
+  const { session } = useContext(RightsContext);
+  const { showError } = useNotification();
+
+  const tenantApi = useTenantApi();
 
   const hasRight = useCallback(
     (right: string) => {
@@ -75,22 +75,19 @@ export const TenantProvider = ({
   useEffect(() => {
     if (
       showError &&
-      metaTenantApiFactory &&
-      token &&
+      tenantApi &&
       session &&
       session.tenant
     ) {
-      const api = metaTenantApiFactory();
-
-      api
-        .metadataForTenant(token, session.tenant as string)
+      tenantApi
+        .fetchMetadataForTenant(session.tenant as string)
         .then(result => setTenant(result))
         .catch(reason => showError(reason));
     } else {
       setTenant(undefined);
       setPages(undefined);
     }
-  }, [showError, metaTenantApiFactory, token, session]);
+  }, [showError, tenantApi, session]);
 
   useEffect(() => {
     if (tenant && session) {
@@ -106,6 +103,7 @@ export const TenantProvider = ({
     setValue({
       name: tenant?.name,
       navigation: tenant?.navigation,
+      templates: tenant?.templates ?? [],
       pages,
       hasRight,
     } as TenantContextState);

@@ -38,18 +38,18 @@ function App() {
   return (<SettingsProvider 
       appversion={process.env.REACT_APP_VERSION}
       googlekey={googlekey}      
-      identityUserApiFactory={() => createKeycloakBackendUserApi(identityBaseUrl)}
-      identityRoleApiFactory={() => createKeycloakBackendRoleApi(identityBaseUrl)}
-      metaEntityApiFactory={() => createMetaBackendEntityApi(metaBaseUrl)}
-      metaTenantApiFactory={() => createMetaBackendTenantApi(metaBaseUrl)}
-      metaAttachmentApiFactory={() => createMetaBackendAttachmentApi(metaBaseUrl)}
-      metaStatisticApiFactory={() => createMetaBackendStatisticApi(metaBaseUrl)}
-      metaLookupApiFactory={() => createMetaBackendLookupApi(metaBaseUrl)}
-      metaProcessingstateApiFactory={() => createMetaBackendProcessingstateApi(metaBaseUrl)}
-      metaPickvalueApiFactory={() => createMetaBackendPickvalueApi(metaBaseUrl)}
-      metaDocumentApiFactory={() => createMetaBackendDocumentApi(metaBaseUrl, documentBaseUrl)}
-      metaDocumentationApiFactory={() => createMetaBackendDocumentationApi(metaBaseUrl)}
-      metaPageApiFactory={() => createMetaBackendPageApi(metaBaseUrl)}
+      identityUserApi={createKeycloakBackendUserApi(identityBaseUrl)}
+      identityRoleApi={createKeycloakBackendRoleApi(identityBaseUrl)}
+      metaEntityApi={createMetaBackendEntityApi(metaBaseUrl)}
+      metaTenantApi={createMetaBackendTenantApi(metaBaseUrl)}
+      metaAttachmentApi={createMetaBackendAttachmentApi(metaBaseUrl)}
+      metaStatisticApi={createMetaBackendStatisticApi(metaBaseUrl)}
+      metaLookupApi={createMetaBackendLookupApi(metaBaseUrl)}
+      metaProcessingstateApi={createMetaBackendProcessingstateApi(metaBaseUrl)}
+      metaPickvalueApi={createMetaBackendPickvalueApi(metaBaseUrl)}
+      metaDocumentApi={createMetaBackendDocumentApi(metaBaseUrl, documentBaseUrl)}
+      metaDocumentationApi={createMetaBackendDocumentationApi(metaBaseUrl)}
+      metaPageApi={createMetaBackendPageApi(metaBaseUrl)}
       metaGenericEntityApiFactory={(entityBaseUrl) => createMetaBackendGenericEntityApi(entityBaseUrl?.replaceAll('{meta}', metaBaseUrl).replaceAll('{identity}', identityBaseUrl))}>
       <ProviderFactory>
         <DxRenderFactoryProvider>

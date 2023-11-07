@@ -7,7 +7,6 @@
 
 import { PageToolbarItem } from '@ballware/meta-interface';
 import { ToolbarItemRef } from '@ballware/react-renderer';
-import { Theme } from '@mui/material/styles';
 
 export interface ToolbarItemProps {
   toolbarItem: PageToolbarItem;
@@ -23,14 +22,6 @@ export interface ToolbarComponentWithOptions {
     */
   option<TPropertyName extends string, TValue = unknown>(optionName: TPropertyName, optionValue: TValue): void;
 }
-
-export const useDefaultToolbarItemStyles = (theme: Theme) => {
-  
-  return {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  };
-};
 
 export const componentToToolbarItemRef = (component: ToolbarComponentWithOptions) => {
   return {

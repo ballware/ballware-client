@@ -23,6 +23,7 @@ import {
   DefaultEditFunction,
 } from '@ballware/react-contexts';
 import { RenderFactoryContext } from '../renderfactorycontext';
+import { useMetaEditLayout } from '@ballware/react-provider';
 
 /**
  * Properties for crud functions component
@@ -37,23 +38,20 @@ export const CrudFunctions = ({
 }: PropsWithChildren<CrudFunctionsProps>) => {
   const { t } = useTranslation();
 
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
 
   const { EditPopup, DeletePopup, IframePopup, ForeignEditPopup, ImportPopup } = useContext(
     RenderFactoryContext
   );
 
   const {
-    LookupProvider,
     MetaProvider,
-    AttachmentProvider,
     CrudProvider,
     EditProvider,
   } = useContext(ProviderFactoryContext);
-  const { displayName, getEditLayout, documents } = useContext(MetaContext);
+  const { displayName, documents } = useContext(MetaContext);
   const {
     load,
-    fetchParams,
     close,
     adding,
     viewing,
@@ -68,11 +66,15 @@ export const CrudFunctions = ({
     item,
   } = useContext(CrudContext);
 
+  const { 
+    getEditLayout
+  } = useMetaEditLayout();
+
   useEffect(() => {
-    if (load && fetchParams) {
-      load(fetchParams);
+    if (load) {
+      load();
     }
-  }, [load, fetchParams]);
+  }, [load]);
 
   const getEditLayoutForIdentifier = useCallback(
     (layoutIdentifier: string) => {
@@ -148,39 +150,33 @@ export const CrudFunctions = ({
         />
       )}
       {ForeignEditPopup &&
-        LookupProvider &&
         MetaProvider &&
-        AttachmentProvider &&
         CrudProvider &&
         customEditing &&
         !customEditFunction?.externalEditor &&
         customEditFunction?.entity &&
         close &&
         load && (
-          <LookupProvider>
-            <MetaProvider
-              entity={customEditFunction.entity}
-              readOnly={false}
-              headParams={{}}
-              initialCustomParam={{}}
-            >
-              <AttachmentProvider>
-                <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
-                  <ForeignEditPopup
-                    functionIdentifier={customEditFunction.id}
-                    selection={customEditParam as CrudItem[]}
-                    editingFinished={reload => {
-                      close();
+          <MetaProvider
+            entity={customEditFunction.entity}
+            readOnly={false}
+            headParams={{}}
+            initialCustomParam={{}}
+          >
+            <CrudProvider query={undefined} initialFetchParams={{}} identifier={undefined}>
+              <ForeignEditPopup
+                functionIdentifier={customEditFunction.id}
+                selection={customEditParam as CrudItem[]}
+                editingFinished={reload => {
+                  close();
 
-                      if (reload) {
-                        load(fetchParams);
-                      }
-                    }}
-                  />
-                </CrudProvider>
-              </AttachmentProvider>
-            </MetaProvider>
-          </LookupProvider>
+                  if (reload) {
+                    load();
+                  }
+                }}
+              />
+            </CrudProvider>
+          </MetaProvider>
         )}
       {t && DeletePopup && deleteing && item && (
         <DeletePopup
@@ -194,7 +190,6 @@ export const CrudFunctions = ({
         getEditLayout &&
         lookups &&
         documents &&
-        lookupsComplete &&
         children}
     </React.Fragment>
   );

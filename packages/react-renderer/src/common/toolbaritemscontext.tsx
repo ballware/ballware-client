@@ -20,8 +20,8 @@ import {
   LookupDescriptor,
   LookupCreator,
   LookupContext,
-  PageContext,
 } from '@ballware/react-contexts';
+import { usePageParams } from '@ballware/react-provider';
 
 /**
  * Context providing environmental functionality for toolbar items
@@ -88,13 +88,13 @@ export const ToolbarItemsProvider = ({
 }: PropsWithChildren<ToolbarItemsProviderProps>) => {
   const [value, setValue] = useState<ToolbarItemsContextState>({});
 
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
   const {
     paramsInitialized,
     paramEditorInitialized,
     paramEditorValueChanged,
     paramEditorEvent,
-  } = useContext(PageContext);
+  } = usePageParams();
 
   const toolbarItems = useMemo(() => {
     return {} as Record<string, ToolbarItemRef>;
@@ -118,7 +118,7 @@ export const ToolbarItemsProvider = ({
   }, [toolbarItems]);
 
   useEffect(() => {
-    if (lookups && lookupsComplete) {
+    if (lookups) {
       setValue(previousValue => {
         return {
           ...previousValue,
@@ -128,7 +128,7 @@ export const ToolbarItemsProvider = ({
         } as ToolbarItemsContextState;
       });
     }
-  }, [lookups, lookupsComplete]);
+  }, [lookups]);
 
   useEffect(() => {
     if (

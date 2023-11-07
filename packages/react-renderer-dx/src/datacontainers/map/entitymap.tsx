@@ -17,17 +17,17 @@ import { ActionSheet } from 'devextreme-react/action-sheet';
 
 import { EntityCustomFunction, CrudItem } from '@ballware/meta-interface';
 
-import Media from 'react-media';
 import {
   MetaContext,
   CrudContext,
-  SettingsContext,
 } from '@ballware/react-contexts';
 import { getByPath } from '@ballware/react-renderer';
 import Map from 'devextreme-react/map';
 import { SpeedDialAction } from 'devextreme-react/speed-dial-action';
 import { dxElement } from 'devextreme/core/element';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../../util/mediaquery';
+import { useGooglekey, useMetaAllowed, useMetaOperations } from '@ballware/react-provider';
 
 export interface EntityMapProps {
   height?: string;
@@ -44,24 +44,34 @@ export const EntityMap = ({
 }: EntityMapProps) => {
   const { t } = useTranslation();
 
+  const smallScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
+
   const selectedRowKeys = useRef<Array<string>>();
   const selectedRowData = useRef<Array<CrudItem>>();
 
   const mapRef = useRef<Map>(null);
 
-  const { googlekey } = useContext(SettingsContext);
   const {
     displayName,
     customFunctions,
-    print,
-    documents,
+    documents    
+  } = useContext(MetaContext);
+
+  const {
     addAllowed,
     viewAllowed,
     editAllowed,
     dropAllowed,
     printAllowed,
     customFunctionAllowed,
-  } = useContext(MetaContext);
+  } = useMetaAllowed();
+
+  const {
+    print
+  } = useMetaOperations();
+
+  const googlekey = useGooglekey();
+
   const { add, view, edit, remove, customEdit, fetchedItems } = useContext(
     CrudContext
   );
@@ -129,8 +139,23 @@ export const EntityMap = ({
     (row: CrudItem, target: Element) => {
       const actions = [];
 
-      if (t && actionMenu.current) {
-        if (viewAllowed && viewAllowed(row)) {
+      if (t && viewAllowed && editAllowed && customFunctionAllowed && customFunctions && actionMenu.current) {
+
+        const defaultViewFunction = customFunctions
+          .map(f =>
+            Object.assign({}, f, { row: row, originalTarget: target })
+          )
+          .find(f => f.type === 'default_view' && customFunctionAllowed(f, row));
+
+        const defaultEditFunction = customFunctions
+          .map(f =>
+            Object.assign({}, f, { row: row, originalTarget: target })
+          )
+          .find(f => f.type === 'default_edit' && customFunctionAllowed(f, row));
+
+        if (defaultViewFunction) {
+          actions.push(defaultViewFunction);
+        } else if (viewAllowed && viewAllowed(row)) {
           actions.push({
             id: 'view',
             text: t('datacontainer.actions.show'),
@@ -141,7 +166,9 @@ export const EntityMap = ({
           });
         }
 
-        if (editAllowed && editAllowed(row)) {
+        if (defaultEditFunction) {
+          actions.push(defaultEditFunction);
+        } else if (editAllowed && editAllowed(row)) {
           actions.push({
             id: 'edit',
             text: t('datacontainer.actions.edit'),
@@ -251,7 +278,8 @@ export const EntityMap = ({
       displayName &&
       addMenu.current?.instance &&
       addAllowed &&
-      customFunctionAllowed
+      customFunctionAllowed &&
+      customFunctions
     ) {
       const addMenuItems: Array<{
         id: string;
@@ -259,22 +287,25 @@ export const EntityMap = ({
         customFunction?: EntityCustomFunction;
       }> = [];
 
-      if (addAllowed()) {
+      const defaultAddFunction = customFunctions        
+        .find(f => f.type === 'default_add' && customFunctionAllowed(f));
+
+      if (defaultAddFunction) {
+        addMenuItems.push({ id: defaultAddFunction.id, text: defaultAddFunction.text, customFunction: defaultAddFunction })
+      } else if (addAllowed()) {
         addMenuItems.push({
           id: 'none',
           text: t('datacontainer.actions.add', { entity: displayName }),
         });
       }
 
-      if (customFunctions) {
-        addMenuItems.push(
-          ...customFunctions
-            ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
-            .map(f => {
-              return { id: f.id, text: f.text, customFunction: f };
-            })
-        );
-      }
+      addMenuItems.push(
+        ...customFunctions
+          ?.filter(f => f.type === 'add' && customFunctionAllowed(f))
+          .map(f => {
+            return { id: f.id, text: f.text, customFunction: f };
+          })
+      );      
 
       addMenu.current.instance.option('dataSource', addMenuItems);
     }
@@ -415,51 +446,41 @@ export const EntityMap = ({
   ]);
 
   return (
-    <Media
-      queries={{
-        small: { maxWidth: 599 },
-        medium: { maxWidth: 1000 },
-        large: { minWidth: 1001 },
-      }}
-    >
-      {matches => (
-        <div style={{ height: height ?? '100%' }}>
-          {WrappedMap}
-          {t && displayName && false && (
-            <SpeedDialAction
-              icon="bi bi-plus"
-              label={t('datacontainer.actions.add', { entity: displayName })}
-              index={1}
-              onClick={e => addButtonClicked(e.element)}
-            />
-          )}
-          <ActionSheet
-            ref={actionMenu}
-            usePopover={!matches.small}
-            showCancelButton
-            onItemClick={actionItemClicked}
-          />
-          {t && documents && (
-            <ActionSheet
-              title={t('datacontainer.actions.print')}
-              usePopover={!matches.small}
-              ref={printMenu}
-              dataSource={documents}
-              onItemClick={printMenuItemClicked}
-            />
-          )}
-          {t && displayName && (
-            <ActionSheet
-              ref={addMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.add', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={addMenuItemClicked}
-            />
-          )}
-        </div>
+    <div style={{ height: height ?? '100%' }}>
+      {WrappedMap}
+      {t && displayName && false && (
+        <SpeedDialAction
+          icon="bi bi-plus"
+          label={t('datacontainer.actions.add', { entity: displayName })}
+          index={1}
+          onClick={e => addButtonClicked(e.element)}
+        />
       )}
-    </Media>
+      <ActionSheet
+        ref={actionMenu}
+        usePopover={!smallScreen}
+        showCancelButton
+        onItemClick={actionItemClicked}
+      />
+      {t && documents && (
+        <ActionSheet
+          title={t('datacontainer.actions.print')}
+          usePopover={!smallScreen}
+          ref={printMenu}
+          dataSource={documents}
+          onItemClick={printMenuItemClicked}
+        />
+      )}
+      {t && displayName && (
+        <ActionSheet
+          ref={addMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.add', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={addMenuItemClicked}
+        />
+      )}
+    </div>
   );
 };

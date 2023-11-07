@@ -1,5 +1,6 @@
 import React, { Suspense, useContext, useEffect, useMemo } from 'react';
 import { Router, Route } from 'react-router-dom';
+import { LoadIndicator } from 'devextreme-react/load-indicator';
 
 import { history } from './history';
 
@@ -8,7 +9,6 @@ import i18n from './locate/i18n';
 
 import { SettingsContext, ProviderFactoryContext } from '@ballware/react-contexts';
 
-import { CircularProgress } from '@mui/material';
 import { RenderFactoryContext } from '@ballware/react-renderer';
 
 import { DocumentViewer } from '../components/print/documentviewer';
@@ -45,8 +45,8 @@ export interface AppComponentProps {
 export const AppComponent = ({ authority, client_id, client_secret, application_uri, scope, account_management_uri }: AppComponentProps) => {
       
     const { version } = useContext(SettingsContext);
-    const { NotificationProvider, TenantProvider } = useContext(ProviderFactoryContext);
-    const { Context, Notification } = useContext(RenderFactoryContext);
+    const { TenantProvider } = useContext(ProviderFactoryContext);
+    const { Context } = useContext(RenderFactoryContext);
   
     useEffect(() => {
         if (version) {
@@ -56,28 +56,25 @@ export const AppComponent = ({ authority, client_id, client_secret, application_
     
     const MemorizedApp = useMemo(() => () => <App/>, []);
 
-    if (NotificationProvider && TenantProvider && Context && Notification) {
+    if (TenantProvider && Context) {
       return <Router history={history}>
         <Context>
-          <NotificationProvider>
-            <AuthorizationCodeRightsProvider 
-              authority={authority} 
-              client={client_id} 
-              secret={client_secret}
-              redirect_uri={`${application_uri}/signin-oidc`}
-              post_logout_redirect_uri={application_uri} 
-              response_type={'code'}
-              scope={scope}
-              account_management_uri={account_management_uri}>
-              <TenantProvider>
-                <Route path={"/"} component={MemorizedApp} />
-                <Notification />
-              </TenantProvider>
-            </AuthorizationCodeRightsProvider>
-          </NotificationProvider>
+          <AuthorizationCodeRightsProvider 
+            authority={authority} 
+            client={client_id} 
+            secret={client_secret}
+            redirect_uri={`${application_uri}/signin-oidc`}
+            post_logout_redirect_uri={application_uri} 
+            response_type={'code'}
+            scope={scope}
+            account_management_uri={account_management_uri}>
+            <TenantProvider>
+              <Route path={"/"} component={MemorizedApp} />              
+            </TenantProvider>
+          </AuthorizationCodeRightsProvider>          
         </Context>
       </Router>
     } else {
-      return <CircularProgress/>;
+      return <LoadIndicator/>;
     }
   }

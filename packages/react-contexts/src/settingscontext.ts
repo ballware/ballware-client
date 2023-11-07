@@ -7,7 +7,6 @@
 
 import { createContext } from 'react';
 import {
-  ResourceOwnerAuthApi,
   IdentityUserApi,
   IdentityRoleApi,
 } from '@ballware/identity-interface';
@@ -32,82 +31,77 @@ export interface SettingsContextState {
   /**
    * Current version of application
    */
-  version?: string;
+  version: string;
 
   /**
    * API key for usage with google services
    */
-  googlekey?: string;
+  googlekey: string;
 
   /**
-   * Factory for creating data adapter for user authentication
+   * Data adapter for user list data access
    */
-  identityAuthApiFactory?: () => ResourceOwnerAuthApi;
+  identityUserApi: IdentityUserApi;
 
   /**
-   * Factory for creating data adapter for user list data access
+   * Data adapter for role list data access
    */
-  identityUserApiFactory?: () => IdentityUserApi;
+  identityRoleApi: IdentityRoleApi;
 
   /**
-   * Factory for creating data adapter for role list data access
+   * Data adapter for entity metadata access
    */
-  identityRoleApiFactory?: () => IdentityRoleApi;
+  metaEntityApi: MetaEntityApi;
 
   /**
-   * Factory for creating data adapter for entity metadata access
+   * Data adapter for tenant data access
    */
-  metaEntityApiFactory?: () => MetaEntityApi;
+  metaTenantApi: MetaTenantApi;
 
   /**
-   * Factory for creating data adapter for tenant data access
+   * Data adapter for tenant data access
    */
-  metaTenantApiFactory?: () => MetaTenantApi;
+  metaAttachmentApi: MetaAttachmentApi;
 
   /**
-   * Factory for creating data adapter for tenant data access
+   * Data adapter for statistic data access
    */
-  metaAttachmentApiFactory?: () => MetaAttachmentApi;
+  metaStatisticApi: MetaStatisticApi;
 
   /**
-   * Factory for creating data adapter for statistic data access
+   * Data adapter for lookup data access
    */
-  metaStatisticApiFactory?: () => MetaStatisticApi;
+  metaLookupApi: MetaLookupApi;
 
   /**
-   * Factory for creating data adapter for lookup data access
+   * Data adapter for processing state data access
    */
-  metaLookupApiFactory?: () => MetaLookupApi;
+  metaProcessingstateApi: MetaProcessingstateApi;
 
   /**
-   * Factory for creating data adapter for processing state data access
+   * Data adapter for pick values data access
    */
-  metaProcessingstateApiFactory?: () => MetaProcessingstateApi;
+  metaPickvalueApi: MetaPickvalueApi;
 
   /**
-   * Factory for creating data adapter for pick values data access
+   * Data adapter for print document data access
    */
-  metaPickvalueApiFactory?: () => MetaPickvalueApi;
+  metaDocumentApi: MetaDocumentApi;
 
   /**
-   * Factory for creating data adapter for print document data access
+   * Data adapter for documentation data access
    */
-  metaDocumentApiFactory?: () => MetaDocumentApi;
+  metaDocumentationApi: MetaDocumentationApi;
 
   /**
-   * Factory for creating data adapter for documentation data access
+   * Data adapter for page data access
    */
-  metaDocumentationApiFactory?: () => MetaDocumentationApi;
+  metaPageApi: MetaPageApi;
 
   /**
-   * Factory for creating data adapter for page data access
+   * Data adapter for generic entity crud operations
    */
-  metaPageApiFactory?: () => MetaPageApi;
-
-  /**
-   * Factory for creating data adapter for generic entity crud operations
-   */
-  metaGenericEntityApiFactory?: (baseUrl: string) => MetaGenericEntityApi;
+  metaGenericEntityApiFactory: (baseUrl: string) => MetaGenericEntityApi;
 }
 
 export const SettingsContext = createContext({} as SettingsContextState);

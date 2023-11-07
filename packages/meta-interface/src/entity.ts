@@ -10,6 +10,7 @@ import { ScriptUtil } from './scriptutil';
 import { CrudItem, ValueType } from './cruditem';
 import { RightsCheckFunc } from './rights';
 import { QueryParams } from './common';
+import { Template } from './template';
 
 /**
  * Adapter for accessing editor objects in custom scripts
@@ -74,8 +75,11 @@ export interface EntityCustomFunction {
    * edit: Function is editing existing selected business objects
    * import: Function to import external data 
    * export: Function to export data 
+   * default_add: Replacement for default add function
+   * default_view: Replacement for default view function
+   * default_edit: Replacement for default edit function
    */
-  type: 'add' | 'edit' | 'import' | 'export';
+  type: 'add' | 'edit' | 'import' | 'export' | 'default_add' | 'default_view' | 'default_edit';
 
   /**
    * Display text of function
@@ -412,6 +416,41 @@ export interface EditLayout {
 }
 
 /**
+ * Map items received from API
+ *
+ * @param item Unmapped item
+ * @param customParam Current value of prepared custom param (previous result of prepareCustomParam function)
+ * @param util Utility for performing misc operations
+ * @returns Mapped item for usage in client application
+ */
+export type ItemMappingScriptFunc = (item: CrudItem, customParam: unknown, util: ScriptUtil) => CrudItem;
+
+/**
+ * Reverse map items for sending to API
+ *
+ * @param item Item used in client application
+ * @param customParam Current value of prepared custom param (previous result of prepareCustomParam function)
+ * @param util Utility for performing misc operations
+ * @returns Mapped item for usage in API
+ */
+export type ItemReverseMappingScriptFunc = (item: CrudItem, customParam: unknown, util: ScriptUtil) => CrudItem;
+
+/**
+ * Definition of business object specific mapping functions between consumer and provider
+ */
+export interface CompiledMappingScripts {
+  /**
+   * Map items received from API
+   */
+  mapItem?: ItemMappingScriptFunc;
+
+  /**
+   * Reverse map items for sending to API
+   */
+  reverseMapItem?: ItemReverseMappingScriptFunc;
+}
+
+/**
  * Definition of business object specific custom scripts
  */
 export interface CompiledEntityCustomScripts {
@@ -484,6 +523,29 @@ export interface CompiledEntityCustomScripts {
     customParam: unknown,
     util: ScriptUtil,
     editLayout: EditLayout
+  ) => void;
+
+  /**
+   * Manipulate materialized edit layout item template instance before rendering
+   *
+   * @param mode Edit mode (add, edit, view)
+   * @param lookups Lookup definitions prepared for business object
+   * @param customParam Current value of prepared custom param (previous result of prepareCustomParam function)
+   * @param util Utility for performing misc operations
+   * @param editLayout Edit layout instance
+   * @param scope Source scope of template definition
+   * @param identifier Identifier of template definition
+   * @param materializedItem Generated edit layout item instance of template
+   */
+  prepareMaterializedEditItem?: (
+    mode: string, 
+    lookups: Record<string, unknown>, 
+    customParam: unknown, 
+    util: ScriptUtil, 
+    editLayout: EditLayout, 
+    scope: 'tenant' | 'meta', 
+    identifier: string, 
+    materializedItem: EditLayoutItem
   ) => void;
 
   /**
@@ -695,6 +757,8 @@ export interface CompiledEntityCustomScripts {
   ) => void;
 }
 
+
+
 /**
  * Defintion of metadata for business object
  */
@@ -720,32 +784,9 @@ export interface CompiledEntityMetadata {
   baseUrl: string;
 
   /**
-   * Map items received from API
-   *
-   * @param item Unmapped item
-   * @param customParam Current value of prepared custom param (previous result of prepareCustomParam function)
-   * @param util Utility for performing misc operations
-   * @returns Mapped item for usage in client application
+   * Container for item mapping operations
    */
-  itemMappingScript: (
-    item: CrudItem,
-    customParam: unknown,
-    util: ScriptUtil
-  ) => CrudItem;
-
-  /**
-   * Reverse map items for sending to API
-   *
-   * @param item Item used in client application
-   * @param customParam Current value of prepared custom param (previous result of prepareCustomParam function)
-   * @param util Utility for performing misc operations
-   * @returns Mapped item for usage in API
-   */
-  itemReverseMappingScript: (
-    item: CrudItem,
-    customParam: unknown,
-    util: ScriptUtil
-  ) => CrudItem;
+  mappingScripts: CompiledMappingScripts;
 
   /**
    * Container for custom script operations
@@ -783,6 +824,11 @@ export interface CompiledEntityMetadata {
    * Collection of defined picklists
    */
   picklists: Array<{ identifier: string; entity: string; field: string }>;
+
+  /**
+   * List of entity templates
+   */
+  templates?: Array<Template>;
 
   /**
    * Member of business object containing current state code

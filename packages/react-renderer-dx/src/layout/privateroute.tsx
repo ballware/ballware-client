@@ -5,10 +5,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, Route, RouteProps, useHistory } from 'react-router-dom';
-import { NotificationContext } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
+import { useNotification } from '@ballware/react-provider';
 
 export interface PrivateRouteProps extends RouteProps {
   allowed: () => boolean;
@@ -17,7 +17,7 @@ export interface PrivateRouteProps extends RouteProps {
 export const PrivateRoute = ({ allowed, ...rest }: PrivateRouteProps) => {
   const { t } = useTranslation();
   const { location } = useHistory();
-  const { showInfo } = useContext(NotificationContext);
+  const { showInfo } = useNotification();
   const [renderAllowed] = useState(allowed());
 
   useEffect(() => {

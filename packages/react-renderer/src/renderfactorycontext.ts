@@ -27,7 +27,7 @@ export interface ApplicationProps {
   /**
    * Width of navigation drawer
    */
-  drawerWidth?: string | number;
+  drawerWidth?: number;
 }
 
 /**
@@ -52,7 +52,7 @@ export interface NavigationProps {
   /**
    * Navigation menu display/hide toggled
    */
-  onMenuToggle?: () => void;
+  onPageSelected?: (url: string) => void;
 }
 
 /**
@@ -277,11 +277,6 @@ export interface RenderFactoryContextState {
    * Provide routes for router
    */
   Routes?: (props: {}) => JSX.Element;
-
-  /**
-   * Provide notification component for display user notifications
-   */
-  Notification?: (props: {}) => JSX.Element;
 
   /**
    * Provide page component for displaying metadata page

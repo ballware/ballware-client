@@ -98,6 +98,7 @@ export const CodeEditor = ({ layoutItem, dialect }: CodeEditorProps) => {
               ref={editorRef}
               readOnly={readonly}
               defaultValue={getValue(layoutItem.dataMember) ?? ''}
+              options={layoutItem.itemoptions}
               setValue={value => {
                 layoutItem.dataMember &&
                   editorValueChanged(
@@ -114,6 +115,7 @@ export const CodeEditor = ({ layoutItem, dialect }: CodeEditorProps) => {
               ref={editorRef}
               readOnly={readonly}
               defaultValue={getValue(layoutItem.dataMember)}
+              options={layoutItem.itemoptions}
               setValue={value => {
                 layoutItem.dataMember &&
                   editorValueChanged(
@@ -130,6 +132,7 @@ export const CodeEditor = ({ layoutItem, dialect }: CodeEditorProps) => {
               ref={editorRef}
               readOnly={readonly}
               defaultValue={getValue(layoutItem.dataMember)}
+              options={layoutItem.itemoptions}
               setValue={value => {
                 layoutItem.dataMember &&
                   editorValueChanged(

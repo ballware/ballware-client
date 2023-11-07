@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: MIT
  */
 
+import { Template } from "./template";
+
 /**
  * Navigation tree item
  */
@@ -78,6 +80,11 @@ export interface CompiledTenant {
    * Navigation metadata for tenant
    */
   navigation?: NavigationLayout;
+
+  /**
+   * List of tenant templates
+   */
+  templates?: Array<Template>;
 
   /**
    * Custom script for access rights check of tenant

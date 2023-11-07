@@ -9,6 +9,7 @@ import {
   MetaTenantApi,
   CompiledTenant,
   NavigationLayout,
+  Template,
 } from '@ballware/meta-interface';
 import * as JSON5 from 'json5';
 import axios from 'axios';
@@ -17,6 +18,7 @@ interface Tenant {
   Id: string;
   Name: string;
   Navigation?: string;
+  Templates?: string;
   RightsCheckScript?: string;
 }
 
@@ -27,6 +29,12 @@ const compileTenant = (tenant: Tenant): CompiledTenant => {
     navigation: tenant.Navigation
       ? (JSON5.parse(tenant.Navigation) as NavigationLayout)
       : ({} as NavigationLayout),
+    templates: tenant.Templates 
+      ? (JSON5.parse(tenant.Templates) as Array<{ identifier: string, definition: string }>).map(t => ({
+            identifier: t.identifier,
+            definition: JSON5.parse(t.definition)
+          } as Template))        
+      : ([]),
   } as CompiledTenant;
 
   if (tenant.RightsCheckScript) {

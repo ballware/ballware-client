@@ -34,11 +34,6 @@ export interface ProviderFactoryContextState {
   ) => JSX.Element;
 
   /**
-   * Instantiate attachment provider
-   */
-  AttachmentProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
-
-  /**
    * Instanticate crud provider
    */
   CrudProvider?: (
@@ -48,16 +43,6 @@ export interface ProviderFactoryContextState {
       identifier: string | undefined;
     }>
   ) => JSX.Element;
-
-  /**
-   * Instanticate lookup provider
-   */
-  LookupProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
-
-  /**
-   * Instantiate notification provider
-   */
-  NotificationProvider?: (props: PropsWithChildren<{}>) => JSX.Element;
 
   /**
    * Instantiate tenant provider

@@ -6,20 +6,16 @@
  */
 
 import React, { useContext } from 'react';
-import { useTheme } from '@mui/material/styles';
 import { ToolbarItemsContext } from '@ballware/react-renderer';
 import {
   componentToToolbarItemRef,
-  ToolbarItemProps,
-  useDefaultToolbarItemStyles,
+  ToolbarItemProps
 } from './common';
 import { DateBox } from 'devextreme-react';
 import { useTranslation } from 'react-i18next';
 
 export const DatetimeToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
-  const theme = useTheme();
-  const style = useDefaultToolbarItemStyles(theme);
-
+  
   const { name, caption, defaultValue, width } = toolbarItem;
 
   const { t } = useTranslation();
@@ -32,7 +28,6 @@ export const DatetimeToolbarItem = ({ toolbarItem }: ToolbarItemProps) => {
     <React.Fragment>
       {t && paramEditorInitialized && paramEditorValueChanged && (
         <DateBox
-          style={style}
           hint={caption}
           width={width ?? '220px'}
           type={'datetime'}

@@ -39,9 +39,7 @@ export const CrudContainer = ({
   children,
 }: PropsWithChildren<CrudContainerProps>) => {
   const {
-    LookupProvider,
     MetaProvider,
-    AttachmentProvider,
     CrudProvider,
   } = useContext(ProviderFactoryContext);
   const { customParam } = useContext(PageContext);
@@ -50,47 +48,41 @@ export const CrudContainer = ({
   if (
     customParam &&
     PageLayoutItem &&
-    LookupProvider &&
     MetaProvider &&
-    AttachmentProvider &&
     CrudProvider
   ) {
     return (
-      <LookupProvider>
-        <MetaProvider
-          entity={
-            (layoutItem.options?.itemoptions as CrudContainerOptions)?.entity
+      <MetaProvider
+        entity={
+          (layoutItem.options?.itemoptions as CrudContainerOptions)?.entity
+        }
+        readOnly={false}
+        headParams={params ?? {}}
+        initialCustomParam={customParam ?? {}}
+      >
+        <CrudProvider
+          query={
+            (layoutItem.options?.itemoptions as CrudContainerOptions)
+              ?.query ?? 'primary'
           }
-          readOnly={false}
-          headParams={params ?? {}}
-          initialCustomParam={customParam ?? {}}
-        >
-          <AttachmentProvider>
-            <CrudProvider
-              query={
-                (layoutItem.options?.itemoptions as CrudContainerOptions)
-                  ?.query ?? 'primary'
-              }
-              initialFetchParams={params}
-              identifier={(layoutItem.options?.itemoptions as CrudContainerOptions)?.identifier}
-              >
-              <CrudFunctions>
-                <React.Fragment>
-                  {layoutItem.items?.map((item, index) => (
-                    <PageLayoutItem
-                      key={index}
-                      colCount={item.colCount}
-                      layoutItem={item}
-                      params={params}
-                    />
-                  ))}
-                </React.Fragment>
-                <React.Fragment>{children}</React.Fragment>
-              </CrudFunctions>
-            </CrudProvider>
-          </AttachmentProvider>
-        </MetaProvider>
-      </LookupProvider>
+          initialFetchParams={params}
+          identifier={(layoutItem.options?.itemoptions as CrudContainerOptions)?.identifier}
+          >
+          <CrudFunctions>
+            <React.Fragment>
+              {layoutItem.items?.map((item, index) => (
+                <PageLayoutItem
+                  key={index}
+                  colCount={item.colCount}
+                  layoutItem={item}
+                  params={params}
+                />
+              ))}
+            </React.Fragment>
+            <React.Fragment>{children}</React.Fragment>
+          </CrudFunctions>
+        </CrudProvider>          
+      </MetaProvider>
     );
   } else {
     return <React.Fragment>Waiting...</React.Fragment>;

@@ -22,7 +22,8 @@ import {
   StateStoring,
 } from 'devextreme-react/data-grid';
 import DataSource from 'devextreme/data/data_source';
-import dxDataGrid, { Toolbar, dxDataGridColumn, dxDataGridRowObject, EditingStartEvent, RowKeyInfo } from 'devextreme/ui/data_grid';
+import { exportDataGrid } from 'devextreme/excel_exporter';
+import dxDataGrid, { Toolbar, dxDataGridColumn, dxDataGridRowObject, EditingStartEvent, RowKeyInfo, ExportingEvent } from 'devextreme/ui/data_grid';
 import {
   CrudItem,
   GridLayout,
@@ -37,6 +38,9 @@ import { MetaContext, CrudContext, EditModes } from '@ballware/react-contexts';
 import { useTranslation } from 'react-i18next';
 import { ToolbarItem } from 'devextreme/ui/data_grid';
 import dxButton from 'devextreme/ui/button';
+import { Workbook } from 'exceljs';
+import { saveAs } from 'file-saver';
+import { useMetaAllowed, useMetaEditing } from '@ballware/react-provider';
 
 export interface DataGridProps {
   identifier?: string;
@@ -100,12 +104,13 @@ export const DataGrid = ({
   const { t } = useTranslation();
 
   const {
-    displayName,
-    editAllowed,
-    editorValueChanged,
-    editorEntered,
+    displayName
   } = useContext(MetaContext);
   const { customEdit, isLoading } = useContext(CrudContext);
+
+  const { editAllowed } = useMetaAllowed();
+  const { editorValueChanged, editorEntered } = useMetaEditing();
+
   const selectedRowKeys = useRef<Array<string>>([] as string[]);
   const selectedRowData = useRef<Array<CrudItem>>([] as CrudItem[]);
 
@@ -446,10 +451,28 @@ export const DataGrid = ({
       e.cancel = rowData && isMasterDetailExpandable && !isMasterDetailExpandable({ data: rowData.data});
     };
 
+    const onExporting = (e: ExportingEvent<any, any>) => {
+      const workbook = new Workbook();
+      const worksheet = workbook.addWorksheet(displayName)
+
+      exportDataGrid({
+        component: e.component,
+        worksheet,
+        autoFilterEnabled: true
+      }).then(() => {
+        workbook.xlsx.writeBuffer().then(buffer => {
+          saveAs(new Blob([buffer], { type: 'application/octet-stream' }), exportFileName + ".xlsx");
+        })
+
+      });
+
+      e.cancel = true;  
+    };
+
     return (
       <DxDataGrid
         ref={grid}
-        style={{ height: height ?? 'calc(100vh - 140px)' }}
+        style={{ height: height ?? '100%' }}
         dataSource={dataSource}
         repaintChangesOnly
         remoteOperations={{ sorting: false, filtering: false }}
@@ -485,6 +508,7 @@ export const DataGrid = ({
                 })
             : undefined
         }
+        onExporting={onExporting}
       >
         <Paging enabled={mode === 'large'} />
         {mode === 'large' && <ColumnChooser enabled />}
@@ -498,9 +522,9 @@ export const DataGrid = ({
         <SearchPanel visible />
         {mode === 'large' && <FilterRow visible />}
         {mode === 'large' && <GroupPanel visible />}
-        <Export enabled fileName={exportFileName} />
+        <Export enabled allowExportSelectedData={layout.allowMultiselect}/>
         <MasterDetail
-          enabled={layout.details ?? false}
+          enabled={!!(layout.details ?? false)}
           render={(props: { data: CrudItem }) => (
             <GridDetail detailLayout={layout.details} item={props.data} />
           )}

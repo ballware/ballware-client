@@ -7,23 +7,15 @@
 
 import React, { useContext } from 'react';
 
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  useTheme,
-  useMediaQuery,
-  DialogContentText,
-} from '@mui/material';
 import { CrudContext } from '@ballware/react-contexts';
 import { DeletePopupProps } from '@ballware/react-renderer';
 import { useTranslation } from 'react-i18next';
+import { Popup, Position, ToolbarItem } from 'devextreme-react/popup';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
 
 export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  
+  const fullScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
 
   const { t } = useTranslation();
 
@@ -32,26 +24,30 @@ export const DeletePopup = ({ title, message, id }: DeletePopupProps) => {
   return (
     <React.Fragment>
       {t && drop && close && (
-        <Dialog
-          open
-          onClose={(_event, reason) => { if (reason !== 'backdropClick') close() }}
+        <Popup visible
+          title={title}
           fullScreen={fullScreen}
-          maxWidth={'lg'}
-          fullWidth
-        >
-          <DialogTitle id="form-dialog-title">{title}</DialogTitle>
-          <DialogContent>
-            <DialogContentText>{message}</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={() => drop(id)} color="primary">
-              {t('editing.actions.remove')}
-            </Button>
-            <Button onClick={() => close()}>
-              {t('editing.actions.cancel')}
-            </Button>
-          </DialogActions>
-        </Dialog>
+          width="auto"          
+          minWidth="500px"
+          height="auto"
+          >
+          <Position            
+            at="center"
+            my="center"
+            of={window}
+          />
+          <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+            type: 'danger',
+            text: t('editing.actions.remove'),
+            onClick: () => drop(id)
+          }} />
+          <ToolbarItem widget='dxButton' toolbar='bottom' location='after' options={{
+            type: 'default',
+            text: t('editing.actions.cancel'),
+            onClick: () => close()
+          }} />
+          <p className="text-center">{message}</p>
+        </Popup>
       )}
     </React.Fragment>
   );

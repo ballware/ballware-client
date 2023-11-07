@@ -13,63 +13,44 @@ import React, {
   PropsWithChildren,
 } from 'react';
 
-import { useTheme, styled } from '@mui/material/styles';
-import { CssBaseline, Drawer, Hidden, Box } from '@mui/material';
-
 import { RenderFactoryContext } from '@ballware/react-renderer';
-import { SessionButton } from './sessionbutton';
 import { TenantContext } from '@ballware/react-contexts';
-/*
-const useStyles = (drawerWidth: string | number) =>
-  makeStyles(theme => ({
-    root: {
-      display: 'flex',
-      height: '100vh',
-    },
-    drawer: {
-      [theme.breakpoints.up('md')]: {
-        width: drawerWidth,
-        flexShrink: 0,
-      },
-    },
-    toolbar: theme.mixins.toolbar,
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    content: {
-      padding: theme.spacing(1),
-      [theme.breakpoints.up('md')]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-      },
-      [theme.breakpoints.down('sm')]: {
-        width: '100%',
-      },
-    },
-    client: {
-      height: `calc(100% - ${64}px)`,
-    },
-  }));
-*/
+import { Drawer, Template } from 'devextreme-react';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../util/mediaquery';
+import { useHistory } from 'react-router-dom';
+
 export interface ApplicationProps {
-  drawerWidth?: string | number;
+  drawerWidth?: number;
 }
 
 export const Application = ({
   drawerWidth,
   children,
 }: PropsWithChildren<ApplicationProps>) => {
-  //const classes = useStyles(drawerWidth ?? 240)();
 
-  const theme = useTheme();
+  const history = useHistory();
+  const smallScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
+  const largeScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.large);
+  const smallOrMediumScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small) || useMediaQuery(GLOBAL_MEDIA_QUERIES.medium);
 
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(largeScreen);
 
   const { ApplicationBar, Navigation } = useContext(RenderFactoryContext);
   const { navigation } = useContext(TenantContext);
 
   const onToggleMenu = useCallback(() => {
-    setMobileOpen(!mobileOpen);
-  }, [setMobileOpen, mobileOpen]);
+    setMenuOpen(!menuOpen);
+  }, [setMenuOpen, menuOpen]);
+
+  const onPageSelected = useCallback((url: string) => {
+    if (history && url) {
+      history.push(`/${url}`);
+
+      if (smallOrMediumScreen) {
+        setMenuOpen(false);
+      }
+    }
+  }, [history, smallOrMediumScreen]);
 
   const MemorizedApplicationBar = useMemo(
     () => () => (
@@ -78,90 +59,35 @@ export const Application = ({
           <ApplicationBar
             title={navigation?.title}
             onMenuToggle={onToggleMenu}
-          >
-            <SessionButton />
-          </ApplicationBar>
+          />
         )}
       </React.Fragment>
     ),
     [ApplicationBar, onToggleMenu, navigation]
   );
+
   const MemorizedNavigation = useMemo(
     () => () => (
       <React.Fragment>
-        {Navigation && <Navigation onMenuToggle={onToggleMenu} />}
+        {Navigation && <Navigation onPageSelected={onPageSelected} />}
       </React.Fragment>
     ),
-    [Navigation, onToggleMenu]
+    [Navigation, onPageSelected]
   );
 
-  const RootDiv = useMemo(() => styled('div')({
-    display: 'flex',
-    height: '100vh',
-  }), []);
-
-  const Nav = useMemo(() => styled('nav')({
-    [theme.breakpoints.up('md')]: {
-      width: drawerWidth ?? 240,
-      flexShrink: 0
-    }
-  }), [theme]);
-
-  const ToolbarPlaceholder = useMemo(() => styled('div')(theme.mixins.toolbar), [theme]);
-
-  const ContentContainer = useMemo(() => styled('div')({
-    height: `calc(100% - ${64}px)`
-  }), []);
-
   return (
-    <RootDiv>
-      <CssBaseline />
+    <div className="application container-fluid vh-100 vw-100 px-0 d-flex flex-column overflow-hidden">
       <MemorizedApplicationBar />
-      <Nav>
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden mdUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={onToggleMenu}
-            sx={{ 
-              width: drawerWidth ?? 240,
-              flexShrink: 0,
-              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <MemorizedNavigation />
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer sx={{ 
-              width: drawerWidth ?? 240,
-              flexShrink: 0,
-              [`& .MuiDrawer-paper`]: { width: drawerWidth ?? 240, boxSizing: 'border-box' }
-            }}
-            variant="permanent"
-            open
-          >
-            <MemorizedNavigation />
-          </Drawer>
-        </Hidden>
-      </Nav>
-      <Box sx={{      
-          padding: theme.spacing(1),
-          [theme.breakpoints.up('sm')]: {
-            width: `calc(100% - ${drawerWidth ?? 240}px)`
-          },
-          [theme.breakpoints.down('sm')]: {
-            width: '100%'
-          }
-        }}>
-        <ToolbarPlaceholder/>
-        <ContentContainer>{children}</ContentContainer>
-      </Box>
-    </RootDiv>
+      <Drawer className="flex-fill overflow-hidden pt-2" openedStateMode={smallScreen ? 'overlap' : 'shrink'} opened={menuOpen} template="navigation" maxSize={drawerWidth ?? 240}>
+        <Template name="navigation">      
+          <div className={`${smallScreen ? "application" : ""} h-100`} style={{ width: drawerWidth ?? 240 }}>
+            <MemorizedNavigation/>
+          </div>          
+        </Template>
+        <div className="h-100 p-2">
+          {children}
+        </div>        
+      </Drawer>      
+    </div>
   );
 };

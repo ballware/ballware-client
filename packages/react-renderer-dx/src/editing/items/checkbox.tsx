@@ -114,8 +114,8 @@ export const CheckBox = ({ layoutItem }: CheckBoxProps) => {
               <CustomRule
                 key={v.identifier}
                 validationCallback={(e: { value: any }) =>
-                  layoutItem.dataMember &&
-                  editorValidating(layoutItem.dataMember, v.identifier, e.value)
+                  !!(layoutItem.dataMember &&
+                  editorValidating(layoutItem.dataMember, v.identifier, e.value))
                 }
                 message={v.message}
               />

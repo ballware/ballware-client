@@ -21,7 +21,6 @@ import {
   RenderFactoryContextState,
 } from '@ballware/react-renderer';
 import { Page } from './layout/page';
-import { Notification } from './layout/notification';
 
 import { Tabs } from './editing/items/tabs';
 
@@ -30,7 +29,6 @@ import { CodeEditor } from './editing/items/codeeditor';
 import { CheckBox } from './editing/items/checkbox';
 import { DateBox } from './editing/items/datebox';
 import { DetailGrid } from './editing/items/detailgrid';
-import { DetailTable } from './editing/items/detailtable';
 import { EditableEntityGrid } from './editing/items/editableentitygrid';
 import { DetailTree } from './editing/items/detailtree';
 import { LookupBox } from './editing/items/lookupbox';
@@ -45,7 +43,6 @@ import { StaticLookupBox } from './editing/items/staticlookupbox';
 import { MultiLookupBox } from './editing/items/multilookupbox';
 import { StaticMultiLookupBox } from './editing/items/staticmultilookupbox';
 import { MultiValueBox } from './editing/items/multivaluebox';
-import { SummaryList } from './editing/items/summarylist';
 import { Item } from './layout/item';
 import { Context } from './components/context';
 import { ApplicationBar } from './layout/applicationbar';
@@ -71,6 +68,7 @@ import { LookupToolbarItem } from './layout/toolbaritems/lookup';
 import { FilterBar } from './layout/filterbar';
 import { ExternalLinkEditPopup } from './editing/externallinkeditpopup';
 import { ImportPopup } from './editing/importpopup';
+import { StatisticEditItem } from './editing/items/statistic';
 
 export interface DevExtremeRenderFactoryProps {}
 
@@ -102,11 +100,11 @@ const PageLayoutComponent = ({
       return (
         <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
           <Statistic
-            statistic={
-              (layoutItem.options?.itemoptions as StatisticOptions)?.statistic
+            height={
+              (layoutItem.options?.itemoptions as StatisticOptions)?.height
             }
             identifier={
-              (layoutItem.options?.itemoptions as StatisticOptions)?.identifier
+              (layoutItem.options?.itemoptions as StatisticOptions)?.statistic
             }
             params={params as Record<string, unknown>}
           />
@@ -122,9 +120,6 @@ const PageLayoutComponent = ({
             layout={
               (layoutItem.options?.itemoptions as EntityGridOptions)?.layout ??
               'primary'
-            }
-            identifier={
-              (layoutItem.options?.itemoptions as EntityGridOptions)?.identifier
             }
           />
         </Item>
@@ -234,12 +229,6 @@ const EditLayoutComponent = ({
           <Tabs layoutItem={layoutItem} />
         </Item>
       );
-    case 'summary':
-      return (
-        <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
-          <SummaryList layoutItem={layoutItem} />
-        </Item>
-      );
     default:
       return (
         <Item key={key++} colCount={colCount} colSpan={layoutItem.colSpan}>
@@ -296,9 +285,7 @@ const EditorComponent = ({
     case 'richtext':
       return <RichTextBox layoutItem={options} />;
     case 'detailgrid':
-      return <DetailGrid layoutItem={options} />;
-    case 'detailtable':
-      return <DetailTable layoutItem={options} />;
+      return <DetailGrid layoutItem={options} />;    
     case 'detailtree':
       return <DetailTree layoutItem={options} />;
     case 'entitygrid':
@@ -307,6 +294,8 @@ const EditorComponent = ({
       return <AttachmentGrid layoutItem={options} />;
     case 'button':
       return <Button layoutItem={options} />;
+    case 'statistic':
+      return <StatisticEditItem layoutItem={options} />
     case 'empty':
       return <React.Fragment></React.Fragment>;
     default:
@@ -334,7 +323,6 @@ export const DxRenderFactoryProvider = ({
         Navigation: props => <Navigation {...props} />,
         PrivateRoute: props => <PrivateRoute {...props} />,
         Routes: props => <Routes {...props} />,
-        Notification: () => <Notification />,
         Page: () => <Page />,
         PageToolbar: props => <FilterBar {...props} />,
         PageLayoutItem: props => <PageLayoutComponent {...props} />,

@@ -1,6 +1,6 @@
 {
   "name": "@ballware/meta-interface",
-  "version": "6.12.0",
+  "version": "6.21.0",
   "description": "Ballware Application Builder - Interface for metadata provider",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -57,5 +57,5 @@
       "limit": "10 KB"
     }
   ],
-  "gitHead": "69630e91be06a44328c7139f724863f50c13b184"
+  "gitHead": "f45bdb73dc9d10d43d916655dbadc692a3f6ca5f"
 }

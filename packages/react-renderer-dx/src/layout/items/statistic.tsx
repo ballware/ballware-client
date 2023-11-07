@@ -23,32 +23,36 @@ import {
   ValueAxis,
 } from 'devextreme-react/chart';
 import { Map, Marker } from 'devextreme-react/map';
-import { LegendClickEvent } from 'devextreme/viz/chart';
+import { chartSeriesObject } from 'devextreme/viz/chart';
 import moment from 'moment';
+import { useGooglekey } from '@ballware/react-provider';
 import { getByPath } from '@ballware/react-renderer';
-import PivotGrid, { FieldPanel, StateStoring } from 'devextreme-react/pivot-grid';
-import { Field } from 'devextreme/ui/pivot_grid/data_source';
+import PivotGrid from 'devextreme-react/pivot-grid';
+import { PivotGridDataSourceField } from 'devextreme/ui/pivot_grid/data_source';
 import {
   ProviderFactoryContext,
   StatisticContext,
   PageContext,
-  SettingsContext,
 } from '@ballware/react-contexts';
+import { ExportingEvent } from 'devextreme/ui/pivot_grid';
+import { Workbook } from 'exceljs';
+import { exportPivotGrid } from 'devextreme/excel_exporter';
+import saveAs from 'file-saver';
 
 export interface StatisticProps {
-  statistic: string;
   identifier: string;
+  height?: string;
   params: Record<string, unknown>;
 }
 
-const MyStatisticElement = ({ identifier }: { identifier: string }) => {
-  const { googlekey } = useContext(SettingsContext);
+const MyStatisticElement = ({ height }: { height?: string }) => {
+  const googlekey = useGooglekey();
   const { customParam } = useContext(PageContext);
   const { name, params, data, layout, argumentAxisCustomizeText } = useContext(
     StatisticContext
   );
 
-  const onLegendClick = useCallback((e: LegendClickEvent) => {
+  const onLegendClick = useCallback((e: { target?: chartSeriesObject }) => {
     if (e.target) {
       if (e.target.isVisible()) {
         e.target.hide();
@@ -74,7 +78,7 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
 
           return (
             <Chart
-              height={layout.height}
+              height={layout.height ?? height}
               title={layout.title ?? name}
               rotated={options.rotated ?? false}
               dataSource={data}
@@ -90,12 +94,12 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
                 <ArgumentAxis
                   argumentType={options.argumentAxis.argumentType}
                   visualRange={
-                    options.argumentAxis.visualRangeTo
-                      ? [
-                          options.argumentAxis.visualRangeFrom ?? 0,
-                          options.argumentAxis.visualRangeTo,
-                        ]
-                      : null
+                      options.argumentAxis.visualRangeTo
+                        ? [
+                            options.argumentAxis.visualRangeFrom ?? 0,
+                            options.argumentAxis.visualRangeTo,
+                          ]
+                        : undefined                    
                   }
                   tickInterval={options.argumentAxis.tickInterval}
                   label={{
@@ -158,7 +162,7 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
             <React.Fragment>
               {googlekey && (
                 <Map
-                  height={layout.height ?? '400px'}
+                  height={layout.height ?? height ?? '400px'}
                   width={'100%'}
                   autoAdjust
                   provider={'google'}
@@ -187,9 +191,26 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
         case 'pivot': {
           const options = layout.options as StatisticPivotOptions;
 
+          const onExporting = (e: ExportingEvent) => {
+            const workbook = new Workbook();
+            const worksheet = workbook.addWorksheet(name)
+      
+            exportPivotGrid({
+              component: e.component,
+              worksheet
+            }).then(() => {
+              workbook.xlsx.writeBuffer().then(buffer => {
+                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), `${layout.title}_${moment().format('YYYYMMDD')}.xlsx`);
+              })
+      
+            });
+      
+            e.cancel = true;  
+          };
+
           return (
             <PivotGrid
-              style={{ height: layout.height ?? 'calc(100vh - 140px)' }}
+              style={{ height: layout.height ?? height ?? '100%' }}
               allowSortingBySummary
               allowSorting
               allowExpandAll
@@ -197,8 +218,9 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
               fieldChooser={{ enabled: true }}
               export={{
                 enabled: true,
-                fileName: `${layout.title}_${moment().format('YYYYMMDD')}`,
+                //fileName: `${layout.title}_${moment().format('YYYYMMDD')}`,
               }}
+              onExporting={onExporting}
               showRowTotals={options.showRowTotals ?? false}
               showRowGrandTotals={options.showRowGrandTotals ?? false}
               dataSource={{
@@ -218,14 +240,11 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
                       ? { type: f.format, precision: f.precision }
                       : null,
                     width: f.width,
-                  } as Field;
+                  } as PivotGridDataSourceField;
                 }),
                 store: data,
               }}
-            >
-              <FieldPanel visible />
-              <StateStoring enabled={identifier ? true : false} type={"localStorage"} storageKey={identifier} />
-            </PivotGrid>
+            />
           );
         }
       }
@@ -247,14 +266,14 @@ const MyStatisticElement = ({ identifier }: { identifier: string }) => {
   );
 };
 
-const StatisticContainer = ({ statistic, identifier, params }: StatisticProps) => {
+const StatisticContainer = ({ identifier, height, params }: StatisticProps) => {
   const { StatisticProvider } = useContext(ProviderFactoryContext);
 
   return (
     <React.Fragment>
       {StatisticProvider && (
-        <StatisticProvider identifier={statistic} params={params}>
-          <MyStatisticElement identifier={identifier} />
+        <StatisticProvider identifier={identifier} params={params}>
+          <MyStatisticElement height={height} />
         </StatisticProvider>
       )}
     </React.Fragment>

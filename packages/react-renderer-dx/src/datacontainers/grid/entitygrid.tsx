@@ -24,18 +24,25 @@ import {
   CrudItem,
 } from '@ballware/meta-interface';
 import moment from 'moment';
-import Media from 'react-media';
 import {
   createColumnConfiguration,
   OptionButtons,
 } from '../columns/columntemplates';
 import { createSummaryConfiguration } from './gridsummary';
 import { createEditableGridDatasource } from '../../util/datasource';
+import { useMediaQuery, GLOBAL_MEDIA_QUERIES } from '../../util/mediaquery';
 import {
   MetaContext,
   CrudContext,
   LookupContext,
 } from '@ballware/react-contexts';
+
+import {
+  useMetaGridLayout,
+  useMetaAllowed, 
+  useMetaOperations
+} from '@ballware/react-provider';
+
 import { dxElement } from 'devextreme/core/element';
 import { dxEvent } from 'devextreme/events';
 import { DataGrid } from './datagrid';
@@ -45,11 +52,12 @@ import { useTranslation } from 'react-i18next';
 export interface GridProps {
   layout: string;
   height?: string;
-  identifier?: string;
 }
 
-export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
+export const EntityGrid = ({ layout, height }: GridProps) => {
   const { t } = useTranslation();
+  const smallScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.small);
+  const mediumScreen = useMediaQuery(GLOBAL_MEDIA_QUERIES.medium);
 
   const [preparedGridLayout, setPreparedGridLayout] = useState<GridLayout>();
   const [editLayout, setEditLayout] = useState<string>();
@@ -66,24 +74,33 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
 
   const { lookups } = useContext(LookupContext);
   const {
-    getGridLayout,
     displayName,
     customFunctions,
     headParams,
     customParam,
-    print,
-    documents,
+    documents,    
+  } = useContext(MetaContext);
+
+  const {
+    getGridLayout, 
+    prepareGridLayout
+  } = useMetaGridLayout();
+
+  const {
     addAllowed,
     viewAllowed,
     editAllowed,
     dropAllowed,
     printAllowed,
     customFunctionAllowed,
-    prepareGridLayout,
-  } = useContext(MetaContext);
+  } = useMetaAllowed();
+
+  const {
+    print
+  } = useMetaOperations();
+
   const {
     load,
-    fetchParams,
     add,
     view,
     edit,
@@ -165,8 +182,22 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
     (row: CrudItem, target: Element) => {
       const actions = [];
 
-      if (t) {
-        if (viewAllowed && viewAllowed(row)) {
+      if (t && viewAllowed && editAllowed && dropAllowed && printAllowed && customFunctionAllowed && customFunctions) {          
+        const defaultViewFunction = customFunctions
+          .map(f =>
+            Object.assign({}, f, { row: row, originalTarget: target })
+          )
+          .find(f => f.type === 'default_view' && customFunctionAllowed(f, row));
+
+        const defaultEditFunction = customFunctions
+          .map(f =>
+            Object.assign({}, f, { row: row, originalTarget: target })
+          )
+          .find(f => f.type === 'default_edit' && customFunctionAllowed(f, row));
+
+        if (defaultViewFunction) {
+          actions.push(defaultViewFunction);
+        } else if (viewAllowed && viewAllowed(row)) {
           actions.push({
             id: 'view',
             text: t('datacontainer.actions.show'),
@@ -177,7 +208,9 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
           });
         }
 
-        if (editAllowed && editAllowed(row)) {
+        if (defaultEditFunction) {
+          actions.push(defaultEditFunction);
+        } else if (editAllowed && editAllowed(row)) {
           actions.push({
             id: 'edit',
             text: t('datacontainer.actions.edit'),
@@ -286,8 +319,10 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
             printExecute(e.itemData.row, e.itemData.originalTarget);
             break;
           default: {
-            switch (e.itemData.type) {
+            switch (e.itemData.type) {              
               case 'edit':
+              case 'default_edit':
+              case 'default_view':
                 if (customEdit) {
                   customEdit(e.itemData, [e.itemData.row]);
                 }
@@ -441,36 +476,53 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
 
   const optionButtonClicked = useCallback(
     (button: OptionButtons, data: CrudItem, target: Element) => {
-      switch (button) {
-        case 'add':
-          break;
-        case 'view':
-          viewExecute(data, target);
-          break;
-        case 'edit':
-          editExecute(data, target);
-          break;
-        case 'delete':
-          deleteExecute(data, target);
-          break;
-        case 'print':
-          printExecute(data, target);
-          break;
-        case 'options':
-          actionRows.current = [data];
-          actionMenuExecute(data, target);
-          break;
-        case 'customoptions':
-          actionRows.current = [data];
-          additionalActionMenuExecute(data, target);
-          break;
+      if (customFunctionAllowed && customFunctions && customEdit) {          
+        const defaultViewFunction = customFunctions          
+          .find(f => f.type === 'default_view' && customFunctionAllowed(f, data));
+
+        const defaultEditFunction = customFunctions          
+          .find(f => f.type === 'default_edit' && customFunctionAllowed(f, data));      
+
+        switch (button) {
+          case 'view':
+            if (defaultViewFunction) {
+              customEdit(defaultViewFunction, [data])
+            } else {
+              viewExecute(data, target);
+            }            
+            break;
+          case 'edit':
+            if (defaultEditFunction) {
+              customEdit(defaultEditFunction, [data])
+            } else {
+              editExecute(data, target);
+            }
+            break;
+          case 'delete':
+            deleteExecute(data, target);
+            break;
+          case 'print':
+            printExecute(data, target);
+            break;
+          case 'options':
+            actionRows.current = [data];
+            actionMenuExecute(data, target);
+            break;
+          case 'customoptions':
+            actionRows.current = [data];
+            additionalActionMenuExecute(data, target);
+            break;
+        }
       }
     },
     [
+      customFunctionAllowed,
+      customFunctions,
+      customEdit,
       viewExecute,
       editExecute,
       deleteExecute,
-      printExecute,
+      printExecute,      
       actionMenuExecute,
       additionalActionMenuExecute,
     ]
@@ -478,32 +530,45 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
 
   const optionButtonAllowed = useCallback(
     (button: OptionButtons, data?: CrudItem): boolean => {
-      switch (button) {
-        case 'add':
-          return (addAllowed && addAllowed()) ?? false;
-        case 'view':
-          return (data && viewAllowed && viewAllowed(data)) ?? false;
-        case 'edit':
-          return (data && editAllowed && editAllowed(data)) ?? false;
-        case 'delete':
-          return (data && dropAllowed && dropAllowed(data)) ?? false;
-        case 'print':
-          return (data && printAllowed && printAllowed(data)) ?? false;
-        case 'options':
-          return true;
-        case 'customoptions': {
-          if (data && customFunctions && customFunctionAllowed) {
-            const allowedAdditionalFunctions = customFunctions?.filter(f =>
-              customFunctionAllowed(f, data)
-            );
+      if (addAllowed && viewAllowed && editAllowed && dropAllowed && printAllowed && customFunctions && customFunctionAllowed) {
+        const defaultAddFunction = customFunctions          
+          .find(f => f.type === 'default_add' && customFunctionAllowed(f));
 
-            return allowedAdditionalFunctions?.length > 0;
+        const defaultViewFunction = customFunctions          
+          .find(f => !!data && f.type === 'default_view' && customFunctionAllowed(f, data));
+
+        const defaultEditFunction = customFunctions          
+          .find(f => !!data && f.type === 'default_edit' && customFunctionAllowed(f, data));      
+
+        switch (button) {
+          case 'add':
+            return (!!defaultAddFunction || addAllowed());
+          case 'view':
+            return !!data && (!!defaultViewFunction || viewAllowed(data));
+          case 'edit':
+            return !!data && (!!defaultEditFunction || editAllowed(data));
+          case 'delete':
+            return (data && dropAllowed && dropAllowed(data)) ?? false;
+          case 'print':
+            return (data && printAllowed && printAllowed(data)) ?? false;
+          case 'options':
+            return true;
+          case 'customoptions': {
+            if (data && customFunctions && customFunctionAllowed) {
+              const allowedAdditionalFunctions = customFunctions?.filter(f =>
+                customFunctionAllowed(f, data)
+              );
+
+              return allowedAdditionalFunctions?.length > 0;
+            }
+
+            return false;
           }
-
-          return false;
+          default:
+            return false;
         }
-        default:
-          return false;
+      } else { 
+        return false;
       }
     },
     [
@@ -592,7 +657,12 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
     ) {
       const addItems = [];
 
-      if (addAllowed()) {
+      const defaultAddFunction = customFunctions        
+        .find(f => f.type === 'default_add' && customFunctionAllowed(f));
+
+      if (defaultAddFunction) {
+        addItems.push({ id: defaultAddFunction.id, text: defaultAddFunction.text, customFunction: defaultAddFunction })
+      } else if (addAllowed()) {
         addItems.push({
           id: 'none',
           text: t('datacontainer.actions.add', { entity: displayName }),
@@ -717,115 +787,90 @@ export const EntityGrid = ({ identifier, layout, height }: GridProps) => {
   );
 
   return (
-    <Media
-      queries={{
-        small: { maxWidth: 599 },
-        medium: { maxWidth: 1000 },
-        large: { minWidth: 1001 },
-      }}
-    >
-      {matches => (
-        <React.Fragment>
-          {renderGrid &&
-          load &&
-          preparedGridLayout &&
-          summaryConfiguration &&
-          dataSource /* && !matches.small*/ && (
-              <DataGrid
-                identifier={identifier}
-                customFunctions={headCustomFunctions ?? []}
-                showReload={true}
-                showAdd={(addMenuItems && addMenuItems?.length > 0) ?? false}
-                showPrint={(preparedGridLayout.allowMultiselect && documents && documents.length > 0) ?? false}
-                showExport={(exportMenuItems && exportMenuItems.length > 0) ?? false}
-                showImport={(importMenuItems && importMenuItems.length > 0) ?? false}
-                onReloadClick={() => load(fetchParams)}
-                onCustomFunctionClick={customFunctionButtonClicked}
-                onAddClick={addButtonClicked}
-                onPrintClick={printButtonClicked}
-                onExportClick={exportButtonClicked}
-                onImportClick={importButtonClicked}
-                onRowDblClick={onRowDblClick}
-                isMasterDetailExpandable={(e) => optionButtonAllowed('view', e.data)}
-                exportFileName={`${displayName}_${moment().format('YYYYMMDD')}`}
-                layout={preparedGridLayout}
-                summary={summaryConfiguration}
-                mode={
-                  matches.small ? 'small' : matches.medium ? 'medium' : 'large'
-                }
-                height={height ?? 'calc(100vh - 140px)'}
-                dataSource={dataSource}
-                columns={
-                  matches.small
-                    ? smallColumnConfiguration
-                    : matches.medium
-                    ? mediumColumnConfiguration
-                    : largeColumnConfiguration
-                }
-              />
-            )}
-          {/*(renderGrid && matches.small) && <DataList
-        height={height ?? 'calc(100vh - 140px)'}
-        layout={preparedGridLayout}
-        dataSource={dataSource}
-        showReload={true}
-        showAdd={addAllowed()}
-        showPrint={true}
-        customFunctions={customFunctions}
-        onReloadClick={() => load()}
-        onCustomFunctionClick={customFunctionButtonClicked}
-        onAddClick={addButtonClicked}
-        onPrintClick={printButtonClicked}
-        onRowDblClick={onRowDblClick}
-        />*/}
-          <ActionSheet
-            ref={actionMenu}
-            width={'auto'}
-            title={t('datacontainer.actionsheet.title')}
-            usePopover={!matches.small}
-            showCancelButton
-            onItemClick={actionItemClicked}
+    <React.Fragment>
+      {renderGrid &&
+      load &&
+      preparedGridLayout &&
+      summaryConfiguration &&
+      dataSource && (
+          <DataGrid
+            customFunctions={headCustomFunctions ?? []}
+            showReload={true}
+            showAdd={(addMenuItems && addMenuItems?.length > 0) ?? false}
+            showPrint={(preparedGridLayout.allowMultiselect && documents && documents.length > 0) ?? false}
+            showExport={(exportMenuItems && exportMenuItems.length > 0) ?? false}
+            showImport={(importMenuItems && importMenuItems.length > 0) ?? false}
+            onReloadClick={() => load()}
+            onCustomFunctionClick={customFunctionButtonClicked}
+            onAddClick={addButtonClicked}
+            onPrintClick={printButtonClicked}
+            onExportClick={exportButtonClicked}
+            onImportClick={importButtonClicked}
+            onRowDblClick={onRowDblClick}
+            isMasterDetailExpandable={(e) => optionButtonAllowed('view', e.data)}
+            exportFileName={`${displayName}_${moment().format('YYYYMMDD')}`}
+            layout={preparedGridLayout}
+            summary={summaryConfiguration}
+            mode={
+              smallScreen ? 'small' : mediumScreen ? 'medium' : 'large'
+            }
+            height={height ?? '100%'}
+            dataSource={dataSource}
+            columns={
+              smallScreen
+                ? smallColumnConfiguration
+                : mediumScreen
+                ? mediumColumnConfiguration
+                : largeColumnConfiguration
+            }
           />
-          {documents && (
-            <ActionSheet
-              width={'auto'}
-              title={t('datacontainer.actions.print')}
-              usePopover={!matches.small}
-              ref={printMenu}
-              dataSource={documents}
-              onItemClick={printMenuItemClicked}
-            />
-          )}
-          {displayName && (
-            <ActionSheet
-              ref={addMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.add', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={addMenuItemClicked}
-            />
-          )}
-          {exportMenuItems && (<ActionSheet
-              ref={exportMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.export', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={exportMenuItemClicked}
-            />
-          )}
-          {importMenuItems && (<ActionSheet
-              ref={importMenu}
-              width={'auto'}
-              title={t('datacontainer.actions.import', { entity: displayName })}
-              showCancelButton
-              usePopover={!matches.small}
-              onItemClick={importMenuItemClicked}
-            />
-          )}
-        </React.Fragment>
+        )}
+      <ActionSheet
+        ref={actionMenu}
+        width={'auto'}
+        title={t('datacontainer.actionsheet.title')}
+        usePopover={!smallScreen}
+        showCancelButton
+        onItemClick={actionItemClicked}
+      />
+      {documents && (
+        <ActionSheet
+          width={'auto'}
+          title={t('datacontainer.actions.print')}
+          usePopover={!smallScreen}
+          ref={printMenu}
+          dataSource={documents}
+          onItemClick={printMenuItemClicked}
+        />
       )}
-    </Media>
+      {displayName && (
+        <ActionSheet
+          ref={addMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.add', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={addMenuItemClicked}
+        />
+      )}
+      {exportMenuItems && (<ActionSheet
+          ref={exportMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.export', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={exportMenuItemClicked}
+        />
+      )}
+      {importMenuItems && (<ActionSheet
+          ref={importMenu}
+          width={'auto'}
+          title={t('datacontainer.actions.import', { entity: displayName })}
+          showCancelButton
+          usePopover={!smallScreen}
+          onItemClick={importMenuItemClicked}
+        />
+      )}
+    </React.Fragment>
   );
 };

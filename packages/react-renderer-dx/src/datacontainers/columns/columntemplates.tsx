@@ -33,6 +33,7 @@ import {
   getByPath,
   setByPath,
 } from '@ballware/react-renderer';
+import { useGenericLookupByIdentifier } from '@ballware/react-provider';
 
 export type OptionButtons =
   | 'add'
@@ -256,7 +257,8 @@ const TemplateColumn = ({
   const { detailGridCellPreparing, EditProvider } = useContext(
     EditItemsContext
   );
-  const { lookups, getGenericLookupByIdentifier } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
+  const getGenericLookupByIdentifier = useGenericLookupByIdentifier();
 
   const [prepared, setPrepared] = useState<boolean>();
 
@@ -296,7 +298,7 @@ const TemplateColumn = ({
         return (
           <CheckBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as boolean}
             onValueChanged={onValueChanged}
             onInitialized={e => {
               if (editing) e.component?.focus();
@@ -307,7 +309,7 @@ const TemplateColumn = ({
         return (
           <NumberBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as number}
             onValueChanged={onValueChanged}
             onInitialized={e => {
               if (editing) e.component?.focus();
@@ -344,7 +346,7 @@ const TemplateColumn = ({
         return (
           <TagBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as any[]}
             dataSource={
               columnOptions.items ??
               (columnOptions.itemsMember
@@ -388,7 +390,7 @@ const TemplateColumn = ({
         return (
           <TagBox
             readOnly={!editing}
-            defaultValue={getByPath(item, dataMember)}
+            defaultValue={getByPath(item, dataMember) as any[]}
             dataSource={dataSource}
             displayExpr={columnOptions.displayExpr ?? lookup?.displayMember}
             valueExpr={columnOptions.valueExpr ?? lookup?.valueMember}

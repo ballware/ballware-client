@@ -15,19 +15,20 @@ import { Container } from '../container';
 import { TabPanel, Item as TabItem } from 'devextreme-react/tab-panel';
 import { LoadIndicator } from 'devextreme-react/load-indicator';
 import { RenderFactoryContext } from '@ballware/react-renderer';
-import { MetaContext, ProviderFactoryContext } from '@ballware/react-contexts';
+import { ProviderFactoryContext } from '@ballware/react-contexts';
+import { useMetaOperations } from '@ballware/react-provider';
 
-const TabCountIndicator = ({ query, params }: { query: string, params?: QueryParams}) => {
+const TabCountIndicator = ({ query }: { query: string }) => {
 
   const [itemCount, setItemCount] = useState<number>();
 
-  const { count } = useContext(MetaContext);  
+  const { count } = useMetaOperations();
   
   useEffect(() => {
     if (count) {
       var canceled = false;
 
-      count(query, params).then(result => {
+      count(query).then(result => {
         if (!canceled) {
           setItemCount(result);
         }
@@ -39,7 +40,7 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
     }
 
     return () => {};
-  }, [count, params]);
+  }, [count]);
 
   if (itemCount !== undefined) {
     return <React.Fragment>{`(${itemCount})`}</React.Fragment>
@@ -50,12 +51,12 @@ const TabCountIndicator = ({ query, params }: { query: string, params?: QueryPar
 
 const TabHeader = ({ options, params }: { options: TabItemOptions, params?: QueryParams}) => {
 
-  const { LookupProvider, MetaProvider } = useContext(ProviderFactoryContext);
+  const { MetaProvider } = useContext(ProviderFactoryContext);
 
   if (!options?.entity) {
     return <span className="dx-tab-text">{options?.caption}</span>;
   } else {
-    return (<React.Fragment>{(LookupProvider && MetaProvider) && <LookupProvider><MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown>} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'} params={params}/></span></MetaProvider></LookupProvider>}</React.Fragment>);
+    return (<React.Fragment>{(MetaProvider) && <MetaProvider entity={options?.entity} readOnly headParams={params as Record<string, unknown> ?? {}} initialCustomParam={{}}><span className="dx-tab-text">{options?.caption}&nbsp;<TabCountIndicator query={options.query ?? 'primary'}/></span></MetaProvider>}</React.Fragment>);
   }
 }
 

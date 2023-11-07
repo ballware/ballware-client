@@ -22,14 +22,14 @@ export const Page = (): JSX.Element => {
     pageParam,
     resetDocumentation,
   } = useContext(PageContext);
-  const { lookups, lookupsComplete } = useContext(LookupContext);
+  const { lookups } = useContext(LookupContext);
 
   if (resetDocumentation) {
     let key = 1;
 
     return (
-      <div style={{ height: 'calc(100vh - 140px)' }}>
-        {layout && lookups && lookupsComplete && customParam && PageToolbar && (
+      <div className="h-100 mw-100 container-fluid shadow bg-white rounded d-flex flex-column overflow-hidden">
+        {layout && lookups && customParam && PageToolbar && (
           <PageToolbar
             documentationIdentifier={layout.documentationEntity}
             title={layout.title}
@@ -45,7 +45,6 @@ export const Page = (): JSX.Element => {
         )}
         {layout &&
           lookups &&
-          lookupsComplete &&
           pageParam &&
           customParam &&
           layout.items &&

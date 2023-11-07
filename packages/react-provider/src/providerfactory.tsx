@@ -11,12 +11,9 @@ import {
   ProviderFactoryContext,
   ProviderFactoryContextState,
 } from '@ballware/react-contexts';
-import { LookupProvider } from './lookupprovider';
 import { PageProvider } from './pageprovider';
 import { MetaProvider } from './metaprovider';
-import { AttachmentProvider } from './attachmentprovider';
 import { CrudProvider } from './crudprovider';
-import { NotificationProvider } from './notificationprovider';
 import { TenantProvider } from './tenantprovider';
 import { StatisticProvider } from './statisticprovider';
 import { EditProvider } from './editprovider';
@@ -38,10 +35,7 @@ export const ProviderFactory = ({
     setValue({
       PageProvider,
       MetaProvider,
-      AttachmentProvider,
       CrudProvider,
-      LookupProvider,
-      NotificationProvider,
       TenantProvider,
       EditProvider,
       StatisticProvider,

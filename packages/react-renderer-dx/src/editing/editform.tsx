@@ -19,14 +19,13 @@ import { EditLayout, CrudItem, EntityCustomFunction } from '@ballware/meta-inter
 import { ValidationGroup } from 'devextreme-react/validation-group';
 import { ValidationSummary } from 'devextreme-react/validation-summary';
 import {
-  MetaContext,
-  NotificationContext,
   CrudContext,
   EditContext,
 } from '@ballware/react-contexts';
 import { EditItemsProvider } from '@ballware/react-renderer';
 import { Container } from '../layout/container';
 import { RenderFactoryContext } from '@ballware/react-renderer';
+import { useMetaCustomFunctions, useMetaEditLayout, useNotification } from '@ballware/react-provider';
 
 export interface EditFormRef {
   validate(): boolean;
@@ -45,13 +44,17 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
   ) => {
     const [preparedEditLayout, setPreparedEditLayout] = useState<EditLayout>();
 
-    const { showWarning } = useContext(NotificationContext);
-    const { prepareEditLayout, evaluateCustomFunction } = useContext(
-      MetaContext
-    );
+    const { showWarning } = useNotification();
+    
     const { save, saveBatch } = useContext(CrudContext);
     const { item, mode } = useContext(EditContext);
     const { EditLayoutItem } = useContext(RenderFactoryContext);
+
+    const { 
+      prepareEditLayout
+    } = useMetaEditLayout();
+
+    const { evaluateCustomFunction } = useMetaCustomFunctions();
 
     const validationGroupRef = React.useRef<ValidationGroup>(null);
 
@@ -127,6 +130,7 @@ export const EditForm = forwardRef<EditFormRef, EditFormProps>(
         {preparedEditLayout && EditLayoutItem && (
           <EditItemsProvider>
             <ValidationGroup
+              className='container-fluid'
               ref={validationGroupRef}
               onInitialized={e => e.component?.validate()}
             >
