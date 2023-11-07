@@ -10,7 +10,8 @@
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem react-app-rewired --max-http-header-size=32768 start",
     "build": "cross-env react-app-rewired --max-old-space-size=16384 build",
     "docker:build": "cross-env react-scripts --max-old-space-size=16384 build",
-    "test": "cross-env react-app-rewired test"
+    "test": "cross-env react-app-rewired test",
+    "serve": "serve --single --ssl-cert localhost.pem --ssl-key localhost-key.pem build"
   },
   "eslintConfig": {
     "extends": "react-app"

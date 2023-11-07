@@ -6,15 +6,15 @@
       "baseUrl": ".",
       "typeRoots": ["./node_modules/@types", "./types"],
       "paths": {
-        "@ballware/meta-interface": ["packages/meta-interface/src"],        
-        "@ballware/meta-backend": ["packages/meta-backend/src"],
-        "@ballware/identity-interface": ["packages/identity-interface/src"],
-        "@ballware/identity-backend": ["packages/identity-backend/src"],
-        "@ballware/identity-keycloak": ["packages/identity-keycloak/src"],
-        "@ballware/react-contexts": ["packages/react-contexts/src"],
-        "@ballware/react-provider": ["packages/react-provider/src"],
-        "@ballware/react-renderer": ["packages/react-renderer/src"],
-        "@ballware/react-renderer-dx": ["packages/react-renderer-dx/src"],
+        "@ballware/meta-interface": ["./packages/meta-interface/src"],        
+        "@ballware/meta-backend": ["./packages/meta-backend/src"],
+        "@ballware/identity-interface": ["./packages/identity-interface/src"],
+        "@ballware/identity-backend": ["./packages/identity-backend/src"],
+        "@ballware/identity-keycloak": ["./packages/identity-keycloak/src"],
+        "@ballware/react-contexts": ["./packages/react-contexts/src"],
+        "@ballware/react-provider": ["./packages/react-provider/src"],
+        "@ballware/react-renderer": ["./packages/react-renderer/src"],
+        "@ballware/react-renderer-dx": ["./packages/react-renderer-dx/src"],
         "$test/*": ["test/*"]
       }
     }

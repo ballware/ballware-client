@@ -1,5 +1,5 @@
 {
-  "name": "@ballware/identity-interface",
+  "name": "@ballware/identity-interface",  
   "version": "6.21.0",
   "description": "Ballware Application Builder - Interface for identity provider",
   "author": "frank@ballmeyer.com",
@@ -16,30 +16,20 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/identity-interface.cjs",
+    "default": "./dist/identity-interface.modern.js"
   },
+  "types": "./dist/identity-interface/src/index.d.ts",
+  "main": "./dist/identity-interface.cjs",
+  "module": "./dist/identity-interface.module.js",
+  "unpkg": "./dist/identity-interface.umd.js",  
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint --fix",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "docs": "typedoc --plugin typedoc-plugin-markdown",
-    "prepublish": "npm run build"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
+    "start": "microbundle watch",
+    "build": "microbundle",
+    "docs": "typedoc --plugin typedoc-plugin-markdown"
   },
   "prettier": {
     "printWidth": 80,
@@ -47,17 +37,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "module": "dist/ballware-identity-interface.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/ballware-identity-interface.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/ballware-identity-interface.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "dependencies": {
     "@ballware/meta-interface": "^6.21.0"
   },

@@ -3,7 +3,8 @@
   "private": true,
   "devDependencies": {
     "lerna": "^6.4.1",
-    "tsdx": "^0.14.1"
+    "microbundle": "^0.15.1",
+    "serve": "^14.2.1"
   },
   "workspaces": {
     "packages": [

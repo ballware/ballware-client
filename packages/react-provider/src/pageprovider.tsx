@@ -213,7 +213,7 @@ export const PageProvider = ({
         return {
           ...previousValue,
           pageData: pageData,
-          customParam: customParam,
+          customParam: customParam as Record<string, unknown>,
         } as PageContextState;
       });
     }
