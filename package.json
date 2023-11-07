@@ -31,7 +31,7 @@
     "typecheck:changed": "lerna run --since origin/master --include-dependents tsc --noEmit",
     "lint": "lerna run lint -- --fix",
     "lint:changed": "lerna run --since origin/master --include-dependents lint -- --fix",
-    "build": "lerna run build --",
+    "build": "lerna run build --stream --",
     "build:changed": "lerna run --since origin/master --include-dependents build",
     "start:app": "yarn run build && yarn --cwd example && yarn --cwd example start",
     "docs": "lerna run docs --",
